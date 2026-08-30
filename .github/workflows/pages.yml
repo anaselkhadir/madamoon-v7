@@ -38,8 +38,12 @@ jobs:
       - name: Export statique
         env:
           PAGES: "1"
-          BASE_PATH: /${{ github.event.repository.name }}
-        run: npm run build
+        # Le chemin de base est déduit du nom du dépôt, quel que soit
+        # l'évènement qui déclenche la publication.
+        run: |
+          export BASE_PATH="/${GITHUB_REPOSITORY##*/}"
+          echo "chemin de base : $BASE_PATH"
+          npm run build
 
       # Sans ce fichier, GitHub ignore le dossier _next (convention Jekyll).
       - run: touch out/.nojekyll
