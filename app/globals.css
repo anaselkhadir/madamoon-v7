@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+/* ———————————————————————————————————————————————————————————
+ * MADAMOON — système visuel
+ *
+ * Les valeurs de cette feuille ne sont pas inventées : elles sont
+ * relevées sur la référence, à 1440 px de large, puis transposées en
+ * unités fluides. Gouttière 48, en-tête 38 + 70, titre d'affiche 100/95,
+ * titre de section 32/48, bouton 40 de haut, tuiles au rapport 447/621.
+ *
+ * La base est claire : blanc et ivoire. Le rouge n'occupe jamais une
+ * surface — il agit (#910000) ou il ponctue (#CE0A2C).
+ * ——————————————————————————————————————————————————————————— */
+
+@theme {
+  --color-blanc: #ffffff;
+  --color-ivoire: #fdfbf8;
+  --color-craie: #f6f2ec;
+  --color-sable: #ece5da;
+  --color-fil: #e3dcd1;
+
+  --color-encre: #14100c;
+  --color-plume: #2f2d2d;
+  --color-plomb: #6b6459;
+  --color-brume: #a8a093;
+
+  --color-action: #910000;
+  --color-accent: #ce0a2c;
+
+  --font-serif: var(--police-serif), "Times New Roman", serif;
+  --font-sans: var(--police-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-doux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-rideau: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  /* 48 px à 1440. La marge du site, partout la même. */
+  --gouttiere: clamp(1.125rem, 3.34vw, 3.5rem);
+  /* 38 px de bandeau, 70 px de barre principale. */
+  --barre: 2.375rem;
+  --entete: 4.375rem;
+  --ease-doux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-rideau: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --barre: 0rem;
+    --entete: 3.5rem;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Le bandeau de l'en-tête occupe une vraie place : le contenu commence
+ * dessous, exactement comme sur la référence. */
+main {
+  padding-top: var(--barre);
+}
+
+body {
+  background: var(--color-blanc);
+  color: var(--color-plume);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-blanc);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--color-action);
+  outline-offset: 3px;
+}
+
+/* ———————————————————————————————————— typographie ————— */
+
+/* Le titre d'affiche : 100 px / 95 sur la référence. Un seul par écran. */
+.affiche {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.625rem, 6.95vw, 6.25rem);
+  line-height: 0.95;
+  letter-spacing: 0.006em;
+  text-transform: uppercase;
+}
+
+/* Le titre de section : sans-serif, capitales, 32 px / 48. */
+.titre-section {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1.375rem, 2.22vw, 2rem);
+  line-height: 1.5;
+  letter-spacing: 0.019em;
+  text-transform: uppercase;
+  color: var(--color-encre);
+}
+
+/* Le nom posé dans l'image : serif, 48 px, bas de casse. */
+.nom-image {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.875rem, 3.33vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* La ligne qui suit un nom : sans-serif, 18 px. */
+.note-image {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.25vw, 1.125rem);
+  line-height: 1.5;
+}
+
+/* L'accroche sous le titre d'affiche : capitales grasses, 18 px. */
+.accroche {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(0.8125rem, 1.25vw, 1.125rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Les liens de navigation : 12 px, capitales. */
+.lien-nav {
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* Les mentions du bandeau : 10 px, capitales, grasses. */
+.mention {
+  font-size: 0.625rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Un repère de rubrique. */
+.legende {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-plomb);
+}
+
+/* Une phrase éditoriale, en serif. */
+.phrase {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 2.6vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: 0;
+  color: var(--color-encre);
+}
+
+.texte {
+  font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  line-height: 1.7;
+  color: var(--color-plume);
+}
+
+/* ———————————————————————————————————— boutons ————— */
+
+/* 40 px de haut, 24 px de part et d'autre, 12 px de capitales. */
+.bouton,
+.bouton-clair,
+.bouton-trait {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding-inline: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.45s var(--ease-doux), color 0.45s var(--ease-doux),
+    border-color 0.45s var(--ease-doux);
+}
+
+/* L'action de la maison. La seule surface rouge du site. */
+.bouton {
+  background: var(--color-action);
+  color: var(--color-blanc);
+}
+.bouton:hover {
+  background: #760000;
+}
+
+/* Sur une photographie : fond blanc, texte encre. */
+.bouton-clair {
+  background: var(--color-blanc);
+  color: var(--color-encre);
+}
+.bouton-clair:hover {
+  background: var(--color-action);
+  color: var(--color-blanc);
+}
+
+/* L'action secondaire, sur fond clair. */
+.bouton-trait {
+  border: 1px solid var(--color-encre);
+  color: var(--color-encre);
+}
+.bouton-trait:hover {
+  background: var(--color-encre);
+  color: var(--color-blanc);
+}
+
+/* ———————————————————————————————————— trames ————— */
+
+.gouttiere {
+  padding-inline: var(--gouttiere);
+}
+
+/* La grille de tuiles : trois colonnes jointives, 1,5 px de jeu. */
+.trame-tuiles {
+  display: grid;
+  gap: 1.5px;
+}
+
+/* Le rapport relevé sur la référence : 447 / 621. */
+.tuile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 447 / 621;
+}
+
+.tuile img,
+.tuile video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 1.4s var(--ease-doux);
+}
+
+.tuile:hover img,
+.tuile:hover video {
+  transform: scale(1.035);
+}
+
+/* Le texte posé dans l'image : centré en hauteur, 24 px depuis la gauche. */
+.dans-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: clamp(1rem, 1.7vw, 1.5rem);
+  color: var(--color-blanc);
+}
+
+/* Un voile très léger : la photographie reste lisible, le texte aussi. */
+.voile-lecture {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.16) 42%,
+    rgba(0, 0, 0, 0) 78%
+  );
+  pointer-events: none;
+}
+
+.filet {
+  height: 1px;
+  background: var(--color-fil);
+}
+
+.mesure {
+  max-width: 34ch;
+}
+.mesure-l {
+  max-width: 48ch;
+}
+
+/* Le trait qui se dessine sous un lien. */
+.souligne {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+.souligne::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-doux);
+}
+.souligne:hover::after,
+.souligne[data-actif="true"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ———————————————————————————————————— apparitions ————— */
+
+/* Les états de départ ne s'appliquent que si le navigateur exécute des
+ * scripts : sans JavaScript, rien n'est masqué. Une décoration ne doit
+ * jamais pouvoir cacher une page. */
+@media (scripting: enabled) {
+  [data-lever] {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: opacity, transform;
+  }
+
+  [data-voile] {
+    clip-path: inset(0 0 100% 0);
+    will-change: clip-path;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-lever],
+  [data-voile] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ———————————————————————————————————— divers ————— */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-fil) transparent;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-fil);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
