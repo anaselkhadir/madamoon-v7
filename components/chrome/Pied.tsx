@@ -22,7 +22,7 @@ export default function Pied() {
             alt="MADAMOON"
             width={513}
             height={56}
-            className="h-[1.35rem] w-auto"
+            className="h-[1.05rem] w-auto"
           />
           <p className="texte mesure mt-5">{MAISON.baseline}.</p>
           <ul className="mt-5 flex gap-5">

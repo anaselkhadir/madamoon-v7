@@ -42,13 +42,13 @@ export default function Hero() {
   useEffect(() => {
     const el = video.current;
     if (!el || !charge) return;
-    const demarrer = () => {
-      setPrete(true);
-      el.play().catch(() => setPrete(false));
-    };
-    if (el.readyState >= 3) demarrer();
-    else el.addEventListener("canplay", demarrer, { once: true });
-    return () => el.removeEventListener("canplay", demarrer);
+    /* On demande la lecture tout de suite : c'est elle qui déclenche le
+     * chargement. Attendre « canplay » avant de jouer ne mène nulle part,
+     * puisque rien n'est chargé tant qu'on n'a pas joué. */
+    const surLecture = () => setPrete(true);
+    el.addEventListener("playing", surLecture);
+    el.play().catch(() => {});
+    return () => el.removeEventListener("playing", surLecture);
   }, [charge]);
 
   const basculer = () => {
@@ -101,7 +101,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           aria-hidden="true"
           tabIndex={-1}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] [transition-timing-function:var(--ease-doux)] ${

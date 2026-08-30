@@ -107,7 +107,7 @@ export default function Entete() {
                   alt="MADAMOON"
                   width={513}
                   height={56}
-                  className="h-[1.15rem] w-auto md:h-[1.35rem]"
+                  className="h-[0.9rem] w-auto md:h-[1.05rem]"
                 />
               </Link>
 
@@ -168,7 +168,7 @@ export default function Entete() {
             alt="MADAMOON"
             width={513}
             height={56}
-            className="h-[1.15rem] w-auto md:h-[1.35rem]"
+            className="h-[0.9rem] w-auto md:h-[1.05rem]"
           />
           <button type="button" onClick={() => setOuvert(false)} className="lien-nav text-encre">
             Fermer

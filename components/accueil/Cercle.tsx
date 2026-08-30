@@ -29,8 +29,20 @@ const CHOIX = [
   { slug: "clover", vue: 1 },
 ];
 
-const RAYON = 62; /* en pourcentage de la hauteur de la scène */
-const OUVERTURE = 150; /* l'arc occupé par les six robes, en degrés */
+/*
+ * La géométrie.
+ *
+ * Le cercle est immense et son centre très bas : l'arc qui traverse
+ * l'écran est donc presque plat, et les robes glissent latéralement en
+ * s'inclinant à peine. Un petit cercle ferait tourner les images en
+ * carrousel de manège — ce n'est pas ce que l'on veut.
+ *
+ * Le pas de 9° correspond, à ce rayon, à environ 340 px entre deux
+ * robes : la largeur d'une tuile plus une respiration.
+ */
+const RAYON = 240; /* en hauteurs d'écran */
+const PAS = 9; /* l'écart entre deux robes, en degrés */
+const COURSE = 14; /* l'amplitude de la rotation au défilement */
 
 export default function Cercle() {
   const scene = useRef<HTMLDivElement>(null);
@@ -59,7 +71,7 @@ export default function Cercle() {
         end: "bottom bottom",
         scrub: 1.1,
         onUpdate: (self) => {
-          const angle = -OUVERTURE / 2 + self.progress * OUVERTURE;
+          const angle = COURSE - self.progress * COURSE * 2;
           gsap.set(roue.current, { rotate: angle });
           const cartes = roue.current?.querySelectorAll<HTMLElement>("[data-carte]");
           cartes?.forEach((c) => gsap.set(c, { rotate: -angle - Number(c.dataset.pose) }));
@@ -107,10 +119,10 @@ export default function Cercle() {
           <div
             ref={roue}
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[86%] h-0 w-0 will-change-transform"
+            className="pointer-events-none absolute left-1/2 top-[295%] h-0 w-0 will-change-transform"
           >
             {robes.map(({ media, robe }, i) => {
-              const pose = -OUVERTURE / 2 + (i * OUVERTURE) / (robes.length - 1);
+              const pose = (i - (robes.length - 1) / 2) * PAS;
               return (
                 /* Le bras : il place un point sur le cercle, et ne bouge plus. */
                 <div
@@ -123,15 +135,15 @@ export default function Cercle() {
                     data-carte
                     data-pose={pose}
                     className="will-change-transform"
-                    style={{ transform: `rotate(${-pose + OUVERTURE / 2}deg)` }}
+                    style={{ transform: `rotate(${-pose - COURSE}deg)` }}
                   >
-                    <div className="absolute left-0 top-0 w-[19vw] min-w-[9rem] -translate-x-1/2 -translate-y-1/2">
+                    <div className="absolute left-0 top-0 w-[21vw] min-w-[9rem] -translate-x-1/2 -translate-y-1/2">
                       <div className="tuile">
                         <Photo
                           media={media}
                           dossier="robes"
                           alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
-                          sizes="19vw"
+                          sizes="21vw"
                         />
                       </div>
                       <p className="mention mt-3 text-center text-encre">{robe.nom}</p>

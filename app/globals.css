@@ -84,11 +84,12 @@ body {
 
 /* ———————————————————————————————————— typographie ————— */
 
-/* Le titre d'affiche : 100 px / 95 sur la référence. Un seul par écran. */
+/* Le titre d'affiche. La référence monte à 100 px ; MADAMOON s'arrête à
+ * 80 px — le mot reste dominant, l'écran respire davantage. */
 .affiche {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2.625rem, 6.95vw, 6.25rem);
+  font-size: clamp(2.5rem, 5.6vw, 5rem);
   line-height: 0.95;
   letter-spacing: 0.006em;
   text-transform: uppercase;

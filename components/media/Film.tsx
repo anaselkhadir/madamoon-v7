@@ -51,13 +51,11 @@ export default function Film({ src, affiche, alt, className = "", position }: Pr
   useEffect(() => {
     const el = video.current;
     if (!el || !charge) return;
-    const jouer = () => {
-      setPrete(true);
-      el.play().catch(() => setPrete(false));
-    };
-    if (el.readyState >= 3) jouer();
-    else el.addEventListener("canplay", jouer, { once: true });
-    return () => el.removeEventListener("canplay", jouer);
+    /* La lecture déclenche le chargement, jamais l'inverse. */
+    const surLecture = () => setPrete(true);
+    el.addEventListener("playing", surLecture);
+    el.play().catch(() => {});
+    return () => el.removeEventListener("playing", surLecture);
   }, [charge]);
 
   return (
@@ -77,7 +75,7 @@ export default function Film({ src, affiche, alt, className = "", position }: Pr
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           aria-hidden="true"
           tabIndex={-1}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] [transition-timing-function:var(--ease-doux)] ${

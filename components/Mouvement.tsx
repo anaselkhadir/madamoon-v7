@@ -71,7 +71,9 @@ export default function Mouvement() {
           obs.unobserve(el);
         });
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.05 }
+      /* La marge est positive : l'image se découvre pendant qu'elle
+       * monte, pas une fois arrivée. On ne voit jamais de trou blanc. */
+      { rootMargin: "0px 0px 18% 0px", threshold: 0 }
     );
     cibles.forEach((el) => obs.observe(el));
 
@@ -81,7 +83,7 @@ export default function Mouvement() {
       for (const el of cibles) {
         if (el.dataset.leve) continue;
         const b = el.getBoundingClientRect();
-        if (b.top < window.innerHeight * 0.94 && b.bottom > 0) {
+        if (b.top < window.innerHeight * 1.18 && b.bottom > 0) {
           obs.unobserve(el);
           reveler(el);
         } else {
@@ -99,7 +101,7 @@ export default function Mouvement() {
       attente = window.setTimeout(rattraper, 180);
     };
     window.addEventListener("scroll", surScroll, { passive: true });
-    const amorce = window.setTimeout(rattraper, 1200);
+    const amorce = window.setTimeout(rattraper, 400);
 
     return () => {
       obs.disconnect();
@@ -115,16 +117,16 @@ export default function Mouvement() {
 function reveler(el: HTMLElement) {
   if (el.dataset.leve) return;
   if ("voile" in el.dataset) {
-    el.style.transition = "clip-path 1.15s var(--ease-rideau)";
+    el.style.transition = "clip-path 0.75s var(--ease-rideau)";
     el.style.clipPath = "inset(0 0 0% 0)";
   } else {
     el.style.transition =
-      "opacity 0.95s var(--ease-doux), transform 1.05s var(--ease-doux)";
+      "opacity 0.6s var(--ease-doux), transform 0.7s var(--ease-doux)";
     el.style.opacity = "1";
     el.style.transform = "none";
   }
   el.dataset.leve = "1";
   window.setTimeout(() => {
     el.style.willChange = "auto";
-  }, 1300);
+  }, 900);
 }
