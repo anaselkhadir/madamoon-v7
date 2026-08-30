@@ -5,6 +5,11 @@ import { SCENES } from "@/lib/medias";
 /*
  * Le dos d'Uma.
  *
+ * Le cadrage est calé tout en haut : sur une image trois fois plus haute
+ * que le cadre, quelques pour cent décident si l'on regarde le dos de
+ * dentelle ou la chute de la jupe. À zéro, la ligne de boutons occupe le
+ * centre — c'est le dos, le sujet.
+ *
  * Une seule image, plein cadre, tenue haut : la dentelle et la ligne de
  * boutons occupent l'écran. Une phrase, un lien. C'est la scène la plus
  * silencieuse du site — elle n'a rien à vendre, elle montre.
@@ -18,7 +23,7 @@ export default function Dos() {
         dossier="scenes"
         alt="Dos d'une robe de mariée en dentelle fermée par une ligne de boutons, modèle Uma"
         sizes="100vw"
-        position="50% 22%"
+        position="50% 0%"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <span
