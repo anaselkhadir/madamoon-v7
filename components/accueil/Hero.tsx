@@ -112,12 +112,22 @@ export default function Hero() {
         </video>
       )}
 
-      {/* Un voile très léger, du bas vers la gauche : le texte reste blanc. */}
+      {/* Deux voiles très légers : l'un vers la gauche pour le titre, l'autre
+       * en haut pour que la navigation blanche reste lisible quelle que soit
+       * l'image de la vidéo. */}
       <div
         className="absolute inset-0"
         style={{
           background:
             "linear-gradient(95deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 72%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-40"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.14) 45%, rgba(0,0,0,0) 100%)",
         }}
       />
 

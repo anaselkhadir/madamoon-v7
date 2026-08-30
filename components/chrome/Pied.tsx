@@ -19,8 +19,8 @@ export default function Pied() {
           <img
             src="/marque/logo-encre.png"
             alt="MADAMOON"
-            width={1000}
-            height={200}
+            width={513}
+            height={56}
             className="h-[1.35rem] w-auto"
           />
           <p className="texte mesure mt-5">{MAISON.baseline}.</p>
