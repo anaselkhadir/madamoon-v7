@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { SCENES } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
+import { media as chemin } from "@/lib/chemin";
 
 /*
  * Le hero, relevé sur la référence.
@@ -22,7 +23,7 @@ const DESKTOP = SCENES["hero-affiche"];
 const MOBILE = SCENES["hero-affiche-mobile"];
 
 const jeu = (media: { name: string }, ext: string, largeurs: readonly number[]) =>
-  largeurs.map((w) => `/scenes/${media.name}-${w}.${ext} ${w}w`).join(", ");
+  largeurs.map((w) => `${chemin(`/scenes/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
 
 export default function Hero() {
   const video = useRef<HTMLVideoElement>(null);
@@ -81,7 +82,7 @@ export default function Hero() {
         <source type="image/webp" srcSet={jeu(DESKTOP, "webp", DESKTOP.widths)} sizes="100vw" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/scenes/${DESKTOP.name}-1000.jpg`}
+          src={chemin(`/scenes/${DESKTOP.name}-1000.jpg`)}
           srcSet={jeu(DESKTOP, "jpg", DESKTOP.jpgw)}
           sizes="100vw"
           width={DESKTOP.w}
@@ -107,8 +108,12 @@ export default function Hero() {
             prete ? "opacity-100" : "opacity-0"
           }`}
         >
-          <source src="/film/hero-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
-          <source src="/film/hero-desktop.mp4" type="video/mp4" />
+          <source
+            src={chemin("/film/hero-mobile.mp4")}
+            type="video/mp4"
+            media="(max-width: 700px)"
+          />
+          <source src={chemin("/film/hero-desktop.mp4")} type="video/mp4" />
         </video>
       )}
 

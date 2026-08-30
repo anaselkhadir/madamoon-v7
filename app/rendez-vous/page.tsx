@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Photo from "@/components/media/Photo";
-import { MAISON, ROBES, SIGNATURES } from "@/lib/madamoon";
+import RobeChoisie from "@/components/parcours/RobeChoisie";
+import { MAISON, SIGNATURES } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
 
 /*
@@ -18,14 +20,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/rendez-vous" },
 };
 
-export default async function RendezVous({
-  searchParams,
-}: {
-  searchParams: Promise<{ robe?: string }>;
-}) {
-  const { robe: demande } = await searchParams;
-  const robe = ROBES.find((r) => r.slug === demande);
-
+export default function RendezVous() {
   return (
     <section className="grid min-h-svh md:grid-cols-2">
       <div className="relative min-h-[42svh] overflow-hidden md:min-h-svh">
@@ -43,12 +38,9 @@ export default async function RendezVous({
         <p className="legende">Essayage privé, sur rendez-vous</p>
         <h1 className="affiche mt-4 text-encre">Prendre rendez-vous</h1>
 
-        {robe && (
-          <p className="texte mt-6">
-            Le modèle <strong className="text-encre">{robe.nom}</strong> sera préparé pour
-            votre venue — {robe.ligne.toLowerCase()}.
-          </p>
-        )}
+        <Suspense fallback={null}>
+          <RobeChoisie />
+        </Suspense>
 
         <ul className="mt-8 flex flex-col gap-4">
           {SIGNATURES.map((s) => (

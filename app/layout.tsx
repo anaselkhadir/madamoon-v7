@@ -7,6 +7,7 @@ import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Mouvement from "@/components/Mouvement";
 import { MAISON, SITE_URL } from "@/lib/madamoon";
+import { APERCU } from "@/lib/chemin";
 
 /*
  * Deux caractères, comme sur la référence.
@@ -57,7 +58,9 @@ export const metadata: Metadata = {
     description:
       "Showroom de robes de mariée à Paris 10e. Essayage privé sur rendez-vous, créateurs sélectionnés, confection sur mesure.",
   },
-  robots: { index: true, follow: true },
+  /* L'aperçu GitHub Pages est fermé aux moteurs : une copie indexée
+   * ferait concurrence au vrai site. */
+  robots: APERCU ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {

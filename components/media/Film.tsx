@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Photo from "@/components/media/Photo";
 import type { Media } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
+import { media as chemin } from "@/lib/chemin";
 
 /*
  * Un film court, en boucle, sans son.
@@ -72,7 +73,7 @@ export default function Film({ src, affiche, alt, className = "", position }: Pr
       {charge && (
         <video
           ref={video}
-          src={src}
+          src={chemin(src)}
           muted
           loop
           playsInline

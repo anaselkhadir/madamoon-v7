@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
+import { media as ressource } from "@/lib/chemin";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -102,7 +103,7 @@ export default function Entete() {
               <Link href="/" aria-label="MADAMOON, accueil" className="shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={surImage ? "/marque/logo-blanc.png" : "/marque/logo-encre.png"}
+                  src={ressource(surImage ? "/marque/logo-blanc.png" : "/marque/logo-encre.png")}
                   alt="MADAMOON"
                   width={513}
                   height={56}
@@ -163,7 +164,7 @@ export default function Entete() {
         <div className="gouttiere flex h-[var(--entete)] items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/marque/logo-encre.png"
+            src={ressource("/marque/logo-encre.png")}
             alt="MADAMOON"
             width={513}
             height={56}

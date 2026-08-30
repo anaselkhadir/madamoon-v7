@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { SILHOUETTES } from "@/lib/silhouettes";
+import { media as chemin } from "@/lib/chemin";
 
 /*
  * Le pied de page.
@@ -17,7 +18,7 @@ export default function Pied() {
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/marque/logo-encre.png"
+            src={chemin("/marque/logo-encre.png")}
             alt="MADAMOON"
             width={513}
             height={56}

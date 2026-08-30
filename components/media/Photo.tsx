@@ -1,4 +1,5 @@
 import type { Media } from "@/lib/medias";
+import { media as chemin } from "@/lib/chemin";
 
 /*
  * Une photographie MADAMOON.
@@ -30,7 +31,7 @@ export default function Photo({
   position,
 }: Props) {
   const jeu = (ext: string, largeurs: readonly number[]) =>
-    largeurs.map((w) => `/${dossier}/${media.name}-${w}.${ext} ${w}w`).join(", ");
+    largeurs.map((w) => `${chemin(`/${dossier}/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
   const jpeg = media.jpgw;
   const replis = jpeg[jpeg.length - 1];
 
@@ -39,7 +40,7 @@ export default function Photo({
       <source type="image/avif" srcSet={jeu("avif", media.widths)} sizes={sizes} />
       <source type="image/webp" srcSet={jeu("webp", media.widths)} sizes={sizes} />
       <img
-        src={`/${dossier}/${media.name}-${replis}.jpg`}
+        src={chemin(`/${dossier}/${media.name}-${replis}.jpg`)}
         srcSet={jeu("jpg", jpeg)}
         sizes={sizes}
         width={media.w}

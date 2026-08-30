@@ -1,4 +1,8 @@
 import type { MetadataRoute } from "next";
+
+/* Ces deux fichiers sont écrits une fois, à la compilation : ils doivent
+ * l'être aussi quand le site est exporté en fichiers statiques. */
+export const dynamic = "force-static";
 import { ROBES, SITE_URL } from "@/lib/madamoon";
 
 const PAGES = ["", "/robes", "/trouver-ma-robe", "/showroom", "/a-propos", "/rendez-vous"];
