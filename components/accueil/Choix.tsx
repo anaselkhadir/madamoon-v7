@@ -8,11 +8,15 @@ import { SCENES } from "@/lib/medias";
  * Deux images, deux chemins : se laisser guider par la silhouette, ou
  * regarder toutes les robes. Le même langage que les modèles — l'image
  * porte le texte, rien n'est encadré.
+ *
+ * La section n'a pas de fond : elle remonte par-dessus le hero, qui reste
+ * collant et se floute. C'est lui qu'on voit derrière les deux
+ * photographies — d'où le z-10, sans lequel elle passerait dessous.
  */
 
 export default function Choix() {
   return (
-    <section aria-labelledby="commencer">
+    <section aria-labelledby="commencer" className="relative z-10 pb-[clamp(3rem,5vw,5rem)]">
       <TitreSection id="commencer" titre="Par où commencer" />
       <div className="gouttiere">
         <div className="trame-tuiles md:grid-cols-2">

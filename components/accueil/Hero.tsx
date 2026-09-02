@@ -18,6 +18,17 @@ import AppelElise from "@/components/AppelElise";
  * L'affiche est chargée en priorité : c'est elle qui s'affiche d'abord, et
  * c'est elle qui reste si la connexion est comptée ou si le mouvement est
  * refusé. La vidéo vient ensuite, en fondu, muette et en boucle.
+ *
+ * Le passage à la section suivante.
+ *
+ * Le hero ne défile pas : il est collant, et « Par où commencer » remonte
+ * par-dessus. À mesure qu'elle monte, l'image se floute et tout ce qui
+ * était écrit dessus s'efface — le hero cesse d'être une scène pour
+ * devenir le fond de la section, derrière les deux photographies.
+ *
+ * Le flou est arrondi au pixel : à chaque valeur nouvelle le navigateur
+ * refait le rendu de tout le plan, et une progression continue le ferait
+ * soixante fois par seconde pour rien.
  */
 
 const DESKTOP = SCENES["hero-affiche"];
@@ -27,11 +38,80 @@ const MOBILE = SCENES["hero-affiche-mobile"];
 const jeu = (media: { name: string }, ext: string, largeurs: readonly number[]) =>
   largeurs.map((w) => `${chemin(`/scenes/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
 
+/* Le flou au bout de la course. Au-delà, on ne gagne plus rien de
+ * visible et le rendu devient coûteux. */
+const FLOU = 18;
+
 export default function Hero() {
   const video = useRef<HTMLVideoElement>(null);
+  const fond = useRef<HTMLDivElement>(null);
+  const voile = useRef<HTMLDivElement>(null);
+  const devant = useRef<HTMLDivElement>(null);
   const [charge, setCharge] = useState(false);
   const [prete, setPrete] = useState(false);
   const [joue, setJoue] = useState(true);
+  /* La lecture voulue par la visiteuse, lisible depuis le défilement sans
+   * refaire l'écouteur à chaque bascule. */
+  const joueRef = useRef(true);
+  joueRef.current = joue;
+  /* Le hero ne devient collant que si le passage a lieu : sans lui, la
+   * section suivante n'aurait rien à recouvrir. */
+  const [passage, setPassage] = useState(false);
+
+  useEffect(() => {
+    if (!mouvementReduit()) setPassage(true);
+  }, []);
+
+  useEffect(() => {
+    if (!passage) return;
+    let demande = 0;
+    const poser = () => {
+      demande = 0;
+      const hauteur = window.innerHeight || 1;
+      const avance = Math.min(Math.max(window.scrollY / hauteur, 0), 1);
+      if (fond.current) {
+        /* Un léger agrandissement : le flou mange les bords, et sans lui
+         * on verrait le fond de la page les traverser. */
+        fond.current.style.filter = `blur(${Math.round(avance * FLOU)}px)`;
+        fond.current.style.transform = `scale(${1 + avance * 0.06})`;
+      }
+      /* Le voile monte avec le flou.
+       *
+       * Sans lui, « Par où commencer » écrit à l'encre passait à 0,91 de
+       * contraste sur les plans sombres du film — illisible. Mesuré image
+       * par image sur les cinquante-trois secondes : à 55 % d'ivoire le
+       * pire plan donne 5,49, et il reste 45 % de l'image floutée. */
+      if (voile.current) voile.current.style.opacity = String(avance);
+
+      /* Une fois le fond entièrement flouté, le film est figé : personne
+       * ne lit un mouvement sous dix-huit pixels de flou, et le rendu
+       * d'un plan plein écran flouté à soixante images par seconde coûte
+       * cher pour rien. Il repart dès qu'on remonte — sauf si elle l'a
+       * mis en pause elle-même. */
+      const el = video.current;
+      if (el && joueRef.current) {
+        if (avance > 0.85 && !el.paused) el.pause();
+        else if (avance <= 0.85 && el.paused) el.play().catch(() => {});
+      }
+
+      if (devant.current) {
+        /* Le texte s'efface avant la fin de la course : on ne laisse
+         * jamais lire un titre flou. */
+        devant.current.style.opacity = String(Math.max(0, 1 - avance * 1.9));
+      }
+    };
+    const surScroll = () => {
+      if (!demande) demande = requestAnimationFrame(poser);
+    };
+    poser();
+    window.addEventListener("scroll", surScroll, { passive: true });
+    window.addEventListener("resize", surScroll);
+    return () => {
+      cancelAnimationFrame(demande);
+      window.removeEventListener("scroll", surScroll);
+      window.removeEventListener("resize", surScroll);
+    };
+  }, [passage]);
 
   useEffect(() => {
     const co = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
@@ -66,7 +146,12 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
+    <section
+      className={`${
+        passage ? "sticky top-0 z-0" : "relative"
+      } h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie`}
+    >
+      <div ref={fond} className="absolute inset-0 will-change-[filter,transform]">
       <picture>
         <source
           type="image/avif"
@@ -118,7 +203,24 @@ export default function Hero() {
           <source src={chemin("/film/hero-desktop.mp4")} type="video/mp4" />
         </video>
       )}
+      </div>
 
+      {/* Le voile de lecture, entre l'image floutée et ce qu'on écrit
+        * dessus. Absent au premier écran, entier à la fin de la course. */}
+      <div
+        ref={voile}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-0"
+        style={{ background: "color-mix(in srgb, var(--color-ivoire) 55%, transparent)" }}
+      />
+
+      {/* Tout ce qui est posé sur l'image s'efface ensemble : les voiles,
+        * le titre, le bouton, le bandeau. La couche ne prend pas le
+        * pointeur — seuls ses enfants cliquables le reprennent. */}
+      <div
+        ref={devant}
+        className="pointer-events-none absolute inset-0 [&_a]:pointer-events-auto [&_button]:pointer-events-auto"
+      >
       {/* Deux voiles très légers : l'un vers la gauche pour le titre, l'autre
        * en haut pour que la navigation blanche reste lisible quelle que soit
        * l'image de la vidéo. */}
@@ -176,6 +278,7 @@ export default function Hero() {
       )}
 
       <Bandeau />
+      </div>
     </section>
   );
 }
