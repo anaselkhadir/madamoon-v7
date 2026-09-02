@@ -18,8 +18,8 @@ import {
   morphologieParSlug,
   type Categorie,
 } from "@/lib/madamoon";
-import { AU_DELA, EDITO } from "@/lib/morphologies";
-import { PLURIEL, coupe } from "@/lib/coupes";
+import { AU_DELA, EDITO, QUESTIONS } from "@/lib/morphologies";
+import { APPOSITION, PLURIEL, coupe } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 import { altCoupe, altRobe } from "@/lib/alt";
 
@@ -110,11 +110,24 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
     },
   ].filter((n) => n.robes.length > 0);
 
+  /* Les trois questions écrites, plus celle qui dit comment se
+   * reconnaître — sa réponse est déjà sur la page, plus haut. Google
+   * demande que la réponse figure visiblement : c'est la même. */
+  const questions = [
+    {
+      q: `Comment savoir si j'ai une silhouette en ${m.lettre} ?`,
+      r: e.reperes.map((r) => r.texte).join(" "),
+    },
+    ...QUESTIONS[m.lettre],
+  ];
+
   const maisons = maisonsPour(m.lettre).filter((o) => o.premieres.length > 0);
   const scene = vues(m.ouverture.robe)[1] ?? vues(m.ouverture.robe)[0];
 
   const donnees = {
     "@context": "https://schema.org",
+    "@graph": [
+      {
     "@type": "Article",
     headline: e.question,
     description: e.promesse,
@@ -128,6 +141,22 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
       name: `Robe de mariée ${s.nom.toLowerCase()}`,
       url: `${SITE_URL}/coupes/${s.ancre}`,
     })),
+      },
+      {
+        /* Le balisage des questions.
+         *
+         * Google a fermé les extraits enrichis FAQ en 2023 : ils ne
+         * s'affichent plus que pour les sites publics et de santé. Le
+         * balisage reste néanmoins juste, il aide à comprendre la page,
+         * et le contenu visible, lui, capte les requêtes longues. */
+        "@type": "FAQPage",
+        mainEntity: questions.map((x) => ({
+          "@type": "Question",
+          name: x.q,
+          acceptedAnswer: { "@type": "Answer", text: x.r },
+        })),
+      },
+    ],
   };
 
   return (
@@ -226,6 +255,40 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
             <p className="phrase mesure-l text-encre" data-lever>
               {e.detail}
             </p>
+
+            {/* Le maillage contextuel.
+              *
+              * Des phrases, pas une liste de liens : l'ancre dit ce qu'on
+              * trouve au bout et pourquoi cela concerne cette
+              * morphologie. « Cliquez ici » n'apprend rien, ni à la
+              * lectrice ni à un moteur. */}
+            <div className="mesure-l mt-8" data-lever data-retard="100">
+              {stations.map((s) => {
+                const modeles = s.robes;
+                return (
+                  <p key={s.ancre} className="texte mt-3">
+                    <Link href={`/coupes/${s.ancre}`} className="souligne text-action">
+                      Découvrez nos robes de mariée {APPOSITION[s.nom as Categorie]} adaptées
+                      à une silhouette en {m.lettre}
+                    </Link>
+                    {modeles.length > 0 && (
+                      <>
+                        {" "}— ou allez directement à{" "}
+                        {modeles.map((r, i) => (
+                          <span key={r.slug}>
+                            {i > 0 && (i === modeles.length - 1 ? " et " : ", ")}
+                            <Link href={`/robes/${r.slug}`} className="souligne text-encre">
+                              {r.nom}, {r.ligne.toLowerCase()}
+                            </Link>
+                          </span>
+                        ))}
+                        .
+                      </>
+                    )}
+                  </p>
+                );
+              })}
+            </div>
           </div>
         </section>
       )}
@@ -270,7 +333,26 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         ))}
       </section>
 
-      {/* ————————————————————————————— 05 · au-delà ————— */}
+      {/* ————————————————————————————— 05 · les questions ————— */}
+      <section aria-labelledby="questions" className="pt-[clamp(4rem,8vw,8rem)]">
+        <TitreSection
+          id="questions"
+          titre="Les questions que l'on nous pose"
+          lien={{ href: "/rendez-vous", label: "Poser la vôtre" }}
+        />
+        <div className="gouttiere pb-[clamp(2rem,4vw,4rem)]">
+          <dl className="mesure-l border-t border-fil">
+            {questions.map((x, i) => (
+              <div key={x.q} className="border-b border-fil py-6" data-lever data-retard={i * 80}>
+                <dt className="phrase text-[1.125rem] text-encre">{x.q}</dt>
+                <dd className="texte mt-3">{x.r}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ————————————————————————————— 06 · au-delà ————— */}
       <section aria-labelledby="au-dela" className="mt-[clamp(4rem,8vw,8rem)] bg-craie">
         <TitreSection id="au-dela" titre="Au-delà de la morphologie" />
         <div className="gouttiere pb-[clamp(4rem,7vw,7rem)]">
@@ -323,7 +405,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         </div>
       </section>
 
-      {/* ————————————————————————————— 06 · la boutique ————— */}
+      {/* ————————————————————————————— 07 · la boutique ————— */}
       <Showroom />
       <Rendezvous />
     </>

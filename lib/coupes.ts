@@ -83,6 +83,23 @@ export const PLURIEL: Record<Categorie, string> = {
   "Deux en un": "deux-en-un",
 };
 
+/*
+ * La forme employée après « robes de mariée ».
+ *
+ * Certaines coupes s'accordent — « robes fluides », « robes
+ * minimalistes » — et d'autres restent invariables parce qu'elles sont
+ * des noms en apposition : on écrit « robes de mariée sirène », jamais
+ * « sirènes ». Une table est plus sûre qu'une règle.
+ */
+export const APPOSITION: Record<Categorie, string> = {
+  Sirène: "sirène",
+  Fluide: "fluides",
+  Trapèze: "trapèze",
+  Princesse: "princesse",
+  Minimaliste: "minimalistes",
+  "Deux en un": "deux-en-un",
+};
+
 export function coupeParAncre(ancre: string): Coupe | undefined {
   return COUPES.find((c) => c.ancre === ancre);
 }

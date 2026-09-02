@@ -267,3 +267,108 @@ export const AU_DELA: Repere[] = [
       "C'est le seul critère qui décide vraiment. En cabine, les mariées savent en trente secondes — bien avant d'avoir regardé la coupe.",
   },
 ];
+
+/*
+ * Les questions que l'on pose vraiment.
+ *
+ * Trois par morphologie, écrites à la main. Une quatrième est composée
+ * sur la page à partir des repères — elle dit comment se reconnaître, et
+ * la réponse est déjà écrite plus haut.
+ *
+ * Deux d'entre elles commencent par « faut-il éviter » ou « peut-on
+ * porter ». C'est délibéré : ce sont les mots que les mariées tapent, et
+ * y répondre est l'occasion de dire non, qu'aucune robe n'est interdite.
+ * Une page qui refuse la question laisse la réponse à quelqu'un d'autre.
+ *
+ * Le balisage FAQPage les reprend telles quelles. Google demande que la
+ * réponse figure visiblement sur la page : elle y est, c'est la même.
+ */
+
+export type Question = { q: string; r: string };
+
+export const QUESTIONS: Record<Lettre, Question[]> = {
+  O: [
+    {
+      q: "Quelle coupe de robe de mariée choisir pour une silhouette en O ?",
+      r: "Les tombés fluides et les coupes trapèze en premier : le tissu descend d'un seul tenant et la ligne paraît plus longue. Le décolleté compte autant que la coupe — un V ou un cœur ouvre le buste et allonge le cou.",
+    },
+    {
+      q: "Peut-on porter une robe sirène avec une silhouette en O ?",
+      r: "Oui. Une morphologie n'interdit aucune robe, elle indique seulement par quoi commencer. La sirène demande une matière qui tient — un crêpe plutôt qu'un satin léger — et se juge en cabine bien mieux que sur photographie.",
+    },
+    {
+      q: "Faut-il éviter les robes princesse avec une silhouette en O ?",
+      r: "Non, et le mot « éviter » n'a pas cours ici. Un bustier travaillé porte le regard vers le haut, et l'ampleur de la jupe répond au buste sans le charger. La princesse vient simplement après le fluide et le trapèze dans l'ordre des essayages.",
+    },
+  ],
+  A: [
+    {
+      q: "Quelle robe de mariée met en valeur une silhouette en A ?",
+      r: "Celles qui donnent au haut du corps de quoi retenir le regard : un bustier brodé, drapé, ou une encolure qui élargit l'épaule. La jupe, elle, n'a rien à démontrer — évasée, elle répond aux hanches sans les souligner.",
+    },
+    {
+      q: "Comment équilibrer des hanches plus larges que les épaules ?",
+      r: "Par le haut, jamais en cachant le bas. Une encolure bateau ou un bustier droit ajoutent quelques centimètres de ligne à l'épaule, et cela suffit à changer toute la proportion.",
+    },
+    {
+      q: "Une robe sirène convient-elle à une silhouette en A ?",
+      r: "Elle se porte très bien, à condition que le haut ait de quoi équilibrer : une manche, une bretelle large, un décolleté travaillé. Beaucoup de mariées en A repartent avec une sirène qu'elles n'avaient pas prévu d'essayer.",
+    },
+  ],
+  V: [
+    {
+      q: "Quelle robe de mariée pour des épaules larges ?",
+      r: "Celles qui ne construisent rien au-dessus : un tombé fluide qui part du buste, ou une jupe ample qui donne au bas la place qu'il n'a pas naturellement. La ligne s'équilibre d'elle-même.",
+    },
+    {
+      q: "Quel décolleté choisir avec une silhouette en V ?",
+      r: "Un V, un croisé ou un asymétrique. Tous les trois cassent la largeur d'un trait vertical, et c'est ici le détail qui compte le plus — davantage que la coupe de la jupe.",
+    },
+    {
+      q: "Peut-on porter des manches bouffantes avec une silhouette en V ?",
+      r: "Oui, et cela peut très bien fonctionner si la jupe a du volume pour répondre. Portée sur une jupe droite, la manche ballon accentue en revanche la largeur de l'épaule — c'est une question d'équilibre, pas d'interdit.",
+    },
+  ],
+  H: [
+    {
+      q: "Comment créer des courbes avec une silhouette en H ?",
+      r: "En laissant la coupe les dessiner. Une sirène légère, un modèle cintré à la taille ou une simple ceinture marquent là où l'on veut, sans rien serrer.",
+    },
+    {
+      q: "La coupe empire convient-elle à une silhouette en H ?",
+      r: "Très bien. Elle remonte la taille sous la poitrine et allonge tout ce qui suit. Elle mérite un essayage même si l'idée ne vous attirait pas sur photographie — c'est une coupe qui se comprend une fois portée.",
+    },
+    {
+      q: "Faut-il forcément marquer la taille ?",
+      r: "Non. Une robe droite, en satin net, sur une silhouette longue, est l'un des plus beaux partis pris qui soient. Marquer la taille est une option, pas une correction à apporter.",
+    },
+  ],
+  "8": [
+    {
+      q: "Quelle robe de mariée pour une taille marquée et des courbes ?",
+      r: "Les sirènes et les fourreaux, qui suivent une ligne déjà proportionnée sans avoir à la créer. Le satin minimaliste fonctionne pour la même raison : il ne raconte que la coupe.",
+    },
+    {
+      q: "La robe princesse convient-elle à une silhouette en 8 ?",
+      r: "Oui. Le bustier se cintre à la taille et l'ampleur part de là : le contraste est net, et c'est tout l'effet recherché. Elle demande simplement de la place — pensez au lieu et à la journée.",
+    },
+    {
+      q: "Faut-il éviter les coupes droites avec une silhouette en 8 ?",
+      r: "Non. Une coupe droite flotte parfois là où la taille se creuse, mais une ceinture ou une reprise à la taille règle la question en un essayage. Rien n'est écarté d'avance.",
+    },
+  ],
+  X: [
+    {
+      q: "Quelle robe de mariée choisir pour une silhouette en X ?",
+      r: "Presque toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide ou minimaliste : la question devient celle du style du mariage, et non celle de la morphologie.",
+    },
+    {
+      q: "Comment choisir quand toutes les coupes conviennent ?",
+      r: "Par le lieu, la saison, et ce que vous voulez pouvoir faire de votre journée. Une traîne de deux mètres sur une plage, un satin lourd en août : la robe doit tenir douze heures, pas seulement la photographie.",
+    },
+    {
+      q: "La silhouette en X est-elle la même que la silhouette en 8 ?",
+      r: "Elles se ressemblent et se confondent souvent. Les deux ont des épaules et des hanches équilibrées ; le 8 a des courbes franchement marquées, le X des courbes plus douces et une taille fine. Les conseils se recoupent largement, et les deux pages valent la lecture.",
+    },
+  ],
+};
