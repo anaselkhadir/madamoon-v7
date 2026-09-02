@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import AppelElise from "@/components/AppelElise";
 import { notFound } from "next/navigation";
 import HeroCreateur from "@/components/createur/HeroCreateur";
 import Tuile from "@/components/Tuile";
@@ -184,9 +184,9 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                 </div>
               ))}
             </dl>
-            <Link href="/trouver-ma-robe" className="bouton-trait mt-8">
+            <AppelElise maison={createur.nom} className="bouton-trait mt-8">
               Trouver ma robe {createur.nom}
-            </Link>
+            </AppelElise>
           </div>
         </section>
       )}

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { media as ressource } from "@/lib/chemin";
+import AppelElise from "@/components/AppelElise";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -29,7 +30,9 @@ const LIENS = [
 const MENU = [
   { href: "/", label: "Accueil" },
   { href: "/robes", label: "Toutes les robes" },
-  { href: "/trouver-ma-robe", label: "Trouver ma robe" },
+  /* Celle-ci n'a pas d'adresse : elle ouvre Élise. La maison, s'il y en a
+   * une, vient de la page où l'on se trouve. */
+  { href: "", label: "Trouver ma robe" },
   { href: "/showroom", label: "Le showroom" },
   { href: "/a-propos", label: "La maison" },
   { href: "/rendez-vous", label: "Prendre rendez-vous" },
@@ -63,6 +66,14 @@ export default function Entete() {
     const surTouche = (e: KeyboardEvent) => e.key === "Escape" && setOuvert(false);
     window.addEventListener("keydown", surTouche);
     return () => window.removeEventListener("keydown", surTouche);
+  }, []);
+
+  /* Ouvrir Élise depuis le menu ferme le menu : deux plein-écrans
+   * superposés, c'est un de trop. */
+  useEffect(() => {
+    const fermer = () => setOuvert(false);
+    window.addEventListener("elise:ouvrir", fermer);
+    return () => window.removeEventListener("elise:ouvrir", fermer);
   }, []);
 
   return (
@@ -180,16 +191,21 @@ export default function Entete() {
         <div className="gouttiere flex h-[calc(100svh-var(--entete))] flex-col justify-center gap-6 md:h-[calc(100svh-var(--barre)-var(--entete))]">
           <nav aria-label="Menu">
             <ul className="flex flex-col gap-1">
-              {MENU.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="nom-image block py-1 text-encre transition-colors duration-500 hover:text-action"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+              {MENU.map((l) => {
+                const habits =
+                  "nom-image block py-1 text-left text-encre transition-colors duration-500 hover:text-action";
+                return (
+                  <li key={l.label}>
+                    {l.href ? (
+                      <Link href={l.href} className={habits}>
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <AppelElise className={habits}>{l.label}</AppelElise>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 

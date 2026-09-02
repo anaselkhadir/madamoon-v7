@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Bandeau from "@/components/accueil/Bandeau";
+import AppelElise from "@/components/AppelElise";
 import { SCENES, vues, type Media } from "@/lib/medias";
 import { FILMS } from "@/lib/films";
 import { mouvementReduit } from "@/lib/mouvement";
@@ -123,9 +123,9 @@ export default function HeroCreateur({ createur }: { createur: Createur }) {
           <p className="legende sur-rouge">{createur.origine}</p>
           <h1 className="affiche mt-3 text-blanc">{createur.nom}</h1>
           <p className="accroche mt-6 text-blanc">{createur.note}</p>
-          <Link href="/rendez-vous" className="bouton mt-6">
+          <AppelElise maison={createur.nom} className="bouton mt-6">
             Trouver ma robe {createur.nom}
-          </Link>
+          </AppelElise>
         </div>
       </div>
 

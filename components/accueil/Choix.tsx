@@ -18,6 +18,7 @@ export default function Choix() {
         <div className="trame-tuiles md:grid-cols-2">
           <Tuile
             href="/trouver-ma-robe"
+            appelle={null}
             media={SCENES["choix-guidee"]}
             dossier="scenes"
             alt="Robe de mariée fluide portée dans la lumière du showroom"

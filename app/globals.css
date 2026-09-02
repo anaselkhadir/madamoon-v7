@@ -320,6 +320,32 @@ body {
   }
 }
 
+/* ———————————————————————————————————— le verre d'Élise ————— */
+
+/*
+ * Le panneau de la conversation, en verre dépoli.
+ *
+ * L'ivoire de la maison, mais translucide : la page reste devinée
+ * derrière, floutée. La saturation est relevée parce que le flou lave les
+ * couleurs — sans elle, la photographie derrière vire au gris.
+ *
+ * Le fond opaque n'est pas un repli honteux : là où le navigateur ne sait
+ * pas flouter, du texte encre sur un ivoire translucide deviendrait
+ * illisible dès qu'une image sombre passe dessous.
+ */
+.verre {
+  background: color-mix(in srgb, var(--color-ivoire) 68%, transparent);
+  -webkit-backdrop-filter: blur(26px) saturate(150%);
+  backdrop-filter: blur(26px) saturate(150%);
+  border-color: color-mix(in srgb, var(--color-blanc) 55%, var(--color-fil));
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .verre {
+    background: var(--color-ivoire);
+  }
+}
+
 /* ———————————————————————————————————— trames ————— */
 
 .gouttiere {

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { SCENES } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
 import Bandeau from "@/components/accueil/Bandeau";
+import AppelElise from "@/components/AppelElise";
 
 /*
  * Le hero, relevé sur la référence.
@@ -146,10 +146,11 @@ export default function Hero() {
             Robes de mariée, essayage privé — Paris 10<sup>e</sup>
           </p>
           {/* Rouge plein sur la photographie : la cliente veut l'action
-            * franche plutôt que le bouton blanc de la référence. */}
-          <Link href="/rendez-vous" className="bouton mt-6">
-            Trouver ma robe
-          </Link>
+            * franche plutôt que le bouton blanc de la référence.
+            *
+            * Il n'emmène nulle part — il ouvre Élise, qui part de la
+            * silhouette. Sans maison ici : l'accueil ne filtre rien. */}
+          <AppelElise className="bouton mt-6">Trouver ma robe</AppelElise>
         </div>
       </div>
 

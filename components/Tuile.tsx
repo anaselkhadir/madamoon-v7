@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppelElise from "@/components/AppelElise";
 import Photo from "@/components/media/Photo";
 import type { Media } from "@/lib/medias";
 
@@ -10,10 +11,17 @@ import type { Media } from "@/lib/medias";
  * serif avec une ligne en dessous. Le texte est centré en hauteur et calé
  * à 24 px de la gauche. Pas de cadre, pas d'ombre, pas de bouton : la
  * tuile entière est le lien.
+ *
+ * « appelle » remplace l'adresse par une conversation : la tuile devient
+ * alors un bouton, parce qu'il n'y a pas de page au bout. Le nom de la
+ * maison, s'il est donné, dit à Élise de quel catalogue partir.
  */
 
 type Props = {
   href: string;
+  /* Ouvre Élise plutôt que de naviguer. La chaîne vide vaut « aucune
+   * maison » : la conversation part alors de tout le catalogue. */
+  appelle?: string | null;
   media: Media;
   dossier: "robes" | "scenes";
   alt: string;
@@ -30,6 +38,7 @@ type Props = {
 
 export default function Tuile({
   href,
+  appelle,
   media,
   dossier,
   alt,
@@ -41,13 +50,8 @@ export default function Tuile({
   repere,
   ratio,
 }: Props) {
-  return (
-    <Link
-      href={href}
-      className="tuile group block"
-      style={ratio ? { aspectRatio: ratio } : undefined}
-      data-voile
-    >
+  const dedans = (
+    <>
       <Photo
         media={media}
         dossier={dossier}
@@ -66,6 +70,25 @@ export default function Tuile({
         <span className="nom-image">{nom}</span>
         {note && <span className="note-image mt-2">{note}</span>}
       </span>
+    </>
+  );
+
+  const habits = {
+    className: "tuile group block",
+    style: ratio ? { aspectRatio: ratio } : undefined,
+    "data-voile": true,
+  } as const;
+
+  if (appelle !== undefined)
+    return (
+      <AppelElise maison={appelle ?? undefined} {...habits}>
+        {dedans}
+      </AppelElise>
+    );
+
+  return (
+    <Link href={href} {...habits}>
+      {dedans}
     </Link>
   );
 }

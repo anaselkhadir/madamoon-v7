@@ -718,6 +718,45 @@ export function suggerer(lettre: string): Suggestion[] {
   ].filter((s) => s.robes.length > 0);
 }
 
+/*
+ * Ce qu'une maison peut offrir à une morphologie.
+ *
+ * « premieres » : ses robes dans les coupes que l'on conseille d'abord.
+ * « secondes » : celles qui valent l'essai. Une maison qui n'a ni l'une
+ * ni l'autre n'est pas cachée — elle est simplement dernière au
+ * classement, et on le dit.
+ */
+export type OffreMaison = {
+  createur: Createur;
+  premieres: Robe[];
+  secondes: Robe[];
+};
+
+export function offreMaison(nom: string, lettre: string): OffreMaison | undefined {
+  const createur = CREATEURS.find((c) => c.nom === nom);
+  const m = morphologie(lettre);
+  if (!createur || !m) return undefined;
+  const siennes = robesDe(nom);
+  return {
+    createur,
+    premieres: siennes.filter((r) => m.premieres.includes(r.categorie)),
+    secondes: siennes.filter((r) => m.secondes.includes(r.categorie)),
+  };
+}
+
+/*
+ * Les maisons classées par ce qu'elles savent offrir à cette morphologie.
+ *
+ * D'abord le nombre de robes dans les coupes conseillées en premier,
+ * ensuite celles qui valent l'essai. À égalité, l'ordre du catalogue —
+ * jamais l'alphabet, qui avantagerait toujours les mêmes.
+ */
+export function maisonsPour(lettre: string): OffreMaison[] {
+  return CREATEURS.map((c) => offreMaison(c.nom, lettre))
+    .filter((o): o is OffreMaison => Boolean(o))
+    .sort((x, y) => y.premieres.length - x.premieres.length || y.secondes.length - x.secondes.length);
+}
+
 /* ————————————————————————————————————————————— La FAQ ————— */
 
 export const FAQ = [

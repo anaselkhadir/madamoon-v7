@@ -3,6 +3,7 @@ import { Instrument_Serif, Quattrocento_Sans } from "next/font/google";
 import "./globals.css";
 
 import Entete from "@/components/chrome/Entete";
+import Elise from "@/components/Elise";
 import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Mouvement from "@/components/Mouvement";
@@ -110,6 +111,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Entete />
         <main id="contenu">{children}</main>
         <Pied />
+        {/* Élise vit au gabarit : le bouton « Trouver ma robe » l'ouvre
+          * depuis n'importe quelle page, et elle lit l'adresse courante
+          * pour savoir de quelle maison partir. */}
+        <Elise />
         <CarteRendezvous />
         <Mouvement />
       </body>
