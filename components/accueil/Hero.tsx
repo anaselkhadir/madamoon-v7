@@ -29,6 +29,10 @@ import AppelElise from "@/components/AppelElise";
  * Le flou est arrondi au pixel : à chaque valeur nouvelle le navigateur
  * refait le rendu de tout le plan, et une progression continue le ferait
  * soixante fois par seconde pour rien.
+ *
+ * Il se colle sous le bandeau, pas au bord de la fenêtre : le contenu
+ * commence à 38 px du haut, et un hero haut de « 100svh moins le
+ * bandeau » collé à zéro laissait justement 38 px de blanc sous lui.
  */
 
 const DESKTOP = SCENES["hero-affiche"];
@@ -77,10 +81,8 @@ export default function Hero() {
       }
       /* Le voile monte avec le flou.
        *
-       * Sans lui, « Par où commencer » écrit à l'encre passait à 0,91 de
-       * contraste sur les plans sombres du film — illisible. Mesuré image
-       * par image sur les cinquante-trois secondes : à 55 % d'ivoire le
-       * pire plan donne 5,49, et il reste 45 % de l'image floutée. */
+       * Le titre de la section est en blanc : c'est donc un voile sombre
+       * qu'il faut, et non clair. Sa force est mesurée plus bas. */
       if (voile.current) voile.current.style.opacity = String(avance);
 
       /* Une fois le fond entièrement flouté, le film est figé : personne
@@ -148,7 +150,7 @@ export default function Hero() {
   return (
     <section
       className={`${
-        passage ? "sticky top-0 z-0" : "relative"
+        passage ? "sticky top-[var(--barre)] z-0" : "relative"
       } h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie`}
     >
       <div ref={fond} className="absolute inset-0 will-change-[filter,transform]">
@@ -211,7 +213,7 @@ export default function Hero() {
         ref={voile}
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0"
-        style={{ background: "color-mix(in srgb, var(--color-ivoire) 55%, transparent)" }}
+        style={{ background: "rgba(12, 10, 8, 0.5)" }}
       />
 
       {/* Tout ce qui est posé sur l'image s'efface ensemble : les voiles,

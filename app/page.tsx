@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Hero from "@/components/accueil/Hero";
-import Choix from "@/components/accueil/Choix";
 import Modeles from "@/components/accueil/Modeles";
 import Cercle from "@/components/accueil/Cercle";
 import Dos from "@/components/accueil/Dos";
@@ -14,10 +13,10 @@ import Rendezvous from "@/components/accueil/Rendezvous";
  * courtes séparées par un intitulé en capitales. Chaque scène apporte une
  * image nouvelle — aucune n'est là pour occuper un écran.
  *
- * Le hero et « Par où commencer » partagent une même boîte : c'est elle
- * qui borne le collant du hero. Il reste en place et se floute pendant
- * que la section remonte par-dessus, puis les deux s'en vont ensemble et
- * « Nos modèles » retrouve le fond de la page.
+ * Le hero et « Nos modèles » partagent une même boîte : c'est elle qui
+ * borne le collant du hero. Il reste en place et se floute pendant que
+ * la section remonte par-dessus, puis les deux s'en vont ensemble et le
+ * reste de la page retrouve son fond.
  */
 
 export const metadata: Metadata = {
@@ -32,9 +31,8 @@ export default function Accueil() {
     <>
       <div className="relative">
         <Hero />
-        <Choix />
+        <Modeles />
       </div>
-      <Modeles />
       <Cercle />
       <Dos />
       <Showroom />
