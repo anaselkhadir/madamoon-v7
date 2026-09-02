@@ -7,17 +7,16 @@ import { SCENES, vues, type Media } from "@/lib/medias";
 import { FILMS } from "@/lib/films";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
-import type { Createur } from "@/lib/madamoon";
 
 /*
- * Le premier écran d'une maison.
+ * Le premier écran d'une page de rubrique — une maison, une silhouette.
  *
- * Le même écran que l'accueil, au nom de la maison : une image plein
- * cadre, le titre calé sur la gouttière, une ligne, un bouton rouge.
+ * Le même écran que l'accueil : une image plein cadre, le titre calé sur
+ * la gouttière, une ligne, un bouton rouge qui ouvre Élise.
  *
- * Le film n'est là que si la maison en a un. Trois des cinq n'en ont
- * pas ; leur page s'ouvre alors sur la photographie de la robe choisie,
- * et rien ne le signale — une image fixe n'est pas un manque.
+ * Le film n'est là que si la robe d'ouverture en possède un. Toutes n'en
+ * ont pas ; la page s'ouvre alors sur la photographie, et rien ne le
+ * signale — une image fixe n'est pas un manque.
  *
  * L'affiche est chargée en priorité : c'est elle qui s'affiche d'abord,
  * et c'est elle qui reste si la connexion est comptée ou si le mouvement
@@ -27,17 +26,35 @@ import type { Createur } from "@/lib/madamoon";
 const jeu = (media: Media, ext: string, largeurs: readonly number[], dossier: string) =>
   largeurs.map((w) => `${chemin(`/${dossier}/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
 
-export default function HeroCreateur({ createur }: { createur: Createur }) {
+export default function HeroPage({
+  surtitre,
+  titre,
+  ligne,
+  robe,
+  vue = 1,
+  alt,
+  action,
+  maison,
+}: {
+  surtitre?: string;
+  titre: string;
+  ligne: string;
+  /* La robe qui ouvre la page : son film s'il existe, sa photo sinon. */
+  robe: string;
+  vue?: number;
+  alt: string;
+  action: string;
+  /* Transmis à Élise : la maison dont il faut partir, s'il y en a une. */
+  maison?: string;
+}) {
   const video = useRef<HTMLVideoElement>(null);
   const [charge, setCharge] = useState(false);
   const [prete, setPrete] = useState(false);
 
-  const film = FILMS[createur.ouverture.robe];
+  const film = FILMS[robe];
   /* L'affiche : celle du film quand il existe, sinon la photographie
    * elle-même — dans les deux cas, l'image sur laquelle on ouvre. */
-  const affiche: Media | undefined = film
-    ? SCENES[film.affiche]
-    : vues(createur.ouverture.robe)[createur.ouverture.vue - 1];
+  const affiche: Media | undefined = film ? SCENES[film.affiche] : vues(robe)[vue - 1];
   const dossier = film ? "scenes" : "robes";
 
   useEffect(() => {
@@ -66,8 +83,16 @@ export default function HeroCreateur({ createur }: { createur: Createur }) {
   return (
     <section className="relative h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
       <picture>
-        <source type="image/avif" srcSet={jeu(affiche, "avif", affiche.widths, dossier)} sizes="100vw" />
-        <source type="image/webp" srcSet={jeu(affiche, "webp", affiche.widths, dossier)} sizes="100vw" />
+        <source
+          type="image/avif"
+          srcSet={jeu(affiche, "avif", affiche.widths, dossier)}
+          sizes="100vw"
+        />
+        <source
+          type="image/webp"
+          srcSet={jeu(affiche, "webp", affiche.widths, dossier)}
+          sizes="100vw"
+        />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={chemin(`/${dossier}/${affiche.name}-${affiche.jpgw[affiche.jpgw.length - 1]}.jpg`)}
@@ -75,7 +100,7 @@ export default function HeroCreateur({ createur }: { createur: Createur }) {
           sizes="100vw"
           width={affiche.w}
           height={affiche.h}
-          alt={`Robe de mariée ${createur.nom} présentée chez MADAMOON à Paris`}
+          alt={alt}
           fetchPriority="high"
           decoding="sync"
           className="absolute inset-0 h-full w-full object-cover"
@@ -120,11 +145,11 @@ export default function HeroCreateur({ createur }: { createur: Createur }) {
 
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-w-[53vw] min-w-[16rem] max-md:max-w-[92%]">
-          <p className="legende sur-rouge">{createur.origine}</p>
-          <h1 className="affiche mt-3 text-blanc">{createur.nom}</h1>
-          <p className="accroche mt-6 text-blanc">{createur.note}</p>
-          <AppelElise maison={createur.nom} className="bouton mt-6">
-            Trouver ma robe {createur.nom}
+          {surtitre && <p className="legende sur-rouge">{surtitre}</p>}
+          <h1 className={`affiche text-blanc ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
+          <p className="accroche mt-6 text-blanc">{ligne}</p>
+          <AppelElise maison={maison} className="bouton mt-6">
+            {action}
           </AppelElise>
         </div>
       </div>

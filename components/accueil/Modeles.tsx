@@ -29,7 +29,7 @@ export default function Modeles() {
             return (
               <Tuile
                 key={s.ancre}
-                href={`/robes#${s.ancre}`}
+                href={`/silhouettes/${s.ancre}`}
                 media={media}
                 dossier="robes"
                 alt={`Robe de mariée ${s.nom.toLowerCase()} — modèle présenté chez MADAMOON à Paris`}

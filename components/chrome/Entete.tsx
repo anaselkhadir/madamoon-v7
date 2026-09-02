@@ -22,7 +22,7 @@ import AppelElise from "@/components/AppelElise";
 
 const LIENS = [
   { href: "/robes", label: "Robes de mariée" },
-  { href: "/trouver-ma-robe", label: "Silhouettes" },
+  { href: "/silhouettes", label: "Silhouettes" },
   { href: "/showroom", label: "Showroom" },
   { href: "/a-propos", label: "La maison" },
 ];
@@ -30,6 +30,7 @@ const LIENS = [
 const MENU = [
   { href: "/", label: "Accueil" },
   { href: "/robes", label: "Toutes les robes" },
+  { href: "/silhouettes", label: "Les silhouettes" },
   /* Celle-ci n'a pas d'adresse : elle ouvre Élise. La maison, s'il y en a
    * une, vient de la page où l'on se trouve. */
   { href: "", label: "Trouver ma robe" },

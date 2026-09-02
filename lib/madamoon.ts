@@ -60,7 +60,9 @@ export const CREATEURS: Createur[] = [
     slug: "casablanca-bridal",
     origine: "Californie",
     note: "Le mikado, le satin duchesse, les lignes nettes. Des robes construites, faites pour la lumière.",
-    ouverture: { robe: "tessa", vue: 1 },
+    /* Meredith plutôt que Tessa : Tessa est le seul film « deux en un »
+     * du catalogue, et la page de cette silhouette en a plus besoin. */
+    ouverture: { robe: "meredith", vue: 1 },
   },
   {
     nom: "Olya Mak",

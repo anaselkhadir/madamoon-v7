@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import AppelElise from "@/components/AppelElise";
 import { notFound } from "next/navigation";
-import HeroCreateur from "@/components/createur/HeroCreateur";
+import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
@@ -86,7 +86,16 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
 
-      <HeroCreateur createur={createur} />
+      <HeroPage
+        surtitre={createur.origine}
+        titre={createur.nom}
+        ligne={createur.note}
+        robe={createur.ouverture.robe}
+        vue={createur.ouverture.vue}
+        alt={`Robe de mariée ${createur.nom} présentée chez MADAMOON à Paris`}
+        action={`Trouver ma robe ${createur.nom}`}
+        maison={createur.nom}
+      />
 
       {/* ————————————————————————————— ses robes ————— */}
       <section aria-labelledby="ses-robes">
@@ -124,7 +133,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
           <TitreSection
             id="ses-silhouettes"
             titre="Ses silhouettes"
-            lien={{ href: "/trouver-ma-robe", label: "Trouver la mienne" }}
+            lien={{ href: "/silhouettes", label: "Les six coupes" }}
           />
           <div className="gouttiere">
             <p className="texte mesure pb-6">
@@ -143,7 +152,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                 return (
                   <Tuile
                     key={coupe}
-                    href={`/robes#${famille.ancre}`}
+                    href={`/silhouettes/${famille.ancre}`}
                     media={media}
                     dossier="robes"
                     alt={`Robe de mariée ${coupe.toLowerCase()} ${createur.nom}`}
