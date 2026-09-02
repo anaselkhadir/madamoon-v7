@@ -2174,7 +2174,7 @@ export const SCENES = {
       1000,
       1500
     ],
-    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAACQAwCdASoUAAsAPxFysFAsJqSisAgBgCIJaQAATEGfwuL9gUoAAOGE9ogROJaILc+oXK2l2of8iT9cyhEJrLnjQokxiXDh+s+n+oLuXdSVzHrATvXqukoDUCjHUywAAAA=",
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwAwCdASoUAAsAPpU8mUgloyKhMAgAsBKJZwAAQ9C77IQn4lU7gAD+wrTN9TiP2nH/tv0yMMyVMafBJHn3vtF/SeuFudPUToM01wTlIGBemRrWPItxpN3k6+Tu7S34gp+JMV5NDeYJCxQqUHFHR9ykn5+mVYP/I9HyIGWOQQU3RrYKXAdaiL3pIAA=",
     "jpgw": [
       640,
       1000
@@ -2183,12 +2183,12 @@ export const SCENES = {
   "hero-affiche-mobile": {
     "name": "hero-affiche-mobile",
     "w": 720,
-    "h": 1279,
+    "h": 1280,
     "widths": [
       480,
       720
     ],
-    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoLABQAPxFysFAsJqSisAgBgCIJYwCw7BtzFJKpsrnxhTxAAP4GcTv/A0HjXAziewcCY5mnIaOb0lom4d8vogfakudfSIZWUUQst+gNhnZ6yLjMbcudjQTkAAA=",
+    "blur": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAADQBgCdASoUACQAPpVGnEqlo6KhqrgIALASiWUAwqE2XAI4DapCAXYTIohEUnM+GgXLjnO5au5W8BNU0i9aIAAA/vj+NPVK3/p0jWGN+jrN6BYAeOyjKFxZO0sOmP8J+8zJ04wMjZTS3QMN0nHN9iI1EtjF3vNlSTKkceIyhB8whg3x0al4Z/+KoXpcrs4exyNDqmmdf+5b1vbMVlHm6cZaYRLr7CGrYSV5AU2iRrIQ63Whm3X0fu4bvAuzS6/+cD4jtwuns86h/TsU5jnARqTi+t2pv7MWX8TJ+1/izwBmvzw8I4rHgeN9/Cb26tLtt/ndiePcWvjzkyqJcQgSiNIWQuMBVkbPeKMH4pmGpFzq2qn4A+cAAA==",
     "jpgw": [
       480,
       720
