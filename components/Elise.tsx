@@ -583,7 +583,7 @@ export default function Elise() {
       aria-hidden={!ouvert}
       className={`verre fixed z-[80] flex flex-col border-fil transition-all duration-700 [transition-timing-function:var(--ease-rideau)] ${
         ouvert ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
-      } inset-0 md:inset-auto md:bottom-7 md:right-8 md:h-[min(620px,calc(100dvh-6rem))] md:w-[26rem] md:border md:shadow-[0_30px_90px_-40px_rgba(22,19,15,0.5)]`}
+      } inset-0 md:inset-auto md:bottom-7 md:right-8 md:h-[min(620px,calc(100dvh-6rem))] md:w-[26rem] md:border`}
     >
       <div className="flex items-start justify-between border-b border-fil px-6 py-5">
         <div>

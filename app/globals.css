@@ -334,10 +334,33 @@ body {
  * illisible dès qu'une image sombre passe dessous.
  */
 .verre {
-  background: color-mix(in srgb, var(--color-ivoire) 68%, transparent);
-  -webkit-backdrop-filter: blur(26px) saturate(150%);
-  backdrop-filter: blur(26px) saturate(150%);
-  border-color: color-mix(in srgb, var(--color-blanc) 55%, var(--color-fil));
+  /*
+   * 42 % d'ivoire : le moins couvrant qui reste lisible.
+   *
+   * Mesuré sur le film du hero, image par image, en composant le voile
+   * sur le fond flouté : à 34 % le plan de la treizième seconde tombait
+   * à 4,19 de contraste avec l'encre — sous le seuil AA. À 42 %, le pire
+   * plan donne 5,23. En dessous on gagne du verre et on perd du texte.
+   */
+  background: color-mix(in srgb, var(--color-ivoire) 42%, transparent);
+  /* La luminosité relevée n'est pas un effet : c'est ce qui garde le
+   * texte encre lisible quand un plan sombre de la vidéo passe derrière.
+   * La saturation compense le flou, qui lave les couleurs. */
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(122%);
+  backdrop-filter: blur(40px) saturate(180%) brightness(122%);
+  border-color: color-mix(in srgb, var(--color-blanc) 70%, transparent);
+  /* Le liseré clair en haut : c'est lui qui donne l'épaisseur, comme la
+   * tranche d'une vitre prise dans la lumière. */
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 30px 90px -40px rgba(22, 19, 15, 0.5);
+}
+
+/* Les séparations internes se font discrètes : sur du verre, un trait
+ * plein découpe le panneau en morceaux. */
+.verre .border-fil {
+  border-color: rgba(255, 255, 255, 0.42);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
