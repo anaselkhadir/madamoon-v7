@@ -15,13 +15,24 @@ import Link from "next/link";
 
 type Props = {
   titre: string;
+  /* L'intitulé devient cliquable. Le lien est posé dans le titre et non
+   * autour : le niveau de titre reste celui du document, et seul le texte
+   * prend le clic. */
+  href?: string;
   id?: string;
   niveau?: 1 | 2;
   lien?: { href: string; label: string };
   className?: string;
 };
 
-export default function TitreSection({ titre, id, niveau = 2, lien, className = "" }: Props) {
+export default function TitreSection({
+  titre,
+  id,
+  href,
+  niveau = 2,
+  lien,
+  className = "",
+}: Props) {
   const H = niveau === 1 ? "h1" : "h2";
   return (
     <div
@@ -29,7 +40,16 @@ export default function TitreSection({ titre, id, niveau = 2, lien, className = 
     >
       <span data-ligne className="block">
         <H id={id} className="titre-section">
-          {titre}
+          {href ? (
+            <Link
+              href={href}
+              className="souligne transition-colors duration-500 hover:text-action"
+            >
+              {titre}
+            </Link>
+          ) : (
+            titre
+          )}
         </H>
       </span>
       {lien && (

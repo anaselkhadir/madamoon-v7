@@ -188,6 +188,7 @@ export default function RobesEnRoue() {
         <TitreSection
           id="robes-roue"
           titre="Nos robes de mariée"
+          href="/robes"
           lien={{ href: "/robes", label: "Voir toutes les robes" }}
         />
 
