@@ -176,12 +176,15 @@ export default function RobesEnRoue() {
       aria-labelledby="robes-roue"
       className={roule ? "relative z-10 h-[320svh] bg-blanc" : "relative z-10 bg-blanc"}
     >
-      {/* Le rembourrage haut dégage l'en-tête fixe : sans lui, l'intitulé
-        * se glisse dessous et se coupe. */}
+      {/* La zone collante commence sous l'en-tête plutôt qu'au bord de la
+        * fenêtre. Un rembourrage aurait fait la même chose visuellement,
+        * mais il s'ajoutait à celui du titre : cent soixante-quatorze
+        * pixels de vide au-dessus de l'intitulé, qu'on voyait passer
+        * comme une bande blanche pendant la remontée. */}
       <div
         className={
           roule
-            ? "sticky top-0 h-[100svh] overflow-hidden pt-[calc(var(--barre)+var(--entete))]"
+            ? "sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] flex-col overflow-hidden"
             : "overflow-hidden"
         }
       >
@@ -194,9 +197,10 @@ export default function RobesEnRoue() {
 
         <div
           className={
-            roule
-              ? "flex h-[calc(100svh-var(--barre)-var(--entete)-11rem)] items-center"
-              : "pb-[clamp(2rem,4vw,4rem)]"
+            /* La rangée prend ce qui reste de la boîte : plus aucune
+              * hauteur n'est calculée à la main, donc plus rien à
+              * réajuster quand l'intitulé change de taille. */
+            roule ? "flex flex-1 items-center" : "pb-[clamp(2rem,4vw,4rem)]"
           }
           style={roule ? { perspective: "1100px", perspectiveOrigin: "50% 45%" } : undefined}
         >
@@ -247,7 +251,7 @@ export default function RobesEnRoue() {
 
         {/* Les repères. Ils déplacent la page, ils ne pilotent pas la roue. */}
         {roule && (
-          <div className="gouttiere absolute inset-x-0 bottom-8 flex items-center justify-center gap-5">
+          <div className="gouttiere flex shrink-0 items-center justify-center gap-5 pb-8">
             <button
               type="button"
               onClick={() => aller(Math.max(rang - 1, 0))}
