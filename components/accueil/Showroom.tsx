@@ -19,7 +19,7 @@ export default function Showroom() {
       <TitreSection id="showroom" titre="Le showroom" />
       <div className="gouttiere">
         <div className="grid gap-x-10 gap-y-8 md:grid-cols-[1.55fr_1fr] md:items-end">
-          <div className="relative overflow-hidden" data-voile>
+          <div className="relative overflow-hidden" data-rideau>
             <Photo
               media={SCENES["showroom"]}
               dossier="scenes"
@@ -28,7 +28,7 @@ export default function Showroom() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div data-lever>
+          <div>
             <p className="phrase">
               Une heure, le showroom pour vous seule, et quelqu&apos;un qui connaît
               chaque robe.

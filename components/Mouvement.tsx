@@ -12,11 +12,16 @@ import { enregistrerLenis, mouvementReduit } from "@/lib/mouvement";
  * lisse la molette, les scènes suivent le scroll — elles ne le pilotent
  * jamais. On peut s'arrêter n'importe où.
  *
- * Les apparitions ([data-lever], [data-voile]) passent par un simple
- * IntersectionObserver, doublé d'un filet de sécurité : si l'observateur
- * ne se déclenche pas (onglet en arrière-plan, environnement particulier),
- * un contrôle au défilement puis un délai révèlent quand même le contenu.
- * Une décoration ne doit jamais pouvoir cacher une page.
+ * Les apparitions passent par un simple IntersectionObserver, doublé
+ * d'un filet de sécurité : si l'observateur ne se déclenche pas (onglet
+ * en arrière-plan, environnement particulier), un contrôle au défilement
+ * puis un délai révèlent quand même le contenu. Une décoration ne doit
+ * jamais pouvoir cacher une page.
+ *
+ * Quatre matières, chacune avec sa courbe et sa durée. Le rideau est le
+ * plus lent parce qu'il découvre une image ; la ligne est nette parce
+ * qu'elle découvre un mot ; la suite est brève et décalée parce qu'elle
+ * découvre des voisins.
  */
 
 export default function Mouvement() {
@@ -47,19 +52,24 @@ export default function Mouvement() {
     };
   }, []);
 
-  /* Les apparitions, remontées à chaque page. */
+  /*
+   * Les apparitions, remontées à chaque page.
+   *
+   * Le balayage se répète au lieu de n'avoir lieu qu'au montage. Un
+   * balayage unique suppose que tout le contenu de la route est déjà
+   * là ; il ne l'est pas toujours — une reprise à chaud, une hydratation
+   * lente, et l'effet ne trouve rien puis ne revient jamais. La page
+   * reste alors masquée, ce qui est le pire défaut possible pour une
+   * décoration.
+   *
+   * On observe donc aussi les ajouts au document, et l'on rebalaye.
+   */
   useEffect(() => {
-    const cibles = Array.from(
-      document.querySelectorAll<HTMLElement>(
-        "[data-lever]:not([data-leve]), [data-voile]:not([data-leve])"
-      )
-    );
-    if (!cibles.length) return;
+    const SELECTEUR = ["lever", "voile", "rideau", "ligne", "suite"]
+      .map((n) => `[data-${n}]:not([data-leve])`)
+      .join(", ");
 
-    if (mouvementReduit()) {
-      cibles.forEach(reveler);
-      return;
-    }
+    const reduit = mouvementReduit();
 
     const obs = new IntersectionObserver(
       (entrees) => {
@@ -75,24 +85,40 @@ export default function Mouvement() {
        * monte, pas une fois arrivée. On ne voit jamais de trou blanc. */
       { rootMargin: "0px 0px 18% 0px", threshold: 0 }
     );
-    cibles.forEach((el) => obs.observe(el));
 
-    /* Filet de sécurité : ce qui est à l'écran finit toujours par paraître. */
+    const balayer = () => {
+      const cibles = Array.from(document.querySelectorAll<HTMLElement>(SELECTEUR));
+      if (reduit) {
+        cibles.forEach(reveler);
+        return;
+      }
+      cibles.forEach((el) => obs.observe(el));
+    };
+
+    balayer();
+
+    /* Le document bouge encore après le premier rendu : on rebalaye, sans
+     * s'exciter — une image d'animation suffit à regrouper les ajouts. */
+    let prevu = 0;
+    const mo = new MutationObserver(() => {
+      if (prevu) return;
+      prevu = requestAnimationFrame(() => {
+        prevu = 0;
+        balayer();
+      });
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    /* Filet de sécurité : ce qui est à l'écran finit toujours par
+     * paraître, même si l'observateur ne s'est pas déclenché. */
     const rattraper = () => {
-      let restant = false;
-      for (const el of cibles) {
-        if (el.dataset.leve) continue;
+      document.querySelectorAll<HTMLElement>(SELECTEUR).forEach((el) => {
         const b = el.getBoundingClientRect();
         if (b.top < window.innerHeight * 1.18 && b.bottom > 0) {
           obs.unobserve(el);
           reveler(el);
-        } else {
-          restant = true;
         }
-      }
-      if (!restant) {
-        window.removeEventListener("scroll", surScroll);
-      }
+      });
     };
 
     let attente = 0;
@@ -101,10 +127,12 @@ export default function Mouvement() {
       attente = window.setTimeout(rattraper, 180);
     };
     window.addEventListener("scroll", surScroll, { passive: true });
-    const amorce = window.setTimeout(rattraper, 400);
+    const amorce = window.setTimeout(rattraper, 500);
 
     return () => {
       obs.disconnect();
+      mo.disconnect();
+      cancelAnimationFrame(prevu);
       window.removeEventListener("scroll", surScroll);
       window.clearTimeout(attente);
       window.clearTimeout(amorce);
@@ -114,9 +142,44 @@ export default function Mouvement() {
   return null;
 }
 
+/* Dix éléments à cinquante millisecondes : une demi-seconde en tout.
+ * Au-delà on n'attend plus une liste, on attend une page. */
+const PAS = 50;
+const SUITE_MAX = 10;
+
 function reveler(el: HTMLElement) {
   if (el.dataset.leve) return;
-  if ("voile" in el.dataset) {
+
+  if ("rideau" in el.dataset) {
+    /* Le cadre s'ouvre, l'image revient de sa contre-échelle. Les deux
+     * durées diffèrent : l'image finit après le cadre, ce qui donne
+     * l'impression qu'elle se pose plutôt qu'elle n'arrive. */
+    el.style.transition = "clip-path 1.05s var(--ease-rideau)";
+    el.style.clipPath = "inset(0 0 0% 0)";
+    /* L'image, pas l'enveloppe : <picture> est en ligne et ne se
+     * transforme pas. */
+    const image = el.querySelector("img");
+    if (image) {
+      image.style.transition = "transform 1.5s var(--ease-rideau)";
+      image.style.transform = "none";
+    }
+  } else if ("ligne" in el.dataset) {
+    el.style.transition = "clip-path 0.85s var(--ease-rideau)";
+    el.style.clipPath = "inset(-0.3em 0 0% 0)";
+    const dedans = el.firstElementChild as HTMLElement | null;
+    if (dedans) {
+      dedans.style.transition = "transform 0.85s var(--ease-rideau)";
+      dedans.style.transform = "none";
+    }
+  } else if ("suite" in el.dataset) {
+    Array.from(el.children).forEach((enfant, i) => {
+      const e = enfant as HTMLElement;
+      const retard = Math.min(i, SUITE_MAX) * PAS;
+      e.style.transition = `opacity 0.55s var(--ease-doux) ${retard}ms, transform 0.7s var(--ease-doux) ${retard}ms`;
+      e.style.opacity = "1";
+      e.style.transform = "none";
+    });
+  } else if ("voile" in el.dataset) {
     el.style.transition = "clip-path 0.75s var(--ease-rideau)";
     el.style.clipPath = "inset(0 0 0% 0)";
   } else {
@@ -125,8 +188,11 @@ function reveler(el: HTMLElement) {
     el.style.opacity = "1";
     el.style.transform = "none";
   }
+
   el.dataset.leve = "1";
   window.setTimeout(() => {
     el.style.willChange = "auto";
-  }, 900);
+    el.querySelectorAll<HTMLElement>("img").forEach((c) => (c.style.willChange = "auto"));
+    Array.from(el.children).forEach((c) => ((c as HTMLElement).style.willChange = "auto"));
+  }, 1700);
 }

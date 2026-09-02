@@ -34,6 +34,11 @@ type Props = {
   repere?: string;
   /* Le rapport de la tuile. Par défaut celui de la référence. */
   ratio?: string;
+  /* Le décalage d'apparition, en millisecondes. Il se compte par colonne
+   * et non par rang : une rangée cascade de gauche à droite, mais les
+   * rangées ne s'additionnent pas. Sur quarante tuiles, un décalage par
+   * rang aurait fait attendre près de trois secondes à la dernière. */
+  retard?: number;
 };
 
 export default function Tuile({
@@ -49,6 +54,7 @@ export default function Tuile({
   position,
   repere,
   ratio,
+  retard,
 }: Props) {
   const dedans = (
     <>
@@ -76,7 +82,8 @@ export default function Tuile({
   const habits = {
     className: "tuile group block",
     style: ratio ? { aspectRatio: ratio } : undefined,
-    "data-voile": true,
+    "data-rideau": true,
+    ...(retard ? { "data-retard": retard } : {}),
   } as const;
 
   if (appelle !== undefined)

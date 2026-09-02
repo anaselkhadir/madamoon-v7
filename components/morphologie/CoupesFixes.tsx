@@ -163,7 +163,7 @@ export default function CoupesFixes({ stations }: { stations: Station[] }) {
             className="flex flex-col justify-center py-12 md:min-h-[78svh]"
           >
             {/* L'image de la coupe, sur petit écran seulement. */}
-            <div className="tuile -mx-[var(--gouttiere)] mb-8 md:hidden" data-voile>
+            <div className="tuile -mx-[var(--gouttiere)] mb-8 md:hidden" data-rideau>
               <Photo
                 media={s.media}
                 dossier="robes"
@@ -172,17 +172,13 @@ export default function CoupesFixes({ stations }: { stations: Station[] }) {
               />
             </div>
 
-            <p className="legende" data-lever>
-              {String(i + 1).padStart(2, "0")}
-            </p>
-            <h3 className="titre-section mt-2" data-lever data-retard="60">
-              {s.nom}
-            </h3>
-            <p className="texte mesure-l mt-4" data-lever data-retard="120">
-              {s.pourquoi}
-            </p>
+            <p className="legende">{String(i + 1).padStart(2, "0")}</p>
+            <span data-ligne className="mt-2 block">
+              <h3 className="titre-section">{s.nom}</h3>
+            </span>
+            <p className="texte mesure-l mt-4">{s.pourquoi}</p>
 
-            <ul className="mt-8 border-t border-fil" data-lever data-retard="180">
+            <ul className="mt-8 border-t border-fil" data-suite>
               {s.robes.map((r) => (
                 <li key={r.slug}>
                   <Link
@@ -206,8 +202,6 @@ export default function CoupesFixes({ stations }: { stations: Station[] }) {
             <Link
               href={`/coupes/${s.ancre}`}
               className="lien-nav souligne mt-6 self-start text-action"
-              data-lever
-              data-retard="240"
             >
               Toutes nos robes {s.nom.toLowerCase()}
             </Link>

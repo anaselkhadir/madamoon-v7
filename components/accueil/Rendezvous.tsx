@@ -24,15 +24,15 @@ export default function Rendezvous() {
       className="sur-rouge gouttiere mt-[clamp(3rem,5.5vw,5rem)] bg-action py-[clamp(3.5rem,7vw,7rem)]"
     >
       <div className="grid gap-8 md:grid-cols-4 md:items-end md:gap-10">
-        <div className="md:col-span-3" data-lever>
+        <span data-ligne className="md:col-span-3 block">
           <h2 id="rendez-vous" className="legende">
             Essayage privé
           </h2>
           <p className="phrase mesure-l mt-4">
             Venez essayer. C&apos;est là que tout se décide.
           </p>
-        </div>
-        <div className="flex flex-col items-start gap-4 md:col-start-4" data-lever data-retard="120">
+        </span>
+        <div className="flex flex-col items-start gap-4 md:col-start-4" data-lever data-retard="200">
           <Link href="/rendez-vous" className="bouton-sur-rouge">
             Prendre rendez-vous
           </Link>

@@ -62,6 +62,7 @@ export default function Robes() {
             return (
               <Tuile
                 key={s.ancre}
+                retard={(i % 3) * 70}
                 href={`#${s.ancre}`}
                 media={media}
                 dossier="robes"
@@ -86,12 +87,13 @@ export default function Robes() {
             <div className="gouttiere">
               <p className="texte mesure-l -mt-1 mb-6">{FAMILLES[s.nom]}</p>
               <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-                {famille.map((r) => {
+                {famille.map((r, i) => {
                   const media = vues(r.slug)[0];
                   if (!media) return null;
                   return (
                     <Tuile
                       key={r.slug}
+                      retard={(i % 3) * 70}
                       href={`/robes/${r.slug}`}
                       media={media}
                       dossier="robes"

@@ -129,6 +129,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
                 return (
                   <Tuile
                     key={robe.slug}
+                    retard={(j % 3) * 70}
                     href={`/robes/${robe.slug}`}
                     media={media}
                     dossier="robes"

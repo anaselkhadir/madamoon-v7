@@ -113,6 +113,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
               return (
                 <Tuile
                   key={robe.slug}
+                  retard={(i % 3) * 70}
                   href={`/robes/${robe.slug}`}
                   media={media}
                   dossier="robes"
@@ -143,7 +144,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
               celle d&apos;une autre maison.
             </p>
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-              {coupes.map((nom) => {
+              {coupes.map((nom, i) => {
                 /* L'image de la famille vient d'une robe de la maison :
                   * sur sa page, on ne montre pas le travail d'un autre. */
                 const sienne = robes.find((r) => r.categorie === nom);
@@ -153,6 +154,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                 return (
                   <Tuile
                     key={nom}
+                    retard={(i % 3) * 70}
                     href={`/coupes/${famille.ancre}`}
                     media={media}
                     dossier="robes"

@@ -44,6 +44,7 @@ export default function Coupes() {
               return (
                 <Tuile
                   key={s.ancre}
+                  retard={(i % 3) * 70}
                   href={`/coupes/${s.ancre}`}
                   media={media}
                   dossier="robes"

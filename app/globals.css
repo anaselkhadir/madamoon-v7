@@ -512,16 +512,71 @@ body {
 
 /* ———————————————————————————————————— apparitions ————— */
 
-/* Les états de départ ne s'appliquent que si le navigateur exécute des
+/*
+ * Trois matières, chacune avec un rôle. Pas une quatrième.
+ *
+ * Le défaut, sur ce site comme partout ailleurs, était le fondu-montée
+ * posé sur tout ce qui défile : quarante éléments par page, la même
+ * entrée pour un titre, un paragraphe et une photographie. Ce n'est pas
+ * une chorégraphie, c'est un tic — et il se reconnaît immédiatement.
+ *
+ * Ce qui est animé maintenant : ce qui gagne à l'être. Le corps de texte
+ * n'est pas animé, il est là.
+ *
+ * Les états de départ ne s'appliquent que si le navigateur exécute des
  * scripts : sans JavaScript, rien n'est masqué. Une décoration ne doit
- * jamais pouvoir cacher une page. */
+ * jamais pouvoir cacher une page.
+ */
 @media (scripting: enabled) {
+  /* Le rideau — pour une photographie seule.
+   *
+   * Le cadre s'ouvre par le bas, et l'image posée dedans revient d'une
+   * contre-échelle. Les deux mouvements se compensent : la photographie
+   * se développe sur place au lieu de glisser. C'est le geste d'un
+   * tirage qui apparaît, pas d'un bloc qui entre. */
+  [data-rideau] {
+    clip-path: inset(0 0 100% 0);
+    will-change: clip-path;
+  }
+  /* La contre-échelle vise l'image, pas l'enveloppe : <picture> est un
+   * élément en ligne, et une transformation n'a aucun effet dessus. */
+  [data-rideau] img {
+    transform: scale(1.06);
+    transform-origin: center 40%;
+    will-change: transform;
+  }
+
+  /* La ligne — pour un intitulé, un par section.
+   *
+   * Le texte monte de derrière un masque. Le masque est le bloc
+   * lui-même : pas d'élément ajouté, pas de balise en plus. */
+  [data-ligne] {
+    clip-path: inset(-0.3em 0 100% 0);
+    will-change: clip-path;
+  }
+  [data-ligne] > * {
+    transform: translate3d(0, 105%, 0);
+    will-change: transform;
+  }
+
+  /* La suite — pour une vraie liste. Le décalage est plafonné plus bas,
+   * dans le script : dix éléments à cinquante millisecondes suffisent, au
+   * delà on attend. */
+  [data-suite] > * {
+    opacity: 0;
+    transform: translate3d(0, 0.75rem, 0);
+    will-change: opacity, transform;
+  }
+
+  /* L'ancien fondu-montée reste pour les rares cas isolés — un bouton
+   * seul, une mention. Il n'a plus vocation à couvrir une page. */
   [data-lever] {
     opacity: 0;
     transform: translate3d(0, 1.25rem, 0);
     will-change: opacity, transform;
   }
 
+  /* Le voile d'origine, conservé : des pages s'en servent encore. */
   [data-voile] {
     clip-path: inset(0 0 100% 0);
     will-change: clip-path;
@@ -530,7 +585,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   [data-lever],
-  [data-voile] {
+  [data-voile],
+  [data-rideau],
+  [data-ligne],
+  [data-suite] > *,
+  [data-rideau] img,
+  [data-ligne] > * {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;

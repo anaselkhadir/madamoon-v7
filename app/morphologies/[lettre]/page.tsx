@@ -184,7 +184,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
             * s'écrit à côté : le même geste que la scène des coupes, en
             * plus court. */}
           <div className="md:sticky md:top-[calc(var(--barre)+var(--entete))] md:h-fit">
-            <div className="tuile" data-voile>
+            <div className="tuile" data-rideau>
               {scene && (
                 <Photo
                   media={scene}
@@ -200,32 +200,27 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
             <h2 id="reconnaitre" className="titre-section" data-lever>
               Reconnaître une silhouette en {m.lettre}
             </h2>
-            <p className="phrase mt-5 text-encre" data-lever data-retard="80">
+            <p className="phrase mt-5 text-encre">
               {m.silhouette}
             </p>
 
-            <dl className="mt-10 border-t border-fil">
-              {e.reperes.map((r, i) => (
-                <div
-                  key={r.titre}
-                  className="border-b border-fil py-5"
-                  data-lever
-                  data-retard={120 + i * 90}
-                >
+            <dl className="mt-10 border-t border-fil" data-suite>
+              {e.reperes.map((r) => (
+                <div key={r.titre} className="border-b border-fil py-5">
                   <dt className="legende">{r.titre}</dt>
                   <dd className="texte mt-2">{r.texte}</dd>
                 </div>
               ))}
             </dl>
 
-            <p className="mention mt-8 text-brume" data-lever data-retard="420">
+            <p className="mention mt-8 text-brume">
               Les proportions
             </p>
-            <p className="texte mt-1" data-lever data-retard="450">
+            <p className="texte mt-1">
               {e.proportions}
             </p>
 
-            <p className="texte mesure-l mt-8" data-lever data-retard="500">
+            <p className="texte mesure-l mt-8">
               Une morphologie ne se lit pas dans un miroir en trente secondes, et elle
               n&apos;a pas à être exacte : c&apos;est un point de départ pour savoir quoi
               essayer en premier. Si vous hésitez entre deux,{" "}
@@ -303,12 +298,8 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         {niveaux.map((n, rang) => (
           <div key={n.titre} className={rang > 0 ? "pt-[clamp(2.5rem,5vw,5rem)]" : ""}>
             <div className="gouttiere">
-              <h3 className="legende" data-lever>
-                {n.titre}
-              </h3>
-              <p className="texte mesure-l mt-2 pb-6" data-lever data-retard="70">
-                {n.note}
-              </p>
+              <h3 className="legende">{n.titre}</h3>
+              <p className="texte mesure-l mt-2 pb-6">{n.note}</p>
               <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
                 {n.robes.map((robe, i) => {
                   const media = vues(robe.slug)[0];
@@ -316,6 +307,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
                   return (
                     <Tuile
                       key={robe.slug}
+                      retard={(i % 3) * 70}
                       href={`/robes/${robe.slug}`}
                       media={media}
                       dossier="robes"
@@ -341,9 +333,9 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
           lien={{ href: "/rendez-vous", label: "Poser la vôtre" }}
         />
         <div className="gouttiere pb-[clamp(2rem,4vw,4rem)]">
-          <dl className="mesure-l border-t border-fil">
-            {questions.map((x, i) => (
-              <div key={x.q} className="border-b border-fil py-6" data-lever data-retard={i * 80}>
+          <dl className="mesure-l border-t border-fil" data-suite>
+            {questions.map((x) => (
+              <div key={x.q} className="border-b border-fil py-6">
                 <dt className="phrase text-[1.125rem] text-encre">{x.q}</dt>
                 <dd className="texte mt-3">{x.r}</dd>
               </div>
@@ -363,9 +355,9 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
             Une morphologie dit par où commencer. Elle ne dit pas qui vous êtes le jour de
             votre mariage.
           </p>
-          <dl className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-            {AU_DELA.map((r, i) => (
-              <div key={r.titre} data-lever data-retard={i * 90}>
+          <dl className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4" data-suite>
+            {AU_DELA.map((r) => (
+              <div key={r.titre}>
                 <dt className="legende">{r.titre}</dt>
                 <dd className="texte mt-2">{r.texte}</dd>
               </div>
@@ -373,9 +365,9 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
           </dl>
 
           {maisons.length > 0 && (
-            <div className="mt-14" data-lever>
+            <div className="mt-14">
               <p className="mention text-brume">Les maisons qui vous vont</p>
-              <ol className="mesure-l mt-3 border-t border-fil">
+              <ol className="mesure-l mt-3 border-t border-fil" data-suite>
                 {maisons.map((o, i) => (
                   <li key={o.createur.slug}>
                     <Link
