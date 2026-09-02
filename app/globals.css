@@ -191,6 +191,10 @@ body {
   justify-content: center;
   height: 2.5rem;
   padding-inline: 1.5rem;
+  /* Quatre pixels : l'angle s'adoucit sans que le bouton devienne une
+   * pastille. Le reste du site est net — tuiles carrées, filets d'un
+   * pixel — et un rayon plus large ferait entrer un autre vocabulaire. */
+  border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.04em;
