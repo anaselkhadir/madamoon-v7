@@ -37,9 +37,14 @@
 :root {
   /* 48 px à 1440. La marge du site, partout la même. */
   --gouttiere: clamp(1.125rem, 3.34vw, 3.5rem);
-  /* 38 px de bandeau, 70 px de barre principale. */
+  /* 38 px de bandeau, 56 px de barre principale.
+   *
+   * La référence en met 70 ; la cliente les trouve trop hauts. À 56, le
+   * logo de 17 px et la navigation de 12 px gardent une marge franche, et
+   * la barre cesse de peser sur l'image. C'est aussi la hauteur qu'elle
+   * avait déjà sous 900 px : une valeur de moins dans le système. */
   --barre: 2.375rem;
-  --entete: 4.375rem;
+  --entete: 3.5rem;
   --ease-doux: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-rideau: cubic-bezier(0.16, 1, 0.3, 1);
   color-scheme: light;
