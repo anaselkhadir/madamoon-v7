@@ -15,9 +15,11 @@ import bpy
 SOURCE = "/Users/mac/Desktop/madamoon files /Anas EL KHADIR - web site/2573- Meredith.mp4"
 SORTIE = "/Users/mac/Desktop/madamoon-v7/public/film/"
 
-# Le film passe en entier, sans coupe : c'est la demande de la cliente.
+# Le film passe presque en entier : on ne retire que le carton de marque
+# de la fin. Le fondu au blanc qui l'amène commence à 53,05 s — mesuré
+# sur la luminance, qui saute de 104 à 150 entre 53,00 et 53,15.
 DEBUT = 0.0
-DUREE = None   # None : toute la durée de la source
+DUREE = 53.0   # None pour toute la durée de la source
 
 VERSIONS = [
     ("hero-desktop", 1600, 900, 1200),

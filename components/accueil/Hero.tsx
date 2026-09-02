@@ -143,8 +143,10 @@ export default function Hero() {
           <p className="accroche mt-6 text-blanc">
             Robes de mariée, essayage privé — Paris 10<sup>e</sup>
           </p>
-          <Link href="/rendez-vous" className="bouton-clair mt-6">
-            Prendre rendez-vous
+          {/* Rouge plein sur la photographie : la cliente veut l'action
+            * franche plutôt que le bouton blanc de la référence. */}
+          <Link href="/rendez-vous" className="bouton mt-6">
+            Trouver ma robe
           </Link>
         </div>
       </div>
