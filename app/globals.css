@@ -422,6 +422,27 @@ body {
   }
 }
 
+/* La légende d'une carte de la roue.
+ *
+ * Deux classes plutôt que des utilitaires : .phrase et .texte portent
+ * leur propre taille, ne sont pas calquées, et l'emportent donc sur
+ * n'importe quel text-[…]. Le nom s'affichait à 36 px au lieu de 15.
+ */
+.nom-carte {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.25;
+  color: var(--color-encre);
+}
+
+.ligne-carte {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--color-plomb);
+}
+
 /* ———————————————————————————————————— trames ————— */
 
 .gouttiere {

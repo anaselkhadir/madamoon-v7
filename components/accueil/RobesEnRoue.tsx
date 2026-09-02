@@ -233,10 +233,10 @@ export default function RobesEnRoue() {
                     />
                   </div>
                   <figcaption className="mt-4">
-                    <span className="phrase block text-[1.125rem] text-encre transition-colors duration-500 group-hover:text-action">
+                    <span className="nom-carte block transition-colors duration-500 group-hover:text-action">
                       {robe.nom}
                     </span>
-                    <span className="texte mt-1 block">{robe.ligne}</span>
+                    <span className="ligne-carte mt-1 block">{robe.ligne}</span>
                   </figcaption>
                 </Link>
               </figure>
