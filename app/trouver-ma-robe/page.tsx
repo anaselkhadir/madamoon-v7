@@ -1,27 +1,50 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import AppelElise from "@/components/AppelElise";
 import TitreSection from "@/components/TitreSection";
-import Tuile from "@/components/Tuile";
-import { FAMILLES } from "@/lib/madamoon";
-import { SILHOUETTES } from "@/lib/silhouettes";
-import { vues } from "@/lib/medias";
+import Rendezvous from "@/components/accueil/Rendezvous";
+import { MAISON } from "@/lib/madamoon";
 
 /*
- * Trouver ma robe — première étape.
+ * Trouver ma robe — le carrefour.
  *
- * On part de la silhouette, parce que c'est le mot que les mariées
- * emploient en boutique. Ce sont des recommandations, jamais des
- * exclusions : aucune robe n'est « à éviter ».
+ * Cette page montrait les six silhouettes en tuiles. Depuis que
+ * /silhouettes existe, c'était deux fois la même page à deux adresses :
+ * mauvais pour la lecture, et deux pages qui se disputent le même mot
+ * chez les moteurs.
  *
- * Le parcours guidé complet (morphologie, questions, sélection) viendra
- * se greffer ici — la page en est déjà la première marche.
+ * Elle garde son adresse — des liens pointent dessus — mais change de
+ * métier : elle dit les trois portes d'entrée du catalogue, et laisse
+ * chacune à sa page.
  */
 
 export const metadata: Metadata = {
-  title: "Trouver ma robe de mariée — par silhouette",
+  title: "Trouver ma robe de mariée",
   description:
-    "Sirène, princesse, fluide, trapèze, minimaliste ou deux-en-un : partez de la silhouette qui vous ressemble et découvrez les robes de mariée MADAMOON à Paris.",
+    "Trois façons de commencer : par la silhouette, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
   alternates: { canonical: "/trouver-ma-robe" },
 };
+
+const PORTES = [
+  {
+    href: "/silhouettes",
+    titre: "Par la silhouette",
+    texte:
+      "Sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Le mot que les mariées emploient en boutique, et le tri qui fait gagner une heure d'essayage.",
+  },
+  {
+    href: "/morphologies",
+    titre: "Par la morphologie",
+    texte:
+      "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n'est « à éviter » — mais pour savoir lesquelles proposer en premier.",
+  },
+  {
+    href: "/createurs/watters-designs",
+    titre: "Par la maison",
+    texte:
+      "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d'Olya Mak.",
+  },
+];
 
 export default function Trouver() {
   return (
@@ -32,36 +55,40 @@ export default function Trouver() {
           titre="Trouver ma robe"
           lien={{ href: "/robes", label: "Voir toutes les robes" }}
         />
-      </div>
+        <div className="gouttiere">
+          <p className="texte mesure-l pb-10">
+            Trois portes, et aucune n&apos;est la bonne. Ce sont des pistes, pas des
+            règles : au showroom, beaucoup de mariées repartent avec une robe
+            qu&apos;elles n&apos;auraient pas choisie sur photo.
+          </p>
 
-      <div className="gouttiere">
-        <p className="texte mesure-l mb-8">
-          Commencez par la ligne qui vous attire. Ce sont des pistes, pas des règles :
-          au showroom, beaucoup de mariées repartent avec une robe qu&apos;elles
-          n&apos;auraient pas choisie sur photo.
-        </p>
-        <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-          {SILHOUETTES.map((s, i) => {
-            const media = vues(s.robe)[s.vue - 1];
-            if (!media) return null;
-            return (
-              <Tuile
-                key={s.ancre}
-                href={`/robes#${s.ancre}`}
-                media={media}
-                dossier="robes"
-                alt={`Robe de mariée ${s.nom.toLowerCase()} — ${FAMILLES[s.nom]}`}
-                nom={s.nom}
-                note={FAMILLES[s.nom]}
-                priorite={i < 3}
-                sizes="(max-width: 768px) 50vw, 31vw"
-              />
-            );
-          })}
+          <ul className="border-t border-fil">
+            {PORTES.map((p) => (
+              <li key={p.href}>
+                <Link
+                  href={p.href}
+                  className="group grid gap-x-10 gap-y-2 border-b border-fil py-6 md:grid-cols-[16rem_1fr] md:items-baseline"
+                >
+                  <span className="phrase text-encre transition-colors duration-500 group-hover:text-action">
+                    {p.titre}
+                  </span>
+                  <span className="texte mesure-l">{p.texte}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="pb-[clamp(3rem,5vw,5rem)] pt-10">
+            <p className="texte mesure pb-6">
+              Ou laissez-vous guider : Élise part de votre silhouette, en trois questions,
+              et vous dit franchement si la réponse est chez une autre maison. Elle donne
+              aussi l&apos;adresse et les horaires — {MAISON.adresse}, sur rendez-vous.
+            </p>
+            <AppelElise className="bouton">Trouver ma robe</AppelElise>
+          </div>
         </div>
       </div>
-
-      <div className="gouttiere py-[clamp(3rem,5.5vw,5rem)]" />
+      <Rendezvous />
     </>
   );
 }

@@ -232,7 +232,7 @@ export default function Elise() {
             "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n'était pas prévu. Voulez-vous voir la sélection correspondante ?",
           ],
           [
-            { label: "Voir mes recommandations", href: `/trouver-ma-robe#silhouette-${m.lettre}` },
+            { label: "Voir mes recommandations", href: `/morphologies/${m.lettre.toLowerCase()}` },
             { label: "Prendre rendez-vous", next: "rdv" },
             { label: "Refaire le diagnostic", next: "q1" },
           ],
@@ -333,7 +333,7 @@ export default function Elise() {
                 },
               ]
             : []),
-          { label: "Toute la sélection", href: `/trouver-ma-robe#silhouette-${m.lettre}` },
+          { label: "Toute la sélection", href: `/morphologies/${m.lettre.toLowerCase()}` },
           { label: "Prendre rendez-vous", next: "rdv" },
         ],
         720
@@ -475,7 +475,7 @@ export default function Elise() {
                 },
               ],
               [
-                { label: "Toute la sélection", href: `/trouver-ma-robe#silhouette-${lettre}` },
+                { label: "Toute la sélection", href: `/morphologies/${lettre.toLowerCase()}` },
                 { label: "Prendre rendez-vous", next: "rdv" },
               ]
             );

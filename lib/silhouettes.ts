@@ -69,6 +69,20 @@ export function silhouette(nom: Categorie): Silhouette {
   return SILHOUETTES.find((s) => s.nom === nom) ?? SILHOUETTES[0];
 }
 
+/*
+ * Le pluriel se dit sur les pages ; le catalogue n'en garde que le
+ * singulier. « Deux en un » n'en prend pas, « minimaliste » ni « fluide »
+ * non plus sans le mot « robes ».
+ */
+export const PLURIEL: Record<Categorie, string> = {
+  Sirène: "sirènes",
+  Fluide: "robes fluides",
+  Trapèze: "trapèzes",
+  Princesse: "robes princesse",
+  Minimaliste: "robes minimalistes",
+  "Deux en un": "deux-en-un",
+};
+
 export function silhouetteParAncre(ancre: string): Silhouette | undefined {
   return SILHOUETTES.find((s) => s.ancre === ancre);
 }

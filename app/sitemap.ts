@@ -3,10 +3,10 @@ import type { MetadataRoute } from "next";
 /* Ces deux fichiers sont écrits une fois, à la compilation : ils doivent
  * l'être aussi quand le site est exporté en fichiers statiques. */
 export const dynamic = "force-static";
-import { CREATEURS, ROBES, SITE_URL } from "@/lib/madamoon";
+import { CREATEURS, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { SILHOUETTES } from "@/lib/silhouettes";
 
-const PAGES = ["", "/robes", "/silhouettes", "/trouver-ma-robe", "/showroom", "/a-propos", "/rendez-vous"];
+const PAGES = ["", "/robes", "/silhouettes", "/morphologies", "/trouver-ma-robe", "/showroom", "/a-propos", "/rendez-vous"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -22,6 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...SILHOUETTES.map((s) => ({
       url: `${SITE_URL}/silhouettes/${s.ancre}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...MORPHOLOGIES.map((m) => ({
+      url: `${SITE_URL}/morphologies/${m.lettre.toLowerCase()}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

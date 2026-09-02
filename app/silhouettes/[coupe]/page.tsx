@@ -7,7 +7,7 @@ import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import Rendezvous from "@/components/accueil/Rendezvous";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
-import { SILHOUETTES, silhouetteParAncre } from "@/lib/silhouettes";
+import { PLURIEL, SILHOUETTES, silhouetteParAncre } from "@/lib/silhouettes";
 import { vues } from "@/lib/medias";
 
 /*
@@ -22,18 +22,6 @@ import { vues } from "@/lib/medias";
  * n'est pas renseigné forment un dernier groupe, à part : on ne les
  * attribue à personne pour faire joli.
  */
-
-/* Le pluriel se dit sur la page ; le catalogue n'en garde que le
- * singulier. « Deux en un » n'en prend pas, « minimaliste » non plus au
- * féminin pluriel sans le mot « robes ». */
-const PLURIELS: Record<string, string> = {
-  Sirène: "sirènes",
-  Fluide: "robes fluides",
-  Trapèze: "trapèzes",
-  Princesse: "robes princesse",
-  Minimaliste: "robes minimalistes",
-  "Deux en un": "deux-en-un",
-};
 
 export function generateStaticParams() {
   return SILHOUETTES.map((s) => ({ coupe: s.ancre }));
@@ -62,7 +50,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
   if (!s) notFound();
 
   const siennes = ROBES.filter((r) => r.categorie === s.nom);
-  const pluriel = PLURIELS[s.nom] ?? s.nom.toLowerCase();
+  const pluriel = PLURIEL[s.nom];
 
   /* Par maison, dans l'ordre du catalogue, puis celles dont on ignore le
    * créateur — jamais rangées sous un nom qui n'est pas le leur. */
@@ -162,7 +150,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
           <TitreSection
             id="pour-qui"
             titre="À qui cette coupe va"
-            lien={{ href: "/trouver-ma-robe", label: "Le guide complet" }}
+            lien={{ href: "/morphologies", label: "Toutes les morphologies" }}
           />
           <div className="gouttiere pb-[clamp(3rem,5vw,5rem)]">
             <p className="texte mesure pb-8">

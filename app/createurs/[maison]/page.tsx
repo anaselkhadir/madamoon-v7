@@ -173,7 +173,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
           <TitreSection
             id="ses-morphologies"
             titre="À qui ces coupes vont"
-            lien={{ href: "/trouver-ma-robe", label: "Le guide complet" }}
+            lien={{ href: "/morphologies", label: "Toutes les morphologies" }}
           />
           <div className="gouttiere pb-[clamp(3rem,5vw,5rem)]">
             <p className="texte mesure pb-8">

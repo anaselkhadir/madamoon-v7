@@ -577,6 +577,9 @@ export type Lettre = "O" | "A" | "V" | "H" | "8" | "X";
 
 export type Morphologie = {
   lettre: Lettre;
+  /* La robe qui ouvre sa page : son film s'il en existe un. Chaque
+   * morphologie en reçoit un différent — le catalogue en compte sept. */
+  ouverture: { robe: string; vue: number };
   nom: string;
   silhouette: string;
   objectif: string;
@@ -595,6 +598,7 @@ export type Morphologie = {
 export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "O",
+    ouverture: { robe: "montana", vue: 1 },
     nom: "Silhouette en O",
     silhouette: "Des courbes généreuses, une poitrine et un ventre marqués.",
     objectif: "Allonger la ligne et mettre la poitrine en valeur.",
@@ -610,6 +614,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "A",
+    ouverture: { robe: "solana", vue: 1 },
     nom: "Silhouette en A",
     silhouette: "Des épaules plus étroites que les hanches, une taille bien dessinée.",
     objectif: "Ramener le regard vers le haut du corps.",
@@ -625,6 +630,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "V",
+    ouverture: { robe: "addison", vue: 1 },
     nom: "Silhouette en V",
     silhouette: "Des épaules larges, des hanches plus étroites.",
     objectif: "Adoucir le haut et donner du volume au bas.",
@@ -640,6 +646,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "H",
+    ouverture: { robe: "ariel", vue: 1 },
     nom: "Silhouette en H",
     silhouette: "Une ligne droite, une taille peu marquée.",
     objectif: "Créer de la courbe, sans la forcer.",
@@ -655,6 +662,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "8",
+    ouverture: { robe: "venus", vue: 1 },
     nom: "Silhouette en 8",
     silhouette: "Des épaules et des hanches équilibrées, une taille marquée.",
     objectif: "Sublimer une harmonie qui existe déjà.",
@@ -670,6 +678,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "X",
+    ouverture: { robe: "meredith", vue: 1 },
     nom: "Silhouette en X",
     silhouette: "Une silhouette équilibrée, des courbes douces, une taille fine.",
     objectif: "Valoriser sans en faire trop.",
@@ -683,6 +692,11 @@ export const MORPHOLOGIES: Morphologie[] = [
       "Bonne nouvelle : presque toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
   },
 ];
+
+/* L'adresse d'une morphologie : sa lettre, en minuscule. */
+export function morphologieParSlug(slug: string): Morphologie | undefined {
+  return MORPHOLOGIES.find((m) => m.lettre === slug.toUpperCase());
+}
 
 export function morphologie(lettre: string): Morphologie | undefined {
   return MORPHOLOGIES.find((m) => m.lettre === lettre);
