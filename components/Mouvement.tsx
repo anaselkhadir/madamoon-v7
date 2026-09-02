@@ -166,11 +166,15 @@ function reveler(el: HTMLElement) {
   } else if ("ligne" in el.dataset) {
     el.style.transition = "clip-path 0.85s var(--ease-rideau)";
     el.style.clipPath = "inset(-0.3em 0 0% 0)";
-    const dedans = el.firstElementChild as HTMLElement | null;
-    if (dedans) {
-      dedans.style.transition = "transform 0.85s var(--ease-rideau)";
-      dedans.style.transform = "none";
-    }
+    /* Tous les enfants, pas seulement le premier. La feuille de style
+     * les translate tous ; n'en remettre qu'un en place laissait les
+     * suivants poussés hors du cadre, donc invisibles. Le défaut s'est
+     * vu sur le bandeau rouge, où la phrase avait disparu. */
+    Array.from(el.children).forEach((enfant) => {
+      const e = enfant as HTMLElement;
+      e.style.transition = "transform 0.85s var(--ease-rideau)";
+      e.style.transform = "none";
+    });
   } else if ("suite" in el.dataset) {
     Array.from(el.children).forEach((enfant, i) => {
       const e = enfant as HTMLElement;
