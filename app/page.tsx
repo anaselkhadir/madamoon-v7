@@ -13,6 +13,11 @@ import Rendezvous from "@/components/accueil/Rendezvous";
  * Le rythme de la référence : une image plein cadre, puis des sections
  * courtes séparées par un intitulé en capitales. Chaque scène apporte une
  * image nouvelle — aucune n'est là pour occuper un écran.
+ *
+ * Le hero et « Nos robes de mariée » partagent une boîte : c'est elle qui
+ * borne le collant du hero. Celui-ci ne bouge pas et ne change pas
+ * d'apparence — ni flou, ni fondu, ni voile — pendant que la roue remonte
+ * par-dessus, portée par son propre fond blanc.
  */
 
 export const metadata: Metadata = {
@@ -25,8 +30,10 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
-      <Hero />
-      <RobesEnRoue />
+      <div className="relative">
+        <Hero />
+        <RobesEnRoue />
+      </div>
       <Cercle />
       <Dos />
       <Avis />

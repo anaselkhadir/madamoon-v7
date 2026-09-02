@@ -174,7 +174,7 @@ export default function RobesEnRoue() {
     <section
       ref={scene}
       aria-labelledby="robes-roue"
-      className={roule ? "relative h-[320svh] bg-blanc" : "relative bg-blanc"}
+      className={roule ? "relative z-10 h-[320svh] bg-blanc" : "relative z-10 bg-blanc"}
     >
       {/* Le rembourrage haut dégage l'en-tête fixe : sans lui, l'intitulé
         * se glisse dessous et se coupe. */}

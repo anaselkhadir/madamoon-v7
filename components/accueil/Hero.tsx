@@ -33,6 +33,10 @@ export default function Hero() {
   const [charge, setCharge] = useState(false);
   const [prete, setPrete] = useState(false);
   const [joue, setJoue] = useState(true);
+  /* La lecture voulue par la visiteuse, lisible depuis le défilement sans
+   * refaire l'écouteur à chaque bascule. */
+  const joueRef = useRef(true);
+  joueRef.current = joue;
 
   useEffect(() => {
     const co = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
@@ -54,6 +58,38 @@ export default function Hero() {
     return () => el.removeEventListener("playing", surLecture);
   }, [charge]);
 
+  /* Le film s'arrête quand la section suivante l'a entièrement recouvert.
+   * Il est alors invisible : le laisser tourner ne coûterait que de la
+   * batterie. Il repart en remontant, sauf si elle l'a mis en pause
+   * elle-même. */
+  useEffect(() => {
+    if (mouvementReduit()) return;
+    const el = video.current;
+    if (!el || !charge) return;
+
+    let demande = 0;
+    const poser = () => {
+      demande = 0;
+      if (!joueRef.current) return;
+      const couvert = window.scrollY > window.innerHeight;
+      if (couvert && !el.paused) el.pause();
+      else if (!couvert && el.paused) el.play().catch(() => {});
+    };
+    const surScroll = () => {
+      if (!demande) demande = requestAnimationFrame(poser);
+    };
+    /* Une première évaluation à l'ouverture. Sans elle, l'état ne se
+     * corrigeait qu'au premier défilement : revenir en haut par une ancre,
+     * ou rouvrir la page depuis le cache, laissait le film en pause devant
+     * une visiteuse qui n'avait rien demandé. */
+    poser();
+    window.addEventListener("scroll", surScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(demande);
+      window.removeEventListener("scroll", surScroll);
+    };
+  }, [charge]);
+
   const basculer = () => {
     const el = video.current;
     if (!el) return;
@@ -66,8 +102,18 @@ export default function Hero() {
     }
   };
 
+  /*
+   * Le hero est collé sous le bandeau, pas au bord de la fenêtre : le
+   * contenu de la page commence à 38 px du haut, et un hero haut de
+   * « 100svh moins le bandeau » collé à zéro laisserait justement 38 px
+   * de blanc sous lui.
+   *
+   * Rien d'autre ne change. La vidéo, le titre, le bouton et le bandeau
+   * restent exactement tels quels pendant que la section suivante passe
+   * par-dessus — pas de flou, pas de fondu, pas de voile.
+   */
   return (
-    <section className="relative h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
+    <section className="sticky top-[var(--barre)] z-0 h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
       <picture>
         <source
           type="image/avif"
