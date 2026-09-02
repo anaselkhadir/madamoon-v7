@@ -49,9 +49,21 @@ const CHOIX = [
   "pendant",
 ];
 
-/* La géométrie de la roue. */
-const INCLINAISON = 13; /* degrés au bord de l'écran */
-const RECUL = 70; /* pixels de profondeur au bord */
+/*
+ * La géométrie de la roue.
+ *
+ * Les cartes ne sont pas simplement inclinées : elles sont posées sur un
+ * cylindre. Pour un angle donné, la profondeur vaut R(cos θ − 1) — donc
+ * les cartes des bords reculent réellement au lieu de pivoter sur place.
+ * C'est ce qui fait qu'on lit une roue et non une rangée penchée.
+ *
+ * Le creux ajoute quelques pixels de descente vers les bords. Sur un
+ * cylindre horizontal parfait la hauteur ne bougerait pas ; l'œil, lui,
+ * attend une courbe, et vingt-huit pixels suffisent à la lui donner.
+ */
+const ANGLE = 26; /* degrés au bord de l'écran */
+const RAYON = 820; /* le rayon du cylindre, en pixels */
+const CREUX = 28; /* la descente au bord, en pixels */
 
 export default function RobesEnRoue() {
   const scene = useRef<HTMLElement>(null);
@@ -104,10 +116,12 @@ export default function RobesEnRoue() {
         /* offsetLeft est figé : il ne dépend pas de la translation, donc
          * le lire ne force aucun recalcul. */
         const centre = el.offsetLeft + el.offsetWidth / 2 + x;
-        const d = Math.min(Math.max((centre - milieu) / milieu, -1.4), 1.4);
-        el.style.transform = `rotateY(${-d * INCLINAISON}deg) translateZ(${
-          -Math.abs(d) * RECUL
-        }px)`;
+        const d = Math.min(Math.max((centre - milieu) / milieu, -1.3), 1.3);
+        const theta = (d * ANGLE * Math.PI) / 180;
+        const profondeur = RAYON * (Math.cos(theta) - 1);
+        el.style.transform = `translateY(${d * d * CREUX}px) rotateY(${
+          -d * ANGLE
+        }deg) translateZ(${profondeur}px)`;
         const e = Math.abs(centre - milieu);
         if (e < ecart) {
           ecart = e;
@@ -160,7 +174,7 @@ export default function RobesEnRoue() {
     <section
       ref={scene}
       aria-labelledby="robes-roue"
-      className={roule ? "relative h-[320svh] bg-craie" : "relative bg-craie"}
+      className={roule ? "relative h-[320svh] bg-blanc" : "relative bg-blanc"}
     >
       {/* Le rembourrage haut dégage l'en-tête fixe : sans lui, l'intitulé
         * se glisse dessous et se coupe. */}
@@ -183,7 +197,7 @@ export default function RobesEnRoue() {
               ? "flex h-[calc(100svh-var(--barre)-var(--entete)-11rem)] items-center"
               : "pb-[clamp(2rem,4vw,4rem)]"
           }
-          style={roule ? { perspective: "1600px" } : undefined}
+          style={roule ? { perspective: "1100px", perspectiveOrigin: "50% 45%" } : undefined}
         >
           <div
             ref={piste}
@@ -199,7 +213,7 @@ export default function RobesEnRoue() {
                 ref={(el) => {
                   cartes.current[i] = el;
                 }}
-                className={`w-[clamp(15rem,22vw,20rem)] flex-none ${
+                className={`w-[clamp(12rem,17vw,16rem)] flex-none ${
                   roule
                     ? "will-change-transform [transform-style:preserve-3d]"
                     : "snap-start"
@@ -214,7 +228,7 @@ export default function RobesEnRoue() {
                       media={media}
                       dossier="robes"
                       alt={altRobe(robe)}
-                      sizes="(max-width: 768px) 70vw, 22vw"
+                      sizes="(max-width: 768px) 62vw, 17vw"
                       priorite={i < 3}
                     />
                   </div>
