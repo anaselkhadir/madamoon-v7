@@ -3,6 +3,7 @@ import Hero from "@/components/accueil/Hero";
 import Modeles from "@/components/accueil/Modeles";
 import Cercle from "@/components/accueil/Cercle";
 import Dos from "@/components/accueil/Dos";
+import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
 import Rendezvous from "@/components/accueil/Rendezvous";
 
@@ -28,6 +29,7 @@ export default function Accueil() {
       <Modeles />
       <Cercle />
       <Dos />
+      <Avis />
       <Showroom />
       <Rendezvous />
     </>
