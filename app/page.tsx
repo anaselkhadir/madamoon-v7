@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/accueil/Hero";
-import Modeles from "@/components/accueil/Modeles";
+import RobesEnRoue from "@/components/accueil/RobesEnRoue";
 import Cercle from "@/components/accueil/Cercle";
 import Dos from "@/components/accueil/Dos";
 import Avis from "@/components/accueil/Avis";
@@ -26,7 +26,7 @@ export default function Accueil() {
   return (
     <>
       <Hero />
-      <Modeles />
+      <RobesEnRoue />
       <Cercle />
       <Dos />
       <Avis />
