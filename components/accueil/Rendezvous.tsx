@@ -8,6 +8,13 @@ import { MAISON } from "@/lib/madamoon";
  * tout en bas : une phrase, un bouton blanc, un numéro. C'est la
  * dernière chose que l'on lit — elle doit être simple, et elle doit se
  * voir.
+ *
+ * Elle reprend la grille de quatre colonnes du pied de page, qui la suit
+ * immédiatement. Sans cela, ses deux boutons « prendre rendez-vous » —
+ * celui-ci et celui du pied — se retrouvaient sur deux axes différents à
+ * quelques centimètres l'un de l'autre : le premier calé sur la gouttière
+ * droite, le second sur la quatrième colonne. Ils partagent maintenant le
+ * même bord gauche.
  */
 
 export default function Rendezvous() {
@@ -16,8 +23,8 @@ export default function Rendezvous() {
       aria-labelledby="rendez-vous"
       className="sur-rouge gouttiere mt-[clamp(3rem,5.5vw,5rem)] bg-action py-[clamp(3.5rem,7vw,7rem)]"
     >
-      <div className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
-        <div data-lever>
+      <div className="grid gap-8 md:grid-cols-4 md:items-end md:gap-10">
+        <div className="md:col-span-3" data-lever>
           <h2 id="rendez-vous" className="legende">
             Essayage privé
           </h2>
@@ -25,7 +32,7 @@ export default function Rendezvous() {
             Venez essayer. C&apos;est là que tout se décide.
           </p>
         </div>
-        <div className="flex flex-col items-start gap-4" data-lever data-retard="120">
+        <div className="flex flex-col items-start gap-4 md:col-start-4" data-lever data-retard="120">
           <Link href="/rendez-vous" className="bouton-sur-rouge">
             Prendre rendez-vous
           </Link>
