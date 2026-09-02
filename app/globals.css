@@ -252,6 +252,74 @@ body {
   color: var(--color-blanc);
 }
 
+/* ———————————————————————————————————— le bandeau défilant ————— */
+
+/*
+ * Une bande d'informations qui passe en boucle, au bas du hero.
+ *
+ * Le défilé est une simple translation : la piste contient quatre copies
+ * de la liste et se décale d'un quart de sa largeur. Arrivée au bout, la
+ * copie suivante occupe exactement la place de la première — la boucle
+ * ne se voit pas. Quatre copies plutôt que deux pour qu'un écran très
+ * large ne rattrape jamais la fin de la piste.
+ */
+.bandeau {
+  overflow: hidden;
+}
+
+.bandeau-piste {
+  display: flex;
+  width: max-content;
+  /* 22 s pour un quart de piste, soit une quarantaine de pixels par
+   * seconde : le mouvement se voit sans jamais presser la lecture. */
+  animation: defile 22s linear infinite;
+}
+
+/* Au survol on suspend : le prix doit pouvoir se lire. */
+.bandeau:hover .bandeau-piste {
+  animation-play-state: paused;
+}
+
+@keyframes defile {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.bandeau-mention {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gouttiere);
+  padding-inline: calc(var(--gouttiere) / 2);
+  height: 2.75rem;
+  /* Sans fond : la bande est posée à même l'image. L'ombre portée est ce
+   * qui tient la lisibilité quand un plan clair passe dessous. */
+  color: var(--color-blanc);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+/* Le losange de séparation : la seule touche d'accent de la page. */
+.bandeau-mention::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  flex: none;
+  rotate: 45deg;
+  background: var(--color-accent);
+}
+
+/* Le mouvement refusé : la bande s'arrête, rien ne se perd — les mentions
+ * restent lisibles, on peut les faire défiler à la main. */
+@media (prefers-reduced-motion: reduce) {
+  .bandeau {
+    overflow-x: auto;
+  }
+  .bandeau-piste {
+    animation: none;
+  }
+}
+
 /* ———————————————————————————————————— trames ————— */
 
 .gouttiere {
