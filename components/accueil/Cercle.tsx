@@ -18,6 +18,11 @@ import { mouvementReduit } from "@/lib/mouvement";
  * La scène tient sur deux hauteurs d'écran : assez pour que la rotation
  * se lise, pas assez pour retenir quelqu'un. Sans JavaScript, ou si le
  * mouvement est refusé, les six robes se rangent simplement en ligne.
+ *
+ * Le défilement vertical fait tourner la composition ; la main peut en
+ * plus la pousser latéralement — au glisser, ou au défilement horizontal
+ * du pavé tactile. Les deux angles s'additionnent : on ne se dispute pas
+ * la même valeur, donc pousser à la main ne défait jamais le scroll.
  */
 
 const CHOIX = [
@@ -43,11 +48,22 @@ const CHOIX = [
 const RAYON = 240; /* en hauteurs d'écran */
 const PAS = 9; /* l'écart entre deux robes, en degrés */
 const COURSE = 14; /* l'amplitude de la rotation au défilement */
+const LIBRE = 18; /* ce que la main peut ajouter, de part et d'autre */
+
+const borner = (v: number) => Math.min(Math.max(v, -LIBRE), LIBRE);
 
 export default function Cercle() {
   const scene = useRef<HTMLDivElement>(null);
   const roue = useRef<HTMLDivElement>(null);
+  const prise = useRef<HTMLDivElement>(null);
   const [anime, setAnime] = useState(false);
+
+  /* Les deux moitiés de la rotation : ce que le défilement impose, et ce
+   * que la main ajoute. « visee » est là où la main veut aller, « pousse »
+   * où l'on en est — l'écart entre les deux fait l'inertie. */
+  const impose = useRef(COURSE);
+  const visee = useRef(0);
+  const pousse = useRef(0);
 
   /* La rotation n'a lieu que sur grand écran, et jamais contre l'avis
    * de l'utilisatrice. La décision est prise avant d'aller chercher GSAP. */
@@ -63,7 +79,24 @@ export default function Cercle() {
     let nettoyer: (() => void) | undefined;
 
     import("@/lib/gsap").then(({ gsap, ScrollTrigger }) => {
-      if (!vivant || !scene.current || !roue.current) return;
+      if (!vivant || !scene.current || !roue.current || !prise.current) return;
+      const cadre = roue.current;
+      const main = prise.current;
+
+      const poser = () => {
+        const angle = impose.current + pousse.current;
+        gsap.set(cadre, { rotate: angle });
+        cadre
+          .querySelectorAll<HTMLElement>("[data-carte]")
+          .forEach((c) => gsap.set(c, { rotate: -angle - Number(c.dataset.pose) }));
+      };
+
+      /* Combien de degrés vaut un pixel de la main.
+       *
+       * Le rayon est exprimé en hauteurs d'écran : à 240 svh sur une
+       * fenêtre de 860 px, il fait 2064 px, et un degré d'arc vaut 36 px.
+       * Glisser de la largeur d'une tuile revient donc à passer une robe. */
+      const parPixel = () => 180 / (Math.PI * (RAYON / 100) * window.innerHeight);
 
       const st = ScrollTrigger.create({
         trigger: scene.current,
@@ -71,14 +104,68 @@ export default function Cercle() {
         end: "bottom bottom",
         scrub: 1.1,
         onUpdate: (self) => {
-          const angle = COURSE - self.progress * COURSE * 2;
-          gsap.set(roue.current, { rotate: angle });
-          const cartes = roue.current?.querySelectorAll<HTMLElement>("[data-carte]");
-          cartes?.forEach((c) => gsap.set(c, { rotate: -angle - Number(c.dataset.pose) }));
+          impose.current = COURSE - self.progress * COURSE * 2;
+          poser();
         },
       });
 
-      nettoyer = () => st.kill();
+      /* Le pavé tactile : on ne retient que les gestes franchement
+       * latéraux, sinon on volerait le défilement vertical de la page. */
+      const surRoulette = (e: WheelEvent) => {
+        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+        e.preventDefault();
+        visee.current = borner(visee.current - e.deltaX * parPixel());
+      };
+
+      /* Le glisser. On suit le geste sur la fenêtre plutôt que de capturer
+       * le pointeur : la capture échoue dès que le pointeur n'est plus
+       * actif, et le glisser s'arrêtait net en sortant de la scène. */
+      let tenu = false;
+      let depart = 0;
+      let depuis = 0;
+      const surPrise = (e: PointerEvent) => {
+        tenu = true;
+        depart = e.clientX;
+        depuis = visee.current;
+        main.dataset.tenu = "";
+      };
+      const surGlisse = (e: PointerEvent) => {
+        if (!tenu) return;
+        visee.current = borner(depuis + (e.clientX - depart) * parPixel());
+      };
+      const surLache = () => {
+        tenu = false;
+        delete main.dataset.tenu;
+      };
+
+      main.addEventListener("wheel", surRoulette, { passive: false });
+      main.addEventListener("pointerdown", surPrise);
+      window.addEventListener("pointermove", surGlisse);
+      window.addEventListener("pointerup", surLache);
+      window.addEventListener("pointercancel", surLache);
+
+      /* L'inertie : la poussée rejoint la visée par approches, et on ne
+       * repeint que tant qu'elle bouge encore. */
+      let image = 0;
+      const boucle = () => {
+        const ecart = visee.current - pousse.current;
+        if (Math.abs(ecart) > 0.002) {
+          pousse.current += ecart * 0.12;
+          poser();
+        }
+        image = requestAnimationFrame(boucle);
+      };
+      image = requestAnimationFrame(boucle);
+
+      nettoyer = () => {
+        st.kill();
+        cancelAnimationFrame(image);
+        main.removeEventListener("wheel", surRoulette);
+        main.removeEventListener("pointerdown", surPrise);
+        window.removeEventListener("pointermove", surGlisse);
+        window.removeEventListener("pointerup", surLache);
+        window.removeEventListener("pointercancel", surLache);
+      };
     });
 
     return () => {
@@ -116,11 +203,27 @@ export default function Cercle() {
         </div>
 
         {anime ? (
-          <div
-            ref={roue}
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[295%] h-0 w-0 will-change-transform"
-          >
+          <>
+            {/* La surface de préhension.
+              *
+              * Les tuiles sont posées sur un bras de 0 × 0 pixel : on ne
+              * peut pas les saisir elles-mêmes sans manquer tout ce qui
+              * les entoure. Cette couche transparente couvre la scène,
+              * sous le titre et le bouton — qui portent un z-10 et
+              * restent donc cliquables.
+              *
+              * « pan-y » laisse le doigt faire défiler la page vers le
+              * bas : seul le geste latéral nous revient. */}
+            <div
+              ref={prise}
+              aria-hidden="true"
+              className="absolute inset-0 touch-pan-y cursor-grab [&[data-tenu]]:cursor-grabbing"
+            />
+            <div
+              ref={roue}
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-[295%] h-0 w-0 will-change-transform"
+            >
             {robes.map(({ media, robe }, i) => {
               const pose = (i - (robes.length - 1) / 2) * PAS;
               return (
@@ -152,26 +255,40 @@ export default function Cercle() {
                 </div>
               );
             })}
-          </div>
-        ) : (
-          /* Le repli : une ligne de robes, sans rotation. */
-          <div className="gouttiere mt-8">
-            <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-              {robes.map(({ media, robe }) => (
-                <Link key={robe.slug} href={`/robes/${robe.slug}`} className="tuile group block">
-                  <Photo
-                    media={media}
-                    dossier="robes"
-                    alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
-                    sizes="(max-width: 768px) 50vw, 31vw"
-                  />
-                  <span className="voile-lecture" aria-hidden="true" />
-                  <span className="dans-image">
-                    <span className="nom-image">{robe.nom}</span>
-                  </span>
-                </Link>
-              ))}
             </div>
+          </>
+        ) : (
+          /* Le repli — petit écran, ou mouvement refusé.
+            *
+            * La rotation n'a pas lieu, mais les robes défilent quand même
+            * sous le doigt : un rail horizontal, avec arrêt sur chaque
+            * tuile. Rien ne bouge tout seul, c'est la main qui mène.
+            *
+            * La gouttière est portée par le rembourrage du rail et non par
+            * un parent, sans quoi la première et la dernière tuile
+            * viendraient buter contre le bord. */
+          <div
+            className="mt-8 flex snap-x snap-mandatory gap-1.5 overflow-x-auto px-[var(--gouttiere)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            style={{ scrollPaddingInline: "var(--gouttiere)" }}
+          >
+            {robes.map(({ media, robe }) => (
+              <Link
+                key={robe.slug}
+                href={`/robes/${robe.slug}`}
+                className="tuile group block w-[62vw] max-w-[19rem] flex-none snap-start"
+              >
+                <Photo
+                  media={media}
+                  dossier="robes"
+                  alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                  sizes="(max-width: 768px) 62vw, 19rem"
+                />
+                <span className="voile-lecture" aria-hidden="true" />
+                <span className="dans-image">
+                  <span className="nom-image">{robe.nom}</span>
+                </span>
+              </Link>
+            ))}
           </div>
         )}
 
