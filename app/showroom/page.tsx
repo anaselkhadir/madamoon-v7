@@ -4,6 +4,7 @@ import TitreSection from "@/components/TitreSection";
 import Photo from "@/components/media/Photo";
 import { MAISON, SIGNATURES } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
+import { altScene } from "@/lib/alt";
 
 /*
  * Le showroom.
@@ -28,7 +29,7 @@ export default function Showroom() {
         <Photo
           media={SCENES["showroom"]}
           dossier="scenes"
-          alt="Le showroom MADAMOON à Paris, robes de mariée suspendues"
+          alt={altScene("Robes de mariée suspendues dans le showroom")}
           sizes="100vw"
           priorite
           className="absolute inset-0 h-full w-full object-cover"
@@ -81,7 +82,7 @@ export default function Showroom() {
               <Photo
                 media={SCENES[v]}
                 dossier="scenes"
-                alt="Détail d'une robe de mariée au showroom MADAMOON"
+                alt={altScene("Détail d'une robe de mariée")}
                 sizes="(max-width: 768px) 100vw, 31vw"
               />
             </div>

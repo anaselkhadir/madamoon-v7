@@ -9,6 +9,7 @@ import Rendezvous from "@/components/accueil/Rendezvous";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { PLURIEL, COUPES, coupeParAncre } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * La page d'une coupe.
@@ -109,7 +110,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
         ligne={FAMILLES[s.nom]}
         robe={ouverture.robe}
         vue={ouverture.vue}
-        alt={`Robe de mariée ${s.nom.toLowerCase()} présentée chez MADAMOON à Paris`}
+        alt={altCoupe(s.nom)}
         action="Trouver ma robe"
       />
 
@@ -131,7 +132,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
                     href={`/robes/${robe.slug}`}
                     media={media}
                     dossier="robes"
-                    alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                    alt={altRobe(robe)}
                     nom={robe.nom}
                     note={robe.ligne}
                     sizes="(max-width: 768px) 50vw, 31vw"

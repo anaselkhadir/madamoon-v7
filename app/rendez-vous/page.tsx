@@ -4,6 +4,7 @@ import Photo from "@/components/media/Photo";
 import RobeChoisie from "@/components/parcours/RobeChoisie";
 import { MAISON, SIGNATURES } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
+import { altScene } from "@/lib/alt";
 
 /*
  * Le rendez-vous.
@@ -27,7 +28,7 @@ export default function RendezVous() {
         <Photo
           media={SCENES["seuil"]}
           dossier="scenes"
-          alt="L'entrée du showroom MADAMOON à Paris"
+          alt={altScene("L'entrée du showroom")}
           sizes="(max-width: 768px) 100vw, 50vw"
           priorite
           className="absolute inset-0 h-full w-full object-cover"

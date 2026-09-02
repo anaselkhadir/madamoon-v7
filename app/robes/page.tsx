@@ -4,6 +4,7 @@ import Tuile from "@/components/Tuile";
 import { ROBES, FAMILLES, SITE_URL } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * Le catalogue.
@@ -56,6 +57,7 @@ export default function Robes() {
         <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
           {COUPES.map((s, i) => {
             const media = vues(s.robe)[s.vue - 1];
+            const vedette = ROBES.find((r) => r.slug === s.robe);
             if (!media) return null;
             return (
               <Tuile
@@ -63,7 +65,7 @@ export default function Robes() {
                 href={`#${s.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={`Robe de mariée ${s.nom.toLowerCase()} — ${FAMILLES[s.nom]}`}
+                alt={vedette ? altRobe(vedette, s.vue) : altCoupe(s.nom)}
                 nom={s.nom}
                 note={s.note}
                 priorite={i < 3}
@@ -93,7 +95,7 @@ export default function Robes() {
                       href={`/robes/${r.slug}`}
                       media={media}
                       dossier="robes"
-                      alt={`Robe de mariée ${r.nom} — ${r.ligne}`}
+                      alt={altRobe(r)}
                       nom={r.nom}
                       note={r.ligne}
                       repere={r.createur}

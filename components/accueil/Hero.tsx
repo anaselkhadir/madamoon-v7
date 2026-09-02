@@ -6,6 +6,7 @@ import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
 import Bandeau from "@/components/accueil/Bandeau";
 import AppelElise from "@/components/AppelElise";
+import { altScene } from "@/lib/alt";
 
 /*
  * Le hero, relevé sur la référence.
@@ -89,7 +90,7 @@ export default function Hero() {
           sizes="100vw"
           width={DESKTOP.w}
           height={DESKTOP.h}
-          alt="Une mariée en robe de dentelle dans le showroom MADAMOON à Paris"
+          alt={altScene("Une mariée en robe de dentelle")}
           fetchPriority="high"
           decoding="sync"
           className="absolute inset-0 h-full w-full object-cover"

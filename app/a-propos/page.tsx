@@ -4,6 +4,7 @@ import TitreSection from "@/components/TitreSection";
 import Photo from "@/components/media/Photo";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
+import { altScene } from "@/lib/alt";
 
 /*
  * La maison.
@@ -48,7 +49,7 @@ export default function AProps() {
             <Photo
               media={SCENES["createurs"]}
               dossier="scenes"
-              alt="Robe de mariée présentée au showroom MADAMOON"
+              alt={altScene("Robe de mariée présentée en boutique")}
               sizes="(max-width: 768px) 100vw, 47vw"
             />
           </div>

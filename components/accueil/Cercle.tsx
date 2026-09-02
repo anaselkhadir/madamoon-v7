@@ -6,6 +6,7 @@ import Photo from "@/components/media/Photo";
 import { vues } from "@/lib/medias";
 import { ROBES } from "@/lib/madamoon";
 import { mouvementReduit } from "@/lib/mouvement";
+import { altRobe } from "@/lib/alt";
 
 /*
  * La rotation.
@@ -245,7 +246,7 @@ export default function Cercle() {
                         <Photo
                           media={media}
                           dossier="robes"
-                          alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                          alt={altRobe(robe)}
                           sizes="21vw"
                         />
                       </div>
@@ -280,7 +281,7 @@ export default function Cercle() {
                 <Photo
                   media={media}
                   dossier="robes"
-                  alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                  alt={altRobe(robe)}
                   sizes="(max-width: 768px) 62vw, 19rem"
                 />
                 <span className="voile-lecture" aria-hidden="true" />

@@ -21,6 +21,7 @@ import {
 import { AU_DELA, EDITO } from "@/lib/morphologies";
 import { PLURIEL, coupe } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * La page d'une morphologie.
@@ -81,7 +82,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         ancre: coupe(c).ancre,
         pourquoi: e.pourquoi[c] ?? "",
         media,
-        alt: `Robe de mariée ${c.toLowerCase()} conseillée pour une silhouette en ${m.lettre}`,
+        alt: altCoupe(c, `conseillée pour une silhouette en ${m.lettre}`),
         robes: robes.slice(0, 2).map((r) => ({ slug: r.slug, nom: r.nom, ligne: r.ligne })),
       };
     })
@@ -143,7 +144,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         ligne={e.promesse}
         robe={m.ouverture.robe}
         vue={m.ouverture.vue}
-        alt={`Robe de mariée conseillée pour une silhouette en ${m.lettre}, chez MADAMOON à Paris`}
+        alt={altCoupe(m.premieres[0] ?? "de mariée", `conseillée pour une silhouette en ${m.lettre}`)}
         action="Trouver ma robe"
       />
 
@@ -159,7 +160,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
                 <Photo
                   media={scene}
                   dossier="robes"
-                  alt={`Silhouette en ${m.lettre} — robe de mariée MADAMOON`}
+                  alt={altCoupe(m.premieres[0] ?? "de mariée", `pour une silhouette en ${m.lettre}`)}
                   sizes="(max-width: 768px) 100vw, 46vw"
                 />
               )}
@@ -255,7 +256,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
                       href={`/robes/${robe.slug}`}
                       media={media}
                       dossier="robes"
-                      alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                      alt={altRobe(robe)}
                       nom={robe.nom}
                       note={robe.ligne}
                       sizes="(max-width: 768px) 50vw, 31vw"

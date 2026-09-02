@@ -18,6 +18,7 @@ import {
 } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { coupe } from "@/lib/coupes";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * La page d'une maison.
@@ -92,7 +93,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
         ligne={createur.note}
         robe={createur.ouverture.robe}
         vue={createur.ouverture.vue}
-        alt={`Robe de mariée ${createur.nom} présentée chez MADAMOON à Paris`}
+        alt={altCoupe(coupes[0] ?? "de mariée", createur.nom)}
         action={`Trouver ma robe ${createur.nom}`}
         maison={createur.nom}
       />
@@ -115,7 +116,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                   href={`/robes/${robe.slug}`}
                   media={media}
                   dossier="robes"
-                  alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+                  alt={altRobe(robe)}
                   nom={robe.nom}
                   note={robe.ligne}
                   sizes="(max-width: 768px) 50vw, 31vw"
@@ -155,7 +156,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                     href={`/coupes/${famille.ancre}`}
                     media={media}
                     dossier="robes"
-                    alt={`Robe de mariée ${nom.toLowerCase()} ${createur.nom}`}
+                    alt={altCoupe(nom, createur.nom)}
                     nom={nom}
                     note={FAMILLES[nom]}
                     sizes="(max-width: 768px) 50vw, 31vw"

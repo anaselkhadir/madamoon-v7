@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Photo from "@/components/media/Photo";
 import { SCENES } from "@/lib/medias";
+import { altScene } from "@/lib/alt";
 
 /*
  * Le dos d'Uma.
@@ -21,7 +22,7 @@ export default function Dos() {
       <Photo
         media={SCENES["dos-uma-large"]}
         dossier="scenes"
-        alt="Dos d'une robe de mariée en dentelle fermée par une ligne de boutons, modèle Uma"
+        alt={altScene("Dos d'une robe de mariée en dentelle fermée par une ligne de boutons, modèle Uma")}
         sizes="100vw"
         position="50% 0%"
         className="absolute inset-0 h-full w-full object-cover"

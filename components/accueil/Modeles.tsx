@@ -1,7 +1,9 @@
 import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
 import { COUPES } from "@/lib/coupes";
+import { ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * « Nos modèles ».
@@ -25,6 +27,7 @@ export default function Modeles() {
         <div className="trame-tuiles md:grid-cols-3">
           {TROIS.map((s) => {
             const media = vues(s.robe)[s.vue - 1];
+            const vedette = ROBES.find((r) => r.slug === s.robe);
             if (!media) return null;
             return (
               <Tuile
@@ -32,7 +35,7 @@ export default function Modeles() {
                 href={`/coupes/${s.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={`Robe de mariée ${s.nom.toLowerCase()} — modèle présenté chez MADAMOON à Paris`}
+                alt={vedette ? altRobe(vedette, s.vue) : altCoupe(s.nom)}
                 nom={s.nom}
                 note={s.note}
                 sizes="(max-width: 768px) 100vw, 31vw"

@@ -9,6 +9,7 @@ import { ROBES, FAMILLES, MAISON, SITE_URL } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
 import { coupe } from "@/lib/coupes";
+import { altRobe } from "@/lib/alt";
 
 /*
  * La fiche d'une robe.
@@ -75,7 +76,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
           <Film
             src={film.src}
             affiche={SCENES[film.affiche]}
-            alt={`Robe de mariée ${robe.nom} en mouvement`}
+            alt={altRobe(robe)}
             className="absolute inset-0 h-full w-full"
           />
         ) : (
@@ -83,7 +84,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
             <Photo
               media={photos[0]}
               dossier="robes"
-              alt={`Robe de mariée ${robe.nom} — ${robe.ligne}`}
+              alt={altRobe(robe)}
               sizes="100vw"
               priorite
               position="50% 30%"
@@ -123,7 +124,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
                 <Photo
                   media={p}
                   dossier="robes"
-                  alt={`Robe de mariée ${robe.nom}, vue ${i + 2}`}
+                  alt={altRobe(robe, i + 2)}
                   sizes="(max-width: 768px) 100vw, 47vw"
                   className="h-full w-full object-cover"
                 />
@@ -202,7 +203,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
                     href={`/robes/${v.slug}`}
                     media={media}
                     dossier="robes"
-                    alt={`Robe de mariée ${v.nom} — ${v.ligne}`}
+                    alt={altRobe(v)}
                     nom={v.nom}
                     note={v.ligne}
                     sizes="(max-width: 768px) 50vw, 31vw"

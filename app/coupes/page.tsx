@@ -5,6 +5,7 @@ import Rendezvous from "@/components/accueil/Rendezvous";
 import { FAMILLES, ROBES } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
+import { altCoupe, altRobe } from "@/lib/alt";
 
 /*
  * Les six coupes.
@@ -37,6 +38,7 @@ export default function Coupes() {
           <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
             {COUPES.map((s, i) => {
               const media = vues(s.robe)[s.vue - 1];
+            const vedette = ROBES.find((r) => r.slug === s.robe);
               const nombre = ROBES.filter((r) => r.categorie === s.nom).length;
               if (!media) return null;
               return (
@@ -45,7 +47,7 @@ export default function Coupes() {
                   href={`/coupes/${s.ancre}`}
                   media={media}
                   dossier="robes"
-                  alt={`Robe de mariée ${s.nom.toLowerCase()} — ${FAMILLES[s.nom]}`}
+                  alt={vedette ? altRobe(vedette, s.vue) : altCoupe(s.nom)}
                   nom={s.nom}
                   note={`${nombre} modèles — ${s.note.toLowerCase()}`}
                   sizes="(max-width: 768px) 50vw, 31vw"
