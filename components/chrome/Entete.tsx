@@ -72,8 +72,11 @@ export default function Entete() {
         <div className="hidden h-[var(--barre)] items-center justify-between border-b border-fil bg-blanc text-encre md:flex gouttiere">
           <ul className="flex items-center gap-7">
             {CREATEURS.slice(0, 4).map((c) => (
-              <li key={c.nom}>
-                <Link href="/robes" className="mention souligne text-plomb hover:text-encre">
+              <li key={c.slug}>
+                <Link
+                  href={`/createurs/${c.slug}`}
+                  className="mention souligne text-plomb hover:text-encre"
+                >
                   {c.nom}
                 </Link>
               </li>
@@ -189,6 +192,24 @@ export default function Entete() {
               ))}
             </ul>
           </nav>
+
+          {/* Les maisons. Le bandeau qui les porte est masqué sous 768 px :
+            * sans cette liste, leurs pages seraient hors d'atteinte au
+            * doigt. */}
+          <p className="legende mt-8">Les maisons</p>
+          <ul className="mt-2 flex flex-col gap-1">
+            {CREATEURS.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/createurs/${c.slug}`}
+                  className="mention block py-1 text-plomb transition-colors duration-500 hover:text-action"
+                >
+                  {c.nom}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
           <div className="mt-6 flex flex-col gap-1">
             <a href={MAISON.telephoneHref} className="legende text-encre">
               {MAISON.telephone}

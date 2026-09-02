@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { SCENES } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
+import Bandeau from "@/components/accueil/Bandeau";
 
 /*
  * Le hero, relevé sur la référence.
@@ -22,17 +23,6 @@ import { media as chemin } from "@/lib/chemin";
 const DESKTOP = SCENES["hero-affiche"];
 const MOBILE = SCENES["hero-affiche-mobile"];
 
-/* Les quatre promesses de la maison, en bas du hero. */
-const MENTIONS = [
-  "Essayage privé",
-  "Confection sur mesure",
-  "Retouches incluses",
-  "À partir de 1 500 €",
-];
-
-/* Quatre copies : la piste se décale d'un quart, donc la copie suivante
- * vient prendre exactement la place de la première. */
-const COPIES = 4;
 
 const jeu = (media: { name: string }, ext: string, largeurs: readonly number[]) =>
   largeurs.map((w) => `${chemin(`/scenes/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
@@ -184,26 +174,7 @@ export default function Hero() {
         </button>
       )}
 
-      {/* Le bandeau des mentions, dans le bas du hero, au-dessus de la
-        * commande de lecture — à même l'image, sans fond.
-        *
-        * Une seule copie porte le texte pour les lecteurs d'écran et les
-        * moteurs ; les trois autres ne servent qu'à remplir la piste et
-        * sont masquées, sinon la page annoncerait quatre fois la même
-        * chose. */}
-      <div className="bandeau absolute inset-x-0 bottom-[4.5rem]">
-        <div className="bandeau-piste">
-          {Array.from({ length: COPIES }, (_, copie) => (
-            <div key={copie} className="flex" aria-hidden={copie > 0 || undefined}>
-              {MENTIONS.map((mention) => (
-                <p key={mention} className="legende bandeau-mention">
-                  {mention}
-                </p>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Bandeau />
     </section>
   );
 }

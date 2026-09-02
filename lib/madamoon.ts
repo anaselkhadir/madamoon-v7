@@ -35,33 +35,82 @@ export const MAISON = {
 export const SITE_URL = "https://madamoon.fr";
 
 /* Les maisons dont MADAMOON présente les collections. */
-export const CREATEURS: { nom: string; origine: string; note: string }[] = [
+export type Createur = {
+  nom: string;
+  /* L'adresse de sa page. Écrite, jamais dérivée : une URL ne doit pas
+   * changer parce qu'on a corrigé une majuscule dans un nom. */
+  slug: string;
+  origine: string;
+  note: string;
+  /* La robe qui ouvre sa page : son film s'il en existe un, sa
+   * photographie sinon. */
+  ouverture: { robe: string; vue: number };
+};
+
+export const CREATEURS: Createur[] = [
   {
     nom: "Watters Designs",
+    slug: "watters-designs",
     origine: "Dallas",
     note: "Dentelles travaillées, dos illusion, tombés légers. La maison d'Uma et de Pendant.",
+    ouverture: { robe: "uma", vue: 1 },
   },
   {
     nom: "Casablanca Bridal",
+    slug: "casablanca-bridal",
     origine: "Californie",
     note: "Le mikado, le satin duchesse, les lignes nettes. Des robes construites, faites pour la lumière.",
+    ouverture: { robe: "tessa", vue: 1 },
   },
   {
     nom: "Olya Mak",
+    slug: "olya-mak",
     origine: "Barcelone",
     note: "Le drapé, la transparence, la sensualité retenue. Des robes qui bougent avec celle qui les porte.",
+    ouverture: { robe: "venus", vue: 1 },
   },
   {
     nom: "Angeola Biarritz",
+    slug: "angeola-biarritz",
     origine: "Biarritz",
     note: "La dentelle française et le romantisme atlantique, dans des coupes contemporaines.",
+    ouverture: { robe: "sienna", vue: 1 },
   },
   {
     nom: "Monica Loretti",
+    slug: "monica-loretti",
     origine: "Italie",
     note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
+    ouverture: { robe: "lorette", vue: 1 },
   },
 ];
+
+export function createurParSlug(slug: string): Createur | undefined {
+  return CREATEURS.find((c) => c.slug === slug);
+}
+
+/* Le filtre de la maison : sur sa page, on ne montre que ses robes. */
+export function robesDe(nom: string): Robe[] {
+  return ROBES.filter((r) => r.createur === nom);
+}
+
+/* Les silhouettes que la maison travaille, dans l'ordre du catalogue. */
+export function silhouettesDe(nom: string): Categorie[] {
+  const siennes = new Set(robesDe(nom).map((r) => r.categorie));
+  return CATEGORIES.filter((c) => siennes.has(c));
+}
+
+/*
+ * Les morphologies auxquelles ses coupes répondent en premier.
+ *
+ * On ne retient qu'une morphologie dont l'une des deux recommandations
+ * principales figure au catalogue de la maison : le conseil doit pouvoir
+ * s'essayer sur place, sinon il ne vaut rien.
+ */
+export function morphologiesDe(nom: string): Morphologie[] {
+  const siennes = silhouettesDe(nom);
+  return MORPHOLOGIES.filter((m) => m.premieres.some((c) => siennes.includes(c)));
+}
 
 /* Les engagements de la maison. */
 export const SIGNATURES = [
