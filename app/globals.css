@@ -374,6 +374,50 @@ body {
   }
 }
 
+/* ———————————————————————————————————— le rail des avis ————— */
+
+/*
+ * Les avis passent en boucle, comme le bandeau du hero — même mécanique,
+ * même keyframe. La piste porte quatre copies de la liste et se décale
+ * d'un quart de sa largeur : la copie suivante vient prendre exactement
+ * la place de la première, et la boucle ne se voit pas.
+ *
+ * Quatre-vingts secondes pour un quart de piste, soit une trentaine de
+ * pixels par seconde — deux fois plus lent que le bandeau, parce qu'ici
+ * il y a des phrases à lire et non trois mots à reconnaître.
+ */
+.rail-avis {
+  overflow: hidden;
+}
+
+.rail-avis-piste {
+  display: flex;
+  width: max-content;
+  animation: defile 80s linear infinite;
+}
+
+/* Au survol on suspend : on doit pouvoir finir sa lecture. */
+.rail-avis:hover .rail-avis-piste {
+  animation-play-state: paused;
+}
+
+/* Une colonne d'avis. Le filet à gauche sépare, aucun cadre n'entoure. */
+.avis-colonne {
+  width: 22rem;
+  flex: none;
+  border-left: 1px solid var(--color-fil);
+  padding-inline: clamp(1.25rem, 2vw, 2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail-avis {
+    overflow-x: auto;
+  }
+  .rail-avis-piste {
+    animation: none;
+  }
+}
+
 /* ———————————————————————————————————— trames ————— */
 
 .gouttiere {
