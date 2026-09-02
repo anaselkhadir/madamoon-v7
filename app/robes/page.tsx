@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
 import { ROBES, FAMILLES, SITE_URL } from "@/lib/madamoon";
-import { SILHOUETTES } from "@/lib/silhouettes";
+import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 
 /*
@@ -54,7 +54,7 @@ export default function Robes() {
 
       <div className="gouttiere">
         <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-          {SILHOUETTES.map((s, i) => {
+          {COUPES.map((s, i) => {
             const media = vues(s.robe)[s.vue - 1];
             if (!media) return null;
             return (
@@ -75,7 +75,7 @@ export default function Robes() {
       </div>
 
       {/* Puis chaque famille, dans l'ordre, avec ses robes. */}
-      {SILHOUETTES.map((s) => {
+      {COUPES.map((s) => {
         const famille = ROBES.filter((r) => r.categorie === s.nom);
         if (!famille.length) return null;
         return (

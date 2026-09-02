@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
-import { SILHOUETTES } from "@/lib/silhouettes";
+import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
 
 /*
@@ -41,12 +41,12 @@ export default function Pied() {
           </ul>
         </div>
 
-        <nav aria-label="Silhouettes">
-          <h2 className="legende">Silhouettes</h2>
+        <nav aria-label="Coupes">
+          <h2 className="legende">Coupes</h2>
           <ul className="mt-4 flex flex-col gap-2">
-            {SILHOUETTES.map((s) => (
+            {COUPES.map((s) => (
               <li key={s.ancre}>
-                <Link href={`/robes#${s.ancre}`} className="texte souligne">
+                <Link href={`/coupes/${s.ancre}`} className="texte souligne">
                   Robe de mariée {s.nom.toLowerCase()}
                 </Link>
               </li>

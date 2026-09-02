@@ -1,6 +1,6 @@
 import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
-import { SILHOUETTES } from "@/lib/silhouettes";
+import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 
 /*
@@ -11,7 +11,7 @@ import { vues } from "@/lib/medias";
  * nom de la famille posé dans l'image et sa ligne en dessous.
  */
 
-const TROIS = SILHOUETTES.slice(0, 3);
+const TROIS = COUPES.slice(0, 3);
 
 export default function Modeles() {
   return (
@@ -29,7 +29,7 @@ export default function Modeles() {
             return (
               <Tuile
                 key={s.ancre}
-                href={`/silhouettes/${s.ancre}`}
+                href={`/coupes/${s.ancre}`}
                 media={media}
                 dossier="robes"
                 alt={`Robe de mariée ${s.nom.toLowerCase()} — modèle présenté chez MADAMOON à Paris`}

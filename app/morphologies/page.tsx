@@ -28,7 +28,7 @@ export default function Morphologies() {
         <TitreSection
           niveau={1}
           titre="Les morphologies"
-          lien={{ href: "/silhouettes", label: "Les six coupes" }}
+          lien={{ href: "/coupes", label: "Toutes les coupes" }}
         />
         <div className="gouttiere">
           <p className="texte mesure-l pb-10">

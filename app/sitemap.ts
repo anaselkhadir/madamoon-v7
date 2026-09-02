@@ -4,9 +4,9 @@ import type { MetadataRoute } from "next";
  * l'être aussi quand le site est exporté en fichiers statiques. */
 export const dynamic = "force-static";
 import { CREATEURS, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
-import { SILHOUETTES } from "@/lib/silhouettes";
+import { COUPES } from "@/lib/coupes";
 
-const PAGES = ["", "/robes", "/silhouettes", "/morphologies", "/trouver-ma-robe", "/showroom", "/a-propos", "/rendez-vous"];
+const PAGES = ["", "/robes", "/coupes", "/morphologies", "/trouver-ma-robe", "/showroom", "/a-propos", "/rendez-vous"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -20,8 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...SILHOUETTES.map((s) => ({
-      url: `${SITE_URL}/silhouettes/${s.ancre}`,
+    ...COUPES.map((s) => ({
+      url: `${SITE_URL}/coupes/${s.ancre}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

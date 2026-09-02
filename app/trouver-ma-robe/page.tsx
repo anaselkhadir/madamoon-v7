@@ -8,8 +8,8 @@ import { MAISON } from "@/lib/madamoon";
 /*
  * Trouver ma robe — le carrefour.
  *
- * Cette page montrait les six silhouettes en tuiles. Depuis que
- * /silhouettes existe, c'était deux fois la même page à deux adresses :
+ * Cette page montrait les six coupes en tuiles. Depuis que
+ * /coupes existe, c'était deux fois la même page à deux adresses :
  * mauvais pour la lecture, et deux pages qui se disputent le même mot
  * chez les moteurs.
  *
@@ -21,14 +21,14 @@ import { MAISON } from "@/lib/madamoon";
 export const metadata: Metadata = {
   title: "Trouver ma robe de mariée",
   description:
-    "Trois façons de commencer : par la silhouette, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
+    "Trois façons de commencer : par la coupe, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
   alternates: { canonical: "/trouver-ma-robe" },
 };
 
 const PORTES = [
   {
-    href: "/silhouettes",
-    titre: "Par la silhouette",
+    href: "/coupes",
+    titre: "Par la coupe",
     texte:
       "Sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Le mot que les mariées emploient en boutique, et le tri qui fait gagner une heure d'essayage.",
   },

@@ -61,7 +61,7 @@ export const CREATEURS: Createur[] = [
     origine: "Californie",
     note: "Le mikado, le satin duchesse, les lignes nettes. Des robes construites, faites pour la lumière.",
     /* Meredith plutôt que Tessa : Tessa est le seul film « deux en un »
-     * du catalogue, et la page de cette silhouette en a plus besoin. */
+     * du catalogue, et la page de cette coupe en a plus besoin. */
     ouverture: { robe: "meredith", vue: 1 },
   },
   {
@@ -96,8 +96,8 @@ export function robesDe(nom: string): Robe[] {
   return ROBES.filter((r) => r.createur === nom);
 }
 
-/* Les silhouettes que la maison travaille, dans l'ordre du catalogue. */
-export function silhouettesDe(nom: string): Categorie[] {
+/* Les coupes que la maison travaille, dans l'ordre du catalogue. */
+export function coupesDe(nom: string): Categorie[] {
   const siennes = new Set(robesDe(nom).map((r) => r.categorie));
   return CATEGORIES.filter((c) => siennes.has(c));
 }
@@ -110,7 +110,7 @@ export function silhouettesDe(nom: string): Categorie[] {
  * s'essayer sur place, sinon il ne vaut rien.
  */
 export function morphologiesDe(nom: string): Morphologie[] {
-  const siennes = silhouettesDe(nom);
+  const siennes = coupesDe(nom);
   return MORPHOLOGIES.filter((m) => m.premieres.some((c) => siennes.includes(c)));
 }
 

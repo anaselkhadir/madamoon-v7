@@ -14,17 +14,17 @@ import {
   createurParSlug,
   morphologiesDe,
   robesDe,
-  silhouettesDe,
+  coupesDe,
 } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
-import { silhouette } from "@/lib/silhouettes";
+import { coupe } from "@/lib/coupes";
 
 /*
  * La page d'une maison.
  *
  * Le rythme de l'accueil, au nom d'un créateur : une image plein cadre,
  * puis des sections courtes. La différence tient en un mot — la page est
- * un filtre. On n'y montre que ses robes, que les silhouettes qu'il
+ * un filtre. On n'y montre que ses robes, que les coupes qu'il
  * travaille, que les morphologies auxquelles ses coupes répondent.
  *
  * Rien n'est complété par le reste du catalogue : une maison qui n'a que
@@ -59,7 +59,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
   if (!createur) notFound();
 
   const robes = robesDe(createur.nom);
-  const coupes = silhouettesDe(createur.nom);
+  const coupes = coupesDe(createur.nom);
   const morphologies = morphologiesDe(createur.nom);
 
   const donnees = {
@@ -127,13 +127,13 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
         </div>
       </section>
 
-      {/* ————————————————————————————— ses silhouettes ————— */}
+      {/* ————————————————————————————— ses coupes ————— */}
       {coupes.length > 0 && (
-        <section aria-labelledby="ses-silhouettes">
+        <section aria-labelledby="ses-coupes">
           <TitreSection
-            id="ses-silhouettes"
-            titre="Ses silhouettes"
-            lien={{ href: "/silhouettes", label: "Les six coupes" }}
+            id="ses-coupes"
+            titre="Ses coupes"
+            lien={{ href: "/coupes", label: "Toutes les coupes" }}
           />
           <div className="gouttiere">
             <p className="texte mesure pb-6">
@@ -142,22 +142,22 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
               celle d&apos;une autre maison.
             </p>
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-              {coupes.map((coupe) => {
+              {coupes.map((nom) => {
                 /* L'image de la famille vient d'une robe de la maison :
                   * sur sa page, on ne montre pas le travail d'un autre. */
-                const sienne = robes.find((r) => r.categorie === coupe);
+                const sienne = robes.find((r) => r.categorie === nom);
                 const media = sienne ? vues(sienne.slug)[0] : undefined;
-                const famille = silhouette(coupe);
+                const famille = coupe(nom);
                 if (!media || !famille) return null;
                 return (
                   <Tuile
-                    key={coupe}
-                    href={`/silhouettes/${famille.ancre}`}
+                    key={nom}
+                    href={`/coupes/${famille.ancre}`}
                     media={media}
                     dossier="robes"
-                    alt={`Robe de mariée ${coupe.toLowerCase()} ${createur.nom}`}
-                    nom={coupe}
-                    note={FAMILLES[coupe]}
+                    alt={`Robe de mariée ${nom.toLowerCase()} ${createur.nom}`}
+                    nom={nom}
+                    note={FAMILLES[nom]}
                     sizes="(max-width: 768px) 50vw, 31vw"
                   />
                 );

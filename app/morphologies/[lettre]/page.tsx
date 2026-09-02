@@ -14,13 +14,13 @@ import {
   maisonsPour,
   morphologieParSlug,
 } from "@/lib/madamoon";
-import { PLURIEL, silhouette } from "@/lib/silhouettes";
+import { PLURIEL, coupe } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 
 /*
  * La page d'une morphologie.
  *
- * Troisième entrée du catalogue, après les maisons et les silhouettes.
+ * Troisième entrée du catalogue, après les maisons et les coupes.
  * Là on partait d'un créateur ou d'une coupe ; ici on part d'un corps.
  *
  * Le ton est celui du reste : une morphologie n'exclut jamais une robe,
@@ -63,7 +63,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
   const groupes = [
     ...m.premieres.map((c) => ({
       titre: `Nos ${PLURIEL[c]}`,
-      ancre: silhouette(c).ancre,
+      ancre: coupe(c).ancre,
       robes: ROBES.filter((r) => r.categorie === c),
     })),
   ].filter((g) => g.robes.length > 0);
@@ -111,7 +111,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         <TitreSection
           id="conseils"
           titre="Ce que l'on conseille"
-          lien={{ href: "/silhouettes", label: "Les six coupes" }}
+          lien={{ href: "/coupes", label: "Toutes les coupes" }}
         />
         <div className="gouttiere">
           <ul className="mesure-l border-t border-fil">
@@ -132,7 +132,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         <section key={g.titre} aria-label={g.titre}>
           <TitreSection
             titre={g.titre}
-            lien={{ href: `/silhouettes/${g.ancre}`, label: "La silhouette" }}
+            lien={{ href: `/coupes/${g.ancre}`, label: "La coupe" }}
           />
           <div className="gouttiere">
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">

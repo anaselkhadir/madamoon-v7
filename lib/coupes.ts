@@ -1,14 +1,14 @@
 import type { Categorie } from "@/lib/madamoon";
 
 /*
- * Les six silhouettes MADAMOON.
+ * Les six coupes MADAMOON.
  *
  * Chacune a son ancre, sa ligne courte — celle qui se pose dans l'image —
  * et la robe qui la représente le mieux en photographie. Rien n'est
  * inventé : les descriptions viennent de ce que la coupe fait réellement.
  */
 
-export type Silhouette = {
+export type Coupe = {
   nom: Categorie;
   /* Sert d'ancre dans le catalogue et d'adresse à sa page. */
   ancre: string;
@@ -22,7 +22,7 @@ export type Silhouette = {
   ouverture?: { robe: string; vue: number };
 };
 
-export const SILHOUETTES: Silhouette[] = [
+export const COUPES: Coupe[] = [
   {
     nom: "Sirène",
     ancre: "sirene",
@@ -65,8 +65,8 @@ export const SILHOUETTES: Silhouette[] = [
   },
 ];
 
-export function silhouette(nom: Categorie): Silhouette {
-  return SILHOUETTES.find((s) => s.nom === nom) ?? SILHOUETTES[0];
+export function coupe(nom: Categorie): Coupe {
+  return COUPES.find((c) => c.nom === nom) ?? COUPES[0];
 }
 
 /*
@@ -83,6 +83,6 @@ export const PLURIEL: Record<Categorie, string> = {
   "Deux en un": "deux-en-un",
 };
 
-export function silhouetteParAncre(ancre: string): Silhouette | undefined {
-  return SILHOUETTES.find((s) => s.ancre === ancre);
+export function coupeParAncre(ancre: string): Coupe | undefined {
+  return COUPES.find((c) => c.ancre === ancre);
 }

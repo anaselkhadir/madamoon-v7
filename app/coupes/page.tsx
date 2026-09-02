@@ -3,14 +3,14 @@ import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import Rendezvous from "@/components/accueil/Rendezvous";
 import { FAMILLES, ROBES } from "@/lib/madamoon";
-import { SILHOUETTES } from "@/lib/silhouettes";
+import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 
 /*
- * Les six silhouettes.
+ * Les six coupes.
  *
  * Une page de passage, pas une destination : elle existe pour que
- * « Silhouettes » dans la barre mène quelque part, et pour que les six
+ * « Coupes » dans la barre mène quelque part, et pour que les six
  * coupes soient atteignables autrement qu'en devinant leur adresse.
  *
  * Une tuile par coupe, le nombre de modèles sous le nom. Rien de plus :
@@ -18,31 +18,31 @@ import { vues } from "@/lib/medias";
  */
 
 export const metadata: Metadata = {
-  title: "Les six silhouettes de robe de mariée",
+  title: "Les six coupes de robe de mariée",
   description:
     "Sirène, princesse, fluide, trapèze, minimaliste, deux-en-un : les six coupes du showroom MADAMOON, Paris 10e. Essayage privé sur rendez-vous.",
-  alternates: { canonical: "/silhouettes" },
+  alternates: { canonical: "/coupes" },
 };
 
-export default function Silhouettes() {
+export default function Coupes() {
   return (
     <>
       <div className="pt-[var(--entete)]">
-        <TitreSection niveau={1} titre="Les silhouettes" />
+        <TitreSection niveau={1} titre="Les coupes" />
         <div className="gouttiere">
           <p className="texte mesure-l pb-8">
-            Six coupes, quarante robes. La silhouette n&apos;est pas une règle : c&apos;est le
+            Six coupes, quarante robes. La coupe n&apos;est pas une règle : c&apos;est le
             premier tri, celui qui fait gagner une heure d&apos;essayage.
           </p>
           <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-            {SILHOUETTES.map((s, i) => {
+            {COUPES.map((s, i) => {
               const media = vues(s.robe)[s.vue - 1];
               const nombre = ROBES.filter((r) => r.categorie === s.nom).length;
               if (!media) return null;
               return (
                 <Tuile
                   key={s.ancre}
-                  href={`/silhouettes/${s.ancre}`}
+                  href={`/coupes/${s.ancre}`}
                   media={media}
                   dossier="robes"
                   alt={`Robe de mariée ${s.nom.toLowerCase()} — ${FAMILLES[s.nom]}`}

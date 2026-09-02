@@ -8,7 +8,7 @@ import TitreSection from "@/components/TitreSection";
 import { ROBES, FAMILLES, MAISON, SITE_URL } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
-import { silhouette } from "@/lib/silhouettes";
+import { coupe } from "@/lib/coupes";
 
 /*
  * La fiche d'une robe.
@@ -45,7 +45,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
 
   const photos = vues(robe.slug);
   const film = FILMS[robe.slug];
-  const famille = silhouette(robe.categorie);
+  const famille = coupe(robe.categorie);
   const voisines = ROBES.filter((r) => r.categorie === robe.categorie && r.slug !== robe.slug).slice(
     0,
     3
@@ -139,7 +139,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
           <p className="phrase mesure-l">{robe.regard}</p>
           <dl className="grid grid-cols-2 gap-x-8 gap-y-6 self-start">
             <div>
-              <dt className="legende">Silhouette</dt>
+              <dt className="legende">Coupe</dt>
               <dd className="texte mt-1">
                 <Link href={`/robes#${famille.ancre}`} className="souligne">
                   {robe.categorie}

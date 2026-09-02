@@ -27,7 +27,7 @@ import { media as chemin } from "@/lib/chemin";
  *
  * Sur la page d'une maison, elle ne recommande que les robes de cette
  * maison. Et quand la maison n'a pas la coupe qui conviendrait — deux
- * d'entre elles ne travaillent que deux silhouettes — elle ne fait pas
+ * d'entre elles ne travaillent que deux coupes — elle ne fait pas
  * semblant : elle le dit, et donne le classement des maisons qui l'ont.
  * Une conseillère qui vend ce qu'elle a sous la main n'est pas une
  * conseillère.

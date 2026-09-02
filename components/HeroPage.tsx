@@ -9,7 +9,8 @@ import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
 
 /*
- * Le premier écran d'une page de rubrique — une maison, une silhouette.
+ * Le premier écran d'une page de rubrique — une maison, une coupe, une
+ * morphologie.
  *
  * Le même écran que l'accueil : une image plein cadre, le titre calé sur
  * la gouttière, une ligne, un bouton rouge qui ouvre Élise.

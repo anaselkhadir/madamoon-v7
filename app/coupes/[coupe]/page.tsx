@@ -7,11 +7,11 @@ import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import Rendezvous from "@/components/accueil/Rendezvous";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
-import { PLURIEL, SILHOUETTES, silhouetteParAncre } from "@/lib/silhouettes";
+import { PLURIEL, COUPES, coupeParAncre } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 
 /*
- * La page d'une silhouette.
+ * La page d'une coupe.
  *
  * Bâtie comme celle d'une maison, mais l'axe est inversé : là on prenait
  * une maison et on montrait ses coupes, ici on prend une coupe et on
@@ -24,7 +24,7 @@ import { vues } from "@/lib/medias";
  */
 
 export function generateStaticParams() {
-  return SILHOUETTES.map((s) => ({ coupe: s.ancre }));
+  return COUPES.map((s) => ({ coupe: s.ancre }));
 }
 
 export async function generateMetadata({
@@ -33,20 +33,20 @@ export async function generateMetadata({
   params: Promise<{ coupe: string }>;
 }): Promise<Metadata> {
   const { coupe } = await params;
-  const s = silhouetteParAncre(coupe);
+  const s = coupeParAncre(coupe);
   if (!s) return {};
   const nombre = ROBES.filter((r) => r.categorie === s.nom).length;
   return {
     /* Le gabarit du site ajoute « — MADAMOON » : ne pas le redire ici. */
     title: `Robe de mariée ${s.nom.toLowerCase()} à Paris`,
     description: `${nombre} robes de mariée ${s.nom.toLowerCase()} au showroom MADAMOON, Paris 10e. ${FAMILLES[s.nom]} Essayage privé sur rendez-vous.`,
-    alternates: { canonical: `/silhouettes/${s.ancre}` },
+    alternates: { canonical: `/coupes/${s.ancre}` },
   };
 }
 
 export default async function Coupe({ params }: { params: Promise<{ coupe: string }> }) {
   const { coupe } = await params;
-  const s = silhouetteParAncre(coupe);
+  const s = coupeParAncre(coupe);
   if (!s) notFound();
 
   const siennes = ROBES.filter((r) => r.categorie === s.nom);
@@ -85,7 +85,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
     "@type": "CollectionPage",
     name: `Robes de mariée ${s.nom.toLowerCase()}`,
     description: FAMILLES[s.nom],
-    url: `${SITE_URL}/silhouettes/${s.ancre}`,
+    url: `${SITE_URL}/coupes/${s.ancre}`,
     isPartOf: { "@type": "WebSite", name: MAISON.nom, url: SITE_URL },
     hasPart: siennes.map((r) => ({
       "@type": "Product",
@@ -156,7 +156,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
             <p className="texte mesure pb-8">
               Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. La{" "}
               {s.nom.toLowerCase()} est celle que l&apos;on conseille d&apos;abord à ces
-              silhouettes — les autres l&apos;essaient tout aussi bien en boutique.
+              morphologies — les autres l&apos;essaient tout aussi bien en boutique.
             </p>
             <dl className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
               {morphologies.map((m) => (
