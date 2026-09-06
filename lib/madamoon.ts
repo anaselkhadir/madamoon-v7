@@ -174,6 +174,10 @@ export type Robe = {
   /* Nombre de vues disponibles dans /public/robes. */
   vues: number;
   createur?: string;
+  /* Les morphologies que cette robe sert en premier. Relevé sur les
+   * fiches produit de la cliente, jamais déduit d'une photographie :
+   * c'est elle qui fait essayer les robes, pas nous. */
+  morphos?: Lettre[];
 };
 
 export const ROBES: Robe[] = [
@@ -185,6 +189,7 @@ export const ROBES: Robe[] = [
     regard: "Un dos entier de dentelle fermé par une ligne de boutons, jusqu'à la nuque.",
     vues: 4,
     createur: "Watters Designs",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "pendant",
@@ -194,6 +199,7 @@ export const ROBES: Robe[] = [
     regard: "Un voile immense qui prend la lumière et double le volume de la robe.",
     vues: 4,
     createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "adularia",
@@ -211,6 +217,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un pli creux au centre de la jupe et deux nœuds de mikado sur les épaules.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "amaryllis",
@@ -219,6 +227,8 @@ export const ROBES: Robe[] = [
     categorie: "Minimaliste",
     regard: "Le drapé du col bénitier, et une file de boutons couverts le long du dos.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "aster",
@@ -227,6 +237,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Des manches longues en dentelle qui se portent — ou non — sur un bustier droit.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "fern",
@@ -235,6 +247,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un bustier brodé feuille à feuille sur une jupe de mikado parfaitement lisse.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "charlize",
@@ -244,6 +258,7 @@ export const ROBES: Robe[] = [
     regard: "Un corset apparent, une fente haute et des gants de dentelle en option.",
     vues: 3,
     createur: "Casablanca Bridal",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "tessa",
@@ -253,6 +268,7 @@ export const ROBES: Robe[] = [
     regard: "Des fleurs de tissu sur une bretelle asymétrique, et une jupe qui s'enlève.",
     vues: 3,
     createur: "Casablanca Bridal",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "addison",
@@ -262,6 +278,7 @@ export const ROBES: Robe[] = [
     regard: "Le volume net du mikado ivoire, et de vraies poches.",
     vues: 3,
     createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "meredith",
@@ -271,6 +288,7 @@ export const ROBES: Robe[] = [
     regard: "Des fleurs en relief posées une à une, jusqu'au bas de la traîne.",
     vues: 3,
     createur: "Casablanca Bridal",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "clover",
@@ -280,6 +298,7 @@ export const ROBES: Robe[] = [
     regard: "Une robe courte brodée de fleurs de couleur, et une surjupe longue à volonté.",
     vues: 3,
     createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "solana",
@@ -288,7 +307,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Une épaule asymétrique et une petite veste de dentelle qui change tout.",
     vues: 3,
-    createur: "Olya Mak",
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "venus",
@@ -297,7 +317,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un crêpe mat sur le corps, une traîne de dentelle qui s'ouvre au sol.",
     vues: 3,
-    createur: "Olya Mak",
+    createur: "Casablanca Bridal",
+    morphos: ["H", "8", "X"],
   },
   {
     slug: "ariel",
@@ -306,7 +327,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un corset transparent brodé, et une cape de tulle qui suit la marche.",
     vues: 3,
-    createur: "Olya Mak",
+    createur: "Casablanca Bridal",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "montana",
@@ -315,7 +337,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Une encolure carrée très nette, et des manches de dentelle transparentes.",
     vues: 3,
-    createur: "Olya Mak",
+    createur: "Casablanca Bridal",
+    morphos: ["A", "H", "8", "X"],
   },
   {
     slug: "zina",
@@ -325,6 +348,7 @@ export const ROBES: Robe[] = [
     regard: "Un drapé qui tourne autour du corps, fermé au dos par un laçage.",
     vues: 3,
     createur: "Angeola Biarritz",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "sienna",
@@ -334,6 +358,7 @@ export const ROBES: Robe[] = [
     regard: "Une dentelle blush posée sur un fond nude : la couleur de la peau, en plus doux.",
     vues: 3,
     createur: "Angeola Biarritz",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "amandine",
@@ -360,6 +385,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Un bustier plongeant et un tulle qui accroche la lumière sans briller.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "dove",
@@ -368,6 +395,8 @@ export const ROBES: Robe[] = [
     categorie: "Minimaliste",
     regard: "Un satin ivoire, un dos nu, un voile — et rien de plus.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "finell",
@@ -376,6 +405,8 @@ export const ROBES: Robe[] = [
     categorie: "Minimaliste",
     regard: "Un bustier cœur et une jupe qui tombe droit, sans un pli de trop.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "ryle",
@@ -384,6 +415,8 @@ export const ROBES: Robe[] = [
     categorie: "Fluide",
     regard: "Des manches ballon en satin et un décolleté en V très profond.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "shiloh",
@@ -392,6 +425,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un dos entièrement ouvert entre deux manches de dentelle.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["A", "8", "X"],
   },
   {
     slug: "carrie",
@@ -400,6 +435,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Un tulle scintillant et un décolleté plongeant maintenu par deux fils.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "kensington",
@@ -408,6 +445,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un buste brodé et une jupe de mikado qui garde sa forme toute la soirée.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "maribel",
@@ -416,6 +455,8 @@ export const ROBES: Robe[] = [
     categorie: "Fluide",
     regard: "Un buste de dentelle sur une jupe de crêpe fendue.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "arden",
@@ -424,6 +465,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Une dentelle graphique et un dos plongeant jusqu'à la taille.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["V", "8", "X"],
   },
   {
     slug: "summer",
@@ -432,6 +475,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Une dentelle florale et une traîne large qui se déploie au sol.",
     vues: 3,
+    createur: "Casablanca Bridal",
+    morphos: ["V", "8", "X"],
   },
   {
     slug: "gabriel",
@@ -440,6 +485,8 @@ export const ROBES: Robe[] = [
     categorie: "Deux en un",
     regard: "Une robe courte en plumetis, une jupe transparente par-dessus.",
     vues: 3,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "emerald",
@@ -448,6 +495,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un bustier structuré sur des mètres de tulle plissé.",
     vues: 1,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "alicia",
@@ -512,7 +561,189 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un bustier corseté et des manches courtes en organza, portées sur l'épaule.",
     vues: 2,
+    createur: "Watters Designs",
+    morphos: ["V", "H", "8", "X"],
   },
+  {
+    slug: "nirali",
+    nom: "Nirali",
+    ligne: "Trapèze à taille basse, fleurs à l'encolure",
+    categorie: "Trapèze",
+    regard: "Des fleurs faites main, posées une à une le long de l'encolure droite.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "calla",
+    nom: "Calla",
+    ligne: "Trapèze en dentelle sur tulle souple",
+    categorie: "Trapèze",
+    regard: "La dentelle court sur le bustier corseté et s'arrête net à l'encolure ronde.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "fortune",
+    nom: "Fortune",
+    ligne: "Trapèze en crêpe et organza",
+    categorie: "Trapèze",
+    regard: "Un bustier sans bretelles, et la jupe qui s'ouvre d'un seul mouvement.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "siddalee",
+    nom: "Siddalee",
+    ligne: "Fourreau à motifs floraux, longue traîne",
+    categorie: "Fluide",
+    regard: "Une bretelle amovible sur l'épaule, et une traîne qui n'en finit pas.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "mitra",
+    nom: "Mitra",
+    ligne: "Princesse à taille basse, rubans de velours",
+    categorie: "Princesse",
+    regard: "Des rubans de velours posés à la naissance des drapés de la jupe.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "ember",
+    nom: "Ember",
+    ligne: "Princesse en dupion, bustier corseté",
+    categorie: "Princesse",
+    regard: "Un décolleté cœur entaillé d'un V, et la taille descendue très bas.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "rowan",
+    nom: "Rowan",
+    ligne: "Sirène en charmeuse, corset transparent",
+    categorie: "Sirène",
+    regard: "Un corset brodé que l'on voit à travers, sous une encolure drapée.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["V", "H", "8", "X"],
+  },
+  {
+    slug: "clover-perles",
+    nom: "Clover avec ou sans perles",
+    ligne: "Princesse en dentelle Caterina, perles à l'encolure",
+    categorie: "Princesse",
+    regard: "Une encolure carrée soulignée de perles, et la taille descendue sur la jupe.",
+    vues: 1,
+    createur: "Watters Designs",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "marie",
+    nom: "Marie",
+    ligne: "Fluide, ligne intemporelle",
+    categorie: "Fluide",
+    regard: "Rien qui accroche : la robe tombe, et c'est tout ce qu'elle fait.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "mathilda",
+    nom: "Mathilda",
+    ligne: "Fluide à taille haute",
+    categorie: "Fluide",
+    regard: "Une coupe pensée pour être portée enceinte sans rien changer à la ligne.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "murielle",
+    nom: "Murielle",
+    ligne: "Mousseline, dentelle florale et manches illusion",
+    categorie: "Fluide",
+    regard: "Un dos en V profond, et une fente qui ouvre la mousseline à chaque pas.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "mira",
+    nom: "Mira",
+    ligne: "Sirène en crêpe, fente haute",
+    categorie: "Sirène",
+    regard: "Des appliques de dentelle perlées qui accrochent la lumière au moindre geste.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["V", "H", "8", "X"],
+  },
+  {
+    slug: "monica",
+    nom: "Monica",
+    ligne: "Jacquard floral, ceinture large",
+    categorie: "Trapèze",
+    regard: "Une ceinture large qui marque la taille, et la jupe qui s'ouvre en dessous.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "milan",
+    nom: "Milan",
+    ligne: "Crêpe léger, fente moderne",
+    categorie: "Minimaliste",
+    regard: "Aucun ornement : une ligne nette, et la fente pour seule audace.",
+    vues: 1,
+    createur: "Monica Loretti",
+    morphos: ["H", "8", "X"],
+  },
+  {
+    slug: "chastity",
+    nom: "Chastity",
+    ligne: "Dentelle et manches longues, volume amovible",
+    categorie: "Deux en un",
+    regard: "Un col haut, de la dentelle jusqu'aux poignets, et le volume qui part des hanches.",
+    vues: 1,
+    createur: "Olya Mak",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "river",
+    nom: "River",
+    ligne: "Courte, ligne sculptée",
+    categorie: "Trapèze",
+    regard: "Une coupe qui tient toute seule, sans un pli de trop.",
+    vues: 1,
+    createur: "Olya Mak",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "seraphina",
+    nom: "Seraphina",
+    ligne: "Princesse en dentelle brodée main",
+    categorie: "Princesse",
+    regard: "Chaque fleur de dentelle est posée à la main sur un bustier transparent.",
+    vues: 1,
+    createur: "Olya Mak",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "elin",
+    nom: "Elin",
+    ligne: "Courte en crêpe, pour la mairie",
+    categorie: "Minimaliste",
+    regard: "Faite pour la cérémonie civile : nette, légère, sans traîne.",
+    vues: 1,
+    createur: "Olya Mak",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  }
 ];
 
 export function robeParSlug(slug: string): Robe | undefined {
