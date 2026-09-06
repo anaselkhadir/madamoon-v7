@@ -21,12 +21,13 @@ import AppelElise from "@/components/AppelElise";
  * hauteur.
  *
  * Trois entrées ouvrent un panneau : les robes par maison, les six
- * coupes, les six morphologies. Le panneau est en verre — la même classe
- * que le panneau d'Élise, dont l'opacité a été mesurée sur le film du
- * hero pour que l'encre y reste au-dessus du seuil AA. Tant qu'il est
- * ouvert, la barre reprend son fond plein : un texte blanc sur la vidéo
- * au-dessus d'un texte encre sur du verre ne se lit pas comme un seul
- * en-tête.
+ * coupes, les six morphologies. Il est blanc plein, sans effet — le reste
+ * du site n'en a aucun, et un texte se lit mieux sur du blanc que sur
+ * n'importe quel verre.
+ *
+ * Tant qu'il est ouvert, la barre reprend son fond plein elle aussi : sur
+ * l'accueil elle est blanche sur la vidéo, et son texte blanc
+ * disparaîtrait au-dessus d'un panneau blanc.
  */
 
 /*
@@ -252,7 +253,7 @@ export default function Entete() {
         {mega && GROUPES[mega] && (
           <div
             id="mega-navigation"
-            className="verre hidden border-b border-fil lg:block"
+            className="hidden border-b border-fil bg-blanc text-encre lg:block"
           >
             <div className="gouttiere py-[clamp(1.75rem,3vw,2.75rem)]">
               <p className="legende">{GROUPES[mega].intitule}</p>
@@ -263,9 +264,7 @@ export default function Entete() {
                       <span className="block font-serif text-[1.375rem] leading-tight text-encre transition-colors duration-500 group-hover:text-action">
                         {x.nom}
                       </span>
-                      {x.note && (
-                        <span className="texte mt-1 block text-plomb">{x.note}</span>
-                      )}
+                      {x.note && <span className="texte mt-1 block text-plomb">{x.note}</span>}
                     </Link>
                   </li>
                 ))}
