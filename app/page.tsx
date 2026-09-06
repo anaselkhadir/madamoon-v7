@@ -5,7 +5,6 @@ import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
-import Rendezvous from "@/components/accueil/Rendezvous";
 
 /*
  * L'accueil.
@@ -44,7 +43,6 @@ export default function Accueil() {
       <Createurs />
       <Avis />
       <Showroom />
-      <Rendezvous />
     </>
   );
 }

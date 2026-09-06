@@ -8,7 +8,6 @@ import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import CoupesFixes, { type Station } from "@/components/morphologie/CoupesFixes";
 import Showroom from "@/components/accueil/Showroom";
-import Rendezvous from "@/components/accueil/Rendezvous";
 import {
   MAISON,
   MORPHOLOGIES,
@@ -406,7 +405,6 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
 
       {/* ————————————————————————————— 07 · la boutique ————— */}
       <Showroom />
-      <Rendezvous />
     </>
   );
 }

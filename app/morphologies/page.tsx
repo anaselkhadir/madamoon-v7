@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AppelElise from "@/components/AppelElise";
 import TitreSection from "@/components/TitreSection";
-import Rendezvous from "@/components/accueil/Rendezvous";
 import { MORPHOLOGIES } from "@/lib/madamoon";
 
 /*
@@ -67,7 +66,6 @@ export default function Morphologies() {
           </div>
         </div>
       </div>
-      <Rendezvous />
     </>
   );
 }

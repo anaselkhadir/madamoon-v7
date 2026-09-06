@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
-import Rendezvous from "@/components/accueil/Rendezvous";
 import { FAMILLES, ROBES } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
@@ -59,7 +58,6 @@ export default function Coupes() {
           </div>
         </div>
       </div>
-      <Rendezvous />
     </>
   );
 }

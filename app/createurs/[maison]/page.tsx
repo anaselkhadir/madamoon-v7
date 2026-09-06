@@ -5,7 +5,6 @@ import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
-import Rendezvous from "@/components/accueil/Rendezvous";
 import {
   CREATEURS,
   FAMILLES,
@@ -205,7 +204,6 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
       )}
 
       <Showroom />
-      <Rendezvous />
     </>
   );
 }

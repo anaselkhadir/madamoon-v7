@@ -5,7 +5,6 @@ import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
-import Rendezvous from "@/components/accueil/Rendezvous";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { APPOSITION, COUPES, PLURIEL, coupeParAncre } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
@@ -181,7 +180,6 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
       )}
 
       <Showroom />
-      <Rendezvous />
     </>
   );
 }

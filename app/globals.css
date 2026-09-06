@@ -184,7 +184,6 @@ body {
 /* 40 px de haut, 24 px de part et d'autre, 12 px de capitales. */
 .bouton,
 .bouton-clair,
-.bouton-sur-rouge,
 .bouton-trait {
   display: inline-flex;
   align-items: center;
@@ -223,32 +222,16 @@ body {
   color: var(--color-blanc);
 }
 
-/* La bande rouge.
+/* Sur une photographie.
  *
- * Les styles de titre portent leur propre couleur ; sur le rouge, il faut
- * donc la reprendre explicitement — un utilitaire ne suffirait pas, les
- * règles écrites ici ne sont pas calquées et l'emportent sur lui. */
+ * Les styles de titre portent leur propre couleur ; sur une image, il
+ * faut donc la reprendre explicitement — un utilitaire n'y suffirait
+ * pas, ces règles ne sont pas calquées et l'emportent sur lui.
+ *
+ * Il n'en reste qu'une : les règles descendantes et le bouton blanc
+ * servaient à la bande rouge de bas de page, retirée du site. */
 .sur-rouge {
   color: var(--color-blanc);
-}
-.sur-rouge .phrase {
-  color: var(--color-blanc);
-}
-.sur-rouge .legende {
-  color: rgba(255, 255, 255, 0.72);
-}
-.sur-rouge .lien-nav {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-/* Sur le rouge de la maison : le bouton devient blanc, et c'est le texte
- * qui porte le rouge. */
-.bouton-sur-rouge {
-  background: var(--color-blanc);
-  color: var(--color-action);
-}
-.bouton-sur-rouge:hover {
-  background: var(--color-craie);
 }
 
 /*
