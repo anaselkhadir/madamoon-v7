@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { MAISON, CREATEURS, MORPHOLOGIES } from "@/lib/madamoon";
-import { COUPES } from "@/lib/coupes";
+import { useEffect, useMemo, useState } from "react";
+import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES } from "@/lib/madamoon";
+import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 
@@ -94,18 +94,54 @@ const DROITE = [
   { href: "/a-propos", label: "La maison" },
 ];
 
-const MENU = [
-  { href: "/", label: "Accueil" },
+/*
+ * Le menu montre le catalogue, pas la barre.
+ *
+ * Répéter les entrées de la navigation ne servait à rien : elles sont
+ * déjà là, à trois centimètres. Le menu donne donc ce que la barre ne
+ * peut pas donner — les robes elles-mêmes, par leur nom, rangées par
+ * maison ou par coupe. C'est ce que font les maisons qui vendent
+ * vraiment : on y entre par un modèle, pas par une rubrique.
+ *
+ * Les liens de rubrique restent en bas, en petit. Sous mille vingt-quatre
+ * pixels la barre ne montre plus que le sigle et le rendez-vous : sans
+ * eux, le showroom et la maison seraient hors d'atteinte au doigt.
+ */
+const RACCOURCIS = [
   { href: "/robes", label: "Toutes les robes" },
   { href: "/coupes", label: "Les coupes" },
   { href: "/morphologies", label: "Les morphologies" },
-  /* Celle-ci n'a pas d'adresse : elle ouvre Élise. La maison, s'il y en a
-   * une, vient de la page où l'on se trouve. */
   { href: "", label: "Trouver ma robe" },
   { href: "/showroom", label: "Le showroom" },
   { href: "/a-propos", label: "La maison" },
   { href: "/rendez-vous", label: "Prendre rendez-vous" },
 ];
+
+type Groupe = { titre: string; href: string; robes: (typeof ROBES)[number][] };
+
+/* Par maison. Les modèles dont la maison n'est pas renseignée finissent
+ * dans un dernier groupe : les taire reviendrait à les retirer du
+ * catalogue. */
+function parCreateur(): Groupe[] {
+  const groupes = CREATEURS.map((c) => ({
+    titre: c.nom,
+    href: `/createurs/${c.slug}`,
+    robes: ROBES.filter((r) => r.createur === c.nom),
+  })).filter((g) => g.robes.length > 0);
+  const orphelines = ROBES.filter((r) => !r.createur);
+  if (orphelines.length > 0) {
+    groupes.push({ titre: "Autres modèles", href: "/robes", robes: orphelines });
+  }
+  return groupes;
+}
+
+function parCoupe(): Groupe[] {
+  return CATEGORIES.map((c) => ({
+    titre: c,
+    href: `/coupes/${familleDeCoupe(c).ancre}`,
+    robes: ROBES.filter((r) => r.categorie === c),
+  })).filter((g) => g.robes.length > 0);
+}
 
 export default function Entete() {
   const chemin = usePathname();
@@ -113,6 +149,14 @@ export default function Entete() {
   const [ouvert, setOuvert] = useState(false);
   /* L'entrée dont le panneau est déplié. */
   const [mega, setMega] = useState<string | null>(null);
+  /* Comment le menu range les robes. */
+  const [classement, setClassement] = useState<"createur" | "coupe">("createur");
+  /* Les groupes se recalculent au changement de classement, jamais à
+   * chaque rendu : la liste ne bouge pas, elle vient des données. */
+  const groupes = useMemo(
+    () => (classement === "createur" ? parCreateur() : parCoupe()),
+    [classement]
+  );
 
   /* L'accueil est la seule page qui commence par une image plein cadre. */
   const surImage = chemin === "/" && !pose && !ouvert && !mega;
@@ -361,12 +405,65 @@ export default function Entete() {
         {/* « min-h-full » sur le bloc intérieur : il se centre tant qu'il
           * tient, et pousse la barre de défilement dès qu'il déborde. */}
         <div className="gouttiere flex-1 overflow-y-auto overscroll-contain">
-          <div className="flex min-h-full flex-col justify-center gap-6 py-8">
-            <nav aria-label="Menu">
-              <ul className="flex flex-col gap-1">
-                {MENU.map((l) => {
+          {/* Le bloc ne se centre plus : un catalogue se lit du haut. */}
+          <div className="flex min-h-full flex-col py-[clamp(1.5rem,3vw,2.5rem)]">
+            {/* ————— le classement ————— */}
+            <div className="flex items-baseline gap-6" role="group" aria-label="Classer les robes">
+              {(["createur", "coupe"] as const).map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  onClick={() => setClassement(c)}
+                  aria-pressed={classement === c}
+                  className={`lien-nav souligne transition-colors duration-500 ${
+                    classement === c ? "text-encre" : "text-brume hover:text-plomb"
+                  }`}
+                  data-actif={classement === c}
+                >
+                  {c === "createur" ? "Par créateur" : "Par coupe"}
+                </button>
+              ))}
+              <span className="legende ml-auto text-brume">{ROBES.length} modèles</span>
+            </div>
+
+            {/* ————— le catalogue ————— */}
+            <nav aria-label="Le catalogue" className="mt-[clamp(1.5rem,3vw,2.5rem)]">
+              <div /* Six colonnes au plus large : les deux classements comptent
+                  * six groupes — cinq maisons plus les modèles sans maison, et
+                  * les six coupes. À cinq, le dernier retombait seul sur une
+                  * ligne. */
+                className="grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+                {groupes.map((g) => (
+                  <div key={g.titre}>
+                    <Link
+                      href={g.href}
+                      className="legende souligne block text-encre transition-colors duration-500 hover:text-action"
+                    >
+                      {g.titre}
+                    </Link>
+                    <ul className="mt-4 flex flex-col">
+                      {g.robes.map((r) => (
+                        <li key={r.slug}>
+                          <Link
+                            href={`/robes/${r.slug}`}
+                            className="block py-[0.3rem] font-serif text-[1.0625rem] leading-tight text-plume transition-colors duration-500 hover:text-action"
+                          >
+                            {r.nom}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </nav>
+
+            {/* ————— les rubriques, en pied ————— */}
+            <div className="mt-auto border-t border-fil pt-6">
+              <ul className="flex flex-wrap items-center gap-x-7 gap-y-3">
+                {RACCOURCIS.map((l) => {
                   const habits =
-                    "nom-image block py-1 text-left text-encre transition-colors duration-500 hover:text-action";
+                    "lien-nav souligne text-plomb transition-colors duration-500 hover:text-encre";
                   return (
                     <li key={l.label}>
                       {l.href ? (
@@ -380,33 +477,15 @@ export default function Entete() {
                   );
                 })}
               </ul>
-            </nav>
-
-            {/* Les maisons. Le bandeau qui les porte est masqué sous 768 px :
-              * sans cette liste, leurs pages seraient hors d'atteinte au
-              * doigt. */}
-            <p className="legende mt-8">Les maisons</p>
-            <ul className="mt-2 flex flex-col gap-1">
-              {CREATEURS.map((c) => (
-                <li key={c.slug}>
-                  <Link
-                    href={`/createurs/${c.slug}`}
-                    className="mention block py-1 text-plomb transition-colors duration-500 hover:text-action"
-                  >
-                    {c.nom}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 flex flex-col gap-1">
-              <a href={MAISON.telephoneHref} className="legende text-encre">
-                {MAISON.telephone}
-              </a>
-              <span className="legende">
-                {MAISON.adresse} — {MAISON.codePostal} {MAISON.ville}
-              </span>
-          </div>
+              <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-2">
+                <a href={MAISON.telephoneHref} className="legende text-encre">
+                  {MAISON.telephone}
+                </a>
+                <span className="legende">
+                  {MAISON.adresse} — {MAISON.codePostal} {MAISON.ville}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
