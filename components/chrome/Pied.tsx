@@ -14,7 +14,11 @@ import { media as chemin } from "@/lib/chemin";
 export default function Pied() {
   return (
     <footer className="gouttiere border-t border-fil bg-blanc pb-10 pt-[clamp(3rem,5vw,4.5rem)]">
-      <div className="grid gap-10 md:grid-cols-4">
+      {/* Deux colonnes avant mille vingt-quatre pixels, quatre au-delà.
+        * À quatre dès sept cent soixante-huit, la colonne du rendez-vous
+        * était plus étroite que son bouton — celui-ci ne se coupe pas, et
+        * la page gagnait seize pixels de défilement latéral. */}
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

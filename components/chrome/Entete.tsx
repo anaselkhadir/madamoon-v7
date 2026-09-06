@@ -269,7 +269,7 @@ export default function Entete() {
                   <span className="block h-px w-4 bg-current" />
                   <span className="block h-px w-4 bg-current" />
                 </span>
-                <span className="max-sm:sr-only">Menu</span>
+                Menu
               </button>
 
               <ul className="ml-auto hidden items-center gap-8 lg:flex">
@@ -297,13 +297,11 @@ export default function Entete() {
             <Link
               href="/"
               aria-label="MADAMOON, accueil"
-              /* Centré au milieu de la page à partir de trois cent
-                * soixante-huit pixels. En dessous, la moitié du sigle
-                * plus le bouton rouge dépassent la demi-largeur moins la
-                * gouttière : le centrage ferait forcément un
-                * chevauchement. Les trois éléments se répartissent alors
-                * simplement, ce qui reste juste et ne casse rien. */
-              className="min-[368px]:absolute min-[368px]:left-1/2 min-[368px]:top-1/2 min-[368px]:-translate-x-1/2 min-[368px]:-translate-y-1/2"
+              /* Centré au milieu de la page, à toutes les largeurs. Le
+                * seuil qui existait ici n'a plus lieu d'être : le bouton
+                * rouge, seul à disputer la place au sigle, ne paraît plus
+                * sur téléphone. */
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -340,10 +338,18 @@ export default function Entete() {
                 })}
               </ul>
 
-              {/* Le même bouton rouge que dans le hero. */}
-              <Link href="/rendez-vous" className="bouton bouton-barre ml-auto shrink-0">
-                Rendez-vous
-              </Link>
+              {/* Le même bouton rouge que dans le hero. Il ne paraît pas
+                * sur téléphone : le menu et le pied de page y mènent
+                * déjà, et il y prenait le tiers de la barre.
+                *
+                * C'est l'enveloppe que l'on masque, pas le bouton :
+                * « .bouton » pose son « display » hors calque et
+                * l'emporterait sur l'utilitaire. */}
+              <span className="ml-auto hidden shrink-0 md:block">
+                <Link href="/rendez-vous" className="bouton bouton-barre">
+                  Rendez-vous
+                </Link>
+              </span>
             </div>
           </nav>
         </div>
