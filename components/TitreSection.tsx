@@ -22,6 +22,9 @@ type Props = {
   id?: string;
   niveau?: 1 | 2;
   lien?: { href: string; label: string };
+  /* Sans gouttière ni retrait haut : l'intitulé est alors posé dans une
+   * colonne qui porte déjà ses propres marges, et non en tête de section. */
+  nu?: boolean;
   className?: string;
 };
 
@@ -31,12 +34,15 @@ export default function TitreSection({
   href,
   niveau = 2,
   lien,
+  nu = false,
   className = "",
 }: Props) {
   const H = niveau === 1 ? "h1" : "h2";
   return (
     <div
-      className={`gouttiere flex items-baseline justify-between gap-6 pb-3 pt-[clamp(3rem,5.5vw,5rem)] ${className}`}
+      className={`flex items-baseline justify-between gap-6 pb-3 ${
+        nu ? "" : "gouttiere pt-[clamp(3rem,5.5vw,5rem)]"
+      } ${className}`}
     >
       <span data-ligne className="block">
         <H id={id} className="titre-section">

@@ -28,9 +28,7 @@ export default function Rendezvous() {
           <h2 id="rendez-vous" className="legende">
             Essayage privé
           </h2>
-          <p className="phrase mesure-l mt-4">
-            Venez essayer. C&apos;est là que tout se décide.
-          </p>
+          <p className="phrase mesure-l mt-4">Le reste se décide en robe.</p>
         </div>
         <div className="flex flex-col items-start gap-4 md:col-start-4" data-lever data-retard="200">
           <Link href="/rendez-vous" className="bouton-sur-rouge">

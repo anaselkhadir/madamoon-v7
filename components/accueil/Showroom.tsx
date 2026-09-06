@@ -1,64 +1,66 @@
 import Link from "next/link";
-import TitreSection from "@/components/TitreSection";
 import Photo from "@/components/media/Photo";
 import { SCENES } from "@/lib/medias";
-import { MAISON } from "@/lib/madamoon";
 import { altScene } from "@/lib/alt";
 
 /*
  * Le showroom.
  *
- * Une grande photographie, un texte court, un lien discret — le schéma de
- * la référence pour ses boutiques. Les informations utiles (adresse,
- * horaires) sont données une fois, sans paragraphe.
+ * Le passage de l'écran au réel. Après les paroles des mariées, une
+ * porte — celle du 234, rue du Faubourg Saint-Martin — sur toute la
+ * largeur, et trois lignes.
+ *
+ * L'adresse et les horaires ne sont plus ici : ils sont dans le pied de
+ * page, et sur la page du showroom. Les répéter en tête d'une image
+ * pleine page en ferait un encadré de renseignements, ce qui est
+ * exactement le contraire de l'effet recherché.
+ *
+ * L'image se rapproche très lentement, quarante secondes pour six pour
+ * cent. On ne le voit pas ; on sent seulement que l'image n'est pas
+ * morte. Le voile est un dégradé, comme sur le hero : il ne teinte pas
+ * la photographie, il tient le texte lisible dans son coin.
  */
 
 export default function Showroom() {
   return (
-    <section aria-labelledby="showroom">
-      <TitreSection id="showroom" titre="Le showroom" />
-      <div className="gouttiere">
-        <div className="grid gap-x-10 gap-y-8 md:grid-cols-[1.55fr_1fr] md:items-end">
-          <div className="relative overflow-hidden" data-rideau>
-            <Photo
-              media={SCENES["showroom"]}
-              dossier="scenes"
-              alt={altScene("Robes de mariée suspendues dans la lumière du showroom")}
-              sizes="(max-width: 768px) 100vw, 60vw"
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div>
-            <p className="phrase">
-              Une heure, le showroom pour vous seule, et quelqu&apos;un qui connaît
-              chaque robe.
-            </p>
-            <dl className="mt-8 flex flex-col gap-3">
-              <div>
-                <dt className="legende">Adresse</dt>
-                <dd className="texte">
-                  {MAISON.adresse}
-                  <br />
-                  {MAISON.codePostal} {MAISON.ville}
-                </dd>
-              </div>
-              <div>
-                <dt className="legende">Horaires</dt>
-                <dd className="texte">
-                  {MAISON.horaires.map((h) => (
-                    <span key={h.jour} className="block">
-                      {h.jour} — {h.heures}
-                    </span>
-                  ))}
-                  <span className="block text-plomb">{MAISON.mentionHoraires}</span>
-                </dd>
-              </div>
-            </dl>
-            <Link href="/showroom" className="bouton-trait mt-8">
-              Découvrir le showroom
-            </Link>
-          </div>
-        </div>
+    <section
+      aria-labelledby="showroom"
+      className="relative h-[92svh] min-h-[32rem] overflow-hidden"
+    >
+      <div className="absolute inset-0 respire">
+        <Photo
+          media={SCENES["seuil"]}
+          dossier="scenes"
+          alt={altScene("L'entrée du showroom MADAMOON, rue du Faubourg Saint-Martin")}
+          sizes="100vw"
+          position="50% 42%"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <span
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(10deg, rgba(0,0,0,0.56) 0%, rgba(0,0,0,0.24) 42%, rgba(0,0,0,0) 76%)",
+        }}
+      />
+
+      <div className="gouttiere absolute inset-x-0 bottom-0 pb-[clamp(3rem,7vw,6rem)]">
+        <p className="legende text-blanc/70">Le showroom — Paris 10<sup>e</sup></p>
+        <span data-ligne className="mt-4 block">
+          <h2 id="showroom" className="affiche max-w-[18ch] text-blanc">
+            Poussez la porte
+          </h2>
+        </span>
+        <p className="accroche mesure-l mt-5 text-blanc">
+          Une heure, le showroom pour vous seule, et quelqu&apos;un qui connaît
+          chaque robe.
+        </p>
+        <Link href="/showroom" className="bouton-clair mt-7">
+          Découvrir le showroom
+        </Link>
       </div>
     </section>
   );

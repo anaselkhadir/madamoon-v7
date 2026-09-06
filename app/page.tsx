@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Hero from "@/components/accueil/Hero";
-import RobesEnRoue from "@/components/accueil/RobesEnRoue";
-import Cercle from "@/components/accueil/Cercle";
-import Dos from "@/components/accueil/Dos";
+import Silhouette from "@/components/accueil/Silhouette";
+import Coupes from "@/components/accueil/Coupes";
+import RobesEnScene from "@/components/accueil/RobesEnScene";
+import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
 import Rendezvous from "@/components/accueil/Rendezvous";
@@ -10,13 +11,21 @@ import Rendezvous from "@/components/accueil/Rendezvous";
 /*
  * L'accueil.
  *
- * Le rythme de la référence : une image plein cadre, puis des sections
- * courtes séparées par un intitulé en capitales. Chaque scène apporte une
- * image nouvelle — aucune n'est là pour occuper un écran.
+ * Une seule phrase, en sept temps : on entre par une image, on comprend
+ * sa ligne, on voit ce qu'une coupe en fait, on regarde les robes, on
+ * apprend qui les dessine, on écoute celles qui les ont portées, on
+ * pousse la porte. Puis on prend rendez-vous.
  *
- * Le hero et « Nos robes de mariée » partagent une boîte : c'est elle qui
- * borne le collant du hero. Celui-ci ne bouge pas et ne change pas
- * d'apparence — ni flou, ni fondu, ni voile — pendant que la roue remonte
+ * L'ordre n'est jamais énoncé — il est seulement tenu. Chaque scène
+ * répond à un geste différent : le défilement conduit la silhouette, la
+ * main conduit les coupes, les robes tournent seules, la bande des
+ * maisons dérive, les paroles montent une à une. Deux scènes voisines
+ * qui obéissent au même geste finissent par se ressembler, quelles que
+ * soient leurs images.
+ *
+ * Le hero et la silhouette partagent une boîte : c'est elle qui borne le
+ * collant du hero. Celui-ci ne bouge pas et ne change pas d'apparence —
+ * ni flou, ni fondu, ni voile — pendant que la silhouette remonte
  * par-dessus, portée par son propre fond blanc.
  */
 
@@ -32,10 +41,11 @@ export default function Accueil() {
     <>
       <div className="relative">
         <Hero />
-        <RobesEnRoue />
+        <Silhouette />
       </div>
-      <Cercle />
-      <Dos />
+      <Coupes />
+      <RobesEnScene />
+      <Createurs />
       <Avis />
       <Showroom />
       <Rendezvous />
