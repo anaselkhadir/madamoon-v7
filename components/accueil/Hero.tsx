@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { SCENES } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
+import Link from "next/link";
 import Bandeau from "@/components/accueil/Bandeau";
 import AppelElise from "@/components/AppelElise";
 import { altScene } from "@/lib/alt";
@@ -197,7 +198,16 @@ export default function Hero() {
             *
             * Il n'emmène nulle part — il ouvre Élise, qui part de la
             * silhouette. Sans maison ici : l'accueil ne filtre rien. */}
-          <AppelElise className="bouton mt-6">Trouver ma robe</AppelElise>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <AppelElise className="bouton">Trouver ma robe</AppelElise>
+            {/* Le second geste, en blanc : celle qui sait déjà ce qu'elle
+              * vient chercher n'a pas à passer par Élise. Même adresse
+              * que la navigation et que le bas de page — le site n'a
+              * qu'une porte pour le rendez-vous. */}
+            <Link href="/rendez-vous" className="bouton-clair">
+              Prendre rendez-vous
+            </Link>
+          </div>
         </div>
       </div>
 
