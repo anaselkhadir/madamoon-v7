@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/accueil/Hero";
 import Silhouette from "@/components/accueil/Silhouette";
 import Coupes from "@/components/accueil/Coupes";
-import RobesEnScene from "@/components/accueil/RobesEnScene";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
@@ -11,17 +10,15 @@ import Rendezvous from "@/components/accueil/Rendezvous";
 /*
  * L'accueil.
  *
- * Une seule phrase, en sept temps : on entre par une image, on comprend
- * sa ligne, on voit ce qu'une coupe en fait, on regarde les robes, on
- * apprend qui les dessine, on écoute celles qui les ont portées, on
- * pousse la porte. Puis on prend rendez-vous.
+ * Une seule phrase, en six temps : on entre par une image, on comprend
+ * sa ligne, on voit ce qu'une coupe en fait, on apprend qui dessine les
+ * robes, on écoute celles qui les ont portées, on pousse la porte. Puis
+ * on prend rendez-vous.
  *
- * L'ordre n'est jamais énoncé — il est seulement tenu. Chaque scène
- * répond à un geste différent : le défilement conduit la silhouette, la
- * main conduit les coupes, les robes tournent seules, la bande des
- * maisons dérive, les paroles montent une à une. Deux scènes voisines
- * qui obéissent au même geste finissent par se ressembler, quelles que
- * soient leurs images.
+ * L'ordre n'est jamais énoncé — il est seulement tenu. Les robes elles-
+ * mêmes ne sont pas montrées ici : on y arrive par une coupe ou par une
+ * maison, ce qui vaut mieux qu'une vitrine de plus. L'accueil présente
+ * des façons de chercher, pas un catalogue.
  *
  * Le hero et la silhouette partagent une boîte : c'est elle qui borne le
  * collant du hero. Celui-ci ne bouge pas et ne change pas d'apparence —
@@ -44,7 +41,6 @@ export default function Accueil() {
         <Silhouette />
       </div>
       <Coupes />
-      <RobesEnScene />
       <Createurs />
       <Avis />
       <Showroom />
