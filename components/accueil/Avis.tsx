@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AVIS, DISTINCTION, NOTE } from "@/lib/avis";
-import { MAISON, SITE_URL } from "@/lib/madamoon";
+import { ID_MAISON } from "@/lib/schema";
 
 /*
  * Ce qu'elles en disent.
@@ -38,11 +38,16 @@ export default function Avis() {
   );
   if (voix.length === 0) return null;
 
+  /*
+   * La note et les avis se raccrochent à l'entité du gabarit par son
+   * « @id », au lieu de déclarer une seconde maison. Deux nœuds de même
+   * identité se fondent en un ; deux nœuds sans identité commune font
+   * deux commerces, et la note n'est alors rattachée à rien.
+   */
   const donnees = {
     "@context": "https://schema.org",
     "@type": "BridalShop",
-    name: MAISON.nom,
-    url: SITE_URL,
+    "@id": ID_MAISON,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: NOTE.moyenne,

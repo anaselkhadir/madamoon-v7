@@ -7,7 +7,8 @@ import Elise from "@/components/Elise";
 import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Mouvement from "@/components/Mouvement";
-import { MAISON, SITE_URL } from "@/lib/madamoon";
+import { SITE_URL } from "@/lib/madamoon";
+import { MAISON_SCHEMA } from "@/lib/schema";
 import { APERCU } from "@/lib/chemin";
 
 /*
@@ -70,25 +71,7 @@ export const viewport: Viewport = {
 };
 
 /* Les données structurées de la boutique : une seule source, la maison. */
-const DONNEES = {
-  "@context": "https://schema.org",
-  "@type": "BridalShop",
-  name: MAISON.nom,
-  description: MAISON.baseline,
-  url: SITE_URL,
-  telephone: MAISON.telephone,
-  email: MAISON.email,
-  priceRange: "€€€",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: MAISON.adresse,
-    postalCode: MAISON.codePostal,
-    addressLocality: MAISON.ville,
-    addressCountry: "FR",
-  },
-  openingHours: ["Mo 12:00-21:00", "Tu-Sa 10:00-19:00"],
-  sameAs: MAISON.reseaux.map((r) => r.href),
-};
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -98,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(DONNEES) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(MAISON_SCHEMA) }}
         />
       </head>
       <body>
