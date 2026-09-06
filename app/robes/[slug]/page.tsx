@@ -11,7 +11,7 @@ import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
-import { offreRobe } from "@/lib/schema";
+import { epingleRobe, offreRobe } from "@/lib/schema";
 
 /*
  * La fiche d'une robe.
@@ -51,10 +51,43 @@ export async function generateMetadata({
   const { slug } = await params;
   const robe = ROBES.find((r) => r.slug === slug);
   if (!robe) return {};
+
+  const epingle = epingleRobe({
+    slug: robe.slug,
+    nom: robe.nom,
+    ligne: robe.ligne,
+    regard: robe.regard,
+    createur: robe.createur,
+    media: vues(robe.slug)[0],
+    alt: altRobe(robe),
+  });
+
   return {
     title: `Robe de mariée ${robe.nom} — ${robe.ligne}`,
     description: `${robe.nom} : ${robe.ligne.toLowerCase()}. ${robe.regard} À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
     alternates: { canonical: `/robes/${robe.slug}` },
+    /*
+     * L'Open Graph du gabarit est écarté ici, et réécrit dans la page.
+     *
+     * Une épingle enrichie demande « og:type: product », que l'API de
+     * Next ne sait pas produire — son type n'accepte que « website »,
+     * « article » et quelques autres. Laisser l'héritage en place
+     * donnerait deux « og:type » contradictoires sur la même page ; on le
+     * coupe donc, et l'on écrit les balises à la main, avec « property »
+     * comme le veut le protocole.
+     *
+     * La carte Twitter, elle, doit être écrite : Next la déduisait de
+     * l'Open Graph hérité, et la couper la faisait disparaître. On la
+     * reprend en grand format, ce qui vaut mieux qu'une vignette pour une
+     * robe entière.
+     */
+    openGraph: null,
+    twitter: {
+      card: "summary_large_image",
+      title: epingle.titre,
+      description: epingle.description,
+      images: epingle.image ? [epingle.image.url] : undefined,
+    },
   };
 }
 
@@ -86,12 +119,58 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
     offers: offreRobe(robe.slug),
   };
 
+  const epingle = epingleRobe({
+    slug: robe.slug,
+    nom: robe.nom,
+    ligne: robe.ligne,
+    regard: robe.regard,
+    createur: robe.createur,
+    media: photos[0],
+    alt: altRobe(robe),
+  });
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
+
+      {/*
+        * L'épingle Pinterest.
+        *
+        * Écrites ici plutôt que par l'API de Next : celle-ci ne sait pas
+        * produire « og:type: product », et n'émet ses balises qu'avec
+        * « name » là où le protocole demande « property ». React les
+        * remonte dans l'en-tête depuis n'importe où dans l'arbre.
+        *
+        * Le prix est le plancher. La description dit « à partir de »,
+        * parce qu'une épingle n'affiche qu'un nombre et qu'un nombre seul
+        * se lirait comme un prix ferme.
+        */}
+      <meta property="og:type" content="product" />
+      <meta property="og:site_name" content={MAISON.nom} />
+      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:url" content={epingle.url} />
+      <meta property="og:title" content={epingle.titre} />
+      <meta property="og:description" content={epingle.description} />
+      {epingle.image && (
+        <>
+          <meta property="og:image" content={epingle.image.url} />
+          <meta property="og:image:secure_url" content={epingle.image.url} />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content={String(epingle.image.largeur)} />
+          <meta property="og:image:height" content={String(epingle.image.hauteur)} />
+          <meta property="og:image:alt" content={epingle.image.alt} />
+        </>
+      )}
+      <meta property="product:price:amount" content={String(epingle.prix)} />
+      <meta property="product:price:currency" content="EUR" />
+      <meta property="product:availability" content="in stock" />
+      <meta property="product:condition" content="new" />
+      <meta property="product:retailer_item_id" content={epingle.reference} />
+      <meta property="product:category" content={`Robe de mariée ${robe.categorie.toLowerCase()}`} />
+      {epingle.marque && <meta property="product:brand" content={epingle.marque} />}
 
       {/* ————————————————————————————— le premier écran —————
         * L'image plein cadre, et le nom posé dedans. Inchangé : c'est

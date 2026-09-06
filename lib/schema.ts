@@ -165,3 +165,59 @@ export const MAISON_SCHEMA = {
     result: { "@type": "Reservation", name: "Essayage privé" },
   },
 };
+
+/*
+ * L'épingle d'une robe.
+ *
+ * Pinterest lit les balises Open Graph de type « product » pour fabriquer
+ * une épingle enrichie : le nom, le prix, la disponibilité et le lien
+ * reviennent alors sous la photographie, et suivent l'épingle partout où
+ * elle est repartagée.
+ *
+ * Le prix déclaré est le plancher, le même que partout ailleurs. La
+ * description le dit en toutes lettres — « à partir de » — parce qu'une
+ * épingle n'affiche qu'un nombre, et qu'un nombre seul se lirait comme un
+ * prix ferme. Une robe sur mesure n'en a pas.
+ *
+ * L'image est le plus grand JPEG disponible : Pinterest préfère ce format
+ * à l'AVIF et au WebP, et il lui faut six cents pixels de large au
+ * minimum. Les hauteurs sont recalculées depuis le rapport de la source —
+ * une épingle sans dimensions déclarées est recadrée à l'aveugle.
+ */
+export type EpingleRobe = {
+  titre: string;
+  description: string;
+  url: string;
+  image?: { url: string; largeur: number; hauteur: number; alt: string };
+  marque?: string;
+  reference: string;
+  prix: number;
+};
+
+export function epingleRobe(o: {
+  slug: string;
+  nom: string;
+  ligne: string;
+  regard: string;
+  createur?: string;
+  media?: { name: string; w: number; h: number; jpgw: number[] };
+  alt: string;
+}): EpingleRobe {
+  const large = o.media ? Math.max(...o.media.jpgw) : 0;
+  return {
+    titre: `Robe de mariée ${o.nom} — ${o.ligne}`,
+    description: `${o.regard} Sur mesure, retouches incluses, à partir de ${MAISON.prixDepart}. À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
+    url: `${SITE_URL}/robes/${o.slug}`,
+    image: o.media
+      ? {
+          url: `${SITE_URL}/robes/${o.media.name}-${large}.jpg`,
+          largeur: large,
+          hauteur: Math.round((large * o.media.h) / o.media.w),
+          alt: o.alt,
+        }
+      : undefined,
+    marque: o.createur,
+    reference: o.slug,
+    prix: PRIX_PLANCHER,
+  };
+}
