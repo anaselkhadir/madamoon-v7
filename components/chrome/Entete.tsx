@@ -71,10 +71,25 @@ const GROUPES: Record<
   },
 };
 
-const LIENS = [
+/*
+ * Les entrées se répartissent de part et d'autre du logo.
+ *
+ * À gauche ce qui sert à chercher une robe — les robes, les coupes, les
+ * morphologies : c'est le même chemin que raconte l'accueil. À droite ce
+ * qui parle du lieu et de la maison.
+ *
+ * Les morphologies restent à gauche avec les deux autres. Elles ne
+ * figuraient pas dans la répartition demandée, mais les retirer de la
+ * barre irait contre la demande précédente de les y mettre, et elles ont
+ * plus à voir avec les coupes qu'avec le showroom.
+ */
+const GAUCHE = [
   { href: "/robes", label: "Robes de mariée" },
   { href: "/coupes", label: "Coupes" },
   { href: "/morphologies", label: "Morphologies" },
+];
+
+const DROITE = [
   { href: "/showroom", label: "Showroom" },
   { href: "/a-propos", label: "La maison" },
 ];
@@ -180,58 +195,25 @@ export default function Entete() {
               : "bg-blanc text-encre shadow-[0_1px_0_var(--color-fil)]"
           }`}
         >
-          <div className="gouttiere flex h-[var(--entete)] items-center justify-between gap-8">
-            {/* Le logo et la navigation forment un seul groupe, à gauche. */}
-            <div className="flex items-center gap-10 lg:gap-14">
-              <Link href="/" aria-label="MADAMOON, accueil" className="shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={ressource(surImage ? "/marque/logo-blanc.png" : "/marque/logo-encre.png")}
-                  alt="MADAMOON"
-                  width={513}
-                  height={56}
-                  className="h-[0.9rem] w-auto md:h-[1.05rem]"
-                />
-              </Link>
-
-              <nav aria-label="Principale" className="hidden lg:block">
-                <ul className="flex items-center gap-8">
-                  {LIENS.map((l) => {
-                    const groupe = GROUPES[l.href];
-                    return (
-                      <li
-                        key={l.label}
-                        onMouseEnter={() => setMega(groupe ? l.href : null)}
-                      >
-                        <Link
-                          href={l.href}
-                          data-actif={chemin === l.href}
-                          /* L'entrée reste un lien : elle mène à sa page
-                            * d'index. Le panneau ne fait que devancer le
-                            * clic — il ne le remplace pas. */
-                          onFocus={() => setMega(groupe ? l.href : null)}
-                          aria-expanded={groupe ? mega === l.href : undefined}
-                          aria-controls={groupe ? "mega-navigation" : undefined}
-                          className="lien-nav souligne"
-                        >
-                          {l.label}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-            </div>
-
-            <div className="flex items-center gap-5 md:gap-7">
-              <Link
-                href="/rendez-vous"
-                className={`hidden lien-nav souligne sm:inline-block ${
-                  surImage ? "" : "text-action"
-                }`}
-              >
-                Rendez-vous
-              </Link>
+          {/*
+            * La barre : le menu à gauche, le logo au centre, le
+            * rendez-vous à droite. Les entrées se rangent de part et
+            * d'autre du logo et le touchent presque — ce sont elles qui
+            * l'encadrent, pas les extrémités de la page.
+            *
+            * Le logo est centré à la page, pas entre les deux groupes :
+            * ceux-ci n'ont pas la même largeur — le bouton rouge pèse
+            * plus que le mot « Menu » — et un centrage par colonnes
+            * souples le décalait de vingt-cinq pixels sur téléphone. Il
+            * est donc posé au milieu, en propre, et les deux groupes se
+            * rangent de part et d'autre.
+            */}
+          <nav
+            aria-label="Principale"
+            className="gouttiere relative flex h-[var(--entete)] items-center justify-between gap-6"
+          >
+            {/* ————— à gauche : le menu, puis les entrées ————— */}
+            <div className="flex min-w-0 items-center gap-6">
               <button
                 type="button"
                 onClick={() => setOuvert(true)}
@@ -243,10 +225,83 @@ export default function Entete() {
                   <span className="block h-px w-4 bg-current" />
                   <span className="block h-px w-4 bg-current" />
                 </span>
-                Menu
+                <span className="max-sm:sr-only">Menu</span>
               </button>
+
+              <ul className="ml-auto hidden items-center gap-8 lg:flex">
+                {GAUCHE.map((l) => {
+                  const groupe = GROUPES[l.href];
+                  return (
+                    <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
+                      <Link
+                        href={l.href}
+                        data-actif={chemin === l.href}
+                        onFocus={() => setMega(groupe ? l.href : null)}
+                        aria-expanded={groupe ? mega === l.href : undefined}
+                        aria-controls={groupe ? "mega-navigation" : undefined}
+                        className="lien-nav souligne"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-          </div>
+
+            {/* ————— au centre : la marque ————— */}
+            <Link
+              href="/"
+              aria-label="MADAMOON, accueil"
+              /* Centré au milieu de la page à partir de trois cent
+                * soixante-huit pixels. En dessous, la moitié du sigle
+                * plus le bouton rouge dépassent la demi-largeur moins la
+                * gouttière : le centrage ferait forcément un
+                * chevauchement. Les trois éléments se répartissent alors
+                * simplement, ce qui reste juste et ne casse rien. */
+              className="min-[368px]:absolute min-[368px]:left-1/2 min-[368px]:top-1/2 min-[368px]:-translate-x-1/2 min-[368px]:-translate-y-1/2"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ressource(surImage ? "/marque/logo-blanc.png" : "/marque/logo-encre.png")}
+                alt="MADAMOON"
+                width={513}
+                height={56}
+                /* Le sigle rapetisse sous six cent quarante pixels : au
+                  * centre exact, il touchait le bouton rouge de six
+                  * pixels sur un téléphone. */
+                className="h-[0.75rem] w-auto sm:h-[0.9rem] md:h-[1.05rem]"
+              />
+            </Link>
+
+            {/* ————— à droite : les entrées, puis le rendez-vous ————— */}
+            <div className="flex min-w-0 items-center justify-end gap-6">
+              <ul className="hidden items-center gap-8 lg:flex">
+                {DROITE.map((l) => {
+                  const groupe = GROUPES[l.href];
+                  return (
+                    <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
+                      <Link
+                        href={l.href}
+                        data-actif={chemin === l.href}
+                        onFocus={() => setMega(groupe ? l.href : null)}
+                        aria-expanded={groupe ? mega === l.href : undefined}
+                        aria-controls={groupe ? "mega-navigation" : undefined}
+                        className="lien-nav souligne"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {/* Le même bouton rouge que dans le hero. */}
+              <Link href="/rendez-vous" className="bouton bouton-barre ml-auto shrink-0">
+                Rendez-vous
+              </Link>
+            </div>
+          </nav>
         </div>
 
         {/* ————————————————————————————— le panneau ————— */}

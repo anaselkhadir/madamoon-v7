@@ -251,6 +251,28 @@ body {
   background: var(--color-craie);
 }
 
+/*
+ * Le bouton de la barre.
+ *
+ * Le bouton courant fait quarante pixels de haut ; dans une barre qui en
+ * fait cinquante-six, il ne laisse que huit pixels d'air au-dessus et
+ * au-dessous et pèse plus que le reste de la navigation. Trente-deux
+ * suffisent : il reste une action franche sans devenir le sujet.
+ *
+ * Les mesures s'écrivent ici et non en utilitaires : « .bouton » pose sa
+ * hauteur et ses marges hors calque, et l'emporterait.
+ */
+.bouton-barre {
+  height: 2rem;
+  padding-inline: 1.125rem;
+  font-size: 0.6875rem;
+}
+@media (max-width: 1023px) {
+  .bouton-barre {
+    padding-inline: 0.875rem;
+  }
+}
+
 /* L'action secondaire, sur fond clair. */
 .bouton-trait {
   border: 1px solid var(--color-encre);
