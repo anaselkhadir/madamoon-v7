@@ -329,13 +329,23 @@ export default function Entete() {
         )}
       </header>
 
-      {/* Le menu : une page blanche, quelques lignes, rien d'autre. */}
+      {/*
+        * Le menu : une page blanche, quelques lignes, rien d'autre.
+        *
+        * Une colonne : la ligne du sigle en haut, qui ne se comprime
+        * jamais, puis le reste qui prend ce qui demeure et défile s'il ne
+        * tient pas. Le contenu était auparavant centré dans une hauteur
+        * fixe : sur une fenêtre large et basse, les intitulés montent à
+        * quarante-huit pixels et le bloc dépassait des deux côtés — le
+        * premier lien passait sur le sigle, le dernier sortait de
+        * l'écran, et rien ne défilait.
+        */}
       <div
         id="menu-principal"
         hidden={!ouvert}
-        className="fixed inset-0 z-[60] bg-blanc"
+        className="fixed inset-0 z-[60] flex flex-col bg-blanc"
       >
-        <div className="gouttiere flex h-[var(--entete)] items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
+        <div className="gouttiere flex h-[var(--entete)] shrink-0 items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={ressource("/marque/logo-encre.png")}
@@ -348,51 +358,55 @@ export default function Entete() {
             Fermer
           </button>
         </div>
-        <div className="gouttiere flex h-[calc(100svh-var(--entete))] flex-col justify-center gap-6 md:h-[calc(100svh-var(--barre)-var(--entete))]">
-          <nav aria-label="Menu">
-            <ul className="flex flex-col gap-1">
-              {MENU.map((l) => {
-                const habits =
-                  "nom-image block py-1 text-left text-encre transition-colors duration-500 hover:text-action";
-                return (
-                  <li key={l.label}>
-                    {l.href ? (
-                      <Link href={l.href} className={habits}>
-                        {l.label}
-                      </Link>
-                    ) : (
-                      <AppelElise className={habits}>{l.label}</AppelElise>
-                    )}
-                  </li>
-                );
-              })}
+        {/* « min-h-full » sur le bloc intérieur : il se centre tant qu'il
+          * tient, et pousse la barre de défilement dès qu'il déborde. */}
+        <div className="gouttiere flex-1 overflow-y-auto overscroll-contain">
+          <div className="flex min-h-full flex-col justify-center gap-6 py-8">
+            <nav aria-label="Menu">
+              <ul className="flex flex-col gap-1">
+                {MENU.map((l) => {
+                  const habits =
+                    "nom-image block py-1 text-left text-encre transition-colors duration-500 hover:text-action";
+                  return (
+                    <li key={l.label}>
+                      {l.href ? (
+                        <Link href={l.href} className={habits}>
+                          {l.label}
+                        </Link>
+                      ) : (
+                        <AppelElise className={habits}>{l.label}</AppelElise>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            {/* Les maisons. Le bandeau qui les porte est masqué sous 768 px :
+              * sans cette liste, leurs pages seraient hors d'atteinte au
+              * doigt. */}
+            <p className="legende mt-8">Les maisons</p>
+            <ul className="mt-2 flex flex-col gap-1">
+              {CREATEURS.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/createurs/${c.slug}`}
+                    className="mention block py-1 text-plomb transition-colors duration-500 hover:text-action"
+                  >
+                    {c.nom}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </nav>
 
-          {/* Les maisons. Le bandeau qui les porte est masqué sous 768 px :
-            * sans cette liste, leurs pages seraient hors d'atteinte au
-            * doigt. */}
-          <p className="legende mt-8">Les maisons</p>
-          <ul className="mt-2 flex flex-col gap-1">
-            {CREATEURS.map((c) => (
-              <li key={c.slug}>
-                <Link
-                  href={`/createurs/${c.slug}`}
-                  className="mention block py-1 text-plomb transition-colors duration-500 hover:text-action"
-                >
-                  {c.nom}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-6 flex flex-col gap-1">
-            <a href={MAISON.telephoneHref} className="legende text-encre">
-              {MAISON.telephone}
-            </a>
-            <span className="legende">
-              {MAISON.adresse} — {MAISON.codePostal} {MAISON.ville}
-            </span>
+            <div className="mt-6 flex flex-col gap-1">
+              <a href={MAISON.telephoneHref} className="legende text-encre">
+                {MAISON.telephone}
+              </a>
+              <span className="legende">
+                {MAISON.adresse} — {MAISON.codePostal} {MAISON.ville}
+              </span>
+          </div>
           </div>
         </div>
       </div>
