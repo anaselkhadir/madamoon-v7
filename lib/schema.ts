@@ -33,6 +33,35 @@ export const FICHE_GOOGLE = {
 
 export const ID_MAISON = `${SITE_URL}/#maison`;
 
+/* Le plancher tarifaire, tiré de la seule valeur écrite dans le site :
+ * « 1 500 € ». On ne le recopie pas, on le lit. */
+export const PRIX_PLANCHER = Number(MAISON.prixDepart.replace(/[^\d]/g, ""));
+
+/*
+ * L'offre d'une robe.
+ *
+ * Une robe sur mesure n'a pas de prix fixe : elle en a un plancher, celui
+ * qu'affiche déjà sa fiche. C'est donc une offre agrégée, avec un prix
+ * bas et pas de prix haut — dire « 1 500 € » tout court serait un prix
+ * ferme, ce qu'aucune de ces robes n'a.
+ *
+ * Le vendeur est la maison elle-même, désignée par son identité : c'est
+ * ce qui dit qu'aucune de ces robes ne se trouve ailleurs.
+ */
+export function offreRobe(slug: string) {
+  return {
+    "@type": "AggregateOffer",
+    lowPrice: PRIX_PLANCHER,
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStoreOnly",
+    itemCondition: "https://schema.org/NewCondition",
+    url: `${SITE_URL}/robes/${slug}`,
+    seller: { "@id": ID_MAISON },
+    offeredBy: { "@id": ID_MAISON },
+    areaServed: { "@type": "City", name: "Paris" },
+  };
+}
+
 const image = (nom: keyof typeof SCENES) => {
   const m = SCENES[nom];
   return `${SITE_URL}/scenes/${m.name}-${m.widths[m.widths.length - 1]}.webp`;
@@ -64,8 +93,31 @@ export const MAISON_SCHEMA = {
   url: SITE_URL,
   telephone: MAISON.telephone,
   email: MAISON.email,
-  priceRange: "€€€",
+  /*
+   * Le prix se dit, il ne se code pas en symboles.
+   *
+   * « €€€ » est une échelle sans définition : elle prétend situer la
+   * maison sans rien affirmer de vérifiable, et elle contredisait le
+   * « à partir de 1 500 € » affiché sur chaque fiche. Le plancher, lui,
+   * est connu — c'est celui-là qu'on déclare, en toutes lettres pour la
+   * lecture et en nombre juste en dessous pour la machine.
+   */
+  priceRange: `À partir de ${MAISON.prixDepart}`,
   currenciesAccepted: "EUR",
+  makesOffer: {
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Product",
+      name: "Robe de mariée, confection sur mesure",
+    },
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      minPrice: PRIX_PLANCHER,
+      priceCurrency: "EUR",
+    },
+    availability: "https://schema.org/InStoreOnly",
+    seller: { "@id": ID_MAISON },
+  },
   image: [image("seuil"), image("showroom")],
   logo: `${SITE_URL}/marque/logo-encre.png`,
   address: {

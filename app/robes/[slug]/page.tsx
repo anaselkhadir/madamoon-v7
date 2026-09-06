@@ -11,6 +11,7 @@ import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
+import { offreRobe } from "@/lib/schema";
 
 /*
  * La fiche d'une robe.
@@ -79,6 +80,10 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
     brand: { "@type": "Brand", name: robe.createur ?? MAISON.nom },
     category: `Robe de mariée ${robe.categorie.toLowerCase()}`,
     image: photos.map((p) => `${SITE_URL}/robes/${p.name}-${p.widths[p.widths.length - 1]}.webp`),
+    /* La robe est vendue par la maison, et seulement par elle. Le vendeur
+      * est désigné par l'identité déclarée dans le gabarit : c'est ce qui
+      * relie chaque modèle au showroom du dixième. */
+    offers: offreRobe(robe.slug),
   };
 
   return (
