@@ -110,7 +110,7 @@ export default function Silhouette() {
         * pour le collant : au delà, la scène s'attarde ; en deçà, les
         * lettres défilent trop vite pour qu'on les lise. */}
       <div ref={piste} className="relative h-[230svh] max-lg:h-[190svh]">
-        <div className="sticky top-[var(--barre)] flex h-[calc(100svh-var(--barre))] min-h-[34rem] items-center overflow-hidden">
+        <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
           <div className="gouttiere grid w-full items-center gap-[clamp(1.5rem,4vw,4rem)] max-lg:content-center max-lg:gap-8 lg:grid-cols-[1fr_auto]">
             {/* ————————————————————————————— le propos ————— */}
             <div className="max-lg:order-2">
@@ -180,7 +180,7 @@ export default function Silhouette() {
             {/* ————————————————————————————— la robe ————— */}
             <div
               ref={cadre}
-              className="relative aspect-[5/7] w-full overflow-hidden will-change-transform max-lg:order-1 max-lg:mx-auto max-lg:max-w-[17rem] lg:h-[min(72svh,40rem)] lg:w-auto"
+              className="relative aspect-[5/7] w-full overflow-hidden will-change-transform max-lg:order-1 max-lg:mx-auto max-lg:max-w-[17rem] lg:h-[min(64svh,38rem)] lg:w-auto"
             >
               {scenes.map(({ m: s, robe, media }, i) => (
                 <Photo

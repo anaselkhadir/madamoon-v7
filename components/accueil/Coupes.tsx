@@ -103,10 +103,18 @@ export default function Coupes() {
   return (
     <section aria-labelledby="coupes" className="relative bg-blanc">
       {/* La course. Six coupes à traverser, plus une hauteur d'écran pour
-        * le collant. « overflow-hidden » ne peut pas être posé sur la
-        * section : sur un ancêtre, il désactive le collant. */}
+        * le collant.
+        *
+        * La scène se colle sous l'en-tête entier — le bandeau et la barre
+        * — et non sous le seul bandeau. Le hero peut se permettre de
+        * passer derrière la navigation, c'est une image ; un texte, non :
+        * à 790 px de haut, seize pixels de l'intitulé disparaissaient
+        * dessous.
+        *
+        * « overflow-hidden » ne peut pas être posé sur la section : sur un
+        * ancêtre, il désactive le collant. */}
       <div ref={piste} className="relative h-[210svh] max-lg:h-[180svh]">
-        <div className="sticky top-[var(--barre)] flex h-[calc(100svh-var(--barre))] min-h-[34rem] items-center overflow-hidden">
+        <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
           <div className="grid w-full items-center gap-[clamp(1.25rem,5vw,5rem)] max-lg:content-center lg:grid-cols-[1.1fr_1fr]">
             {/* ————————————————————————————— la photographie —————
               * Elle sort du cadre par la gauche : la page perd son bord de ce
@@ -116,7 +124,7 @@ export default function Coupes() {
               * ne défile pas, donc tout doit tenir dans un écran. Au
               * rapport 4/5, l'image seule en prenait la moitié et le lien
               * du bas passait sous le pli. */}
-            <div className="relative h-[34svh] overflow-hidden max-lg:mx-[var(--gouttiere)] lg:aspect-[5/6] lg:h-[min(76svh,42rem)]">
+            <div className="relative h-[34svh] overflow-hidden max-lg:mx-[var(--gouttiere)] lg:aspect-[5/6] lg:h-[min(64svh,38rem)]">
               {familles.map(({ c, media }, i) => (
                 <Photo
                   key={c.ancre}
@@ -144,7 +152,7 @@ export default function Coupes() {
                 C&apos;est la coupe qui décide de la ligne, bien avant la taille.
               </p>
 
-              <ul className="mt-[clamp(1.75rem,3.5vw,2.75rem)] flex flex-col">
+              <ul className="mt-[clamp(0.75rem,3svh,2.75rem)] flex flex-col">
                 {familles.map(({ c }, i) => (
                   <li key={c.ancre}>
                     <button
@@ -155,7 +163,12 @@ export default function Coupes() {
                       onBlur={() => setTenue(null)}
                       onClick={() => setTenue(i)}
                       aria-pressed={i === actif}
-                      className={`block py-[0.35em] text-left font-serif text-[clamp(1.5rem,2.9vw,2.5rem)] leading-none transition-colors duration-700 [transition-timing-function:var(--ease-doux)] ${
+                      /* La taille dépend aussi de la hauteur de l'écran, pas
+                    * seulement de sa largeur : la scène est collée, les
+                    * six noms doivent tenir dans un écran quel qu'il
+                    * soit. Sur une fenêtre basse et large, une mesure en
+                    * « vw » seule débordait le cadre. */
+                  className={`block py-[0.3em] text-left font-serif text-[clamp(1.125rem,min(2.9vw,4.4svh),2.5rem)] leading-none transition-colors duration-700 [transition-timing-function:var(--ease-doux)] ${
                         i === actif ? "text-encre" : "text-fil hover:text-brume"
                       }`}
                     >
@@ -167,7 +180,7 @@ export default function Coupes() {
 
               {/* La note et le lien de la coupe active, empilés dans la même
                 * case : la hauteur ne bouge pas d'une coupe à l'autre. */}
-              <div className="mt-6 grid" aria-live="polite">
+              <div className="mt-[clamp(0.75rem,2.5svh,1.5rem)] grid" aria-live="polite">
                 {familles.map(({ c }, i) => (
                   <div
                     key={c.ancre}

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MAISON, CREATEURS } from "@/lib/madamoon";
+import { MAISON, CREATEURS, MORPHOLOGIES } from "@/lib/madamoon";
+import { COUPES } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 
@@ -18,7 +19,56 @@ import AppelElise from "@/components/AppelElise";
  * Dès que la page défile — et sur toutes les pages claires — elle devient
  * blanche et la typographie passe à l'encre. Elle ne change jamais de
  * hauteur.
+ *
+ * Trois entrées ouvrent un panneau : les robes par maison, les six
+ * coupes, les six morphologies. Le panneau est en verre — la même classe
+ * que le panneau d'Élise, dont l'opacité a été mesurée sur le film du
+ * hero pour que l'encre y reste au-dessus du seuil AA. Tant qu'il est
+ * ouvert, la barre reprend son fond plein : un texte blanc sur la vidéo
+ * au-dessus d'un texte encre sur du verre ne se lit pas comme un seul
+ * en-tête.
  */
+
+/*
+ * Ce que chaque entrée déplie. Les listes sont construites depuis les
+ * données du site : une coupe ajoutée au catalogue paraît ici sans qu'on
+ * y touche.
+ */
+const GROUPES: Record<
+  string,
+  { intitule: string; colonnes: number; liens: { href: string; nom: string; note?: string }[] }
+> = {
+  "/robes": {
+    intitule: "Par maison",
+    colonnes: 3,
+    liens: [
+      { href: "/robes", nom: "Toutes les robes", note: "Le catalogue entier" },
+      ...CREATEURS.map((c) => ({
+        href: `/createurs/${c.slug}`,
+        nom: c.nom,
+        note: c.origine,
+      })),
+    ],
+  },
+  "/coupes": {
+    intitule: "Les six coupes",
+    colonnes: 3,
+    liens: COUPES.map((c) => ({
+      href: `/coupes/${c.ancre}`,
+      nom: c.nom,
+      note: c.note,
+    })),
+  },
+  "/morphologies": {
+    intitule: "Les six silhouettes",
+    colonnes: 3,
+    liens: MORPHOLOGIES.map((m) => ({
+      href: `/morphologies/${m.lettre.toLowerCase()}`,
+      nom: m.nom,
+      note: m.objectif,
+    })),
+  },
+};
 
 const LIENS = [
   { href: "/robes", label: "Robes de mariée" },
@@ -45,9 +95,11 @@ export default function Entete() {
   const chemin = usePathname();
   const [pose, setPose] = useState(false);
   const [ouvert, setOuvert] = useState(false);
+  /* L'entrée dont le panneau est déplié. */
+  const [mega, setMega] = useState<string | null>(null);
 
   /* L'accueil est la seule page qui commence par une image plein cadre. */
-  const surImage = chemin === "/" && !pose && !ouvert;
+  const surImage = chemin === "/" && !pose && !ouvert && !mega;
 
   useEffect(() => {
     const surScroll = () => setPose(window.scrollY > 24);
@@ -56,7 +108,20 @@ export default function Entete() {
     return () => window.removeEventListener("scroll", surScroll);
   }, []);
 
-  useEffect(() => setOuvert(false), [chemin]);
+  useEffect(() => {
+    setOuvert(false);
+    setMega(null);
+  }, [chemin]);
+
+  /* Échap referme le panneau, comme il referme le menu. */
+  useEffect(() => {
+    if (!mega) return;
+    const surTouche = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMega(null);
+    };
+    window.addEventListener("keydown", surTouche);
+    return () => window.removeEventListener("keydown", surTouche);
+  }, [mega]);
 
   useEffect(() => {
     document.documentElement.style.overflow = ouvert ? "hidden" : "";
@@ -81,7 +146,7 @@ export default function Entete() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header className="fixed inset-x-0 top-0 z-50" onMouseLeave={() => setMega(null)}>
         {/* Le bandeau. Toujours blanc, toujours discret. */}
         <div className="hidden h-[var(--barre)] items-center justify-between border-b border-fil bg-blanc text-encre md:flex gouttiere">
           <ul className="flex items-center gap-7">
@@ -130,17 +195,29 @@ export default function Entete() {
 
               <nav aria-label="Principale" className="hidden lg:block">
                 <ul className="flex items-center gap-8">
-                  {LIENS.map((l) => (
-                    <li key={l.label}>
-                      <Link
-                        href={l.href}
-                        data-actif={chemin === l.href}
-                        className="lien-nav souligne"
+                  {LIENS.map((l) => {
+                    const groupe = GROUPES[l.href];
+                    return (
+                      <li
+                        key={l.label}
+                        onMouseEnter={() => setMega(groupe ? l.href : null)}
                       >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
+                        <Link
+                          href={l.href}
+                          data-actif={chemin === l.href}
+                          /* L'entrée reste un lien : elle mène à sa page
+                            * d'index. Le panneau ne fait que devancer le
+                            * clic — il ne le remplace pas. */
+                          onFocus={() => setMega(groupe ? l.href : null)}
+                          aria-expanded={groupe ? mega === l.href : undefined}
+                          aria-controls={groupe ? "mega-navigation" : undefined}
+                          className="lien-nav souligne"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </nav>
             </div>
@@ -170,6 +247,32 @@ export default function Entete() {
             </div>
           </div>
         </div>
+
+        {/* ————————————————————————————— le panneau ————— */}
+        {mega && GROUPES[mega] && (
+          <div
+            id="mega-navigation"
+            className="verre hidden border-b border-fil lg:block"
+          >
+            <div className="gouttiere py-[clamp(1.75rem,3vw,2.75rem)]">
+              <p className="legende">{GROUPES[mega].intitule}</p>
+              <ul className="mt-6 grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-5 md:grid-cols-3">
+                {GROUPES[mega].liens.map((x) => (
+                  <li key={x.href}>
+                    <Link href={x.href} className="group block">
+                      <span className="block font-serif text-[1.375rem] leading-tight text-encre transition-colors duration-500 group-hover:text-action">
+                        {x.nom}
+                      </span>
+                      {x.note && (
+                        <span className="texte mt-1 block text-plomb">{x.note}</span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Le menu : une page blanche, quelques lignes, rien d'autre. */}
