@@ -175,6 +175,13 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
         vue={m.ouverture.vue}
         alt={altCoupe(m.premieres[0] ?? "de mariée", `conseillée pour une silhouette en ${m.lettre}`)}
         action="Trouver ma robe"
+        catalogue={{
+          /* Seule l'initiale passe en bas de casse : la lettre de la
+            * morphologie est une désignation, pas un mot. « silhouette
+            * en X », jamais « silhouette en x ». */
+          intitule: m.nom.charAt(0).toLowerCase() + m.nom.slice(1),
+          contexte: `morphologie:${m.lettre.toLowerCase()}`,
+        }}
       />
 
       {/* ————————————————————————————— 02 · se reconnaître ————— */}

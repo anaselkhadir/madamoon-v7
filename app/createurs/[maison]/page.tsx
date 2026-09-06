@@ -96,6 +96,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
         alt={altCoupe(coupes[0] ?? "de mariée", createur.nom)}
         action={`Trouver ma robe ${createur.nom}`}
         maison={createur.nom}
+        catalogue={{ intitule: createur.nom, contexte: `maison:${createur.slug}` }}
       />
 
       {/* ————————————————————————————— ses robes ————— */}

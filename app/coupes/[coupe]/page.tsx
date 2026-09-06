@@ -7,7 +7,7 @@ import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import Rendezvous from "@/components/accueil/Rendezvous";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
-import { PLURIEL, COUPES, coupeParAncre } from "@/lib/coupes";
+import { APPOSITION, COUPES, PLURIEL, coupeParAncre } from "@/lib/coupes";
 import { vues } from "@/lib/medias";
 import { altCoupe, altRobe } from "@/lib/alt";
 
@@ -112,6 +112,9 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
         vue={ouverture.vue}
         alt={altCoupe(s.nom)}
         action="Trouver ma robe"
+        /* « le catalogue sirène », « le catalogue princesse » : la coupe
+          * s'emploie en apposition, donc invariable après « catalogue ». */
+        catalogue={{ intitule: APPOSITION[s.nom], contexte: `coupe:${s.ancre}` }}
       />
 
       {/* ————————————————————————————— par maison ————— */}

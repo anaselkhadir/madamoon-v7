@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Bandeau from "@/components/accueil/Bandeau";
 import AppelElise from "@/components/AppelElise";
+import Catalogue from "@/components/Catalogue";
 import { SCENES, vues, type Media } from "@/lib/medias";
 import { FILMS } from "@/lib/films";
 import { mouvementReduit } from "@/lib/mouvement";
@@ -36,6 +37,7 @@ export default function HeroPage({
   alt,
   action,
   maison,
+  catalogue,
 }: {
   surtitre?: string;
   titre: string;
@@ -47,6 +49,9 @@ export default function HeroPage({
   action: string;
   /* Transmis à Élise : la maison dont il faut partir, s'il y en a une. */
   maison?: string;
+  /* Le catalogue de la rubrique. Absent, le bouton blanc ne paraît pas —
+   * toutes les rubriques n'en ont pas forcément un. */
+  catalogue?: { intitule: string; contexte: string };
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const [charge, setCharge] = useState(false);
@@ -149,9 +154,14 @@ export default function HeroPage({
           {surtitre && <p className="legende sur-rouge">{surtitre}</p>}
           <h1 className={`affiche text-blanc ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
           <p className="accroche mt-6 text-blanc">{ligne}</p>
-          <AppelElise maison={maison} className="bouton mt-6">
-            {action}
-          </AppelElise>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <AppelElise maison={maison} className="bouton">
+              {action}
+            </AppelElise>
+            {catalogue && (
+              <Catalogue intitule={catalogue.intitule} contexte={catalogue.contexte} />
+            )}
+          </div>
         </div>
       </div>
 
