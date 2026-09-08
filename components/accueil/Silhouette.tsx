@@ -1,51 +1,31 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import Photo from "@/components/media/Photo";
+import RailFleches from "@/components/accueil/RailFleches";
 import { MORPHOLOGIES, ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
-import { mouvementReduit, surDefilement } from "@/lib/mouvement";
 
 /*
  * La silhouette.
  *
- * La première scène après le hero, et celle qui remonte par-dessus lui.
+ * Six morphologies, six lettres, six robes, en un rail que l'on pousse.
+ * Chaque carte s'arrête net : on en regarde une, puis la suivante, à son
+ * rythme.
  *
- * Six morphologies, six lettres, six robes. Le défilement fait passer de
- * l'une à l'autre : la lettre grandit, la photographie change en fondu.
- * On ne lit pas un cours sur les morphologies — on en voit six passer, et
- * l'idée se comprend sans qu'on l'explique.
+ * La scène collée qui tenait cette place a été retirée. Elle retenait
+ * près d'un écran de défilement pour montrer une morphologie à la fois,
+ * et il fallait la traverser pour passer à la suite. Le rail dit la même
+ * chose en laissant la main : on peut le parcourir, ou passer outre sans
+ * même le remarquer.
  *
- * La scène est collée le temps de les traverser, puis rend la main. Elle
- * suit le défilement, elle ne le capture jamais : on peut s'arrêter
- * n'importe où, repartir en arrière, sauter la section d'un geste.
+ * C'est aussi le même geste sur un téléphone et sur un écran large —
+ * seules les photographies changent de taille. Deux dessins pour une même
+ * idée finissent toujours par diverger ; celui-ci n'existe qu'une fois.
  *
- * Ce qui bouge est une opacité ou une transformation, jamais une mise en
- * page. Les six photographies sont empilées et se croisent en fondu ; le
- * reste est du texte qui change de graisse et de couleur.
- *
- * Au survol d'une lettre, la main reprend la scène : c'est elle qui
- * décide, et le défilement cesse d'imposer. On relâche, il reprend.
- *
- * Le mouvement refusé fige la scène sur la première morphologie, retire
- * le collant et laisse les six lettres accessibles en liste.
+ * Aucun script : un rail est du défilement, et le navigateur sait faire.
  */
 
-/* La part de la course laissée aux deux extrémités : la première et la
- * dernière morphologie tiennent un peu plus longtemps que les autres,
- * sinon elles ne font que passer en entrant et en sortant. */
-const MARGE = 0.08;
-
 export default function Silhouette() {
-  const piste = useRef<HTMLDivElement>(null);
-  const cadre = useRef<HTMLDivElement>(null);
-  /* La lettre choisie à la main. Tant qu'elle existe, le défilement
-   * n'impose plus rien. */
-  const [tenue, setTenue] = useState<number | null>(null);
-  const [rang, setRang] = useState(0);
-
   const scenes = MORPHOLOGIES.map((m) => {
     const robe = ROBES.find((r) => r.slug === m.ouverture.robe);
     const media = robe ? vues(robe.slug)[m.ouverture.vue - 1] : undefined;
@@ -56,218 +36,78 @@ export default function Silhouette() {
     media: ReturnType<typeof vues>[number];
   }[];
 
-  const n = scenes.length;
-
-  useEffect(() => {
-    if (mouvementReduit() || n === 0) return;
-    /* La scène collée n'existe qu'au delà de mille vingt-quatre pixels ;
-     * en deçà, la section est un rail que l'on pousse au doigt. La
-     * largeur est relue à chaque image plutôt qu'au montage : une fenêtre
-     * agrandie doit réveiller la scène. */
-    const large = window.matchMedia("(min-width: 1024px)");
-    let demande = 0;
-    let dernier = -1;
-
-    const poser = () => {
-      demande = 0;
-      if (!large.matches) return;
-      const p = piste.current;
-      if (!p) return;
-      const b = p.getBoundingClientRect();
-      const course = b.height - window.innerHeight;
-      if (course <= 0) return;
-
-      const brut = Math.min(Math.max(-b.top / course, 0), 1);
-      const avance = Math.min(Math.max((brut - MARGE) / (1 - 2 * MARGE), 0), 1);
-      const i = Math.min(Math.floor(avance * n), n - 1);
-      if (i !== dernier) {
-        dernier = i;
-        setRang(i);
-      }
-
-      /* Une dérive de trois pour cent sur la photographie : assez pour
-       * qu'elle ne soit pas figée, trop peu pour qu'on la remarque. */
-      const el = cadre.current;
-      if (el) el.style.transform = `translate3d(0, ${(brut - 0.5) * 3}%, 0)`;
-    };
-
-    const surScroll = () => {
-      if (!demande) demande = requestAnimationFrame(poser);
-    };
-    poser();
-    const desabonner = surDefilement(surScroll);
-    window.addEventListener("scroll", surScroll, { passive: true });
-    window.addEventListener("resize", surScroll);
-    return () => {
-      cancelAnimationFrame(demande);
-      desabonner();
-      window.removeEventListener("scroll", surScroll);
-      window.removeEventListener("resize", surScroll);
-    };
-  }, [n]);
-
-  if (n === 0) return null;
-  const actif = tenue ?? rang;
-  const { m } = scenes[actif];
+  if (scenes.length === 0) return null;
 
   return (
-    <section aria-labelledby="silhouette" className="relative z-10 bg-blanc">
-      {/* La course. Six morphologies à traverser, plus une hauteur d'écran
-        * pour le collant : au delà, la scène s'attarde ; en deçà, les
-        * lettres défilent trop vite pour qu'on les lise. */}
-      <div ref={piste} className="relative hidden h-[230svh] lg:block">
-        <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
-          <div className="gouttiere grid w-full items-center gap-[clamp(1.5rem,4vw,4rem)] max-lg:content-center max-lg:gap-8 lg:grid-cols-[1fr_auto]">
-            {/* ————————————————————————————— le propos ————— */}
-            <div className="max-lg:order-2">
-              <p className="legende">La silhouette</p>
-              <span data-ligne className="mt-4 block">
-                <h2 id="silhouette" className="phrase mesure-l">
-                  Avant la robe, la ligne.
-                </h2>
-              </span>
-              <p className="texte mesure mt-4 max-lg:hidden">
-                Six silhouettes, et pour chacune les coupes qui l&apos;allongent,
-                l&apos;équilibrent ou la révèlent.
-              </p>
+    <section
+      aria-labelledby="silhouette"
+      className="relative z-10 bg-blanc pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,8vw,7rem)]"
+    >
+      <div className="gouttiere">
+        <p className="legende">La silhouette</p>
+        <span data-ligne className="mt-4 block">
+          <h2 id="silhouette" className="phrase mesure-l">
+            Avant la robe, la ligne.
+          </h2>
+        </span>
+        <p className="texte mesure-l mt-4">
+          Six silhouettes, et pour chacune les coupes qui l&apos;allongent,
+          l&apos;équilibrent ou la révèlent.
+        </p>
+      </div>
 
-              {/* Les six lettres. Chacune mène à sa page ; le survol
-                * change la photographie sans quitter l'accueil. */}
-              <ul
-                className="mt-[clamp(1.75rem,4vw,3rem)] flex flex-wrap items-baseline gap-x-[clamp(1rem,2.6vw,2.25rem)] gap-y-3"
-                onMouseLeave={() => setTenue(null)}
-              >
-                {scenes.map(({ m: s }, i) => (
-                  <li key={s.lettre}>
-                    <Link
-                      href={`/morphologies/${s.lettre.toLowerCase()}`}
-                      onMouseEnter={() => setTenue(i)}
-                      onFocus={() => setTenue(i)}
-                      onBlur={() => setTenue(null)}
-                      aria-current={i === actif ? "true" : undefined}
-                      className={`block font-serif text-[clamp(1.75rem,3.4vw,3rem)] leading-none transition-colors duration-700 [transition-timing-function:var(--ease-doux)] ${
-                        i === actif ? "text-encre" : "text-fil hover:text-brume"
-                      }`}
-                    >
-                      {s.lettre}
-                      <span className="sr-only"> — {s.nom}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Le nom et la ligne de la morphologie active. Les six sont
-                * empilés dans la même case de grille : la hauteur est
-                * celle du plus long, et rien ne saute d'une lettre à
-                * l'autre. */}
-              <div className="mt-6 grid" aria-live="polite">
-                {scenes.map(({ m: s }, i) => (
-                  <div
-                    key={s.lettre}
-                    className={`col-start-1 row-start-1 transition-opacity duration-700 [transition-timing-function:var(--ease-doux)] ${
-                      i === actif ? "opacity-100" : "pointer-events-none opacity-0"
-                    }`}
-                    aria-hidden={i !== actif || undefined}
-                  >
-                    <p className="nom-carte text-[1.0625rem]">{s.nom}</p>
-                    <p className="texte mesure mt-1">{s.silhouette}</p>
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/morphologies"
-                className="lien-nav souligne mt-8 inline-block text-action max-lg:mt-6"
-              >
-                Les six morphologies
-              </Link>
-            </div>
-
-            {/* ————————————————————————————— la robe ————— */}
-            <div
-              ref={cadre}
-              className="relative aspect-[5/7] w-full overflow-hidden will-change-transform max-lg:order-1 max-lg:mx-auto max-lg:max-w-[17rem] lg:h-[min(64svh,38rem)] lg:w-auto"
-            >
-              {scenes.map(({ m: s, robe, media }, i) => (
+      {/*
+        * Le rail. Il déborde volontairement à droite : c'est ce débord qui
+        * dit qu'il y a autre chose à voir. La barre de défilement est
+        * masquée — le geste suffit, et une barre sous six photographies
+        * ferait fenêtre de navigateur.
+        */}
+      <ul id="rail-silhouette" className="mt-[clamp(2rem,4vw,3rem)] flex snap-x snap-mandatory scroll-pl-[var(--gouttiere)] gap-[clamp(1rem,1.6vw,1.5rem)] overflow-x-auto px-[var(--gouttiere)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {scenes.map(({ m, robe, media }, i) => (
+          <li
+            key={m.lettre}
+            /* Les cartes grandissent avec l'écran : trois et demie
+              * paraissent à 1440 px, une et demie sur un téléphone. */
+            className="w-[74vw] max-w-[19rem] flex-none snap-start lg:w-[clamp(18rem,27vw,26rem)] lg:max-w-none"
+          >
+            <Link href={`/morphologies/${m.lettre.toLowerCase()}`} className="group block">
+              <div className="relative aspect-[5/7] overflow-hidden">
                 <Photo
-                  key={s.lettre}
                   media={media}
                   dossier="robes"
                   alt={altRobe(robe)}
-                  sizes="(max-width: 768px) 60vw, 30rem"
-                  priorite={i === 0}
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1100ms] [transition-timing-function:var(--ease-doux)] ${
-                    i === actif ? "opacity-100" : "opacity-0"
-                  }`}
+                  sizes="(max-width: 1024px) 74vw, 27vw"
+                  priorite={i < 2}
+                  className="h-full w-full object-cover transition-transform duration-[1400ms] [transition-timing-function:var(--ease-doux)] group-hover:scale-[1.03]"
                 />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+                {/* La lettre est posée sur l'image, en bas : c'est elle que
+                  * l'on cherche du regard en parcourant. */}
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-0 bottom-0 h-32"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 100%)",
+                  }}
+                />
+                <span className="absolute bottom-4 left-5 font-serif text-[clamp(2.5rem,4vw,3.5rem)] leading-none text-blanc">
+                  {m.lettre}
+                </span>
+              </div>
+              <p className="nom-carte mt-4 text-[1.0625rem] transition-colors duration-500 group-hover:text-action">
+                {m.nom}
+              </p>
+              <p className="texte mt-1">{m.silhouette}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
 
-      {/* —————————————————————————— au doigt ——————————————————————————
-        *
-        * Sur téléphone, la scène collée est remplacée par un rail que
-        * l'on pousse. Une scène qui retient le défilement pendant près
-        * d'un écran donne, sur un téléphone, le sentiment d'une page
-        * bloquée : on balaie et rien ne bouge, seul le contenu change.
-        *
-        * Ici le geste répond tout de suite. Les six morphologies passent
-        * l'une après l'autre, chacune s'arrêtant net sous le pouce, et
-        * l'on va aussi vite ou aussi lentement qu'on veut.
-        */}
-      <div className="lg:hidden">
-        <div className="gouttiere pt-[clamp(3rem,8vw,4rem)]">
-          <p className="legende">La silhouette</p>
-          <span data-ligne className="mt-4 block">
-            <p className="phrase">Avant la robe, la ligne.</p>
-          </span>
-          <p className="texte mt-4">
-            Six silhouettes, et pour chacune les coupes qui l&apos;allongent,
-            l&apos;équilibrent ou la révèlent.
-          </p>
-        </div>
-
-        <ul className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--gouttiere)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {scenes.map(({ m: s, robe, media }, i) => (
-            <li key={s.lettre} className="w-[74vw] max-w-[19rem] flex-none snap-start">
-              <Link href={`/morphologies/${s.lettre.toLowerCase()}`} className="group block">
-                <div className="relative aspect-[5/7] overflow-hidden">
-                  <Photo
-                    media={media}
-                    dossier="robes"
-                    alt={altRobe(robe)}
-                    sizes="74vw"
-                    priorite={i === 0}
-                    className="h-full w-full object-cover"
-                  />
-                  {/* La lettre est posée sur l'image, en bas : c'est elle
-                    * que l'on cherche du regard en balayant. */}
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-28"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 100%)",
-                    }}
-                  />
-                  <span className="absolute bottom-3 left-4 font-serif text-[2.5rem] leading-none text-blanc">
-                    {s.lettre}
-                  </span>
-                </div>
-                <p className="nom-carte mt-3 text-[1.0625rem]">{s.nom}</p>
-                <p className="texte mt-1">{s.silhouette}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="gouttiere pt-6">
-          <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
-            Les six morphologies
-          </Link>
-        </div>
+      <div className="gouttiere flex items-center justify-between gap-6 pt-[clamp(1.5rem,3vw,2.5rem)]">
+        <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
+          Les six morphologies
+        </Link>
+        <RailFleches cible="rail-silhouette" />
       </div>
     </section>
   );

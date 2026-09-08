@@ -1,0 +1,94 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+/*
+ * Les deux flèches d'un rail.
+ *
+ * Sous le pouce, un rail se pousse ; à la souris, il ne se pousse pas.
+ * Ces flèches n'existent donc que sur grand écran, et seulement là où
+ * l'on ne peut pas faire autrement. Elles s'effacent au bout du rail
+ * plutôt que de rester allumées sans rien faire.
+ */
+
+export default function RailFleches({ cible }: { cible: string }) {
+  const [debut, poserDebut] = useState(true);
+  const [fin, poserFin] = useState(false);
+  const rail = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const el = document.getElementById(cible);
+    if (!el) return;
+    rail.current = el;
+
+    let demande = 0;
+    const jauger = () => {
+      demande = 0;
+      const reste = el.scrollWidth - el.clientWidth;
+      poserDebut(el.scrollLeft <= 4);
+      poserFin(el.scrollLeft >= reste - 4);
+    };
+    const auDefilement = () => {
+      if (demande) return;
+      demande = requestAnimationFrame(jauger);
+    };
+
+    jauger();
+    el.addEventListener("scroll", auDefilement, { passive: true });
+    window.addEventListener("resize", auDefilement, { passive: true });
+    return () => {
+      cancelAnimationFrame(demande);
+      el.removeEventListener("scroll", auDefilement);
+      window.removeEventListener("resize", auDefilement);
+    };
+  }, [cible]);
+
+  /* Un pas = une carte, gouttière comprise : le rail retombe toujours
+   * sur un cran, jamais entre deux. */
+  const pousser = (sens: 1 | -1) => {
+    const el = rail.current;
+    if (!el) return;
+    const carte = el.firstElementChild as HTMLElement | null;
+    const pas = carte
+      ? carte.getBoundingClientRect().width +
+        parseFloat(getComputedStyle(el).columnGap || "0")
+      : el.clientWidth * 0.8;
+    el.scrollBy({ left: sens * pas, behavior: "smooth" });
+  };
+
+  return (
+    <div className="hidden items-center gap-2 lg:flex">
+      {(
+        [
+          ["-1", "Voir les morphologies précédentes", "M15 5 8 12l7 7"],
+          ["1", "Voir les morphologies suivantes", "M9 5l7 7-7 7"],
+        ] as const
+      ).map(([sens, titre, trace]) => {
+        const inactif = sens === "-1" ? debut : fin;
+        return (
+          <button
+            key={sens}
+            type="button"
+            onClick={() => pousser(sens === "-1" ? -1 : 1)}
+            disabled={inactif}
+            aria-label={titre}
+            className="grid h-11 w-11 place-items-center rounded-full border border-fil text-encre transition-[opacity,border-color,color] duration-500 hover:border-encre disabled:pointer-events-none disabled:opacity-25"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d={trace} />
+            </svg>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
