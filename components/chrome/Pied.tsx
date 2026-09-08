@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
@@ -86,9 +87,9 @@ export default function Pied() {
               {MAISON.email}
             </a>
           </address>
-          <Link href="/rendez-vous" className="bouton mt-6">
+          <AppelRendezvous className="bouton mt-6">
             Prendre rendez-vous
-          </Link>
+          </AppelRendezvous>
         </div>
       </div>
 

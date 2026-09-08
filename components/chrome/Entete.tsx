@@ -7,6 +7,7 @@ import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES } from "@/lib/madamo
 import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
+import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -346,9 +347,9 @@ export default function Entete() {
                 * « .bouton » pose son « display » hors calque et
                 * l'emporterait sur l'utilitaire. */}
               <span className="ml-auto hidden shrink-0 md:block">
-                <Link href="/rendez-vous" className="bouton bouton-barre">
+                <AppelRendezvous className="bouton bouton-barre">
                   Rendez-vous
-                </Link>
+                </AppelRendezvous>
               </span>
             </div>
           </nav>

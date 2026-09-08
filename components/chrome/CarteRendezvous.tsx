@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -46,9 +46,9 @@ export default function CarteRendezvous() {
       }`}
     >
       <p className="mention mb-3 text-encre">Votre essayage privé</p>
-      <Link href="/rendez-vous" className="bouton w-full">
+      <AppelRendezvous className="bouton w-full">
         Prendre rendez-vous
-      </Link>
+      </AppelRendezvous>
     </aside>
   );
 }

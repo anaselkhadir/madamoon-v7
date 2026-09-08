@@ -5,6 +5,7 @@ import Photo from "@/components/media/Photo";
 import Film from "@/components/media/Film";
 import Tuile from "@/components/Tuile";
 import Catalogue from "@/components/Catalogue";
+import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import TitreSection from "@/components/TitreSection";
 import { ROBES, FAMILLES, MAISON, MORPHOLOGIES, SITE_URL } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
@@ -213,9 +214,9 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
             <h1 className="affiche mt-3 text-blanc">{robe.nom}</h1>
             <p className="accroche mt-5 text-blanc">{robe.ligne}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Link href={`/rendez-vous?robe=${robe.slug}`} className="bouton-clair">
+              <AppelRendezvous robe={robe.slug} className="bouton-clair">
                 L&apos;essayer au showroom
-              </Link>
+              </AppelRendezvous>
               <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} />
             </div>
           </div>
@@ -345,9 +346,9 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
             {robe.nom} vous attend au showroom.
           </p>
           <div className="flex flex-col items-start gap-4" data-lever data-retard="180">
-            <Link href={`/rendez-vous?robe=${robe.slug}`} className="bouton">
+            <AppelRendezvous robe={robe.slug} className="bouton">
               Prendre rendez-vous
-            </Link>
+            </AppelRendezvous>
             <a href={MAISON.telephoneHref} className="lien-nav souligne text-encre">
               {MAISON.telephone}
             </a>

@@ -6,6 +6,7 @@ import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
 import Link from "next/link";
 import Bandeau from "@/components/accueil/Bandeau";
+import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import AppelElise from "@/components/AppelElise";
 import { altScene } from "@/lib/alt";
 
@@ -204,9 +205,9 @@ export default function Hero() {
               * vient chercher n'a pas à passer par Élise. Même adresse
               * que la navigation et que le bas de page — le site n'a
               * qu'une porte pour le rendez-vous. */}
-            <Link href="/rendez-vous" className="bouton-clair">
+            <AppelRendezvous className="bouton-clair">
               Prendre rendez-vous
-            </Link>
+            </AppelRendezvous>
           </div>
         </div>
       </div>
