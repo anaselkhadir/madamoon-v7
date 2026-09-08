@@ -175,10 +175,22 @@ export default function Hero() {
        * en haut pour que la navigation blanche reste lisible quelle que soit
        * l'image de la vidéo. */}
       <div
-        className="absolute inset-0"
+        aria-hidden="true"
+        className="absolute inset-0 max-md:hidden"
         style={{
           background:
             "linear-gradient(95deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 72%)",
+        }}
+      />
+      {/* Sur téléphone le texte est centré : un voile venu de la gauche ne
+        * couvrirait que sa moitié. Celui-ci descend, et retient le bas de
+        * l'image où se posent le bouton et le lien. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 md:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.38) 48%, rgba(0,0,0,0.56) 100%)",
         }}
       />
       <div
@@ -190,27 +202,53 @@ export default function Hero() {
         }}
       />
 
-      {/* Le bloc de texte : gouttière à gauche, centré en hauteur. */}
+      {/*
+        * Le bloc de texte, centré en hauteur.
+        *
+        * Un seul titre, une seule accroche : la page n'a droit qu'à un
+        * h1, et deux copies masquées l'une l'autre en feraient deux aux
+        * yeux des moteurs. Seule la rangée des deux gestes existe en
+        * double — sur téléphone leur ordre s'inverse et « Trouver ma
+        * robe » cesse d'être un bouton, ce qu'aucune bascule au point
+        * d'arrêt ne pouvait obtenir : les classes de bouton ne sont pas
+        * calquées et l'emportent sur les utilitaires.
+        */}
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
-        <div className="w-full max-w-[53vw] min-w-[16rem] max-md:max-w-[92%]">
+        <div className="w-full max-md:text-center md:max-w-[53vw] md:min-w-[16rem]">
           <h1 className="affiche text-blanc">Vous vous mariez bientôt ?</h1>
           <p className="accroche mt-6 text-blanc">
             Robes de mariée, essayage privé — Paris 10<sup>e</sup>
           </p>
-          {/* Rouge plein sur la photographie : la cliente veut l'action
-            * franche plutôt que le bouton blanc de la référence.
+
+          {/* Grand écran : côte à côte, calés sur la gouttière.
             *
-            * Il n'emmène nulle part — il ouvre Élise, qui part de la
-            * silhouette. Sans maison ici : l'accueil ne filtre rien. */}
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+            * Rouge plein sur la photographie : la cliente veut l'action
+            * franche plutôt que le bouton blanc de la référence. Il
+            * n'emmène nulle part — il ouvre Élise, qui part de la
+            * silhouette. Sans maison ici : l'accueil ne filtre rien.
+            *
+            * Le second geste, en blanc : celle qui sait déjà ce qu'elle
+            * vient chercher n'a pas à passer par Élise. Même adresse que
+            * la navigation et que le bas de page — le site n'a qu'une
+            * porte pour le rendez-vous. */}
+          <div className="mt-6 hidden flex-wrap items-center gap-3 md:flex">
             <AppelElise className="bouton">Trouver ma robe</AppelElise>
-            {/* Le second geste, en blanc : celle qui sait déjà ce qu'elle
-              * vient chercher n'a pas à passer par Élise. Même adresse
-              * que la navigation et que le bas de page — le site n'a
-              * qu'une porte pour le rendez-vous. */}
             <AppelRendezvous className="bouton-clair">
               Prendre rendez-vous
             </AppelRendezvous>
+          </div>
+
+          {/* Téléphone : l'un sous l'autre, au centre, et l'ordre inversé.
+            * Sous le pouce le rendez-vous passe devant — c'est ce que la
+            * cliente vend. Élise reste juste dessous, en toutes lettres
+            * soulignées : un second bouton ferait deux actions de même
+            * poids. Le souligné est en dur, pas au survol — il n'y a pas
+            * de survol sous le pouce. */}
+          <div className="mt-8 flex flex-col items-center gap-5 md:hidden">
+            <AppelRendezvous className="bouton">Prendre rendez-vous</AppelRendezvous>
+            <AppelElise className="accroche text-blanc underline decoration-1 underline-offset-[6px]">
+              Trouver ma robe
+            </AppelElise>
           </div>
         </div>
       </div>
