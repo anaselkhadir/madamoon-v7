@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Photo from "@/components/media/Photo";
+import Tuile from "@/components/Tuile";
 import { COUPES, PLURIEL } from "@/lib/coupes";
 import { ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
@@ -62,11 +63,16 @@ export default function Coupes() {
 
   useEffect(() => {
     if (mouvementReduit() || n === 0) return;
+    /* La scène collée n'existe qu'au delà de mille vingt-quatre pixels ;
+     * en deçà, les six coupes se lisent empilées. La largeur est relue à
+     * chaque image, pour qu'une fenêtre agrandie réveille la scène. */
+    const large = window.matchMedia("(min-width: 1024px)");
     let demande = 0;
     let dernier = -1;
 
     const poser = () => {
       demande = 0;
+      if (!large.matches) return;
       const p = piste.current;
       if (!p) return;
       const b = p.getBoundingClientRect();
@@ -113,7 +119,7 @@ export default function Coupes() {
         *
         * « overflow-hidden » ne peut pas être posé sur la section : sur un
         * ancêtre, il désactive le collant. */}
-      <div ref={piste} className="relative h-[210svh] max-lg:h-[180svh]">
+      <div ref={piste} className="relative hidden h-[210svh] lg:block">
         <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
           <div className="grid w-full items-center gap-[clamp(1.25rem,5vw,5rem)] max-lg:content-center lg:grid-cols-[1.1fr_1fr]">
             {/* ————————————————————————————— la photographie —————
@@ -208,6 +214,55 @@ export default function Coupes() {
       <span className="sr-only" aria-live="polite">
         Coupe présentée : {courante.nom}
       </span>
+
+      {/* —————————————————————————— au doigt ——————————————————————————
+        *
+        * Les six coupes se lisent empilées, chacune entière, sans rien à
+        * commander. La scène de bureau demande un survol qui n'existe pas
+        * au doigt, et une scène collée y donnerait le sentiment d'une
+        * page bloquée.
+        *
+        * Une pile plutôt qu'un second rail : la section précédente en est
+        * un, celle des maisons aussi. Trois de suite finiraient par se
+        * confondre, et l'on veut ici voir chaque ligne en entier plutôt
+        * que d'en balayer six.
+        */}
+      <div className="lg:hidden">
+        <div className="gouttiere pt-[clamp(3rem,8vw,4rem)]">
+          <p className="legende">Les coupes</p>
+          <span data-ligne className="mt-4 block">
+            <p className="phrase">Une même femme, six lignes.</p>
+          </span>
+          <p className="texte mt-4">
+            C&apos;est la coupe qui décide de la ligne, bien avant la taille.
+          </p>
+        </div>
+
+        {/* La trame à deux colonnes du site, celle des robes et des
+          * maisons. Empilées en pleine largeur, les six coupes tenaient
+          * quatre écrans et demi — plus long que tout le reste de la page
+          * réuni. Elles en tiennent un. */}
+        <div className="gouttiere mt-8">
+          <div className="trame-tuiles grid-cols-2">
+            {familles.map(({ c, media }, i) => (
+              <Tuile
+                key={c.ancre}
+                retard={(i % 2) * 70}
+                href={`/coupes/${c.ancre}`}
+                media={media}
+                dossier="robes"
+                alt={altCoupe(c.nom)}
+                nom={c.nom}
+                note={c.note}
+                sizes="46vw"
+              />
+            ))}
+          </div>
+          <Link href="/coupes" className="lien-nav souligne mt-8 inline-block text-action">
+            Toutes les coupes
+          </Link>
+        </div>
+      </div>
     </section>
   );
 }

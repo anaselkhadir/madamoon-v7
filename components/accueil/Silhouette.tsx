@@ -60,11 +60,17 @@ export default function Silhouette() {
 
   useEffect(() => {
     if (mouvementReduit() || n === 0) return;
+    /* La scène collée n'existe qu'au delà de mille vingt-quatre pixels ;
+     * en deçà, la section est un rail que l'on pousse au doigt. La
+     * largeur est relue à chaque image plutôt qu'au montage : une fenêtre
+     * agrandie doit réveiller la scène. */
+    const large = window.matchMedia("(min-width: 1024px)");
     let demande = 0;
     let dernier = -1;
 
     const poser = () => {
       demande = 0;
+      if (!large.matches) return;
       const p = piste.current;
       if (!p) return;
       const b = p.getBoundingClientRect();
@@ -109,7 +115,7 @@ export default function Silhouette() {
       {/* La course. Six morphologies à traverser, plus une hauteur d'écran
         * pour le collant : au delà, la scène s'attarde ; en deçà, les
         * lettres défilent trop vite pour qu'on les lise. */}
-      <div ref={piste} className="relative h-[230svh] max-lg:h-[190svh]">
+      <div ref={piste} className="relative hidden h-[230svh] lg:block">
         <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
           <div className="gouttiere grid w-full items-center gap-[clamp(1.5rem,4vw,4rem)] max-lg:content-center max-lg:gap-8 lg:grid-cols-[1fr_auto]">
             {/* ————————————————————————————— le propos ————— */}
@@ -197,6 +203,70 @@ export default function Silhouette() {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* —————————————————————————— au doigt ——————————————————————————
+        *
+        * Sur téléphone, la scène collée est remplacée par un rail que
+        * l'on pousse. Une scène qui retient le défilement pendant près
+        * d'un écran donne, sur un téléphone, le sentiment d'une page
+        * bloquée : on balaie et rien ne bouge, seul le contenu change.
+        *
+        * Ici le geste répond tout de suite. Les six morphologies passent
+        * l'une après l'autre, chacune s'arrêtant net sous le pouce, et
+        * l'on va aussi vite ou aussi lentement qu'on veut.
+        */}
+      <div className="lg:hidden">
+        <div className="gouttiere pt-[clamp(3rem,8vw,4rem)]">
+          <p className="legende">La silhouette</p>
+          <span data-ligne className="mt-4 block">
+            <p className="phrase">Avant la robe, la ligne.</p>
+          </span>
+          <p className="texte mt-4">
+            Six silhouettes, et pour chacune les coupes qui l&apos;allongent,
+            l&apos;équilibrent ou la révèlent.
+          </p>
+        </div>
+
+        <ul className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--gouttiere)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {scenes.map(({ m: s, robe, media }, i) => (
+            <li key={s.lettre} className="w-[74vw] max-w-[19rem] flex-none snap-start">
+              <Link href={`/morphologies/${s.lettre.toLowerCase()}`} className="group block">
+                <div className="relative aspect-[5/7] overflow-hidden">
+                  <Photo
+                    media={media}
+                    dossier="robes"
+                    alt={altRobe(robe)}
+                    sizes="74vw"
+                    priorite={i === 0}
+                    className="h-full w-full object-cover"
+                  />
+                  {/* La lettre est posée sur l'image, en bas : c'est elle
+                    * que l'on cherche du regard en balayant. */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-0 h-28"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 100%)",
+                    }}
+                  />
+                  <span className="absolute bottom-3 left-4 font-serif text-[2.5rem] leading-none text-blanc">
+                    {s.lettre}
+                  </span>
+                </div>
+                <p className="nom-carte mt-3 text-[1.0625rem]">{s.nom}</p>
+                <p className="texte mt-1">{s.silhouette}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="gouttiere pt-6">
+          <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
+            Les six morphologies
+          </Link>
         </div>
       </div>
     </section>
