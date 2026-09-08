@@ -12,6 +12,7 @@ import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
+import { de } from "@/lib/francais";
 import { epingleRobe, offreRobe } from "@/lib/schema";
 
 /*
@@ -229,7 +230,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
         className="gouttiere pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,5.5vw,5rem)]"
       >
         <h2 id="fiche" className="sr-only">
-          La fiche de {robe.nom}
+          La fiche {de(robe.nom)}
         </h2>
 
         {/* Ce que l'on remarque en premier, à la taille d'une phrase. */}

@@ -31,7 +31,7 @@ export default function Coupes() {
         <TitreSection niveau={1} titre="Les coupes" />
         <div className="gouttiere">
           <p className="texte mesure-l pb-8">
-            Six coupes, quarante robes. La coupe n&apos;est pas une règle : c&apos;est le
+            Six coupes, soixante robes. La coupe n&apos;est pas une règle : c&apos;est le
             premier tri, celui qui fait gagner une heure d&apos;essayage.
           </p>
           <div className="trame-tuiles grid-cols-2 md:grid-cols-3">

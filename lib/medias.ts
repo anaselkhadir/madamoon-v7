@@ -1469,13 +1469,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "amandine": [
     {
       "name": "robe-de-mariee-princesse-amandine-1",
-      "w": 933,
-      "h": 1400,
+      "w": 5712,
+      "h": 8567,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoNABQAPxFysFCsJqSisAgBgCIJYwCdACKRRMoXWp8afOIG5wAA/tWrFAeYTVua30PzJVKN5uSOr0SZy0+4MMc6NWxsGgHBZYphjvQAVwegeVCTrkj6UPwAAAA=",
+      "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoNABQAPrVKnkmnJCKhMAgA4BaJYwCdMoADSw7aALg37O4OROAA/vCKkCor90i64+VXDxK7iJx+yBINo9kzUX4PLtKQ4L3mquPU2jVXU527X4tMEVr2W08fqjHY3dokag+i7LfyBwVSUIlmqalyPxLv3jTfIJaAAAA=",
       "jpgw": [
         480,
         800
@@ -1483,13 +1485,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-princesse-amandine-2",
-      "w": 933,
-      "h": 1400,
+      "w": 6189,
+      "h": 9283,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAwCdASoNABQAPxFysFAsJqSisAgBgCIJZQCdAB8nbZXR0WCZA5IAAP7Vpo2ePo1Oe4yYLtyHqwwcofKz9M+0W0fsmTRe++HN4Vx784pDWmis9zpQfUwozmGBnFNT0RC4AAAA",
+      "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJZQCdMoAC8OmXH+uDiAr2AAD+8IGK/R21786XC9xZ5pTKBpUrxEqgaoHLtik1g2TS5C2//Ufn4mLTVRB6k24IqJWAj9+BnVPpBZ++5Hr0Oz/puMfieQ+tdVX9Cupl3af6fJ4RTpgAAA==",
       "jpgw": [
         480,
         800
@@ -1497,13 +1501,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-princesse-amandine-3",
-      "w": 934,
-      "h": 1400,
+      "w": 5464,
+      "h": 8192,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoNABQAPxFysFAsJqSisAgBgCIJYwCdAB0+nuv8EHOaaKIQAAD+384ANtCKbT9mjKeNS86i99LWhfrOJeUq7d9uvq38JdZw22oyjF6jyaxuwn8rmVCuCgF/CwZWIRkAAAA=",
+      "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoMzGDwGDd7sP3PAXW/wa6oAAP7zzJiWD+7ql4nO96MTmqSjQwjXNoTOSn+T7UFu3MCPeMvfBnFUICoZ1iMrnZ0aQ9VjndzK5glHRSxXhD6NOVBp278OQ/KNfP9gjAWKVM3sQAAA",
       "jpgw": [
         480,
         800
@@ -1543,13 +1549,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "livia": [
     {
       "name": "robe-de-mariee-princesse-livia-1",
-      "w": 983,
-      "h": 1400,
+      "w": 2894,
+      "h": 4120,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoOABQAPxF0sVAsJySisAgBgCIJZwAAJOO7dhKMvbkAAPb1DdFKF9HlmCDg3bYPG+Bg6UZyoylkrzsXBoAAAA==",
+      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoOABQAPrVKn0mnJCKhMAgA4BaJZwAAXuL8X+XWDGIfAAD93vODuVlT4dLO5xx7nX2QMXuvN7jTozBQb+0ppKyZRZL/tZiDuhGOAAAA",
       "jpgw": [
         480,
         800
@@ -1557,13 +1565,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-princesse-livia-2",
-      "w": 983,
-      "h": 1400,
+      "w": 2894,
+      "h": 4120,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACQAwCdASoOABQAPxF6tFAsKCUisAgBgCIJaQAAJSNvA2t5Q+PAANNZHzGqc94f0X/OUwjl1gRwS6nJHrJIGuyWIyAAAA==",
+      "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoOABQAPrVWoUsnJSMhsAgA4BaJaQAAUXdKeoo6tAnOAADXMeoLvPIPTzzgg8vDI7Qwi55riSJrdzAhsfptG97B3pEiEyR9FwRrXWAAAAA=",
       "jpgw": [
         480,
         800
@@ -1573,13 +1583,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "lovia": [
     {
       "name": "robe-de-mariee-trapeze-lovia-1",
-      "w": 933,
-      "h": 1400,
+      "w": 5709,
+      "h": 8564,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASoNABQAPxFysFAsJqSisAgBgCIJQBOmUABv53cwFvm569kipUAA/tYCdaeDAVbVChdd4yDjCXHTJdxolVyXQkIMd8Py+43CY7dmuyM18qVginvGeg7PNblso3OQAA==",
+      "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoNABQAPrVKnkmnJCKhMAgA4BaJQBOmUI7gBSIjViZJmteZg7AA/u3uwnZhXksgsWAQ8cHOPLaPPb5rQmoJRY4Dtz3rRmeL+kz5yuEfIcvAB06VyrZxaDROl/dJFNc7qTEuH4O1LGRaLQCF4FY0JwDMMaD5v9EBzQn7IQaYAAA=",
       "jpgw": [
         480,
         800
@@ -1587,13 +1599,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-lovia-2",
-      "w": 933,
-      "h": 1400,
+      "w": 5683,
+      "h": 8526,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoNABQAPxFysFAsJqSisAgBgCIJQBOmUABNfrln8vWKJQAA/tToEVXE2j2QXsIjdr7jk5GoFDp1ppJ+N296uF5yBvfuO58epKyZO4GXwo87Nwfjq2ZG8cBdjyFkrgAA",
+      "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI4AA8ZMa/IkF37jgAD+8m9UywRhuqnexU0c8hR0dSklhPaQxLble5OGkypAdDFSCeE6DzaLZgAinuiuDzgF1k8BUVSwz6wXTcmAzMTM6t+ab5I3wzYprU1miwDnYI2D1EwAAA==",
       "jpgw": [
         480,
         800
@@ -1601,13 +1615,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-lovia-3",
-      "w": 934,
-      "h": 1400,
+      "w": 4308,
+      "h": 6458,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBACdASoNABQAPxFysFAsJqSisAgBgCIJYwCdMoADZlXxOgS7vSyGsAD+59q2QPBIevZwtLo1tn7jXNQ0g1YuwB4Hdz2nmQXjaedbPMEcEIFz0pLql378eNk5aU/SCgZZ3hr73TGCGKDE/idaxGIAAAA=",
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoACYhQsbQ8F1QDgAP71Q8xKDmgPNx3ldWrz73+csRM05wCsK1JBXPr4G/YyfOzge1p4ZpqlEcok3PTQ903YmUgbbwpjmCOM2kO6dCuFbeSwrNizjutFyHZyA9VG1Ix+70nY3Lu2OeFsDf5eBRe4l+oAAAA=",
       "jpgw": [
         480,
         800
@@ -1617,13 +1633,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "alicia": [
     {
       "name": "robe-de-mariee-trapeze-alicia-1",
-      "w": 933,
-      "h": 1400,
+      "w": 5786,
+      "h": 8678,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoNABQAPxFysFAsJqSisAgBgCIJQBOmUABpdHTA/vgdgAD+UO+FMrZWCxVQvywcuHTGVPUh6RYeaVPklquAhCU1Ouj8EUsPTrwtRpEK2Co1/9cgwAA=",
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI4ABTog7Gh4iJIQAP7Du65CN/V85P+/w01SQUn4oY2COjUcfCGNGswq6+Tm/yXQLAhNhKXIbzr1MtLZqsHcF43ZVj96233rlPcb/ncb6sf0lqVvlb/UppLqhunbQAAA",
       "jpgw": [
         480,
         800
@@ -1631,13 +1649,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-alicia-2",
-      "w": 933,
-      "h": 1400,
+      "w": 5782,
+      "h": 8674,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQAwCdASoNABQAPxFysVAsJqSisAgBgCIJQBOmUAAbuInGSHcAAP5ZmCm+alWeavXp/YMf+gY+J1CrdxIEo5DDcQlrXF47evueK7pTfz1/KLSEQqP1i6nVofLqME2Q2AAAAA==",
+      "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI4AA/hY07tUmm5WtIAA/rXRnFFuWMPa0CMfBr1TVMBXmzZVzhHjxjLflWRht8Ya7dWLPSvFuqBcNnDajHX76/MPttxvyX/07m9/5EP/RPgjxOxnuUlHrAXB8ovvlhPkOveA0zrVLUC8XAAA",
       "jpgw": [
         480,
         800
@@ -1645,13 +1665,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-alicia-3",
-      "w": 934,
-      "h": 1400,
+      "w": 5464,
+      "h": 8192,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoNABQAPxFysFAsJqSisAgBgCIJYwCdMoACwggV+Blcu5ZUygAA/t7trqYjYlLvVwlkAfcU9+gV3d5vF8nnQhkDNfW7EO/AsTQptXUQsIAS+QrDAAA=",
+      "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQBACdASoNABQAPrVKnkmnJCKhMAgA4BaJYwCdMoCGACUae1gky53FlNlgAP7zo15SiGX7B3nqGs88BX5fH3wQWGfQNPzAEtO1hfVw1W+zRgJAITydRe88S25u1l4v5tr0o9q/p7i9HaKmfUHe3dj9415gl1oHqjnUp8vZD8bjyAAA",
       "jpgw": [
         480,
         800
@@ -1661,13 +1683,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "agnessa": [
     {
       "name": "robe-de-mariee-fluide-agnessa-1",
-      "w": 933,
-      "h": 1400,
+      "w": 3680,
+      "h": 5520,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABQAwCdASoNABQAPxFysFAsJqSisAgBgCIJYwCdABrhJS9UAAD+jG6qjYR+6bouL8qay0+fiOnkim4aQuQxJy7oY9fMTrFxiluA8tB7QAA=",
+      "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoMYAEQTw6IvUqRpkVaAAP7TYOGIWCBmxzuyZEdpR4I787FsKFR6nM94tDpReGZxPc+jIIPiJX7nuUO3VW0cvmh6R2wiIkDmg4kAAA==",
       "jpgw": [
         480,
         800
@@ -1675,13 +1699,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-fluide-agnessa-2",
-      "w": 933,
-      "h": 1400,
+      "w": 3716,
+      "h": 5574,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoNABQAPxFysFAsJqSisAgBgCIJYwCsABuvJhGgAP3RX4dY9rnM1nVc2i4s8JHqD67brMJIjkFegAAA",
+      "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoADU3Dsc+AA/rHEhXJ3kisRjwtAxGWvatZl8Xx17fJ+zWQJ4L1Yr4SWijp6Y5DANcgDP2Py3b+1uvaiioeJDgAA",
       "jpgw": [
         480,
         800
@@ -1721,13 +1747,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "dolores": [
     {
       "name": "robe-de-mariee-trapeze-dolores-1",
-      "w": 933,
-      "h": 1400,
+      "w": 3755,
+      "h": 5632,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoNABQAPxFysFAsJqSisAgBgCIJZQC06CBUN6+qTDHGtoAA/q/GyjwPdPn0yvlCeRdFBptcHGPNlApPlAH9qeDhNJZ4/gAA",
+      "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZQCdMoADD77rNcSM5AAA/udNHr54mprrjTREyjGJ/O3wf0eI8qcsGPI/EqAnZAnM6xsuTjN5d1CXGOTapHnpRzhKBcvcQAeOZvseQAA=",
       "jpgw": [
         480,
         800
@@ -1735,13 +1763,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-dolores-2",
-      "w": 933,
-      "h": 1400,
+      "w": 3846,
+      "h": 5768,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoNABQAPxFysFAsJqSisAgBgCIJZQC06CKjCLOG6bgAAP6uwPkmX+sWDEJtQHWRqKJ0Ajbo3uQoUAAA",
+      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZQCsACP3zo0mAHiFUAAA/ufgBzafR3YsfDsaXRGZqfQhgcVdLnL2IH1ojDRn8s69OO8Akovw/EAA",
       "jpgw": [
         480,
         800
@@ -1751,13 +1781,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "lorette": [
     {
       "name": "robe-de-mariee-sirene-lorette-1",
-      "w": 933,
-      "h": 1400,
+      "w": 3625,
+      "h": 5438,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoNABQAPxFysFAsJqSisAgBgCIJYwCdABTV4mzFnq1TkAD+s7wglcVht9kLSXWLHHxNd3kFFj/YtKnQxy4ADcfb6ohuINH+YdU/I8grBBVgAA==",
+      "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCsABuM9EKFjt8ZJOY0AAD+5+4Rszc9zt7l/QNsN6/uMpZfIggMts+R+6gFzpRx1saQ8xENF9m4m7CU0RVd1wOU3oEWt8byb3u9AX9G4yQA",
       "jpgw": [
         480,
         800
@@ -1765,13 +1797,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-sirene-lorette-2",
-      "w": 933,
-      "h": 1400,
+      "w": 3609,
+      "h": 5413,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoNABQAPxFysFCsJqSisAgBgCIJYwAAPuOmysvZ6mL9gAD+WxkVgk/lAH8uEA/B1ftTGapr/CXNgkmb9ydb3skOLl47Ao6CMbjURiE8AAA=",
+      "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAwCdASoNABQAPrVInkonJCKhsAgA4BaJYwCdAB9FJFHqeSrLvqAAAP7GAlPejfTJDfu5FoOMQ4IWp2FJfb4GKYhXPLqeLbWbsCl/Sh0d7liVETdh31fSBhwJIJ8EgSqg0cDkBAmAmAAA",
       "jpgw": [
         480,
         800
@@ -1781,13 +1815,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "angel": [
     {
       "name": "robe-de-mariee-trapeze-angel-1",
-      "w": 933,
-      "h": 1400,
+      "w": 3821,
+      "h": 5731,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAQAwCdASoNABQAPxFysFAsJqSisAgBgCIJZQCo9Bqu1QAA/lJvAXC3KGrFoXCW4MptqMmGhhFiOUGGgnJQjWiAlVKS18AA",
+      "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZQCdABuYUvtPzvT5mAAA/sWOY91t/Up8POVJSn/VRMSSe18tL5C5y9fJAMK8xMdsgsnZzNGWbR70v8b0hzCvgAA=",
       "jpgw": [
         480,
         800
@@ -1795,13 +1831,15 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
     },
     {
       "name": "robe-de-mariee-trapeze-angel-2",
-      "w": 933,
-      "h": 1400,
+      "w": 3868,
+      "h": 5803,
       "widths": [
         480,
-        800
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAwAwCdASoNABQAPxFysFAsJqSisAgBgCIJZQCo9B9xPX2AAP5Si7Q1gVRLsfV/MUlM5lwZkQemrFP4obh81K+B9KlgAA==",
+      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZQCdABwaChAAAP6v3yjwAF5nbCLuAI5MhUaxnCKp4rBzOPdtNpwcswvD7t5VN/RjEAJjtkFkazeC+kv7IK1r+MRgMX3iGIAAAA==",
       "jpgw": [
         480,
         800
@@ -1923,140 +1961,636 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "marie": [
     {
       "name": "robe-de-mariee-fluide-marie-1",
-      "w": 535,
-      "h": 807,
+      "w": 4000,
+      "h": 6000,
       "widths": [
-        535
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAACQBQCdASoUAB4APsFYoU2npSKiKAqo8BgJYwCdMw6lvAhNCpY3QjPkcS7lmVGlAU3rAKlJaAD+z2Q6CIMr6fV+IRFsRzQMmc02ppoqoIsmbUCfsz+GJBWZaCtU/2eRdZNwVngTxNDvwpao/zeDkAYv+hyFH3fy36TFVGjp//ci3ezi5t4N5HDUp0IqyTdUGTZd0QW3RFJu0HNyKcMEahX22ViaT//R1wQPt0C7vBqEZ/k4qHORh/VCXIOnQ6EedoURgS2NkfJfePacBx1p/QeF5R5iDRoCSDk8aaXLqSK/C9uAAAA=",
+      "blur": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACwBACdASoNABQAPrVInkmnJCKhMAgA4BaJaACdMoC2St0Ac2uP7gBFpr0xoN0AAP7ifSHX3DVPiHisknuuFpf5qns1+xgP5p3/AwyXmwW5kWJSq+N3+lljoxjj0Ss/22U7M2yeu+jiJsu9EQMM6RavIvvzebugMPGPYHgaDCTU5+am+kqaYFA1m6dzEe9AY74UB4cNNGbSVjx85Y50zbYM9kAAAA==",
       "jpgw": [
-        535
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-fluide-marie-2",
+      "w": 4000,
+      "h": 6000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJZgCdMoAlrhgWE9f5zKeelPAA/f0+VfSYd0WREGVVXowM/cju6Kpj8WhHG11H/uaX432p/bD2DJkwYz2NeBGDwzxHnbp6qNCKAbqtyOmOAy9zXpMKCRX83dH/XaBK5IWLySXyUez1aom+bZzQEcQu+G5Bn5NB5MVRx1im5EazImZFFtSWAAAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "mathilda": [
     {
       "name": "robe-de-mariee-fluide-mathilda-1",
-      "w": 507,
-      "h": 736,
+      "w": 3806,
+      "h": 5708,
       "widths": [
-        507
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAACwBQCdASoUAB0APsFWo00npKMiKAqo8BgJQBbbP/xbQxcZyB05eNUlh8lPF59BRZskEyD1XvAA/u6ga8qBvj5GWNKpBDTsrKG+cyIMHCoHrPaMLMhA2WgsXI9OZZStMz8Rweg0PmfBAGzWkOeweA8Cpd4kdJO5cBTav5RvgxrfAJHe1ZH1N8+JxWOAdUBh2QaCzCsuqoM/3lAMfmeo7LJ7tzW/FE+6iD8wijJAvUBj1g7gS44wRS4QHDBH5quaXpEgzCi4R7xH3LImFZpecVU5O4tlXv4zPoAR7avgHnwaYJCWYmiJppP8YAA=",
+      "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQAAJBrxiTkMnAAD+5hxcXO0c8cJ8AfHY7KC6cSF2QmkuNfJXFMEpyR8K34pdFr9lD9Efyd99WzL2lEuB/MC/n+/tes6n/vXbSbOeE9C2xw7IwpVkKL46Xyqb4TLPQV8UaSyJbfXf4oL+fsPAAAAA",
       "jpgw": [
-        507
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-fluide-mathilda-2",
+      "w": 3833,
+      "h": 5749,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQAALgMRlQN07r3KgAAD+8NBMLWemtj2dUu6bHnNvlxDLtre8pLCR1ekcACoHLIiobCqqcKNVj/KZmvR/rj81BQy4pvcaxrDY7rsDoUZBL60+4kGy+YVrzZrhB/19D9+eAAAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "murielle": [
     {
       "name": "robe-de-mariee-fluide-murielle-1",
-      "w": 462,
-      "h": 667,
+      "w": 4000,
+      "h": 6000,
       "widths": [
-        462
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABwBQCdASoUAB0APsFapk6npSOiKAgA8BgJZACdM4T9DzKBjIYzzypA2ol/NmED2NR9OcpAANriwV3OiRQzEnfYNknI7cD6PjVFI4rXBhApFzROe4/BgVObhSph0Hy/zu2LQoVcAbbGJ5jvl+pnMqrJ+VUitUQ92SH+xKlsIDWZ0PSEoP3a3V/ywT4zHCZbkwtvz/AF1kvHK7gW1hFFcjI9CVugJ5BfOJ/ktCu2OeC7ipesBpgLMIuiobarpCfuDLIOLfeL96Pp+xW8kovVZCBrh2PtkO7wAAA=",
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZACdMoACre0ZqEoYQdd4AMqQgE1SbSdeYWJwcV9tDMDwippmyIeBJnpdWU57E4s5kfusGx9qDy9zp0ri3pIVNfewVJoG7+2VvFhGMKwUXFZJ0G5T8/wEys9A5zg/BQ7sgAAA",
       "jpgw": [
-        462
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-fluide-murielle-2",
+      "w": 4512,
+      "h": 6416,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACwAwCdASoOABQAPrVInkmnJCKhMAgA4BaJZACdABrFUCGaduSVgAD2LGAPw4bDNvJf5cCpxQ+Et5ksNeVcty0/8dGGHtiFprPqWrY4B9kRXehd4C4nDNOelBXpWEtKj4RufQ8JzN0t+SzKoSSaomXeY1hmqN6p/VdckuGsmA1juoAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-fluide-murielle-3",
+      "w": 4000,
+      "h": 6000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJZgCdMoR8eB8GKlJ0Uc992ADh2ju7c1C9DqVrs2gFH8DeYbLn6vAPAhC6/BAsgWfFMOcavRUk2z5lnN8DkKtSKqXNoxboEQ+1jtyrHBda92d0GrAQKce+CifCF6aakvs8QFgA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "mira": [
     {
       "name": "robe-de-mariee-sirene-mira-1",
-      "w": 435,
-      "h": 710,
+      "w": 3891,
+      "h": 5836,
       "widths": [
-        435
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRhQBAABXRUJQVlA4IAgBAACQBgCdASoUACEAPsFcpU4npSOiKrgIAPAYCWMAtRuAzpk4ALFN8JI6fJBP95qk6kxSQptgSYLvUNgOp3SoAPqemOxKbIH2v4CNPWJW/ocJnhYmjc2zic2zHJGmefOwd7vhsAjK5AynFML3NFoIy5OwX8vA/BnGR9vI2ryV2FhGIqSyZJzSdiAj99P45g6QPWQ0VHwdtQ6VYkV8+WJKyju1ClOft/SkAIpeE7e6NAJiuGD9+k2tcyRjFWfCHmjJzFlsIruQx79blvYAqYsBa0pdQHmrZWMDfaPPHZdU4dpMf9M+9x2cRInVpMyarij3zVJU9c6ZGJOTIBNgHYhXqmJETJaYBbGAAAA=",
+      "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwAwCdASoNABQAPrVKnkmnJCKhMAgA4BaJQBOmUAAt96EDq+JRAAD+Jrk/yMVoH6hZ70cjc6tpICF4Nh1mJJepGKr2MhMbja7CnyoZQTZnN/MpX5mMQh32DjjhqFGgHLlOj3zo4S7N0RWGXlbG/oeveNROj00MKWk7v8y/pC0/dgIb3medp1/ZvGeAAAAA",
       "jpgw": [
-        435
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-sirene-mira-2",
+      "w": 3823,
+      "h": 5735,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI7gBLSI/pnqhmb++AD+6ZM5oralDFcAbEY3zb3YAfYefLw72RZD2DCf8jjNfzG1sk2wTfGo7CMI1/akX1Z284kHLfMfllfLSzHsL/sucPGFtwtcA25nfG18Ah3II6uQGAAAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-sirene-mira-3",
+      "w": 3753,
+      "h": 5629,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBOkGQBMn8hopV+pgAD+u+oj6lO+244QeUaQPjQVGzni6GsiBG8AT/2PGEPCvS84B7Zzt9LmMzBbrn23LNpwyGrer87KvS3/HkIdPleloOwYZ5lsTeRAJLUdhgBQ6oAAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-sirene-mira-4",
+      "w": 3751,
+      "h": 5626,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBOgjgARL+LPDzoTzIwAAPzZT63iX74qd0qxfIyPH7bKs28v5a7H1ISsqx2fJsRYVKGlbpvS5Q+EM8WhqtGu9O6vRgO5dnYJeCZdebJrEVHyo38dbYjWGBxUmmkIGKuBV8v/ydgLP9EciNJ86C+jbte2kxbkAAA=",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-sirene-mira-5",
+      "w": 3633,
+      "h": 5450,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUABfkb0hiZq5ILCSxlqwAP7RLXptpDtLbGBPhur9DUhmEgiNNMB0BAK6iPu6K4HPZayrgkd1t2HrEnbSfN1VyqcWNnKqmxlmc6fcScHR4QpVorz2hLY4Jv059WwPjWwofbHqpHr+EP3YplAAAAA=",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-sirene-mira-6",
+      "w": 4000,
+      "h": 6000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoAC+0+gMdQEhkX5QAD+6frqLTSp6/HdeinaDE3JzrxspRBxfefCh2xHDqpew3Hbdh1iK039QKZDdyW/ZEDlwKHVzoZBvcEbFoRD9YcEC0mYp+YQuVJ8CoOSA1a09zteMAAAAA==",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "monica": [
     {
       "name": "robe-de-mariee-trapeze-monica-1",
-      "w": 516,
-      "h": 672,
+      "w": 3648,
+      "h": 5472,
       "widths": [
-        516
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAABwBQCdASoUABoAPsFapk6npSOiKAgA8BgJZQDGfAmtJ90PdWD151LIkW+kTPzLUJVkZ7YAAP7oP0qn97aprAkDERWgHCHpnGlFqKejnBL99xwZkk3ZCXua7ZSWjToymXEgbIxTv04UVX/aTmJJCCButFqQjX576y2d+vv9K6HsMIkm1aSwMkByorF2XIReXDL94xExFCuEog0DpTVNYzhzyZG5lEcIZaYskPxiBjsueyMik5ZlO7OW3OUqzopBFy+sRnn7Ue8jhNYbd06P6bEWuAAAAA==",
+      "blur": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoADTUU7lp5q/RGZNQAA/vQPvJg5R/4/V6kw/FkoNzq+wfw/ucz/oxWpHDVSvf3Yoz5XCDt/iPqJBu1Icb11NAtXi1HJJvl96kSVbZY5JKz3Qh9uhw5C3kpmFKuCntMmFs4yAQPcY3ChynhUBmsAAA==",
       "jpgw": [
-        516
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-monica-2",
+      "w": 3648,
+      "h": 5472,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBYdgpIRSo+ofDxyC6OAAP7n4xFeheey80g9s5QbuOXd1qgYWAyzFgaR/3WnlqhvOcVaUGli4tkHe/BOJVAxY5l/eKdHlgJagGz+rMq5y3PDJLrhYC3Afo23rNJFBzFLdjhHGc5NcWtczPDJ2g0A+71/gAAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-monica-3",
+      "w": 3648,
+      "h": 5472,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoADQxt6ct9zNSYwM2DAAPlrWn/QtfK8mmA+Ywxdai5MHIbO3KMFI1zbhUGHk2T37oqC5yZhfK4D2FmDXpgLJS6vb6IE531pJNhvIZMDsm7CvqhIq50baMDhQO1XRLXQj8jqoKkcrMCdg0GDnfDL3QknGyAAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-monica-4",
+      "w": 6075,
+      "h": 4305,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAABwBQCdASocABQAPrVQoUwnJKMiKAqo4BaJYwC2yd2hiLImzjiy1oR5b0NQPCuoMGGgpiu8APRnOVyqhl6+4x/7RhE87Vsul6+dv8A6MJapmcwNcUfkqAWrRqmWim9Aq/GSrlNJ5ZKF1d+ECmjmBfs3vSog8q79Fp85CaX9ymYJe99jzXVBpb+W6TWj0mjUsjmz3oa9E3AYWwTZ7hIgpAsET5SxeB1YXlaT2Jd2fE6VxCUlMd8cFvSDhcXvL9+PBuX9n71/l1D0hnieNLfzK+JzBkNxnppRVO5R1zlkNDeIE6ttPA4iwWdJ41bHugEmYAAAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-monica-5",
+      "w": 5472,
+      "h": 3648,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAwBQCdASoeABQAPrVKnkmnJCKhMAgA4BaJYwCxHxiijBYrmf7v3WqpjvQFeU12qH3WAAD3ixDPMlDUeAsjJLXcVssPesUG9fbGdoAsdUYZMmRMz4aIglftd9EsNSz9bbqdQ961zstfBp7HSn+/UX4erCFoW1JIhG+DBldPDMT42hDWC66oWYF85WLDx2isuIXYkFgTUaxrCDPmRI3vZPO8DCG1+avhbcoZ/stg49vTihSkAgsgZWVLrHQvK+D/J03I35gmR/m3JPOV/wIYFBtwk3HO/j/W5YqFR4PdZlMgRLAM2kAAAA==",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "milan": [
     {
       "name": "robe-de-mariee-minimaliste-milan-1",
-      "w": 492,
-      "h": 682,
+      "w": 2000,
+      "h": 3000,
       "widths": [
-        492
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAACwBQCdASoUABwAPsFapk6npSOiKAgA8BgJYwCdMtJv/gE6YRsxdF1LQEtF4c5/EeTzyqD0FoAA+xWPbXU9Zf41t+PAIzwkNX9I3/fqsqNuFw/GmzpEt8kK1gTnHVC56bbE6Rq5JrW0462lcDwnQpQtMQQUqOvGwCtlVJXIHloPbtD8S0i5O91Bc3NRCRuAH5of58uzJ+L/QI1qb18CWKasVxMN+HlWVPAQLVgtHOVK9rA+BkDdY6MS+iTPW2sTgtfRol1hPX50kgAA",
+      "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdMoGv/gPMkjmq0S0QwAD8j/kCegEPBp5vsOSeqF2GYclbsHx+hRf267I9yo0ZzeytNQlSzwjgfMUPz6WJufql+PZo95LcQ4sR6kBE9uhF6h2WH2vlY+4TszMwAAA=",
       "jpgw": [
-        492
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-minimaliste-milan-2",
+      "w": 2000,
+      "h": 3000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBOgBDzwaZrVBACyKQAA/mbfCWiJEJDFBA1KuD9YSFG7KhuInwWFRDB4F0VMYmhlGr9wS9O2xu2rBmhzkeQ9NrjgnPY3W5NA09Tm4LCRa7shBub3qjqnR/XzTVngjcWEAAAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-minimaliste-milan-3",
+      "w": 2000,
+      "h": 3000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoNABQAPrVKnkmnJCKhMAgA4BaJQBOmUABN42OZWFOIlS9BQYAA/kCLw8y+Fr+S4cTqqMK9rxowhraUt6L1F2yN/fGMZJ7JvMJ7b42vrymnRhFfuOQml72PslNVda/bVBx2dtKVd5LUclFtAgRivbIQAAA=",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-minimaliste-milan-4",
+      "w": 2000,
+      "h": 3000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUABiVRzhyxM7OkS1DoAA/qZw7G/wSO1FmpBgLKaOeFv4x2Mf/YkKAOjIHkm/fNnhT7jE1ff5PDsPQNI4Bk6+bkTp0t/Fu2sTF0aCNLm2OW7mju29Y8unG1wKuzGzAM7HFwZBIAAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "chastity": [
     {
       "name": "robe-de-mariee-deux-en-un-chastity-1",
-      "w": 561,
-      "h": 862,
+      "w": 5082,
+      "h": 7620,
       "widths": [
-        561
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAQBQCdASoUAB8APsFSoUwnpKMiMBgIAPAYCWUAyJgQswDZUB/N+RSEXG7W4QWIHKrgAP6+egtu6wMM3htXM7YOodSJXuQwnBEsgpPIs72Xh58xuIIAdtucywJyH9UuIm5UX/lisYclrgCnhj8MWFGzqtUGjsKKERTqlRIIWFh5azmhD/EpoMv/TDYOgs9oAWCox/7noZLN7gAA",
+      "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI7gAoTlpm7IgAmgAP4m1j2/hexDtzuy2aKKk7dZyyuSClaO4Hpoq5uB7DBgpxwGdqNngI17bZLfnIVVCERn3NuAUkgK83TvmTWQXqOFCqpwJRGgDDTUhd6+FtvXztuny8AAAA==",
       "jpgw": [
-        561
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-deux-en-un-chastity-2",
+      "w": 5334,
+      "h": 7997,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoNABQAPrVKnkonJCKhsAgA4BaJQBOmUI7gBCC1Qt5Mdk9FEAD+6fW3mk8PbbmoepOvv0Y9IMGaSXmVuEPDZIE1BYjbxu6hfK8B9v8T7k4vG+3KWji7rvzOfzbEylV30vB1nFexbgJDK5O5z2gCFbXJbNrV4AAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-deux-en-un-chastity-3",
+      "w": 5349,
+      "h": 8020,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAwCdASoNABQAPrVKnkmnJCKhMAgA4BaJYwCdAB6Ix5ArTRNqvFiAAP7pWKa0MbQnETf7fSSjR7AEIDkKleUdw7XJ5oOnoGQMQOtEVjkx28CLUFkBpD1cV0ciP4yyyK6JkpJVeXqZu7BQMkAAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-deux-en-un-chastity-4",
+      "w": 5630,
+      "h": 8440,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoADQxqHsrEx8A2gQAD+5mm8UjradYEluVo1Lmd5VlX4f+ihrv6wYluMe+FhpcoZ4X2LpkJBClSqJTsWYIlKYUbVh9bQgwRbASujPs7gwz4tG5TzzFeg7IAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "river": [
     {
       "name": "robe-de-mariee-trapeze-river-1",
-      "w": 356,
-      "h": 535,
+      "w": 5464,
+      "h": 8192,
       "widths": [
-        356
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAADQBQCdASoUAB4APsFMn0qnpCKhsAgA8BgJYgCdMzAnArQUCnu0Qb6qK6Km9i0WFTyFA1IHmZAAAP0AzWbGsU6MaiXn2fcBdq2TcPirVAWmjyHfL6woJtDs11reKDDxj+KPvQTt8aLUqKVWHYX6/HAT3yAhCkl+WLKkq5YqQG5Eunlpv7pZbm4QdiRK+3fvwPd73mkJ5OvT2hKFnxgGzyMuRbBRjTbTO4H3e4oohnT3g8OZCVO/1ktkMGVgdKePMsZQmegmJAMJ8EGLgp6BKKQ4Kcm2S9Jg9dfUSoiROFrFQDahM66bk2E+1XqkoucQFLU1bOgf5hygDAdv+QZyPsRJv4R90Db4lHydxUywCGSAAA==",
+      "blur": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI7k0AVwm3JaRvr6Ya4e5RAA/uZ7dTM84kl37Esats5a+UAb7xMGV4VnYFGg6yOREM5zHY1W45AVkUGUW+M5QWsHKHNggDepS+jsOH7G/hCHaf57NGU9qqAVKAq7n42b/IHk/Ai39Oa1XyjmEvX1qGmdUWwER+2ttZgCYF0tsDQbQAAA",
       "jpgw": [
-        356
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-river-2",
+      "w": 5464,
+      "h": 8192,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUABr75GNXAdp07cgNIAA/t0+TspWNqOkgwt7g2uZkrOmmfsGFb0UcZrHnw30JIS6h8ah8WafgbptSVp8F/1IFMYD5mSDAS2jxh7RA3KmYd14j+U82rCjqcrPp9oUDLdrsI1G9qF5XBSOLbNFDpmK9rqekUXa9zrXt+oAAA==",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "seraphina": [
     {
       "name": "robe-de-mariee-princesse-seraphina-1",
-      "w": 321,
-      "h": 512,
+      "w": 5464,
+      "h": 8192,
       "widths": [
-        321
+        480,
+        800,
+        1200,
+        1700
       ],
-      "blur": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAACQBQCdASoUACAAPsFSo0wnpKMiMBgIAPAYCWIAsQEABUBhUZpO1NYlT/0JqpeInlcRXkCyAAD6Tn4vVXBgpnmaODAkvB5mD+OeEDvP13TUxE4W8HBjA5k6PsCzL7pqjU1D2IzosbzAd4uwbZlFR77MTucqoLCYzgh2bhJvs02HsS8VRrO7nIdFti0/99UOmnKOpEkTTa6zr4BLZuzlWH30cK5rJ4gsTAOUBFFoXZetM5TBTxyEyQqIPjbOQ3KlHaLJrDxAyAKeZ61HBlKcmOcIeJyTystnEEdLclATTpxBv94s4UO4Dvd5feAAAA==",
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBACdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdAYyKtpPHkGPmedvOjgAA9qg7hpZAFeU3M4XcCzvTFHh6pQgvhEPJBq7DJuhhPp3ZpLl+fIz6duewYiDcpYdH29J7w9/d1t4PyG0IVFILwuYfIZj36z1JBBsxJtxMw7Go5S4lardR3aRTw/dD6u/7BE/bDAA=",
       "jpgw": [
-        321
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-princesse-seraphina-2",
+      "w": 5464,
+      "h": 8192,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBACdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdMoAlthbvuwuPW41kJJWXkAD98Dw/jtd4Lbbmt/yKCk5cv5KQZwSqA7MYMmONPVXW8HMrWJhlsxX7CSALEW90SLRXQQvWjaZxaTqNT6CikknLBM3QsiEYR8aa1oeBmfWgdGVomKBvL/FdRI2MtWzCQ4falOOwAAAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-princesse-seraphina-3",
+      "w": 5464,
+      "h": 8192,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdMoAloRMzeXuECRDBqzBsAP7BH1O8cOPVnWs/Zas8Cvt2x6tQA+1u5wDDZqTvlfGF/WDIX2aJRnC7/U3cqmvlO8uUiXdUNMWPrTcxQY+VoJl6HYyB9O5tX0c1zoJLuGAG/2f4KaQDY60nIW1FHpFYJG1/aHsESQl+NheAAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-princesse-seraphina-4",
+      "w": 8192,
+      "h": 5464,
+      "widths": [
+        480,
+        800,
+        1200,
+        1700
+      ],
+      "blur": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAADQBQCdASoeABQAPrVKnkmnJCKhMAgA4BaJYwC7L9SrgPdoUs0PX/jkTSPaZu/eVPHHi0S1upQAAP6sKy4TIGmx/Po/ql00l1fjsKtfOkMehK4kWgdHdWhy3u1cGqbanzisn15Lbhu975OBsvXm4lrxTcA1GRTfsOR1gi4UZnWxmyjz9OlbP9eb2kxsQ11hkY/rhaVa0WGxbVXrVkx9ZQOMWxXicX7odN8ZM2fl+oVCgPR+2q3LbNkCc+FOHXjzFnytUPzTg34IhtsetitV08iDicazyeFlEXQJ6gKaDcC2KQZNT0J9QvKQdZ6IuULgu4H449BtXXjMOAAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],
   "elin": [
     {
       "name": "robe-de-mariee-minimaliste-elin-1",
-      "w": 370,
-      "h": 517,
+      "w": 1200,
+      "h": 1800,
       "widths": [
-        370
+        480,
+        800,
+        1200
       ],
-      "blur": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBQCdASoUABwAPsFQnksnpKKhsBgMAPAYCWcAv+2Mdm87Z5CKcCkcVbXfQq8vaAQAAP0D3USYflq8jJJsbj4Qmjoa5uT3eDMwjvcm4nJxpjBp/Ao+tHg1RhMwyFz0dWRB0chYedG1nyz5cANGf8F9IMn9PA/QaWB4t9Yo7feRGDys2R95H2znbphBg80q3RXRlqHEVYd2FGgcdijc9AxdYB5cLMEYvcacsr5A3dep27WpBe5p9Pj6IDx9iVKcfjWgAA==",
+      "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoNABQAPrVKnkonJCKhsAgA4BaJZwC06B+DDBll4KdyTfwhgAD+8yU9Q0WXyrDmqEsB/F7y+UfdRFPsmccPlH7wsJxray7e3rppQHpHGGCTO4Ja/t7ZeFk4lz+BOTuttfbvtYIEAAA=",
       "jpgw": [
-        370
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-minimaliste-elin-2",
+      "w": 1200,
+      "h": 1800,
+      "widths": [
+        480,
+        800,
+        1200
+      ],
+      "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJZwC2yBh69PY0xnguUiEAAP7xf1q/dcYWjrtdIML7xHt7aRyX43y84KW37IPQ421n9bTuvU1AooB1zJvycb5wBP5JeN6qPrjD0zAnPAyLZhAAAAA=",
+      "jpgw": [
+        480,
+        800
+      ]
+    }
+  ],
+  "hera": [
+    {
+      "name": "robe-de-mariee-trapeze-hera-1",
+      "w": 923,
+      "h": 1280,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBACdASoOABQAPrVInkmnJCKhMAgA4BaJQBOmUAS4ovT/XGl+q0NNOWUoIAD+9RofjfTD1Wf031MlVXhjkOm89xRTkzWz4KAZg2y5uuaOoSlUpyrL++VYgMoinBQHe7KMiiGsT3tb+nB8nY9phhhRe48FybrB55USdiyG0mRYcTW1VbYbwwzh9XOIiq8gAAA=",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-hera-2",
+      "w": 852,
+      "h": 1280,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUGMEz/gG4jpGX13SWlyAAP701R+BpoXzn6HaN1du0sMsj8WHhMIgKpmgXt7yFxNbQPvvPadNtf6JYBgOjm03fxXoEiydScfOUKrMdIiPKDyNnBN3iZnj/RbEM6tbm+Nf4P9TNeQyC0X4tYq02JZITPFbM4J/9WGETM8/QoAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-hera-3",
+      "w": 852,
+      "h": 1280,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQBACdASoNABQAPrVInkmnJCKhMAgA4BaJQBOmUI7gOhogNkd1lYFWZqWAAP72PyftVw+BpvpYDdq6eS4hm6joWrjKlvFdbnMQt7ecnULV4OI/gBODdSEqU9HPR/i/Oxzy+iI/cZndUyUc4Kx4uj+OAbAlOxm2xXBOEDZwP+LokyTKNqD8mD8OEkNzeybMGBrQMIgA",
+      "jpgw": [
+        480,
+        800
+      ]
+    }
+  ],
+  "helene": [
+    {
+      "name": "robe-de-mariee-fluide-helene-1",
+      "w": 852,
+      "h": 1280,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdMoADg5O+ovMEXxhEq3/LAAD+63m+P1CXOxjgooeIuLPh1GLpLaJkdJvIGXPZ0sExlK3sf4eYHqAEZL7kbTh9bJ0IVHIEhvJ8R8NITflmf4onrH0nwTtLEghDdDlJFZykI4gedVkKHl0RhQAA",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-fluide-helene-2",
+      "w": 852,
+      "h": 1280,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJYgCdABusGricMDSbeOQ4AP7t7jJHNx4Xsuxgt5ecUhPlzbE2Sz1um8k3x52fsCTzkKQsbVKg3SqKnp/SIMPTn3HR6+Q2x8P/xntDdg8vF/bxS+K/nOto99bYPRprhfd7DEmyFWP67YrUGrR4Wrbk9sfFRsN4wGOAiEPF+EO4AAAA",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ]
