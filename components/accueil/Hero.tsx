@@ -105,17 +105,20 @@ export default function Hero() {
   };
 
   /*
-   * Le hero est collé sous le bandeau, pas au bord de la fenêtre : le
-   * contenu de la page commence à 38 px du haut, et un hero haut de
-   * « 100svh moins le bandeau » collé à zéro laisserait justement 38 px
-   * de blanc sous lui.
+   * Le hero défile avec la page.
    *
-   * Rien d'autre ne change. La vidéo, le titre, le bouton et le bandeau
-   * restent exactement tels quels pendant que la section suivante passe
-   * par-dessus — pas de flou, pas de fondu, pas de voile.
+   * Il est resté un temps collé sous le bandeau, la section suivante
+   * remontant par-dessus. L'effet a été retiré : le hero ne bougeait pas
+   * d'un pixel pendant huit cent soixante pixels de défilement, et le
+   * bloc blanc le coupait à l'horizontale d'une ligne franche, sans
+   * fondu — un store qui descend sur une image, plutôt qu'une page qui
+   * avance.
+   *
+   * Une image qui s'en va vers le haut n'a besoin d'aucun effet. C'est
+   * aussi le seul comportement que personne n'a à comprendre.
    */
   return (
-    <section className="sticky top-[var(--barre)] z-0 h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
+    <section className="relative z-0 h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
       <picture>
         <source
           type="image/avif"

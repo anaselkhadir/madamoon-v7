@@ -19,10 +19,11 @@ import Showroom from "@/components/accueil/Showroom";
  * maison, ce qui vaut mieux qu'une vitrine de plus. L'accueil présente
  * des façons de chercher, pas un catalogue.
  *
- * Le hero et la silhouette partagent une boîte : c'est elle qui borne le
- * collant du hero. Celui-ci ne bouge pas et ne change pas d'apparence —
- * ni flou, ni fondu, ni voile — pendant que la silhouette remonte
- * par-dessus, portée par son propre fond blanc.
+ * Le hero défile comme le reste. Il est resté un temps collé, la
+ * silhouette remontant par-dessus ; la maison n'a pas aimé cette
+ * transition, et elle avait raison — le hero y restait figé pendant huit
+ * cents pixels, coupé par une ligne blanche franche. Une image qui s'en
+ * va vers le haut se passe d'effet.
  */
 
 export const metadata: Metadata = {
@@ -35,10 +36,8 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
-      <div className="relative">
-        <Hero />
-        <Silhouette />
-      </div>
+      <Hero />
+      <Silhouette />
       <Coupes />
       <Createurs />
       <Avis />
