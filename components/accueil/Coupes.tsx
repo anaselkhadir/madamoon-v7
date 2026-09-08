@@ -121,23 +121,29 @@ export default function Coupes() {
         * ancêtre, il désactive le collant. */}
       <div ref={piste} className="relative hidden h-[210svh] lg:block">
         <div className="sticky top-[calc(var(--barre)+var(--entete))] flex h-[calc(100svh-var(--barre)-var(--entete))] min-h-[30rem] items-center overflow-hidden">
-          <div className="grid w-full items-center gap-[clamp(1.25rem,5vw,5rem)] max-lg:content-center lg:grid-cols-[1.1fr_1fr]">
+          <div className="grid w-full items-center gap-[clamp(1.25rem,5vw,5rem)] max-lg:content-center lg:grid-cols-[auto_1fr]">
             {/* ————————————————————————————— la photographie —————
               * Elle sort du cadre par la gauche : la page perd son bord de ce
               * côté, et la composition cesse d'être un bloc centré. */}
-            {/* Sur petit écran la photographie est mesurée en hauteur
-              * d'écran, pas en rapport de côtés : la scène est collée et
-              * ne défile pas, donc tout doit tenir dans un écran. Au
-              * rapport 4/5, l'image seule en prenait la moitié et le lien
-              * du bas passait sous le pli. */}
-            <div className="relative h-[34svh] overflow-hidden max-lg:mx-[var(--gouttiere)] lg:aspect-[5/6] lg:h-[min(64svh,38rem)]">
+            {/* La photographie se mesure en hauteur d'écran, pas en
+              * rapport de côtés : la scène est collée et ne défile pas,
+              * donc tout doit tenir dans un écran. Au rapport 4/5,
+              * l'image seule en prenait la moitié et le lien du bas
+              * passait sous le pli.
+              *
+              * Sur grand écran elle prend quatre-vingt-douze pour cent de
+              * la scène, plafonnée à cinquante-six rem pour qu'un très grand
+              * écran ne la démesure pas. Elle tenait auparavant soixante
+              * -quatre pour cent de la fenêtre, soit 480 x 576 px dans
+              * une colonne de 717 : un tiers de la place restait vide. */}
+            <div className="relative h-[34svh] overflow-hidden max-lg:mx-[var(--gouttiere)] lg:aspect-[5/6] lg:h-[min(calc((100svh-var(--barre)-var(--entete))*0.92),56rem)]">
               {familles.map(({ c, media }, i) => (
                 <Photo
                   key={c.ancre}
                   media={media}
                   dossier="robes"
                   alt={altCoupe(c.nom)}
-                  sizes="(max-width: 768px) 92vw, 46vw"
+                  sizes="(max-width: 1024px) 92vw, 44vw"
                   priorite={i === 0}
                   className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-[1200ms] [transition-timing-function:var(--ease-doux)] ${
                     i === actif ? "scale-100 opacity-100" : "scale-[1.04] opacity-0"
