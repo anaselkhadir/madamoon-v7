@@ -24,12 +24,23 @@ export const CALENDLY = {
 export const CALENDLY_URL = `https://calendly.com/${CALENDLY.compte}/${CALENDLY.evenement}`;
 
 /*
- * Les couleurs du widget.
+ * Les couleurs du widget — envoyées, mais pas appliquées.
  *
- * Calendly les accepte en hexadécimal sans dièse. Ce sont celles du site,
- * reprises de globals.css : l'action, l'encre et le blanc. Sans elles, le
- * bleu de Calendly arriverait au milieu d'une page qui n'en contient
- * aucun.
+ * Calendly les accepte en hexadécimal sans dièse, et ne les honore que
+ * sur ses offres payantes. Vérifié sur le rendu : les dates restent
+ * bleues. On les laisse parce qu'elles ne coûtent rien et qu'elles
+ * prendront effet le jour d'un changement d'offre — mais il ne faut pas
+ * croire qu'elles habillent quoi que ce soit aujourd'hui.
+ *
+ * Ce qui donne réellement sa couleur au widget est le réglage du type
+ * d'événement dans le compte, actuellement #0099ff. Il se change en un
+ * clic depuis Calendly, et il est partagé avec madamoon.fr : les deux
+ * sites en dépendent. La maison a demandé qu'on n'y touche pas.
+ *
+ * Le reste ne se contourne pas : le widget est un cadre d'origine
+ * différente, aucune feuille de style du site ne l'atteint. Pour aller
+ * plus loin il faudrait poser nos propres champs et n'utiliser Calendly
+ * que pour enregistrer.
  *
  * « hide_gdpr_banner » reprend le réglage de madamoon.fr, pour que les
  * deux sites se comportent de la même façon.
