@@ -215,7 +215,7 @@ export default function Hero() {
         */}
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-md:text-center md:max-w-[53vw] md:min-w-[16rem]">
-          <h1 className="affiche text-blanc">Vous vous mariez bientôt ?</h1>
+          <h1 className="affiche text-blanc">Vous vous mariez bientôt ?</h1>
           <p className="accroche mt-6 text-blanc">
             Robes de mariée, essayage privé — Paris 10<sup>e</sup>
           </p>

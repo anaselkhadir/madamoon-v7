@@ -16,7 +16,7 @@ import { altScene } from "@/lib/alt";
 export const metadata: Metadata = {
   title: "Showroom robe de mariée à Paris 10e",
   description:
-    "Le showroom MADAMOON, 234 rue du Faubourg Saint-Martin à Paris 10e : essayage privé d'une heure, sur rendez-vous, accompagnée de qui vous voulez.",
+    "Le showroom MADAMOON, 234 rue du Faubourg Saint-Martin à Paris 10e : essayage privé d'une heure, sur rendez-vous, accompagnée de qui vous voulez.",
   alternates: { canonical: "/showroom" },
 };
 

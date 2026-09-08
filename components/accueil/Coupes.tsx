@@ -212,7 +212,7 @@ export default function Coupes() {
       </div>
 
       <span className="sr-only" aria-live="polite">
-        Coupe présentée : {courante.nom}
+        Coupe présentée : {courante.nom}
       </span>
 
       {/* —————————————————————————— au doigt ——————————————————————————

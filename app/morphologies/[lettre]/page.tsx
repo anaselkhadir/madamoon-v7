@@ -228,7 +228,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
 
             <p className="texte mesure-l mt-8">
               Une morphologie ne se lit pas dans un miroir en trente secondes, et elle
-              n&apos;a pas à être exacte : c&apos;est un point de départ pour savoir quoi
+              n&apos;a pas à être exacte : c&apos;est un point de départ pour savoir quoi
               essayer en premier. Si vous hésitez entre deux,{" "}
               <AppelElise className="souligne text-action">Élise vous guide</AppelElise> en
               trois questions.

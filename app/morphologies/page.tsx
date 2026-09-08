@@ -16,7 +16,7 @@ import { MORPHOLOGIES } from "@/lib/madamoon";
 export const metadata: Metadata = {
   title: "Robe de mariée selon sa morphologie",
   description:
-    "Silhouette en O, A, V, H, 8 ou X : les coupes de robe de mariée conseillées pour chaque morphologie, à essayer au showroom MADAMOON, Paris 10e.",
+    "Silhouette en O, A, V, H, 8 ou X : les coupes de robe de mariée conseillées pour chaque morphologie, à essayer au showroom MADAMOON, Paris 10e.",
   alternates: { canonical: "/morphologies" },
 };
 
@@ -31,8 +31,8 @@ export default function Morphologies() {
         />
         <div className="gouttiere">
           <p className="texte mesure-l pb-10">
-            Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. Rien
-            n&apos;est « à éviter » — c&apos;est un conseil de style, pas une règle, et au
+            Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. Rien
+            n&apos;est « à éviter » — c&apos;est un conseil de style, pas une règle, et au
             showroom on essaie aussi ce qui n&apos;était pas prévu.
           </p>
 
@@ -60,7 +60,7 @@ export default function Morphologies() {
 
           <div className="pb-[clamp(3rem,5vw,5rem)] pt-10">
             <p className="texte mesure pb-6">
-              Vous ne savez pas laquelle est la vôtre ? Élise vous guide en trois questions.
+              Vous ne savez pas laquelle est la vôtre ? Élise vous guide en trois questions.
             </p>
             <AppelElise className="bouton">Trouver ma robe</AppelElise>
           </div>

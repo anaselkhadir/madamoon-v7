@@ -18,7 +18,7 @@ import { altCoupe, altRobe } from "@/lib/alt";
 export const metadata: Metadata = {
   title: "Robes de mariée — 40 modèles en showroom à Paris",
   description:
-    "Les robes de mariée MADAMOON : sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Quarante modèles de cinq créateurs, à essayer sur rendez-vous à Paris 10e.",
+    "Les robes de mariée MADAMOON : sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Quarante modèles de cinq créateurs, à essayer sur rendez-vous à Paris 10e.",
   alternates: { canonical: "/robes" },
 };
 

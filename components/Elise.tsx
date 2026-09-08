@@ -98,7 +98,7 @@ function reponseLocale(entree: string): { textes: string[]; options: Option[] } 
   if (a("morpho", "silhouette", "coupe", "corps", "quelle robe", "robe pour moi"))
     return {
       textes: [
-        "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
+        "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
       ],
       options: [{ label: "Lancer le diagnostic", next: "q1" }],
     };
@@ -229,7 +229,7 @@ export default function Elise() {
         dire(
           [
             carte,
-            "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n'était pas prévu. Voulez-vous voir la sélection correspondante ?",
+            "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n'était pas prévu. Voulez-vous voir la sélection correspondante ?",
           ],
           [
             { label: "Voir mes recommandations", href: `/morphologies/${m.lettre.toLowerCase()}` },
@@ -369,7 +369,7 @@ export default function Elise() {
           dire(
             [
               "L'essentiel est de trouver la robe qui met en valeur votre silhouette tout en vous ressemblant.",
-              "Connaissez-vous déjà votre morphologie ?",
+              "Connaissez-vous déjà votre morphologie ?",
             ],
             [
               { label: "Oui, je la connais", next: "choix" },
@@ -380,7 +380,7 @@ export default function Elise() {
 
         case "choix":
           dire(
-            ["Très bien. Laquelle est la vôtre ?"],
+            ["Très bien. Laquelle est la vôtre ?"],
             MORPHOLOGIES.map((m) => ({ label: `En ${m.lettre}`, next: `res:${m.lettre}` }))
           );
           break;
@@ -389,7 +389,7 @@ export default function Elise() {
           dire(
             [
               "Je vous guide pas à pas.",
-              "Comment décririez-vous vos épaules par rapport à vos hanches ?",
+              "Comment décririez-vous vos épaules par rapport à vos hanches ?",
             ],
             [
               { label: "Plus étroites", next: "res:A" },
@@ -402,7 +402,7 @@ export default function Elise() {
 
         case "q2":
           dire(
-            ["Et votre taille, est-elle marquée ?"],
+            ["Et votre taille, est-elle marquée ?"],
             [
               { label: "Oui, bien marquée", next: "q3" },
               { label: "Peu marquée", next: "res:H" },
@@ -412,7 +412,7 @@ export default function Elise() {
 
         case "q3":
           dire(
-            ["Dernière question : vos courbes sont plutôt…"],
+            ["Dernière question : vos courbes sont plutôt…"],
             [
               { label: "Prononcées", next: "res:8" },
               { label: "Douces, silhouette fine", next: "res:X" },
@@ -436,7 +436,7 @@ export default function Elise() {
 
         case "faq":
           dire(
-            ["Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m'écrire librement."],
+            ["Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m'écrire librement."],
             FAQ.slice(0, 5).map((f, i) => ({ label: f.q.replace(/\s*\?$/, ""), next: `faq:${i}` }))
           );
           break;

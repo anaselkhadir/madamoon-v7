@@ -20,7 +20,7 @@ import { MAISON } from "@/lib/madamoon";
 export const metadata: Metadata = {
   title: "Trouver ma robe de mariée",
   description:
-    "Trois façons de commencer : par la coupe, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
+    "Trois façons de commencer : par la coupe, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
   alternates: { canonical: "/trouver-ma-robe" },
 };
 
@@ -35,13 +35,13 @@ const PORTES = [
     href: "/morphologies",
     titre: "Par la morphologie",
     texte:
-      "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n'est « à éviter » — mais pour savoir lesquelles proposer en premier.",
+      "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n'est « à éviter » — mais pour savoir lesquelles proposer en premier.",
   },
   {
     href: "/createurs/watters-designs",
     titre: "Par la maison",
     texte:
-      "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d'Olya Mak.",
+      "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d'Olya Mak.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Trouver() {
         <div className="gouttiere">
           <p className="texte mesure-l pb-10">
             Trois portes, et aucune n&apos;est la bonne. Ce sont des pistes, pas des
-            règles : au showroom, beaucoup de mariées repartent avec une robe
+            règles : au showroom, beaucoup de mariées repartent avec une robe
             qu&apos;elles n&apos;auraient pas choisie sur photo.
           </p>
 
@@ -79,7 +79,7 @@ export default function Trouver() {
 
           <div className="pb-[clamp(3rem,5vw,5rem)] pt-10">
             <p className="texte mesure pb-6">
-              Ou laissez-vous guider : Élise part de votre silhouette, en trois questions,
+              Ou laissez-vous guider : Élise part de votre silhouette, en trois questions,
               et vous dit franchement si la réponse est chez une autre maison. Elle donne
               aussi l&apos;adresse et les horaires — {MAISON.adresse}, sur rendez-vous.
             </p>

@@ -180,7 +180,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
           />
           <div className="gouttiere pb-[clamp(3rem,5vw,5rem)]">
             <p className="texte mesure pb-8">
-              Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. Voici celles
+              Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. Voici celles
               que les coupes de {createur.nom} servent en premier — les autres s&apos;essaient tout
               aussi bien en boutique.
             </p>

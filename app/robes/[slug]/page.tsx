@@ -273,7 +273,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
                 <p className="texte mt-4">
                   {servies.length === MORPHOLOGIES.length
                     ? "Elle va à toutes les silhouettes — c'est rare, et c'est ce qui en fait une valeur sûre à l'essayage."
-                    : `Elle est d'abord conseillée aux silhouettes ${servies.join(", ")}. Rien n'empêche de l'essayer autrement : une morphologie ouvre des pistes, elle n'en ferme aucune.`}
+                    : `Elle est d'abord conseillée aux silhouettes ${servies.join(", ")}. Rien n'empêche de l'essayer autrement : une morphologie ouvre des pistes, elle n'en ferme aucune.`}
                 </p>
               </dd>
             </div>

@@ -187,7 +187,34 @@ def sansacc(x):
 
 
 def largeur(txt, police, corps, espacement=0):
+    txt = rendu(txt)
     return pdfmetrics.stringWidth(txt, police, corps) + espacement * max(len(txt) - 1, 0)
+
+
+FINE = "\u202f"   # espace fine insécable, avant ? ! ; et dans les guillemets
+INSEC = "\u00a0"  # espace insécable pleine, avant les deux-points
+
+
+def mots(txt):
+    """
+    Découpe en mots pour la césure.
+
+    On ne coupe que sur les espaces ordinaires : les insécables, elles,
+    collent le signe à son mot. C'est tout leur objet — sans quoi le
+    « ? » retombe seul en début de ligne, ici comme sur le site.
+    """
+    return [m for m in re.split(r"[ \t\n\r]+", txt) if m]
+
+
+def rendu(txt):
+    """
+    Le texte tel qu'il sera tracé.
+
+    La police du site n'a pas à posséder le dessin de l'espace fine : au
+    tracé elle redevient une espace ordinaire. La coupure, elle, a déjà
+    été empêchée au découpage — l'insécable a fait son travail avant.
+    """
+    return txt.replace(FINE, " ").replace(INSEC, " ")
 
 
 def poser(c, txt, x, y, police, corps, couleur, espacement=0):
@@ -205,7 +232,7 @@ def poser(c, txt, x, y, police, corps, couleur, espacement=0):
     t.setTextOrigin(x, y)
     t.setFont(police, corps)
     t.setCharSpace(espacement)
-    t.textLine(txt)
+    t.textLine(rendu(txt))
     t.setCharSpace(0)
     c.drawText(t)
 
@@ -220,9 +247,9 @@ def paragraphe(c, txt, x, y, large, police, corps, couleur, interligne=None):
     interligne = interligne or corps * 1.55
     lignes = []
     ligne = ""
-    for mot in txt.split():
+    for mot in mots(txt):
         essai = (ligne + " " + mot).strip()
-        if pdfmetrics.stringWidth(essai, police, corps) <= large or not ligne:
+        if pdfmetrics.stringWidth(rendu(essai), police, corps) <= large or not ligne:
             ligne = essai
         else:
             lignes.append(ligne)
@@ -237,7 +264,7 @@ def paragraphe(c, txt, x, y, large, police, corps, couleur, interligne=None):
     t.setCharSpace(0)
     t.setLeading(interligne)
     for l in lignes:
-        t.textLine(l)
+        t.textLine(rendu(l))
     c.drawText(t)
     return y - interligne * len(lignes)
 

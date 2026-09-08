@@ -82,7 +82,7 @@ export const CREATEURS: Createur[] = [
     nom: "Monica Loretti",
     slug: "monica-loretti",
     origine: "Italie",
-    note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
+    note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
     ouverture: { robe: "lorette", vue: 1 },
   },
 ];
@@ -160,7 +160,7 @@ export const FAMILLES: Record<Categorie, string> = {
   Trapèze: "Un buste ajusté, une jupe qui s'ouvre en A. La coupe la plus universelle.",
   Princesse: "Un bustier travaillé et un volume de jupe assumé. La robe d'apparat.",
   Minimaliste: "Le satin, la ligne, rien d'autre. Tout se joue dans la coupe.",
-  "Deux en un": "Une robe, deux allures : une surjupe ou une traîne qui se détache.",
+  "Deux en un": "Une robe, deux allures : une surjupe ou une traîne qui se détache.",
 };
 
 export type Robe = {
@@ -355,7 +355,7 @@ export const ROBES: Robe[] = [
     nom: "Sienna",
     ligne: "Trapèze, dentelle sur nude",
     categorie: "Trapèze",
-    regard: "Une dentelle blush posée sur un fond nude : la couleur de la peau, en plus doux.",
+    regard: "Une dentelle blush posée sur un fond nude : la couleur de la peau, en plus doux.",
     vues: 3,
     createur: "Angeola Biarritz",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -649,7 +649,7 @@ export const ROBES: Robe[] = [
     nom: "Marie",
     ligne: "Fluide, ligne intemporelle",
     categorie: "Fluide",
-    regard: "Rien qui accroche : la robe tombe, et c'est tout ce qu'elle fait.",
+    regard: "Rien qui accroche : la robe tombe, et c'est tout ce qu'elle fait.",
     vues: 1,
     createur: "Monica Loretti",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -699,7 +699,7 @@ export const ROBES: Robe[] = [
     nom: "Milan",
     ligne: "Crêpe léger, fente moderne",
     categorie: "Minimaliste",
-    regard: "Aucun ornement : une ligne nette, et la fente pour seule audace.",
+    regard: "Aucun ornement : une ligne nette, et la fente pour seule audace.",
     vues: 1,
     createur: "Monica Loretti",
     morphos: ["H", "8", "X"],
@@ -739,7 +739,7 @@ export const ROBES: Robe[] = [
     nom: "Elin",
     ligne: "Courte en crêpe, pour la mairie",
     categorie: "Minimaliste",
-    regard: "Faite pour la cérémonie civile : nette, légère, sans traîne.",
+    regard: "Faite pour la cérémonie civile : nette, légère, sans traîne.",
     vues: 1,
     createur: "Olya Mak",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -757,7 +757,7 @@ export const PARCOURS = [
     n: "01",
     titre: "Le rendez-vous",
     texte:
-      "Tout commence par la réservation de votre premier essayage privé. Prévoyez idéalement huit à neuf mois avant la date du mariage. Si vous disposez de moins de temps, dites-le nous : nous trouvons presque toujours une solution.",
+      "Tout commence par la réservation de votre premier essayage privé. Prévoyez idéalement huit à neuf mois avant la date du mariage. Si vous disposez de moins de temps, dites-le nous : nous trouvons presque toujours une solution.",
   },
   {
     n: "02",
@@ -775,7 +775,7 @@ export const PARCOURS = [
     n: "04",
     titre: "La confection",
     texte:
-      "Votre robe est réalisée à vos mesures. Matières nobles, finitions à la main : le temps de l'atelier est le temps qu'il faut.",
+      "Votre robe est réalisée à vos mesures. Matières nobles, finitions à la main : le temps de l'atelier est le temps qu'il faut.",
   },
   {
     n: "05",
@@ -905,7 +905,7 @@ export const MORPHOLOGIES: Morphologie[] = [
     premieres: ["Sirène", "Minimaliste"],
     secondes: ["Princesse", "Fluide"],
     conseil:
-      "Les sirènes et les fourreaux épousent les courbes ; un bustier cœur ou une encolure en V accentue l'équilibre naturel.",
+      "Les sirènes et les fourreaux épousent les courbes ; un bustier cœur ou une encolure en V accentue l'équilibre naturel.",
   },
   {
     lettre: "X",
@@ -914,13 +914,13 @@ export const MORPHOLOGIES: Morphologie[] = [
     silhouette: "Une silhouette équilibrée, des courbes douces, une taille fine.",
     objectif: "Valoriser sans en faire trop.",
     coupes: [
-      "Bonne nouvelle : presque toutes les coupes vous vont.",
+      "Bonne nouvelle : presque toutes les coupes vous vont.",
       "Princesse, sirène, fluide ou minimaliste — laissez le style du mariage décider.",
     ],
     premieres: ["Sirène", "Princesse", "Fluide"],
     secondes: ["Minimaliste", "Trapèze"],
     conseil:
-      "Bonne nouvelle : presque toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
+      "Bonne nouvelle : presque toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
   },
 ];
 
@@ -1008,31 +1008,31 @@ export function maisonsPour(lettre: string): OffreMaison[] {
 
 export const FAQ = [
   {
-    q: "Combien de temps prévoir avant le mariage ?",
-    r: "Prévoyez votre rendez-vous d'essayage idéalement huit à neuf mois avant la date du mariage. Pas de panique si vous disposez de moins de temps : nous pourrons toujours vous proposer des solutions. Prenez simplement rendez-vous, nous nous occupons du reste.",
+    q: "Combien de temps prévoir avant le mariage ?",
+    r: "Prévoyez votre rendez-vous d'essayage idéalement huit à neuf mois avant la date du mariage. Pas de panique si vous disposez de moins de temps : nous pourrons toujours vous proposer des solutions. Prenez simplement rendez-vous, nous nous occupons du reste.",
   },
   {
-    q: "Comment se passent les essayages au showroom ?",
-    r: "Dès que vous avez pris rendez-vous, le showroom est privatisé pour vous pendant une heure. Vous pouvez venir accompagnée de votre famille ou de vos amies. Afin de mieux préserver nos robes de mariée, merci de vous présenter sans maquillage : nous sommes certaines que vous êtes belle au naturel.",
+    q: "Comment se passent les essayages au showroom ?",
+    r: "Dès que vous avez pris rendez-vous, le showroom est privatisé pour vous pendant une heure. Vous pouvez venir accompagnée de votre famille ou de vos amies. Afin de mieux préserver nos robes de mariée, merci de vous présenter sans maquillage : nous sommes certaines que vous êtes belle au naturel.",
   },
   {
-    q: "Quelles sont les étapes d'une confection sur mesure ?",
+    q: "Quelles sont les étapes d'une confection sur mesure ?",
     r: "La première étape est la prise de votre premier rendez-vous d'essayage. Une fois l'essayage terminé et votre choix réalisé, nous prenons le jour même vos mensurations pour initier la confection à l'atelier. Quand votre robe est prête, vous venez l'essayer en boutique pour vérifier s'il y a besoin d'ajustement. Si oui, un rendez-vous retouches est prévu avec une de nos couturières sur place. Enfin, vous retirez votre robe après l'essayage final.",
   },
   {
-    q: "Comment se passe le paiement ?",
+    q: "Comment se passe le paiement ?",
     r: "Un acompte est payé le jour de la prise des mensurations. Le solde restant est payé le jour des retouches.",
   },
   {
-    q: "Quelle est la fourchette de prix pour une robe sur mesure ?",
+    q: "Quelle est la fourchette de prix pour une robe sur mesure ?",
     r: "Pour une confection sur mesure, les prix commencent à partir de 1 500 €. Nous vous invitons à nous contacter directement pour avoir plus de précisions sur les modèles qui vous intéressent.",
   },
   {
-    q: "Puis-je venir accompagnée ?",
-    r: "Oui, et c'est même conseillé. Le showroom est privatisé : votre famille et vos amies sont les bienvenues pendant toute la durée de l'essayage.",
+    q: "Puis-je venir accompagnée ?",
+    r: "Oui, et c'est même conseillé. Le showroom est privatisé : votre famille et vos amies sont les bienvenues pendant toute la durée de l'essayage.",
   },
   {
-    q: "Où se trouve le showroom MADAMOON ?",
+    q: "Où se trouve le showroom MADAMOON ?",
     r: `Au ${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}. Les essayages ont lieu sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h.`,
   },
 ] as const;

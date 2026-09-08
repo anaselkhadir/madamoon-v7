@@ -158,7 +158,7 @@ export default async function Coupe({ params }: { params: Promise<{ coupe: strin
           />
           <div className="gouttiere pb-[clamp(3rem,5vw,5rem)]">
             <p className="texte mesure pb-8">
-              Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. La{" "}
+              Une morphologie n&apos;exclut jamais une robe : elle ouvre des pistes. La{" "}
               {s.nom.toLowerCase()} est celle que l&apos;on conseille d&apos;abord à ces
               morphologies — les autres l&apos;essaient tout aussi bien en boutique.
             </p>

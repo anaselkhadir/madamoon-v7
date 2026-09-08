@@ -17,7 +17,7 @@ import { altScene } from "@/lib/alt";
 export const metadata: Metadata = {
   title: "La maison — boutique de robes de mariée à Paris",
   description:
-    "MADAMOON, boutique de robes de mariée à Paris 10e : cinq créateurs sélectionnés, essayage privé sur rendez-vous et confection sur mesure à partir de 1 500 €.",
+    "MADAMOON, boutique de robes de mariée à Paris 10e : cinq créateurs sélectionnés, essayage privé sur rendez-vous et confection sur mesure à partir de 1 500 €.",
   alternates: { canonical: "/a-propos" },
 };
 
@@ -36,7 +36,7 @@ export default function AProps() {
               choisir.
             </p>
             <p className="texte mesure-l mt-6">
-              MADAMOON n&apos;édite pas ses propres collections : la maison choisit, robe
+              MADAMOON n&apos;édite pas ses propres collections : la maison choisit, robe
               par robe, chez cinq créateurs — puis fait confectionner et ajuster la
               vôtre à l&apos;atelier. Le showroom du 10<sup>e</sup> se privatise le temps
               d&apos;un essayage.
