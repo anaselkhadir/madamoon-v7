@@ -771,3 +771,22 @@ body {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/*
+ * Un rail n'a pas de barre.
+ *
+ * Les règles ci-dessus ne sont pas calquées : elles l'emportent sur
+ * n'importe quel utilitaire, et le filet gris de neuf pixels revenait
+ * donc se poser sous les photographies malgré `scrollbar-width: none`.
+ * Cette classe se tient au même niveau qu'elles, et gagne.
+ *
+ * On ne perd rien à l'éteindre : le débord de la dernière carte dit
+ * déjà qu'il y a autre chose à voir, et sur grand écran deux flèches le
+ * disent en toutes lettres.
+ */
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}

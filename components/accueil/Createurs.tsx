@@ -113,7 +113,7 @@ export default function Createurs() {
       <div ref={scene} className="mt-[clamp(2.5rem,5vw,4rem)] overflow-hidden max-lg:overflow-visible">
         <div
           ref={bande}
-          className="flex w-max gap-[clamp(1rem,2.2vw,2rem)] pl-[var(--gouttiere)] pr-[var(--gouttiere)] will-change-transform max-lg:w-auto max-lg:snap-x max-lg:snap-mandatory max-lg:overflow-x-auto"
+          className="rail flex w-max gap-[clamp(1rem,2.2vw,2rem)] pl-[var(--gouttiere)] pr-[var(--gouttiere)] will-change-transform max-lg:w-auto max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-pl-[var(--gouttiere)] max-lg:overflow-x-auto"
         >
           {maisons.map(({ c, robe, media }, i) => (
             <figure

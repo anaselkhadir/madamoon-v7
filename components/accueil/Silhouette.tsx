@@ -62,7 +62,7 @@ export default function Silhouette() {
         * masquée — le geste suffit, et une barre sous six photographies
         * ferait fenêtre de navigateur.
         */}
-      <ul id="rail-silhouette" className="mt-[clamp(2rem,4vw,3rem)] flex snap-x snap-mandatory scroll-pl-[var(--gouttiere)] gap-[clamp(1rem,1.6vw,1.5rem)] overflow-x-auto px-[var(--gouttiere)] pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <ul id="rail-silhouette" className="mt-[clamp(2rem,4vw,3rem)] flex snap-x snap-mandatory scroll-pl-[var(--gouttiere)] gap-[clamp(1rem,1.6vw,1.5rem)] rail overflow-x-auto px-[var(--gouttiere)] pb-2">
         {scenes.map(({ m, robe, media }, i) => (
           <li
             key={m.lettre}
