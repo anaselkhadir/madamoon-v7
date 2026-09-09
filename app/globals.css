@@ -790,3 +790,52 @@ body {
 .rail::-webkit-scrollbar {
   display: none;
 }
+
+/* ———————————————————————————————————— le rendez-vous ————— */
+
+/*
+ * La fenêtre Calendly, sur téléphone.
+ *
+ * Le formulaire est servi dans un cadre d'un autre domaine : sa mise en
+ * page ne nous appartient pas, et le compte de la maison ne doit pas
+ * être touché. Reste le cadre lui-même, qui est à nous.
+ *
+ * La cliente le trouvait trop gros — la fiche du rendez-vous sortait de
+ * l'écran à gauche comme à droite. On donne donc au cadre une fenêtre
+ * plus large que le téléphone, puis on la réduit à l'affichage : la page
+ * se compose comme sur un écran de 460 pixels et se lit sur 390. Rien
+ * n'est coupé, tout est un cran plus petit.
+ *
+ * La règle porte « important » à dessein : la feuille de Calendly est
+ * chargée à l'ouverture, donc après la nôtre, et l'emporterait sinon.
+ */
+@media (max-width: 767px) {
+  .calendly-popup-content {
+    overflow: hidden !important;
+  }
+
+  .calendly-popup-content > iframe {
+    /* 1 / 0,85 : la largeur rendue, avant réduction. */
+    width: 117.65% !important;
+    height: 117.65% !important;
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+
+  /*
+   * Et qu'elle occupe la hauteur.
+   *
+   * Le widget se fixe à 700 pixels quel que soit le téléphone : sur un
+   * écran de 844, la page du site reparaissait sous la fenêtre — deux
+   * photographies de robes sous le récapitulatif du rendez-vous. Les
+   * cinquante pixels du haut restent au bouton de fermeture.
+   *
+   * Le sélecteur répète la classe pour peser plus lourd que celui de
+   * Calendly : « important » ne suffit pas quand la règle d'en face
+   * l'est aussi et qu'elle est chargée après la nôtre.
+   */
+  .calendly-overlay .calendly-popup.calendly-popup {
+    height: calc(100% - 50px) !important;
+    max-height: calc(100% - 50px) !important;
+  }
+}
