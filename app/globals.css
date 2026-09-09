@@ -337,49 +337,75 @@ body {
 /* ———————————————————————————————————— le verre d'Élise ————— */
 
 /*
- * Le panneau de la conversation, en verre dépoli.
+ * Le panneau de la conversation, en verre dépoli sombre.
  *
- * L'ivoire de la maison, mais translucide : la page reste devinée
- * derrière, floutée. La saturation est relevée parce que le flou lave les
- * couleurs — sans elle, la photographie derrière vire au gris.
+ * Il a d'abord été clair — de l'ivoire translucide. La maison le veut
+ * sombre : une conseillère qui parle par-dessus la page doit s'en
+ * détacher, et un panneau clair posé sur des photographies claires
+ * flottait sans jamais se poser.
+ *
+ * Le fond est de l'encre à soixante-huit pour cent, et le filtre
+ * assombrit au lieu d'éclaircir. En dessous de soixante, le film du hero
+ * traverse et le texte se perd sur les plans lumineux ; au-dessus de
+ * quatre-vingts, ce n'est plus du verre mais un volet. La saturation
+ * reste relevée parce que le flou lave les couleurs.
  *
  * Le fond opaque n'est pas un repli honteux : là où le navigateur ne sait
- * pas flouter, du texte encre sur un ivoire translucide deviendrait
- * illisible dès qu'une image sombre passe dessous.
+ * pas flouter, du texte clair sur une encre translucide deviendrait
+ * illisible dès qu'une image claire passe dessous.
  */
 .verre {
-  /*
-   * 42 % d'ivoire : le moins couvrant qui reste lisible.
-   *
-   * Mesuré sur le film du hero, image par image, en composant le voile
-   * sur le fond flouté : à 34 % le plan de la treizième seconde tombait
-   * à 4,19 de contraste avec l'encre — sous le seuil AA. À 42 %, le pire
-   * plan donne 5,23. En dessous on gagne du verre et on perd du texte.
-   */
-  background: color-mix(in srgb, var(--color-ivoire) 42%, transparent);
-  /* La luminosité relevée n'est pas un effet : c'est ce qui garde le
-   * texte encre lisible quand un plan sombre de la vidéo passe derrière.
-   * La saturation compense le flou, qui lave les couleurs. */
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(122%);
-  backdrop-filter: blur(40px) saturate(180%) brightness(122%);
-  border-color: color-mix(in srgb, var(--color-blanc) 70%, transparent);
+  background: color-mix(in srgb, var(--color-encre) 68%, transparent);
+  -webkit-backdrop-filter: blur(40px) saturate(160%) brightness(62%);
+  backdrop-filter: blur(40px) saturate(160%) brightness(62%);
+  border-color: color-mix(in srgb, var(--color-blanc) 18%, transparent);
   /* Le liseré clair en haut : c'est lui qui donne l'épaisseur, comme la
-   * tranche d'une vitre prise dans la lumière. */
+   * tranche d'une vitre prise dans la lumière. Il s'assourdit avec le
+   * fond — sur du sombre, un liseré à cinquante-cinq pour cent devient
+   * un néon. */
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
-    0 30px 90px -40px rgba(22, 19, 15, 0.5);
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 30px 90px -40px rgba(0, 0, 0, 0.7);
+}
+
+/*
+ * Les couleurs du site s'inversent à l'intérieur.
+ *
+ * Le panneau porte les mêmes classes qu'ailleurs — encre, plomb, brume —
+ * et il faut qu'elles disent l'inverse ici. La règle est descendante à
+ * dessein : n'étant pas calquée, elle l'emporte sur l'utilitaire, et le
+ * composant n'a pas à connaître la couleur de son fond.
+ */
+.verre .text-encre {
+  color: var(--color-ivoire);
+}
+.verre .text-plomb {
+  color: color-mix(in srgb, var(--color-ivoire) 74%, transparent);
+}
+.verre .text-brume {
+  color: color-mix(in srgb, var(--color-ivoire) 54%, transparent);
+}
+.verre input::placeholder {
+  color: color-mix(in srgb, var(--color-ivoire) 46%, transparent);
+}
+/* Le rouge de la maison est trop sombre sur du sombre : il s'éclaircit
+ * pour rester lisible, sans quitter la famille. */
+.verre .text-accent,
+.verre .hover\:text-accent:hover,
+.verre .enabled\:hover\:text-accent:enabled:hover {
+  color: color-mix(in srgb, var(--color-accent) 48%, white);
 }
 
 /* Les séparations internes se font discrètes : sur du verre, un trait
  * plein découpe le panneau en morceaux. */
 .verre .border-fil {
-  border-color: rgba(255, 255, 255, 0.42);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .verre {
-    background: var(--color-ivoire);
+    background: #1c1813;
   }
 }
 

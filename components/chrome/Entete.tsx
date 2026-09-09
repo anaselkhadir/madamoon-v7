@@ -436,7 +436,6 @@ export default function Entete() {
                   {c === "createur" ? "Par créateur" : "Par coupe"}
                 </button>
               ))}
-              <span className="legende ml-auto text-brume">{ROBES.length} modèles</span>
             </div>
 
             {/* ————— le catalogue ————— */}

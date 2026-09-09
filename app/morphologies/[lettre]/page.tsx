@@ -388,7 +388,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
                         </span>
                         <span className="texte">
                           {" "}
-                          — {o.premieres.length} robe{o.premieres.length > 1 ? "s" : ""} en{" "}
+                          — en{" "}
                           {o.premieres
                             .map((r) => PLURIEL[r.categorie])
                             .filter((v, j, t) => t.indexOf(v) === j)

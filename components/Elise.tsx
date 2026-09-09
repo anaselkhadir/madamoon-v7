@@ -249,7 +249,7 @@ export default function Elise() {
           [
             carte,
             {
-              plat: `Chez ${nom}, ${offre.premieres.length} robe${offre.premieres.length > 1 ? "s" : ""} correspond${offre.premieres.length > 1 ? "ent" : ""} : ${offre.premieres.map((r) => r.nom).join(", ")}.`,
+              plat: `Chez ${nom}, voici ce qui vous correspond : ${offre.premieres.map((r) => r.nom).join(", ")}.`,
               riche: (
                 <div>
                   <p className="mention text-brume">Chez {nom}</p>
@@ -298,7 +298,7 @@ export default function Elise() {
                     ? " Voici les maisons faites pour vous."
                     : siennes.length === 1
                       ? " Son autre robe vaut l'essai, mais voici d'abord les maisons faites pour vous."
-                      : ` Ses ${siennes.length} autres robes valent l'essai, mais voici d'abord les maisons faites pour vous.`}
+                      : " Ses autres robes valent l'essai, mais voici d'abord les maisons faites pour vous."}
                 </p>
                 <p className="mention mt-4 text-brume">Dans l&apos;ordre</p>
                 <ol className="mt-2 border-t border-fil pt-2">
@@ -312,9 +312,7 @@ export default function Elise() {
                         <span className="font-serif text-[1.05rem]">{o.createur.nom}</span>
                         <span className="text-plomb">
                           {" "}
-                          — {o.premieres.length > 0
-                            ? `${o.premieres.length} robe${o.premieres.length > 1 ? "s" : ""} dans vos coupes`
-                            : `${o.secondes.length} robe${o.secondes.length > 1 ? "s" : ""} à essayer`}
+                          — {o.premieres.length > 0 ? "dans vos coupes" : "à essayer"}
                         </span>
                       </a>
                     </li>
