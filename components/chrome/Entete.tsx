@@ -119,8 +119,50 @@ const RACCOURCIS = [
   { href: "/rendez-vous", label: "Prendre rendez-vous" },
 ];
 
-/* Les adresses que la liste du téléphone porte déjà. */
-const SECTIONS = new Set([...GAUCHE, ...DROITE].map((l) => l.href));
+/*
+ * Les trois onglets du téléphone.
+ *
+ * Un menu de grande maison ne pose pas cinq rubriques à plat : il
+ * range le catalogue derrière deux ou trois entrées et déplie l'une
+ * d'elles. On garde ici les trois axes par lesquels le site fait
+ * chercher — la robe, la coupe, la silhouette — et le showroom et la
+ * maison se lisent dessous, où l'on regarde quand on a fini de chercher.
+ */
+const ONGLETS = [
+  {
+    cle: "robes",
+    label: "Robes",
+    liens: () => [
+      { href: "/robes", label: "Toutes les robes" },
+      ...CREATEURS.map((c) => ({ href: `/createurs/${c.slug}`, label: c.nom })),
+    ],
+  },
+  {
+    cle: "coupes",
+    label: "Coupes",
+    liens: () => [
+      { href: "/coupes", label: "Toutes les coupes" },
+      ...COUPES.map((c) => ({ href: `/coupes/${c.ancre}`, label: c.nom })),
+    ],
+  },
+  {
+    cle: "morphologies",
+    label: "Morphologies",
+    liens: () => [
+      { href: "/morphologies", label: "Toutes les morphologies" },
+      ...MORPHOLOGIES.map((m) => ({
+        href: `/morphologies/${m.lettre.toLowerCase()}`,
+        label: m.nom,
+      })),
+    ],
+  },
+] as const;
+
+/* Les adresses que les onglets du téléphone portent déjà. */
+const SECTIONS = new Set([
+  "/robes", "/coupes", "/morphologies",
+  ...DROITE.map((l) => l.href),
+]);
 
 type Groupe = { titre: string; href: string; robes: (typeof ROBES)[number][] };
 
@@ -150,6 +192,7 @@ function parCoupe(): Groupe[] {
 
 export default function Entete() {
   const chemin = usePathname();
+  const [onglet, setOnglet] = useState<(typeof ONGLETS)[number]["cle"]>("robes");
   const [pose, setPose] = useState(false);
   const [ouvert, setOuvert] = useState(false);
   /* L'entrée dont le panneau est déplié. */
@@ -424,33 +467,83 @@ export default function Entete() {
           {/* Le bloc ne se centre plus : un catalogue se lit du haut. */}
           <div className="flex min-h-full flex-col py-[clamp(1.5rem,3vw,2.5rem)]">
             {/*
-              * ————— sur téléphone : les cinq entrées —————
+              * ————— sur téléphone : trois onglets —————
               *
               * Le catalogue entier est une réponse de grand écran : six
-              * colonnes de noms, qu'on lit d'un coup d'œil à la souris.
-              * Sous le pouce, il devient une liste de soixante lignes à
-              * faire défiler pour atteindre « Showroom » — et ces cinq
-              * entrées ne sont nulle part ailleurs, la barre ne les
-              * affiche qu'au-delà de mille vingt-quatre pixels.
+              * colonnes de noms qu'on embrasse d'un coup d'œil. Sous le
+              * pouce, il devenait une liste de soixante lignes à faire
+              * défiler pour atteindre « Showroom ».
               *
-              * Le menu redevient donc ce qu'il doit être là : la table
-              * des matières du site.
+              * Trois onglets, et l'un d'eux déplié : c'est la forme que
+              * prennent les menus des grandes maisons, et elle tient
+              * dans un écran sans jamais rien cacher.
               */}
-            <nav aria-label="Les sections" className="lg:hidden">
-              <ul className="flex flex-col">
-                {[...GAUCHE, ...DROITE].map((l) => (
+            <div className="lg:hidden">
+              <div
+                role="tablist"
+                aria-label="Le catalogue"
+                className="flex items-center gap-7 border-b border-fil"
+              >
+                {ONGLETS.map((o) => (
+                  <button
+                    key={o.cle}
+                    type="button"
+                    role="tab"
+                    aria-selected={onglet === o.cle}
+                    aria-controls={`onglet-${o.cle}`}
+                    onClick={() => setOnglet(o.cle)}
+                    /* Le trait sous l'onglet actif est porté par le bouton
+                      * lui-même : une bordure sur un pseudo-élément
+                      * sauterait d'un pixel au changement de graisse. */
+                    className={`-mb-px border-b py-3 text-[0.8125rem] uppercase leading-none tracking-[0.08em] transition-colors duration-500 ${
+                      onglet === o.cle
+                        ? "border-encre font-bold text-encre"
+                        : "border-transparent text-brume"
+                    }`}
+                  >
+                    {o.label}
+                  </button>
+                ))}
+              </div>
+
+              {ONGLETS.map((o) => (
+                <ul
+                  key={o.cle}
+                  id={`onglet-${o.cle}`}
+                  role="tabpanel"
+                  hidden={onglet !== o.cle}
+                  className="pt-5"
+                >
+                  {o.liens().map((l) => (
+                    <li key={l.href}>
+                      <Link
+                        href={l.href}
+                        data-actif={chemin === l.href}
+                        className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+
+              {/* Le showroom et la maison : on les regarde quand on a fini
+                * de chercher une robe. */}
+              <ul className="mt-6 border-t border-fil pt-5">
+                {DROITE.map((l) => (
                   <li key={l.href}>
                     <Link
                       href={l.href}
                       data-actif={chemin === l.href}
-                      className="block py-[0.45em] font-serif text-[clamp(1.75rem,7.5vw,2.75rem)] leading-tight text-encre transition-colors duration-500 hover:text-action"
+                      className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
                     >
                       {l.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </nav>
+            </div>
 
             {/* ————— le classement ————— */}
             <div className="hidden items-baseline gap-6 lg:flex" role="group" aria-label="Classer les robes">
