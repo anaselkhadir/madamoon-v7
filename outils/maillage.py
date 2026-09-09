@@ -8,11 +8,15 @@ le panneau d'Élise sont écartés : leurs liens sont sur les
 quatre-vingt-sept pages et ne disent rien du maillage. Ce qui reste est
 le lien éditorial, celui qu'un moteur pèse.
 
-    uv run --with reportlab python outils/maillage.py
+Le document porte l'identité d'ANVSLAB et non celle de MADAMOON : c'est
+un livrable d'agence sur le site d'une cliente, pas une pièce du site.
+Même grille que le cahier des charges — seize-neuvièmes, fond blanc,
+intertitres en mono espacé sous un filet, titre en néo-grotesque, signal
+orangé pour ce qui compte.
 
-Rend public/maillage-interne-madamoon.pdf : le schéma, puis une page de
-relevés — les pages les plus tirées, les plus délaissées, et celles que
-seul le gabarit atteint.
+    uv run --with reportlab --with fonttools python outils/maillage.py
+
+Rend public/maillage-interne-madamoon.pdf.
 """
 
 import json
@@ -24,7 +28,6 @@ import sys
 from collections import Counter
 from html.parser import HTMLParser
 
-from reportlab.lib.pagesizes import A3, landscape
 from reportlab.lib.utils import simpleSplit
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -32,37 +35,99 @@ from reportlab.pdfgen import canvas as pdfcanvas
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 SORTIE = RACINE / "public" / "maillage-interne-madamoon.pdf"
-POLICES = os.environ.get("POLICES_PDF", "")
+POLICES = os.environ.get("POLICES_ANVSLAB", "")
 BASE = "/madamoon-v7"
 
-MM = 72 / 25.4
-LARGEUR, HAUTEUR = landscape(A3)
+PO = 72  # un pouce
+# Seize-neuvièmes, comme le cahier des charges.
+LARGEUR, HAUTEUR = 13.333 * PO, 7.5 * PO
+MX, MY = 0.85 * PO, 0.62 * PO
+CW = LARGEUR - 2 * MX
 
-# L'identité de la maison.
-IVOIRE = (0.992, 0.984, 0.973)
-CRAIE = (0.965, 0.949, 0.925)
-FIL = (0.890, 0.863, 0.820)
-ENCRE = (0.078, 0.063, 0.047)
-PLOMB = (0.420, 0.394, 0.349)
-BRUME = (0.659, 0.627, 0.576)
-ACTION = (0.569, 0, 0)
+# Les jetons du système ANVSLAB.
+SNOW = (1, 1, 1)
+INK = (0, 0, 0)
+PANEL = (0.957, 0.957, 0.957)
+LINE = (0.878, 0.878, 0.878)
+FOG = (0.412, 0.412, 0.412)
+DIM = (0.604, 0.604, 0.604)
+SIGNAL = (1, 0.176, 0)
+NIGHT = (0.051, 0.051, 0.051)
 
-SERIF = "MaillageSerif"
-SANS = "MaillageSans"
-SANS_G = "MaillageSansGras"
+SANS = "AnvsSans"
+SANS_M = "AnvsSansMoyen"
+SANS_G = "AnvsSansGras"
+MONO = "AnvsMono"
+
+
+# Le système ANVSLAB compose en Geist ; à défaut, en néo-grotesque et en
+# mono du système. Les fichiers ne sont pas versionnés — ce sont des
+# polices Apple, qui ne se redistribuent pas — mais extraits à la volée
+# dans un dossier temporaire.
+COLLECTIONS = {
+    SANS: ("HelveticaNeue.ttc", "Helvetica Neue", "Regular"),
+    SANS_M: ("HelveticaNeue.ttc", "Helvetica Neue", "Medium"),
+    SANS_G: ("HelveticaNeue.ttc", "Helvetica Neue", "Bold"),
+    MONO: ("Menlo.ttc", "Menlo", "Regular"),
+}
 
 
 def polices():
-    paires = [
-        (SERIF, "InstrumentSerif-Regular.ttf"),
-        (SANS, "QuattrocentoSans-Regular.ttf"),
-        (SANS_G, "QuattrocentoSans-Bold.ttf"),
-    ]
-    for nom, fichier in paires:
-        chemin = os.path.join(POLICES, fichier)
-        if not os.path.exists(chemin):
-            sys.exit(f"Police introuvable : {chemin}\nDéfinissez POLICES_PDF.")
-        pdfmetrics.registerFont(TTFont(nom, chemin))
+    dossier = pathlib.Path(POLICES) if POLICES else pathlib.Path(
+        os.environ.get("TMPDIR", "/tmp")) / "polices-anvslab"
+    dossier.mkdir(parents=True, exist_ok=True)
+    for nom, (collection, famille, style) in COLLECTIONS.items():
+        chemin = dossier / f"{nom}.ttf"
+        if not chemin.exists():
+            source = pathlib.Path("/System/Library/Fonts") / collection
+            if not source.exists():
+                sys.exit(f"Police introuvable : {source}\n"
+                         "Déposez les .ttf dans un dossier et définissez POLICES_ANVSLAB.")
+            from fontTools.ttLib import TTCollection
+            c = TTCollection(str(source))
+            f = next((f for f in c.fonts
+                      if f["name"].getDebugName(1) == famille
+                      and f["name"].getDebugName(2) == style), None)
+            if f is None:
+                sys.exit(f"{famille} {style} absente de {collection}.")
+            f.flavor = None
+            f.save(str(chemin))
+        pdfmetrics.registerFont(TTFont(nom, str(chemin)))
+
+
+def espace(c, texte, x, y, police, corps, couleur, ecart=1.6):
+    """
+    Le mono espacé des intertitres.
+
+    L'interlettrage appartient à l'état de page dans un PDF : posé une
+    fois, il vaut pour tout ce qui suit. On le remet donc à zéro avant de
+    rendre la main.
+    """
+    c.saveState()
+    c.setFillColorRGB(*couleur)
+    t = c.beginText()
+    t.setTextOrigin(x, y)
+    t.setFont(police, corps)
+    t.setCharSpace(ecart)
+    t.textLine(texte)
+    t.setCharSpace(0)
+    c.drawText(t)
+    c.restoreState()
+
+
+def filet(c, x, y, largeur, couleur=LINE, epaisseur=0.75):
+    c.saveState()
+    c.setStrokeColorRGB(*couleur)
+    c.setLineWidth(epaisseur)
+    c.line(x, y, x + largeur, y)
+    c.restoreState()
+
+
+def chapeau(c, oeil, folio):
+    """L'intertitre en mono, le filet dessous, le folio en bas à droite."""
+    espace(c, oeil.upper(), MX, HAUTEUR - MY - 8, MONO, 8, DIM)
+    filet(c, MX, HAUTEUR - MY - 20, CW)
+    espace(c, folio, LARGEUR - MX - 18, MY - 2, MONO, 8, DIM, 1.2)
 
 
 # ————————————————————————————————————— la lecture du site —————
@@ -162,7 +227,9 @@ def nom_court(a, titres):
         return f"Silhouette {dernier.upper()}"
     t = titres.get(a, dernier).split(" — ")[0]
     if a.startswith("/robes/"):
-        return re.sub(r"^Robe de mariée\s*", "", t).strip() or dernier
+        n = re.sub(r"^Robe de mariée\s*", "", t).strip() or dernier
+        # « Clover avec ou sans perles » débordait la page à lui seul.
+        return n if len(n) <= 16 else n[:15] + "…"
     if a.startswith("/coupes/"):
         return re.sub(r"^Robe de mariée\s*|\s*à Paris.*$", "", t).strip().capitalize() or dernier
     if a.startswith("/createurs/"):
@@ -200,9 +267,9 @@ def bâtir_arbre(graphe, titres):
     branches = []
     for c in coupes:
         branches.append({"a": c, "nom": nom_court(c, titres), "enfants": sous[c]})
-    branches.append({"a": "/morphologies", "nom": "Les morphologies", "enfants": morphos})
-    branches.append({"a": None, "nom": "Les créateurs", "enfants": createurs})
-    branches.append({"a": None, "nom": "Les rubriques", "enfants": rubriques})
+    branches.append({"a": "/morphologies", "nom": "Morphologies", "enfants": morphos})
+    branches.append({"a": None, "nom": "Créateurs", "enfants": createurs})
+    branches.append({"a": None, "nom": "Rubriques", "enfants": rubriques})
     if sous.get("__orphelines__"):
         branches.append({"a": None, "nom": "Hors coupe",
                          "enfants": sous["__orphelines__"]})
@@ -212,7 +279,7 @@ def bâtir_arbre(graphe, titres):
 # ————————————————————————————————————— le dessin —————
 
 def secteur(c, cx, cy, r0, r1, a0, a1, couleur, alpha):
-    """Un éventail pâle derrière une branche, comme sur la référence."""
+    """L'éventail pâle derrière une branche."""
     c.saveState()
     c.setFillColorRGB(*couleur, alpha=alpha)
     p = c.beginPath()
@@ -232,14 +299,14 @@ def secteur(c, cx, cy, r0, r1, a0, a1, couleur, alpha):
 def rond(c, x, y, r, couleur, alpha=1.0):
     c.saveState()
     c.setFillColorRGB(*couleur, alpha=alpha)
-    c.setStrokeColorRGB(*IVOIRE, alpha=alpha)
-    c.setLineWidth(0.7)
+    c.setStrokeColorRGB(*SNOW)
+    c.setLineWidth(0.8)
     c.circle(x, y, r, stroke=1, fill=1)
     c.restoreState()
 
 
 def texte_radial(c, x, y, angle, texte, police, corps, couleur):
-    """Une étiquette posée dans l'axe de son rayon, jamais à l'envers."""
+    """Une étiquette dans l'axe de son rayon, jamais à l'envers."""
     c.saveState()
     c.setFillColorRGB(*couleur)
     c.setFont(police, corps)
@@ -254,221 +321,210 @@ def texte_radial(c, x, y, angle, texte, police, corps, couleur):
     c.restoreState()
 
 
-def schema(c, branches, graphe, entrants, titres):
-    c.setFillColorRGB(*IVOIRE)
+def page_schema(c, branches, graphe, entrants, titres):
+    """
+    Le schéma occupe la droite, le texte la gauche.
+
+    Le seize-neuvièmes est bas : une couronne centrée sur la page, avec un
+    titre au-dessus et une légende dessous, ne laissait plus que quatre
+    cents points de diamètre et coupait les étiquettes du bas. En colonne,
+    le schéma retrouve toute la hauteur.
+    """
+    c.setFillColorRGB(*SNOW)
     c.rect(0, 0, LARGEUR, HAUTEUR, stroke=0, fill=1)
+    chapeau(c, "Maillage interne  ·  madamoon.fr", "01")
 
-    cx, cy = LARGEUR / 2, HAUTEUR / 2 - 6 * MM
-    R1, R2 = 42 * MM, 96 * MM
+    COL = 262  # la colonne de gauche
 
-    feuilles = sum(max(1, len(b["enfants"])) for b in branches)
-    # Un cran d'écart entre deux branches, pour que les éventails se lisent.
-    ecart = 0.55
-    total = feuilles + ecart * len(branches)
-    pas = 2 * math.pi / total
+    c.setFillColorRGB(*INK)
+    c.setFont(SANS, 30)
+    c.drawString(MX, HAUTEUR - MY - 62, "Qui mène")
+    c.drawString(MX, HAUTEUR - MY - 92, "à quoi")
+    c.saveState()
+    c.setFillColorRGB(*SIGNAL)
+    c.rect(MX, HAUTEUR - MY - 104, 52, 3, stroke=0, fill=1)
+    c.restoreState()
+
+    liens = sum(len(v) for v in graphe.values())
+    c.setFillColorRGB(*FOG)
+    c.setFont(SANS, 10)
+    y = HAUTEUR - MY - 132
+    for l in [f"{len(graphe)} pages, {liens} liens éditoriaux,",
+              f"{liens / len(graphe):.1f} par page en moyenne.",
+              "",
+              "L'en-tête, le pied de page, le menu et",
+              "le panneau d'Élise sont exclus : leurs",
+              "liens sont sur toutes les pages et ne",
+              "disent rien du maillage."]:
+        c.drawString(MX, y, l)
+        y -= 14
+
+    y -= 16
+    espace(c, "LIRE LE SCHÉMA", MX, y, MONO, 7, DIM)
+    y -= 18
+    c.setFillColorRGB(*FOG)
+    c.setFont(SANS, 9)
+    for l in ["Le disque grossit avec le nombre de",
+              "pages qui mènent à lui. Chaque robe est",
+              "rangée sous la coupe qui la présente ;",
+              "les autres chemins — morphologie,",
+              "créateur, robes voisines — comptent",
+              "dans la taille des disques."]:
+        c.drawString(MX, y, l)
+        y -= 12.5
 
     maxi = max(entrants.values()) or 1
+    y -= 20
+    espace(c, "LIENS ENTRANTS", MX, y, MONO, 7, DIM)
+    for i, v in enumerate([2, 10, 30, maxi]):
+        px = MX + i * 56
+        rond(c, px + 6, y - 22, 1.5 + 5.0 * math.sqrt(v / maxi), SIGNAL)
+        c.setFillColorRGB(*DIM)
+        c.setFont(MONO, 7)
+        c.drawCentredString(px + 6, y - 38, str(v))
+
+    # ————— la couronne, à droite
+    zone_g = MX + COL + 30
+    cx = (zone_g + LARGEUR - MX) / 2
+    cy = HAUTEUR / 2 - 12
+    R1, R2 = 90, 156
+
+    feuilles = sum(max(1, len(b["enfants"])) for b in branches)
+    ecart = 0.55
+    pas = 2 * math.pi / (feuilles + ecart * len(branches))
 
     def rayon(a):
-        return 1.7 + 5.6 * math.sqrt(entrants.get(a, 0) / maxi)
+        return 1.5 + 5.0 * math.sqrt(entrants.get(a, 0) / maxi)
 
-    angle = math.pi / 2  # on démarre en haut
+    angle = math.pi / 2
     for b in branches:
         n = max(1, len(b["enfants"]))
-        a0 = angle
-        a1 = angle + n * pas
+        a0, a1 = angle, angle + n * pas
         milieu = (a0 + a1) / 2
-
-        secteur(c, cx, cy, R1 + 3 * MM, R2 - 2 * MM, a0 + pas * 0.12, a1 - pas * 0.12,
-                FIL, 0.55)
+        secteur(c, cx, cy, R1 + 10, R2 - 6, a0 + pas * 0.12, a1 - pas * 0.12, PANEL, 1)
 
         bx, by = cx + R1 * math.cos(milieu), cy + R1 * math.sin(milieu)
-
-        c.setStrokeColorRGB(*BRUME, alpha=0.75)
-        c.setLineWidth(0.6)
+        c.setStrokeColorRGB(*LINE)
+        c.setLineWidth(0.7)
         c.line(cx, cy, bx, by)
 
         for i, e in enumerate(b["enfants"]):
             af = a0 + (i + 0.5) * pas
             fx, fy = cx + R2 * math.cos(af), cy + R2 * math.sin(af)
-            c.setStrokeColorRGB(*BRUME, alpha=0.5)
-            c.setLineWidth(0.4)
+            c.setStrokeColorRGB(*LINE)
+            c.setLineWidth(0.5)
             c.line(bx, by, fx, fy)
             r = rayon(e)
-            rond(c, fx, fy, r, ACTION, 0.88)
-            texte_radial(c, cx + (R2 + r + 2.2 * MM) * math.cos(af),
-                         cy + (R2 + r + 2.2 * MM) * math.sin(af), af,
-                         nom_court(e, titres), SANS, 6.2, PLOMB)
+            rond(c, fx, fy, r, SIGNAL)
+            texte_radial(c, cx + (R2 + r + 5) * math.cos(af),
+                         cy + (R2 + r + 5) * math.sin(af), af,
+                         nom_court(e, titres), SANS, 6, FOG)
 
-        rb = 3.4 * MM if b["a"] is None else max(3 * MM, rayon(b["a"]) * 1.2)
-        rond(c, bx, by, rb, PLOMB)
-
-        # L'intitulé se pose entre le centre et la branche : c'est le seul
-        # espace vide du schéma, et aucun mot ne tient dans un disque de
-        # trois millimètres.
-        texte_radial(c, cx + (R1 - rb - 3 * MM) * math.cos(milieu),
-                     cy + (R1 - rb - 3 * MM) * math.sin(milieu), milieu + math.pi,
-                     b["nom"].upper(), SANS_G, 7.2, ENCRE)
+        rb = 7 if b["a"] is None else max(6, rayon(b["a"]) * 1.1)
+        rond(c, bx, by, rb, INK)
+        texte_radial(c, cx + (R1 - rb - 6) * math.cos(milieu),
+                     cy + (R1 - rb - 6) * math.sin(milieu), milieu + math.pi,
+                     b["nom"].upper(), SANS_G, 6.2, INK)
 
         angle = a1 + ecart * pas
 
-    rond(c, cx, cy, 11 * MM, ENCRE)
-    c.setFillColorRGB(*IVOIRE)
-    c.setFont(SERIF, 15)
-    c.drawCentredString(cx, cy - 4, "Accueil")
+    rond(c, cx, cy, 22, INK)
+    c.setFillColorRGB(*SNOW)
+    c.setFont(SANS_M, 7.4)
+    c.drawCentredString(cx, cy - 2.5, "ACCUEIL")
 
 
-def entete(c, graphe):
-    c.setFillColorRGB(*ENCRE)
-    c.setFont(SERIF, 26)
-    c.drawString(18 * MM, HAUTEUR - 22 * MM, "Le maillage interne")
-    c.setFont(SANS_G, 7.4)
-    c.setFillColorRGB(*PLOMB)
-    c.drawString(18 * MM, HAUTEUR - 28 * MM, "M A D A M O O N   —   M A D A M O O N . F R")
-    c.setFont(SANS, 8.4)
-    liens = sum(len(v) for v in graphe.values())
-    c.setFillColorRGB(*PLOMB)
-    c.drawRightString(LARGEUR - 18 * MM, HAUTEUR - 22 * MM,
-                      f"{len(graphe)} pages · {liens} liens éditoriaux")
-    c.drawRightString(LARGEUR - 18 * MM, HAUTEUR - 27 * MM,
-                      "En-tête, pied de page et menu exclus")
-    c.setStrokeColorRGB(*FIL)
-    c.setLineWidth(0.6)
-    c.line(18 * MM, HAUTEUR - 32 * MM, LARGEUR - 18 * MM, HAUTEUR - 32 * MM)
+def panneau(c, x, y, w, h, oeil, titre, corps):
+    """Le bloc gris du système : label mono, titre sans, corps gris."""
+    c.saveState()
+    c.setFillColorRGB(*PANEL)
+    c.rect(x, y, w, h, stroke=0, fill=1)
+    c.restoreState()
+    espace(c, oeil.upper(), x + 16, y + h - 22, MONO, 7, DIM)
+    c.setFillColorRGB(*INK)
+    c.setFont(SANS, 13)
+    yy = y + h - 44
+    for l in simpleSplit(titre, SANS, 13, w - 32):
+        c.drawString(x + 16, yy, l)
+        yy -= 16
+    c.setFillColorRGB(*FOG)
+    c.setFont(SANS, 8.6)
+    yy -= 6
+    for m in simpleSplit(corps, SANS, 8.6, w - 32):
+        c.drawString(x + 16, yy, m)
+        yy -= 12
 
 
-def legende(c, entrants):
-    x, y = 18 * MM, 30 * MM
-    c.setFont(SANS_G, 7)
-    c.setFillColorRGB(*PLOMB)
-    c.drawString(x, y + 14, "LIRE LE SCHÉMA")
-    c.setFont(SANS, 8)
-    lignes = [
-        "Le disque grossit avec le nombre de pages qui mènent à lui.",
-        "Chaque robe est rangée sous la coupe qui la présente ; les autres chemins",
-        "— morphologie, créateur, robes voisines — comptent dans la taille des disques.",
-    ]
-    for i, l in enumerate(lignes):
-        c.setFillColorRGB(*PLOMB)
-        c.drawString(x, y - i * 10, l)
-
-    # l'échelle
-    xe = LARGEUR - 78 * MM
-    c.setFont(SANS_G, 7)
-    c.setFillColorRGB(*PLOMB)
-    c.drawString(xe, y + 14, "LIENS ENTRANTS")
-    maxi = max(entrants.values()) or 1
-    for i, v in enumerate([2, 10, 30, maxi]):
-        px = xe + i * 17 * MM
-        r = 1.7 + 5.6 * math.sqrt(v / maxi)
-        rond(c, px + 4, y + 1, r, ACTION, 0.88)
-        c.setFillColorRGB(*BRUME)
-        c.setFont(SANS, 7)
-        c.drawCentredString(px + 4, y - 12, str(v))
-
-
-def releves(c, graphe, entrants, titres):
+def page_releves(c, graphe, entrants, titres):
     c.showPage()
-    c.setFillColorRGB(*IVOIRE)
+    c.setFillColorRGB(*SNOW)
     c.rect(0, 0, LARGEUR, HAUTEUR, stroke=0, fill=1)
-    c.setFillColorRGB(*ENCRE)
-    c.setFont(SERIF, 26)
-    c.drawString(18 * MM, HAUTEUR - 22 * MM, "Ce que le schéma montre")
-    c.setStrokeColorRGB(*FIL)
-    c.setLineWidth(0.6)
-    c.line(18 * MM, HAUTEUR - 30 * MM, LARGEUR - 18 * MM, HAUTEUR - 30 * MM)
+    chapeau(c, "Le relevé", "02")
 
-    # La page d'erreur n'est la destination de personne : elle fausserait
-    # le bas du classement.
+    c.setFillColorRGB(*INK)
+    c.setFont(SANS, 34)
+    c.drawString(MX, HAUTEUR - MY - 58, "Ce que le schéma montre")
+
     compte = {a: n for a, n in entrants.items() if a not in ("/404", "/")}
     orphelines = sorted(a for a, n in compte.items() if n == 0)
+    plus = sorted(compte.items(), key=lambda x: (-x[1], x[0]))[:10]
+    moins = [x for x in sorted(compte.items(), key=lambda x: (x[1], x[0])) if x[1] > 0][:10]
 
+    # ————— trois colonnes de relevés
+    y = HAUTEUR - MY - 92
+    largeur = (CW - 2 * 0.42 * PO) / 3
     colonnes = [
-        ("LES PLUS TIRÉES",
-         [f"{n}   {nom_court(a, titres)}" for a, n in
-          sorted(compte.items(), key=lambda x: (-x[1], x[0]))[:14]]),
-        ("LES MOINS TIRÉES",
-         [f"{n}   {nom_court(a, titres)}" for a, n in
-          sorted(compte.items(), key=lambda x: (x[1], x[0])) if n > 0][:14]),
-        ("SANS LIEN ÉDITORIAL ENTRANT",
-         [f"·   {nom_court(a, titres)}   {a}" for a in orphelines]),
+        ("Les plus tirées", [f"{n}   {nom_court(a, titres)}" for a, n in plus]),
+        ("Les moins tirées", [f"{n}   {nom_court(a, titres)}" for a, n in moins]),
+        ("Sans lien éditorial entrant",
+         [f"—   {nom_court(a, titres)}" for a in orphelines]),
     ]
-    largeur_col = (LARGEUR - 36 * MM) / 3
-    bas = HAUTEUR - 42 * MM
+    bas = y
     for i, (titre, lignes) in enumerate(colonnes):
-        x = 18 * MM + i * largeur_col
-        y = HAUTEUR - 42 * MM
-        c.setFont(SANS_G, 7.6)
-        c.setFillColorRGB(*ENCRE)
-        c.drawString(x, y, titre)
-        y -= 15
-        c.setFont(SANS, 9)
-        c.setFillColorRGB(*PLOMB)
+        x = MX + i * (largeur + 0.42 * PO)
+        espace(c, titre.upper(), x, y, MONO, 7, DIM)
+        yy = y - 18
         for l in lignes:
-            c.drawString(x, y, l)
-            y -= 13
+            c.setFillColorRGB(*INK)
+            c.setFont(SANS, 9.6)
+            c.drawString(x, yy, l)
+            yy -= 14
         if i == 2:
-            y -= 4
-            c.setFillColorRGB(*BRUME)
+            yy -= 4
+            c.setFillColorRGB(*DIM)
             c.setFont(SANS, 8.4)
-            for l in ["Elles ne sont atteintes que par le gabarit —",
-                      "la barre, le menu, le pied de page."]:
-                c.drawString(x, y, l); y -= 11
-        bas = min(bas, y)
+            for l in ["Atteintes par le seul gabarit —",
+                      "barre, menu, pied de page."]:
+                c.drawString(x, yy, l)
+                yy -= 11
+        bas = min(bas, yy)
 
-    # ————— la lecture, sous les colonnes
-    y = bas - 16 * MM
-    c.setStrokeColorRGB(*FIL)
-    c.line(18 * MM, y + 8 * MM, LARGEUR - 18 * MM, y + 8 * MM)
-    c.setFont(SANS_G, 7.6)
-    c.setFillColorRGB(*ENCRE)
-    c.drawString(18 * MM, y, "CE QU'IL FAUT EN RETENIR")
-    y -= 16
-
-    moy = sum(len(v) for v in graphe.values()) / len(graphe)
+    # ————— quatre panneaux de lecture
+    yp = MY + 26
+    hp = bas - 26 - yp
+    lp = (CW - 3 * 14) / 4
     lectures = [
-        ("Le rendez-vous est le point de convergence.",
-         "Il est tiré par les quatre-vingt-six autres pages : tout chemin du site y mène, "
-         "et c'est bien ce qu'on lui demande."),
-        ("Les morphologies concentrent le maillage.",
-         "Les six silhouettes reçoivent de trente-six à cinquante-deux liens chacune — davantage "
-         "que les coupes. C'est l'entrée que le site privilégie, et celle qui distingue la maison "
-         "d'un catalogue."),
-        ("Les fiches robes ne sont pas égales devant les liens.",
-         "De deux à vingt-quatre liens entrants selon la robe. Les mieux tirées sont celles "
-         "qu'une coupe, une morphologie et un créateur citent à la fois ; les moins tirées "
-         "n'ont que leur coupe et le catalogue."),
-        ("Trois pages n'ont aucun lien éditorial entrant.",
-         "La maison, Trouver ma robe et Coups de cœur ne sont atteintes que par la barre et le "
-         "pied de page. Un lien depuis un texte leur donnerait le poids qui leur manque — "
-         "Coups de cœur est hors moteurs par choix, les deux autres non."),
+        ("Convergence", "Le rendez-vous tire tout le site",
+         "Quatre-vingt-six pages y mènent. C'est le seul point où tous les chemins "
+         "se rejoignent, et c'est ce qu'on lui demande."),
+        ("Priorité", "Les morphologies portent le maillage",
+         "De trente-six à cinquante-deux liens chacune, davantage que les coupes. "
+         "C'est l'entrée que le site privilégie, et celle qui le distingue d'un catalogue."),
+        ("Écart", "Les fiches robes ne sont pas égales",
+         "De deux à vingt-quatre liens entrants. Les mieux tirées sont citées par une "
+         "coupe, une morphologie et un créateur à la fois."),
+        ("À corriger", "Trois pages sans lien éditorial",
+         "La maison, Trouver ma robe et Coups de cœur ne sont atteintes que par le "
+         "gabarit. Un lien depuis un texte leur donnerait le poids qui leur manque."),
     ]
-    largeur = (LARGEUR - 36 * MM) / 2 - 8 * MM
-    # La hauteur d'une rangée se mesure sur le plus long des deux blocs :
-    # fixée d'avance, elle laissait le second se poser sur le troisième.
-    plies = [simpleSplit(corps, SANS, 8.6, largeur) for _, corps in lectures]
-    y_rangee = y
-    for r in range(0, len(lectures), 2):
-        haut = max(len(plies[j]) for j in range(r, min(r + 2, len(lectures))))
-        for j in range(r, min(r + 2, len(lectures))):
-            cx = 18 * MM + (j % 2) * ((LARGEUR - 36 * MM) / 2)
-            c.setFont(SANS_G, 9)
-            c.setFillColorRGB(*ACTION)
-            c.drawString(cx, y_rangee, lectures[j][0])
-            c.setFont(SANS, 8.6)
-            c.setFillColorRGB(*PLOMB)
-            yy = y_rangee - 12
-            for l in plies[j]:
-                c.drawString(cx, yy, l); yy -= 11
-        y_rangee -= 12 + haut * 11 + 14
-
-    c.setFont(SANS, 7.4)
-    c.setFillColorRGB(*BRUME)
-    c.drawString(18 * MM, 18 * MM,
-                 f"Relevé sur l'export du site — {len(graphe)} pages, "
-                 f"{sum(len(v) for v in graphe.values())} liens éditoriaux, "
-                 f"{moy:.1f} par page en moyenne. L'en-tête, le pied de page, le menu et "
-                 f"le panneau d'Élise sont exclus du décompte.")
+    for i, (oeil, titre, corps) in enumerate(lectures):
+        x = MX + i * (lp + 14)
+        panneau(c, x, yp, lp, hp, oeil, titre, corps)
+        if oeil == "À corriger":
+            c.saveState()
+            c.setFillColorRGB(*SIGNAL)
+            c.rect(x, yp + hp - 3, lp, 3, stroke=0, fill=1)
+            c.restoreState()
 
 
 def main():
@@ -484,11 +540,9 @@ def main():
     branches = bâtir_arbre(graphe, titres)
     c = pdfcanvas.Canvas(str(SORTIE), pagesize=(LARGEUR, HAUTEUR))
     c.setTitle("MADAMOON — Le maillage interne")
-    c.setAuthor("MADAMOON")
-    schema(c, branches, graphe, entrants, titres)
-    entete(c, graphe)
-    legende(c, entrants)
-    releves(c, graphe, entrants, titres)
+    c.setAuthor("ANVSLAB")
+    page_schema(c, branches, graphe, entrants, titres)
+    page_releves(c, graphe, entrants, titres)
     c.save()
     print(f"{SORTIE.relative_to(RACINE)} — {len(graphe)} pages, "
           f"{sum(len(v) for v in graphe.values())} liens, {len(branches)} branches")
