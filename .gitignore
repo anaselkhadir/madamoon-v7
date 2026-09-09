@@ -43,3 +43,6 @@ next-env.d.ts
 # Fichiers de travail : sauvegardes et rendus intermédiaires.
 /travail
 outils/__pycache__/
+
+# Dossiers de travail d’un autre chantier, déposés ici par erreur.
+.build-*/
