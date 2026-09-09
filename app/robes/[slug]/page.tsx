@@ -344,22 +344,16 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
         </section>
       )}
 
-      {/* ————————————————————————————— l'essayage ————— */}
-      <section className="gouttiere mt-[clamp(3rem,6vw,6rem)] bg-craie py-[clamp(3.5rem,7vw,7rem)]">
-        <div className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
-          <p className="phrase mesure">
-            {robe.nom} vous attend au showroom.
-          </p>
-          <div className="flex flex-col items-start gap-4" data-lever data-retard="180">
-            <AppelRendezvous robe={robe.slug} className="bouton">
-              Prendre rendez-vous
-            </AppelRendezvous>
-            <a href={MAISON.telephoneHref} className="lien-nav souligne text-encre">
-              {MAISON.telephone}
-            </a>
-          </div>
-        </div>
-      </section>
+      {/*
+        * La bande « … vous attend au showroom » est retirée.
+        *
+        * Le rendez-vous est déjà proposé trois fois sur cette page : sur
+        * la photographie d'ouverture, dans la barre de navigation, et
+        * dans la carte qui suit le défilement. Une quatrième invitation
+        * n'ajoutait rien, sinon un écran de craie entre les
+        * photographies et les robes voisines. Le numéro se lit dans le
+        * bandeau et au pied de page.
+        */}
 
       {/* ————————————————————————————— les voisines ————— */}
       {voisines.length > 0 && (
