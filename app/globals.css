@@ -773,3 +773,136 @@ body {
     max-height: calc(100% - 50px) !important;
   }
 }
+
+/* ———————————————————————————————————— l'ouverture ————— */
+
+/*
+ * Le noir posé avant la première peinture.
+ *
+ * Le site est un export statique : le hero est dans le HTML, et il
+ * s'afficherait le temps que React s'hydrate. Un script du gabarit pose
+ * donc « data-ouverture » sur la racine avant que rien ne soit peint, et
+ * c'est cette règle — du CSS, pas du JavaScript — qui tient l'écran noir
+ * pendant ce temps. Sans elle, on verrait le hero une fraction de
+ * seconde avant l'ouverture, ce qui ruinerait exactement ce qu'elle
+ * cherche à faire.
+ *
+ * Le voile s'efface tout seul au bout de la séquence, par animation :
+ * si l'hydratation n'arrivait jamais, la page finirait quand même par
+ * paraître. Rien de ce qui cache le contenu ne dépend d'un script.
+ */
+html[data-ouverture] {
+  overflow: hidden;
+}
+html[data-ouverture]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: #000;
+  animation: ouverture-voile 1ms linear 3350ms forwards;
+}
+@keyframes ouverture-voile {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*
+ * La scène. Elle couvre tout — la barre est à 50, le menu à 60, Élise à
+ * 80 — et ne prend jamais le focus : c'est une image, pas une étape.
+ */
+.ouverture {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #000;
+  padding: calc(env(safe-area-inset-top, 0px) + 1.5rem)
+    calc(env(safe-area-inset-right, 0px) + var(--gouttiere))
+    calc(env(safe-area-inset-bottom, 0px) + 1.5rem)
+    calc(env(safe-area-inset-left, 0px) + var(--gouttiere));
+  animation: ouverture-part 800ms var(--ease-doux) 3350ms forwards;
+}
+
+/* Les deux lignes et la signature se superposent dans la même case : la
+ * seconde ne pousse pas la première, et rien ne se déplace. */
+.ouverture-scene {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.5rem, 2.2vh, 1.25rem);
+  text-align: center;
+}
+
+.ouverture-ligne {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--color-ivoire);
+  opacity: 0;
+  will-change: opacity, transform;
+  animation:
+    ouverture-monte 750ms var(--ease-rideau) forwards,
+    ouverture-part 350ms linear 2050ms forwards;
+}
+.ouverture-ligne:nth-child(1) {
+  animation-delay: 450ms, 2050ms;
+}
+.ouverture-ligne:nth-child(2) {
+  animation-delay: 1200ms, 2050ms;
+}
+
+.ouverture-signature {
+  grid-area: 1 / 1;
+  width: clamp(9rem, 26vw, 15rem);
+  height: auto;
+  opacity: 0;
+  will-change: opacity, transform;
+  animation: ouverture-signature 750ms var(--ease-doux) 2250ms forwards;
+}
+
+@keyframes ouverture-monte {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ouverture-part {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes ouverture-signature {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Passée d'un geste : tout s'arrête où c'est, et le noir s'en va. */
+.ouverture[data-passe="true"],
+.ouverture[data-passe="true"] .ouverture-ligne,
+.ouverture[data-passe="true"] .ouverture-signature {
+  animation: none;
+}
+.ouverture[data-passe="true"] {
+  opacity: 0;
+  transition: opacity 350ms var(--ease-doux);
+}
+.ouverture[data-passe="true"] .ouverture-scene,
+.ouverture[data-passe="true"] .ouverture-signature {
+  visibility: hidden;
+}

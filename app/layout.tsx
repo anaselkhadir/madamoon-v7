@@ -9,7 +9,7 @@ import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Mouvement from "@/components/Mouvement";
 import { SITE_URL } from "@/lib/madamoon";
 import { MAISON_SCHEMA } from "@/lib/schema";
-import { APERCU } from "@/lib/chemin";
+import { APERCU, BASE } from "@/lib/chemin";
 
 /*
  * Deux caractères, comme sur la référence.
@@ -82,6 +82,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(MAISON_SCHEMA) }}
+        />
+        {/*
+          * Le garde de l'ouverture.
+          *
+          * Il s'exécute avant la première peinture — c'est tout son
+          * intérêt. Le site est un export statique : le hero est déjà
+          * dans le HTML, et attendre l'hydratation pour le couvrir le
+          * laisserait clignoter.
+          *
+          * Il ne décide que d'une chose : poser ou non « data-ouverture »
+          * sur la racine. Le reste — le noir, la séquence — est du CSS.
+          * Trois refus : ailleurs que sur l'accueil, à la deuxième visite
+          * de la session, et si le mouvement est refusé. Dans ce dernier
+          * cas on va droit au hero : une ouverture « plus sobre » reste
+          * une ouverture, et la préférence demande qu'il n'y en ait pas.
+          *
+          * Le drapeau de session est posé tout de suite, avant même que
+          * la séquence commence : rechargée au milieu, elle ne recommence
+          * pas.
+          *
+          * Le filet de sécurité rend le défilement au bout de six
+          * secondes, quoi qu'il arrive au script de la page.
+          */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{
+var b=${JSON.stringify(BASE)},p=location.pathname;
+if(b&&p.indexOf(b)===0)p=p.slice(b.length);
+p=p.replace(/index\\.html$/,"").replace(/\\/+$/,"");
+if(p!=="")return;
+if(sessionStorage.getItem("madamoon.ouverture"))return;
+if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+sessionStorage.setItem("madamoon.ouverture","1");
+var d=document.documentElement;d.setAttribute("data-ouverture","");
+setTimeout(function(){d.removeAttribute("data-ouverture")},6000);
+}catch(e){}})();`,
+          }}
         />
       </head>
       <body>

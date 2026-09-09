@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Ouverture from "@/components/accueil/Ouverture";
 import Hero from "@/components/accueil/Hero";
 import Silhouette from "@/components/accueil/Silhouette";
 import Coupes from "@/components/accueil/Coupes";
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
 export default function Accueil() {
   return (
     <>
+      <Ouverture />
       <Hero />
       <Silhouette />
       <Coupes />
