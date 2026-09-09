@@ -119,6 +119,9 @@ const RACCOURCIS = [
   { href: "/rendez-vous", label: "Prendre rendez-vous" },
 ];
 
+/* Les adresses que la liste du téléphone porte déjà. */
+const SECTIONS = new Set([...GAUCHE, ...DROITE].map((l) => l.href));
+
 type Groupe = { titre: string; href: string; robes: (typeof ROBES)[number][] };
 
 /* Par maison. Les modèles dont la maison n'est pas renseignée finissent
@@ -420,8 +423,37 @@ export default function Entete() {
         <div className="gouttiere flex-1 overflow-y-auto overscroll-contain">
           {/* Le bloc ne se centre plus : un catalogue se lit du haut. */}
           <div className="flex min-h-full flex-col py-[clamp(1.5rem,3vw,2.5rem)]">
+            {/*
+              * ————— sur téléphone : les cinq entrées —————
+              *
+              * Le catalogue entier est une réponse de grand écran : six
+              * colonnes de noms, qu'on lit d'un coup d'œil à la souris.
+              * Sous le pouce, il devient une liste de soixante lignes à
+              * faire défiler pour atteindre « Showroom » — et ces cinq
+              * entrées ne sont nulle part ailleurs, la barre ne les
+              * affiche qu'au-delà de mille vingt-quatre pixels.
+              *
+              * Le menu redevient donc ce qu'il doit être là : la table
+              * des matières du site.
+              */}
+            <nav aria-label="Les sections" className="lg:hidden">
+              <ul className="flex flex-col">
+                {[...GAUCHE, ...DROITE].map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      href={l.href}
+                      data-actif={chemin === l.href}
+                      className="block py-[0.45em] font-serif text-[clamp(1.75rem,7.5vw,2.75rem)] leading-tight text-encre transition-colors duration-500 hover:text-action"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             {/* ————— le classement ————— */}
-            <div className="flex items-baseline gap-6" role="group" aria-label="Classer les robes">
+            <div className="hidden items-baseline gap-6 lg:flex" role="group" aria-label="Classer les robes">
               {(["createur", "coupe"] as const).map((c) => (
                 <button
                   key={c}
@@ -439,7 +471,7 @@ export default function Entete() {
             </div>
 
             {/* ————— le catalogue ————— */}
-            <nav aria-label="Le catalogue" className="mt-[clamp(1.5rem,3vw,2.5rem)]">
+            <nav aria-label="Le catalogue" className="mt-[clamp(1.5rem,3vw,2.5rem)] max-lg:hidden">
               <div /* Six colonnes au plus large : les deux classements comptent
                   * six groupes — cinq maisons plus les modèles sans maison, et
                   * les six coupes. À cinq, le dernier retombait seul sur une
@@ -477,7 +509,13 @@ export default function Entete() {
                   const habits =
                     "lien-nav souligne text-plomb transition-colors duration-500 hover:text-encre";
                   return (
-                    <li key={l.label}>
+                    <li
+                      key={l.label}
+                      /* Sur téléphone, la liste du haut porte déjà ces
+                        * cinq-là : ne restent ici qu'Élise et le
+                        * rendez-vous. */
+                      className={SECTIONS.has(l.href) ? "hidden lg:block" : undefined}
+                    >
                       {l.href ? (
                         <Link href={l.href} className={habits}>
                           {l.label}
