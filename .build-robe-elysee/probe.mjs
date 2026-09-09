@@ -1,0 +1,11 @@
+import { FileBlob, PresentationFile } from "@oai/artifact-tool";
+const p = await PresentationFile.importPptx(await FileBlob.load(process.argv[2]));
+console.log('slides', Object.getOwnPropertyNames(Object.getPrototypeOf(p.slides)));
+console.log('presentation', Object.getOwnPropertyNames(Object.getPrototypeOf(p)));
+const s=p.slides.getItem(0);
+console.log('slide0', Object.getOwnPropertyNames(Object.getPrototypeOf(s)));
+console.log('shapes', Object.getOwnPropertyNames(Object.getPrototypeOf(s.shapes)));
+console.log('count', s.shapes.items.length);
+console.log('shape0', Object.getOwnPropertyNames(Object.getPrototypeOf(s.shapes.items[0])));
+for (const [i,sh] of s.shapes.items.entries()) console.log(i, sh.id, sh.type, sh.data?.text?.text, sh.data?.text?.content, JSON.stringify(sh.data).slice(0,360));
+const t=p.resolve('sh/k3yl0zql'); console.log('resolved', Object.keys(t), Object.getOwnPropertyNames(Object.getPrototypeOf(t)), Object.getOwnPropertyNames(Object.getPrototypeOf(t.text)), t.text, t.text?.text, t.text?.content);
