@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import TitreSection from "@/components/TitreSection";
 import ListeCoupsDeCoeur from "@/components/parcours/ListeCoupsDeCoeur";
 
 /*
@@ -20,16 +19,12 @@ export const metadata: Metadata = {
 };
 
 export default function CoupsDeCoeur() {
+  /* L'intitulé appartient au composant client : il n'est pas le même
+   * selon que l'on regarde sa propre liste ou la sélection de quelqu'un
+   * d'autre, et cela ne se sait qu'une fois l'adresse lue. */
   return (
-    <>
-      <div className="pt-[var(--entete)]">
-        <TitreSection
-          niveau={1}
-          titre="Vos coups de cœur"
-          lien={{ href: "/robes", label: "Voir toutes les robes" }}
-        />
-      </div>
+    <div className="pt-[var(--entete)]">
       <ListeCoupsDeCoeur />
-    </>
+    </div>
   );
 }
