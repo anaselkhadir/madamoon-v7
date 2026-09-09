@@ -116,6 +116,7 @@ export default async function Maison({ params }: { params: Promise<{ maison: str
                   key={robe.slug}
                   retard={(i % 3) * 70}
                   href={`/robes/${robe.slug}`}
+                  coupDeCoeur={robe.slug}
                   media={media}
                   dossier="robes"
                   alt={altRobe(robe)}

@@ -8,6 +8,7 @@ import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
+import Panier from "@/components/chrome/Panier";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -346,7 +347,12 @@ export default function Entete() {
                 * C'est l'enveloppe que l'on masque, pas le bouton :
                 * « .bouton » pose son « display » hors calque et
                 * l'emporterait sur l'utilitaire. */}
-              <span className="ml-auto hidden shrink-0 md:block">
+              {/* Les coups de cœur, à droite, sur tous les écrans : c'est
+                * le seul endroit où la visiteuse retrouve ce qu'elle a
+                * aimé, et le seul que le téléphone garde en vue. */}
+              <Panier />
+
+              <span className="hidden shrink-0 md:block">
                 <AppelRendezvous className="bouton bouton-barre">
                   Rendez-vous
                 </AppelRendezvous>

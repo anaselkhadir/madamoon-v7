@@ -315,6 +315,7 @@ export default async function Morpho({ params }: { params: Promise<{ lettre: str
                       key={robe.slug}
                       retard={(i % 3) * 70}
                       href={`/robes/${robe.slug}`}
+                      coupDeCoeur={robe.slug}
                       media={media}
                       dossier="robes"
                       alt={altRobe(robe)}

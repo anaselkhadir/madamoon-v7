@@ -13,6 +13,7 @@ import { SCENES, vues } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
+import { CoeurFiche } from "@/components/parcours/Coeur";
 import { epingleRobe, offreRobe } from "@/lib/schema";
 
 /*
@@ -219,6 +220,9 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
                 L&apos;essayer au showroom
               </AppelRendezvous>
               <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} />
+              {/* Le coup de cœur, au même rang : c'est le geste que l'on
+                * fait avant de savoir si l'on prendra rendez-vous. */}
+              <CoeurFiche slug={robe.slug} nom={robe.nom} />
             </div>
           </div>
         </div>
@@ -378,6 +382,7 @@ export default async function Fiche({ params }: { params: Promise<{ slug: string
                     key={v.slug}
                     retard={i * 70}
                     href={`/robes/${v.slug}`}
+                    coupDeCoeur={v.slug}
                     media={media}
                     dossier="robes"
                     alt={altRobe(v)}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AppelElise from "@/components/AppelElise";
 import Photo from "@/components/media/Photo";
+import { CoeurTuile } from "@/components/parcours/Coeur";
 import type { Media } from "@/lib/medias";
 
 /*
@@ -32,6 +33,11 @@ type Props = {
   position?: string;
   /* Un repère discret en haut à gauche (numéro, catégorie). */
   repere?: string;
+  /* L'identifiant de la robe montrée. Donné, il pose un cœur dans le
+   * coin haut droit : on aime depuis la liste, sans ouvrir la fiche.
+   * Les tuiles qui montrent une coupe ou une maison n'en ont pas — on
+   * n'a pas de coup de cœur pour une catégorie. */
+  coupDeCoeur?: string;
   /* Le rapport de la tuile. Par défaut celui de la référence. */
   ratio?: string;
   /* Le décalage d'apparition, en millisecondes. Il se compte par colonne
@@ -53,6 +59,7 @@ export default function Tuile({
   priorite = false,
   position,
   repere,
+  coupDeCoeur,
   ratio,
   retard,
 }: Props) {
@@ -86,16 +93,32 @@ export default function Tuile({
     ...(retard ? { "data-retard": retard } : {}),
   } as const;
 
-  if (appelle !== undefined)
-    return (
+  const tuile =
+    appelle !== undefined ? (
       <AppelElise maison={appelle ?? undefined} {...habits}>
         {dedans}
       </AppelElise>
+    ) : (
+      <Link href={href} {...habits}>
+        {dedans}
+      </Link>
     );
 
+  if (!coupDeCoeur) return tuile;
+
+  /*
+   * Le cœur ne peut pas vivre dans la tuile : celle-ci est un lien
+   * entier, et un bouton dans un lien n'est pas un balisage valide — ni
+   * pour un lecteur d'écran, ni pour le clavier. Il est donc posé à
+   * côté, dans une enveloppe qui épouse la tuile, et superposé.
+   *
+   * L'enveloppe devient l'élément de la trame ; la tuile garde son
+   * rapport de côtés et lui donne sa hauteur.
+   */
   return (
-    <Link href={href} {...habits}>
-      {dedans}
-    </Link>
+    <div className="relative">
+      {tuile}
+      <CoeurTuile slug={coupDeCoeur} nom={nom} />
+    </div>
   );
 }

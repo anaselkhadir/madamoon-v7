@@ -95,6 +95,7 @@ export default function Robes() {
                       key={r.slug}
                       retard={(i % 3) * 70}
                       href={`/robes/${r.slug}`}
+                      coupDeCoeur={r.slug}
                       media={media}
                       dossier="robes"
                       alt={altRobe(r)}
