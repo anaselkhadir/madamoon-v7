@@ -1,0 +1,89 @@
+import type { Categorie } from "@/lib/madamoon";
+
+/*
+ * Le vocabulaire de la maison, en anglais.
+ *
+ * Ce n'est pas une traduction mot à mot : la robe de mariée a ses termes
+ * établis dans chaque langue, et une mariée anglophone cherche une
+ * « mermaid » ou une « ball gown », jamais une « sirène » ni une « robe
+ * princesse ». Employer les mots du métier vaut mieux que rester fidèle
+ * au français.
+ *
+ * Le registre, lui, ne change pas : des phrases courtes, du concret,
+ * aucune promesse. Ce qui se dit en français « Le satin, la ligne, rien
+ * d'autre » ne devient pas « Timeless elegance redefined ».
+ *
+ * Les clés sont celles du français : une coupe ajoutée au catalogue
+ * réclame sa ligne ici, et le manque se voit au typage.
+ */
+
+export const COUPE_NOM: Record<Categorie, string> = {
+  Sirène: "Mermaid",
+  Princesse: "Ball gown",
+  Fluide: "Sheath",
+  Trapèze: "A-line",
+  Minimaliste: "Minimalist",
+  "Deux en un": "Two-in-one",
+};
+
+export const COUPE_PLURIEL: Record<Categorie, string> = {
+  Sirène: "mermaid dresses",
+  Princesse: "ball gowns",
+  Fluide: "sheath dresses",
+  Trapèze: "A-line dresses",
+  Minimaliste: "minimalist dresses",
+  "Deux en un": "two-in-one dresses",
+};
+
+export const COUPE_NOTE: Record<Categorie, string> = {
+  Sirène: "Feminine and sensual",
+  Princesse: "Refined and stately",
+  Fluide: "Soft and light",
+  Trapèze: "True and timeless",
+  Minimaliste: "Clean and quiet",
+  "Deux en un": "Two looks, one dress",
+};
+
+export const FAMILLE: Record<Categorie, string> = {
+  Sirène: "Fitted to the knee, then flared. It draws the waist and the hips.",
+  Fluide: "A soft fall, with no visible structure. It follows the movement.",
+  Trapèze: "A fitted bodice, a skirt that opens in an A. The most universal cut.",
+  Princesse: "A worked bodice and a skirt that owns its volume. The ceremonial gown.",
+  Minimaliste: "Satin, line, nothing else. Everything rests on the cut.",
+  "Deux en un": "One dress, two looks: an overskirt or a train that comes away.",
+};
+
+/* Les maisons gardent leur nom : ce sont des noms propres. Seule la
+ * phrase qui les présente se traduit. */
+export const CREATEUR_NOTE: Record<string, string> = {
+  "watters-designs":
+    "Worked lace, illusion backs, light falls. The house of Uma and Pendant.",
+  "casablanca-bridal":
+    "Mikado, duchess satin, clean lines. Constructed dresses, made for the light.",
+  "olya-mak":
+    "Draping, sheerness, restrained sensuality. Dresses that move with the woman wearing them.",
+  "angeola-biarritz":
+    "French lace and Atlantic romance, in contemporary cuts.",
+  "monica-loretti":
+    "The Italian school: true proportions, dense embroidery, bodice craft.",
+};
+
+export const CREATEUR_ORIGINE: Record<string, string> = {
+  "watters-designs": "Dallas",
+  "casablanca-bridal": "California",
+  "olya-mak": "Barcelona",
+  "angeola-biarritz": "Biarritz",
+  "monica-loretti": "Italy",
+};
+
+export const MAISON_EN = {
+  baseline: "Bridal boutique in Paris",
+  pays: "France",
+  horaires: [
+    { jour: "Monday", heures: "12pm — 9pm" },
+    { jour: "Tuesday — Saturday", heures: "10am — 7pm" },
+  ],
+  mentionHoraires: "By appointment only",
+  /* Le prix reste en euros : c'est la monnaie de la boutique. */
+  prixDepart: "€1,500",
+};

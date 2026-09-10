@@ -9,7 +9,10 @@ import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
-import Langue from "@/components/chrome/Langue";
+import Commutateur from "@/components/chrome/Langue";
+import { langueDe, type Langue } from "@/lib/langue";
+import { coupeNom, coupeNote, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
+import { t } from "@/lib/textes";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -38,40 +41,47 @@ import Langue from "@/components/chrome/Langue";
  * données du site : une coupe ajoutée au catalogue paraît ici sans qu'on
  * y touche.
  */
-const GROUPES: Record<
+type Groupes = Record<
   string,
   { intitule: string; colonnes: number; liens: { href: string; nom: string; note?: string }[] }
-> = {
-  "/robes": {
-    intitule: "Par maison",
-    colonnes: 3,
-    liens: [
-      { href: "/robes", nom: "Toutes les robes", note: "Le catalogue entier" },
-      ...CREATEURS.map((c) => ({
-        href: `/createurs/${c.slug}`,
-        nom: c.nom,
-        note: c.origine,
+>;
+
+/* Les tables sont des fonctions de la langue : elles portent des mots,
+ * et des mots ne peuvent plus être des constantes de module. */
+const tableGroupes = (l: Langue): Groupes => {
+  const L = t(l);
+  return {
+    "/robes": {
+      intitule: L.barre.parMaison,
+      colonnes: 3,
+      liens: [
+        { href: "/robes", nom: L.barre.toutesRobes, note: L.barre.catalogueEntier },
+        ...CREATEURS.map((c) => ({
+          href: `/createurs/${c.slug}`,
+          nom: c.nom,
+          note: createurOrigine(c, l),
+        })),
+      ],
+    },
+    "/coupes": {
+      intitule: L.barre.sixCoupes,
+      colonnes: 3,
+      liens: COUPES.map((c) => ({
+        href: `/coupes/${c.ancre}`,
+        nom: coupeNom(c, l),
+        note: coupeNote(c, l),
       })),
-    ],
-  },
-  "/coupes": {
-    intitule: "Les six coupes",
-    colonnes: 3,
-    liens: COUPES.map((c) => ({
-      href: `/coupes/${c.ancre}`,
-      nom: c.nom,
-      note: c.note,
-    })),
-  },
-  "/morphologies": {
-    intitule: "Les six silhouettes",
-    colonnes: 3,
-    liens: MORPHOLOGIES.map((m) => ({
-      href: `/morphologies/${m.lettre.toLowerCase()}`,
-      nom: m.nom,
-      note: m.objectif,
-    })),
-  },
+    },
+    "/morphologies": {
+      intitule: L.barre.sixMorphologies,
+      colonnes: 3,
+      liens: MORPHOLOGIES.map((m) => ({
+        href: `/morphologies/${m.lettre.toLowerCase()}`,
+        nom: morphoNom(m, l),
+        note: morphoObjectif(m, l),
+      })),
+    },
+  };
 };
 
 /*
@@ -86,15 +96,15 @@ const GROUPES: Record<
  * barre irait contre la demande précédente de les y mettre, et elles ont
  * plus à voir avec les coupes qu'avec le showroom.
  */
-const GAUCHE = [
-  { href: "/robes", label: "Robes de mariée" },
-  { href: "/coupes", label: "Coupes" },
-  { href: "/morphologies", label: "Morphologies" },
+const tableGauche = (l: Langue) => [
+  { href: "/robes", label: t(l).barre.robes },
+  { href: "/coupes", label: t(l).barre.coupes },
+  { href: "/morphologies", label: t(l).barre.morphologies },
 ];
 
-const DROITE = [
-  { href: "/showroom", label: "Showroom" },
-  { href: "/a-propos", label: "La maison" },
+const tableDroite = (l: Langue) => [
+  { href: "/showroom", label: t(l).barre.showroom },
+  { href: "/a-propos", label: t(l).barre.maison },
 ];
 
 /*
@@ -110,15 +120,18 @@ const DROITE = [
  * pixels la barre ne montre plus que le sigle et le rendez-vous : sans
  * eux, le showroom et la maison seraient hors d'atteinte au doigt.
  */
-const RACCOURCIS = [
-  { href: "/robes", label: "Toutes les robes" },
-  { href: "/coupes", label: "Les coupes" },
-  { href: "/morphologies", label: "Les morphologies" },
-  { href: "", label: "Trouver ma robe" },
-  { href: "/showroom", label: "Le showroom" },
-  { href: "/a-propos", label: "La maison" },
-  { href: "/rendez-vous", label: "Prendre rendez-vous" },
-];
+const tableRaccourcis = (l: Langue) => {
+  const R = t(l).raccourcis;
+  return [
+    { href: "/robes", label: R.toutesRobes },
+    { href: "/coupes", label: R.lesCoupes },
+    { href: "/morphologies", label: R.lesMorphologies },
+    { href: "", label: R.trouverMaRobe },
+    { href: "/showroom", label: R.leShowroom },
+    { href: "/a-propos", label: R.laMaison },
+    { href: "/rendez-vous", label: R.prendreRendezvous },
+  ];
+};
 
 /*
  * Les trois onglets du téléphone.
@@ -129,31 +142,31 @@ const RACCOURCIS = [
  * chercher — la robe, la coupe, la silhouette — et le showroom et la
  * maison se lisent dessous, où l'on regarde quand on a fini de chercher.
  */
-const ONGLETS = [
+const tableOnglets = (l: Langue) => [
   {
     cle: "robes",
-    label: "Robes",
+    label: t(l).barre.robes,
     liens: () => [
-      { href: "/robes", label: "Toutes les robes" },
+      { href: "/robes", label: t(l).barre.toutesRobes },
       ...CREATEURS.map((c) => ({ href: `/createurs/${c.slug}`, label: c.nom })),
     ],
   },
   {
     cle: "coupes",
-    label: "Coupes",
+    label: t(l).barre.coupes,
     liens: () => [
-      { href: "/coupes", label: "Toutes les coupes" },
-      ...COUPES.map((c) => ({ href: `/coupes/${c.ancre}`, label: c.nom })),
+      { href: "/coupes", label: t(l).barre.sixCoupes },
+      ...COUPES.map((c) => ({ href: `/coupes/${c.ancre}`, label: coupeNom(c, l) })),
     ],
   },
   {
     cle: "morphologies",
-    label: "Morphologies",
+    label: t(l).barre.morphologies,
     liens: () => [
-      { href: "/morphologies", label: "Toutes les morphologies" },
+      { href: "/morphologies", label: t(l).barre.sixMorphologies },
       ...MORPHOLOGIES.map((m) => ({
         href: `/morphologies/${m.lettre.toLowerCase()}`,
-        label: m.nom,
+        label: morphoNom(m, l),
       })),
     ],
   },
@@ -162,7 +175,7 @@ const ONGLETS = [
 /* Les adresses que les onglets du téléphone portent déjà. */
 const SECTIONS = new Set([
   "/robes", "/coupes", "/morphologies",
-  ...DROITE.map((l) => l.href),
+  "/showroom", "/a-propos",
 ]);
 
 type Groupe = { titre: string; href: string; robes: (typeof ROBES)[number][] };
@@ -193,7 +206,16 @@ function parCoupe(): Groupe[] {
 
 export default function Entete() {
   const chemin = usePathname();
-  const [onglet, setOnglet] = useState<(typeof ONGLETS)[number]["cle"]>("robes");
+  const [onglet, setOnglet] = useState<"robes" | "coupes" | "morphologies">("robes");
+  /* Le gabarit ne reçoit pas de propriété : il lit la langue sur
+   * l'adresse, comme il lit déjà la page courante. */
+  const l = langueDe(chemin ?? "/");
+  const L = t(l);
+  const GRP = tableGroupes(l);
+  const GCH = tableGauche(l);
+  const DRT = tableDroite(l);
+  const RCC = tableRaccourcis(l);
+  const ONG = tableOnglets(l);
   const [pose, setPose] = useState(false);
   const [ouvert, setOuvert] = useState(false);
   /* L'entrée dont le panneau est déplié. */
@@ -302,7 +324,7 @@ export default function Entete() {
             * rangent de part et d'autre.
             */}
           <nav
-            aria-label="Principale"
+            aria-label={L.barre.principale}
             className="gouttiere relative flex h-[var(--entete)] items-center justify-between gap-6"
           >
             {/* ————— à gauche : le menu, puis les entrées ————— */}
@@ -318,12 +340,12 @@ export default function Entete() {
                   <span className="block h-px w-4 bg-current" />
                   <span className="block h-px w-4 bg-current" />
                 </span>
-                Menu
+                {L.barre.menu}
               </button>
 
               <ul className="ml-auto hidden items-center gap-8 lg:flex">
-                {GAUCHE.map((l) => {
-                  const groupe = GROUPES[l.href];
+                {GCH.map((l) => {
+                  const groupe = GRP[l.href];
                   return (
                     <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
                       <Link
@@ -345,7 +367,7 @@ export default function Entete() {
             {/* ————— au centre : la marque ————— */}
             <Link
               href="/"
-              aria-label="MADAMOON, accueil"
+              aria-label={L.barre.accueil}
               /* Centré au milieu de la page, à toutes les largeurs. Le
                 * seuil qui existait ici n'a plus lieu d'être : le bouton
                 * rouge, seul à disputer la place au sigle, ne paraît plus
@@ -368,8 +390,8 @@ export default function Entete() {
             {/* ————— à droite : les entrées, puis le rendez-vous ————— */}
             <div className="flex min-w-0 items-center justify-end gap-6">
               <ul className="hidden items-center gap-8 lg:flex">
-                {DROITE.map((l) => {
-                  const groupe = GROUPES[l.href];
+                {DRT.map((l) => {
+                  const groupe = GRP[l.href];
                   return (
                     <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
                       <Link
@@ -401,11 +423,11 @@ export default function Entete() {
 
               {/* La langue, juste après le cœur : deux lettres, pas un
                 * drapeau — un drapeau désigne un pays, pas une langue. */}
-              <Langue />
+              <Commutateur />
 
               <span className="hidden shrink-0 md:block">
                 <AppelRendezvous className="bouton bouton-barre">
-                  Rendez-vous
+                  {L.barre.rendezvous}
                 </AppelRendezvous>
               </span>
             </div>
@@ -413,15 +435,15 @@ export default function Entete() {
         </div>
 
         {/* ————————————————————————————— le panneau ————— */}
-        {mega && GROUPES[mega] && (
+        {mega && GRP[mega] && (
           <div
             id="mega-navigation"
             className="hidden border-b border-fil bg-blanc text-encre lg:block"
           >
             <div className="gouttiere py-[clamp(1.75rem,3vw,2.75rem)]">
-              <p className="legende">{GROUPES[mega].intitule}</p>
+              <p className="legende">{GRP[mega].intitule}</p>
               <ul className="mt-6 grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-5 md:grid-cols-3">
-                {GROUPES[mega].liens.map((x) => (
+                {GRP[mega].liens.map((x) => (
                   <li key={x.href}>
                     <Link href={x.href} className="group block">
                       <span className="block font-serif text-[1.375rem] leading-tight text-encre transition-colors duration-500 group-hover:text-action">
@@ -463,7 +485,7 @@ export default function Entete() {
             className="h-[0.9rem] w-auto md:h-[1.05rem]"
           />
           <button type="button" onClick={() => setOuvert(false)} className="lien-nav text-encre">
-            Fermer
+            {L.barre.fermer}
           </button>
         </div>
         {/* « min-h-full » sur le bloc intérieur : il se centre tant qu'il
@@ -486,10 +508,10 @@ export default function Entete() {
             <div className="lg:hidden">
               <div
                 role="tablist"
-                aria-label="Le catalogue"
+                aria-label={L.barre.catalogue}
                 className="flex items-center gap-7 border-b border-fil"
               >
-                {ONGLETS.map((o) => (
+                {ONG.map((o) => (
                   <button
                     key={o.cle}
                     type="button"
@@ -511,7 +533,7 @@ export default function Entete() {
                 ))}
               </div>
 
-              {ONGLETS.map((o) => (
+              {ONG.map((o) => (
                 <ul
                   key={o.cle}
                   id={`onglet-${o.cle}`}
@@ -536,7 +558,7 @@ export default function Entete() {
               {/* Le showroom et la maison : on les regarde quand on a fini
                 * de chercher une robe. */}
               <ul className="mt-6 border-t border-fil pt-5">
-                {DROITE.map((l) => (
+                {DRT.map((l) => (
                   <li key={l.href}>
                     <Link
                       href={l.href}
@@ -551,7 +573,7 @@ export default function Entete() {
             </div>
 
             {/* ————— le classement ————— */}
-            <div className="hidden items-baseline gap-6 lg:flex" role="group" aria-label="Classer les robes">
+            <div className="hidden items-baseline gap-6 lg:flex" role="group" aria-label={L.barre.classer}>
               {(["createur", "coupe"] as const).map((c) => (
                 <button
                   key={c}
@@ -563,7 +585,7 @@ export default function Entete() {
                   }`}
                   data-actif={classement === c}
                 >
-                  {c === "createur" ? "Par créateur" : "Par coupe"}
+                  {c === "createur" ? L.barre.parCreateur : L.barre.parCoupe}
                 </button>
               ))}
             </div>
@@ -603,7 +625,7 @@ export default function Entete() {
             {/* ————— les rubriques, en pied ————— */}
             <div className="mt-auto border-t border-fil pt-6">
               <ul className="flex flex-wrap items-center gap-x-7 gap-y-3">
-                {RACCOURCIS.map((l) => {
+                {RCC.map((l) => {
                   const habits =
                     "lien-nav souligne text-plomb transition-colors duration-500 hover:text-encre";
                   return (
