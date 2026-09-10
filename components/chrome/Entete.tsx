@@ -10,7 +10,7 @@ import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
 import Commutateur from "@/components/chrome/Langue";
-import { langueDe, type Langue } from "@/lib/langue";
+import { langueDe, versFrancais, type Langue } from "@/lib/langue";
 import { coupeNom, coupeNote, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 
@@ -210,6 +210,12 @@ export default function Entete() {
   /* Le gabarit ne reçoit pas de propriété : il lit la langue sur
    * l'adresse, comme il lit déjà la page courante. */
   const l = langueDe(chemin ?? "/");
+  /* Les comparaisons d'adresse se font dans l'espace français : les
+   * tables de navigation portent des adresses françaises, et « /en/
+   * dresses » ne s'est jamais égalé à « /robes ». Sans cela, la barre
+   * de l'accueil anglais devenait blanche au lieu de rester sur la
+   * vidéo, et aucune entrée ne se marquait comme active. */
+  const cheminFr = versFrancais(chemin ?? "/");
   const L = t(l);
   const GRP = tableGroupes(l);
   const GCH = tableGauche(l);
@@ -230,7 +236,7 @@ export default function Entete() {
   );
 
   /* L'accueil est la seule page qui commence par une image plein cadre. */
-  const surImage = chemin === "/" && !pose && !ouvert && !mega;
+  const surImage = cheminFr === "/" && !pose && !ouvert && !mega;
 
   useEffect(() => {
     const surScroll = () => setPose(window.scrollY > 24);
@@ -350,7 +356,7 @@ export default function Entete() {
                     <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
                       <Link
                         href={l.href}
-                        data-actif={chemin === l.href}
+                        data-actif={cheminFr === l.href}
                         onFocus={() => setMega(groupe ? l.href : null)}
                         aria-expanded={groupe ? mega === l.href : undefined}
                         aria-controls={groupe ? "mega-navigation" : undefined}
@@ -396,7 +402,7 @@ export default function Entete() {
                     <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
                       <Link
                         href={l.href}
-                        data-actif={chemin === l.href}
+                        data-actif={cheminFr === l.href}
                         onFocus={() => setMega(groupe ? l.href : null)}
                         aria-expanded={groupe ? mega === l.href : undefined}
                         aria-controls={groupe ? "mega-navigation" : undefined}
@@ -545,7 +551,7 @@ export default function Entete() {
                     <li key={l.href}>
                       <Link
                         href={l.href}
-                        data-actif={chemin === l.href}
+                        data-actif={cheminFr === l.href}
                         className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
                       >
                         {l.label}
@@ -562,7 +568,7 @@ export default function Entete() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      data-actif={chemin === l.href}
+                      data-actif={cheminFr === l.href}
                       className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
                     >
                       {l.label}

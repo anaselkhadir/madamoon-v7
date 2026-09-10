@@ -85,7 +85,12 @@ export function versFrancais(adresseEn: string): string {
    * « favourites?robes=uma » et retombait sur l'accueil. */
   const [chemin, reste] = adresseEn.split(/(?=[?#])/, 2) as [string, string?];
   const morceaux = chemin.split("/").filter(Boolean);
-  if (morceaux[0] !== "en") return adresseEn;
+  /* La barre oblique finale est retirée : l'export statique sert
+   * « /robes/ », les tables du site écrivent « /robes », et les deux ne
+   * s'égalaient pas — le repère de page active ne s'allumait jamais en
+   * français, alors qu'il s'allumait en anglais où le chemin est
+   * reconstruit. */
+  if (morceaux[0] !== "en") return "/" + morceaux.join("/") + (reste ?? "");
   const [, rubrique, ...suite] = morceaux;
   if (!rubrique) return "/" + (reste ?? "");
   const fr = SEGMENTS_FR[rubrique];
