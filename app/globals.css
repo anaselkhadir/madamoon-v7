@@ -26,6 +26,10 @@
    * devenu noir sur noir au premier essai du mode sombre. */
   --color-sur-image: #ffffff;
 
+  /* Et l'encre posée sur ce blanc-là. Même raison, en miroir : le fond
+   * d'un bouton clair ne bascule pas, donc son texte non plus. */
+  --color-sous-image: #14100c;
+
   --color-encre: #14100c;
   --color-plume: #2f2d2d;
   --color-plomb: #6b6459;
@@ -219,10 +223,15 @@ body {
   background: #760000;
 }
 
-/* Sur une photographie : fond blanc, texte encre. */
+/* Sur une photographie : fond blanc, texte encre.
+ *
+ * Les deux couleurs sont fixes. Un bouton blanc reste blanc en mode
+ * sombre : il se lit sur l'image, pas sur la page, et l'image ne change
+ * pas de thème. Le jeton « blanc » désignait la surface du site, qui
+ * s'assombrit — le bouton était devenu noir. */
 .bouton-clair {
-  background: var(--color-blanc);
-  color: var(--color-encre);
+  background: var(--color-sur-image);
+  color: var(--color-sous-image);
 }
 .bouton-clair:hover {
   background: var(--color-action);
