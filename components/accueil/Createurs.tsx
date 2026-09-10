@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { useEffect, useRef } from "react";
 import Photo from "@/components/media/Photo";
 import { CREATEURS, ROBES } from "@/lib/madamoon";

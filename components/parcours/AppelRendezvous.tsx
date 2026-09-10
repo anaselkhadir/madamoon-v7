@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { useCallback, useRef } from "react";
 import { CALENDLY, urlCalendly } from "@/lib/calendly";
 import { media as chemin } from "@/lib/chemin";

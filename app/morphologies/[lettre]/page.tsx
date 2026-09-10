@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { notFound } from "next/navigation";
 import AppelElise from "@/components/AppelElise";
 import HeroPage from "@/components/HeroPage";

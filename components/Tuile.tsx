@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 import AppelElise from "@/components/AppelElise";
 import Photo from "@/components/media/Photo";
 import { CoeurTuile } from "@/components/parcours/Coeur";

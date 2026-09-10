@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES } from "@/lib/madamoon";
@@ -9,6 +9,7 @@ import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
+import Langue from "@/components/chrome/Langue";
 
 /*
  * L'en-tête, relevée sur la référence.
@@ -397,6 +398,10 @@ export default function Entete() {
                 * le seul endroit où la visiteuse retrouve ce qu'elle a
                 * aimé, et le seul que le téléphone garde en vue. */}
               <Panier />
+
+              {/* La langue, juste après le cœur : deux lettres, pas un
+                * drapeau — un drapeau désigne un pays, pas une langue. */}
+              <Langue />
 
               <span className="hidden shrink-0 md:block">
                 <AppelRendezvous className="bouton bouton-barre">

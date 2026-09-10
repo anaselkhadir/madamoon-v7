@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/Lien";
 import TitreSection from "@/components/TitreSection";
 import Photo from "@/components/media/Photo";
 import { MAISON, SIGNATURES } from "@/lib/madamoon";

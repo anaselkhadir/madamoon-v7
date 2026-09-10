@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import { SCENES } from "@/lib/medias";
 import { altScene } from "@/lib/alt";

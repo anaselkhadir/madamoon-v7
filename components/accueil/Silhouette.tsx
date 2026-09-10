@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import RailFleches from "@/components/accueil/RailFleches";
 import { MORPHOLOGIES, ROBES } from "@/lib/madamoon";

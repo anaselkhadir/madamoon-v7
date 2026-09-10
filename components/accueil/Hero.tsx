@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { SCENES } from "@/lib/medias";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
-import Link from "next/link";
+import Link from "@/components/Lien";
 import Bandeau from "@/components/accueil/Bandeau";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import AppelElise from "@/components/AppelElise";

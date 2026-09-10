@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { useEffect, useState } from "react";
 import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";

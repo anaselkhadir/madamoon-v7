@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";

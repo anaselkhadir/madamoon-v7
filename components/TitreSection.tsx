@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 
 /*
  * L'intitulé d'une section.

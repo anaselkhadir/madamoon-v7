@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Lien";
 import { AVIS, DISTINCTION, NOTE } from "@/lib/avis";
 import { ID_MAISON } from "@/lib/schema";
 import { typographie } from "@/lib/francais";
