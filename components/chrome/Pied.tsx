@@ -6,6 +6,7 @@ import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
+import Logo from "@/components/chrome/Logo";
 import { langueDe } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { coupeNom, maison } from "@/lib/contenu";
@@ -34,14 +35,7 @@ export default function Pied() {
        * la page gagnait seize pixels de défilement latéral. */}
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={chemin("/marque/logo-encre.png")}
-            alt="MADAMOON"
-            width={513}
-            height={56}
-            className="h-[1.05rem] w-auto"
-          />
+          <Logo className="h-[1.05rem] w-auto" />
           <p className="texte mesure mt-5">{M.baseline}.</p>
           <ul className="mt-5 flex gap-5">
             {MAISON.reseaux.map((r) => (

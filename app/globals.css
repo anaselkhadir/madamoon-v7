@@ -944,14 +944,28 @@ html[data-ouverture]::before {
   --color-plomb: #a89f92;
   --color-brume: #7d7568;
 
-  /* Le rouge doit tenir deux contraintes contraires sur du noir : porter
-   * du texte blanc — 4,9 de contraste — et se voir comme un bouton sur
-   * le fond — 3,96. Plus clair, le texte devenait illisible ; plus
-   * sombre, le bouton disparaissait dans la page. */
-  --color-action: #c9403f;
-  --color-accent: #e0687a;
+  /* Les deux rouges ne bougent pas. Ce sont ceux de la maison, et une
+   * marque ne change pas de rouge parce que le fond a changé : #910000
+   * agit, #CE0A2C ponctue, en clair comme en sombre. */
 
   color-scheme: dark;
+}
+
+/*
+ * Le sigle. Les deux fichiers sont posés, la feuille en masque un.
+ *
+ * Ces règles ne sont pas calquées : elles l'emportent sur les
+ * utilitaires de mise en page portés par les mêmes images, ce qui est
+ * exactement ce qu'on veut ici.
+ */
+.logo-sombre {
+  display: none;
+}
+:root[data-theme="sombre"] .logo-clair {
+  display: none;
+}
+:root[data-theme="sombre"] .logo-sombre {
+  display: block;
 }
 
 /* La photographie ne s'assombrit pas : c'est la robe qu'on vient voir.

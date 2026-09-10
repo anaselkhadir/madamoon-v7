@@ -11,6 +11,7 @@ import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
 import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
+import Logo from "@/components/chrome/Logo";
 import { langueDe, versFrancais, type Langue } from "@/lib/langue";
 import { coupeNom, coupeNote, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
 import { t } from "@/lib/textes";
@@ -381,17 +382,7 @@ export default function Entete() {
                 * sur téléphone. */
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={ressource(surImage ? "/marque/logo-blanc.png" : "/marque/logo-encre.png")}
-                alt="MADAMOON"
-                width={513}
-                height={56}
-                /* Le sigle rapetisse sous six cent quarante pixels : au
-                  * centre exact, il touchait le bouton rouge de six
-                  * pixels sur un téléphone. */
-                className="h-[0.75rem] w-auto sm:h-[0.9rem] md:h-[1.05rem]"
-              />
+              <Logo surImage={surImage} className="h-[0.75rem] w-auto sm:h-[0.9rem] md:h-[1.05rem]" />
             </Link>
 
             {/* ————— à droite : les entrées, puis le rendez-vous ————— */}
@@ -490,14 +481,7 @@ export default function Entete() {
         className="fixed inset-0 z-[60] flex flex-col bg-blanc"
       >
         <div className="gouttiere flex h-[var(--entete)] shrink-0 items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={ressource("/marque/logo-encre.png")}
-            alt="MADAMOON"
-            width={513}
-            height={56}
-            className="h-[0.9rem] w-auto md:h-[1.05rem]"
-          />
+          <Logo className="h-[0.9rem] w-auto md:h-[1.05rem]" />
           <button type="button" onClick={() => setOuvert(false)} className="lien-nav text-encre">
             {L.barre.fermer}
           </button>
