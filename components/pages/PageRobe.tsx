@@ -179,12 +179,12 @@ export default async function PageRobe({
         />
         <div className="gouttiere absolute inset-0 flex flex-col justify-center">
           <div className="max-w-[52vw] max-md:max-w-[92%]">
-            <p className="mention text-blanc/85">
+            <p className="mention text-sur-image/85">
               {coupeNom(robe.categorie, langue)}
               {robe.createur ? ` — ${robe.createur}` : ""}
             </p>
-            <h1 className="affiche mt-3 text-blanc">{robe.nom}</h1>
-            <p className="accroche mt-5 text-blanc">
+            <h1 className="affiche mt-3 text-sur-image">{robe.nom}</h1>
+            <p className="accroche mt-5 text-sur-image">
               {robeLigne(robe, langue)}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">

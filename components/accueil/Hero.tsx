@@ -219,8 +219,8 @@ export default function Hero({ langue = "fr" }: { langue?: Langue }) {
         */}
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-md:text-center md:max-w-[53vw] md:min-w-[16rem]">
-          <h1 className="affiche text-blanc">{L.hero.titre}</h1>
-          <p className="accroche mt-6 text-blanc">
+          <h1 className="affiche text-sur-image">{L.hero.titre}</h1>
+          <p className="accroche mt-6 text-sur-image">
             {L.hero.accroche}<sup>e</sup>
           </p>
 
@@ -248,7 +248,7 @@ export default function Hero({ langue = "fr" }: { langue?: Langue }) {
             * de survol sous le pouce. */}
           <div className="mt-8 flex flex-col items-center gap-5 md:hidden">
             <AppelRendezvous className="bouton">{L.hero.prendreRendezvous}</AppelRendezvous>
-            <AppelElise className="accroche text-blanc underline decoration-1 underline-offset-[6px]">
+            <AppelElise className="accroche text-sur-image underline decoration-1 underline-offset-[6px]">
               {L.hero.trouverMaRobe}
             </AppelElise>
           </div>
@@ -261,7 +261,7 @@ export default function Hero({ langue = "fr" }: { langue?: Langue }) {
           type="button"
           onClick={basculer}
           aria-label={joue ? L.hero.pause : L.hero.reprendre}
-          className="absolute bottom-6 left-[var(--gouttiere)] flex h-8 w-8 items-center justify-center text-blanc/80 transition-colors duration-500 hover:text-blanc"
+          className="absolute bottom-6 left-[var(--gouttiere)] flex h-8 w-8 items-center justify-center text-sur-image/80 transition-colors duration-500 hover:text-sur-image"
         >
           <span aria-hidden="true">
             {joue ? (

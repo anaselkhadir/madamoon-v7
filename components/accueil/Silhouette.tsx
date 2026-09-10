@@ -94,7 +94,7 @@ export default function Silhouette({ langue = "fr" }: { langue?: Langue }) {
                       "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42) 100%)",
                   }}
                 />
-                <span className="absolute bottom-4 left-5 font-serif text-[clamp(2.5rem,4vw,3.5rem)] leading-none text-blanc">
+                <span className="absolute bottom-4 left-5 font-serif text-[clamp(2.5rem,4vw,3.5rem)] leading-none text-sur-image">
                   {m.lettre}
                 </span>
               </div>

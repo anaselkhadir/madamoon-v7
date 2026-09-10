@@ -109,6 +109,13 @@ const FR = {
   gabarit: {
     allerAuContenu: "Aller au contenu",
   },
+  theme: {
+    versSombre: "Passer en mode sombre",
+    versClair: "Revenir en mode clair",
+    intitule: "Apparence",
+    sombre: "Sombre",
+    clair: "Clair",
+  },
   fiche: {
     laFiche: "La fiche",
     silhouettes: "Les silhouettes qu’elle sert",
@@ -238,6 +245,13 @@ const EN: Textes = {
   },
   gabarit: {
     allerAuContenu: "Skip to content",
+  },
+  theme: {
+    versSombre: "Switch to dark mode",
+    versClair: "Back to light mode",
+    intitule: "Appearance",
+    sombre: "Dark",
+    clair: "Light",
   },
   fiche: {
     laFiche: "About",

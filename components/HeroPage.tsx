@@ -152,8 +152,8 @@ export default function HeroPage({
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-w-[53vw] min-w-[16rem] max-md:max-w-[92%]">
           {surtitre && <p className="legende sur-rouge">{surtitre}</p>}
-          <h1 className={`affiche text-blanc ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
-          <p className="accroche mt-6 text-blanc">{ligne}</p>
+          <h1 className={`affiche text-sur-image ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
+          <p className="accroche mt-6 text-sur-image">{ligne}</p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <AppelElise maison={maison} className="bouton">
               {action}

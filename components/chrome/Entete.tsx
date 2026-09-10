@@ -10,6 +10,7 @@ import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
 import Commutateur from "@/components/chrome/Langue";
+import Theme from "@/components/chrome/Theme";
 import { langueDe, versFrancais, type Langue } from "@/lib/langue";
 import { coupeNom, coupeNote, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
 import { t } from "@/lib/textes";
@@ -312,7 +313,7 @@ export default function Entete() {
         <div
           className={`transition-[background-color,color,box-shadow] duration-700 [transition-timing-function:var(--ease-doux)] ${
             surImage
-              ? "bg-transparent text-blanc"
+              ? "bg-transparent text-sur-image"
               : "bg-blanc text-encre shadow-[0_1px_0_var(--color-fil)]"
           }`}
         >
@@ -430,6 +431,13 @@ export default function Entete() {
               {/* La langue, juste après le cœur : deux lettres, pas un
                 * drapeau — un drapeau désigne un pays, pas une langue. */}
               <Commutateur />
+
+              {/* L'apparence, juste après la langue : deux réglages de la
+                * visiteuse, rangés ensemble. Sur téléphone il rejoint le
+                * bas du menu — la barre n'a pas la place. */}
+              <span className="hidden lg:block">
+                <Theme classe="px-1" />
+              </span>
 
               <span className="hidden shrink-0 md:block">
                 <AppelRendezvous className="bouton bouton-barre">
@@ -653,6 +661,15 @@ export default function Entete() {
                   );
                 })}
               </ul>
+              {/* L'apparence, au bas du menu : c'est là qu'on la cherche
+                * sur un téléphone, la barre n'ayant pas la place. */}
+              <div className="mt-6 flex items-center gap-3 lg:hidden">
+                <span className="legende text-plomb">{L.theme.intitule}</span>
+                {/* Le trait fait quinze pixels : la zone touchée, elle,
+                  * doit rester visable au pouce. */}
+                <Theme classe="-my-1 px-3 py-4" />
+              </div>
+
               <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-2">
                 <a href={MAISON.telephoneHref} className="legende text-encre">
                   {MAISON.telephone}

@@ -49,7 +49,7 @@ export function CoeurTuile({ slug, nom }: { slug: string; nom: string }) {
       aria-label={aime ? `Retirer ${nom} des coups de cœur` : `Ajouter ${nom} aux coups de cœur`}
       /* Posé au-dessus du lien de la tuile : un bouton dans un lien
         * n'est pas un balisage valide, celui-ci lui est superposé. */
-      className="absolute right-[clamp(0.75rem,1.4vw,1.25rem)] top-[clamp(0.75rem,1.4vw,1.25rem)] z-10 grid h-11 w-11 place-items-center text-blanc transition-[opacity,transform] duration-500 [transition-timing-function:var(--ease-doux)] hover:scale-110"
+      className="absolute right-[clamp(0.75rem,1.4vw,1.25rem)] top-[clamp(0.75rem,1.4vw,1.25rem)] z-10 grid h-11 w-11 place-items-center text-sur-image transition-[opacity,transform] duration-500 [transition-timing-function:var(--ease-doux)] hover:scale-110"
     >
       <Dessin plein={aime} classe="h-[1.15rem] w-[1.15rem] drop-shadow-[0_1px_3px_rgba(0,0,0,0.45)]" />
     </button>

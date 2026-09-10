@@ -75,7 +75,7 @@ export default function Tuile({
       />
       <span className="voile-lecture" aria-hidden="true" />
       {repere && (
-        <span className="mention absolute left-[clamp(1rem,1.7vw,1.5rem)] top-[clamp(1rem,1.7vw,1.5rem)] text-blanc/80">
+        <span className="mention absolute left-[clamp(1rem,1.7vw,1.5rem)] top-[clamp(1rem,1.7vw,1.5rem)] text-sur-image/80">
           {repere}
         </span>
       )}

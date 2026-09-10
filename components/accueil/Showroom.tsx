@@ -52,13 +52,13 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
       />
 
       <div className="gouttiere absolute inset-x-0 bottom-0 pb-[clamp(3rem,7vw,6rem)]">
-        <p className="legende text-blanc/70">{L.showroom.legende}<sup>e</sup></p>
+        <p className="legende text-sur-image/70">{L.showroom.legende}<sup>e</sup></p>
         <span data-ligne className="mt-4 block">
-          <h2 id="showroom" className="affiche max-w-[18ch] text-blanc">
+          <h2 id="showroom" className="affiche max-w-[18ch] text-sur-image">
             {L.showroom.titre}
           </h2>
         </span>
-        <p className="accroche mesure-l mt-5 text-blanc">
+        <p className="accroche mesure-l mt-5 text-sur-image">
           Une heure, le showroom pour vous seule, et quelqu&apos;un qui connaît
           chaque robe.
         </p>

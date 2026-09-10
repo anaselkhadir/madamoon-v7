@@ -51,6 +51,24 @@ export default function Gabarit({
      * inquiéter au moment de l'hydratation. */
     <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
       <head>
+        {/*
+          * Le thème, reposé avant la première peinture.
+          *
+          * Sans lui, une visiteuse qui a choisi le sombre verrait le site
+          * blanc le temps de l'hydratation — un éclair blanc dans une
+          * pièce sombre, ce qui est exactement ce qu'elle voulait éviter.
+          *
+          * Le système n'est pas consulté : le site est clair par défaut,
+          * et « prefers-color-scheme: dark » ne dit pas qu'on veut voir
+          * de la dentelle sur du noir.
+          */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              `try{if(localStorage.getItem("madamoon.theme")==="sombre")` +
+              `document.documentElement.setAttribute("data-theme","sombre")}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(MAISON_SCHEMA) }}

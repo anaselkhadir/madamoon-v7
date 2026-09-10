@@ -44,8 +44,8 @@ export default function Showroom() {
         />
         <div className="gouttiere absolute inset-0 flex flex-col justify-center">
           <div className="max-w-[52vw] max-md:max-w-[92%]">
-            <h1 className="affiche text-blanc">Le showroom</h1>
-            <p className="accroche mt-6 text-blanc">
+            <h1 className="affiche text-sur-image">Le showroom</h1>
+            <p className="accroche mt-6 text-sur-image">
               Paris 10<sup>e</sup> — sur rendez-vous
             </p>
             <Link href="/rendez-vous" className="bouton-clair mt-6">

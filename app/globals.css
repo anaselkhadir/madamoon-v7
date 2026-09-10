@@ -19,6 +19,13 @@
   --color-sable: #ece5da;
   --color-fil: #e3dcd1;
 
+  /* Le blanc du texte posé sur une photographie. Il ne bascule jamais :
+   * une image reste une image, et son voile de lecture est calculé pour
+   * du blanc. « blanc » désigne une surface, et une surface s'assombrit ;
+   * les deux rôles portaient le même jeton, et le titre du hero est
+   * devenu noir sur noir au premier essai du mode sombre. */
+  --color-sur-image: #ffffff;
+
   --color-encre: #14100c;
   --color-plume: #2f2d2d;
   --color-plomb: #6b6459;
@@ -79,7 +86,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
 }
 
 :focus-visible {
@@ -206,7 +213,7 @@ body {
 /* L'action de la maison. La seule surface rouge du site. */
 .bouton {
   background: var(--color-action);
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
 }
 .bouton:hover {
   background: #760000;
@@ -219,7 +226,7 @@ body {
 }
 .bouton-clair:hover {
   background: var(--color-action);
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
 }
 
 /* Sur une photographie.
@@ -231,7 +238,7 @@ body {
  * Il n'en reste qu'une : les règles descendantes et le bouton blanc
  * servaient à la bande rouge de bas de page, retirée du site. */
 .sur-rouge {
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
 }
 
 /*
@@ -308,7 +315,7 @@ body {
   height: 2.75rem;
   /* Sans fond : la bande est posée à même l'image. L'ombre portée est ce
    * qui tient la lisibilité quand un plan clair passe dessous. */
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
   white-space: nowrap;
 }
@@ -358,7 +365,7 @@ body {
   background: color-mix(in srgb, var(--color-encre) 68%, transparent);
   -webkit-backdrop-filter: blur(40px) saturate(160%) brightness(62%);
   backdrop-filter: blur(40px) saturate(160%) brightness(62%);
-  border-color: color-mix(in srgb, var(--color-blanc) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-sur-image) 18%, transparent);
   /* Le liseré clair en haut : c'est lui qui donne l'épaisseur, comme la
    * tranche d'une vitre prise dans la lumière. Il s'assourdit avec le
    * fond — sur du sombre, un liseré à cinquante-cinq pour cent devient
@@ -514,7 +521,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-inline: clamp(1rem, 1.7vw, 1.5rem);
-  color: var(--color-blanc);
+  color: var(--color-sur-image);
 }
 
 /* Un voile très léger : la photographie reste lisible, le texte aussi. */
@@ -906,3 +913,53 @@ html[data-ouverture]::before {
 .ouverture[data-passe="true"] .ouverture-signature {
   visibility: hidden;
 }
+
+/* ———————————————————————————————————— le mode sombre ————— */
+
+/*
+ * Le site est clair. Le sombre est un choix de la visiteuse, jamais une
+ * préférence devinée : « prefers-color-scheme » n'est pas consulté, car
+ * une boutique de robes de mariée se donne d'abord en clair, et un
+ * système réglé sur sombre ne dit pas qu'on veut voir la dentelle sur du
+ * noir.
+ *
+ * Rien n'est réécrit composant par composant : les jetons changent, et
+ * tout ce qui les emploie suit. C'est ce qui rend le sombre tenable —
+ * une seconde feuille de style aurait divergé au premier ajout.
+ *
+ * L'échelle est inversée par rôle et non par valeur. « blanc » est la
+ * surface la plus claire du clair : en sombre c'est la plus sombre. Les
+ * deux rouges de la maison, eux, s'éclaircissent juste assez pour rester
+ * lisibles sur du noir sans changer de famille.
+ */
+:root[data-theme="sombre"] {
+  --color-blanc: #100d0a;
+  --color-ivoire: #16120e;
+  --color-craie: #1c1813;
+  --color-sable: #241f18;
+  --color-fil: #322b22;
+
+  --color-encre: #f5f0e8;
+  --color-plume: #ded7cc;
+  --color-plomb: #a89f92;
+  --color-brume: #7d7568;
+
+  /* Le rouge doit tenir deux contraintes contraires sur du noir : porter
+   * du texte blanc — 4,9 de contraste — et se voir comme un bouton sur
+   * le fond — 3,96. Plus clair, le texte devenait illisible ; plus
+   * sombre, le bouton disparaissait dans la page. */
+  --color-action: #c9403f;
+  --color-accent: #e0687a;
+
+  color-scheme: dark;
+}
+
+/* La photographie ne s'assombrit pas : c'est la robe qu'on vient voir.
+ * On lui retire seulement l'éclat que le fond clair lui donnait. */
+:root[data-theme="sombre"] img,
+:root[data-theme="sombre"] video {
+  filter: brightness(0.94);
+}
+
+/* Le voile de lecture posé sur les images est calculé pour du texte
+ * blanc : il ne change pas avec le thème. */
