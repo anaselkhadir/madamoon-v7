@@ -5,16 +5,24 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   AI_ENDPOINT,
   CREATEURS,
-  FAQ,
   MAISON,
   MORPHOLOGIES,
   SUPABASE_ANON_KEY,
   createurParSlug,
   maisonsPour,
   offreMaison,
-  robesDe,
 } from "@/lib/madamoon";
 import { media as chemin } from "@/lib/chemin";
+import { langueDe, versLangue, type Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
+import {
+  faq,
+  morphoCoupes,
+  morphoNom,
+  morphoObjectif,
+  morphoSilhouette,
+  robeLigne,
+} from "@/lib/contenu";
 
 /*
  * Élise — conseillère de la maison.
@@ -35,93 +43,114 @@ import { media as chemin } from "@/lib/chemin";
  * Elle n'est pas une bulle de support. C'est le bouton « Trouver ma robe »
  * qui l'ouvre, depuis n'importe quelle page (événement « elise:ouvrir »,
  * dont le détail peut nommer la maison).
+ *
+ * Elle parle la langue de la page où elle s'ouvre : ses répliques
+ * viennent du dictionnaire, ses liens passent par « versLangue », et la
+ * langue accompagne la question envoyée au service.
  */
 
 type Option = { label: string; next?: string; href?: string };
 type Message = { de: "elise" | "vous"; texte?: string; riche?: React.ReactNode };
 type Historique = { role: "user" | "assistant"; content: string };
 
-const ACCUEIL: Option[] = [
-  { label: "Trouver ma coupe", next: "morpho" },
-  { label: "Prendre rendez-vous", next: "rdv" },
-  { label: "Questions pratiques", next: "faq" },
-];
+const accueil = (l: Langue): Option[] => {
+  const T = t(l).elise;
+  return [
+    { label: T.trouverMaCoupe, next: "morpho" },
+    { label: T.prendreRendezvous, next: "rdv" },
+    { label: T.questionsPratiques, next: "faq" },
+  ];
+};
 
-/* Repli hors ligne : orientation par mots-clés vers ce que nous savons. */
-function reponseLocale(entree: string): { textes: string[]; options: Option[] } {
+/*
+ * Repli hors ligne : orientation par mots-clés vers ce que nous savons.
+ *
+ * Les deux langues sont dans la même liste. Une cliente anglophone peut
+ * très bien écrire « rdv » — elle a lu le site français avant — et une
+ * francophone « price ». Séparer les tables n'aurait servi personne.
+ */
+function reponseLocale(entree: string, l: Langue): { textes: string[]; options: Option[] } {
+  const T = t(l).elise;
+  const M = MAISON;
   const q = entree
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
+    .replace(/[\u0300-\u036f]/g, "");
   const a = (...mots: string[]) => mots.some((m) => q.includes(m));
 
-  if (a("rendez", "rdv", "reserv", "essayage", "venir", "visite"))
+  if (
+    a("rendez", "rdv", "reserv", "essayage", "venir", "visite",
+      "appoint", "book", "fitting", "visit")
+  )
     return {
-      textes: [
-        `Avec plaisir. Le showroom est privatisé pour vous pendant une heure, sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${MAISON.adresse}, Paris ${MAISON.codePostal}.`,
-      ],
+      textes: [T.localRdv(M.adresse, M.codePostal)],
       options: [
-        { label: "Prendre rendez-vous", href: "/rendez-vous" },
-        { label: "Appeler la boutique", href: MAISON.telephoneHref },
+        { label: T.prendreRendezvous, href: "/rendez-vous" },
+        { label: T.appeler, href: M.telephoneHref },
       ],
     };
-  if (a("prix", "tarif", "cout", "coute", "budget", "cher"))
+  if (
+    a("prix", "tarif", "cout", "coute", "budget", "cher",
+      "price", "cost", "expensive", "how much")
+  )
     return {
-      textes: [
-        `Nos robes commencent à ${MAISON.prixDepart}, retouches comprises. Le sur-mesure se chiffre après l'essayage, selon la robe et le tissu.`,
-      ],
-      options: [{ label: "Prendre rendez-vous", next: "rdv" }],
+      textes: [T.localPrix(M.prixDepart)],
+      options: [{ label: T.prendreRendezvous, next: "rdv" }],
     };
-  if (a("horaire", "adresse", "ouvert", "situ", "metro", "acces"))
+  if (
+    a("horaire", "adresse", "ouvert", "situ", "metro", "acces",
+      "hour", "open", "address", "where", "located", "access")
+  )
     return {
-      textes: [
-        `Le showroom vous reçoit sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h — ${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}.`,
-      ],
+      textes: [T.localHoraires(M.adresse, M.codePostal, M.ville)],
       options: [
-        { label: "Voir le showroom", href: "/showroom" },
-        { label: "Prendre rendez-vous", next: "rdv" },
+        { label: T.voirShowroom, href: "/showroom" },
+        { label: T.prendreRendezvous, next: "rdv" },
       ],
     };
-  if (a("marque", "createur", "createurs", "maison", "watters", "casablanca", "olya", "angeola"))
+  if (
+    a("marque", "createur", "createurs", "maison", "watters", "casablanca", "olya", "angeola",
+      "brand", "designer", "label", "house")
+  )
     return {
-      textes: [
-        `Nos robes sont choisies chez ${CREATEURS.map((c) => c.nom).join(", ")}, avec un service de confection sur mesure.`,
-      ],
+      textes: [T.localCreateurs(CREATEURS.map((c) => c.nom).join(", "))],
       options: [
         ...CREATEURS.slice(0, 3).map((c) => ({
           label: c.nom,
           href: `/createurs/${c.slug}`,
         })),
-        { label: "Voir le catalogue", href: "/robes" },
+        { label: T.voirCatalogue, href: "/robes" },
       ],
     };
-  if (a("morpho", "silhouette", "coupe", "corps", "quelle robe", "robe pour moi"))
+  if (
+    a("morpho", "silhouette", "coupe", "corps", "quelle robe", "robe pour moi",
+      "shape", "figure", "body", "cut", "which dress", "dress for me")
+  )
     return {
-      textes: [
-        "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
-      ],
-      options: [{ label: "Lancer le diagnostic", next: "q1" }],
+      textes: [T.localDiagnostic],
+      options: [{ label: T.lancerDiagnostic, next: "q1" }],
     };
-  if (a("merci", "super", "parfait"))
-    return {
-      textes: [
-        "Avec grand plaisir. Je reste à votre écoute, et au plaisir de vous accueillir au showroom.",
-      ],
-      options: ACCUEIL,
-    };
-  const q0 = FAQ[0];
-  if (a("delai", "quand", "mois", "date", "temps", "avance") && q0)
-    return { textes: [q0.r], options: [{ label: "Prendre rendez-vous", next: "rdv" }] };
+  if (a("merci", "super", "parfait", "thank", "great", "perfect"))
+    return { textes: [T.localMerci], options: accueil(l) };
+  const q0 = faq(l)[0];
+  if (
+    a("delai", "quand", "mois", "date", "temps", "avance", "how long", "when", "month", "ahead") &&
+    q0
+  )
+    return { textes: [q0.r], options: [{ label: T.prendreRendezvous, next: "rdv" }] };
   return {
-    textes: [
-      "Je préfère vous répondre précisément plutôt que de m'avancer. Le mieux est d'en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre silhouette, nos prix et la prise de rendez-vous.",
-    ],
-    options: [...ACCUEIL, { label: "Appeler la boutique", href: MAISON.telephoneHref }],
+    textes: [T.localDefaut],
+    options: [...accueil(l), { label: T.appeler, href: M.telephoneHref }],
   };
 }
 
 export default function Elise() {
   const route = usePathname();
+  const langue = langueDe(route ?? "/");
+  /* La table est un objet constant : elle ne fabrique aucune dépendance
+   * nouvelle à chaque rendu. */
+  const T = t(langue).elise;
+
   const [ouvert, setOuvert] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [options, setOptions] = useState<Option[]>([]);
@@ -204,16 +233,21 @@ export default function Elise() {
       if (!m) return;
       const nom = maisonRef.current;
       const offre = nom ? offreMaison(nom, lettre) : undefined;
+      const coupes = morphoCoupes(m, langue);
 
       const carte = {
-        plat: `${m.nom}. ${m.silhouette} L'objectif : ${m.objectif} Nos recommandations : ${m.coupes.join(" ")}`,
+        plat: `${morphoNom(m, langue)}. ${morphoSilhouette(m, langue)} ${T.lObjectif} ${morphoObjectif(m, langue)} ${T.nosRecommandations} : ${coupes.join(" ")}`,
         riche: (
           <div>
-            <p className="font-serif text-[1.375rem] leading-none text-encre">{m.nom}</p>
-            <p className="mt-2 text-[12.5px] leading-relaxed text-plomb">{m.silhouette}</p>
-            <p className="mention mt-4 text-brume">Nos recommandations</p>
+            <p className="font-serif text-[1.375rem] leading-none text-encre">
+              {morphoNom(m, langue)}
+            </p>
+            <p className="mt-2 text-[12.5px] leading-relaxed text-plomb">
+              {morphoSilhouette(m, langue)}
+            </p>
+            <p className="mention mt-4 text-brume">{T.nosRecommandations}</p>
             <ul className="mt-2 border-t border-fil pt-2">
-              {m.coupes.map((c) => (
+              {coupes.map((c) => (
                 <li key={c} className="flex gap-2.5 py-1 text-[13px] leading-relaxed">
                   <span className="text-accent">—</span>
                   <span>{c}</span>
@@ -227,14 +261,11 @@ export default function Elise() {
       /* Hors d'une maison : la sélection générale. */
       if (!offre) {
         dire(
+          [carte, T.pistes],
           [
-            carte,
-            "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n'était pas prévu. Voulez-vous voir la sélection correspondante ?",
-          ],
-          [
-            { label: "Voir mes recommandations", href: `/morphologies/${m.lettre.toLowerCase()}` },
-            { label: "Prendre rendez-vous", next: "rdv" },
-            { label: "Refaire le diagnostic", next: "q1" },
+            { label: T.voirRecommandations, href: `/morphologies/${m.lettre.toLowerCase()}` },
+            { label: T.prendreRendezvous, next: "rdv" },
+            { label: T.refaireDiagnostic, next: "q1" },
           ],
           720
         );
@@ -249,19 +280,19 @@ export default function Elise() {
           [
             carte,
             {
-              plat: `Chez ${nom}, voici ce qui vous correspond : ${offre.premieres.map((r) => r.nom).join(", ")}.`,
+              plat: T.voiciCeQui(nom ?? "", offre.premieres.map((r) => r.nom).join(", ")),
               riche: (
                 <div>
-                  <p className="mention text-brume">Chez {nom}</p>
+                  <p className="mention text-brume">{T.chezMaison(nom ?? "")}</p>
                   <ul className="mt-2 border-t border-fil pt-2">
                     {siennes.slice(0, 5).map((r) => (
                       <li key={r.slug} className="py-1.5">
                         <a
-                          href={chemin(`/robes/${r.slug}`)}
+                          href={chemin(versLangue(`/robes/${r.slug}`, langue))}
                           className="text-[13px] leading-relaxed text-encre hover:text-accent"
                         >
                           <span className="font-serif text-[1.05rem]">{r.nom}</span>
-                          <span className="text-plomb"> — {r.ligne.toLowerCase()}</span>
+                          <span className="text-plomb"> — {robeLigne(r, langue).toLowerCase()}</span>
                         </a>
                       </li>
                     ))}
@@ -271,48 +302,45 @@ export default function Elise() {
             },
           ],
           [
-            { label: `Toutes les robes ${nom}`, href: `/createurs/${offre.createur.slug}` },
-            { label: "Voir les autres maisons", next: `classement:${m.lettre}` },
-            { label: "Prendre rendez-vous", next: "rdv" },
+            { label: T.toutesLesRobes(nom ?? ""), href: `/createurs/${offre.createur.slug}` },
+            { label: T.autresMaisons, next: `classement:${m.lettre}` },
+            { label: T.prendreRendezvous, next: "rdv" },
           ],
           720
         );
         return;
       }
 
-      /* La maison n'a pas la coupe. On le dit, et on classe les autres. */
+      /* La maison n'a pas la coupe. On le dit, et on classe les autres.
+       *
+       * Le classement ne chiffre rien : la maison ne veut pas voir de
+       * nombre de robes sur le site. On dit « dans vos coupes » ou « à
+       * essayer », ce qui est de toute façon ce qui intéresse. */
       const autres = maisonsPour(m.lettre).filter((o) => o.createur.nom !== nom);
       dire(
         [
           carte,
           {
-            plat: `${nom} ne travaille pas les coupes que je vous conseillerais en premier. Les maisons qui les ont, dans l'ordre : ${autres
-              .map((o) => `${o.createur.nom} (${o.premieres.length})`)
-              .join(", ")}.`,
+            plat: T.pasLesCoupes(nom ?? "", autres.map((o) => o.createur.nom).join(", ")),
             riche: (
               <div>
                 <p className="text-[13.5px] leading-[1.75] text-encre">
-                  Je préfère être franche : {nom} ne travaille pas les coupes que je vous
-                  conseillerais en premier.
-                  {siennes.length === 0
-                    ? " Voici les maisons faites pour vous."
-                    : siennes.length === 1
-                      ? " Son autre robe vaut l'essai, mais voici d'abord les maisons faites pour vous."
-                      : " Ses autres robes valent l'essai, mais voici d'abord les maisons faites pour vous."}
+                  {T.franche(nom ?? "")}
+                  {T.saufQue(siennes.length)}
                 </p>
-                <p className="mention mt-4 text-brume">Dans l&apos;ordre</p>
+                <p className="mention mt-4 text-brume">{T.dansLOrdre}</p>
                 <ol className="mt-2 border-t border-fil pt-2">
                   {autres.map((o, i) => (
                     <li key={o.createur.slug} className="flex gap-3 py-1.5">
                       <span className="mention pt-1 text-brume">{String(i + 1).padStart(2, "0")}</span>
                       <a
-                        href={chemin(`/createurs/${o.createur.slug}`)}
+                        href={chemin(versLangue(`/createurs/${o.createur.slug}`, langue))}
                         className="text-[13px] leading-relaxed text-encre hover:text-accent"
                       >
                         <span className="font-serif text-[1.05rem]">{o.createur.nom}</span>
                         <span className="text-plomb">
                           {" "}
-                          — {o.premieres.length > 0 ? "dans vos coupes" : "à essayer"}
+                          — {o.premieres.length > 0 ? T.dansVosCoupes : T.aEssayer}
                         </span>
                       </a>
                     </li>
@@ -326,18 +354,18 @@ export default function Elise() {
           ...(autres[0]
             ? [
                 {
-                  label: `Voir ${autres[0].createur.nom}`,
+                  label: T.voirMaison(autres[0].createur.nom),
                   href: `/createurs/${autres[0].createur.slug}`,
                 },
               ]
             : []),
-          { label: "Toute la sélection", href: `/morphologies/${m.lettre.toLowerCase()}` },
-          { label: "Prendre rendez-vous", next: "rdv" },
+          { label: T.touteLaSelection, href: `/morphologies/${m.lettre.toLowerCase()}` },
+          { label: T.prendreRendezvous, next: "rdv" },
         ],
         720
       );
     },
-    [dire]
+    [T, dire, langue]
   );
 
   /* ————————————————————————————— le parcours ————— */
@@ -345,97 +373,85 @@ export default function Elise() {
   const aller = useCallback(
     (noeud: string) => {
       const nom = maisonRef.current;
+      const questions = faq(langue);
       switch (noeud) {
         case "root": {
-          const combien = nom ? robesDe(nom).length : 0;
           dire(
-            nom
-              ? [
-                  "Bonjour, je suis Élise, conseillère chez MADAMOON. Trouver la robe d'une vie, c'est mon métier — et ma plus grande joie.",
-                  `Vous regardez ${nom} : ${combien} robe${combien > 1 ? "s" : ""} au showroom. Je pars de votre silhouette, et je vous dis franchement si la réponse est ailleurs.`,
-                ]
-              : [
-                  "Bonjour, je suis Élise, conseillère chez MADAMOON. Trouver la robe d'une vie, c'est mon métier — et ma plus grande joie.",
-                  "Parlez-moi de votre mariage, posez-moi vos questions, ou laissez-vous guider.",
-                ],
-            ACCUEIL
+            nom ? [T.bonjour, T.vousRegardez(nom)] : [T.bonjour, T.invitation],
+            accueil(langue)
           );
           break;
         }
 
         case "morpho":
           dire(
+            [T.essentiel, T.connaissezMorpho],
             [
-              "L'essentiel est de trouver la robe qui met en valeur votre silhouette tout en vous ressemblant.",
-              "Connaissez-vous déjà votre morphologie ?",
-            ],
-            [
-              { label: "Oui, je la connais", next: "choix" },
-              { label: "Guidez-moi", next: "q1" },
+              { label: T.ouiJeLaConnais, next: "choix" },
+              { label: T.guidezMoi, next: "q1" },
             ]
           );
           break;
 
         case "choix":
           dire(
-            ["Très bien. Laquelle est la vôtre ?"],
-            MORPHOLOGIES.map((m) => ({ label: `En ${m.lettre}`, next: `res:${m.lettre}` }))
+            [T.laquelle],
+            MORPHOLOGIES.map((m) => ({
+              label: T.lettreLabel(m.lettre),
+              next: `res:${m.lettre}`,
+            }))
           );
           break;
 
         case "q1":
           dire(
+            [T.pasAPas, T.epaulesHanches],
             [
-              "Je vous guide pas à pas.",
-              "Comment décririez-vous vos épaules par rapport à vos hanches ?",
-            ],
-            [
-              { label: "Plus étroites", next: "res:A" },
-              { label: "Plus larges", next: "res:V" },
-              { label: "Alignées", next: "q2" },
-              { label: "Courbes généreuses", next: "res:O" },
+              { label: T.plusEtroites, next: "res:A" },
+              { label: T.plusLarges, next: "res:V" },
+              { label: T.alignees, next: "q2" },
+              { label: T.courbesGenereuses, next: "res:O" },
             ]
           );
           break;
 
         case "q2":
           dire(
-            ["Et votre taille, est-elle marquée ?"],
+            [T.tailleMarquee],
             [
-              { label: "Oui, bien marquée", next: "q3" },
-              { label: "Peu marquée", next: "res:H" },
+              { label: T.ouiBienMarquee, next: "q3" },
+              { label: T.peuMarquee, next: "res:H" },
             ]
           );
           break;
 
         case "q3":
           dire(
-            ["Dernière question : vos courbes sont plutôt…"],
+            [T.derniereQuestion],
             [
-              { label: "Prononcées", next: "res:8" },
-              { label: "Douces, silhouette fine", next: "res:X" },
+              { label: T.prononcees, next: "res:8" },
+              { label: T.doucesFine, next: "res:X" },
             ]
           );
           break;
 
         case "rdv":
           dire(
+            [T.rdvPrivatise, T.localRdv(MAISON.adresse, MAISON.codePostal)],
             [
-              "Avec plaisir. Le showroom est entièrement privatisé pour vous pendant une heure — venez accompagnée de vos proches.",
-              `Sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${MAISON.adresse}, Paris ${MAISON.codePostal}.`,
-            ],
-            [
-              { label: "Prendre rendez-vous", href: "/rendez-vous" },
-              { label: "Appeler", href: MAISON.telephoneHref },
-              { label: "Écrire", href: MAISON.emailHref },
+              { label: T.prendreRendezvous, href: "/rendez-vous" },
+              { label: T.appelerCourt, href: MAISON.telephoneHref },
+              { label: T.ecrireCourt, href: MAISON.emailHref },
             ]
           );
           break;
 
         case "faq":
           dire(
-            ["Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m'écrire librement."],
-            FAQ.slice(0, 5).map((f, i) => ({ label: f.q.replace(/\s*\?$/, ""), next: `faq:${i}` }))
+            [T.faqIntro],
+            questions
+              .slice(0, 5)
+              .map((f, i) => ({ label: f.q.replace(/\s*\?$/, ""), next: `faq:${i}` }))
           );
           break;
 
@@ -448,7 +464,7 @@ export default function Elise() {
             dire(
               [
                 {
-                  plat: `Les maisons pour cette morphologie : ${rang.map((o) => `${o.createur.nom} (${o.premieres.length})`).join(", ")}.`,
+                  plat: T.lesMaisonsPour(rang.map((o) => o.createur.nom).join(", ")),
                   riche: (
                     <ol className="border-t border-fil pt-2">
                       {rang.map((o, i) => (
@@ -457,13 +473,13 @@ export default function Elise() {
                             {String(i + 1).padStart(2, "0")}
                           </span>
                           <a
-                            href={chemin(`/createurs/${o.createur.slug}`)}
+                            href={chemin(versLangue(`/createurs/${o.createur.slug}`, langue))}
                             className="text-[13px] leading-relaxed text-encre hover:text-accent"
                           >
                             <span className="font-serif text-[1.05rem]">{o.createur.nom}</span>
                             <span className="text-plomb">
                               {" "}
-                              — {o.premieres.length} dans vos coupes, {o.secondes.length} à essayer
+                              — {o.premieres.length > 0 ? T.dansVosCoupes : T.aEssayer}
                             </span>
                           </a>
                         </li>
@@ -473,26 +489,26 @@ export default function Elise() {
                 },
               ],
               [
-                { label: "Toute la sélection", href: `/morphologies/${lettre.toLowerCase()}` },
-                { label: "Prendre rendez-vous", next: "rdv" },
+                { label: T.touteLaSelection, href: `/morphologies/${lettre.toLowerCase()}` },
+                { label: T.prendreRendezvous, next: "rdv" },
               ]
             );
           } else if (noeud.startsWith("faq:")) {
-            const f = FAQ[Number(noeud.slice(4))];
+            const f = questions[Number(noeud.slice(4))];
             if (!f) return;
             dire(
               [f.r],
               [
-                { label: "Prendre rendez-vous", next: "rdv" },
-                { label: "Autre question", next: "faq" },
-                { label: "Trouver ma coupe", next: "morpho" },
+                { label: T.prendreRendezvous, next: "rdv" },
+                { label: T.autreQuestion, next: "faq" },
+                { label: T.trouverMaCoupe, next: "morpho" },
               ]
             );
           }
         }
       }
     },
-    [conclure, dire]
+    [T, conclure, dire, langue]
   );
 
   /* Le bouton « Trouver ma robe », depuis n'importe quelle page.
@@ -533,7 +549,7 @@ export default function Elise() {
           Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
           apikey: SUPABASE_ANON_KEY,
         },
-        body: JSON.stringify({ messages: historique.current.slice(-16) }),
+        body: JSON.stringify({ messages: historique.current.slice(-16), langue }),
       });
       clearTimeout(minuteur);
       if (!res.ok) throw new Error(`http_${res.status}`);
@@ -543,9 +559,9 @@ export default function Elise() {
       historique.current.push({ role: "assistant", content: reponse });
       setEcrit(false);
       setMessages((m) => [...m, { de: "elise", texte: reponse }]);
-      setOptions([{ label: "Prendre rendez-vous", next: "rdv" }]);
+      setOptions([{ label: T.prendreRendezvous, next: "rdv" }]);
     } catch {
-      const repli = reponseLocale(question);
+      const repli = reponseLocale(question, langue);
       setEcrit(false);
       repli.textes.forEach((t) => historique.current.push({ role: "assistant", content: t }));
       setMessages((m) => [...m, ...repli.textes.map((t) => ({ de: "elise" as const, texte: t }))]);
@@ -566,7 +582,7 @@ export default function Elise() {
     if (o.href) {
       if (o.href.startsWith("http") || o.href.startsWith("tel:") || o.href.startsWith("mailto:"))
         window.open(o.href, "_blank", "noopener");
-      else window.location.href = chemin(o.href);
+      else window.location.href = chemin(versLangue(o.href, langue));
       return;
     }
     historique.current.push({ role: "user", content: o.label });
@@ -577,7 +593,7 @@ export default function Elise() {
   return (
     <div
       role="dialog"
-      aria-label="Élise, conseillère MADAMOON"
+      aria-label={T.dialogue}
       aria-hidden={!ouvert}
       className={`verre fixed z-[80] flex flex-col border-fil transition-all duration-700 [transition-timing-function:var(--ease-rideau)] ${
         ouvert ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
@@ -588,7 +604,7 @@ export default function Elise() {
           <p className="font-serif text-[1.375rem] leading-none text-encre">Élise</p>
           <p className="mention mt-2.5 flex items-center gap-2 text-plomb">
             <span aria-hidden className="inline-block h-1 w-1 rounded-full bg-accent" />
-            {maison ? `Conseillère — ${maison}` : "Conseillère — MADAMOON"}
+            {maison ? T.chezMaison(maison) : T.conseillere}
           </p>
         </div>
         <button
@@ -597,7 +613,7 @@ export default function Elise() {
           tabIndex={ouvert ? 0 : -1}
           className="souligne legende text-encre"
         >
-          Fermer
+          {t(langue).barre.fermer}
         </button>
       </div>
 
@@ -612,13 +628,13 @@ export default function Elise() {
             </div>
           ) : (
             <div key={i} className="ml-auto max-w-[88%] border-r-2 border-action pr-4 text-right">
-              <p className="mention mb-1.5 text-brume">Vous</p>
+              <p className="mention mb-1.5 text-brume">{T.vous}</p>
               <p className="text-[13.5px] font-light leading-[1.75] text-encre">{m.texte}</p>
             </div>
           )
         )}
         {ecrit && (
-          <div className="flex items-center gap-1.5" aria-label="Élise écrit">
+          <div className="flex items-center gap-1.5" aria-label={T.ecrit}>
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
@@ -657,20 +673,20 @@ export default function Elise() {
           type="text"
           value={entree}
           onChange={(e) => setEntree(e.target.value)}
-          placeholder="Écrivez à Élise…"
-          aria-label="Votre message pour Élise"
+          placeholder={T.champ}
+          aria-label={T.champLabel}
           enterKeyHint="send"
           tabIndex={ouvert ? 0 : -1}
           className="min-w-0 flex-1 bg-transparent py-1.5 text-[14px] font-light text-encre outline-none placeholder:text-brume"
         />
         <button
           type="submit"
-          aria-label="Envoyer"
+          aria-label={T.envoyer}
           disabled={!entree.trim() || ecrit}
           tabIndex={ouvert ? 0 : -1}
           className="legende shrink-0 text-encre transition-colors duration-500 enabled:hover:text-accent disabled:opacity-30"
         >
-          Envoyer
+          {T.envoyer}
         </button>
       </form>
     </div>

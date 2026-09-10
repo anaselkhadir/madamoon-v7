@@ -132,6 +132,97 @@ const FR = {
     silhouettesServies: (lettres: string) =>
       `Elle est d’abord conseillée aux silhouettes ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
   },
+  elise: {
+    dialogue: "Élise, conseillère MADAMOON",
+    vous: "Vous",
+    conseillere: "Conseillère — MADAMOON",
+    ecrit: "Élise écrit",
+    champ: "Écrivez à Élise…",
+    champLabel: "Votre message pour Élise",
+    envoyer: "Envoyer",
+
+    trouverMaCoupe: "Trouver ma coupe",
+    prendreRendezvous: "Prendre rendez-vous",
+    questionsPratiques: "Questions pratiques",
+    appeler: "Appeler la boutique",
+    appelerCourt: "Appeler",
+    ecrireCourt: "Écrire",
+    voirShowroom: "Voir le showroom",
+    voirCatalogue: "Voir le catalogue",
+    lancerDiagnostic: "Lancer le diagnostic",
+    voirRecommandations: "Voir mes recommandations",
+    refaireDiagnostic: "Refaire le diagnostic",
+    autresMaisons: "Voir les autres maisons",
+    touteLaSelection: "Toute la sélection",
+    autreQuestion: "Autre question",
+    ouiJeLaConnais: "Oui, je la connais",
+    guidezMoi: "Guidez-moi",
+    plusEtroites: "Plus étroites",
+    plusLarges: "Plus larges",
+    alignees: "Alignées",
+    courbesGenereuses: "Courbes généreuses",
+    ouiBienMarquee: "Oui, bien marquée",
+    peuMarquee: "Peu marquée",
+    prononcees: "Prononcées",
+    doucesFine: "Douces, silhouette fine",
+
+    bonjour:
+      "Bonjour, je suis Élise, conseillère chez MADAMOON. Trouver la robe d’une vie, c’est mon métier — et ma plus grande joie.",
+    invitation:
+      "Parlez-moi de votre mariage, posez-moi vos questions, ou laissez-vous guider.",
+    essentiel:
+      "L’essentiel est de trouver la robe qui met en valeur votre silhouette tout en vous ressemblant.",
+    connaissezMorpho: "Connaissez-vous déjà votre morphologie ?",
+    laquelle: "Très bien. Laquelle est la vôtre ?",
+    pasAPas: "Je vous guide pas à pas.",
+    epaulesHanches: "Comment décririez-vous vos épaules par rapport à vos hanches ?",
+    tailleMarquee: "Et votre taille, est-elle marquée ?",
+    derniereQuestion: "Dernière question : vos courbes sont plutôt…",
+    pistes:
+      "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n’était pas prévu. Voulez-vous voir la sélection correspondante ?",
+    rdvPrivatise:
+      "Avec plaisir. Le showroom est entièrement privatisé pour vous pendant une heure — venez accompagnée de vos proches.",
+    faqIntro: "Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m’écrire librement.",
+    dansVosCoupes: "dans vos coupes",
+    aEssayer: "à essayer",
+    nosRecommandations: "Nos recommandations",
+    lObjectif: "L’objectif :",
+    dansLOrdre: "Dans l’ordre",
+    lettreLabel: (lettre: string) => `En ${lettre}`,
+    chezMaison: (nom: string) => `Chez ${nom}`,
+    toutesLesRobes: (nom: string) => `Toutes les robes ${nom}`,
+    voirMaison: (nom: string) => `Voir ${nom}`,
+    vousRegardez: (nom: string) =>
+      `Vous regardez ${nom}. Je pars de votre silhouette, et je vous dis franchement si la réponse est ailleurs.`,
+    voiciCeQui: (nom: string, liste: string) =>
+      `Chez ${nom}, voici ce qui vous correspond : ${liste}.`,
+    pasLesCoupes: (nom: string, liste: string) =>
+      `${nom} ne travaille pas les coupes que je vous conseillerais en premier. Les maisons qui les ont, dans l’ordre : ${liste}.`,
+    franche: (nom: string) =>
+      `Je préfère être franche : ${nom} ne travaille pas les coupes que je vous conseillerais en premier.`,
+    saufQue: (combien: number): string =>
+      combien === 0
+        ? " Voici les maisons faites pour vous."
+        : combien === 1
+          ? " Son autre robe vaut l’essai, mais voici d’abord les maisons faites pour vous."
+          : " Ses autres robes valent l’essai, mais voici d’abord les maisons faites pour vous.",
+    lesMaisonsPour: (liste: string) => `Les maisons pour cette morphologie : ${liste}.`,
+
+    localRdv: (adresse: string, cp: string) =>
+      `Avec plaisir. Le showroom est privatisé pour vous pendant une heure, sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${adresse}, Paris ${cp}.`,
+    localPrix: (prix: string) =>
+      `Nos robes commencent à ${prix}, retouches comprises. Le sur-mesure se chiffre après l’essayage, selon la robe et le tissu.`,
+    localHoraires: (adresse: string, cp: string, ville: string) =>
+      `Le showroom vous reçoit sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h — ${adresse}, ${cp} ${ville}.`,
+    localCreateurs: (liste: string) =>
+      `Nos robes sont choisies chez ${liste}, avec un service de confection sur mesure.`,
+    localDiagnostic:
+      "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
+    localMerci:
+      "Avec grand plaisir. Je reste à votre écoute, et au plaisir de vous accueillir au showroom.",
+    localDefaut:
+      "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre silhouette, nos prix et la prise de rendez-vous.",
+  },
   catalogue: {
     nom: "Robes de mariée MADAMOON",
     titre: "Nos robes de mariée",
@@ -268,6 +359,95 @@ const EN: Textes = {
       "It suits every body shape — which is rare, and what makes it a safe bet at a fitting.",
     silhouettesServies: (lettres: string) =>
       `It is first recommended for the ${lettres} shapes. Nothing stops you trying it otherwise: a body shape opens paths, it closes none.`,
+  },
+  elise: {
+    dialogue: "Élise, MADAMOON consultant",
+    vous: "You",
+    conseillere: "Consultant — MADAMOON",
+    ecrit: "Élise is writing",
+    champ: "Write to Élise…",
+    champLabel: "Your message for Élise",
+    envoyer: "Send",
+
+    trouverMaCoupe: "Find my silhouette",
+    prendreRendezvous: "Book an appointment",
+    questionsPratiques: "Practical questions",
+    appeler: "Call the boutique",
+    appelerCourt: "Call",
+    ecrireCourt: "Email",
+    voirShowroom: "See the showroom",
+    voirCatalogue: "See the catalogue",
+    lancerDiagnostic: "Start",
+    voirRecommandations: "See my recommendations",
+    refaireDiagnostic: "Start again",
+    autresMaisons: "See the other houses",
+    touteLaSelection: "The whole selection",
+    autreQuestion: "Another question",
+    ouiJeLaConnais: "Yes, I know it",
+    guidezMoi: "Guide me",
+    plusEtroites: "Narrower",
+    plusLarges: "Broader",
+    alignees: "In line",
+    courbesGenereuses: "Generous curves",
+    ouiBienMarquee: "Yes, clearly",
+    peuMarquee: "Barely",
+    prononcees: "Pronounced",
+    doucesFine: "Soft, a fine figure",
+
+    bonjour:
+      "Hello, I am Élise, a consultant at MADAMOON. Finding the dress of a lifetime is my work — and my greatest joy.",
+    invitation: "Tell me about your wedding, ask me anything, or let me guide you.",
+    essentiel:
+      "What matters is finding the dress that shows your figure at its best while still looking like you.",
+    connaissezMorpho: "Do you already know your body shape?",
+    laquelle: "Very good. Which one is yours?",
+    pasAPas: "I will guide you step by step.",
+    epaulesHanches: "How would you describe your shoulders compared with your hips?",
+    tailleMarquee: "And your waist — is it marked?",
+    derniereQuestion: "Last question: your curves are rather…",
+    pistes:
+      "These are paths, never rules: in the boutique we also try what was not planned. Would you like to see the matching selection?",
+    rdvPrivatise:
+      "With pleasure. The showroom is yours alone for an hour — come with the people close to you.",
+    faqIntro: "Of course. What would you like to know? You can also simply write to me.",
+    dansVosCoupes: "in your silhouettes",
+    aEssayer: "to try on",
+    nosRecommandations: "Our recommendations",
+    lObjectif: "The aim:",
+    dansLOrdre: "In order",
+    lettreLabel: (lettre: string) => `Shape ${lettre}`,
+    chezMaison: (nom: string) => `At ${nom}`,
+    toutesLesRobes: (nom: string) => `All ${nom} dresses`,
+    voirMaison: (nom: string) => `See ${nom}`,
+    vousRegardez: (nom: string) =>
+      `You are looking at ${nom}. I start from your figure, and I will tell you honestly if the answer lies elsewhere.`,
+    voiciCeQui: (nom: string, liste: string) => `At ${nom}, here is what suits you: ${liste}.`,
+    pasLesCoupes: (nom: string, liste: string) =>
+      `${nom} does not work the cuts I would recommend to you first. The houses that do, in order: ${liste}.`,
+    franche: (nom: string) =>
+      `Let me be honest: ${nom} does not work the cuts I would recommend to you first.`,
+    saufQue: (combien: number): string =>
+      combien === 0
+        ? " Here are the houses made for you."
+        : combien === 1
+          ? " Its other dress is worth trying, but here first are the houses made for you."
+          : " Its other dresses are worth trying, but here first are the houses made for you.",
+    lesMaisonsPour: (liste: string) => `The houses for this body shape: ${liste}.`,
+
+    localRdv: (adresse: string, cp: string) =>
+      `With pleasure. The showroom is yours alone for an hour, by appointment only: Monday 12pm–9pm, Tuesday to Saturday 10am–7pm, at ${adresse}, Paris ${cp}.`,
+    localPrix: (prix: string) =>
+      `Our dresses start at ${prix}, alterations included. Made to measure is quoted after the fitting, depending on the dress and the fabric.`,
+    localHoraires: (adresse: string, cp: string, ville: string) =>
+      `The showroom receives you by appointment only: Monday 12pm to 9pm, Tuesday to Saturday 10am to 7pm — ${adresse}, ${cp} ${ville}.`,
+    localCreateurs: (liste: string) =>
+      `Our dresses are chosen from ${liste}, with a made-to-measure service.`,
+    localDiagnostic:
+      "Every woman is different. The simplest way is a short diagnosis together, to find the cuts that will suit you. Shall we begin?",
+    localMerci:
+      "With great pleasure. I remain at your disposal, and I look forward to welcoming you at the showroom.",
+    localDefaut:
+      "I would rather answer you precisely than guess. The best is to speak with the boutique directly — or I can guide you here on your figure, our prices and booking an appointment.",
   },
   catalogue: {
     nom: "MADAMOON wedding dresses",

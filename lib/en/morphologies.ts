@@ -35,3 +35,37 @@ export const MORPHO_OBJECTIF: Record<string, string> = {
   "8": "Bring out a harmony that is already there.",
   X: "Show the figure without overstating it.",
 };
+
+/* Ce que l'on conseille, morphologie par morphologie. Ce sont des
+ * phrases, pas des étiquettes : elles se lisent l'une après l'autre. */
+export const MORPHO_COUPES: Record<string, string[]> = {
+  O: [
+    "Fluid falls, that glide without marking the body.",
+    "A-lines, that structure the bust and leave the rest free.",
+    "V or sweetheart necklines.",
+  ],
+  A: [
+    "A worked bodice, rich in detail.",
+    "A flared skirt, that balances the hips.",
+    "Boat necklines or straight bodices, that widen the shoulder.",
+  ],
+  V: [
+    "Full skirts, A-line or ball gown.",
+    "Light structures, barely built at the shoulder.",
+    "V necklines, crossed or asymmetric.",
+  ],
+  H: [
+    "Models fitted at the waist, or worn with a belt.",
+    "Light mermaids, that draw the line without gripping it.",
+    "Empire cuts, that lengthen.",
+  ],
+  "8": [
+    "Mermaids and sheaths, that follow the line.",
+    "Sweetheart bodices and V necklines.",
+    "Anything that nips in at the waist.",
+  ],
+  X: [
+    "Good news: almost every cut suits you.",
+    "Ball gown, mermaid, sheath or minimalist — let the style of the wedding decide.",
+  ],
+};

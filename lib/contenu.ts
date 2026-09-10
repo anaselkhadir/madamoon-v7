@@ -1,6 +1,6 @@
 import type { Langue } from "@/lib/langue";
 import type { Categorie, Createur, Morphologie, Robe } from "@/lib/madamoon";
-import { MAISON } from "@/lib/madamoon";
+import { FAQ, MAISON } from "@/lib/madamoon";
 import { PLURIEL, type Coupe } from "@/lib/coupes";
 import {
   COUPE_NOM,
@@ -12,9 +12,11 @@ import {
   MAISON_EN,
 } from "@/lib/en/taxonomie";
 import { ROBE_EN } from "@/lib/en/robes";
+import { FAQ_EN } from "@/lib/en/faq";
 import {
   MORPHO_NOM,
   MORPHO_OBJECTIF,
+  MORPHO_COUPES,
   MORPHO_SILHOUETTE,
 } from "@/lib/en/morphologies";
 
@@ -60,6 +62,9 @@ export const morphoSilhouette = (m: Morphologie, l: Langue) =>
 export const morphoObjectif = (m: Morphologie, l: Langue) =>
   l === "fr" ? m.objectif : MORPHO_OBJECTIF[m.lettre] ?? m.objectif;
 
+export const morphoCoupes = (m: Morphologie, l: Langue) =>
+  l === "fr" ? m.coupes : MORPHO_COUPES[m.lettre] ?? m.coupes;
+
 /* La maison : seules les mentions se traduisent, jamais l'adresse ni le
  * numéro. */
 export const maison = (l: Langue) =>
@@ -76,4 +81,6 @@ export const robeLigne = (r: Robe, l: Langue) =>
 export const robeRegard = (r: Robe, l: Langue) =>
   l === "fr" ? r.regard : ROBE_EN[r.slug]?.regard ?? r.regard;
 
-
+/* La FAQ : même ordre, mêmes engagements, deux langues. */
+export const faq = (l: Langue): { q: string; r: string }[] =>
+  l === "fr" ? FAQ.map((f) => ({ q: f.q, r: f.r })) : FAQ_EN;
