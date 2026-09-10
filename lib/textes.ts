@@ -109,6 +109,27 @@ const FR = {
   gabarit: {
     allerAuContenu: "Aller au contenu",
   },
+  fiche: {
+    laFiche: "La fiche",
+    silhouettes: "Les silhouettes qu’elle sert",
+    coupe: "La coupe",
+    maison: "La maison",
+    confection: "La confection",
+    surMesure: "Sur mesure, retouches incluses",
+    aPartirDe: "À partir de",
+    essayer: "L’essayer au showroom",
+    memeFamille: "Dans la même famille",
+    toutesLes: (pluriel: string) => `Toutes les ${pluriel}`,
+    toutesSilhouettes:
+      "Elle va à toutes les silhouettes — c’est rare, et c’est ce qui en fait une valeur sûre à l’essayage.",
+    silhouettesServies: (lettres: string) =>
+      `Elle est d’abord conseillée aux silhouettes ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
+  },
+  catalogue: {
+    nom: "Robes de mariée MADAMOON",
+    titre: "Nos robes de mariée",
+    robesDe: (pluriel: string) => `Robes ${pluriel}`,
+  },
   pied: {
     coupes: "Coupes",
     createurs: "Créateurs",
@@ -217,6 +238,27 @@ const EN: Textes = {
   },
   gabarit: {
     allerAuContenu: "Skip to content",
+  },
+  fiche: {
+    laFiche: "About",
+    silhouettes: "The body shapes it serves",
+    coupe: "Silhouette",
+    maison: "House",
+    confection: "Made to order",
+    surMesure: "Made to measure, alterations included",
+    aPartirDe: "From",
+    essayer: "Try it on at the showroom",
+    memeFamille: "In the same family",
+    toutesLes: (pluriel: string) => `All ${pluriel}`,
+    toutesSilhouettes:
+      "It suits every body shape — which is rare, and what makes it a safe bet at a fitting.",
+    silhouettesServies: (lettres: string) =>
+      `It is first recommended for the ${lettres} shapes. Nothing stops you trying it otherwise: a body shape opens paths, it closes none.`,
+  },
+  catalogue: {
+    nom: "MADAMOON wedding dresses",
+    titre: "Our wedding dresses",
+    robesDe: (pluriel: string) => `The ${pluriel}`,
   },
   pied: {
     coupes: "Silhouettes",

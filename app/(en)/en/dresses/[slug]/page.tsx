@@ -17,9 +17,10 @@ import { CoeurFiche } from "@/components/parcours/Coeur";
 import { epingleRobe, offreRobe } from "@/lib/schema";
 
 import PageRobe from "@/components/pages/PageRobe";
+import { robeLigne, robeRegard } from "@/lib/contenu";
 
 /*
- * La fiche d'une robe, en français.
+ * La fiche d'une robe, en anglais.
  *
  * La page ne porte plus que ce qui lui est propre : ses adresses
  * statiques et ses métadonnées. Le corps est commun aux deux langues.
@@ -49,10 +50,10 @@ export async function generateMetadata({
   });
 
   return {
-    title: `Robe de mariée ${robe.nom} — ${robe.ligne}`,
-    description: `${robe.nom} : ${robe.ligne.toLowerCase()}. ${robe.regard} À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
+    title: `${robe.nom} wedding dress — ${robeLigne(robe, "en")}`,
+    description: `${robe.nom}: ${robeLigne(robe, "en").toLowerCase()}. ${robeRegard(robe, "en")} To try on by appointment at the MADAMOON showroom, Paris 10e.`,
     alternates: {
-      canonical: `/robes/${robe.slug}`,
+      canonical: `/en/dresses/${robe.slug}`,
       languages: { fr: `/robes/${robe.slug}`, en: `/en/dresses/${robe.slug}` },
     },
     /*
@@ -81,5 +82,5 @@ export async function generateMetadata({
 }
 
 export default async function Fiche({ params }: { params: Promise<{ slug: string }> }) {
-  return <PageRobe params={params} langue="fr" />;
+  return <PageRobe params={params} langue="en" />;
 }
