@@ -7,6 +7,9 @@ import { CREATEURS, ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import { mouvementReduit, surDefilement } from "@/lib/mouvement";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
+import { createurOrigine } from "@/lib/contenu";
 
 /*
  * Les créateurs.
@@ -29,7 +32,9 @@ import { mouvementReduit, surDefilement } from "@/lib/mouvement";
  * commande pas.
  */
 
-export default function Createurs() {
+export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   const scene = useRef<HTMLDivElement>(null);
   const bande = useRef<HTMLDivElement>(null);
 
@@ -97,14 +102,14 @@ export default function Createurs() {
       className="bg-blanc py-[clamp(4rem,8vw,8rem)]"
     >
       <div className="gouttiere">
-        <p className="legende">Les créateurs</p>
+        <p className="legende">{L.createurs.legende}</p>
         <span data-ligne className="mt-4 block">
           <h2 id="createurs" className="phrase">
-            Cinq maisons. Aucune par hasard.
+            {L.createurs.titre}
           </h2>
         </span>
         <p className="texte mesure-l mt-4">
-          {maisons.map(({ c }) => c.origine).join(", ")} — retenues une robe à la fois.
+          {maisons.map(({ c }) => createurOrigine(c, langue)).join(", ")} — {L.createurs.suite}
         </p>
       </div>
 
@@ -135,7 +140,7 @@ export default function Createurs() {
                   <span className="block font-serif text-[clamp(1.0625rem,1.5vw,1.375rem)] leading-tight text-encre transition-colors duration-700 group-hover:text-action">
                     {c.nom}
                   </span>
-                  <span className="legende mt-2 block text-brume">{c.origine}</span>
+                  <span className="legende mt-2 block text-brume">{createurOrigine(c, langue)}</span>
                 </figcaption>
               </Link>
             </figure>

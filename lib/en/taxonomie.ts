@@ -87,3 +87,9 @@ export const MAISON_EN = {
   /* Le prix reste en euros : c'est la monnaie de la boutique. */
   prixDepart: "€1,500",
 };
+
+/* La distinction que la maison met en avant, telle qu'elle se dit en
+ * anglais. Le rang « 10e arrondissement » ne se traduit pas : c'est une
+ * adresse parisienne, et une mariée qui vient l'a déjà lue ainsi. */
+export const DISTINCTION_EN =
+  "The only wedding dress boutique rated 5 stars in the 10th arrondissement.";

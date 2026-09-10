@@ -1,8 +1,14 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "@/components/Lien";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
+import { langueDe } from "@/lib/langue";
+import { t } from "@/lib/textes";
+import { coupeNom, maison } from "@/lib/contenu";
 
 /*
  * Le pied de page.
@@ -10,15 +16,22 @@ import { media as chemin } from "@/lib/chemin";
  * Il ne cherche pas à retenir : il range. Quatre colonnes de liens fins,
  * les coordonnées de la maison, et le maillage interne dont le
  * référencement a besoin — sans un paragraphe de plus.
+ *
+ * Il lit la langue sur l'adresse : posé par le gabarit, il ne reçoit
+ * rien de la page. C'est ce qui l'a fait passer côté client — il n'était
+ * que des liens, qui le sont déjà.
  */
 
 export default function Pied() {
+  const l = langueDe(usePathname() ?? "/");
+  const L = t(l);
+  const M = maison(l);
   return (
     <footer className="gouttiere border-t border-fil bg-blanc pb-10 pt-[clamp(3rem,5vw,4.5rem)]">
       {/* Deux colonnes avant mille vingt-quatre pixels, quatre au-delà.
-        * À quatre dès sept cent soixante-huit, la colonne du rendez-vous
-        * était plus étroite que son bouton — celui-ci ne se coupe pas, et
-        * la page gagnait seize pixels de défilement latéral. */}
+       * À quatre dès sept cent soixante-huit, la colonne du rendez-vous
+       * était plus étroite que son bouton — celui-ci ne se coupe pas, et
+       * la page gagnait seize pixels de défilement latéral. */}
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -29,7 +42,7 @@ export default function Pied() {
             height={56}
             className="h-[1.05rem] w-auto"
           />
-          <p className="texte mesure mt-5">{MAISON.baseline}.</p>
+          <p className="texte mesure mt-5">{M.baseline}.</p>
           <ul className="mt-5 flex gap-5">
             {MAISON.reseaux.map((r) => (
               <li key={r.label}>
@@ -46,21 +59,21 @@ export default function Pied() {
           </ul>
         </div>
 
-        <nav aria-label="Coupes">
-          <h2 className="legende">Coupes</h2>
+        <nav aria-label={L.pied.coupes}>
+          <h2 className="legende">{L.pied.coupes}</h2>
           <ul className="mt-4 flex flex-col gap-2">
             {COUPES.map((s) => (
               <li key={s.ancre}>
                 <Link href={`/coupes/${s.ancre}`} className="texte souligne">
-                  Robe de mariée {s.nom.toLowerCase()}
+                  {L.pied.robeDeMariee} {coupeNom(s, l).toLowerCase()}
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <nav aria-label="Créateurs">
-          <h2 className="legende">Créateurs</h2>
+        <nav aria-label={L.pied.createurs}>
+          <h2 className="legende">{L.pied.createurs}</h2>
           <ul className="mt-4 flex flex-col gap-2">
             {CREATEURS.map((c) => (
               <li key={c.nom}>
@@ -73,7 +86,7 @@ export default function Pied() {
         </nav>
 
         <div>
-          <h2 className="legende">Le showroom</h2>
+          <h2 className="legende">{L.pied.showroom}</h2>
           <address className="texte mt-4 not-italic">
             {MAISON.adresse}
             <br />
@@ -88,14 +101,14 @@ export default function Pied() {
             </a>
           </address>
           <AppelRendezvous className="bouton mt-6">
-            Prendre rendez-vous
+            {L.pied.rendezvous}
           </AppelRendezvous>
         </div>
       </div>
 
       <div className="filet mt-12" />
       <p className="mention mt-6 text-plomb">
-        © {new Date().getFullYear()} {MAISON.nom} — Boutique de robes de mariée à Paris
+        © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
       </p>
     </footer>
   );

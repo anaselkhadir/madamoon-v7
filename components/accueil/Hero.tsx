@@ -9,6 +9,8 @@ import Bandeau from "@/components/accueil/Bandeau";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import AppelElise from "@/components/AppelElise";
 import { altScene } from "@/lib/alt";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Le hero, relevé sur la référence.
@@ -30,7 +32,9 @@ const MOBILE = SCENES["hero-affiche-mobile"];
 const jeu = (media: { name: string }, ext: string, largeurs: readonly number[]) =>
   largeurs.map((w) => `${chemin(`/scenes/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
 
-export default function Hero() {
+export default function Hero({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   const video = useRef<HTMLVideoElement>(null);
   const [charge, setCharge] = useState(false);
   const [prete, setPrete] = useState(false);
@@ -141,7 +145,7 @@ export default function Hero() {
           sizes="100vw"
           width={DESKTOP.w}
           height={DESKTOP.h}
-          alt={altScene("Une mariée en robe de dentelle")}
+          alt={altScene(L.hero.alt)}
           fetchPriority="high"
           decoding="sync"
           className="absolute inset-0 h-full w-full object-cover"
@@ -215,9 +219,9 @@ export default function Hero() {
         */}
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-md:text-center md:max-w-[53vw] md:min-w-[16rem]">
-          <h1 className="affiche text-blanc">Vous vous mariez bientôt ?</h1>
+          <h1 className="affiche text-blanc">{L.hero.titre}</h1>
           <p className="accroche mt-6 text-blanc">
-            Robes de mariée, essayage privé — Paris 10<sup>e</sup>
+            {L.hero.accroche}<sup>e</sup>
           </p>
 
           {/* Grand écran : côte à côte, calés sur la gouttière.
@@ -232,10 +236,8 @@ export default function Hero() {
             * la navigation et que le bas de page — le site n'a qu'une
             * porte pour le rendez-vous. */}
           <div className="mt-6 hidden flex-wrap items-center gap-3 md:flex">
-            <AppelElise className="bouton">Trouver ma robe</AppelElise>
-            <AppelRendezvous className="bouton-clair">
-              Prendre rendez-vous
-            </AppelRendezvous>
+            <AppelElise className="bouton">{L.hero.trouverMaRobe}</AppelElise>
+            <AppelRendezvous className="bouton-clair">{L.hero.prendreRendezvous}</AppelRendezvous>
           </div>
 
           {/* Téléphone : l'un sous l'autre, au centre, et l'ordre inversé.
@@ -245,9 +247,9 @@ export default function Hero() {
             * poids. Le souligné est en dur, pas au survol — il n'y a pas
             * de survol sous le pouce. */}
           <div className="mt-8 flex flex-col items-center gap-5 md:hidden">
-            <AppelRendezvous className="bouton">Prendre rendez-vous</AppelRendezvous>
+            <AppelRendezvous className="bouton">{L.hero.prendreRendezvous}</AppelRendezvous>
             <AppelElise className="accroche text-blanc underline decoration-1 underline-offset-[6px]">
-              Trouver ma robe
+              {L.hero.trouverMaRobe}
             </AppelElise>
           </div>
         </div>
@@ -258,7 +260,7 @@ export default function Hero() {
         <button
           type="button"
           onClick={basculer}
-          aria-label={joue ? "Mettre la vidéo en pause" : "Reprendre la vidéo"}
+          aria-label={joue ? L.hero.pause : L.hero.reprendre}
           className="absolute bottom-6 left-[var(--gouttiere)] flex h-8 w-8 items-center justify-center text-blanc/80 transition-colors duration-500 hover:text-blanc"
         >
           <span aria-hidden="true">
@@ -274,7 +276,7 @@ export default function Hero() {
         </button>
       )}
 
-      <Bandeau />
+      <Bandeau langue={langue} />
     </section>
   );
 }

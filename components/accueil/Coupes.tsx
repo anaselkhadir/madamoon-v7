@@ -9,6 +9,9 @@ import { ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altCoupe } from "@/lib/alt";
 import { mouvementReduit, surDefilement } from "@/lib/mouvement";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
+import { coupeNom, coupeNote, coupePluriel } from "@/lib/contenu";
 
 /*
  * Les coupes.
@@ -43,7 +46,9 @@ import { mouvementReduit, surDefilement } from "@/lib/mouvement";
  * passer en entrant et en sortant. */
 const MARGE = 0.08;
 
-export default function Coupes() {
+export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   const piste = useRef<HTMLDivElement>(null);
   const [rang, setRang] = useState(0);
   /* La coupe choisie à la main. Tant qu'elle existe, le défilement
@@ -154,14 +159,14 @@ export default function Coupes() {
 
             {/* ————————————————————————————— les noms ————— */}
             <div className="gouttiere lg:pl-0">
-              <p className="legende">Les coupes</p>
+              <p className="legende">{L.coupes.legende}</p>
               <span data-ligne className="mt-4 block">
                 <h2 id="coupes" className="phrase">
-                  Une même femme, six lignes.
+                  {L.coupes.titre}
                 </h2>
               </span>
               <p className="texte mesure mt-4">
-                C&apos;est la coupe qui décide de la ligne, bien avant la taille.
+                {L.coupes.texte}
               </p>
 
               <ul className="mt-[clamp(0.75rem,3svh,2.75rem)] flex flex-col">
@@ -184,7 +189,7 @@ export default function Coupes() {
                         i === actif ? "text-encre" : "text-fil hover:text-brume"
                       }`}
                     >
-                      {c.nom}
+                      {coupeNom(c, langue)}
                     </button>
                   </li>
                 ))}
@@ -201,13 +206,13 @@ export default function Coupes() {
                     }`}
                     aria-hidden={i !== actif || undefined}
                   >
-                    <p className="texte">{c.note}</p>
+                    <p className="texte">{coupeNote(c, langue)}</p>
                     <Link
                       href={`/coupes/${c.ancre}`}
                       tabIndex={i === actif ? undefined : -1}
                       className="lien-nav souligne mt-3 inline-block text-action"
                     >
-                      Les {PLURIEL[c.nom]}
+                      {L.coupes.les} {coupePluriel(c.nom, langue)}
                     </Link>
                   </div>
                 ))}
@@ -218,7 +223,7 @@ export default function Coupes() {
       </div>
 
       <span className="sr-only" aria-live="polite">
-        Coupe présentée : {courante.nom}
+        {L.coupes.presentee} : {coupeNom(courante, langue)}
       </span>
 
       {/* —————————————————————————— au doigt ——————————————————————————
@@ -237,10 +242,10 @@ export default function Coupes() {
         <div className="gouttiere pt-[clamp(3rem,8vw,4rem)]">
           <p className="legende">Les coupes</p>
           <span data-ligne className="mt-4 block">
-            <p className="phrase">Une même femme, six lignes.</p>
+            <p className="phrase">{L.coupes.titre}</p>
           </span>
           <p className="texte mt-4">
-            C&apos;est la coupe qui décide de la ligne, bien avant la taille.
+            {L.coupes.texte}
           </p>
         </div>
 
@@ -258,14 +263,14 @@ export default function Coupes() {
                 media={media}
                 dossier="robes"
                 alt={altCoupe(c.nom)}
-                nom={c.nom}
-                note={c.note}
+                nom={coupeNom(c, langue)}
+                note={coupeNote(c, langue)}
                 sizes="46vw"
               />
             ))}
           </div>
           <Link href="/coupes" className="lien-nav souligne mt-8 inline-block text-action">
-            Toutes les coupes
+            {L.coupes.lien}
           </Link>
         </div>
       </div>

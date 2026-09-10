@@ -1,7 +1,10 @@
 import Link from "@/components/Lien";
 import { AVIS, DISTINCTION, NOTE } from "@/lib/avis";
+import { DISTINCTION_EN } from "@/lib/en/taxonomie";
 import { ID_MAISON } from "@/lib/schema";
 import { typographie } from "@/lib/francais";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Ce qu'elles en disent.
@@ -33,7 +36,9 @@ import { typographie } from "@/lib/francais";
  * vient de `lib/avis.ts`, mot pour mot. */
 const CHOIX = ["Gwendoline Carrier", "Julia JF"];
 
-export default function Avis() {
+export default function Avis({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   const voix = CHOIX.map((nom) => AVIS.find((a) => a.auteur === nom)).filter(
     (a): a is (typeof AVIS)[number] => Boolean(a)
   );
@@ -72,7 +77,7 @@ export default function Avis() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
 
-      <p className="legende">Ce qu&apos;elles en disent</p>
+      <p className="legende">{L.avis.legende}</p>
 
       {/* La note. Le chiffre est posé à gauche, ce qu'il vaut à droite. */}
       <div className="mt-[clamp(2rem,4vw,3rem)] grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-5 md:grid-cols-[auto_1fr] md:items-start">
@@ -83,7 +88,7 @@ export default function Avis() {
           * « 5,0 5,0 sur 5 ». */}
         <h2
           id="avis"
-          aria-label={`${moyenne} sur 5, sur ${NOTE.nombre} avis ${NOTE.source}`}
+          aria-label={`${moyenne} / 5 — ${L.avis.sur} ${NOTE.nombre} ${L.avis.avisGoogle}`}
           className="md:min-w-[8rem]"
         >
           <span className="block font-serif text-[clamp(5rem,12vw,11rem)] leading-[0.78] text-encre">
@@ -94,9 +99,9 @@ export default function Avis() {
 
         <div className="md:pt-[clamp(0.5rem,1.5vw,1.5rem)]">
           <p className="accroche text-encre">
-            Sur {NOTE.nombre} avis {NOTE.source}
+            {L.avis.sur} {NOTE.nombre} {L.avis.avisGoogle}
           </p>
-          <p className="texte mesure mt-3">{DISTINCTION}</p>
+          <p className="texte mesure mt-3">{langue === "fr" ? DISTINCTION : DISTINCTION_EN}</p>
         </div>
       </div>
 
@@ -124,7 +129,7 @@ export default function Avis() {
 
       <p className="mt-[clamp(2.5rem,5vw,4rem)] border-t border-fil pt-6">
         <Link href={NOTE.url} className="lien-nav souligne text-action">
-          Les {NOTE.nombre} avis {NOTE.source}
+          {L.avis.lesAvis} {NOTE.nombre} {L.avis.avisGoogle}
         </Link>
       </p>
     </section>

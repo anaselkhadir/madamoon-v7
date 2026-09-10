@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "@/components/Lien";
+import { usePathname } from "next/navigation";
 import { useCoupsDeCoeur } from "@/lib/coupsDeCoeur";
+import { langueDe } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Le panier des coups de cœur, en haut à droite.
@@ -22,18 +25,17 @@ import { useCoupsDeCoeur } from "@/lib/coupsDeCoeur";
 export default function Panier() {
   const liste = useCoupsDeCoeur();
   const n = liste.length;
+  const L = t(langueDe(usePathname() ?? "/"));
 
   return (
     <Link
       href="/coups-de-coeur"
       aria-label={
-        n === 0
-          ? "Vos coups de cœur, vide pour l'instant"
-          : `Vos coups de cœur, ${n} robe${n > 1 ? "s" : ""}`
+        n === 0 ? L.panier.vide : n === 1 ? L.panier.pleinUn : L.panier.plein(n)
       }
       /* Le trait fait dix-sept pixels de haut : la zone touchée, elle,
-        * doit rester visable au pouce. Le rembourrage part vers la
-        * gauche et vers le bas, pour ne pas déplacer le cœur du bord. */
+       * doit rester visable au pouce. Le rembourrage part vers la
+       * gauche et vers le bas, pour ne pas déplacer le cœur du bord. */
       className="lien-nav flex shrink-0 items-center gap-1.5 py-3 pl-3 transition-opacity duration-500 hover:opacity-70"
     >
       <svg
@@ -48,7 +50,7 @@ export default function Panier() {
         <path d="M12 20.7 4.6 13.3a4.6 4.6 0 0 1 0-6.5 4.6 4.6 0 0 1 6.5 0l.9.9.9-.9a4.6 4.6 0 0 1 6.5 0 4.6 4.6 0 0 1 0 6.5Z" />
       </svg>
       {/* Le nombre, en chiffres tabulaires : il ne fait pas sautiller la
-        * barre en passant de 9 à 10. */}
+       * barre en passant de 9 à 10. */}
       {n > 0 && <span className="tabular-nums">{n}</span>}
     </Link>
   );

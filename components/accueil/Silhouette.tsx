@@ -4,6 +4,9 @@ import RailFleches from "@/components/accueil/RailFleches";
 import { MORPHOLOGIES, ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
+import { morphoNom, morphoSilhouette } from "@/lib/contenu";
 
 /*
  * La silhouette.
@@ -25,7 +28,9 @@ import { altRobe } from "@/lib/alt";
  * Aucun script : un rail est du défilement, et le navigateur sait faire.
  */
 
-export default function Silhouette() {
+export default function Silhouette({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   const scenes = MORPHOLOGIES.map((m) => {
     const robe = ROBES.find((r) => r.slug === m.ouverture.robe);
     const media = robe ? vues(robe.slug)[m.ouverture.vue - 1] : undefined;
@@ -44,15 +49,14 @@ export default function Silhouette() {
       className="relative z-10 bg-blanc pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,8vw,7rem)]"
     >
       <div className="gouttiere">
-        <p className="legende">La silhouette</p>
+        <p className="legende">{L.silhouette.legende}</p>
         <span data-ligne className="mt-4 block">
           <h2 id="silhouette" className="phrase mesure-l">
-            Avant la robe, la ligne.
+            {L.silhouette.titre}
           </h2>
         </span>
         <p className="texte mesure-l mt-4">
-          Six silhouettes, et pour chacune les coupes qui l&apos;allongent,
-          l&apos;équilibrent ou la révèlent.
+          {L.silhouette.texte}
         </p>
       </div>
 
@@ -95,9 +99,9 @@ export default function Silhouette() {
                 </span>
               </div>
               <p className="nom-carte mt-4 text-[1.0625rem] transition-colors duration-500 group-hover:text-action">
-                {m.nom}
+                {morphoNom(m, langue)}
               </p>
-              <p className="texte mt-1">{m.silhouette}</p>
+              <p className="texte mt-1">{morphoSilhouette(m, langue)}</p>
             </Link>
           </li>
         ))}
@@ -105,7 +109,7 @@ export default function Silhouette() {
 
       <div className="gouttiere flex items-center justify-between gap-6 pt-[clamp(1.5rem,3vw,2.5rem)]">
         <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
-          Les six morphologies
+          {L.silhouette.lien}
         </Link>
         <RailFleches cible="rail-silhouette" />
       </div>

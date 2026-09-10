@@ -2,6 +2,8 @@ import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import { SCENES } from "@/lib/medias";
 import { altScene } from "@/lib/alt";
+import type { Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Le showroom.
@@ -21,7 +23,9 @@ import { altScene } from "@/lib/alt";
  * la photographie, il tient le texte lisible dans son coin.
  */
 
-export default function Showroom() {
+export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
+  const L = t(langue);
+
   return (
     <section
       aria-labelledby="showroom"
@@ -31,7 +35,7 @@ export default function Showroom() {
         <Photo
           media={SCENES["seuil"]}
           dossier="scenes"
-          alt={altScene("L'entrée du showroom MADAMOON, rue du Faubourg Saint-Martin")}
+          alt={altScene(L.showroom.alt)}
           sizes="100vw"
           position="50% 42%"
           className="h-full w-full object-cover"
@@ -48,10 +52,10 @@ export default function Showroom() {
       />
 
       <div className="gouttiere absolute inset-x-0 bottom-0 pb-[clamp(3rem,7vw,6rem)]">
-        <p className="legende text-blanc/70">Le showroom — Paris 10<sup>e</sup></p>
+        <p className="legende text-blanc/70">{L.showroom.legende}<sup>e</sup></p>
         <span data-ligne className="mt-4 block">
           <h2 id="showroom" className="affiche max-w-[18ch] text-blanc">
-            Poussez la porte
+            {L.showroom.titre}
           </h2>
         </span>
         <p className="accroche mesure-l mt-5 text-blanc">
@@ -59,7 +63,7 @@ export default function Showroom() {
           chaque robe.
         </p>
         <Link href="/showroom" className="bouton-clair mt-7">
-          Découvrir le showroom
+          {L.showroom.lien}
         </Link>
       </div>
     </section>

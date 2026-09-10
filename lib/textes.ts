@@ -78,6 +78,7 @@ const FR = {
     texte: "C’est la coupe qui décide de la ligne, bien avant la taille.",
     lien: "Toutes les coupes",
     presentee: "Coupe présentée",
+    les: "Les",
   },
   createurs: {
     legende: "Les créateurs",
@@ -105,8 +106,16 @@ const FR = {
     legende: "Votre essayage privé",
     bouton: "Prendre rendez-vous",
   },
+  gabarit: {
+    allerAuContenu: "Aller au contenu",
+  },
   pied: {
+    coupes: "Coupes",
     createurs: "Créateurs",
+    showroom: "Le showroom",
+    robeDeMariee: "Robe de mariée",
+    rendezvous: "Prendre rendez-vous",
+    droits: "Boutique de robes de mariée à Paris",
   },
 };
 
@@ -178,6 +187,7 @@ const EN: Textes = {
     texte: "It is the cut that decides the line, long before the size.",
     lien: "All silhouettes",
     presentee: "Silhouette shown",
+    les: "All",
   },
   createurs: {
     legende: "The designers",
@@ -205,8 +215,16 @@ const EN: Textes = {
     legende: "Your private fitting",
     bouton: "Book an appointment",
   },
+  gabarit: {
+    allerAuContenu: "Skip to content",
+  },
   pied: {
+    coupes: "Silhouettes",
     createurs: "Designers",
+    showroom: "The showroom",
+    robeDeMariee: "Wedding dress",
+    rendezvous: "Book an appointment",
+    droits: "Bridal boutique in Paris",
   },
 };
 
