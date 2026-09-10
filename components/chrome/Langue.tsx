@@ -2,7 +2,7 @@
 
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
-import { autreLangue, langueDe } from "@/lib/langue";
+import { autreLangue, estTraduite, langueDe, versFrancais } from "@/lib/langue";
 
 /*
  * Le commutateur de langue, à côté des coups de cœur.
@@ -25,6 +25,11 @@ export default function Langue() {
   const chemin = usePathname() ?? "/";
   const courante = langueDe(chemin);
   const autre = autreLangue(chemin);
+
+  /* Tant que l'anglais se construit page par page, le commutateur ne
+   * paraît que là où l'autre langue existe : proposer une bascule qui
+   * mène à une erreur est pire que ne rien proposer. */
+  if (!estTraduite(versFrancais(chemin))) return null;
 
   return (
     <p className="lien-nav flex shrink-0 items-center gap-1.5 py-3">

@@ -11,6 +11,7 @@ import {
   FAMILLE,
   MAISON_EN,
 } from "@/lib/en/taxonomie";
+import { ROBE_EN } from "@/lib/en/robes";
 import {
   MORPHO_NOM,
   MORPHO_OBJECTIF,
@@ -66,14 +67,13 @@ export const maison = (l: Langue) =>
     ? MAISON
     : { ...MAISON, ...MAISON_EN };
 
-/* Les robes : la ligne et le regard viennent des fiches. Tant que la
- * table anglaise n'est pas écrite, on rend le français plutôt que rien
- * — une fiche vide serait pire qu'une fiche à traduire. */
+/* Les robes : la ligne et le regard viennent des fiches. Le repli sur le
+ * français vaut pour une robe ajoutée dont l'anglais n'est pas encore
+ * écrit — une fiche vide serait pire qu'une fiche à traduire. */
 export const robeLigne = (r: Robe, l: Langue) =>
   l === "fr" ? r.ligne : ROBE_EN[r.slug]?.ligne ?? r.ligne;
 
 export const robeRegard = (r: Robe, l: Langue) =>
   l === "fr" ? r.regard : ROBE_EN[r.slug]?.regard ?? r.regard;
 
-/* Rempli à l'étape suivante, fiche par fiche. */
-export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {};
+

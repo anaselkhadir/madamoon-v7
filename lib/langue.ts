@@ -106,3 +106,21 @@ export function autreLangue(adresse: string): { langue: Langue; adresse: string 
     ? { langue: "fr", adresse: versFrancais(adresse) }
     : { langue: "en", adresse: versLangue(adresse, "en") };
 }
+
+/*
+ * Ce qui existe en anglais.
+ *
+ * La traduction se fait par étapes, et le site est en ligne pendant ce
+ * temps. Cette liste dit ce qui est prêt : le commutateur ne s'affiche
+ * que là, plutôt que de promettre une page et rendre une erreur.
+ *
+ * Elle disparaîtra quand les deux arbres seront complets — d'ici là,
+ * elle est la seule chose à tenir à jour en ajoutant une page anglaise.
+ */
+export const TRADUITES = new Set<string>(["/"]);
+
+/** Vrai si la page a sa version anglaise. */
+export function estTraduite(adresseFr: string): boolean {
+  const chemin = adresseFr.split(/(?=[?#])/, 2)[0].replace(/\/+$/, "") || "/";
+  return TRADUITES.has(chemin);
+}
