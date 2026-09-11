@@ -67,7 +67,6 @@ export default function PageRobes({ langue }: { langue: Langue }) {
         <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
           {COUPES.map((s, i) => {
             const media = vues(s.robe)[s.vue - 1];
-            const vedette = ROBES.find((r) => r.slug === s.robe);
             if (!media) return null;
             return (
               <Tuile
@@ -76,7 +75,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
                 href={`#${s.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={vedette ? altRobe(vedette, langue, s.vue) : altCoupe(s.nom, langue)}
+                alt={altCoupe(s.nom, langue)}
                 nom={coupeNom(s, langue)}
                 note={coupeNote(s, langue)}
                 priorite={i < 3}

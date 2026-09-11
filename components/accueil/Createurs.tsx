@@ -108,9 +108,7 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
             {L.createurs.titre}
           </h2>
         </span>
-        <p className="texte mesure-l mt-4">
-          {maisons.map(({ c }) => createurOrigine(c, langue)).join(", ")} — {L.createurs.suite}
-        </p>
+        <p className="texte mesure-l mt-4">{L.createurs.lieux}</p>
       </div>
 
       {/* La bande. Elle déborde volontairement à droite : c'est ce débord

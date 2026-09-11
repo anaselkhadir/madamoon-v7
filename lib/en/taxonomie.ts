@@ -51,7 +51,7 @@ export const COUPE_NOTE: Record<Categorie, string> = {
   Princesse: "Refined and stately",
   Fluide: "Soft and light",
   Trapèze: "True and timeless",
-  Minimaliste: "Clean and quiet",
+  Minimaliste: "Clean and pared back",
   "Deux en un": "Two looks, one dress",
 };
 

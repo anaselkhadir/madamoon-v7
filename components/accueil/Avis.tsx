@@ -1,6 +1,5 @@
 import Link from "@/components/Lien";
-import { AVIS, DISTINCTION, NOTE } from "@/lib/avis";
-import { DISTINCTION_EN } from "@/lib/en/taxonomie";
+import { AVIS, NOTE } from "@/lib/avis";
 import { ID_MAISON } from "@/lib/schema";
 import { typographie } from "@/lib/francais";
 import type { Langue } from "@/lib/langue";
@@ -88,7 +87,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
           * « 5,0 5,0 sur 5 ». */}
         <h2
           id="avis"
-          aria-label={`${moyenne} / 5 — ${L.avis.sur} ${NOTE.nombre} ${L.avis.avisGoogle}`}
+          aria-label={`${moyenne} / 5 — ${L.avis.experience}`}
           className="md:min-w-[8rem]"
         >
           <span className="block font-serif text-[clamp(5rem,12vw,11rem)] leading-[0.78] text-encre">
@@ -98,10 +97,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
         </h2>
 
         <div className="md:pt-[clamp(0.5rem,1.5vw,1.5rem)]">
-          <p className="accroche text-encre">
-            {L.avis.sur} {NOTE.nombre} {L.avis.avisGoogle}
-          </p>
-          <p className="texte mesure mt-3">{langue === "fr" ? DISTINCTION : DISTINCTION_EN}</p>
+          <p className="accroche text-encre">{L.avis.experience}</p>
         </div>
       </div>
 
@@ -129,7 +125,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
 
       <p className="mt-[clamp(2.5rem,5vw,4rem)] border-t border-fil pt-6">
         <Link href={NOTE.url} className="lien-nav souligne text-action">
-          {L.avis.lesAvis} {NOTE.nombre} {L.avis.avisGoogle}
+          {L.avis.lesAvis}
         </Link>
       </p>
     </section>

@@ -51,16 +51,22 @@ export const COUPES: Coupe[] = [
   {
     nom: "Minimaliste",
     ancre: "minimaliste",
-    note: "Nette et silencieuse",
-    robe: "amaryllis",
+    note: "Nette et épurée",
+    /* Marie porte la coupe fluide au catalogue : c'est sa photographie
+     * que la maison veut ici, pour l'épure. La description de l'image
+     * nomme donc la coupe et non la robe — sans quoi elle annoncerait
+     * « fluide » sur la carte du minimalisme. */
+    robe: "marie",
     vue: 1,
   },
   {
     nom: "Deux en un",
     ancre: "deux-en-un",
     note: "Deux allures, une robe",
+    /* La troisième vue, celle où la surjupe se voit : sur la première,
+     * Tessa est un fourreau et la promesse ne se lit pas. */
     robe: "tessa",
-    vue: 1,
+    vue: 3,
     ouverture: { robe: "tessa", vue: 1 },
   },
 ];

@@ -75,21 +75,28 @@ const FR = {
   coupes: {
     legende: "Les coupes",
     titre: "Une même femme, six lignes.",
-    texte: "C’est la coupe qui décide de la ligne, bien avant la taille.",
+    texte: "La coupe, c’est la forme de la robe. En voici six.",
     lien: "Toutes les coupes",
     presentee: "Coupe présentée",
     les: "Les",
   },
   createurs: {
     legende: "Les créateurs",
-    titre: "Cinq maisons. Aucune par hasard.",
-    suite: "retenues une robe à la fois.",
+    titre: "Plusieurs maisons. Aucune par hasard.",
+    /* La phrase est écrite, non composée à partir des maisons montrées :
+     * leur nombre change avec les collections, et la ligne n'a pas à
+     * être reprise chaque fois. */
+    lieux:
+      "Biarritz, Newport Beach, Rome, Dallas, Barcelone — les plus belles robes des collections nuptiales, choisies une par une pour vous.",
   },
   avis: {
     legende: "Ce qu’elles en disent",
-    sur: "Sur",
-    avisGoogle: "avis Google",
-    lesAvis: "Les",
+    /* Ni le nombre d'avis ni le rang dans l'arrondissement : la maison
+     * ne veut pas d'un chiffre qu'il faut tenir à jour, ni d'une
+     * comparaison. La note reste, le décompte passe dans les données
+     * structurées — invisible à la lecture, lu par Google. */
+    experience: "MADAMOON n’est pas une simple boutique à visiter, c’est une expérience à vivre.",
+    lesAvis: "Voir les avis Google",
   },
   showroom: {
     legende: "Le showroom — Paris 10",
@@ -491,21 +498,21 @@ const EN: Textes = {
   coupes: {
     legende: "The silhouettes",
     titre: "One woman, six lines.",
-    texte: "It is the cut that decides the line, long before the size.",
+    texte: "The cut is the shape of the dress. Here are six.",
     lien: "All silhouettes",
     presentee: "Silhouette shown",
     les: "All",
   },
   createurs: {
     legende: "The designers",
-    titre: "Five houses. None by chance.",
-    suite: "chosen one dress at a time.",
+    titre: "Several houses. None by chance.",
+    lieux:
+      "Biarritz, Newport Beach, Rome, Dallas, Barcelona — the finest dresses of the bridal collections, chosen one by one for you.",
   },
   avis: {
     legende: "What they say",
-    sur: "From",
-    avisGoogle: "Google reviews",
-    lesAvis: "The",
+    experience: "MADAMOON is not simply a boutique to visit — it is an experience to live.",
+    lesAvis: "See the Google reviews",
   },
   showroom: {
     legende: "The showroom — Paris 10",
