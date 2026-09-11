@@ -122,11 +122,17 @@ export function autreLangue(adresse: string): { langue: Langue; adresse: string 
  * Elle disparaîtra quand les deux arbres seront complets — d'ici là,
  * elle est la seule chose à tenir à jour en ajoutant une page anglaise.
  */
-export const TRADUITES = new Set<string>(["/", "/robes"]);
+export const TRADUITES = new Set<string>([
+  "/",
+  "/robes",
+  "/coupes",
+  "/morphologies",
+  "/coups-de-coeur",
+]);
 
 /* Les familles d'adresses entièrement traduites : toutes les fiches
  * robes plutôt que soixante lignes. */
-const PREFIXES_TRADUITS = ["/robes/"];
+const PREFIXES_TRADUITS = ["/robes/", "/coupes/", "/morphologies/", "/createurs/"];
 
 /** Vrai si la page a sa version anglaise. */
 export function estTraduite(adresseFr: string): boolean {

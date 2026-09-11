@@ -5,6 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import Photo from "@/components/media/Photo";
 import { mouvementReduit, surDefilement } from "@/lib/mouvement";
 import type { Media } from "@/lib/medias";
+import type { Categorie } from "@/lib/madamoon";
+import { bas } from "@/lib/contenu";
+import { t } from "@/lib/textes";
+import type { Langue } from "@/lib/langue";
 
 /*
  * La robe qui reste.
@@ -37,7 +41,11 @@ import type { Media } from "@/lib/medias";
  */
 
 export type Station = {
+  /* Le nom affiché, déjà dans la langue de la page. */
   nom: string;
+  /* La catégorie française, celle des données : le nom ne sert plus de
+   * clef dès lors qu'il se traduit. */
+  categorie: Categorie;
   ancre: string;
   pourquoi: string;
   media: Media;
@@ -46,7 +54,14 @@ export type Station = {
   robes: { slug: string; nom: string; ligne: string }[];
 };
 
-export default function CoupesFixes({ stations }: { stations: Station[] }) {
+export default function CoupesFixes({
+  stations,
+  langue,
+}: {
+  stations: Station[];
+  langue: Langue;
+}) {
+  const L = t(langue).pages.morpho;
   const [active, setActive] = useState(0);
   const scene = useRef<HTMLDivElement>(null);
   const image = useRef<HTMLDivElement>(null);
@@ -189,10 +204,10 @@ export default function CoupesFixes({ stations }: { stations: Station[] }) {
                       <span className="phrase text-[1.125rem] text-encre transition-colors duration-500 group-hover:text-action">
                         {r.nom}
                       </span>
-                      <span className="texte"> — {r.ligne.toLowerCase()}</span>
+                      <span className="texte"> — {bas(r.ligne, langue)}</span>
                     </span>
                     <span aria-hidden="true" className="legende shrink-0 text-brume">
-                      Voir
+                      {L.voir}
                     </span>
                   </Link>
                 </li>
@@ -203,7 +218,7 @@ export default function CoupesFixes({ stations }: { stations: Station[] }) {
               href={`/coupes/${s.ancre}`}
               className="lien-nav souligne mt-6 self-start text-action"
             >
-              Toutes nos robes {s.nom.toLowerCase()}
+              {L.toutesNosRobes(bas(s.nom, langue))}
             </Link>
           </div>
         ))}

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import PageMorphologie from "@/components/pages/PageMorphologie";
 import { MORPHOLOGIES, morphologieParSlug } from "@/lib/madamoon";
-import { EDITO } from "@/lib/morphologies";
+import { edito } from "@/lib/contenu";
 
+/* Les lettres ne se traduisent pas : /en/body-shapes/a comme
+ * /morphologies/a. C'est un repère, pas un mot. */
 export function generateStaticParams() {
   return MORPHOLOGIES.map((m) => ({ lettre: m.lettre.toLowerCase() }));
 }
@@ -15,20 +17,18 @@ export async function generateMetadata({
   const { lettre } = await params;
   const m = morphologieParSlug(lettre);
   if (!m) return {};
-  const e = EDITO[m.lettre];
+  const e = edito(m.lettre, "en");
   const slug = m.lettre.toLowerCase();
   return {
-    /* Le gabarit ajoute « — MADAMOON » : ne pas le redire ici. Et la
-     * lettre garde sa capitale — « silhouette en x » ne veut rien dire. */
-    title: `Robe de mariée pour une silhouette en ${m.lettre}`,
-    description: `${e.promesse} Comment reconnaître une silhouette en ${m.lettre}, les coupes qui la mettent en valeur et les modèles à essayer au showroom MADAMOON, Paris 10e.`,
+    title: `Wedding dresses for the ${m.lettre} body shape`,
+    description: `${e.promesse} How to recognise the ${m.lettre} shape, the cuts that suit it and the models to try on at the MADAMOON showroom, Paris 10e.`,
     alternates: {
-      canonical: `/morphologies/${slug}`,
+      canonical: `/en/body-shapes/${slug}`,
       languages: { fr: `/morphologies/${slug}`, en: `/en/body-shapes/${slug}` },
     },
   };
 }
 
-export default async function Morpho({ params }: { params: Promise<{ lettre: string }> }) {
-  return <PageMorphologie params={params} langue="fr" />;
+export default async function BodyShape({ params }: { params: Promise<{ lettre: string }> }) {
+  return <PageMorphologie params={params} langue="en" />;
 }

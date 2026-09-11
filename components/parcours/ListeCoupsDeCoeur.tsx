@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "@/components/Lien";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
@@ -10,6 +11,9 @@ import { ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import { ajouter, decoder, PARAM, useCoupsDeCoeur, vider } from "@/lib/coupsDeCoeur";
+import { robeLigne } from "@/lib/contenu";
+import { langueDe, type Langue } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Les coups de cœur.
@@ -39,7 +43,7 @@ function robesDe(slugs: readonly string[]) {
     .filter((r): r is (typeof ROBES)[number] => Boolean(r));
 }
 
-function Trame({ robes }: { robes: (typeof ROBES)[number][] }) {
+function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Langue }) {
   return (
     <div className="trame-tuiles mt-8 grid-cols-2 md:grid-cols-3">
       {robes.map((r, i) => {
@@ -55,7 +59,7 @@ function Trame({ robes }: { robes: (typeof ROBES)[number][] }) {
             dossier="robes"
             alt={altRobe(r)}
             nom={r.nom}
-            note={r.ligne}
+            note={robeLigne(r, langue)}
             repere={r.createur}
             priorite={i < 3}
             sizes="(max-width: 768px) 50vw, 31vw"
@@ -67,6 +71,8 @@ function Trame({ robes }: { robes: (typeof ROBES)[number][] }) {
 }
 
 export default function ListeCoupsDeCoeur() {
+  const langue = langueDe(usePathname() ?? "/");
+  const L = t(langue).coeurs;
   const mienne = useCoupsDeCoeur();
   const [monte, setMonte] = useState(false);
   const [recue, setRecue] = useState<readonly string[] | null>(null);
@@ -94,52 +100,42 @@ export default function ListeCoupsDeCoeur() {
       <>
         <TitreSection
           niveau={1}
-          titre="Une sélection partagée"
-          lien={{ href: "/robes", label: "Voir toutes les robes" }}
+          titre={L.selectionPartagee}
+          lien={{ href: "/robes", label: L.voirToutesLesRobes }}
         />
         <div className="gouttiere pb-[clamp(4rem,8vw,8rem)]">
           {robes.length === 0 ? (
             <>
-              <p className="texte mesure-l">
-                Ce lien ne désigne aucune robe que nous présentons encore. Le catalogue a
-                peut-être changé depuis qu&apos;il a été envoyé.
-              </p>
+              <p className="texte mesure-l">{L.lienPerime}</p>
               <Link href="/robes" className="bouton mt-8">
-                Voir les robes
+                {L.voirLesRobes}
               </Link>
             </>
           ) : (
             <>
               <p className="texte mesure-l">
-                {robes.length === 1
-                  ? "Une robe a été retenue pour vous."
-                  : `${robes.length} robes ont été retenues pour vous.`}{" "}
-                Elles s&apos;essaient ensemble, sur rendez-vous, au showroom.
+                {L.retenuePourVous(robes.length)} {L.essaientEnsemble}
               </p>
 
-              <Trame robes={robes} />
+              <Trame robes={robes} langue={langue} />
 
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-                <AppelRendezvous className="bouton">Prendre rendez-vous</AppelRendezvous>
+                <AppelRendezvous className="bouton">{L.prendreRendezvous}</AppelRendezvous>
                 <button
                   type="button"
                   onClick={() => ajouter(recue)}
                   disabled={toutes}
                   className="bouton-trait disabled:pointer-events-none disabled:opacity-40"
                 >
-                  {toutes ? "Déjà dans vos coups de cœur" : "Ajouter à mes coups de cœur"}
+                  {toutes ? L.dejaDedans : L.ajouterAuxMiens}
                 </button>
                 <Link href="/coups-de-coeur" className="lien-nav souligne text-action">
-                  Voir mes coups de cœur
+                  {L.voirLesMiens}
                 </Link>
               </div>
 
               {manquantes > 0 && (
-                <p className="legende mt-8 text-brume">
-                  {manquantes === 1
-                    ? "Une robe de ce lien n'est plus au catalogue."
-                    : `${manquantes} robes de ce lien ne sont plus au catalogue.`}
-                </p>
+                <p className="legende mt-8 text-brume">{L.plusAuCatalogue(manquantes)}</p>
               )}
             </>
           )}
@@ -155,52 +151,43 @@ export default function ListeCoupsDeCoeur() {
     <>
       <TitreSection
         niveau={1}
-        titre="Vos coups de cœur"
-        lien={{ href: "/robes", label: "Voir toutes les robes" }}
+        titre={L.vosCoupsDeCoeur}
+        lien={{ href: "/robes", label: L.voirToutesLesRobes }}
       />
       <div className="gouttiere pb-[clamp(4rem,8vw,8rem)]">
         {robes.length === 0 ? (
           <>
-            <p className="texte mesure-l">
-              Vous n&apos;avez pas encore de coup de cœur. Parcourez le catalogue et
-              touchez le cœur posé sur une robe : elle vous attendra ici.
-            </p>
+            <p className="texte mesure-l">{L.aucun}</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link href="/robes" className="bouton">
-                Voir les robes
+                {L.voirLesRobes}
               </Link>
               <Link href="/morphologies" className="lien-nav souligne text-action">
-                Partir de ma silhouette
+                {L.partirDeMaSilhouette}
               </Link>
             </div>
           </>
         ) : (
           <>
             <p className="texte mesure-l">
-              {robes.length === 1 ? "Une robe retenue." : `${robes.length} robes retenues.`}{" "}
-              Apportez cette liste au showroom : l&apos;essayage se prépare mieux quand on
-              sait par où commencer.
+              {L.retenues(robes.length)} {L.apportez}
             </p>
 
-            <Trame robes={robes} />
+            <Trame robes={robes} langue={langue} />
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <AppelRendezvous className="bouton">Prendre rendez-vous</AppelRendezvous>
+              <AppelRendezvous className="bouton">{L.prendreRendezvous}</AppelRendezvous>
               <PartagerSelection slugs={robes.map((r) => r.slug)} />
               <button
                 type="button"
                 onClick={vider}
                 className="lien-nav souligne text-plomb transition-colors duration-500 hover:text-encre"
               >
-                Vider la liste
+                {L.viderLaListe}
               </button>
             </div>
 
-            <p className="legende mt-10 text-brume">
-              Cette liste est gardée dans ce navigateur. Elle ne vous suit pas d&apos;un
-              appareil à l&apos;autre et ne nous est pas transmise — le lien de partage,
-              lui, porte la sélection avec lui.
-            </p>
+            <p className="legende mt-10 text-brume">{L.gardee}</p>
           </>
         )}
       </div>

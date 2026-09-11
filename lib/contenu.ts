@@ -1,8 +1,9 @@
 import type { Langue } from "@/lib/langue";
 import type { Categorie, Createur, Morphologie, Robe } from "@/lib/madamoon";
 import { FAQ, MAISON } from "@/lib/madamoon";
-import { PLURIEL, type Coupe } from "@/lib/coupes";
+import { APPOSITION, PLURIEL, type Coupe } from "@/lib/coupes";
 import {
+  COUPE_APPOSITION,
   COUPE_NOM,
   COUPE_NOTE,
   COUPE_PLURIEL,
@@ -13,9 +14,13 @@ import {
 } from "@/lib/en/taxonomie";
 import { ROBE_EN } from "@/lib/en/robes";
 import { FAQ_EN } from "@/lib/en/faq";
+import { AU_DELA_EN, EDITO_EN, QUESTIONS_EN } from "@/lib/en/morphologies-edito";
+import { AU_DELA, EDITO, QUESTIONS } from "@/lib/morphologies";
+import type { Lettre } from "@/lib/madamoon";
 import {
   MORPHO_NOM,
   MORPHO_OBJECTIF,
+  MORPHO_CONSEIL,
   MORPHO_COUPES,
   MORPHO_SILHOUETTE,
 } from "@/lib/en/morphologies";
@@ -44,6 +49,9 @@ export const coupeNote = (c: Coupe, l: Langue) =>
 export const coupePluriel = (cat: Categorie, l: Langue) =>
   l === "fr" ? PLURIEL[cat] : COUPE_PLURIEL[cat];
 
+export const coupeApposition = (cat: Categorie, l: Langue) =>
+  l === "fr" ? APPOSITION[cat] : COUPE_APPOSITION[cat];
+
 export const familleTexte = (cat: Categorie, l: Langue, fr: string) =>
   l === "fr" ? fr : FAMILLE[cat] ?? fr;
 
@@ -65,6 +73,9 @@ export const morphoObjectif = (m: Morphologie, l: Langue) =>
 export const morphoCoupes = (m: Morphologie, l: Langue) =>
   l === "fr" ? m.coupes : MORPHO_COUPES[m.lettre] ?? m.coupes;
 
+export const morphoConseil = (m: Morphologie, l: Langue) =>
+  l === "fr" ? m.conseil : MORPHO_CONSEIL[m.lettre] ?? m.conseil;
+
 /* La maison : seules les mentions se traduisent, jamais l'adresse ni le
  * numéro. */
 export const maison = (l: Langue) =>
@@ -84,3 +95,23 @@ export const robeRegard = (r: Robe, l: Langue) =>
 /* La FAQ : même ordre, mêmes engagements, deux langues. */
 export const faq = (l: Langue): { q: string; r: string }[] =>
   l === "fr" ? FAQ.map((f) => ({ q: f.q, r: f.r })) : FAQ_EN;
+
+/* La matière rédigée des morphologies : l'édito, le bloc « au-delà » et
+ * les questions. Trois tables jumelles, une seule porte. */
+export const edito = (lettre: Lettre, l: Langue) =>
+  l === "fr" ? EDITO[lettre] : EDITO_EN[lettre] ?? EDITO[lettre];
+
+export const auDela = (l: Langue) => (l === "fr" ? AU_DELA : AU_DELA_EN);
+
+export const questions = (lettre: Lettre, l: Langue) =>
+  l === "fr" ? QUESTIONS[lettre] : QUESTIONS_EN[lettre] ?? QUESTIONS[lettre];
+
+/*
+ * La minuscule d'attaque, quand la langue la permet.
+ *
+ * Le français met en bas de casse ce qui suit un tiret ou un article :
+ * « Uma — sirène en dentelle ». L'anglais, non — « A-line », « V-neck »
+ * portent une capitale qui fait partie du mot, et « a-line » se lit
+ * comme une faute.
+ */
+export const bas = (texte: string, l: Langue) => (l === "fr" ? texte.toLowerCase() : texte);

@@ -35,6 +35,17 @@ export const COUPE_PLURIEL: Record<Categorie, string> = {
   "Deux en un": "two-in-one dresses",
 };
 
+/* L'apposition : ce qui s'écrit après « catalogue ». En français elle
+ * s'accorde ou non selon la coupe ; en anglais elle ne bouge pas. */
+export const COUPE_APPOSITION: Record<Categorie, string> = {
+  Sirène: "mermaid",
+  Princesse: "ball gown",
+  Fluide: "sheath",
+  Trapèze: "A-line",
+  Minimaliste: "minimalist",
+  "Deux en un": "two-in-one",
+};
+
 export const COUPE_NOTE: Record<Categorie, string> = {
   Sirène: "Feminine and sensual",
   Princesse: "Refined and stately",

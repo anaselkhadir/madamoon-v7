@@ -69,3 +69,13 @@ export const MORPHO_COUPES: Record<string, string[]> = {
     "Ball gown, mermaid, sheath or minimalist — let the style of the wedding decide.",
   ],
 };
+
+/* Le conseil en une phrase, celui qui tient sous une définition. */
+export const MORPHO_CONSEIL: Record<string, string> = {
+  O: "Fluid falls and A-line cuts lengthen the figure beautifully. A V or sweetheart neckline shows the bust at its best.",
+  A: "A worked bodice and a flared skirt balance the hips. Boat necklines widen the shoulders nicely.",
+  V: "Full skirts and V or crossed necklines soften the line of the shoulders.",
+  H: "Models fitted at the waist and light mermaids draw curves while lengthening the figure.",
+  "8": "Mermaids and sheaths follow the curves; a sweetheart bodice or a V neckline underlines the natural balance.",
+  X: "Good news: almost every cut suits you. Let the style of your wedding guide the choice.",
+};

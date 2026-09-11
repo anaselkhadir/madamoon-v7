@@ -191,7 +191,7 @@ export default async function PageRobe({
               <AppelRendezvous robe={robe.slug} className="bouton-clair">
                 {L.fiche.essayer}
               </AppelRendezvous>
-              <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} />
+              <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} langue={langue} />
               {/* Le coup de cœur, au même rang : c'est le geste que l'on
                * fait avant de savoir si l'on prendra rendez-vous. */}
               <CoeurFiche slug={robe.slug} nom={robe.nom} />

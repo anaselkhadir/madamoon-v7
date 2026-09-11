@@ -223,10 +223,129 @@ const FR = {
     localDefaut:
       "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre silhouette, nos prix et la prise de rendez-vous.",
   },
+  pages: {
+    coupes: {
+      titre: "Les coupes",
+      intro:
+        "Six coupes. La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
+    },
+    morphologies: {
+      titre: "Les morphologies",
+      toutesLesCoupes: "Toutes les coupes",
+      intro:
+        "Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Rien n’est « à éviter » — c’est un conseil de style, pas une règle, et au showroom on essaie aussi ce qui n’était pas prévu.",
+      guide: "Vous ne savez pas laquelle est la vôtre ? Élise vous guide en trois questions.",
+    },
+    coupe: {
+      nos: (pluriel: string, maison: string) => `Nos ${pluriel} ${maison}`,
+      nosAutres: (pluriel: string) => `Nos autres ${pluriel}`,
+      lesNotres: (pluriel: string) => `Nos ${pluriel}`,
+      laMaison: "La maison",
+      aQuiElleVa: "À qui cette coupe va",
+      toutesLesMorphologies: "Toutes les morphologies",
+      pistes: (coupe: string) =>
+        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. La ${coupe} est celle que l’on conseille d’abord à ces morphologies — les autres l’essaient tout aussi bien en boutique.`,
+    },
+    maison: {
+      lesRobesDe: (nom: string) => `Les robes ${nom}`,
+      voirToutesLesRobes: "Voir toutes les robes",
+      sesCoupes: "Ses coupes",
+      toutesLesCoupes: "Toutes les coupes",
+      travaille: (nom: string, combien: number) =>
+        `${nom} travaille ${combien === 1 ? "une seule coupe" : `${combien} coupes`} au catalogue MADAMOON. L’image est prise sur l’une de ses robes, jamais sur celle d’une autre maison.`,
+      aQuiCesCoupesVont: "À qui ces coupes vont",
+      toutesLesMorphologies: "Toutes les morphologies",
+      pistes: (dela: string) =>
+        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Voici celles que les coupes ${dela} servent en premier — les autres s’essaient tout aussi bien en boutique.`,
+      trouverMaRobeDe: (nom: string) => `Trouver ma robe ${nom}`,
+    },
+    morpho: {
+      reconnaitre: (lettre: string) => `Reconnaître une silhouette en ${lettre}`,
+      lesProportions: "Les proportions",
+      pasExacte:
+        "Une morphologie ne se lit pas dans un miroir en trente secondes, et elle n’a pas à être exacte : c’est un point de départ pour savoir quoi essayer en premier. Si vous hésitez entre deux,",
+      eliseVousGuide: "Élise vous guide",
+      enTroisQuestions: " en trois questions.",
+      lesCoupes: "Les coupes qui vous mettent en valeur",
+      voir: "Voir",
+      toutesNosRobes: (coupe: string) => `Toutes nos robes ${coupe}`,
+      toutesLesCoupes: "Toutes les coupes",
+      voiciPourquoi:
+        "Voici pourquoi ces lignes fonctionnent, et ce qu’elles font réellement une fois la robe enfilée.",
+      decouvrez: (apposition: string, lettre: string) =>
+        `Découvrez nos robes de mariée ${apposition} adaptées à une silhouette en ${lettre}`,
+      ouDirectement: " — ou allez directement à ",
+      et: " et ",
+      nosRobes: "Nos robes pour cette silhouette",
+      voirToutLeCatalogue: "Voir tout le catalogue",
+      particulierement: "Particulièrement adaptées",
+      particulierementNote:
+        "Les coupes que nous sortons en premier de la penderie quand vous poussez la porte.",
+      egalement: "Également intéressantes à essayer",
+      egalementNote:
+        "Elles ne sont pas les plus évidentes, et c’est souvent l’une d’elles qui surprend.",
+      selonVosEnvies: "À découvrir selon vos envies",
+      selonVosEnviesNote:
+        "Le reste de la sélection. En cabine tout se tente, et rien ici n’est écarté.",
+      lesQuestions: "Les questions que l’on nous pose",
+      poserLaVotre: "Poser la vôtre",
+      commentSavoir: (lettre: string) => `Comment savoir si j’ai une silhouette en ${lettre} ?`,
+      auDela: "Au-delà de la morphologie",
+      auDelaPhrase:
+        "Une morphologie dit par où commencer. Elle ne dit pas qui vous êtes le jour de votre mariage.",
+      lesMaisons: "Les maisons qui vous vont",
+      enCoupes: (liste: string) => ` — en ${liste}`,
+    },
+    introuvable: {
+      erreur: "Erreur 404",
+      titre: "Cette page n’existe pas",
+      texte: "Le lien a peut-être changé. Les robes, elles, sont toujours là.",
+      voirLesRobes: "Voir les robes",
+      accueil: "Retour à l’accueil",
+    },
+  },
+  coeurs: {
+    vosCoupsDeCoeur: "Vos coups de cœur",
+    selectionPartagee: "Une sélection partagée",
+    voirToutesLesRobes: "Voir toutes les robes",
+    voirLesRobes: "Voir les robes",
+    prendreRendezvous: "Prendre rendez-vous",
+    lienPerime:
+      "Ce lien ne désigne aucune robe que nous présentons encore. Le catalogue a peut-être changé depuis qu’il a été envoyé.",
+    retenuePourVous: (n: number) =>
+      n === 1 ? "Une robe a été retenue pour vous." : `${n} robes ont été retenues pour vous.`,
+    essaientEnsemble: "Elles s’essaient ensemble, sur rendez-vous, au showroom.",
+    dejaDedans: "Déjà dans vos coups de cœur",
+    ajouterAuxMiens: "Ajouter à mes coups de cœur",
+    voirLesMiens: "Voir mes coups de cœur",
+    plusAuCatalogue: (n: number) =>
+      n === 1
+        ? "Une robe de ce lien n’est plus au catalogue."
+        : `${n} robes de ce lien ne sont plus au catalogue.`,
+    aucun:
+      "Vous n’avez pas encore de coup de cœur. Parcourez le catalogue et touchez le cœur posé sur une robe : elle vous attendra ici.",
+    partirDeMaSilhouette: "Partir de ma silhouette",
+    retenues: (n: number) => (n === 1 ? "Une robe retenue." : `${n} robes retenues.`),
+    apportez:
+      "Apportez cette liste au showroom : l’essayage se prépare mieux quand on sait par où commencer.",
+    viderLaListe: "Vider la liste",
+    gardee:
+      "Cette liste est gardée dans ce navigateur. Elle ne vous suit pas d’un appareil à l’autre et ne nous est pas transmise — le lien de partage, lui, porte la sélection avec lui.",
+    partager: "Partager ma sélection",
+    copie: "Lien copié",
+    lienACopier: "Le lien de votre sélection, à copier",
+    titrePartage: "Ma sélection MADAMOON",
+    textePartage: (n: number) =>
+      n === 1
+        ? "La robe que j’ai retenue chez MADAMOON."
+        : `Les ${n} robes que j’ai retenues chez MADAMOON.`,
+  },
   catalogue: {
     nom: "Robes de mariée MADAMOON",
     titre: "Nos robes de mariée",
     robesDe: (pluriel: string) => `Robes ${pluriel}`,
+    telecharger: (intitule: string) => `Télécharger le catalogue ${intitule}`,
+    fichier: (intitule: string) => `MADAMOON — Catalogue ${intitule}.pdf`,
   },
   pied: {
     coupes: "Coupes",
@@ -449,10 +568,129 @@ const EN: Textes = {
     localDefaut:
       "I would rather answer you precisely than guess. The best is to speak with the boutique directly — or I can guide you here on your figure, our prices and booking an appointment.",
   },
+  pages: {
+    coupes: {
+      titre: "The silhouettes",
+      intro:
+        "Six cuts. The cut is not a rule: it is the first sorting, the one that saves an hour of fittings.",
+    },
+    morphologies: {
+      titre: "Body shapes",
+      toutesLesCoupes: "All silhouettes",
+      intro:
+        "A body shape never rules a dress out: it opens paths. Nothing is “to be avoided” — it is advice on style, not a rule, and in the showroom we also try what was not planned.",
+      guide: "Not sure which one is yours? Élise will guide you in three questions.",
+    },
+    coupe: {
+      nos: (pluriel: string, maison: string) => `Our ${maison} ${pluriel}`,
+      nosAutres: (pluriel: string) => `Our other ${pluriel}`,
+      lesNotres: (pluriel: string) => `Our ${pluriel}`,
+      laMaison: "The house",
+      aQuiElleVa: "Who this cut suits",
+      toutesLesMorphologies: "All body shapes",
+      pistes: (coupe: string) =>
+        `A body shape never rules a dress out: it opens paths. The ${coupe} is the one we recommend first to these body shapes — the others try it on just as happily in the boutique.`,
+    },
+    maison: {
+      lesRobesDe: (nom: string) => `The ${nom} dresses`,
+      voirToutesLesRobes: "See all the dresses",
+      sesCoupes: "Its silhouettes",
+      toutesLesCoupes: "All silhouettes",
+      travaille: (nom: string, combien: number) =>
+        `${nom} works ${combien === 1 ? "a single cut" : `${combien} cuts`} in the MADAMOON catalogue. The image is taken from one of its own dresses, never from another house’s.`,
+      aQuiCesCoupesVont: "Who these cuts suit",
+      toutesLesMorphologies: "All body shapes",
+      pistes: (dela: string) =>
+        `A body shape never rules a dress out: it opens paths. Here are the ones the ${dela} cuts serve first — the others are tried on just as happily in the boutique.`,
+      trouverMaRobeDe: (nom: string) => `Find my ${nom} dress`,
+    },
+    morpho: {
+      reconnaitre: (lettre: string) => `Recognising the ${lettre} shape`,
+      lesProportions: "The proportions",
+      pasExacte:
+        "A body shape is not read in a mirror in thirty seconds, and it does not have to be exact: it is a starting point, to know what to try on first. If you hesitate between two,",
+      eliseVousGuide: "Élise will guide you",
+      enTroisQuestions: " in three questions.",
+      lesCoupes: "The cuts that suit you",
+      voir: "See",
+      toutesNosRobes: (coupe: string) => `All our ${coupe} dresses`,
+      toutesLesCoupes: "All silhouettes",
+      voiciPourquoi:
+        "Here is why these lines work, and what they actually do once the dress is on.",
+      decouvrez: (apposition: string, lettre: string) =>
+        `Discover our ${apposition} wedding dresses suited to the ${lettre} shape`,
+      ouDirectement: " — or go straight to ",
+      et: " and ",
+      nosRobes: "Our dresses for this figure",
+      voirToutLeCatalogue: "See the whole catalogue",
+      particulierement: "Particularly suited",
+      particulierementNote:
+        "The cuts we take out of the wardrobe first when you push the door open.",
+      egalement: "Also worth trying",
+      egalementNote:
+        "They are not the most obvious ones, and it is often one of them that surprises.",
+      selonVosEnvies: "To discover as you please",
+      selonVosEnviesNote:
+        "The rest of the selection. In the fitting room everything may be tried, and nothing here is ruled out.",
+      lesQuestions: "The questions we are asked",
+      poserLaVotre: "Ask yours",
+      commentSavoir: (lettre: string) => `How do I know if I have the ${lettre} shape?`,
+      auDela: "Beyond the body shape",
+      auDelaPhrase:
+        "A body shape says where to begin. It does not say who you are on the day of your wedding.",
+      lesMaisons: "The houses that suit you",
+      enCoupes: (liste: string) => ` — in ${liste}`,
+    },
+    introuvable: {
+      erreur: "Error 404",
+      titre: "This page does not exist",
+      texte: "The link may have changed. The dresses, though, are still here.",
+      voirLesRobes: "See the dresses",
+      accueil: "Back to the home page",
+    },
+  },
+  coeurs: {
+    vosCoupsDeCoeur: "Your favourites",
+    selectionPartagee: "A shared selection",
+    voirToutesLesRobes: "See all the dresses",
+    voirLesRobes: "See the dresses",
+    prendreRendezvous: "Book an appointment",
+    lienPerime:
+      "This link points to no dress we still show. The catalogue may have changed since it was sent.",
+    retenuePourVous: (n: number) =>
+      n === 1 ? "One dress has been chosen for you." : `${n} dresses have been chosen for you.`,
+    essaientEnsemble: "They are tried on together, by appointment, at the showroom.",
+    dejaDedans: "Already in your favourites",
+    ajouterAuxMiens: "Add to my favourites",
+    voirLesMiens: "See my favourites",
+    plusAuCatalogue: (n: number) =>
+      n === 1
+        ? "One dress from this link is no longer in the catalogue."
+        : `${n} dresses from this link are no longer in the catalogue.`,
+    aucun:
+      "You have no favourites yet. Browse the catalogue and touch the heart on a dress: it will be waiting for you here.",
+    partirDeMaSilhouette: "Start from my figure",
+    retenues: (n: number) => (n === 1 ? "One dress chosen." : `${n} dresses chosen.`),
+    apportez:
+      "Bring this list to the showroom: a fitting goes better when you know where to begin.",
+    viderLaListe: "Empty the list",
+    gardee:
+      "This list is kept in this browser. It does not follow you from one device to another and is not sent to us — the sharing link, however, carries the selection with it.",
+    partager: "Share my selection",
+    copie: "Link copied",
+    lienACopier: "The link to your selection, to copy",
+    titrePartage: "My MADAMOON selection",
+    textePartage: (n: number) =>
+      n === 1
+        ? "The dress I have chosen at MADAMOON."
+        : `The ${n} dresses I have chosen at MADAMOON.`,
+  },
   catalogue: {
     nom: "MADAMOON wedding dresses",
     titre: "Our wedding dresses",
     robesDe: (pluriel: string) => `The ${pluriel}`,
+    telecharger: (intitule: string) => `Download the ${intitule} catalogue`,
+    fichier: (intitule: string) => `MADAMOON — ${intitule} catalogue.pdf`,
   },
   pied: {
     coupes: "Silhouettes",

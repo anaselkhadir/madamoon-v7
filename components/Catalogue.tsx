@@ -1,5 +1,7 @@
 import { media as chemin } from "@/lib/chemin";
 import { CATALOGUES_DISPONIBLES, fichierCatalogue } from "@/lib/catalogue";
+import { t } from "@/lib/textes";
+import type { Langue } from "@/lib/langue";
 
 /*
  * Le catalogue.
@@ -32,9 +34,16 @@ type Props = {
   /* « coupe:sirene », « maison:olya-mak », « morphologie:x », « robe:uma ». */
   contexte: string;
   className?: string;
+  langue: Langue;
 };
 
-export default function Catalogue({ intitule, contexte, className = "bouton-clair" }: Props) {
+export default function Catalogue({
+  intitule,
+  contexte,
+  className = "bouton-clair",
+  langue,
+}: Props) {
+  const L = t(langue).catalogue;
   if (!CATALOGUES_DISPONIBLES) return null;
 
   return (
@@ -42,10 +51,10 @@ export default function Catalogue({ intitule, contexte, className = "bouton-clai
       href={chemin(fichierCatalogue(contexte))}
       /* Un nom lisible dans le dossier des téléchargements : c'est là
        * qu'il sera retrouvé dans trois semaines, entre deux devis. */
-      download={`MADAMOON — Catalogue ${intitule}.pdf`}
+      download={L.fichier(intitule)}
       className={className}
     >
-      Télécharger le catalogue {intitule}
+      {L.telecharger(intitule)}
     </a>
   );
 }

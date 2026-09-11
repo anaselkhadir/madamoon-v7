@@ -16,6 +16,7 @@ import { media as chemin } from "@/lib/chemin";
 import { langueDe, versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import {
+  bas,
   faq,
   morphoCoupes,
   morphoNom,
@@ -292,7 +293,7 @@ export default function Elise() {
                           className="text-[13px] leading-relaxed text-encre hover:text-accent"
                         >
                           <span className="font-serif text-[1.05rem]">{r.nom}</span>
-                          <span className="text-plomb"> — {robeLigne(r, langue).toLowerCase()}</span>
+                          <span className="text-plomb"> — {bas(robeLigne(r, langue), langue)}</span>
                         </a>
                       </li>
                     ))}

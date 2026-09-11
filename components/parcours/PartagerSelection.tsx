@@ -1,6 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { langueDe } from "@/lib/langue";
+import { t } from "@/lib/textes";
 import { lienPartage } from "@/lib/coupsDeCoeur";
 
 /*
@@ -22,6 +25,7 @@ import { lienPartage } from "@/lib/coupsDeCoeur";
 
 export default function PartagerSelection({ slugs }: { slugs: readonly string[] }) {
   const [etat, setEtat] = useState<"repos" | "copie" | "manuel">("repos");
+  const L = t(langueDe(usePathname() ?? "/")).coeurs;
   const [lien, setLien] = useState("");
   const champ = useRef<HTMLInputElement>(null);
   const minuterie = useRef<number | undefined>(undefined);
@@ -42,11 +46,8 @@ export default function PartagerSelection({ slugs }: { slugs: readonly string[] 
     if (nav.share) {
       try {
         await nav.share({
-          title: "Ma sélection MADAMOON",
-          text:
-            slugs.length === 1
-              ? "La robe que j'ai retenue chez MADAMOON."
-              : `Les ${slugs.length} robes que j'ai retenues chez MADAMOON.`,
+          title: L.titrePartage,
+          text: L.textePartage(slugs.length),
           url,
         });
         return;
@@ -68,7 +69,7 @@ export default function PartagerSelection({ slugs }: { slugs: readonly string[] 
   return (
     <>
       <button type="button" onClick={partager} className="bouton-trait">
-        {etat === "copie" ? "Lien copié" : "Partager ma sélection"}
+        {etat === "copie" ? L.copie : L.partager}
       </button>
 
       {etat === "manuel" && (
@@ -76,7 +77,7 @@ export default function PartagerSelection({ slugs }: { slugs: readonly string[] 
           ref={champ}
           readOnly
           value={lien}
-          aria-label="Le lien de votre sélection, à copier"
+          aria-label={L.lienACopier}
           onFocus={(e) => e.currentTarget.select()}
           className="mt-3 w-full max-w-[34rem] border-0 border-b border-fil bg-transparent pb-1 font-sans text-[0.9375rem] text-plume outline-none"
         />

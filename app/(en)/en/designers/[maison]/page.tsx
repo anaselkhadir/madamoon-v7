@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import PageMaison from "@/components/pages/PageMaison";
 import { CREATEURS, createurParSlug } from "@/lib/madamoon";
+import { createurNote, createurOrigine } from "@/lib/contenu";
 
+/* Les identifiants de maison ne se traduisent pas : « olya-mak » est un
+ * nom propre, pas un mot. Seule la rubrique change. */
 export function generateStaticParams() {
   return CREATEURS.map((c) => ({ maison: c.slug }));
 }
@@ -15,11 +18,10 @@ export async function generateMetadata({
   const createur = createurParSlug(maison);
   if (!createur) return {};
   return {
-    /* Le gabarit du site ajoute « — MADAMOON » : ne pas le redire ici. */
-    title: `Robes de mariée ${createur.nom} à Paris`,
-    description: `Les robes de mariée ${createur.nom} (${createur.origine}) au showroom MADAMOON, Paris 10e. ${createur.note} Essayage privé sur rendez-vous.`,
+    title: `${createur.nom} wedding dresses in Paris`,
+    description: `The ${createur.nom} wedding dresses (${createurOrigine(createur, "en")}) at the MADAMOON showroom, Paris 10e. ${createurNote(createur, "en")} Private fitting by appointment.`,
     alternates: {
-      canonical: `/createurs/${createur.slug}`,
+      canonical: `/en/designers/${createur.slug}`,
       languages: {
         fr: `/createurs/${createur.slug}`,
         en: `/en/designers/${createur.slug}`,
@@ -28,6 +30,6 @@ export async function generateMetadata({
   };
 }
 
-export default async function Maison({ params }: { params: Promise<{ maison: string }> }) {
-  return <PageMaison params={params} langue="fr" />;
+export default async function Designer({ params }: { params: Promise<{ maison: string }> }) {
+  return <PageMaison params={params} langue="en" />;
 }

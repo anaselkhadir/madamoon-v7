@@ -8,6 +8,7 @@ import { SCENES, vues, type Media } from "@/lib/medias";
 import { FILMS } from "@/lib/films";
 import { mouvementReduit } from "@/lib/mouvement";
 import { media as chemin } from "@/lib/chemin";
+import type { Langue } from "@/lib/langue";
 
 /*
  * Le premier écran d'une page de rubrique — une maison, une coupe, une
@@ -38,6 +39,7 @@ export default function HeroPage({
   action,
   maison,
   catalogue,
+  langue,
 }: {
   surtitre?: string;
   titre: string;
@@ -52,6 +54,7 @@ export default function HeroPage({
   /* Le catalogue de la rubrique. Absent, le bouton blanc ne paraît pas —
    * toutes les rubriques n'en ont pas forcément un. */
   catalogue?: { intitule: string; contexte: string };
+  langue: Langue;
 }) {
   const video = useRef<HTMLVideoElement>(null);
   const [charge, setCharge] = useState(false);
@@ -159,13 +162,13 @@ export default function HeroPage({
               {action}
             </AppelElise>
             {catalogue && (
-              <Catalogue intitule={catalogue.intitule} contexte={catalogue.contexte} />
+              <Catalogue intitule={catalogue.intitule} contexte={catalogue.contexte} langue={langue} />
             )}
           </div>
         </div>
       </div>
 
-      <Bandeau />
+      <Bandeau langue={langue} />
     </section>
   );
 }
