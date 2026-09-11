@@ -46,3 +46,6 @@ outils/__pycache__/
 
 # Dossiers de travail d’un autre chantier, déposés ici par erreur.
 .build-*/
+
+# Le relevé de relecture, refait à la demande.
+relecture-anglaise.json
