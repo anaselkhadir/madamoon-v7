@@ -94,6 +94,7 @@ const FR = {
   showroom: {
     legende: "Le showroom — Paris 10",
     titre: "Poussez la porte",
+    texte: "Une heure, le showroom pour vous seule, et quelqu’un qui connaît chaque robe.",
     lien: "Découvrir le showroom",
     alt: "L’entrée du showroom MADAMOON, rue du Faubourg Saint-Martin",
   },
@@ -101,6 +102,11 @@ const FR = {
     vide: "Vos coups de cœur, vide pour l’instant",
     pleinUn: "Vos coups de cœur, 1 robe",
     plein: (n: number) => `Vos coups de cœur, ${n} robes`,
+    ajouter: (nom: string) => `Ajouter ${nom} aux coups de cœur`,
+    retirer: (nom: string) => `Retirer ${nom} des coups de cœur`,
+    dedans: (nom: string) => `${nom} est dans vos coups de cœur`,
+    coupDeCoeur: "Coup de cœur",
+    dansLesVotres: "Dans vos coups de cœur",
   },
   carte: {
     legende: "Votre essayage privé",
@@ -502,6 +508,7 @@ const EN: Textes = {
   },
   showroom: {
     legende: "The showroom — Paris 10",
+    texte: "An hour, the showroom to yourself, and someone who knows every dress.",
     titre: "Push the door open",
     lien: "See the showroom",
     alt: "The entrance to the MADAMOON showroom, rue du Faubourg Saint-Martin",
@@ -510,6 +517,11 @@ const EN: Textes = {
     vide: "Your favourites, empty for now",
     pleinUn: "Your favourites, 1 dress",
     plein: (n: number) => `Your favourites, ${n} dresses`,
+    ajouter: (nom: string) => `Add ${nom} to your favourites`,
+    retirer: (nom: string) => `Remove ${nom} from your favourites`,
+    dedans: (nom: string) => `${nom} is in your favourites`,
+    coupDeCoeur: "Favourite",
+    dansLesVotres: "In your favourites",
   },
   carte: {
     legende: "Your private fitting",

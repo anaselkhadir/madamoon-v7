@@ -57,7 +57,7 @@ function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Lan
             coupDeCoeur={r.slug}
             media={media}
             dossier="robes"
-            alt={altRobe(r)}
+            alt={altRobe(r, langue)}
             nom={r.nom}
             note={robeLigne(r, langue)}
             repere={r.createur}

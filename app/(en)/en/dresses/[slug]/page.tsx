@@ -46,7 +46,7 @@ export async function generateMetadata({
     regard: robe.regard,
     createur: robe.createur,
     media: vues(robe.slug)[0],
-    alt: altRobe(robe),
+    alt: altRobe(robe, "en"),
   });
 
   return {

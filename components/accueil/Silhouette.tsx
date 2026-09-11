@@ -79,7 +79,7 @@ export default function Silhouette({ langue = "fr" }: { langue?: Langue }) {
                 <Photo
                   media={media}
                   dossier="robes"
-                  alt={altRobe(robe)}
+                  alt={altRobe(robe, langue)}
                   sizes="(max-width: 1024px) 74vw, 27vw"
                   priorite={i < 2}
                   className="h-full w-full object-cover transition-transform duration-[1400ms] [transition-timing-function:var(--ease-doux)] group-hover:scale-[1.03]"

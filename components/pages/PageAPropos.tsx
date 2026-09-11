@@ -50,7 +50,7 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
             <Photo
               media={SCENES["createurs"]}
               dossier="scenes"
-              alt={altScene(L.altScene)}
+              alt={altScene(L.altScene, langue)}
               sizes="(max-width: 768px) 100vw, 47vw"
             />
           </div>

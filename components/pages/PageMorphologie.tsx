@@ -81,7 +81,7 @@ export default async function PageMorphologie({
         ancre: coupe(c).ancre,
         pourquoi: e.pourquoi[c] ?? "",
         media,
-        alt: altCoupe(c, `conseillée pour une silhouette en ${m.lettre}`),
+        alt: altCoupe(c, langue, { morphologie: m.lettre }),
         robes: robes
           .slice(0, 2)
           .map((r) => ({ slug: r.slug, nom: r.nom, ligne: robeLigne(r, langue) })),
@@ -181,7 +181,7 @@ export default async function PageMorphologie({
         ligne={e.promesse}
         robe={m.ouverture.robe}
         vue={m.ouverture.vue}
-        alt={altCoupe(m.premieres[0] ?? "de mariée", `conseillée pour une silhouette en ${m.lettre}`)}
+        alt={altCoupe(m.premieres[0] ?? "de mariée", langue, { morphologie: m.lettre })}
         action={t(langue).hero.trouverMaRobe}
         langue={langue}
         catalogue={{
@@ -210,7 +210,7 @@ export default async function PageMorphologie({
                 <Photo
                   media={scene}
                   dossier="robes"
-                  alt={altCoupe(m.premieres[0] ?? "de mariée", `pour une silhouette en ${m.lettre}`)}
+                  alt={altCoupe(m.premieres[0] ?? "de mariée", langue, { morphologie: m.lettre })}
                   sizes="(max-width: 768px) 100vw, 46vw"
                 />
               )}
@@ -325,7 +325,7 @@ export default async function PageMorphologie({
                       coupDeCoeur={robe.slug}
                       media={media}
                       dossier="robes"
-                      alt={altRobe(robe)}
+                      alt={altRobe(robe, langue)}
                       nom={robe.nom}
                       note={robeLigne(robe, langue)}
                       sizes="(max-width: 768px) 50vw, 31vw"

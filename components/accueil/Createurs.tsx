@@ -130,7 +130,7 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
                   <Photo
                     media={media}
                     dossier="robes"
-                    alt={altRobe(robe)}
+                    alt={altRobe(robe, langue)}
                     sizes="(max-width: 768px) 68vw, 20vw"
                     priorite={i < 2}
                     className="h-full w-full object-cover transition-transform duration-[1400ms] [transition-timing-function:var(--ease-doux)] group-hover:scale-[1.03]"

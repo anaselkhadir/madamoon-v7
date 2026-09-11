@@ -147,7 +147,7 @@ export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
                   key={c.ancre}
                   media={media}
                   dossier="robes"
-                  alt={altCoupe(c.nom)}
+                  alt={altCoupe(c.nom, langue)}
                   sizes="(max-width: 1024px) 92vw, 44vw"
                   priorite={i === 0}
                   className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-[1200ms] [transition-timing-function:var(--ease-doux)] ${
@@ -262,7 +262,7 @@ export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
                 href={`/coupes/${c.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={altCoupe(c.nom)}
+                alt={altCoupe(c.nom, langue)}
                 nom={coupeNom(c, langue)}
                 note={coupeNote(c, langue)}
                 sizes="46vw"

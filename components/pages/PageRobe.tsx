@@ -88,7 +88,7 @@ export default async function PageRobe({
     regard: robeRegard(robe, langue),
     createur: robe.createur,
     media: photos[0],
-    alt: altRobe(robe),
+    alt: altRobe(robe, langue),
   });
 
   return (
@@ -153,7 +153,7 @@ export default async function PageRobe({
           <Film
             src={film.src}
             affiche={SCENES[film.affiche]}
-            alt={altRobe(robe)}
+            alt={altRobe(robe, langue)}
             className="absolute inset-0 h-full w-full"
           />
         ) : (
@@ -161,7 +161,7 @@ export default async function PageRobe({
             <Photo
               media={photos[0]}
               dossier="robes"
-              alt={altRobe(robe)}
+              alt={altRobe(robe, langue)}
               sizes="100vw"
               priorite
               position="50% 30%"
@@ -313,7 +313,7 @@ export default async function PageRobe({
                 <Photo
                   media={p}
                   dossier="robes"
-                  alt={altRobe(robe, i + 2)}
+                  alt={altRobe(robe, langue, i + 2)}
                   sizes="(max-width: 768px) 92vw, 46vw"
                   className="h-full w-full object-cover"
                 />
@@ -358,7 +358,7 @@ export default async function PageRobe({
                     coupDeCoeur={v.slug}
                     media={media}
                     dossier="robes"
-                    alt={altRobe(v)}
+                    alt={altRobe(v, langue)}
                     nom={v.nom}
                     note={robeLigne(v, langue)}
                     sizes="(max-width: 768px) 50vw, 31vw"

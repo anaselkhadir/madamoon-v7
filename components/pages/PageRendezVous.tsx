@@ -32,7 +32,7 @@ export default function PageRendezVous({ langue }: { langue: Langue }) {
           <Photo
             media={SCENES["seuil"]}
             dossier="scenes"
-            alt={altScene(L.altScene)}
+            alt={altScene(L.altScene, langue)}
             sizes="(max-width: 768px) 100vw, 50vw"
             priorite
             className="absolute inset-0 h-full w-full object-cover"

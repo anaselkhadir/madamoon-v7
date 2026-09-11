@@ -112,7 +112,7 @@ export default async function PageCoupe({
         ligne={familleTexte(s.nom, langue, FAMILLES[s.nom])}
         robe={ouverture.robe}
         vue={ouverture.vue}
-        alt={altCoupe(s.nom)}
+        alt={altCoupe(s.nom, langue)}
         action={t(langue).hero.trouverMaRobe}
         langue={langue}
         /* « le catalogue sirène », « le catalogue princesse » : la coupe
@@ -140,7 +140,7 @@ export default async function PageCoupe({
                     coupDeCoeur={robe.slug}
                     media={media}
                     dossier="robes"
-                    alt={altRobe(robe)}
+                    alt={altRobe(robe, langue)}
                     nom={robe.nom}
                     note={robeLigne(robe, langue)}
                     sizes="(max-width: 768px) 50vw, 31vw"

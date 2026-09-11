@@ -94,7 +94,7 @@ export default async function PageMaison({
         ligne={createurNote(createur, langue)}
         robe={createur.ouverture.robe}
         vue={createur.ouverture.vue}
-        alt={altCoupe(coupes[0] ?? "de mariée", createur.nom)}
+        alt={altCoupe(coupes[0] ?? "de mariée", langue, { maison: createur.nom })}
         action={L.trouverMaRobeDe(createur.nom)}
         maison={createur.nom}
         langue={langue}
@@ -121,7 +121,7 @@ export default async function PageMaison({
                   coupDeCoeur={robe.slug}
                   media={media}
                   dossier="robes"
-                  alt={altRobe(robe)}
+                  alt={altRobe(robe, langue)}
                   nom={robe.nom}
                   note={robeLigne(robe, langue)}
                   sizes="(max-width: 768px) 50vw, 31vw"
@@ -158,7 +158,7 @@ export default async function PageMaison({
                     href={`/coupes/${famille.ancre}`}
                     media={media}
                     dossier="robes"
-                    alt={altCoupe(nom, createur.nom)}
+                    alt={altCoupe(nom, langue, { maison: createur.nom })}
                     nom={coupeNom(nom, langue)}
                     note={familleTexte(nom, langue, FAMILLES[nom])}
                     sizes="(max-width: 768px) 50vw, 31vw"

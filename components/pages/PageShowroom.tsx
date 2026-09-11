@@ -26,7 +26,7 @@ export default function PageShowroom({ langue }: { langue: Langue }) {
         <Photo
           media={SCENES["showroom"]}
           dossier="scenes"
-          alt={altScene(L.altScene)}
+          alt={altScene(L.altScene, langue)}
           sizes="100vw"
           priorite
           className="absolute inset-0 h-full w-full object-cover"
@@ -79,7 +79,7 @@ export default function PageShowroom({ langue }: { langue: Langue }) {
               <Photo
                 media={SCENES[v]}
                 dossier="scenes"
-                alt={altScene(L.altDetail)}
+                alt={altScene(L.altDetail, langue)}
                 sizes="(max-width: 768px) 100vw, 31vw"
               />
             </div>

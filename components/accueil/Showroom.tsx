@@ -35,7 +35,7 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
         <Photo
           media={SCENES["seuil"]}
           dossier="scenes"
-          alt={altScene(L.showroom.alt)}
+          alt={altScene(L.showroom.alt, langue)}
           sizes="100vw"
           position="50% 42%"
           className="h-full w-full object-cover"
@@ -58,10 +58,7 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
             {L.showroom.titre}
           </h2>
         </span>
-        <p className="accroche mesure-l mt-5 text-sur-image">
-          Une heure, le showroom pour vous seule, et quelqu&apos;un qui connaît
-          chaque robe.
-        </p>
+        <p className="accroche mesure-l mt-5 text-sur-image">{L.showroom.texte}</p>
         <Link href="/showroom" className="bouton-clair mt-7">
           {L.showroom.lien}
         </Link>

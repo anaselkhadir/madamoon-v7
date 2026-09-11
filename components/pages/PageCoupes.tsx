@@ -38,7 +38,7 @@ export default function PageCoupes({ langue }: { langue: Langue }) {
                 href={`/coupes/${s.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={vedette ? altRobe(vedette, s.vue) : altCoupe(s.nom)}
+                alt={vedette ? altRobe(vedette, langue, s.vue) : altCoupe(s.nom, langue)}
                 nom={coupeNom(s, langue)}
                 note={coupeNote(s, langue)}
                 sizes="(max-width: 768px) 50vw, 31vw"

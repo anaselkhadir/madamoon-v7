@@ -1,6 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { langueDe } from "@/lib/langue";
+import { t } from "@/lib/textes";
 
 /*
  * Les deux flèches d'un rail.
@@ -12,6 +15,7 @@ import { useEffect, useRef, useState } from "react";
  */
 
 export default function RailFleches({ cible }: { cible: string }) {
+  const L = t(langueDe(usePathname() ?? "/")).silhouette;
   const [debut, poserDebut] = useState(true);
   const [fin, poserFin] = useState(false);
   const rail = useRef<HTMLElement | null>(null);
@@ -60,8 +64,8 @@ export default function RailFleches({ cible }: { cible: string }) {
     <div className="hidden items-center gap-2 lg:flex">
       {(
         [
-          ["-1", "Voir les morphologies précédentes", "M15 5 8 12l7 7"],
-          ["1", "Voir les morphologies suivantes", "M9 5l7 7-7 7"],
+          ["-1", L.precedentes, "M15 5 8 12l7 7"],
+          ["1", L.suivantes, "M9 5l7 7-7 7"],
         ] as const
       ).map(([sens, titre, trace]) => {
         const inactif = sens === "-1" ? debut : fin;

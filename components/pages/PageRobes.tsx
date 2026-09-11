@@ -76,7 +76,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
                 href={`#${s.ancre}`}
                 media={media}
                 dossier="robes"
-                alt={vedette ? altRobe(vedette, s.vue) : altCoupe(s.nom)}
+                alt={vedette ? altRobe(vedette, langue, s.vue) : altCoupe(s.nom, langue)}
                 nom={coupeNom(s, langue)}
                 note={coupeNote(s, langue)}
                 priorite={i < 3}
@@ -112,7 +112,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
                       coupDeCoeur={r.slug}
                       media={media}
                       dossier="robes"
-                      alt={altRobe(r)}
+                      alt={altRobe(r, langue)}
                       nom={r.nom}
                       note={robeLigne(r, langue)}
                       repere={r.createur}
