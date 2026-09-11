@@ -1,4 +1,5 @@
 import Link from "@/components/Lien";
+import Croquis from "@/components/morphologie/Croquis";
 import { MORPHOLOGIES } from "@/lib/madamoon";
 import { coupeNom, morphoNom, morphoSilhouette } from "@/lib/contenu";
 import type { Langue } from "@/lib/langue";
@@ -12,11 +13,10 @@ import { t } from "@/lib/textes";
  * type de corps se lit comme une recommandation, et la robe qui ouvrait
  * le O n'est pas celle qu'on conseille à une cliente en O.
  *
- * En attendant les dessins — qui demandent un illustrateur, non un
- * script —, la lettre fait l'image. C'est elle que l'on cherche du
- * regard dans le reste du site, et elle ne promet rien qu'elle ne
- * tienne. Pas de fond, pas de cadre : un filet, une lettre, deux
- * lignes.
+ * Six croquis au trait à la place. Ils ne promettent rien, ils
+ * décrivent, et ils se comparent d'un coup d'œil — ce qu'une rangée de
+ * photographies ne permettait pas. Pas de fond, pas de cadre : le
+ * dessin, la lettre, deux lignes.
  */
 
 export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
@@ -44,12 +44,16 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
             <li key={m.lettre}>
               <Link href={`/morphologies/${m.lettre.toLowerCase()}`} className="group block">
                 <span className="block h-px w-full bg-encre" />
-                {/* La lettre porte la carte : c'est le repère du site,
-                  * et le seul signe qui n'ait rien à prouver. */}
-                <span className="affiche mt-4 block text-[clamp(3rem,5.5vw,4.5rem)] leading-[0.85] text-encre transition-colors duration-500 group-hover:text-action">
+                <Croquis
+                  lettre={m.lettre}
+                  className="mx-auto mt-[clamp(1.25rem,2vw,2rem)] w-[min(100%,9rem)] text-plume transition-colors duration-700 group-hover:text-action"
+                />
+                {/* La lettre reste : c'est le repère que l'on cherche du
+                  * regard dans le reste du site. */}
+                <span className="affiche mt-[clamp(1rem,1.6vw,1.5rem)] block text-[clamp(1.75rem,3vw,2.5rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
                   {m.lettre}
                 </span>
-                <span className="nom-carte mt-5 block text-[0.9375rem]">
+                <span className="nom-carte mt-3 block text-[0.9375rem]">
                   {morphoNom(m, langue)}
                 </span>
                 <span className="texte mt-1 block text-[0.8125rem]">
