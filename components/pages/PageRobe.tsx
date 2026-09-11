@@ -177,6 +177,17 @@ export default async function PageRobe({
               "linear-gradient(95deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.16) 46%, rgba(0,0,0,0) 76%)",
           }}
         />
+        {/* Le voile du haut, celui des autres premiers écrans : la
+          * barre de navigation s'y pose maintenant, et son sigle est
+          * blanc. Sans lui, il tombait sur du tissu clair. */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-40"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.14) 45%, rgba(0,0,0,0) 100%)",
+          }}
+        />
         {/* Le second voile, du bas vers le haut, et seulement sous le
           * pouce : le texte y descend, et il descend sur du gravier
           * clair. Le voile latéral, calculé pour une colonne de gauche,

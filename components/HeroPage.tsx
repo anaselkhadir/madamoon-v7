@@ -157,12 +157,20 @@ export default function HeroPage({
           {surtitre && <p className="legende sur-rouge">{surtitre}</p>}
           <h1 className={`affiche text-sur-image ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
           <p className="accroche mt-6 text-sur-image">{ligne}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <AppelElise maison={maison} className="bouton">
+          {/* Sous le pouce, le catalogue se réduit à son cercle et le
+            * rang tient sur une ligne : deux boutons pleine largeur
+            * l'un sous l'autre mangeaient la photographie. */}
+          <div className="mt-6 flex flex-wrap items-center gap-3 max-md:flex-nowrap max-md:gap-2">
+            <AppelElise maison={maison} className="bouton essentiel">
               {action}
             </AppelElise>
             {catalogue && (
-              <Catalogue intitule={catalogue.intitule} contexte={catalogue.contexte} langue={langue} />
+              <Catalogue
+                intitule={catalogue.intitule}
+                contexte={catalogue.contexte}
+                langue={langue}
+                pastille
+              />
             )}
           </div>
         </div>

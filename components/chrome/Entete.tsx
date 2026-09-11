@@ -237,8 +237,23 @@ export default function Entete() {
     [classement]
   );
 
-  /* L'accueil est la seule page qui commence par une image plein cadre. */
-  const surImage = cheminFr === "/" && !pose && !ouvert && !mega;
+  /*
+   * Les pages qui s'ouvrent sur une image plein cadre.
+   *
+   * L'accueil, et les quatre familles qui portent un premier écran
+   * photographique : la fiche d'une robe, une coupe, une morphologie,
+   * une maison. La barre s'y pose dessus, et reprend son fond dès le
+   * premier défilement — comme sur l'accueil.
+   *
+   * Les pages de liste — « /robes », « /coupes », « /morphologies » —
+   * en sont exclues : elles commencent sur du papier, et une barre
+   * transparente y poserait du blanc sur du blanc. La barre oblique
+   * finale du préfixe suffit à les écarter, « versFrancais » ayant
+   * retiré celle des adresses.
+   */
+  const OUVERTURES = ["/robes/", "/coupes/", "/morphologies/", "/createurs/"];
+  const surPhoto = cheminFr === "/" || OUVERTURES.some((p) => cheminFr.startsWith(p));
+  const surImage = surPhoto && !pose && !ouvert && !mega;
 
   useEffect(() => {
     const surScroll = () => setPose(window.scrollY > 24);
