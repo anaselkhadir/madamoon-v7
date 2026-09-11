@@ -525,7 +525,7 @@ export const ROBES: Robe[] = [
   {
     slug: "agnessa",
     nom: "Agnessa",
-    ligne: "Fluide, silhouette longiligne",
+    ligne: "Fluide, tombé longiligne",
     categorie: "Fluide",
     regard: "Un décolleté en V profond sur une jupe de tulle nude.",
     vues: 2,
@@ -853,7 +853,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "O",
     ouverture: { robe: "montana", vue: 1 },
-    nom: "Silhouette en O",
+    nom: "Morphologie en O",
     silhouette: "Des courbes généreuses, une poitrine et un ventre marqués.",
     objectif: "Allonger la ligne et mettre la poitrine en valeur.",
     coupes: [
@@ -864,12 +864,12 @@ export const MORPHOLOGIES: Morphologie[] = [
     premieres: ["Fluide", "Trapèze"],
     secondes: ["Minimaliste", "Princesse"],
     conseil:
-      "Les tombés fluides et les coupes trapèze allongent joliment la silhouette. Un décolleté en V ou en cœur met la poitrine en valeur.",
+      "Les tombés fluides et les coupes trapèze allongent joliment la ligne. Un décolleté en V ou en cœur met la poitrine en valeur.",
   },
   {
     lettre: "A",
     ouverture: { robe: "solana", vue: 1 },
-    nom: "Silhouette en A",
+    nom: "Morphologie en A",
     silhouette: "Des épaules plus étroites que les hanches, une taille bien dessinée.",
     objectif: "Ramener le regard vers le haut du corps.",
     coupes: [
@@ -885,7 +885,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "V",
     ouverture: { robe: "addison", vue: 1 },
-    nom: "Silhouette en V",
+    nom: "Morphologie en V",
     silhouette: "Des épaules larges, des hanches plus étroites.",
     objectif: "Adoucir le haut et donner du volume au bas.",
     coupes: [
@@ -901,7 +901,7 @@ export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "H",
     ouverture: { robe: "ariel", vue: 1 },
-    nom: "Silhouette en H",
+    nom: "Morphologie en H",
     silhouette: "Une ligne droite, une taille peu marquée.",
     objectif: "Créer de la courbe, sans la forcer.",
     coupes: [
@@ -912,12 +912,12 @@ export const MORPHOLOGIES: Morphologie[] = [
     premieres: ["Fluide", "Sirène"],
     secondes: ["Minimaliste", "Trapèze"],
     conseil:
-      "Les modèles cintrés à la taille et les sirènes légères dessinent des courbes tout en allongeant la silhouette.",
+      "Les modèles cintrés à la taille et les sirènes légères dessinent des courbes tout en allongeant la ligne.",
   },
   {
     lettre: "8",
     ouverture: { robe: "venus", vue: 1 },
-    nom: "Silhouette en 8",
+    nom: "Morphologie en 8",
     silhouette: "Des épaules et des hanches équilibrées, une taille marquée.",
     objectif: "Sublimer une harmonie qui existe déjà.",
     coupes: [
@@ -933,8 +933,8 @@ export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "X",
     ouverture: { robe: "meredith", vue: 1 },
-    nom: "Silhouette en X",
-    silhouette: "Une silhouette équilibrée, des courbes douces, une taille fine.",
+    nom: "Morphologie en X",
+    silhouette: "Des proportions équilibrées, des courbes douces, une taille fine.",
     objectif: "Valoriser sans en faire trop.",
     coupes: [
       "Bonne nouvelle : presque toutes les coupes vous vont.",
@@ -972,7 +972,7 @@ export function suggerer(lettre: string): Suggestion[] {
   return [
     {
       titre: "Nos recommandations",
-      intro: "Les silhouettes qui peuvent particulièrement vous mettre en valeur.",
+      intro: "Les coupes qui peuvent particulièrement vous mettre en valeur.",
       robes: premieres.slice(0, 6),
     },
     {

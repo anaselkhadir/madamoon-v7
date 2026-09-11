@@ -41,7 +41,7 @@ export type Edito = {
 
 export const EDITO: Record<Lettre, Edito> = {
   O: {
-    question: "Quelle robe pour une silhouette en O ?",
+    question: "Quelle robe pour une morphologie en O ?",
     promesse:
       "Un tombé qui glisse, un décolleté qui ouvre le buste : la ligne s'allonge d'elle-même.",
     reperes: [
@@ -77,7 +77,7 @@ export const EDITO: Record<Lettre, Edito> = {
   },
 
   A: {
-    question: "Quelle robe pour une silhouette en A ?",
+    question: "Quelle robe pour une morphologie en A ?",
     promesse: "Un haut de robe travaillé, une jupe qui s'ouvre : l'équilibre se fait seul.",
     reperes: [
       {
@@ -110,7 +110,7 @@ export const EDITO: Record<Lettre, Edito> = {
   },
 
   V: {
-    question: "Quelle robe pour une silhouette en V ?",
+    question: "Quelle robe pour une morphologie en V ?",
     promesse: "Adoucir l'épaule, donner de l'ampleur au bas : la robe rééquilibre sans effort.",
     reperes: [
       {
@@ -127,12 +127,12 @@ export const EDITO: Record<Lettre, Edito> = {
         texte: "Les décolletés profonds vous vont : ils cassent la ligne horizontale des épaules.",
       },
     ],
-    proportions: "Épaules larges, hanches étroites, silhouette sportive.",
+    proportions: "Épaules larges, hanches étroites, ligne sportive.",
     pourquoi: {
       Fluide:
         "Rien n'est construit aux épaules. Le tissu tombe depuis le buste, et le haut du corps cesse d'être le point d'appui de la robe.",
       Princesse:
-        "L'ampleur de la jupe donne au bas la place qu'il n'a pas naturellement. L'épaule, du coup, ne mène plus la silhouette.",
+        "L'ampleur de la jupe donne au bas la place qu'il n'a pas naturellement. L'épaule, du coup, ne mène plus la ligne.",
       Trapèze:
         "Le même effet, en plus discret : la jupe s'ouvre, la ligne s'équilibre, et la robe reste simple à vivre.",
       "Deux en un":
@@ -143,7 +143,7 @@ export const EDITO: Record<Lettre, Edito> = {
   },
 
   H: {
-    question: "Quelle robe pour une silhouette en H ?",
+    question: "Quelle robe pour une morphologie en H ?",
     promesse: "Créer la courbe plutôt que la chercher : c'est la coupe qui la dessine.",
     reperes: [
       {
@@ -157,17 +157,17 @@ export const EDITO: Record<Lettre, Edito> = {
       {
         titre: "Devant le miroir",
         texte:
-          "Une simple ceinture change toute votre silhouette — plus nettement que sur d'autres morphologies.",
+          "Une simple ceinture change toute votre ligne — plus nettement que sur d'autres morphologies.",
       },
     ],
-    proportions: "Ligne droite, taille peu marquée, silhouette longiligne.",
+    proportions: "Ligne droite, taille peu marquée, allure longiligne.",
     pourquoi: {
       Sirène:
         "Elle dessine ce qui ne se voit pas encore. Ajustée jusqu'au genou puis évasée, elle crée la courbe au lieu de la souligner.",
       Fluide:
         "Cintrée à la taille ou portée avec une ceinture, elle marque là où vous le décidez, et nulle part ailleurs.",
       Minimaliste:
-        "Rien ne détourne de la ligne. Sur une silhouette longue, c'est souvent la robe la plus juste.",
+        "Rien ne détourne de la ligne. Sur une ligne longue, c'est souvent la robe la plus juste.",
       Trapèze:
         "La jupe s'ouvre à partir d'une taille haute et donne du mouvement là où la ligne est droite.",
     },
@@ -176,7 +176,7 @@ export const EDITO: Record<Lettre, Edito> = {
   },
 
   "8": {
-    question: "Quelle robe pour une silhouette en 8 ?",
+    question: "Quelle robe pour une morphologie en 8 ?",
     promesse: "L'équilibre est déjà là. La robe n'a qu'à le suivre.",
     reperes: [
       {
@@ -194,7 +194,7 @@ export const EDITO: Record<Lettre, Edito> = {
       Sirène:
         "Elle épouse une ligne déjà proportionnée. Ajustée jusqu'au genou, elle ne corrige rien : elle suit.",
       Minimaliste:
-        "Le satin ne raconte que la coupe. Sur une silhouette équilibrée, c'est le parti pris le plus fort.",
+        "Le satin ne raconte que la coupe. Sur des proportions équilibrées, c'est le parti pris le plus fort.",
       Princesse:
         "Le bustier se cintre à la taille et l'ampleur part de là. Le contraste est net, et c'est tout l'effet recherché.",
       Fluide:
@@ -205,7 +205,7 @@ export const EDITO: Record<Lettre, Edito> = {
   },
 
   X: {
-    question: "Quelle robe pour une silhouette en X ?",
+    question: "Quelle robe pour une morphologie en X ?",
     promesse: "Presque toutes les coupes vous vont. C'est le style du mariage qui tranchera.",
     reperes: [
       {
@@ -249,7 +249,7 @@ export const AU_DELA: Repere[] = [
   {
     titre: "Le style",
     texte:
-      "Une robe se choisit aussi contre son type. Une silhouette en 8 peut vouloir du fluide, et avoir raison.",
+      "Une robe se choisit aussi contre son type. Une morphologie en 8 peut vouloir du fluide, et avoir raison.",
   },
   {
     titre: "Le lieu",
@@ -289,21 +289,21 @@ export type Question = { q: string; r: string };
 export const QUESTIONS: Record<Lettre, Question[]> = {
   O: [
     {
-      q: "Quelle coupe de robe de mariée choisir pour une silhouette en O ?",
+      q: "Quelle coupe de robe de mariée choisir pour une morphologie en O ?",
       r: "Les tombés fluides et les coupes trapèze en premier : le tissu descend d'un seul tenant et la ligne paraît plus longue. Le décolleté compte autant que la coupe — un V ou un cœur ouvre le buste et allonge le cou.",
     },
     {
-      q: "Peut-on porter une robe sirène avec une silhouette en O ?",
+      q: "Peut-on porter une robe sirène avec une morphologie en O ?",
       r: "Oui. Une morphologie n'interdit aucune robe, elle indique seulement par quoi commencer. La sirène demande une matière qui tient — un crêpe plutôt qu'un satin léger — et se juge en cabine bien mieux que sur photographie.",
     },
     {
-      q: "Faut-il éviter les robes princesse avec une silhouette en O ?",
+      q: "Faut-il éviter les robes princesse avec une morphologie en O ?",
       r: "Non, et le mot « éviter » n'a pas cours ici. Un bustier travaillé porte le regard vers le haut, et l'ampleur de la jupe répond au buste sans le charger. La princesse vient simplement après le fluide et le trapèze dans l'ordre des essayages.",
     },
   ],
   A: [
     {
-      q: "Quelle robe de mariée met en valeur une silhouette en A ?",
+      q: "Quelle robe de mariée met en valeur une morphologie en A ?",
       r: "Celles qui donnent au haut du corps de quoi retenir le regard : un bustier brodé, drapé, ou une encolure qui élargit l'épaule. La jupe, elle, n'a rien à démontrer — évasée, elle répond aux hanches sans les souligner.",
     },
     {
@@ -311,7 +311,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
       r: "Par le haut, jamais en cachant le bas. Une encolure bateau ou un bustier droit ajoutent quelques centimètres de ligne à l'épaule, et cela suffit à changer toute la proportion.",
     },
     {
-      q: "Une robe sirène convient-elle à une silhouette en A ?",
+      q: "Une robe sirène convient-elle à une morphologie en A ?",
       r: "Elle se porte très bien, à condition que le haut ait de quoi équilibrer : une manche, une bretelle large, un décolleté travaillé. Beaucoup de mariées en A repartent avec une sirène qu'elles n'avaient pas prévu d'essayer.",
     },
   ],
@@ -321,26 +321,26 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
       r: "Celles qui ne construisent rien au-dessus : un tombé fluide qui part du buste, ou une jupe ample qui donne au bas la place qu'il n'a pas naturellement. La ligne s'équilibre d'elle-même.",
     },
     {
-      q: "Quel décolleté choisir avec une silhouette en V ?",
+      q: "Quel décolleté choisir avec une morphologie en V ?",
       r: "Un V, un croisé ou un asymétrique. Tous les trois cassent la largeur d'un trait vertical, et c'est ici le détail qui compte le plus — davantage que la coupe de la jupe.",
     },
     {
-      q: "Peut-on porter des manches bouffantes avec une silhouette en V ?",
+      q: "Peut-on porter des manches bouffantes avec une morphologie en V ?",
       r: "Oui, et cela peut très bien fonctionner si la jupe a du volume pour répondre. Portée sur une jupe droite, la manche ballon accentue en revanche la largeur de l'épaule — c'est une question d'équilibre, pas d'interdit.",
     },
   ],
   H: [
     {
-      q: "Comment créer des courbes avec une silhouette en H ?",
+      q: "Comment créer des courbes avec une morphologie en H ?",
       r: "En laissant la coupe les dessiner. Une sirène légère, un modèle cintré à la taille ou une simple ceinture marquent là où l'on veut, sans rien serrer.",
     },
     {
-      q: "La coupe empire convient-elle à une silhouette en H ?",
+      q: "La coupe empire convient-elle à une morphologie en H ?",
       r: "Très bien. Elle remonte la taille sous la poitrine et allonge tout ce qui suit. Elle mérite un essayage même si l'idée ne vous attirait pas sur photographie — c'est une coupe qui se comprend une fois portée.",
     },
     {
       q: "Faut-il forcément marquer la taille ?",
-      r: "Non. Une robe droite, en satin net, sur une silhouette longue, est l'un des plus beaux partis pris qui soient. Marquer la taille est une option, pas une correction à apporter.",
+      r: "Non. Une robe droite, en satin net, sur une ligne longue, est l'un des plus beaux partis pris qui soient. Marquer la taille est une option, pas une correction à apporter.",
     },
   ],
   "8": [
@@ -349,17 +349,17 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
       r: "Les sirènes et les fourreaux, qui suivent une ligne déjà proportionnée sans avoir à la créer. Le satin minimaliste fonctionne pour la même raison : il ne raconte que la coupe.",
     },
     {
-      q: "La robe princesse convient-elle à une silhouette en 8 ?",
+      q: "La robe princesse convient-elle à une morphologie en 8 ?",
       r: "Oui. Le bustier se cintre à la taille et l'ampleur part de là : le contraste est net, et c'est tout l'effet recherché. Elle demande simplement de la place — pensez au lieu et à la journée.",
     },
     {
-      q: "Faut-il éviter les coupes droites avec une silhouette en 8 ?",
+      q: "Faut-il éviter les coupes droites avec une morphologie en 8 ?",
       r: "Non. Une coupe droite flotte parfois là où la taille se creuse, mais une ceinture ou une reprise à la taille règle la question en un essayage. Rien n'est écarté d'avance.",
     },
   ],
   X: [
     {
-      q: "Quelle robe de mariée choisir pour une silhouette en X ?",
+      q: "Quelle robe de mariée choisir pour une morphologie en X ?",
       r: "Presque toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide ou minimaliste : la question devient celle du style du mariage, et non celle de la morphologie.",
     },
     {
@@ -367,7 +367,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
       r: "Par le lieu, la saison, et ce que vous voulez pouvoir faire de votre journée. Une traîne de deux mètres sur une plage, un satin lourd en août : la robe doit tenir douze heures, pas seulement la photographie.",
     },
     {
-      q: "La silhouette en X est-elle la même que la silhouette en 8 ?",
+      q: "La morphologie en X est-elle la même que la morphologie en 8 ?",
       r: "Elles se ressemblent et se confondent souvent. Les deux ont des épaules et des hanches équilibrées ; le 8 a des courbes franchement marquées, le X des courbes plus douces et une taille fine. Les conseils se recoupent largement, et les deux pages valent la lecture.",
     },
   ],

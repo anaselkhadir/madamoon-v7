@@ -120,3 +120,14 @@ export const questions = (lettre: Lettre, l: Langue) =>
  * comme une faute.
  */
 export const bas = (texte: string, l: Langue) => (l === "fr" ? texte.toLowerCase() : texte);
+
+/*
+ * La seule initiale en bas de casse.
+ *
+ * « bas » met toute la chaîne en minuscules : c'est ce qu'il faut pour
+ * une étiquette — « sirène en dentelle » —, jamais pour une phrase.
+ * Appliquée à « Ajustée jusqu'aux genoux, puis évasée. Elle dessine la
+ * taille », elle avalait la capitale de la seconde phrase.
+ */
+export const initiale = (texte: string, l: Langue) =>
+  l === "fr" && texte ? texte.charAt(0).toLowerCase() + texte.slice(1) : texte;

@@ -19,9 +19,9 @@ export async function generateMetadata({
   const slug = m.lettre.toLowerCase();
   return {
     /* Le gabarit ajoute « — MADAMOON » : ne pas le redire ici. Et la
-     * lettre garde sa capitale — « silhouette en x » ne veut rien dire. */
-    title: `Robe de mariée pour une silhouette en ${m.lettre}`,
-    description: `${e.promesse} Comment reconnaître une silhouette en ${m.lettre}, les coupes qui la mettent en valeur et les modèles à essayer au showroom MADAMOON, Paris 10e.`,
+     * lettre garde sa capitale — « morphologie en x » ne veut rien dire. */
+    title: `Robe de mariée pour une morphologie en ${m.lettre}`,
+    description: `${e.promesse} Comment reconnaître une morphologie en ${m.lettre}, les coupes qui la mettent en valeur et les modèles à essayer au showroom MADAMOON, Paris 10e.`,
     alternates: {
       canonical: `/morphologies/${slug}`,
       languages: { fr: `/morphologies/${slug}`, en: `/en/body-shapes/${slug}` },

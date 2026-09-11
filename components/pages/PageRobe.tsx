@@ -25,7 +25,10 @@ import type { Langue } from "@/lib/langue";
 import { versLangue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import {
+  bas,
   coupeNom,
+  familleTexte,
+  initiale,
   coupePluriel,
   createurNote,
   maison,
@@ -299,8 +302,7 @@ export default async function PageRobe({
                 {coupeNom(robe.categorie, langue)}
               </Link>
               {" — "}
-              {FAMILLES[robe.categorie].charAt(0).toLowerCase() +
-                FAMILLES[robe.categorie].slice(1)}
+              {initiale(familleTexte(robe.categorie, langue, FAMILLES[robe.categorie]), langue)}
             </dd>
           </div>
 

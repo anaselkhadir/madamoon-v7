@@ -96,7 +96,7 @@ export function altCoupe(
       ? ""
       : "maison" in precision
         ? ` ${precision.maison}`
-        : ` conseillée pour une silhouette en ${precision.morphologie}`;
+        : ` conseillée pour une morphologie en ${precision.morphologie}`;
     return `Robe de mariée ${nom.toLowerCase()}${fin} — ${LIEU(langue)}`;
   }
   const fin = !precision

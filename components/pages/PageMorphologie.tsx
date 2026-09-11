@@ -187,13 +187,11 @@ export default async function PageMorphologie({
         catalogue={{
           /* Seule l'initiale passe en bas de casse : la lettre de la
             * morphologie est une désignation, pas un mot. « silhouette
-            * en X », jamais « silhouette en x ». */
-          /* « le catalogue silhouette en A » en français ; en anglais
-           * l'article est déjà dans la phrase, la lettre suffit. */
-          intitule:
-            langue === "fr"
-              ? morphoNom(m, langue).charAt(0).toLowerCase() + morphoNom(m, langue).slice(1)
-              : `${m.lettre} shape`,
+            * en X », jamais « morphologie en x ». */
+          /* « le catalogue morphologie A » : la préposition alourdissait
+           * le bouton sans rien préciser. En anglais, l'article est déjà
+           * dans la phrase et la lettre suffit. */
+          intitule: langue === "fr" ? `morphologie ${m.lettre}` : `${m.lettre} shape`,
           contexte: `morphologie:${m.lettre.toLowerCase()}`,
         }}
       />

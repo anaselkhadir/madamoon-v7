@@ -64,10 +64,10 @@ const FR = {
     aPartirDe: "À partir de",
   },
   silhouette: {
-    legende: "La silhouette",
+    legende: "La morphologie",
     titre: "Avant la robe, la ligne.",
     texte:
-      "Six silhouettes, et pour chacune les coupes qui l’allongent, l’équilibrent ou la révèlent.",
+      "Six morphologies, et pour chacune les coupes qui allongent, équilibrent ou révèlent la ligne.",
     lien: "Les six morphologies",
     precedentes: "Voir les morphologies précédentes",
     suivantes: "Voir les morphologies suivantes",
@@ -125,7 +125,7 @@ const FR = {
   fiche: {
     autresVues: (nom: string) => `Autres vues de ${nom}`,
     laFiche: "La fiche",
-    silhouettes: "Les silhouettes qu’elle sert",
+    silhouettes: "Les morphologies qu’elle sert",
     coupe: "La coupe",
     maison: "La maison",
     confection: "La confection",
@@ -135,9 +135,9 @@ const FR = {
     memeFamille: "Dans la même famille",
     toutesLes: (pluriel: string) => `Toutes les ${pluriel}`,
     toutesSilhouettes:
-      "Elle va à toutes les silhouettes — c’est rare, et c’est ce qui en fait une valeur sûre à l’essayage.",
+      "Elle va à toutes les morphologies — c’est rare, et c’est ce qui en fait une valeur sûre à l’essayage.",
     silhouettesServies: (lettres: string) =>
-      `Elle est d’abord conseillée aux silhouettes ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
+      `Elle est d’abord conseillée aux morphologies ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
   },
   elise: {
     dialogue: "Élise, conseillère MADAMOON",
@@ -171,14 +171,14 @@ const FR = {
     ouiBienMarquee: "Oui, bien marquée",
     peuMarquee: "Peu marquée",
     prononcees: "Prononcées",
-    doucesFine: "Douces, silhouette fine",
+    doucesFine: "Douces, ligne fine",
 
     bonjour:
       "Bonjour, je suis Élise, conseillère chez MADAMOON. Trouver la robe d’une vie, c’est mon métier — et ma plus grande joie.",
     invitation:
       "Parlez-moi de votre mariage, posez-moi vos questions, ou laissez-vous guider.",
     essentiel:
-      "L’essentiel est de trouver la robe qui met en valeur votre silhouette tout en vous ressemblant.",
+      "L’essentiel est de trouver la robe qui met en valeur votre morphologie tout en vous ressemblant.",
     connaissezMorpho: "Connaissez-vous déjà votre morphologie ?",
     laquelle: "Très bien. Laquelle est la vôtre ?",
     pasAPas: "Je vous guide pas à pas.",
@@ -203,7 +203,7 @@ const FR = {
     toutesLesRobes: (nom: string) => `Toutes les robes ${nom}`,
     voirMaison: (nom: string) => `Voir ${nom}`,
     vousRegardez: (nom: string) =>
-      `Vous regardez ${nom}. Je pars de votre silhouette, et je vous dis franchement si la réponse est ailleurs.`,
+      `Vous regardez ${nom}. Je pars de votre morphologie, et je vous dis franchement si la réponse est ailleurs.`,
     voiciCeQui: (nom: string, liste: string) =>
       `Chez ${nom}, voici ce qui vous correspond : ${liste}.`,
     pasLesCoupes: (nom: string, liste: string) =>
@@ -231,7 +231,7 @@ const FR = {
     localMerci:
       "Avec grand plaisir. Je reste à votre écoute, et au plaisir de vous accueillir au showroom.",
     localDefaut:
-      "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre silhouette, nos prix et la prise de rendez-vous.",
+      "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre morphologie, nos prix et la prise de rendez-vous.",
   },
   pages: {
     coupes: {
@@ -270,7 +270,7 @@ const FR = {
       trouverMaRobeDe: (nom: string) => `Trouver ma robe ${nom}`,
     },
     morpho: {
-      reconnaitre: (lettre: string) => `Reconnaître une silhouette en ${lettre}`,
+      reconnaitre: (lettre: string) => `Reconnaître une morphologie en ${lettre}`,
       lesProportions: "Les proportions",
       pasExacte:
         "Une morphologie ne se lit pas dans un miroir en trente secondes, et elle n’a pas à être exacte : c’est un point de départ pour savoir quoi essayer en premier. Si vous hésitez entre deux,",
@@ -283,10 +283,10 @@ const FR = {
       voiciPourquoi:
         "Voici pourquoi ces lignes fonctionnent, et ce qu’elles font réellement une fois la robe enfilée.",
       decouvrez: (apposition: string, lettre: string) =>
-        `Découvrez nos robes de mariée ${apposition} adaptées à une silhouette en ${lettre}`,
+        `Découvrez nos robes de mariée ${apposition} adaptées à une morphologie en ${lettre}`,
       ouDirectement: " — ou allez directement à ",
       et: " et ",
-      nosRobes: "Nos robes pour cette silhouette",
+      nosRobes: "Nos robes pour cette morphologie",
       voirToutLeCatalogue: "Voir tout le catalogue",
       particulierement: "Particulièrement adaptées",
       particulierementNote:
@@ -299,7 +299,7 @@ const FR = {
         "Le reste de la sélection. En cabine tout se tente, et rien ici n’est écarté.",
       lesQuestions: "Les questions que l’on nous pose",
       poserLaVotre: "Poser la vôtre",
-      commentSavoir: (lettre: string) => `Comment savoir si j’ai une silhouette en ${lettre} ?`,
+      commentSavoir: (lettre: string) => `Comment savoir si j’ai une morphologie en ${lettre} ?`,
       auDela: "Au-delà de la morphologie",
       auDelaPhrase:
         "Une morphologie dit par où commencer. Elle ne dit pas qui vous êtes le jour de votre mariage.",
@@ -355,7 +355,7 @@ const FR = {
       parLaMaisonTexte:
         "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d’Olya Mak.",
       elise: (adresse: string) =>
-        `Ou laissez-vous guider : Élise part de votre silhouette, en trois questions, et vous dit franchement si la réponse est chez une autre maison. Elle donne aussi l’adresse et les horaires — ${adresse}, sur rendez-vous.`,
+        `Ou laissez-vous guider : Élise part de votre morphologie, en trois questions, et vous dit franchement si la réponse est chez une autre maison. Elle donne aussi l’adresse et les horaires — ${adresse}, sur rendez-vous.`,
     },
     calendly: {
       souvre: "Le calendrier s’ouvre",
@@ -393,7 +393,7 @@ const FR = {
         : `${n} robes de ce lien ne sont plus au catalogue.`,
     aucun:
       "Vous n’avez pas encore de coup de cœur. Parcourez le catalogue et touchez le cœur posé sur une robe : elle vous attendra ici.",
-    partirDeMaSilhouette: "Partir de ma silhouette",
+    partirDeMaSilhouette: "Partir de ma morphologie",
     retenues: (n: number) => (n === 1 ? "Une robe retenue." : `${n} robes retenues.`),
     apportez:
       "Apportez cette liste au showroom : l’essayage se prépare mieux quand on sait par où commencer.",
