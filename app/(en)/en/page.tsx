@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/accueil/Hero";
-import Silhouette from "@/components/accueil/Silhouette";
+import Morphologies from "@/components/accueil/Morphologies";
 import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       <Hero langue="en" />
-      <Silhouette langue="en" />
+      <Morphologies langue="en" />
       <Coupes langue="en" />
       <Createurs langue="en" />
       <Avis langue="en" />

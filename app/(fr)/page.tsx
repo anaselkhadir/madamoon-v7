@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Ouverture from "@/components/accueil/Ouverture";
 import Hero from "@/components/accueil/Hero";
-import Silhouette from "@/components/accueil/Silhouette";
+import Morphologies from "@/components/accueil/Morphologies";
 import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
@@ -39,7 +39,7 @@ export default function Accueil() {
     <>
       <Ouverture />
       <Hero langue="fr" />
-      <Silhouette langue="fr" />
+      <Morphologies langue="fr" />
       <Coupes langue="fr" />
       <Createurs langue="fr" />
       <Avis langue="fr" />

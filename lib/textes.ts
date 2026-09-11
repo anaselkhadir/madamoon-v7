@@ -64,7 +64,7 @@ const FR = {
     aPartirDe: "À partir de",
   },
   silhouette: {
-    legende: "La morphologie",
+    legende: "Les morphologies",
     titre: "Avant la robe, la ligne.",
     texte:
       "Six morphologies, et pour chacune les coupes qui allongent, équilibrent ou révèlent la ligne.",
@@ -491,7 +491,7 @@ const EN: Textes = {
     aPartirDe: "From",
   },
   silhouette: {
-    legende: "The line",
+    legende: "Body shapes",
     titre: "Before the dress, the line.",
     texte:
       "Six body shapes, and for each the cuts that lengthen, balance or reveal it.",
