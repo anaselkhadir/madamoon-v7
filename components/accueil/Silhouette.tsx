@@ -1,6 +1,7 @@
 import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import RailFleches from "@/components/accueil/RailFleches";
+import RailSouris from "@/components/accueil/RailSouris";
 import { MORPHOLOGIES, ROBES } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
@@ -112,6 +113,7 @@ export default function Silhouette({ langue = "fr" }: { langue?: Langue }) {
           {L.silhouette.lien}
         </Link>
         <RailFleches cible="rail-silhouette" />
+      <RailSouris cible="rail-silhouette" />
       </div>
     </section>
   );

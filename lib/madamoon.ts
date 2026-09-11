@@ -58,7 +58,7 @@ export const CREATEURS: Createur[] = [
   {
     nom: "Casablanca Bridal",
     slug: "casablanca-bridal",
-    origine: "Californie",
+    origine: "Newport Beach",
     note: "Le mikado, le satin duchesse, les lignes nettes. Des robes construites, faites pour la lumière.",
     /* Meredith plutôt que Tessa : Tessa est le seul film « deux en un »
      * du catalogue, et la page de cette coupe en a plus besoin. */
@@ -81,7 +81,7 @@ export const CREATEURS: Createur[] = [
   {
     nom: "Monica Loretti",
     slug: "monica-loretti",
-    origine: "Italie",
+    origine: "Rome",
     note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
     ouverture: { robe: "lorette", vue: 1 },
   },
@@ -951,6 +951,26 @@ export const MORPHOLOGIES: Morphologie[] = [
 export function morphologieParSlug(slug: string): Morphologie | undefined {
   return MORPHOLOGIES.find((m) => m.lettre === slug.toUpperCase());
 }
+
+/*
+ * Les maisons que l'accueil nomme.
+ *
+ * La boutique travaille aussi de petits ateliers qu'elle a mis des
+ * années à trouver. Les nommer en vitrine, c'est les désigner à la
+ * concurrence : leurs robes restent au catalogue, mais l'accueil les
+ * réunit sous « Autres créateurs ».
+ *
+ * La liste est une donnée, pas une règle de tri : elle se change ici,
+ * et nulle part ailleurs.
+ */
+export const MAISONS_EN_VEDETTE = [
+  "casablanca-bridal",
+  "watters-designs",
+  "monica-loretti",
+  "olya-mak",
+];
+
+export const estEnVedette = (slug: string) => MAISONS_EN_VEDETTE.includes(slug);
 
 export function morphologie(lettre: string): Morphologie | undefined {
   return MORPHOLOGIES.find((m) => m.lettre === lettre);

@@ -14,8 +14,17 @@ import { t } from "@/lib/textes";
  * plutôt que de rester allumées sans rien faire.
  */
 
-export default function RailFleches({ cible }: { cible: string }) {
-  const L = t(langueDe(usePathname() ?? "/")).silhouette;
+export default function RailFleches({
+  cible,
+  quoi = "morphologies",
+}: {
+  cible: string;
+  /* Ce que le rail contient : les flèches le disent aux lecteurs
+   * d'écran, et un rail de maisons n'annonce pas des morphologies. */
+  quoi?: "morphologies" | "createurs";
+}) {
+  const T = t(langueDe(usePathname() ?? "/"));
+  const L = quoi === "createurs" ? T.createurs : T.silhouette;
   const [debut, poserDebut] = useState(true);
   const [fin, poserFin] = useState(false);
   const rail = useRef<HTMLElement | null>(null);

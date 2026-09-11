@@ -81,10 +81,10 @@ export const CREATEUR_NOTE: Record<string, string> = {
 
 export const CREATEUR_ORIGINE: Record<string, string> = {
   "watters-designs": "Dallas",
-  "casablanca-bridal": "California",
+  "casablanca-bridal": "Newport Beach",
   "olya-mak": "Barcelona",
   "angeola-biarritz": "Biarritz",
-  "monica-loretti": "Italy",
+  "monica-loretti": "Rome",
 };
 
 export const MAISON_EN = {
