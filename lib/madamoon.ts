@@ -1056,7 +1056,7 @@ export const FAQ = [
   },
   {
     q: "Où se trouve le showroom MADAMOON ?",
-    r: `Au ${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}. Les essayages ont lieu sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h.`,
+    r: `Au ${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}. Les essayages ont lieu sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h.`,
   },
 ] as const;
 

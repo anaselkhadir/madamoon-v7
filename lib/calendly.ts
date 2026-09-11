@@ -1,3 +1,5 @@
+import type { Langue } from "@/lib/langue";
+
 /*
  * Le formulaire de rendez-vous.
  *
@@ -60,8 +62,18 @@ const HABILLAGE = {
  * libre appartient à la mariée, on n'y met pas de mots à sa place. La
  * maison retrouve l'information sur la réservation.
  */
-export function urlCalendly(robe?: string): string {
+export function urlCalendly(robe?: string, langue: Langue = "fr"): string {
   const p = new URLSearchParams(HABILLAGE);
+  /*
+   * La langue du widget, et elle seule.
+   *
+   * « locale » n'agit que sur l'habillage de Calendly — « Select a Date
+   * & Time », les noms de mois, les boutons. Les questions du formulaire
+   * appartiennent au compte et restent écrites en français : elles sont
+   * partagées avec madamoon.fr, et la maison a demandé qu'on n'y touche
+   * pas. Un paramètre d'adresse ne modifie rien chez elle.
+   */
+  if (langue === "en") p.set("locale", "en");
   if (robe) {
     p.set("utm_source", "madamoon.fr");
     p.set("utm_medium", "fiche-robe");

@@ -49,7 +49,7 @@ const FR = {
     prendreRendezvous: "Prendre rendez-vous",
   },
   hero: {
-    titre: "Vous vous mariez bientôt ?",
+    titre: "Vous vous mariez bientôt ?",
     accroche: "Robes de mariée, essayage privé — Paris 10",
     trouverMaRobe: "Trouver ma robe",
     prendreRendezvous: "Prendre rendez-vous",
@@ -130,7 +130,7 @@ const FR = {
     toutesSilhouettes:
       "Elle va à toutes les silhouettes — c’est rare, et c’est ce qui en fait une valeur sûre à l’essayage.",
     silhouettesServies: (lettres: string) =>
-      `Elle est d’abord conseillée aux silhouettes ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
+      `Elle est d’abord conseillée aux silhouettes ${lettres}. Rien n’empêche de l’essayer autrement : une morphologie ouvre des pistes, elle n’en ferme aucune.`,
   },
   elise: {
     dialogue: "Élise, conseillère MADAMOON",
@@ -172,20 +172,23 @@ const FR = {
       "Parlez-moi de votre mariage, posez-moi vos questions, ou laissez-vous guider.",
     essentiel:
       "L’essentiel est de trouver la robe qui met en valeur votre silhouette tout en vous ressemblant.",
-    connaissezMorpho: "Connaissez-vous déjà votre morphologie ?",
-    laquelle: "Très bien. Laquelle est la vôtre ?",
+    connaissezMorpho: "Connaissez-vous déjà votre morphologie ?",
+    laquelle: "Très bien. Laquelle est la vôtre ?",
     pasAPas: "Je vous guide pas à pas.",
-    epaulesHanches: "Comment décririez-vous vos épaules par rapport à vos hanches ?",
-    tailleMarquee: "Et votre taille, est-elle marquée ?",
-    derniereQuestion: "Dernière question : vos courbes sont plutôt…",
+    epaulesHanches: "Comment décririez-vous vos épaules par rapport à vos hanches ?",
+    tailleMarquee: "Et votre taille, est-elle marquée ?",
+    derniereQuestion: "Dernière question : vos courbes sont plutôt…",
     pistes:
-      "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n’était pas prévu. Voulez-vous voir la sélection correspondante ?",
+      "Ce sont des pistes, jamais des règles : en boutique, on essaie aussi ce qui n’était pas prévu. Voulez-vous voir la sélection correspondante ?",
     rdvPrivatise:
       "Avec plaisir. Le showroom est entièrement privatisé pour vous pendant une heure — venez accompagnée de vos proches.",
-    faqIntro: "Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m’écrire librement.",
+    faqIntro: "Bien sûr. Que souhaitez-vous savoir ? Vous pouvez aussi m’écrire librement.",
     dansVosCoupes: "dans vos coupes",
     aEssayer: "à essayer",
     nosRecommandations: "Nos recommandations",
+    /* Le deux-points de la version lue à voix haute : insécable en
+     * français, collé en anglais. */
+    recommandationsPlat: "Nos recommandations\u00a0:",
     lObjectif: "L’objectif :",
     dansLOrdre: "Dans l’ordre",
     lettreLabel: (lettre: string) => `En ${lettre}`,
@@ -195,29 +198,29 @@ const FR = {
     vousRegardez: (nom: string) =>
       `Vous regardez ${nom}. Je pars de votre silhouette, et je vous dis franchement si la réponse est ailleurs.`,
     voiciCeQui: (nom: string, liste: string) =>
-      `Chez ${nom}, voici ce qui vous correspond : ${liste}.`,
+      `Chez ${nom}, voici ce qui vous correspond : ${liste}.`,
     pasLesCoupes: (nom: string, liste: string) =>
-      `${nom} ne travaille pas les coupes que je vous conseillerais en premier. Les maisons qui les ont, dans l’ordre : ${liste}.`,
+      `${nom} ne travaille pas les coupes que je vous conseillerais en premier. Les maisons qui les ont, dans l’ordre : ${liste}.`,
     franche: (nom: string) =>
-      `Je préfère être franche : ${nom} ne travaille pas les coupes que je vous conseillerais en premier.`,
+      `Je préfère être franche : ${nom} ne travaille pas les coupes que je vous conseillerais en premier.`,
     saufQue: (combien: number): string =>
       combien === 0
         ? " Voici les maisons faites pour vous."
         : combien === 1
           ? " Son autre robe vaut l’essai, mais voici d’abord les maisons faites pour vous."
           : " Ses autres robes valent l’essai, mais voici d’abord les maisons faites pour vous.",
-    lesMaisonsPour: (liste: string) => `Les maisons pour cette morphologie : ${liste}.`,
+    lesMaisonsPour: (liste: string) => `Les maisons pour cette morphologie : ${liste}.`,
 
     localRdv: (adresse: string, cp: string) =>
-      `Avec plaisir. Le showroom est privatisé pour vous pendant une heure, sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${adresse}, Paris ${cp}.`,
+      `Avec plaisir. Le showroom est privatisé pour vous pendant une heure, sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${adresse}, Paris ${cp}.`,
     localPrix: (prix: string) =>
       `Nos robes commencent à ${prix}, retouches comprises. Le sur-mesure se chiffre après l’essayage, selon la robe et le tissu.`,
     localHoraires: (adresse: string, cp: string, ville: string) =>
-      `Le showroom vous reçoit sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h — ${adresse}, ${cp} ${ville}.`,
+      `Le showroom vous reçoit sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h — ${adresse}, ${cp} ${ville}.`,
     localCreateurs: (liste: string) =>
       `Nos robes sont choisies chez ${liste}, avec un service de confection sur mesure.`,
     localDiagnostic:
-      "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
+      "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
     localMerci:
       "Avec grand plaisir. Je reste à votre écoute, et au plaisir de vous accueillir au showroom.",
     localDefaut:
@@ -227,14 +230,14 @@ const FR = {
     coupes: {
       titre: "Les coupes",
       intro:
-        "Six coupes. La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
+        "Six coupes. La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
     },
     morphologies: {
       titre: "Les morphologies",
       toutesLesCoupes: "Toutes les coupes",
       intro:
-        "Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Rien n’est « à éviter » — c’est un conseil de style, pas une règle, et au showroom on essaie aussi ce qui n’était pas prévu.",
-      guide: "Vous ne savez pas laquelle est la vôtre ? Élise vous guide en trois questions.",
+        "Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Rien n’est « à éviter » — c’est un conseil de style, pas une règle, et au showroom on essaie aussi ce qui n’était pas prévu.",
+      guide: "Vous ne savez pas laquelle est la vôtre ? Élise vous guide en trois questions.",
     },
     coupe: {
       nos: (pluriel: string, maison: string) => `Nos ${pluriel} ${maison}`,
@@ -244,7 +247,7 @@ const FR = {
       aQuiElleVa: "À qui cette coupe va",
       toutesLesMorphologies: "Toutes les morphologies",
       pistes: (coupe: string) =>
-        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. La ${coupe} est celle que l’on conseille d’abord à ces morphologies — les autres l’essaient tout aussi bien en boutique.`,
+        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. La ${coupe} est celle que l’on conseille d’abord à ces morphologies — les autres l’essaient tout aussi bien en boutique.`,
     },
     maison: {
       lesRobesDe: (nom: string) => `Les robes ${nom}`,
@@ -252,18 +255,18 @@ const FR = {
       sesCoupes: "Ses coupes",
       toutesLesCoupes: "Toutes les coupes",
       travaille: (nom: string, combien: number) =>
-        `${nom} travaille ${combien === 1 ? "une seule coupe" : `${combien} coupes`} au catalogue MADAMOON. L’image est prise sur l’une de ses robes, jamais sur celle d’une autre maison.`,
+        `${nom} travaille ${combien === 1 ? "une seule coupe" : `${combien} coupes`} au catalogue MADAMOON. L’image est prise sur l’une de ses robes, jamais sur celle d’une autre maison.`,
       aQuiCesCoupesVont: "À qui ces coupes vont",
       toutesLesMorphologies: "Toutes les morphologies",
       pistes: (dela: string) =>
-        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Voici celles que les coupes ${dela} servent en premier — les autres s’essaient tout aussi bien en boutique.`,
+        `Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Voici celles que les coupes ${dela} servent en premier — les autres s’essaient tout aussi bien en boutique.`,
       trouverMaRobeDe: (nom: string) => `Trouver ma robe ${nom}`,
     },
     morpho: {
       reconnaitre: (lettre: string) => `Reconnaître une silhouette en ${lettre}`,
       lesProportions: "Les proportions",
       pasExacte:
-        "Une morphologie ne se lit pas dans un miroir en trente secondes, et elle n’a pas à être exacte : c’est un point de départ pour savoir quoi essayer en premier. Si vous hésitez entre deux,",
+        "Une morphologie ne se lit pas dans un miroir en trente secondes, et elle n’a pas à être exacte : c’est un point de départ pour savoir quoi essayer en premier. Si vous hésitez entre deux,",
       eliseVousGuide: "Élise vous guide",
       enTroisQuestions: " en trois questions.",
       lesCoupes: "Les coupes qui vous mettent en valeur",
@@ -289,12 +292,71 @@ const FR = {
         "Le reste de la sélection. En cabine tout se tente, et rien ici n’est écarté.",
       lesQuestions: "Les questions que l’on nous pose",
       poserLaVotre: "Poser la vôtre",
-      commentSavoir: (lettre: string) => `Comment savoir si j’ai une silhouette en ${lettre} ?`,
+      commentSavoir: (lettre: string) => `Comment savoir si j’ai une silhouette en ${lettre} ?`,
       auDela: "Au-delà de la morphologie",
       auDelaPhrase:
         "Une morphologie dit par où commencer. Elle ne dit pas qui vous êtes le jour de votre mariage.",
       lesMaisons: "Les maisons qui vous vont",
       enCoupes: (liste: string) => ` — en ${liste}`,
+    },
+    showroom: {
+      titre: "Le showroom",
+      accroche: "Paris 10",
+      surRendezVous: " — sur rendez-vous",
+      prendreRendezvous: "Prendre rendez-vous",
+      laVisite: "La visite",
+      uneHeure: "Une heure, le showroom privatisé, et quelqu’un qui connaît chaque robe.",
+      venir: "Venir",
+      altScene: "Robes de mariée suspendues dans le showroom",
+      altDetail: "Détail d’une robe de mariée",
+    },
+    maisonPage: {
+      titre: "La maison",
+      accroche: "Une boutique parisienne, cinq créateurs, et le temps qu’il faut pour choisir.",
+      texteAvant:
+        "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez cinq créateurs — puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
+      texteApres: " se privatise le temps d’un essayage.",
+      prendreRendezvous: "Prendre rendez-vous",
+      lesCreateurs: "Les créateurs",
+      voirLesRobes: "Voir les robes",
+      altScene: "Robe de mariée présentée en boutique",
+    },
+    rendezvous: {
+      surtitre: "Essayage privé, sur rendez-vous",
+      titre: "Prendre rendez-vous",
+      choisirUnCreneau: "Choisir un créneau",
+      leShowroom: "Le showroom",
+      horaires: "Horaires",
+      uneHeure:
+        "Une heure, au showroom. L’essayage est gratuit pour la mariée et deux accompagnants.",
+      altScene: "L’entrée du showroom",
+      robeAvant: "Le modèle ",
+      robeApres: (ligne: string) => ` sera préparé pour votre venue — ${ligne}.`,
+    },
+    trouver: {
+      titre: "Trouver ma robe",
+      voirToutesLesRobes: "Voir toutes les robes",
+      intro:
+        "Trois portes, et aucune n’est la bonne. Ce sont des pistes, pas des règles : au showroom, beaucoup de mariées repartent avec une robe qu’elles n’auraient pas choisie sur photo.",
+      parLaCoupe: "Par la coupe",
+      parLaCoupeTexte:
+        "Sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Le mot que les mariées emploient en boutique, et le tri qui fait gagner une heure d’essayage.",
+      parLaMorphologie: "Par la morphologie",
+      parLaMorphologieTexte:
+        "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n’est « à éviter » — mais pour savoir lesquelles proposer en premier.",
+      parLaMaison: "Par la maison",
+      parLaMaisonTexte:
+        "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d’Olya Mak.",
+      elise: (adresse: string) =>
+        `Ou laissez-vous guider : Élise part de votre silhouette, en trois questions, et vous dit franchement si la réponse est chez une autre maison. Elle donne aussi l’adresse et les horaires — ${adresse}, sur rendez-vous.`,
+    },
+    calendly: {
+      souvre: "Le calendrier s’ouvre",
+      echec: "Le calendrier n’a pas pu s’ouvrir",
+      patience: "Encore un instant. Vous pouvez aussi réserver dans un nouvel onglet.",
+      bloque:
+        "Il est peut-être retenu par un bloqueur. Vous pouvez réserver directement sur la page de la maison, ou nous appeler.",
+      choisirUnCreneau: "Choisir un créneau",
     },
     introuvable: {
       erreur: "Erreur 404",
@@ -323,11 +385,11 @@ const FR = {
         ? "Une robe de ce lien n’est plus au catalogue."
         : `${n} robes de ce lien ne sont plus au catalogue.`,
     aucun:
-      "Vous n’avez pas encore de coup de cœur. Parcourez le catalogue et touchez le cœur posé sur une robe : elle vous attendra ici.",
+      "Vous n’avez pas encore de coup de cœur. Parcourez le catalogue et touchez le cœur posé sur une robe : elle vous attendra ici.",
     partirDeMaSilhouette: "Partir de ma silhouette",
     retenues: (n: number) => (n === 1 ? "Une robe retenue." : `${n} robes retenues.`),
     apportez:
-      "Apportez cette liste au showroom : l’essayage se prépare mieux quand on sait par où commencer.",
+      "Apportez cette liste au showroom : l’essayage se prépare mieux quand on sait par où commencer.",
     viderLaListe: "Vider la liste",
     gardee:
       "Cette liste est gardée dans ce navigateur. Elle ne vous suit pas d’un appareil à l’autre et ne nous est pas transmise — le lien de partage, lui, porte la sélection avec lui.",
@@ -532,6 +594,7 @@ const EN: Textes = {
     dansVosCoupes: "in your silhouettes",
     aEssayer: "to try on",
     nosRecommandations: "Our recommendations",
+    recommandationsPlat: "Our recommendations:",
     lObjectif: "The aim:",
     dansLOrdre: "In order",
     lettreLabel: (lettre: string) => `Shape ${lettre}`,
@@ -640,6 +703,65 @@ const EN: Textes = {
         "A body shape says where to begin. It does not say who you are on the day of your wedding.",
       lesMaisons: "The houses that suit you",
       enCoupes: (liste: string) => ` — in ${liste}`,
+    },
+    showroom: {
+      titre: "The showroom",
+      accroche: "Paris 10",
+      surRendezVous: " — by appointment",
+      prendreRendezvous: "Book an appointment",
+      laVisite: "The visit",
+      uneHeure: "An hour, the showroom to yourself, and someone who knows every dress.",
+      venir: "Coming to us",
+      altScene: "Wedding dresses hanging in the showroom",
+      altDetail: "A detail of a wedding dress",
+    },
+    maisonPage: {
+      titre: "The house",
+      accroche: "A Paris boutique, five designers, and the time it takes to choose.",
+      texteAvant:
+        "MADAMOON does not produce its own collections: the house chooses, dress by dress, from five designers — then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting.",
+      texteApres: "",
+      prendreRendezvous: "Book an appointment",
+      lesCreateurs: "The designers",
+      voirLesRobes: "See the dresses",
+      altScene: "A wedding dress shown in the boutique",
+    },
+    rendezvous: {
+      surtitre: "Private fitting, by appointment",
+      titre: "Book an appointment",
+      choisirUnCreneau: "Choose a time",
+      leShowroom: "The showroom",
+      horaires: "Opening hours",
+      uneHeure:
+        "One hour, at the showroom. The fitting is free for the bride and two guests.",
+      altScene: "The entrance to the showroom",
+      robeAvant: "The ",
+      robeApres: (ligne: string) => ` will be made ready for your visit — ${ligne}.`,
+    },
+    trouver: {
+      titre: "Find my dress",
+      voirToutesLesRobes: "See all the dresses",
+      intro:
+        "Three doors, and none of them is the right one. These are paths, not rules: at the showroom, many brides leave with a dress they would never have chosen from a photograph.",
+      parLaCoupe: "By silhouette",
+      parLaCoupeTexte:
+        "Mermaid, ball gown, sheath, A-line, minimalist, two-in-one. The word brides use in the boutique, and the sorting that saves an hour of fittings.",
+      parLaMorphologie: "By body shape",
+      parLaMorphologieTexte:
+        "O, A, V, H, 8 or X. Not to rule dresses out — nothing is “to be avoided” — but to know which to offer first.",
+      parLaMaison: "By house",
+      parLaMaisonTexte:
+        "Five designers, each with their own hand: the laces of Watters, the mikado of Casablanca, the draping of Olya Mak.",
+      elise: (adresse: string) =>
+        `Or let yourself be guided: Élise starts from your figure, in three questions, and tells you honestly if the answer lies with another house. She also gives the address and the hours — ${adresse}, by appointment.`,
+    },
+    calendly: {
+      souvre: "The calendar is opening",
+      echec: "The calendar could not open",
+      patience: "One moment. You can also book in a new tab.",
+      bloque:
+        "It may be held back by a blocker. You can book directly on the house’s own page, or call us.",
+      choisirUnCreneau: "Choose a time",
     },
     introuvable: {
       erreur: "Error 404",

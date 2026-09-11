@@ -104,3 +104,24 @@ export const MAISON_EN = {
  * adresse parisienne, et une mariée qui vient l'a déjà lue ainsi. */
 export const DISTINCTION_EN =
   "The only wedding dress boutique rated 5 stars in the 10th arrondissement.";
+
+/* Les quatre signatures de la maison : ce que la mariée trouve en
+ * poussant la porte. Le prix vient de MAISON_EN, jamais recopié. */
+export const SIGNATURES_EN: { titre: string; texte: string }[] = [
+  {
+    titre: "Private fitting",
+    texte: "The showroom is yours alone for an hour. Do come with someone.",
+  },
+  {
+    titre: "Made to measure",
+    texte: "Every dress is made in the atelier, to your own measurements.",
+  },
+  {
+    titre: "Alterations included",
+    texte: "Our seamstresses adjust your dress until the very last fitting.",
+  },
+  {
+    titre: `From ${MAISON_EN.prixDepart}`,
+    texte: "For a made-to-measure dress, alterations included.",
+  },
+];

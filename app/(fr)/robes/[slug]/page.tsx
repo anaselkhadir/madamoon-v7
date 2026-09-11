@@ -50,7 +50,7 @@ export async function generateMetadata({
 
   return {
     title: `Robe de mariée ${robe.nom} — ${robe.ligne}`,
-    description: `${robe.nom} : ${robe.ligne.toLowerCase()}. ${robe.regard} À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
+    description: `${robe.nom} : ${robe.ligne.toLowerCase()}. ${robe.regard} À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
     alternates: {
       canonical: `/robes/${robe.slug}`,
       languages: { fr: `/robes/${robe.slug}`, en: `/en/dresses/${robe.slug}` },

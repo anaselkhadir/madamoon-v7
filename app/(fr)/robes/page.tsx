@@ -4,7 +4,7 @@ import PageRobes from "@/components/pages/PageRobes";
 export const metadata: Metadata = {
   title: "Robes de mariée à essayer en showroom à Paris",
   description:
-    "Les robes de mariée MADAMOON : sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Les collections de cinq créateurs, à essayer sur rendez-vous à Paris 10e.",
+    "Les robes de mariée MADAMOON : sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Les collections de cinq créateurs, à essayer sur rendez-vous à Paris 10e.",
   alternates: { canonical: "/robes", languages: { fr: "/robes", en: "/en/dresses" } },
 };
 

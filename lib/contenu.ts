@@ -1,6 +1,6 @@
 import type { Langue } from "@/lib/langue";
 import type { Categorie, Createur, Morphologie, Robe } from "@/lib/madamoon";
-import { FAQ, MAISON } from "@/lib/madamoon";
+import { FAQ, MAISON, SIGNATURES } from "@/lib/madamoon";
 import { APPOSITION, PLURIEL, type Coupe } from "@/lib/coupes";
 import {
   COUPE_APPOSITION,
@@ -11,6 +11,7 @@ import {
   CREATEUR_ORIGINE,
   FAMILLE,
   MAISON_EN,
+  SIGNATURES_EN,
 } from "@/lib/en/taxonomie";
 import { ROBE_EN } from "@/lib/en/robes";
 import { FAQ_EN } from "@/lib/en/faq";
@@ -91,6 +92,10 @@ export const robeLigne = (r: Robe, l: Langue) =>
 
 export const robeRegard = (r: Robe, l: Langue) =>
   l === "fr" ? r.regard : ROBE_EN[r.slug]?.regard ?? r.regard;
+
+/* Les signatures de la maison, dans l'ordre. */
+export const signatures = (l: Langue): { titre: string; texte: string }[] =>
+  l === "fr" ? SIGNATURES.map((s) => ({ titre: s.titre, texte: s.texte })) : SIGNATURES_EN;
 
 /* La FAQ : même ordre, mêmes engagements, deux langues. */
 export const faq = (l: Langue): { q: string; r: string }[] =>

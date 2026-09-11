@@ -1,6 +1,9 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { bas, robeLigne } from "@/lib/contenu";
+import { langueDe } from "@/lib/langue";
+import { t } from "@/lib/textes";
 import { ROBES } from "@/lib/madamoon";
 
 /*
@@ -12,13 +15,16 @@ import { ROBES } from "@/lib/madamoon";
  */
 
 export default function RobeChoisie() {
+  const langue = langueDe(usePathname() ?? "/");
+  const L = t(langue).pages.rendezvous;
   const robe = ROBES.find((r) => r.slug === useSearchParams().get("robe"));
   if (!robe) return null;
 
   return (
     <p className="texte mt-6">
-      Le modèle <strong className="text-encre">{robe.nom}</strong> sera préparé pour votre
-      venue — {robe.ligne.toLowerCase()}.
+      {L.robeAvant}
+      <strong className="text-encre">{robe.nom}</strong>
+      {L.robeApres(bas(robeLigne(robe, langue), langue))}
     </p>
   );
 }

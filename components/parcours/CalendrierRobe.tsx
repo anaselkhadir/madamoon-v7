@@ -1,6 +1,7 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { langueDe } from "@/lib/langue";
 import { ROBES } from "@/lib/madamoon";
 import Calendly from "@/components/parcours/Calendly";
 
@@ -16,7 +17,8 @@ import Calendly from "@/components/parcours/Calendly";
  */
 
 export default function CalendrierRobe() {
+  const langue = langueDe(usePathname() ?? "/");
   const slug = useSearchParams().get("robe");
   const robe = ROBES.find((r) => r.slug === slug);
-  return <Calendly robe={robe?.slug} />;
+  return <Calendly robe={robe?.slug} langue={langue} />;
 }

@@ -128,6 +128,10 @@ export const TRADUITES = new Set<string>([
   "/coupes",
   "/morphologies",
   "/coups-de-coeur",
+  "/showroom",
+  "/a-propos",
+  "/rendez-vous",
+  "/trouver-ma-robe",
 ]);
 
 /* Les familles d'adresses entièrement traduites : toutes les fiches

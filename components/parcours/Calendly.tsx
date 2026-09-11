@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CALENDLY, urlCalendly } from "@/lib/calendly";
+import { t } from "@/lib/textes";
+import type { Langue } from "@/lib/langue";
 
 /*
  * Le formulaire de rendez-vous, posé dans la page.
@@ -21,7 +23,8 @@ import { CALENDLY, urlCalendly } from "@/lib/calendly";
  * sur madamoon.fr.
  */
 
-export default function Calendly({ robe }: { robe?: string }) {
+export default function Calendly({ robe, langue }: { robe?: string; langue: Langue }) {
+  const L = t(langue).pages.calendly;
   const cadre = useRef<HTMLDivElement>(null);
   const [pret, setPret] = useState(false);
   const [echec, setEchec] = useState(false);
@@ -42,7 +45,7 @@ export default function Calendly({ robe }: { robe?: string }) {
           .Calendly;
         if (!w) return setEchec(true);
         cadre.current.replaceChildren();
-        w.initInlineWidget({ url: urlCalendly(robe), parentElement: cadre.current });
+        w.initInlineWidget({ url: urlCalendly(robe, langue), parentElement: cadre.current });
         setPret(true);
       };
 
@@ -89,19 +92,17 @@ export default function Calendly({ robe }: { robe?: string }) {
         {/* Ce qui tient la place avant le script — et à jamais s'il ne
           * vient pas. */}
         <div className="flex h-full flex-col items-start justify-center gap-5 border border-fil px-[clamp(1.5rem,4vw,3rem)]">
-          <p className="legende">{echec ? "Le calendrier n'a pas pu s'ouvrir" : "Le calendrier s'ouvre"}</p>
+          <p className="legende">{echec ? L.echec : L.souvre}</p>
           <p className="texte mesure-l">
-            {echec
-              ? "Il est peut-être retenu par un bloqueur. Vous pouvez réserver directement sur la page de la maison, ou nous appeler."
-              : "Encore un instant. Vous pouvez aussi réserver dans un nouvel onglet."}
+            {echec ? L.bloque : L.patience}
           </p>
           <a
-            href={urlCalendly(robe)}
+            href={urlCalendly(robe, langue)}
             target="_blank"
             rel="noreferrer noopener"
             className="bouton"
           >
-            Choisir un créneau
+            {L.choisirUnCreneau}
           </a>
         </div>
       </div>

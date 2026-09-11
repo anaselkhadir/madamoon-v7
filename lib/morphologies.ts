@@ -235,7 +235,7 @@ export const EDITO: Record<Lettre, Edito> = {
         "La plus simple à vivre, et la plus discrète. Elle convient quand la robe ne doit pas être le sujet de la journée.",
     },
     detail:
-      "Ici, la question n'est plus « qu'est-ce qui me va ? » mais « qu'est-ce qui me ressemble ? ». C'est une meilleure question.",
+      "Ici, la question n'est plus « qu'est-ce qui me va ? » mais « qu'est-ce qui me ressemble ? ». C'est une meilleure question.",
   },
 };
 

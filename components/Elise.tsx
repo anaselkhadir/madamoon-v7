@@ -237,7 +237,7 @@ export default function Elise() {
       const coupes = morphoCoupes(m, langue);
 
       const carte = {
-        plat: `${morphoNom(m, langue)}. ${morphoSilhouette(m, langue)} ${T.lObjectif} ${morphoObjectif(m, langue)} ${T.nosRecommandations} : ${coupes.join(" ")}`,
+        plat: `${morphoNom(m, langue)}. ${morphoSilhouette(m, langue)} ${T.lObjectif} ${morphoObjectif(m, langue)} ${T.recommandationsPlat} ${coupes.join(" ")}`,
         riche: (
           <div>
             <p className="font-serif text-[1.375rem] leading-none text-encre">
