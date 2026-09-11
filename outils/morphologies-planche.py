@@ -8,26 +8,20 @@ directement la transparence. On ne détoure pas, on convertit — aucun
 contour à deviner, aucune frange grise autour des lignes. Un plancher
 efface le bruit du JPEG, qui laissait un voile là où il n'y a rien.
 
-La première figure est coupée au bord gauche de la planche : il lui
-manque le bras.
+Les figures sont recadrées sur leur axe, mesuré sur la planche. La pose
+est la même pour les six : le bras gauche s'écarte de 90,5 pixels de
+l'axe, le droit de 76,5. Le cadre commun tient compte de ce déport, si
+bien que les six gardent la même échelle et les mêmes hauteurs d'épaule
+et de hanche : elles restent une famille.
 
-Trois réparations ont été tentées. Ne refléter que la tranche manquante
-ajoutait un second bras à côté de celui qui restait, sans le rejoindre
-à l'épaule. Coudre un haut reflété sur un bas d'origine laissait une
-rupture nette à la hanche. Refléter la moitié entière est la seule qui
-donne une figure propre : elle perd l'appui de la pose, mais elle ne
-montre ni bras détaché ni couture.
+La première figure commence au bord de la planche, à 77 pixels de son
+axe. Il lui manque donc les treize derniers pixels du bras gauche —
+c'est-à-dire sa main, et elle seule : au-dessus du poignet le trait
+tient dans le cadre. On la reprend sur une figure sœur, le A, dont le
+bras gauche se superpose au sien à un pixel près sur toute sa longueur.
+Rien d'autre n'est touché : le reste du O est celui de la planche.
 
-C'est donc un pis-aller assumé, et il saute dès que la planche est
-refaite avec une marge : il n'y aura plus rien à reconstruire, et cette
-branche disparaîtra.
-
-La définition monte d'un facteur trois, et le trait est raffermi. On
-part de 168 pixels de large par figure, ce qui est juste pour un écran
-à double densité ; on finit à 504.
-
-Les six partagent le même cadrage vertical, donc les mêmes hauteurs
-d'épaule et de hanche : elles restent une famille.
+La définition monte d'un facteur trois, et le trait est raffermi.
 """
 
 from pathlib import Path
@@ -45,15 +39,14 @@ MARGE = 10                   # l'air autour de chaque figure
 ECHELLE = 3
 LARGE = 500                  # la carte n'en demande pas plus, même en double densité
 
-# L'axe de chaque figure et son bord droit, relevés sur la planche.
-FIGURES = [
-    ("o", 66, 153, True),    # coupée : à reconstruire par miroir
-    ("a", 314, 398, False),
-    ("v", 561, 645, False),
-    ("h", 809, 893, False),
-    ("8", 1046, 1130, False),
-    ("x", 1293, 1377, False),
-]
+# L'axe de chaque figure, relevé sur la planche.
+FIGURES = [("o", 77.0), ("a", 320.5), ("v", 567.5), ("h", 815.5), ("8", 1053.2), ("x", 1300.0)]
+
+DEMI_G, DEMI_D = 91, 77      # l'écart maximal du trait à l'axe, de part et d'autre
+
+# La main gauche manquante du O : les rangées concernées, et la colonne
+# au-delà de laquelle on reprend le A. Coordonnées relatives à l'axe.
+GREFFE_HAUT, GREFFE_BAS, GREFFE_X = 300, 452, -74
 
 
 def alpha(bande: np.ndarray) -> np.ndarray:
@@ -64,34 +57,27 @@ def alpha(bande: np.ndarray) -> np.ndarray:
     return a
 
 
+def recadre(source: np.ndarray, axe: float, ecarts: np.ndarray) -> np.ndarray:
+    """La figure, prélevée autour de son axe au pixel fractionnaire près."""
+    colonnes = np.arange(source.shape[1], dtype=float)
+    cibles = axe + ecarts
+    return np.stack([np.interp(cibles, colonnes, ligne, left=0, right=0) for ligne in source])
+
+
 def main() -> None:
     source = np.asarray(Image.open(SOURCE).convert("L")).astype(float)
+    ecarts = np.arange(-DEMI_G - MARGE, DEMI_D + MARGE + 1, dtype=float)
     bande = source[HAUT:BAS, :]
 
-    # La demi-largeur nécessaire, commune aux six : le cadre ne change pas
-    # d'une figure à l'autre.
-    demis = [max(bord - axe, axe - 0) if coupee else max(bord - axe, axe - (axe - (bord - axe)))
-             for _, axe, bord, coupee in FIGURES]
-    demi = int(max(bord - axe for _, axe, bord, _ in FIGURES)) + MARGE
+    figures = {nom: recadre(bande, axe, ecarts) for nom, axe in FIGURES}
 
-    for nom, axe, bord, coupee in FIGURES:
-        if coupee:
-            # La moitié droite, et son reflet en guise de moitié gauche.
-            droite = bande[:, axe:bord]
-            entiere = np.concatenate([droite[:, ::-1], droite], axis=1)
-            axe_local = droite.shape[1]
-        else:
-            g = max(0, axe - (bord - axe))
-            entiere = bande[:, g:bord]
-            axe_local = axe - g
+    # La main gauche du O, reprise sur le A.
+    jusqu_a = int(np.searchsorted(ecarts, GREFFE_X, side="right"))
+    lignes = slice(GREFFE_HAUT - HAUT, GREFFE_BAS - HAUT)
+    figures["o"][lignes, :jusqu_a] = figures["a"][lignes, :jusqu_a]
 
-        # On pose la figure au centre d'un cadre commun.
-        h = entiere.shape[0]
-        cadre = np.zeros((h, demi * 2), dtype=float)
-        depart = demi - axe_local
-        cadre[:, depart:depart + entiere.shape[1]] = entiere
-
-        a = (alpha(cadre) * 255).astype(np.uint8)
+    for nom, _ in FIGURES:
+        a = (alpha(figures[nom]) * 255).astype(np.uint8)
         img = Image.fromarray(a)
         img = img.resize((img.width * ECHELLE, img.height * ECHELLE), Image.LANCZOS)
         img = img.filter(ImageFilter.UnsharpMask(radius=2.2, percent=95, threshold=2))

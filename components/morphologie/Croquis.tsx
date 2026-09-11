@@ -35,7 +35,7 @@ export default function Croquis({
       aria-hidden="true"
       className={`block bg-current ${className}`}
       style={{
-        aspectRatio: "500 / 1170",
+        aspectRatio: "500 / 1201",
         WebkitMaskImage: source,
         maskImage: source,
         WebkitMaskSize: "contain",
