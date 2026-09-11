@@ -44,13 +44,16 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
             <li key={m.lettre}>
               <Link href={`/morphologies/${m.lettre.toLowerCase()}`} className="group block">
                 <span className="block h-px w-full bg-encre" />
+                {/* Petites à dessein : le dessin vient d'une planche
+                  * de cent soixante-huit pixels par figure. Agrandi, le
+                  * trait se délite ; à cette taille, il tient. */}
                 <Croquis
                   lettre={m.lettre}
-                  className="mx-auto mt-[clamp(1.25rem,2vw,2rem)] w-[min(100%,9rem)] text-plume transition-colors duration-700 group-hover:text-action"
+                  className="mx-auto mt-[clamp(1rem,1.6vw,1.5rem)] w-[min(62%,5.25rem)] text-plume transition-colors duration-700 group-hover:text-action"
                 />
                 {/* La lettre reste : c'est le repère que l'on cherche du
                   * regard dans le reste du site. */}
-                <span className="affiche mt-[clamp(1rem,1.6vw,1.5rem)] block text-[clamp(1.75rem,3vw,2.5rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
+                <span className="affiche mt-[clamp(0.75rem,1.2vw,1.1rem)] block text-[clamp(1.375rem,2vw,1.75rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
                   {m.lettre}
                 </span>
                 <span className="nom-carte mt-3 block text-[0.9375rem]">
