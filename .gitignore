@@ -49,3 +49,13 @@ outils/__pycache__/
 
 # Le relevé de relecture, refait à la demande.
 relecture-anglaise.json
+
+# La présentation : les scripts sont versionnés, pas les images ni le fichier.
+presentation/captures/
+presentation/mockups/
+presentation/images/
+presentation/node_modules/
+presentation/*.pptx
+presentation/ql/
+presentation/travail/
+presentation/.venv/
