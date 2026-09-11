@@ -9,14 +9,18 @@ contour à deviner, aucune frange grise autour des lignes. Un plancher
 efface le bruit du JPEG, qui laissait un voile là où il n'y a rien.
 
 La première figure est coupée au bord gauche de la planche : il lui
-manque vingt et une colonnes, soit le bord extérieur du bras. On ne
-reflète que cette tranche-là, prise à la même distance de l'axe sur le
-côté droit, et on la soude par recouvrement sur cinq colonnes.
+manque le bras.
 
-Refléter la moitié entière, comme au premier essai, effaçait la pose :
-ces croquis ne sont pas symétriques — le poids porte sur une jambe, les
-bras ne tombent pas pareil. La figure devenait raide, et la maison l'a
-vu tout de suite.
+Trois réparations ont été tentées. Ne refléter que la tranche manquante
+ajoutait un second bras à côté de celui qui restait, sans le rejoindre
+à l'épaule. Coudre un haut reflété sur un bas d'origine laissait une
+rupture nette à la hanche. Refléter la moitié entière est la seule qui
+donne une figure propre : elle perd l'appui de la pose, mais elle ne
+montre ni bras détaché ni couture.
+
+C'est donc un pis-aller assumé, et il saute dès que la planche est
+refaite avec une marge : il n'y aura plus rien à reconstruire, et cette
+branche disparaîtra.
 
 La définition monte d'un facteur trois, et le trait est raffermi. On
 part de 168 pixels de large par figure, ce qui est juste pour un écran
@@ -72,18 +76,10 @@ def main() -> None:
 
     for nom, axe, bord, coupee in FIGURES:
         if coupee:
-            # Ce qui manque à gauche, pris à droite et retourné.
-            demi_droite = bord - axe
-            manque = demi_droite - axe
-            recouvre = 5
-            tranche = bande[:, axe + axe - recouvre : bord][:, ::-1]
-            entiere = np.zeros((bande.shape[0], manque + bord), dtype=float)
-            entiere[:, manque:] = bande[:, 0:bord]
-            # La soudure : on garde le trait le plus marqué des deux.
-            large = tranche.shape[1]
-            zone = entiere[:, 0:large]
-            entiere[:, 0:large] = np.maximum(zone, tranche)
-            axe_local = manque + axe
+            # La moitié droite, et son reflet en guise de moitié gauche.
+            droite = bande[:, axe:bord]
+            entiere = np.concatenate([droite[:, ::-1], droite], axis=1)
+            axe_local = droite.shape[1]
         else:
             g = max(0, axe - (bord - axe))
             entiere = bande[:, g:bord]
