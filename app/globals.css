@@ -238,6 +238,61 @@ body {
   color: var(--color-sur-image);
 }
 
+/*
+ * L'icône seule, dans un cercle — sous le pouce uniquement.
+ *
+ * Sur la fiche d'une robe, trois boutons pleine largeur s'empilaient
+ * les uns sur les autres et recouvraient la photographie. Les deux
+ * actions secondaires — le catalogue, le coup de cœur — se réduisent
+ * donc à leur pictogramme, et l'essayage garde son intitulé.
+ *
+ * Au-delà du point d'arrêt, rien ne change : la place est là, et le mot
+ * vaut mieux qu'un dessin. La classe ne fait donc qu'annuler, en
+ * dessous, ce que « .bouton-clair » a posé.
+ *
+ * L'intitulé est retiré de l'affichage et non masqué à l'œil seul : le
+ * nom accessible vient de « aria-label », que les deux boutons portent
+ * dans les deux formes.
+ */
+@media (max-width: 767px) {
+  .pastille {
+    width: 2.5rem;
+    padding-inline: 0;
+    border-radius: 999px;
+  }
+  .pastille .intitule {
+    display: none;
+  }
+
+  /* Le cœur rempli : la robe est déjà retenue. Le cercle reste blanc —
+   * c'est le tracé qui porte l'état, pas la surface. Au survol, le
+   * cercle devient rouge et le tracé reprend la couleur du bouton,
+   * faute de quoi il disparaîtrait dans le fond. */
+  .pastille[aria-pressed="true"] .trace {
+    color: var(--color-action);
+  }
+  .pastille:hover .trace {
+    color: inherit;
+  }
+}
+
+/*
+ * L'action principale, quand elle partage sa ligne avec des pastilles.
+ *
+ * Sous le pouce, le rang doit tenir sur une seule ligne : deux cercles
+ * de 40 px, deux écarts de 8 px, et le reste pour l'intitulé. On y
+ * gagne la place en resserrant les flancs du bouton, jamais en coupant
+ * le mot — un bouton dont on ne lit pas la fin ne se clique pas.
+ */
+@media (max-width: 767px) {
+  .essentiel {
+    padding-inline: 1rem;
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+}
+
+
 /* Sur une photographie.
  *
  * Les styles de titre portent leur propre couleur ; sur une image, il

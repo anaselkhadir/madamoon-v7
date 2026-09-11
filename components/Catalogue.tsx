@@ -35,6 +35,10 @@ type Props = {
   contexte: string;
   className?: string;
   langue: Langue;
+  /* Sur la fiche d'une robe : l'icône seule sur petit écran, le bouton
+   * entier au-delà. Ailleurs, le catalogue est la seule action
+   * secondaire — son intitulé y sert encore. */
+  pastille?: boolean;
 };
 
 export default function Catalogue({
@@ -42,9 +46,12 @@ export default function Catalogue({
   contexte,
   className = "bouton-clair",
   langue,
+  pastille = false,
 }: Props) {
   const L = t(langue).catalogue;
   if (!CATALOGUES_DISPONIBLES) return null;
+
+  const nom = L.telecharger(intitule);
 
   return (
     <a
@@ -52,9 +59,28 @@ export default function Catalogue({
       /* Un nom lisible dans le dossier des téléchargements : c'est là
        * qu'il sera retrouvé dans trois semaines, entre deux devis. */
       download={L.fichier(intitule)}
-      className={className}
+      aria-label={nom}
+      className={pastille ? `${className} pastille gap-2` : className}
     >
-      {L.telecharger(intitule)}
+      {pastille && (
+        /* Une flèche qui descend dans une corbeille : le geste, pas
+         * l'objet. Un pictogramme de document aurait dit « PDF », ce qui
+         * n'est pas ce que l'on promet. */
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="trace h-[1.05rem] w-[1.05rem] md:hidden"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 3v11m0 0 4-4m-4 4-4-4" />
+          <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+        </svg>
+      )}
+      <span className="intitule">{nom}</span>
     </a>
   );
 }

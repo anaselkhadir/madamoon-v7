@@ -177,8 +177,26 @@ export default async function PageRobe({
               "linear-gradient(95deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.16) 46%, rgba(0,0,0,0) 76%)",
           }}
         />
-        <div className="gouttiere absolute inset-0 flex flex-col justify-center">
-          <div className="max-w-[52vw] max-md:max-w-[92%]">
+        {/* Le second voile, du bas vers le haut, et seulement sous le
+          * pouce : le texte y descend, et il descend sur du gravier
+          * clair. Le voile latéral, calculé pour une colonne de gauche,
+          * n'y suffisait plus. */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 md:hidden"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 56%)",
+          }}
+        />
+        {/*
+          * Sur petit écran le bloc se range en bas plutôt qu'au milieu.
+          * Centré, il tombait en travers de la robe — le buste, la
+          * coupe, tout ce que la visiteuse est venue voir. En bas, il
+          * laisse la photographie entière au-dessus de lui.
+          */}
+        <div className="gouttiere absolute inset-0 flex flex-col justify-center max-md:justify-end max-md:pb-[clamp(2rem,7vw,3rem)]">
+          <div className="max-w-[52vw] max-md:max-w-full">
             <p className="mention text-sur-image/85">
               {coupeNom(robe.categorie, langue)}
               {robe.createur ? ` — ${robe.createur}` : ""}
@@ -187,14 +205,18 @@ export default async function PageRobe({
             <p className="accroche mt-5 text-sur-image">
               {robeLigne(robe, langue)}
             </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <AppelRendezvous robe={robe.slug} className="bouton-clair">
+            {/* Les trois sur une seule ligne, toujours : l'essayage
+              * garde son intitulé, les deux autres tiennent dans leur
+              * cercle. Le retour à la ligne cassait le rang et poussait
+              * le cœur sous la photographie. */}
+            <div className="mt-6 flex flex-wrap items-center gap-3 max-md:flex-nowrap max-md:gap-2">
+              <AppelRendezvous robe={robe.slug} className="bouton-clair essentiel">
                 {L.fiche.essayer}
               </AppelRendezvous>
-              <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} langue={langue} />
+              <Catalogue intitule={robe.nom} contexte={`robe:${robe.slug}`} langue={langue} pastille />
               {/* Le coup de cœur, au même rang : c'est le geste que l'on
                * fait avant de savoir si l'on prendra rendez-vous. */}
-              <CoeurFiche slug={robe.slug} nom={robe.nom} />
+              <CoeurFiche slug={robe.slug} nom={robe.nom} pastille />
             </div>
           </div>
         </div>
@@ -293,7 +315,7 @@ export default async function PageRobe({
       {/* ————————————————————————————— les autres vues ————— */}
       {photos.length > 1 && (
         <section
-          aria-label={`Autres vues de ${robe.nom}`}
+          aria-label={L.fiche.autresVues(robe.nom)}
           className="gouttiere"
         >
           <div className="grid gap-[clamp(1rem,2.5vw,2.5rem)] md:grid-cols-[1.15fr_0.85fr]">

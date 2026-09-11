@@ -63,7 +63,17 @@ export function CoeurTuile({ slug, nom }: { slug: string; nom: string }) {
 /* Sur la fiche d'une robe : un bouton nommé, au même rang que le
  * rendez-vous. Il est clair comme lui — il est posé sur la photographie
  * de couverture. */
-export function CoeurFiche({ slug, nom }: { slug: string; nom: string }) {
+export function CoeurFiche({
+  slug,
+  nom,
+  pastille = false,
+}: {
+  slug: string;
+  nom: string;
+  /* Sur petit écran, le cœur se passe de son intitulé : la
+   * photographie de la robe vaut mieux que trois bandes blanches. */
+  pastille?: boolean;
+}) {
   const L = t(langueDe(usePathname() ?? "/")).panier;
   const aime = useEstAime(slug);
   return (
@@ -71,11 +81,12 @@ export function CoeurFiche({ slug, nom }: { slug: string; nom: string }) {
       type="button"
       onClick={() => basculer(slug)}
       aria-pressed={aime}
-      className="bouton-clair gap-2"
+      aria-label={aime ? L.retirer(nom) : L.ajouter(nom)}
+      className={pastille ? "bouton-clair pastille gap-2" : "bouton-clair gap-2"}
       title={aime ? L.dedans(nom) : undefined}
     >
-      <Dessin plein={aime} classe="h-[0.95rem] w-[0.95rem]" />
-      {aime ? L.dansLesVotres : L.coupDeCoeur}
+      <Dessin plein={aime} classe="trace h-[0.95rem] w-[0.95rem]" />
+      <span className="intitule">{aime ? L.dansLesVotres : L.coupDeCoeur}</span>
     </button>
   );
 }

@@ -123,6 +123,7 @@ const FR = {
     clair: "Clair",
   },
   fiche: {
+    autresVues: (nom: string) => `Autres vues de ${nom}`,
     laFiche: "La fiche",
     silhouettes: "Les silhouettes qu’elle sert",
     coupe: "La coupe",
@@ -538,6 +539,7 @@ const EN: Textes = {
     clair: "Light",
   },
   fiche: {
+    autresVues: (nom: string) => `Other views of ${nom}`,
     laFiche: "About",
     silhouettes: "The body shapes it serves",
     coupe: "Silhouette",
