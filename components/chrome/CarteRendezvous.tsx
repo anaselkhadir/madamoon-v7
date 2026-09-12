@@ -46,7 +46,7 @@ export default function CarteRendezvous() {
   return (
     <aside
       aria-label={L.carte.bouton}
-      className={`fixed bottom-4 right-4 z-40 w-[17rem] max-w-[calc(100vw-2rem)] bg-craie px-5 py-4 text-center transition-[opacity,transform] duration-700 [transition-timing-function:var(--ease-doux)] md:bottom-12 md:right-[3.75rem] ${
+      className={`carte-rdv fixed bottom-4 right-4 z-40 w-[17rem] max-w-[calc(100vw-2rem)] bg-craie px-5 py-4 text-center transition-[opacity,transform] duration-700 [transition-timing-function:var(--ease-doux)] md:bottom-12 md:right-[3.75rem] ${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-3 opacity-0"
