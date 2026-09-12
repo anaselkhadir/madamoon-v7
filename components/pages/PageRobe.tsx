@@ -396,6 +396,7 @@ export default async function PageRobe({
                     alt={altRobe(v, langue)}
                     nom={v.nom}
                     note={robeLigne(v, langue)}
+                    noteAuLarge
                     sizes="(max-width: 768px) 50vw, 31vw"
                   />
                 );

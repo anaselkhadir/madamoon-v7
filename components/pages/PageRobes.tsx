@@ -114,6 +114,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
                       alt={altRobe(r, langue)}
                       nom={r.nom}
                       note={robeLigne(r, langue)}
+                      noteAuLarge
                       repere={r.createur}
                       sizes="(max-width: 768px) 50vw, 31vw"
                     />

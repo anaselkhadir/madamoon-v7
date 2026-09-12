@@ -143,6 +143,7 @@ export default async function PageCoupe({
                     alt={altRobe(robe, langue)}
                     nom={robe.nom}
                     note={robeLigne(robe, langue)}
+                    noteAuLarge
                     sizes="(max-width: 768px) 50vw, 31vw"
                     priorite={i === 0 && j < 3}
                   />
