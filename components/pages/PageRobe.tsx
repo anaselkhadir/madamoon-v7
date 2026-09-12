@@ -60,6 +60,9 @@ export default async function PageRobe({
 
   const photos = vues(robe.slug);
   const film = FILMS[robe.slug];
+  /* Les photographies qui ne sont pas déjà au premier écran. */
+  const galerie = film ? photos : photos.slice(1);
+  const premiere = film ? 1 : 2;
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
   const voisines = ROBES.filter(
@@ -326,14 +329,18 @@ export default async function PageRobe({
         </dl>
       </section>
 
-      {/* ————————————————————————————— les autres vues ————— */}
-      {photos.length > 1 && (
+      {/* ————————————————————————————— les autres vues —————
+        * Le premier écran montre la première photographie, sauf quand la
+        * robe a un film : il la remplace alors, et la galerie doit la
+        * reprendre. Sans quoi la vue de face — toujours la première —
+        * n'apparaissait nulle part, et Meredith ne se voyait que de dos. */}
+      {galerie.length > 0 && (
         <section
           aria-label={L.fiche.autresVues(robe.nom)}
           className="gouttiere"
         >
           <div className="grid gap-[clamp(1rem,2.5vw,2.5rem)] md:grid-cols-[1.15fr_0.85fr]">
-            {photos.slice(1).map((p, i) => (
+            {galerie.map((p, i) => (
               <div
                 key={p.name}
                 data-rideau
@@ -349,7 +356,7 @@ export default async function PageRobe({
                 <Photo
                   media={p}
                   dossier="robes"
-                  alt={altRobe(robe, langue, i + 2)}
+                  alt={altRobe(robe, langue, i + premiere)}
                   sizes="(max-width: 768px) 92vw, 46vw"
                   className="h-full w-full object-cover"
                 />
