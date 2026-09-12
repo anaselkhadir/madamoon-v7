@@ -83,7 +83,10 @@ export const CREATEURS: Createur[] = [
     slug: "monica-loretti",
     origine: "Rome",
     note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
-    ouverture: { robe: "lorette", vue: 1 },
+    /* Monica plutôt que Lorette : Lorette est passée aux petits
+     * ateliers, et Monica porte le nom de la maison sur une place
+     * romaine — son origine, dans l'image. */
+    ouverture: { robe: "monica", vue: 1 },
   },
 ];
 
@@ -367,7 +370,6 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Une dentelle dense sur un tulle blush, et des bretelles fines sur l'épaule.",
     vues: 3,
-    createur: "Monica Loretti",
   },
   {
     slug: "lorette",
@@ -376,7 +378,6 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Une broderie continue du bustier au bas de la traîne.",
     vues: 2,
-    createur: "Monica Loretti",
   },
   {
     slug: "charlotte",
