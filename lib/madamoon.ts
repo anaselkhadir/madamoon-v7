@@ -350,7 +350,7 @@ export const ROBES: Robe[] = [
     categorie: "Fluide",
     regard: "Un drapé qui tourne autour du corps, fermé au dos par un laçage.",
     vues: 3,
-    createur: "Angeola Biarritz",
+    createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
@@ -360,7 +360,7 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Une dentelle blush posée sur un fond nude : la couleur de la peau, en plus doux.",
     vues: 3,
-    createur: "Angeola Biarritz",
+    createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
