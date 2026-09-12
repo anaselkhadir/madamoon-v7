@@ -131,6 +131,17 @@ body {
   letter-spacing: 0;
 }
 
+/* Au doigt, une tuile fait 176 pixels de large : à trente, le nom y
+ * tenait la moitié de la hauteur utile et passait avant la robe. Il
+ * descend à vingt-deux, et remonte avec la largeur de l'écran — sur une
+ * tablette, la tuile fait le double et retrouve sa taille de plein
+ * écran. */
+@media (max-width: 767px) {
+  .nom-image {
+    font-size: clamp(1.375rem, 5.6vw, 1.875rem);
+  }
+}
+
 /* La ligne qui suit un nom : sans-serif, 18 px. */
 .note-image {
   font-family: var(--font-sans);
