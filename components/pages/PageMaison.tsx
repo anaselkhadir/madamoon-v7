@@ -5,6 +5,7 @@ import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import {
+  AUTRES_CREATEURS,
   FAMILLES,
   MAISON,
   SITE_URL,
@@ -19,6 +20,7 @@ import { altCoupe, altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
 import {
   coupeNom,
+  createurNom,
   createurNote,
   createurOrigine,
   familleTexte,
@@ -55,29 +57,37 @@ export default async function PageMaison({
   if (!createur) notFound();
 
   const L = t(langue).pages.maison;
+  /* Le nom se traduit désormais : « Autres créateurs » n'est pas un nom
+   * propre. Les recherches dans le catalogue gardent le nom d'origine,
+   * qui est la clé ; tout ce qui s'affiche prend celui de la langue. */
+  const nomMaison = createurNom(createur, langue);
+  /* « Trouver ma robe Olya Mak » se dit ; « Trouver ma robe Autres
+   * créateurs » non. Le collectif prend l'intitulé nu. */
+  const collective = createur.nom === AUTRES_CREATEURS;
+  const trouver = collective ? t(langue).raccourcis.trouverMaRobe : L.trouverMaRobeDe(nomMaison);
   const robes = robesDe(createur.nom);
   const coupes = coupesDe(createur.nom);
   const morphologies = morphologiesDe(createur.nom);
 
   /* En français la maison se met au génitif — « les coupes d'Olya Mak » ;
    * en anglais le nom se pose devant, sans rien. */
-  const dela = langue === "fr" ? de(createur.nom) : createur.nom;
+  const dela = langue === "fr" ? de(nomMaison) : nomMaison;
 
   const donnees = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     inLanguage: langue === "fr" ? "fr-FR" : "en-GB",
-    name: langue === "fr" ? `Robes de mariée ${createur.nom}` : `${createur.nom} wedding dresses`,
+    name: langue === "fr" ? `Robes de mariée ${nomMaison}` : `${nomMaison} wedding dresses`,
     description: createurNote(createur, langue),
     url: `${SITE_URL}${versLangue(`/createurs/${createur.slug}`, langue)}`,
-    about: { "@type": "Brand", name: createur.nom },
+    about: { "@type": "Brand", name: nomMaison },
     isPartOf: { "@type": "WebSite", name: MAISON.nom, url: SITE_URL },
     hasPart: robes.map((r) => ({
       "@type": "Product",
       name: langue === "fr" ? `Robe de mariée ${r.nom}` : `${r.nom} wedding dress`,
       description: robeLigne(r, langue),
       url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}`,
-      brand: { "@type": "Brand", name: createur.nom },
+      brand: { "@type": "Brand", name: nomMaison },
     })),
   };
 
@@ -90,22 +100,22 @@ export default async function PageMaison({
 
       <HeroPage
         surtitre={createurOrigine(createur, langue)}
-        titre={createur.nom}
+        titre={nomMaison}
         ligne={createurNote(createur, langue)}
         robe={createur.ouverture.robe}
         vue={createur.ouverture.vue}
-        alt={altCoupe(coupes[0] ?? "de mariée", langue, { maison: createur.nom })}
-        action={L.trouverMaRobeDe(createur.nom)}
+        alt={altCoupe(coupes[0] ?? "de mariée", langue, { maison: nomMaison })}
+        action={trouver}
         maison={createur.nom}
         langue={langue}
-        catalogue={{ intitule: createur.nom, contexte: `maison:${createur.slug}` }}
+        catalogue={{ intitule: nomMaison, contexte: `maison:${createur.slug}` }}
       />
 
       {/* ————————————————————————————— ses robes ————— */}
       <section aria-labelledby="ses-robes">
         <TitreSection
           id="ses-robes"
-          titre={L.lesRobesDe(createur.nom)}
+          titre={L.lesRobesDe(nomMaison)}
           lien={{ href: "/robes", label: L.voirToutesLesRobes }}
         />
         <div className="gouttiere">
@@ -143,7 +153,7 @@ export default async function PageMaison({
             lien={{ href: "/coupes", label: L.toutesLesCoupes }}
           />
           <div className="gouttiere">
-            <p className="texte mesure pb-6">{L.travaille(createur.nom, coupes.length)}</p>
+            <p className="texte mesure pb-6">{L.travaille(nomMaison, coupes.length)}</p>
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
               {coupes.map((nom, i) => {
                 /* L'image de la famille vient d'une robe de la maison :
@@ -159,7 +169,7 @@ export default async function PageMaison({
                     href={`/coupes/${famille.ancre}`}
                     media={media}
                     dossier="robes"
-                    alt={altCoupe(nom, langue, { maison: createur.nom })}
+                    alt={altCoupe(nom, langue, { maison: nomMaison })}
                     nom={coupeNom(nom, langue)}
                     note={familleTexte(nom, langue, FAMILLES[nom])}
                     sizes="(max-width: 768px) 50vw, 31vw"
@@ -194,7 +204,7 @@ export default async function PageMaison({
               ))}
             </dl>
             <AppelElise maison={createur.nom} className="bouton-trait mt-8">
-              {L.trouverMaRobeDe(createur.nom)}
+              {trouver}
             </AppelElise>
           </div>
         </section>

@@ -66,6 +66,12 @@ export const FAMILLE: Record<Categorie, string> = {
 
 /* Les maisons gardent leur nom : ce sont des noms propres. Seule la
  * phrase qui les présente se traduit. */
+/* Les noms de maison sont des noms propres : ils ne se traduisent pas.
+ * « Autres créateurs » n'en est pas un — c'est une rubrique. */
+export const CREATEUR_NOM: Record<string, string> = {
+  "autres-createurs": "Other designers",
+};
+
 export const CREATEUR_NOTE: Record<string, string> = {
   "watters-designs":
     "Worked lace, illusion backs, light falls. The house of Uma and Pendant.",
@@ -77,6 +83,8 @@ export const CREATEUR_NOTE: Record<string, string> = {
     "French lace and Atlantic romance, in contemporary cuts.",
   "monica-loretti":
     "The Italian school: true proportions, dense embroidery, bodice craft.",
+  "autres-createurs":
+    "Small ateliers, found one by one. Rare pieces, often unique, not seen elsewhere in Paris.",
 };
 
 export const CREATEUR_ORIGINE: Record<string, string> = {
@@ -85,6 +93,7 @@ export const CREATEUR_ORIGINE: Record<string, string> = {
   "olya-mak": "Barcelona",
   "angeola-biarritz": "Biarritz",
   "monica-loretti": "Rome",
+  "autres-createurs": "Small ateliers",
 };
 
 export const MAISON_EN = {

@@ -3,7 +3,7 @@
 import Link from "@/components/Lien";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES } from "@/lib/madamoon";
+import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES, robesDe } from "@/lib/madamoon";
 import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
@@ -13,7 +13,7 @@ import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
 import Logo from "@/components/chrome/Logo";
 import { langueDe, versFrancais, type Langue } from "@/lib/langue";
-import { coupeNom, coupeNote, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
+import { coupeNom, coupeNote, createurNom, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 
 /*
@@ -60,7 +60,7 @@ const tableGroupes = (l: Langue): Groupes => {
         { href: "/robes", nom: L.barre.toutesRobes, note: L.barre.catalogueEntier },
         ...CREATEURS.map((c) => ({
           href: `/createurs/${c.slug}`,
-          nom: c.nom,
+          nom: createurNom(c, l),
           note: createurOrigine(c, l),
         })),
       ],
@@ -150,7 +150,7 @@ const tableOnglets = (l: Langue) => [
     label: t(l).barre.robes,
     liens: () => [
       { href: "/robes", label: t(l).barre.toutesRobes },
-      ...CREATEURS.map((c) => ({ href: `/createurs/${c.slug}`, label: c.nom })),
+      ...CREATEURS.map((c) => ({ href: `/createurs/${c.slug}`, label: createurNom(c, l) })),
     ],
   },
   {
@@ -182,20 +182,15 @@ const SECTIONS = new Set([
 
 type Groupe = { titre: string; href: string; robes: (typeof ROBES)[number][] };
 
-/* Par maison. Les modèles dont la maison n'est pas renseignée finissent
- * dans un dernier groupe : les taire reviendrait à les retirer du
- * catalogue. */
-function parCreateur(): Groupe[] {
-  const groupes = CREATEURS.map((c) => ({
-    titre: c.nom,
+/* Par maison. Les modèles dont la maison n'est pas renseignée ne font
+ * plus groupe à part : « Autres créateurs » est une maison du catalogue
+ * comme les autres, et « robesDe » les lui rend. */
+function parCreateur(l: Langue): Groupe[] {
+  return CREATEURS.map((c) => ({
+    titre: createurNom(c, l),
     href: `/createurs/${c.slug}`,
-    robes: ROBES.filter((r) => r.createur === c.nom),
+    robes: robesDe(c.nom),
   })).filter((g) => g.robes.length > 0);
-  const orphelines = ROBES.filter((r) => !r.createur);
-  if (orphelines.length > 0) {
-    groupes.push({ titre: "Autres modèles", href: "/robes", robes: orphelines });
-  }
-  return groupes;
 }
 
 function parCoupe(): Groupe[] {
@@ -233,8 +228,8 @@ export default function Entete() {
   /* Les groupes se recalculent au changement de classement, jamais à
    * chaque rendu : la liste ne bouge pas, elle vient des données. */
   const groupes = useMemo(
-    () => (classement === "createur" ? parCreateur() : parCoupe()),
-    [classement]
+    () => (classement === "createur" ? parCreateur(l) : parCoupe()),
+    [classement, l]
   );
 
   /*
@@ -310,7 +305,7 @@ export default function Entete() {
                   href={`/createurs/${c.slug}`}
                   className="mention souligne text-plomb hover:text-encre"
                 >
-                  {c.nom}
+                  {createurNom(c, l)}
                 </Link>
               </li>
             ))}

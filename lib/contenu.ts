@@ -7,6 +7,7 @@ import {
   COUPE_NOM,
   COUPE_NOTE,
   COUPE_PLURIEL,
+  CREATEUR_NOM,
   CREATEUR_NOTE,
   CREATEUR_ORIGINE,
   FAMILLE,
@@ -55,6 +56,9 @@ export const coupeApposition = (cat: Categorie, l: Langue) =>
 
 export const familleTexte = (cat: Categorie, l: Langue, fr: string) =>
   l === "fr" ? fr : FAMILLE[cat] ?? fr;
+
+export const createurNom = (c: Createur, l: Langue) =>
+  l === "fr" ? c.nom : CREATEUR_NOM[c.slug] ?? c.nom;
 
 export const createurNote = (c: Createur, l: Langue) =>
   l === "fr" ? c.note : CREATEUR_NOTE[c.slug] ?? c.note;

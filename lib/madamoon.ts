@@ -88,6 +88,25 @@ export const CREATEURS: Createur[] = [
      * romaine — son origine, dans l'image. */
     ouverture: { robe: "monica", vue: 1 },
   },
+  /*
+   * Les petits ateliers, réunis sous un seul nom.
+   *
+   * Ce n'est pas une maison : c'est le reste du catalogue, celui que la
+   * boutique trouve un par un et ne veut pas désigner à la concurrence.
+   * Il lui fallait pourtant une page — sans elle, un tiers des robes
+   * n'appartenait à rien et n'apparaissait dans aucun classement par
+   * créateur.
+   *
+   * Elle vient en dernier : la barre du haut ne montre que les quatre
+   * premières, et ce sont des maisons nommées.
+   */
+  {
+    nom: "Autres créateurs",
+    slug: "autres-createurs",
+    origine: "Petits ateliers",
+    note: "De petits ateliers, trouvés un par un. Des pièces rares, souvent uniques, que l'on ne verra pas ailleurs à Paris.",
+    ouverture: { robe: "hera", vue: 1 },
+  },
 ];
 
 export function createurParSlug(slug: string): Createur | undefined {
@@ -95,7 +114,11 @@ export function createurParSlug(slug: string): Createur | undefined {
 }
 
 /* Le filtre de la maison : sur sa page, on ne montre que ses robes. */
+/* Le nom sous lequel se rangent les robes sans maison. */
+export const AUTRES_CREATEURS = "Autres créateurs";
+
 export function robesDe(nom: string): Robe[] {
+  if (nom === AUTRES_CREATEURS) return ROBES.filter((r) => !r.createur);
   return ROBES.filter((r) => r.createur === nom);
 }
 

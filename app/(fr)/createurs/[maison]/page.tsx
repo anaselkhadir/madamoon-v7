@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     /* Le gabarit du site ajoute « — MADAMOON » : ne pas le redire ici. */
     title: `Robes de mariée ${createur.nom} à Paris`,
-    description: `Les robes de mariée ${createur.nom} (${createur.origine}) au showroom MADAMOON, Paris 10e. ${createur.note} Essayage privé sur rendez-vous.`,
+    description: `Les robes de mariée ${createur.nom} (${createur.origine.toLowerCase()}) au showroom MADAMOON, Paris 10e. ${createur.note} Essayage privé sur rendez-vous.`,
     alternates: {
       canonical: `/createurs/${createur.slug}`,
       languages: {

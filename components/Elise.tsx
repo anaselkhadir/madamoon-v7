@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   AI_ENDPOINT,
+  AUTRES_CREATEURS,
   CREATEURS,
   MAISON,
   MORPHOLOGIES,
@@ -114,7 +115,13 @@ function reponseLocale(entree: string, l: Langue): { textes: string[]; options: 
       "brand", "designer", "label", "house")
   )
     return {
-      textes: [T.localCreateurs(CREATEURS.map((c) => c.nom).join(", "))],
+      /* Les petits ateliers ne se récitent pas : « Autres créateurs »
+       * est une rubrique, pas une maison que l'on nomme. */
+      textes: [
+        T.localCreateurs(
+          CREATEURS.filter((c) => c.nom !== AUTRES_CREATEURS).map((c) => c.nom).join(", ")
+        ),
+      ],
       options: [
         ...CREATEURS.slice(0, 3).map((c) => ({
           label: c.nom,

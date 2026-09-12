@@ -522,7 +522,12 @@ def main():
             lot, medias, familles, maison))
 
     for cr in createurs:
-        lot = [r for r in avec_photo if r.get("createur") == cr["nom"]]
+        # « Autres créateurs » n'est pas une maison : c'est le reste du
+        # catalogue, celui des robes sans créateur renseigné.
+        if cr["nom"] == "Autres créateurs":
+            lot = [r for r in avec_photo if not r.get("createur")]
+        else:
+            lot = [r for r in avec_photo if r.get("createur") == cr["nom"]]
         if not lot:
             continue
         faits.append(catalogue(

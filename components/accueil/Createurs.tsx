@@ -2,7 +2,7 @@ import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import RailFleches from "@/components/accueil/RailFleches";
 import RailSouris from "@/components/accueil/RailSouris";
-import { CREATEURS, ROBES, estEnVedette } from "@/lib/madamoon";
+import { AUTRES_CREATEURS, CREATEURS, ROBES, estEnVedette } from "@/lib/madamoon";
 import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import type { Langue } from "@/lib/langue";
@@ -26,17 +26,16 @@ import { createurOrigine } from "@/lib/contenu";
 export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
   const L = t(langue);
 
-  /* Les maisons nommées, puis les autres réunies sous une seule
-   * vignette : la boutique ne veut pas désigner ses petits ateliers à
-   * la concurrence. */
-  const discretes = CREATEURS.filter((c) => !estEnVedette(c.slug));
-  const ouvertureDiscrete = discretes
-    .map((c) => {
-      const robe = ROBES.find((r) => r.slug === c.ouverture.robe);
-      const media = robe ? vues(robe.slug)[c.ouverture.vue - 1] : undefined;
-      return robe && media ? { robe, media } : null;
-    })
-    .find(Boolean);
+  /* Les maisons nommées, puis les petits ateliers réunis sous une seule
+   * vignette : la boutique ne veut pas les désigner à la concurrence.
+   * La vignette mène à leur page, qui les rassemble sans les nommer. */
+  const collective = CREATEURS.find((c) => c.nom === AUTRES_CREATEURS);
+  const ouvertureDiscrete = (() => {
+    if (!collective) return null;
+    const robe = ROBES.find((r) => r.slug === collective.ouverture.robe);
+    const media = robe ? vues(robe.slug)[collective.ouverture.vue - 1] : undefined;
+    return robe && media ? { robe, media } : null;
+  })();
 
   const maisons = CREATEURS.filter((c) => estEnVedette(c.slug)).map((c) => {
     const robe = ROBES.find((r) => r.slug === c.ouverture.robe);
@@ -107,7 +106,7 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
             * signer. */}
           {ouvertureDiscrete && (
             <figure className="w-[min(68vw,20rem)] flex-none snap-start lg:w-[clamp(13rem,22vw,20rem)]">
-              <Link href="/robes" className="group block">
+              <Link href={`/createurs/${collective!.slug}`} className="group block">
                 <div className="aspect-[5/7] overflow-hidden">
                   <Photo
                     media={ouvertureDiscrete.media}

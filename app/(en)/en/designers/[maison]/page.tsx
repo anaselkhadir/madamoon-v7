@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageMaison from "@/components/pages/PageMaison";
 import { CREATEURS, createurParSlug } from "@/lib/madamoon";
-import { createurNote, createurOrigine } from "@/lib/contenu";
+import { createurNom, createurNote, createurOrigine } from "@/lib/contenu";
 
 /* Les identifiants de maison ne se traduisent pas : « olya-mak » est un
  * nom propre, pas un mot. Seule la rubrique change. */
@@ -17,9 +17,10 @@ export async function generateMetadata({
   const { maison } = await params;
   const createur = createurParSlug(maison);
   if (!createur) return {};
+  const nom = createurNom(createur, "en");
   return {
-    title: `${createur.nom} wedding dresses in Paris`,
-    description: `The ${createur.nom} wedding dresses (${createurOrigine(createur, "en")}) at the MADAMOON showroom, Paris 10e. ${createurNote(createur, "en")} Private fitting by appointment.`,
+    title: `${nom} wedding dresses in Paris`,
+    description: `The ${nom} wedding dresses (${createurOrigine(createur, "en").toLowerCase()}) at the MADAMOON showroom, Paris 10e. ${createurNote(createur, "en")} Private fitting by appointment.`,
     alternates: {
       canonical: `/en/designers/${createur.slug}`,
       languages: {

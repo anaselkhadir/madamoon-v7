@@ -61,7 +61,7 @@ function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Lan
             nom={r.nom}
             note={robeLigne(r, langue)}
             noteAuLarge
-            repere={r.createur}
+            repere={r.createur ?? t(langue).createurs.autres}
             priorite={i < 3}
             sizes="(max-width: 768px) 50vw, 31vw"
           />

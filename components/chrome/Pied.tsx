@@ -9,7 +9,7 @@ import { media as chemin } from "@/lib/chemin";
 import Logo from "@/components/chrome/Logo";
 import { langueDe } from "@/lib/langue";
 import { t } from "@/lib/textes";
-import { coupeNom, maison } from "@/lib/contenu";
+import { coupeNom, createurNom, maison } from "@/lib/contenu";
 
 /*
  * Le pied de page.
@@ -70,9 +70,9 @@ export default function Pied() {
           <h2 className="legende">{L.pied.createurs}</h2>
           <ul className="mt-4 flex flex-col gap-2">
             {CREATEURS.map((c) => (
-              <li key={c.nom}>
+              <li key={c.slug}>
                 <Link href="/robes" className="texte souligne">
-                  {c.nom}
+                  {createurNom(c, l)}
                 </Link>
               </li>
             ))}
