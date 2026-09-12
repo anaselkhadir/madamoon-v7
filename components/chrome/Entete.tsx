@@ -517,7 +517,7 @@ export default function Entete() {
               <div
                 role="tablist"
                 aria-label={L.barre.catalogue}
-                className="flex items-center gap-7 border-b border-fil"
+                className="flex items-center justify-between gap-4 whitespace-nowrap border-b border-fil min-[400px]:justify-start min-[400px]:gap-7"
               >
                 {ONG.map((o) => (
                   <button
@@ -527,12 +527,11 @@ export default function Entete() {
                     aria-selected={onglet === o.cle}
                     aria-controls={`onglet-${o.cle}`}
                     onClick={() => setOnglet(o.cle)}
-                    /* Le trait sous l'onglet actif est porté par le bouton
-                      * lui-même : une bordure sur un pseudo-élément
-                      * sauterait d'un pixel au changement de graisse. */
-                    className={`-mb-px border-b py-3 text-[0.8125rem] uppercase leading-none tracking-[0.08em] transition-colors duration-500 ${
+                    /* Les trois onglets sont en gras : seuls la couleur et le
+                      * trait distinguent l'onglet actif, sans saut de largeur. */
+                    className={`-mb-px border-b py-3 text-[0.8125rem] font-bold uppercase leading-none tracking-[0.08em] transition-colors duration-500 ${
                       onglet === o.cle
-                        ? "border-encre font-bold text-encre"
+                        ? "border-encre text-encre"
                         : "border-transparent text-brume"
                     }`}
                   >
