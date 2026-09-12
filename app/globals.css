@@ -864,6 +864,12 @@ body {
  */
 html[data-ouverture] {
   overflow: hidden;
+  /* Safari iOS ignore « overflow: hidden » sur la racine : le doigt
+   * défile quand même. Ces deux-là l'arrêtent vraiment, sans quoi un
+   * geste pendant le noir laisse la page au milieu du hero une fois le
+   * rideau levé. */
+  touch-action: none;
+  overscroll-behavior: none;
 }
 html[data-ouverture]::before {
   content: "";
@@ -888,6 +894,10 @@ html[data-ouverture]::before {
   position: fixed;
   inset: 0;
   z-index: 100;
+  /* La racine rend le défilement avant que la scène ne parte : pendant
+   * ce fondu, c'est la scène qui le retient. */
+  touch-action: none;
+  overscroll-behavior: none;
   display: grid;
   place-items: center;
   background: #000;

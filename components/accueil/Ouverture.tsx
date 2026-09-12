@@ -43,6 +43,11 @@ export default function Ouverture() {
 
   const relacher = useCallback(() => {
     document.documentElement.removeAttribute("data-ouverture");
+    /* La page se découvre par le haut, toujours. Safari restitue la
+     * position d'un onglet précédent, et un geste pendant le noir peut
+     * encore passer : dans les deux cas le hero apparaîtrait coupé. Une
+     * ancre dans l'adresse reste prioritaire, elle a été demandée. */
+    if (!window.location.hash) window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -74,6 +79,35 @@ export default function Ouverture() {
     evenements.forEach((e) => window.addEventListener(e, sortir, { once: true, passive: true }));
     return () => evenements.forEach((e) => window.removeEventListener(e, sortir));
   }, [visible, passe, relacher]);
+
+  /* Et tant que la scène est là, le geste ne défile pas. « touch-action »
+   * suffit aux navigateurs récents ; ce refus explicite couvre les
+   * autres, et le fondu de sortie pendant lequel la racine a déjà rendu
+   * le défilement. */
+  useEffect(() => {
+    if (!visible) return;
+    const retenir = (e: Event) => e.preventDefault();
+    const evenements = ["touchmove", "wheel"] as const;
+    evenements.forEach((e) => document.addEventListener(e, retenir, { passive: false }));
+
+    /* Et si quelque chose passait quand même — une touche, une barre
+     * d'espace, la position qu'un onglet restitue —, la page revient en
+     * haut. C'est le dernier verrou : tant que le rideau est là, on ne
+     * bouge pas d'un pixel. */
+    const tenir = () => {
+      if (window.scrollY !== 0) window.scrollTo(0, 0);
+    };
+    tenir();
+    window.addEventListener("scroll", tenir, { passive: true });
+
+    return () => {
+      evenements.forEach((e) => document.removeEventListener(e, retenir));
+      window.removeEventListener("scroll", tenir);
+      /* La scène s'en va : on rend le défilement, mais depuis le haut.
+       * Un geste qui passe l'ouverture la passe — il ne défile pas. */
+      tenir();
+    };
+  }, [visible]);
 
   if (!visible) return null;
 
