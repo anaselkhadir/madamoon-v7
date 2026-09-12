@@ -136,7 +136,7 @@ const FR = {
   fiche: {
     autresVues: (nom: string) => `Autres vues de ${nom}`,
     laFiche: "La fiche",
-    silhouettes: "Les morphologies qu’elle sert",
+    silhouettes: "Les morphologies qu’elle sublime",
     coupe: "La coupe",
     maison: "La maison",
     confection: "La confection",
@@ -556,7 +556,7 @@ const EN: Textes = {
   fiche: {
     autresVues: (nom: string) => `Other views of ${nom}`,
     laFiche: "About",
-    silhouettes: "The body shapes it serves",
+    silhouettes: "The body shapes it flatters",
     coupe: "Silhouette",
     maison: "House",
     confection: "Made to order",
