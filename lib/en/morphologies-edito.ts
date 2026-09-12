@@ -142,7 +142,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
     proportions: "A straight line, a waist barely marked, a long figure.",
     pourquoi: {
       Sirène:
-        "It draws what is not yet visible. Fitted to the knee then flared, it creates the curve instead of underlining it.",
+        "It draws what is not yet visible. Fitted through the thigh then flared, it creates the curve instead of underlining it.",
       Fluide:
         "Fitted at the waist or worn with a belt, it marks where you decide, and nowhere else.",
       Minimaliste:
@@ -173,7 +173,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
     proportions: "Shoulders and hips in line, a hollowed waist, marked curves.",
     pourquoi: {
       Sirène:
-        "It follows a line that is already proportioned. Fitted to the knee, it corrects nothing: it follows.",
+        "It follows a line that is already proportioned. Fitted through the thigh, it corrects nothing: it follows.",
       Minimaliste:
         "Satin tells only the cut. On a balanced figure, it is the boldest choice there is.",
       Princesse:

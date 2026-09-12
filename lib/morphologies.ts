@@ -163,7 +163,7 @@ export const EDITO: Record<Lettre, Edito> = {
     proportions: "Ligne droite, taille peu marquée, allure longiligne.",
     pourquoi: {
       Sirène:
-        "Elle dessine ce qui ne se voit pas encore. Ajustée jusqu'au genou puis évasée, elle crée la courbe au lieu de la souligner.",
+        "Elle dessine ce qui ne se voit pas encore. Ajustée jusqu'aux cuisses puis évasée, elle crée la courbe au lieu de la souligner.",
       Fluide:
         "Cintrée à la taille ou portée avec une ceinture, elle marque là où vous le décidez, et nulle part ailleurs.",
       Minimaliste:
@@ -192,7 +192,7 @@ export const EDITO: Record<Lettre, Edito> = {
     proportions: "Épaules et hanches alignées, taille creusée, courbes marquées.",
     pourquoi: {
       Sirène:
-        "Elle épouse une ligne déjà proportionnée. Ajustée jusqu'au genou, elle ne corrige rien : elle suit.",
+        "Elle épouse une ligne déjà proportionnée. Ajustée jusqu'aux cuisses, elle ne corrige rien : elle suit.",
       Minimaliste:
         "Le satin ne raconte que la coupe. Sur des proportions équilibrées, c'est le parti pris le plus fort.",
       Princesse:

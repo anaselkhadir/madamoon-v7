@@ -318,10 +318,11 @@ export default async function PageRobe({
             <dd className="texte mt-2">{L.fiche.surMesure}</dd>
           </div>
 
-          <div className="border-b border-fil py-5">
-            <dt className="legende">{L.fiche.aPartirDe}</dt>
-            <dd className="texte mt-2">{M.prixDepart}</dd>
-          </div>
+          {/* Pas de prix sur la fiche d'une robe. « À partir de 1 500 € »
+            * est le plancher de la maison, pas celui du modèle montré —
+            * posé sous une photographie, il se lisait comme le prix de
+            * cette robe-là. Le plancher reste dit là où il parle de la
+            * maison : le bandeau de l'accueil, Élise. */}
         </dl>
       </section>
 
