@@ -181,6 +181,10 @@ export default async function PageCoupe({
         </section>
       )}
 
+      {/* Sans la section des morphologies, la dernière trame touchait la
+        * photographie du showroom. L'air qu'elle aurait laissé. */}
+      {morphologies.length === 0 && <div className="py-[clamp(1.5rem,2.75vw,2.5rem)]" />}
+
       <Showroom langue={langue} />
     </>
   );

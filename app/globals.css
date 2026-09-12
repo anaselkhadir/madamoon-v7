@@ -597,6 +597,49 @@ body {
   gap: 1.5px;
 }
 
+/*
+ * Le dernier rang incomplet se centre.
+ *
+ * Une trame de deux colonnes qui porte un nombre impair de robes laissait
+ * la dernière seule à gauche, et un trou blanc à sa droite — sur chaque
+ * fiche (« dans la famille » en porte trois), sur les pages de coupe où
+ * une maison n'a qu'une robe. On aurait dit une tuile oubliée.
+ *
+ * La trame compte donc en demi-colonnes : chaque tuile en prend deux, et
+ * celles du dernier rang incomplet démarrent une demi-colonne plus loin.
+ * La largeur d'une tuile ne change pas d'un pixel ; seul le rang du bas
+ * se pose au milieu, avec autant de blanc de part et d'autre.
+ *
+ * Écrit ici et non en utilitaires : il faut « :nth-child » et
+ * « :last-child », et la règle doit l'emporter sur « grid-cols-2 ».
+ */
+.trame-tuiles.grid-cols-2 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.trame-tuiles.grid-cols-2 > * {
+  grid-column: span 2;
+}
+.trame-tuiles.grid-cols-2 > :last-child:nth-child(odd) {
+  grid-column: 2 / span 2;
+}
+@media (min-width: 768px) {
+  .trame-tuiles.md\:grid-cols-3 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .trame-tuiles.md\:grid-cols-3 > *,
+  .trame-tuiles.md\:grid-cols-3 > :last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+  /* Une seule au dernier rang : au milieu. */
+  .trame-tuiles.md\:grid-cols-3 > :last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
+  /* Deux : la première démarre une demi-colonne plus loin, la seconde suit. */
+  .trame-tuiles.md\:grid-cols-3 > :nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
+}
+
 /* Le rapport relevé sur la référence : 447 / 621. */
 .tuile {
   position: relative;
