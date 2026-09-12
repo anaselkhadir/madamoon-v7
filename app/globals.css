@@ -564,6 +564,15 @@ body {
   aspect-ratio: 447 / 621;
 }
 
+/* Au doigt, la trame a deux colonnes et la gouttière ne bouge pas : une
+ * tuile ne peut s'agrandir qu'en hauteur. Elle y gagne un septième, ce
+ * qui suffit à voir la robe plutôt qu'à la deviner. */
+@media (max-width: 767px) {
+  .tuile {
+    aspect-ratio: 447 / 720;
+  }
+}
+
 .tuile img,
 .tuile video {
   height: 100%;
@@ -578,25 +587,36 @@ body {
 }
 
 /* Le texte posé dans l'image : centré en hauteur, 24 px depuis la gauche. */
+/*
+ * Le texte se pose en bas, pas au milieu.
+ *
+ * Au centre, il traversait exactement ce qu'on vient voir : le dos de
+ * dentelle de la sirène, le bustier de la trapèze. Le détail d'une robe
+ * se joue à hauteur de buste ; le bas d'une image, c'est un ourlet, une
+ * traîne, un sol. C'est là que le texte a sa place.
+ */
 .dans-image {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   padding-inline: clamp(1rem, 1.7vw, 1.5rem);
+  padding-block-end: clamp(1.125rem, 1.9vw, 1.75rem);
   color: var(--color-sur-image);
 }
 
-/* Un voile très léger : la photographie reste lisible, le texte aussi. */
+/* Un voile très léger : la photographie reste lisible, le texte aussi.
+ * Il descend avec lui — une diagonale partant de la gauche ne tenait
+ * plus une ligne posée au bas du cadre. */
 .voile-lecture {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    100deg,
-    rgba(0, 0, 0, 0.34) 0%,
-    rgba(0, 0, 0, 0.16) 42%,
-    rgba(0, 0, 0, 0) 78%
+    to top,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.18) 34%,
+    rgba(0, 0, 0, 0) 62%
   );
   pointer-events: none;
 }
