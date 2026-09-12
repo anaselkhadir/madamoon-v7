@@ -74,7 +74,7 @@ const FR = {
   },
   coupes: {
     legende: "Les coupes",
-    titre: "Une même femme, six lignes.",
+    titre: "Trouvez la coupe qui vous va.",
     texte: "La coupe, c’est la forme de la robe. En voici six.",
     lien: "Toutes les coupes",
     presentee: "Coupe présentée",
@@ -501,7 +501,7 @@ const EN: Textes = {
   },
   coupes: {
     legende: "The silhouettes",
-    titre: "One woman, six lines.",
+    titre: "Find the cut that suits you.",
     texte: "The cut is the shape of the dress. Here are six.",
     lien: "All silhouettes",
     presentee: "Silhouette shown",

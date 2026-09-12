@@ -240,7 +240,7 @@ export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
         */}
       <div className="lg:hidden">
         <div className="gouttiere pt-[clamp(3rem,8vw,4rem)]">
-          <p className="legende">Les coupes</p>
+          <p className="legende">{L.coupes.legende}</p>
           <span data-ligne className="mt-4 block">
             <p className="phrase">{L.coupes.titre}</p>
           </span>
