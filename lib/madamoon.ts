@@ -621,8 +621,8 @@ export const ROBES: Robe[] = [
   {
     slug: "siddalee",
     nom: "Siddalee",
-    ligne: "Fourreau à motifs floraux, longue traîne",
-    categorie: "Fluide",
+    ligne: "Sirène à motifs floraux, longue traîne",
+    categorie: "Sirène",
     regard: "Une bretelle amovible sur l'épaule, et une traîne qui n'en finit pas.",
     vues: 1,
     createur: "Watters Designs",

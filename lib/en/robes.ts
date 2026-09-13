@@ -188,7 +188,7 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard: "A strapless bodice, and a skirt that opens in a single movement.",
   },
   "siddalee": {
-    ligne: "Floral sheath, long train",
+    ligne: "Floral mermaid, long train",
     regard: "A removable strap at the shoulder, and a train that goes on and on.",
   },
   "mitra": {
