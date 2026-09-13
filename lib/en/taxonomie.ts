@@ -57,7 +57,7 @@ export const COUPE_NOTE: Record<Categorie, string> = {
 
 export const FAMILLE: Record<Categorie, string> = {
   Sirène: "Fitted through the thigh, then flared. It draws the waist and the hips.",
-  Fluide: "A soft fall, with no visible structure. It follows the movement.",
+  Fluide: "A soft fall that follows the movement naturally.",
   Trapèze: "A fitted bodice, a skirt that opens in an A. The most universal cut.",
   Princesse: "A worked bodice and a skirt that owns its volume. The ceremonial gown.",
   Minimaliste: "Satin, line, nothing else. Everything rests on the cut.",
