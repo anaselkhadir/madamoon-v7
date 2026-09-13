@@ -295,7 +295,7 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
   const y = 3.05, x0 = T.MARGE, x1 = T.MARGE + T.COLONNE;
   s.addShape("rect", { x: x0, y, w: T.COLONNE, h: 0.02, fill: { color: T.NOIR }, line: { type: "none" } });
   const jalons = [
-    { quand: "30 septembre 2026", quoi: "Fin du test", detail: `Décision de lancer la phase 2. Premier versement${NB}: ${euros(1500)}.`, accent: true },
+    { quand: "30 septembre 2026", quoi: "Fin du test", detail: `Premier versement${NB}: ${euros(1500)}. Décision de lancer la phase 2.`, accent: true },
     { quand: "Octobre 2026", quoi: "Les fondations", detail: "Mise en ligne sur madamoon.fr, cybersécurité, Google Business Profile, Pinterest, Meta Pixel et Clarity." },
     { quand: "15 novembre 2026", quoi: "La première page", detail: `Second versement${NB}: ${euros(1000)}. Objectif${NB}: les 8 intentions en première page de Google.`, accent: true },
     { quand: "31 décembre 2026", quoi: "Le top 3", detail: "Objectif : les 8 intentions dans les trois premiers résultats.", accent: true },
