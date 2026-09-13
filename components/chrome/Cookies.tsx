@@ -14,7 +14,6 @@ import {
   type Categorie,
   type Choix,
 } from "@/lib/consentement";
-import { luminositeSous } from "@/lib/luminosite";
 
 /*
  * Le bandeau de consentement aux cookies.
@@ -41,52 +40,6 @@ export default function Cookies() {
   const [plus, setPlus] = useState(false);
   const [deplie, setDeplie] = useState<string | null>(null);
   const panneau = useRef<HTMLDivElement>(null);
-  const bandeauRef = useRef<HTMLDivElement>(null);
-
-  /*
-   * La vitre suit ce qu'elle recouvre : claire sur un fond sombre, sombre
-   * sur un fond clair.
-   *
-   * Le fond de la page décide d'abord — noir en mode sombre, blanc en mode
-   * clair —, et la mesure de ce qui passe sous la vitre le contredit
-   * quand c'est franc : une vidéo ou une photographie très sombre en mode
-   * clair, très lumineuse en mode sombre. Les photographies de robes, de
-   * luminosité moyenne, ne font pas basculer la vitre à chaque rangée.
-   *
-   * La mesure se refait au défilement, au redimensionnement, et toutes les
-   * deux secondes et demie pour suivre la vidéo du hero.
-   */
-  useEffect(() => {
-    if (!bandeau && !preferences) return;
-    let demande = 0;
-    const mesurer = () => {
-      demande = 0;
-      for (const el of [bandeauRef.current, panneau.current]) {
-        if (!el) continue;
-        const l = luminositeSous(el.getBoundingClientRect());
-        const pageSombre = document.documentElement.getAttribute("data-theme") === "sombre";
-        const claire = pageSombre ? !(l !== null && l > 0.45) : l !== null && l < 0.12;
-        el.dataset.vitre = claire ? "claire" : "sombre";
-      }
-    };
-    const planifier = () => {
-      if (!demande) demande = requestAnimationFrame(mesurer);
-    };
-    planifier();
-    const t1 = window.setTimeout(planifier, 400);
-    const t2 = window.setTimeout(planifier, 1500);
-    const cadence = window.setInterval(planifier, 2500);
-    window.addEventListener("scroll", planifier, { passive: true });
-    window.addEventListener("resize", planifier);
-    return () => {
-      cancelAnimationFrame(demande);
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-      window.clearInterval(cadence);
-      window.removeEventListener("scroll", planifier);
-      window.removeEventListener("resize", planifier);
-    };
-  }, [bandeau, preferences]);
 
   useEffect(() => {
     const enregistre = lireConsentement();
@@ -124,18 +77,7 @@ export default function Cookies() {
   return (
     <>
       {bandeau && !preferences && (
-        /* La page se floute derrière le bandeau jusqu'à ce que la visiteuse
-          * ait choisi — accepter, refuser ou personnaliser. Le voile retient
-          * les clics sans rien imposer : refuser ouvre le site aussi
-          * sûrement qu'accepter. Au-dessus du menu et d'Élise, sous le
-          * rideau d'ouverture. */
-        <div aria-hidden="true" data-sonde-ignorer className="voile-cookies fixed inset-0 z-[88]" />
-      )}
-
-      {bandeau && !preferences && (
         <div
-          ref={bandeauRef}
-          data-sonde-ignorer
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
@@ -165,7 +107,6 @@ export default function Cookies() {
 
       {preferences && (
         <div
-          data-sonde-ignorer
           className="voile-cookies fixed inset-0 z-[90] flex items-end justify-center md:items-center"
           onClick={(e) => e.target === e.currentTarget && setPreferences(false)}
         >

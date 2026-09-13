@@ -1175,22 +1175,17 @@ html[data-ouverture]::before {
 /* ———————————————————————————————————— le bandeau des cookies ————— */
 
 /*
- * Une vitre qui s'accorde à ce qu'elle recouvre.
+ * Un bandeau simple, sur fond noir.
  *
- * Le composant mesure la luminosité de la page juste sous lui — fonds,
- * photographies, vidéo — et pose « data-vitre » : sur un fond clair, une
- * vitre sombre au texte blanc ; sur un fond sombre, une vitre claire au
- * texte encre. La mesure se refait au défilement. Sans mesure, la vitre
- * est sombre.
- *
- * L'angle est discret — huit pixels, le double de celui des boutons — :
- * de la même famille que le reste du site, pas une bulle.
+ * Pas de vitre, pas de flou : un fond noir plein, le texte blanc, et un
+ * filet clair pour qu'il se détache aussi sur le site en mode sombre.
+ * L'angle est discret — huit pixels, le double de celui des boutons.
  *
  * « Tout refuser » et « Tout accepter » gardent exactement le même
  * habit : la CNIL veut que refuser soit aussi visible qu'accepter.
  *
- * Le rouge est toujours celui de la maison, #910000. Sur la vitre sombre
- * il ne se lirait pas en texte : il y devient le fond, et le texte blanc.
+ * Le rouge est toujours celui de la maison, #910000 : sur le noir il ne
+ * se lirait pas en texte, il y devient le fond, et le texte blanc.
  */
 .verre-cookies {
   --vitre-texte: #ffffff;
@@ -1198,50 +1193,17 @@ html[data-ouverture]::before {
   --vitre-doux: rgba(255, 255, 255, 0.7);
   --vitre-filet: rgba(255, 255, 255, 0.14);
   --vitre-bouton: #ffffff;
-  --vitre-sur-bouton: #14100c;
+  --vitre-sur-bouton: #000000;
   --vitre-eteint: rgba(255, 255, 255, 0.25);
   color: var(--vitre-texte);
-  background: rgba(14, 12, 10, 0.62);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  backdrop-filter: blur(22px) saturate(150%);
+  background: #000000;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 8px;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 24px 60px -18px rgba(0, 0, 0, 0.55);
-  transition:
-    background-color 0.5s var(--ease-doux),
-    color 0.5s var(--ease-doux),
-    border-color 0.5s var(--ease-doux);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.55);
 }
-.verre-cookies[data-vitre="claire"] {
-  --vitre-texte: #14100c;
-  --vitre-legende: rgba(20, 16, 12, 0.62);
-  --vitre-doux: rgba(20, 16, 12, 0.7);
-  --vitre-filet: rgba(20, 16, 12, 0.12);
-  --vitre-bouton: #14100c;
-  --vitre-sur-bouton: #ffffff;
-  --vitre-eteint: rgba(20, 16, 12, 0.16);
-  background: rgba(255, 255, 255, 0.66);
-  border-color: rgba(255, 255, 255, 0.7);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 24px 60px -18px rgba(0, 0, 0, 0.45);
-}
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .verre-cookies {
-    background: rgba(14, 12, 10, 0.94);
-  }
-  .verre-cookies[data-vitre="claire"] {
-    background: rgba(255, 255, 255, 0.95);
-  }
-}
-/* Le voile derrière le bandeau : un flou léger et une ombre, qui arrivent
- * en fondu pour ne pas faire sursauter. */
+/* Le fond derrière la fenêtre des préférences : une ombre, sans flou. */
 .voile-cookies {
-  background: rgba(0, 0, 0, 0.18);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.5);
   animation: voile-cookies 400ms var(--ease-doux) both;
 }
 @keyframes voile-cookies {
@@ -1268,8 +1230,8 @@ html[data-ouverture]::before {
   }
 }
 
-/* Sur la vitre, les styles du site portent leur couleur et ne sont pas
- * calqués : la couleur de la vitre doit être redite sur eux. */
+/* Sur le bandeau, les styles du site portent leur couleur et ne sont
+ * pas calqués : le blanc doit être redit sur eux. */
 .verre-cookies .legende {
   color: var(--vitre-legende);
 }
@@ -1295,8 +1257,8 @@ html[data-ouverture]::before {
   color: #ffffff;
 }
 
-/* Le rouge de la maison, en texte sur la vitre claire, en fond sur la
- * sombre. Même corps que les mentions, même angle que les boutons. */
+/* Le rouge de la maison, en fond, le texte blanc. Même corps que les
+ * mentions, même angle que les boutons. */
 .puce-rouge {
   display: inline-block;
   font-size: 0.625rem;
@@ -1309,14 +1271,9 @@ html[data-ouverture]::before {
   color: #ffffff;
   background: var(--color-action);
 }
-.verre-cookies[data-vitre="claire"] .puce-rouge {
-  color: var(--color-action);
-  background: transparent;
-  padding-inline: 0;
-}
 
 /* Les boutons gardent l'angle de tous les boutons du site, quatre
- * pixels : seule la couleur change, avec la vitre. */
+ * pixels : blancs sur le noir, rouges au survol. */
 .bouton-trait.cookies-inverse {
   background: var(--vitre-bouton, #ffffff);
   border-color: var(--vitre-bouton, #ffffff);
