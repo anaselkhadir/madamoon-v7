@@ -81,22 +81,27 @@ export default function Cookies() {
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
-          className="fixed inset-x-3 bottom-3 z-[75] border border-fil bg-blanc p-5 text-encre shadow-[0_12px_40px_rgba(0,0,0,0.12)] md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
+          className="fixed inset-x-3 bottom-3 z-[75] border-t-2 border-action bg-encre p-5 text-blanc shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
         >
-          <p className="legende">{L.titre}</p>
-          <p className="texte mt-3 text-[0.9375rem] leading-relaxed">{L.resume}</p>
+          {/* « .legende » et « .texte » portent leur couleur et ne sont pas
+            * calquées : l'ivoire du bandeau doit être redit sur eux. */}
+          <p className="legende" style={{ color: "var(--color-blanc)" }}>{L.titre}</p>
+          <p className="texte mt-3 text-[0.9375rem] leading-relaxed" style={{ color: "var(--color-blanc)" }}>
+            {L.resume}
+          </p>
           <div className="mt-5 grid grid-cols-2 gap-2.5">
-            <button type="button" className="bouton-trait" onClick={() => decider(RIEN)}>
+            <button type="button" className="bouton-trait cookies-inverse" onClick={() => decider(RIEN)}>
               {L.toutRefuser}
             </button>
-            <button type="button" className="bouton-trait" onClick={() => decider(TOUT)}>
+            <button type="button" className="bouton-trait cookies-inverse" onClick={() => decider(TOUT)}>
               {L.toutAccepter}
             </button>
           </div>
           <button
             type="button"
             onClick={() => setPreferences(true)}
-            className="lien-nav souligne mt-4 text-plomb hover:text-encre"
+            className="lien-nav souligne mt-4"
+            style={{ color: "var(--color-blanc)" }}
           >
             {L.personnaliser}
           </button>
@@ -204,13 +209,13 @@ export default function Cookies() {
             </div>
 
             <div className="grid grid-cols-1 gap-2.5 border-t border-fil px-5 py-4 sm:grid-cols-[1fr_1.5fr_1fr] md:px-7">
-              <button type="button" className="bouton-trait" style={{ paddingInline: "0.75rem" }} onClick={() => decider(RIEN)}>
+              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(RIEN)}>
                 {L.toutRefuser}
               </button>
-              <button type="button" className="bouton-trait" style={{ paddingInline: "0.75rem" }} onClick={() => decider(choix)}>
+              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(choix)}>
                 {L.enregistrer}
               </button>
-              <button type="button" className="bouton-trait" style={{ paddingInline: "0.75rem" }} onClick={() => decider(TOUT)}>
+              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(TOUT)}>
                 {L.toutAccepter}
               </button>
             </div>

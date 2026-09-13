@@ -1171,3 +1171,33 @@ html[data-ouverture]::before {
 
 /* Le voile de lecture posé sur les images est calculé pour du texte
  * blanc : il ne change pas avec le thème. */
+
+/* ———————————————————————————————————— le bandeau des cookies ————— */
+
+/*
+ * Blanc sur blanc, le bandeau se perdait dans la page : il passe en encre,
+ * texte ivoire, et ses boutons se remplissent. Les jetons s'inversent
+ * d'eux-mêmes en mode sombre — un bandeau ivoire sur le noir.
+ *
+ * « Tout refuser » et « Tout accepter » gardent exactement le même
+ * habit : la CNIL veut que refuser soit aussi visible qu'accepter.
+ *
+ * Ces règles viennent après « .bouton-trait » et le précisent : elles
+ * l'emportent sur sa couleur sans toucher à sa forme.
+ */
+.bouton-trait.cookies-inverse {
+  background: var(--color-blanc);
+  border-color: var(--color-blanc);
+  color: var(--color-encre);
+}
+.bouton-trait.cookies-plein {
+  background: var(--color-encre);
+  border-color: var(--color-encre);
+  color: var(--color-blanc);
+}
+.bouton-trait.cookies-inverse:hover,
+.bouton-trait.cookies-plein:hover {
+  background: var(--color-action);
+  border-color: var(--color-action);
+  color: var(--color-sur-image);
+}
