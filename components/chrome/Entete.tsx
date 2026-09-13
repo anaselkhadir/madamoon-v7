@@ -499,19 +499,20 @@ export default function Entete() {
       >
         <div className="gouttiere flex h-[var(--entete)] shrink-0 items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
           <Logo className="h-[0.9rem] w-auto md:h-[1.05rem]" />
-          {/* L'apparence et la fermeture, côte à côte, dans deux cercles
-            * rouges : les deux gestes qu'on cherche d'abord en ouvrant le
-            * menu, au même endroit et à la même taille. */}
-          <div className="flex items-center gap-3">
+          {/* L'apparence et la fermeture, côte à côte, sur deux disques
+            * pleins — encre en clair, ivoire en sombre : les jetons
+            * s'inversent d'eux-mêmes. Les deux gestes qu'on cherche d'abord
+            * en ouvrant le menu, au même endroit et à la même taille. */}
+          <div className="flex items-center gap-2.5">
             <Theme cercle />
             <button
               type="button"
               onClick={() => setOuvert(false)}
               aria-label={L.barre.fermer}
               title={L.barre.fermer}
-              className="rouge-menu flex h-10 w-10 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+              className="flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-encre text-blanc transition-colors duration-500 hover:bg-action hover:text-sur-image"
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[0.8rem] w-[0.8rem]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                 <path d="M5 5l14 14M19 5L5 19" />
               </svg>
             </button>
@@ -685,12 +686,12 @@ export default function Entete() {
                   <a
                     href={MAISON.telephoneHref}
                     aria-label={`${L.elise.appeler} — ${MAISON.telephone}`}
-                    className="rouge-menu flex h-10 items-center gap-2 rounded-full border border-action px-5 text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+                    className="bouton gap-2 px-5"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 3.5 5.5a2 2 0 0 1 2-2Z" />
                     </svg>
-                    <span className="lien-nav">{L.elise.appelerCourt}</span>
+                    {L.elise.appelerCourt}
                   </a>
                   <a
                     href={PLAN}

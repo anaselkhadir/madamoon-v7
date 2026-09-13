@@ -59,7 +59,7 @@ export default function Theme({ classe = "", cercle = false }: { classe?: string
       title={vaVersSombre ? L.theme.versSombre : L.theme.versClair}
       className={
         cercle
-          ? `rouge-menu flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image ${classe}`
+          ? `flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-encre text-blanc transition-colors duration-500 hover:bg-action hover:text-sur-image ${classe}`
           : `lien-nav flex shrink-0 items-center py-3 transition-colors duration-500 hover:text-action ${classe}`
       }
     >
@@ -68,7 +68,7 @@ export default function Theme({ classe = "", cercle = false }: { classe?: string
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          className="h-[0.95rem] w-[0.95rem]"
+          className={cercle ? "h-[0.85rem] w-[0.85rem]" : "h-[0.95rem] w-[0.95rem]"}
           fill="none"
           stroke="currentColor"
           strokeWidth="1.3"
@@ -82,7 +82,7 @@ export default function Theme({ classe = "", cercle = false }: { classe?: string
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          className="h-[0.95rem] w-[0.95rem]"
+          className={cercle ? "h-[0.85rem] w-[0.85rem]" : "h-[0.95rem] w-[0.95rem]"}
           fill="none"
           stroke="currentColor"
           strokeWidth="1.3"
