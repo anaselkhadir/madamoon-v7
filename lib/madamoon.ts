@@ -370,7 +370,7 @@ export const ROBES: Robe[] = [
     slug: "zina",
     nom: "Zina",
     ligne: "Drapé de satin, laçage dos",
-    categorie: "Fluide",
+    categorie: "Sirène",
     regard: "Un drapé qui tourne autour du corps, fermé au dos par un laçage.",
     vues: 3,
     createur: "Casablanca Bridal",
