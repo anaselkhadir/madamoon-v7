@@ -4,7 +4,7 @@ import Photo from "@/components/media/Photo";
 import { CREATEURS } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
 import { altScene } from "@/lib/alt";
-import { createurNote, createurOrigine, maison } from "@/lib/contenu";
+import { createurNom, createurNote, createurOrigine, maison } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
 
@@ -63,7 +63,11 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
           {CREATEURS.map((c) => (
             <li key={c.nom} data-lever>
               <div className="filet mb-4" />
-              <h3 className="titre-section">{c.nom}</h3>
+              <h3 className="titre-section">
+                <Link href={`/createurs/${c.slug}`} className="souligne hover:text-action">
+                  {createurNom(c, langue)}
+                </Link>
+              </h3>
               <p className="legende mt-1">{createurOrigine(c, langue)}</p>
               <p className="texte mesure-l mt-3">{createurNote(c, langue)}</p>
             </li>

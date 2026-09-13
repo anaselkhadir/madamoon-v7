@@ -106,6 +106,12 @@ export function createurParSlug(slug: string): Createur | undefined {
   return CREATEURS.find((c) => c.slug === slug);
 }
 
+/* Une robe ne connaît sa maison que par son nom : c'est de lui qu'on
+ * remonte à sa page. */
+export function createurParNom(nom: string | undefined): Createur | undefined {
+  return nom ? CREATEURS.find((c) => c.nom === nom) : undefined;
+}
+
 /* Le filtre de la maison : sur sa page, on ne montre que ses robes. */
 /* Le nom sous lequel se rangent les robes sans maison. */
 export const AUTRES_CREATEURS = "Autres créateurs";

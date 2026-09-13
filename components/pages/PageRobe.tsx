@@ -12,6 +12,7 @@ import {
   MAISON,
   MORPHOLOGIES,
   SITE_URL,
+  createurParNom,
 } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
@@ -61,6 +62,7 @@ export default async function PageRobe({
 
   const photos = vues(robe.slug);
   const film = FILMS[robe.slug];
+  const maisonDeLaRobe = createurParNom(robe.createur);
   /* L'image de tête : sa couverture. Les photographies qui ne sont pas
    * déjà au premier écran forment la galerie, dans leur ordre. */
   const tete = couverture(robe);
@@ -218,7 +220,14 @@ export default async function PageRobe({
           <div className="max-w-[52vw] max-md:max-w-full">
             <p className="mention text-sur-image/85">
               {coupeNom(robe.categorie, langue)}
-              {robe.createur ? ` — ${robe.createur}` : ""}
+              {maisonDeLaRobe && (
+                <>
+                  {" — "}
+                  <Link href={`/createurs/${maisonDeLaRobe.slug}`} className="souligne">
+                    {robe.createur}
+                  </Link>
+                </>
+              )}
             </p>
             <h1 className="affiche mt-3 text-sur-image">{robe.nom}</h1>
             <p className="accroche mt-5 text-sur-image">
@@ -314,7 +323,15 @@ export default async function PageRobe({
           {robe.createur && (
             <div className="border-b border-fil py-5">
               <dt className="legende">{L.fiche.maison}</dt>
-              <dd className="texte mt-2">{robe.createur}</dd>
+              <dd className="texte mt-2">
+                {maisonDeLaRobe ? (
+                  <Link href={`/createurs/${maisonDeLaRobe.slug}`} className="souligne">
+                    {robe.createur}
+                  </Link>
+                ) : (
+                  robe.createur
+                )}
+              </dd>
             </div>
           )}
 

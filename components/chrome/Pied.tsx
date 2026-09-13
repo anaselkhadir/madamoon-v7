@@ -71,7 +71,7 @@ export default function Pied() {
           <ul className="mt-4 flex flex-col gap-2">
             {CREATEURS.map((c) => (
               <li key={c.slug}>
-                <Link href="/robes" className="texte souligne">
+                <Link href={`/createurs/${c.slug}`} className="texte souligne">
                   {createurNom(c, l)}
                 </Link>
               </li>
