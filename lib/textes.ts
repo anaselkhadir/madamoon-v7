@@ -65,9 +65,9 @@ const FR = {
   },
   silhouette: {
     legende: "Les morphologies",
-    titre: "Avant la robe, la ligne.",
+    titre: "Avant la robe, la morphologie.",
     texte:
-      "Six morphologies, et pour chacune les coupes qui allongent, équilibrent ou révèlent la ligne.",
+      "Six morphologies, et pour chacune les coupes de robes de mariée qui allongent, équilibrent ou révèlent la silhouette.",
     lien: "Les six morphologies",
     precedentes: "Voir les morphologies précédentes",
     suivantes: "Voir les morphologies suivantes",
@@ -492,9 +492,9 @@ const EN: Textes = {
   },
   silhouette: {
     legende: "Body shapes",
-    titre: "Before the dress, the line.",
+    titre: "Before the dress, the body shape.",
     texte:
-      "Six body shapes, and for each the cuts that lengthen, balance or reveal it.",
+      "Six body shapes, and for each the wedding dress cuts that lengthen, balance or reveal the figure.",
     lien: "The six body shapes",
     precedentes: "See the previous body shapes",
     suivantes: "See the next body shapes",
