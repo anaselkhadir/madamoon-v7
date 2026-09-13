@@ -575,7 +575,11 @@ export default function Entete() {
                       <Link
                         href={l.href}
                         data-actif={cheminFr === l.href}
-                        className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
+                        /* « Toutes les robes » ouvre le catalogue entier : il
+                          * se détache des maisons qu'il rassemble. */
+                        className={`block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action ${
+                          l.href === "/robes" ? "font-bold" : ""
+                        }`}
                       >
                         {l.label}
                       </Link>
