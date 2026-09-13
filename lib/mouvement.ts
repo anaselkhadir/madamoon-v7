@@ -15,16 +15,7 @@ const abonnes = new Set<() => void>();
 
 export function enregistrerLenis(l: Lenis | null) {
   instance = l;
-  if (!l) return;
-  abonnes.forEach((fn) => l.on("scroll", fn));
-  /* Lenis défile par lui-même : il ne tient pas compte du blocage posé
-   * par l'attente des cookies, il faut l'arrêter aussi. */
-  if (document.documentElement.hasAttribute("data-cookies-attente")) l.stop();
-}
-
-/* L'attente des cookies est levée : le défilement lissé reprend. */
-export function reprendreLenis() {
-  instance?.start();
+  if (l) abonnes.forEach((fn) => l.on("scroll", fn));
 }
 
 /* S'abonner au défilement lissé. Rend la fonction de désabonnement. */
