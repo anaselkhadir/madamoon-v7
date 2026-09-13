@@ -63,7 +63,7 @@ function pieds(s, clair = false) {
   texte(s, "MADAMOON", { x: T.MARGE, y: 1.14, w: T.COLONNE, h: 1.64, fontFace: T.TITRE, fontSize: 96, color: T.BLANC, charSpacing: spc(96), valign: "middle" });
   s.addShape("rect", { x: T.MARGE, y: 2.9, w: 1.15, h: 0.04, fill: { color: T.ACCENT }, line: { type: "none" } });
   texte(s, "Proposition pour la phase 2", { x: T.MARGE, y: 3.14, w: 9, h: 0.7, fontFace: T.TITRE, fontSize: 31, color: T.BLANC, charSpacing: spc(31), valign: "middle" });
-  texte(s, "Le référencement sur Google, et douze mois pour faire du site un outil qui remplit l'agenda de la boutique.", {
+  texte(s, "Le référencement sur Google et Pinterest, et douze mois pour faire du site un outil qui remplit l'agenda de la boutique.", {
     x: T.MARGE, y: 3.9, w: 7.6, h: 0.62, fontFace: T.TITRE, fontSize: 13.5, color: T.GRIS_CLAIR, charSpacing: spc(13.5), lineSpacingMultiple: 1.4, valign: "top",
   });
   /* La première étape : posée dès la couverture, comme demandé. */
@@ -79,7 +79,7 @@ function pieds(s, clair = false) {
 }
 
 /* ═════════════════════════════════════════════ 01 — Google ═════ */
-intercalaire(pres, { numero: "01", titre: "Le référencement", ligne: "Où MADAMOON apparaît aujourd'hui sur Google, et où nous voulons l'amener." });
+intercalaire(pres, { numero: "01", titre: "Le référencement", ligne: "Google et Pinterest : où MADAMOON apparaît aujourd'hui, et où nous voulons l'amener." });
 
 {
   const s = page(pres, { rubrique: "Le point de départ", titre: "Où MADAMOON apparaît aujourd'hui sur Google", n: p() });
@@ -164,6 +164,56 @@ intercalaire(pres, { numero: "01", titre: "Le référencement", ligne: "Où MADA
   ], { y: 3.2, h: 2.75 });
 }
 
+{
+  const s = page(pres, {
+    rubrique: "Pinterest",
+    titre: "Pinterest, l'autre moteur de recherche des mariées",
+    chapeau: `Une future mariée ne cherche pas seulement sur Google${NB}: elle compose sa robe en images, bien avant de réserver un essayage. Revendiquer le compte, c'est y faire entrer MADAMOON sous son nom.`,
+    n: p(),
+  });
+  const l = 3.6, e = (T.COLONNE - 3 * l) / 2;
+  stat(s, { x: T.MARGE, y: 3.15, l, valeur: "640 M", legende: "utilisateurs chaque mois dans le monde, dont 157 millions en Europe" });
+  stat(s, { x: T.MARGE + l + e, y: 3.15, l, valeur: "≈ 27 %", legende: "de la population française atteinte par Pinterest" });
+  stat(s, { x: T.MARGE + 2 * (l + e), y: 3.15, l, valeur: "160", couleur: T.ACCENT, legende: "photos des 60 robes du catalogue, prêtes à devenir des épingles" });
+  tirets(s, { x: T.MARGE, y: 4.72, l: T.COLONNE, titre: "Ce que la revendication débloque", pas: 0.34, items: [
+    "Les épingles enrichies : nom, description et lien de chaque robe, repris du site — les balises sont déjà en place sur les 60 fiches",
+    "Les statistiques du site sur Pinterest : impressions, enregistrements, clics vers madamoon.fr",
+    "Le nom de MADAMOON sur toutes les épingles de ses robes, y compris celles enregistrées par les mariées elles-mêmes",
+  ] });
+  texte(s, `Sources${NB}: Pinterest, résultats du 2ᵉ trimestre 2026${FINE}; DataReportal, Digital 2026 France.`, {
+    x: T.MARGE, y: 6.78, w: 9, h: 0.24, fontFace: T.TITRE, fontSize: 9.5, color: T.GRIS_CLAIR, charSpacing: spc(9.5), valign: "middle",
+  });
+}
+
+{
+  const s = page(pres, { rubrique: "Pinterest", titre: "Le trafic que Pinterest peut apporter", n: p() });
+  tableau(s, [
+    ["Scénario", "Impressions / mois", "Taux de clic", "Visites / mois"],
+    ["Prudent", "20 000", "0,48 %", { t: "≈ 95", c: T.NOIR, gras: true }],
+    ["Intermédiaire", "60 000", "0,48 %", { t: "≈ 290", c: T.NOIR, gras: true }],
+    ["Ambitieux", "150 000", "0,48 %", { t: "≈ 720", c: T.ACCENT, gras: true }],
+  ], { x: T.MARGE, y: 2.25, w: 6.2, colW: [1.8, 1.7, 1.2, 1.5], taille: 12, hauteur: 0.5, aligne: ["left", "right", "right", "right"] });
+  tirets(s, { x: T.MARGE, y: 4.45, l: 6.2, pas: 0.56, items: [
+    "160 épingles : les 60 robes, avec toutes leurs photos, rangées en tableaux par coupe, morphologie et créateur",
+    "Une épingle classique obtient en moyenne 4,8 clics vers le site pour 1 000 impressions",
+    "Même le scénario prudent égale les visites que Google apporte aujourd'hui sur les 8 intentions",
+  ] });
+  s.addChart(pres.charts.BAR, [{
+    name: "Visites par mois",
+    labels: ["Google aujourd'hui", "Pinterest prudent", "Pinterest intermédiaire", "Pinterest ambitieux"],
+    values: [95, 96, 288, 720],
+  }], {
+    x: 7.45, y: 2.2, w: 5.05, h: 3.95, barDir: "col", barGapWidthPct: 60,
+    chartColors: [T.ACCENT], showValue: true, dataLabelPosition: "outEnd", dataLabelColor: T.NOIR, dataLabelFontSize: 11, dataLabelFontFace: T.TITRE,
+    catAxisLabelColor: T.GRIS, catAxisLabelFontSize: 9, catAxisLabelFontFace: T.TITRE, catAxisLineShow: false,
+    valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
+    showLegend: false, showTitle: true, title: "Visites estimées par mois", titleFontSize: 11, titleColor: T.GRIS, titleFontFace: T.TITRE,
+  });
+  texte(s, `Scénarios d'impressions à confirmer par les statistiques du compte, dès sa revendication. Taux de clic${NB}: WebFX, benchmarks Pinterest.`, {
+    x: T.MARGE, y: 6.78, w: 10, h: 0.24, fontFace: T.TITRE, fontSize: 9.5, color: T.GRIS_CLAIR, charSpacing: spc(9.5), valign: "middle",
+  });
+}
+
 /* ═════════════════════════════════════════════ 02 — les services ═════ */
 intercalaire(pres, { numero: "02", titre: "Au-delà de Google", ligne: "Douze mois pour entretenir le site, l'améliorer, et en faire un outil de rendez-vous." });
 
@@ -206,8 +256,8 @@ intercalaire(pres, { numero: "02", titre: "Au-delà de Google", ligne: "Douze mo
 {
   const s = page(pres, {
     rubrique: "Mesure et protection",
-    titre: "Mesurer, protéger, être vue",
-    chapeau: "Des chiffres lisibles à chaque étape, un site protégé, et une vitrine de plus là où les mariées cherchent l'inspiration.",
+    titre: "Mesurer et protéger",
+    chapeau: "Des chiffres lisibles à chaque étape, et un site protégé avant même son hébergement.",
     n: p(),
   });
   cartes(s, [
@@ -217,8 +267,6 @@ intercalaire(pres, { numero: "02", titre: "Au-delà de Google", ligne: "Douze mo
       texte: "Taux de conversion visiteur → rendez-vous, part du trafic organique, part du trafic publicitaire." },
     { label: "Avant l'hébergement", titre: "La cybersécurité",
       texte: "Détection des robots malveillants par leurs gestes de navigation. Google, ChatGPT et les autres moteurs d'IA restent bienvenus." },
-    { label: "Visibilité", titre: "Le compte Pinterest",
-      texte: "Revendication du compte, et les robes du catalogue épinglées avec leur fiche." },
   ], { y: 3.2, h: 2.75 });
 }
 
@@ -231,7 +279,7 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
   s.addShape("rect", { x: x0, y, w: T.COLONNE, h: 0.02, fill: { color: T.NOIR }, line: { type: "none" } });
   const jalons = [
     { quand: "30 septembre 2026", quoi: "Fin du test", detail: "Le site est éprouvé par la boutique. Décision de lancer la phase 2.", accent: true },
-    { quand: "Octobre 2026", quoi: "Les fondations", detail: "Mise en ligne sur madamoon.fr, migration, cybersécurité, Google Business Profile, pages d'intention." },
+    { quand: "Octobre 2026", quoi: "Les fondations", detail: "Mise en ligne sur madamoon.fr, migration, cybersécurité, Google Business Profile, revendication Pinterest." },
     { quand: "15 novembre 2026", quoi: "La première page", detail: "Objectif : les 8 intentions en première page de Google.", accent: true },
     { quand: "31 décembre 2026", quoi: "Le top 3", detail: "Objectif : les 8 intentions dans les trois premiers résultats.", accent: true },
     { quand: "Jusqu'en septembre 2027", quoi: "Le suivi", detail: "Support, une semaine par section, espace client, rendez-vous, Élise 2.0, e-mail marketing, pendant douze mois." },
@@ -262,7 +310,7 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
     ["Flashs statistiques du trafic organique", 1200],
     ["Suivi des indicateurs clés", 1800],
     ["Protections de cybersécurité", 2000],
-    ["Revendication du compte Pinterest", 400],
+    ["Pinterest : revendication du compte, épingles enrichies, tableaux", 1200],
   ];
   const total = services.reduce((a, [, v]) => a + v, 0);
   tableau(s, [
