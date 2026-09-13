@@ -77,11 +77,20 @@ export default function Cookies() {
   return (
     <>
       {bandeau && !preferences && (
+        /* La page se floute derrière le bandeau jusqu'à ce que la visiteuse
+          * ait choisi — accepter, refuser ou personnaliser. Le voile retient
+          * les clics sans rien imposer : refuser ouvre le site aussi
+          * sûrement qu'accepter. Au-dessus du menu et d'Élise, sous le
+          * rideau d'ouverture. */
+        <div aria-hidden="true" className="voile-cookies fixed inset-0 z-[88]" />
+      )}
+
+      {bandeau && !preferences && (
         <div
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
-          className="verre-cookies fixed inset-x-3 bottom-3 z-[75] p-5 md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
+          className="verre-cookies fixed inset-x-3 bottom-3 z-[89] p-5 md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
         >
           {/* « .legende » et « .texte » portent leur couleur et ne sont pas
             * calquées : le blanc de la vitre doit être redit sur eux. */}
@@ -110,7 +119,7 @@ export default function Cookies() {
 
       {preferences && (
         <div
-          className="fixed inset-0 z-[85] flex items-end justify-center bg-black/50 md:items-center"
+          className="fixed inset-0 z-[90] flex items-end justify-center bg-black/50 md:items-center"
           onClick={(e) => e.target === e.currentTarget && setPreferences(false)}
         >
           <div
