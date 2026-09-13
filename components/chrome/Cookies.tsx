@@ -92,10 +92,8 @@ export default function Cookies() {
           aria-label={L.titre}
           className="verre-cookies fixed inset-x-3 bottom-3 z-[89] p-5 md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
         >
-          {/* « .legende » et « .texte » portent leur couleur et ne sont pas
-            * calquées : le blanc de la vitre doit être redit sur eux. */}
-          <p className="legende" style={{ color: "rgba(255,255,255,0.78)" }}>{L.titre}</p>
-          <p className="texte mt-3 text-[0.9375rem] leading-relaxed" style={{ color: "#ffffff" }}>
+          <p className="legende">{L.titre}</p>
+          <p className="texte mt-3 text-[0.9375rem] leading-relaxed">
             {L.resume}
           </p>
           <div className="mt-5 grid grid-cols-2 gap-2.5">
@@ -110,7 +108,6 @@ export default function Cookies() {
             type="button"
             onClick={() => setPreferences(true)}
             className="lien-nav souligne mt-4"
-            style={{ color: "#ffffff" }}
           >
             {L.personnaliser}
           </button>
@@ -119,7 +116,7 @@ export default function Cookies() {
 
       {preferences && (
         <div
-          className="fixed inset-0 z-[90] flex items-end justify-center bg-black/50 md:items-center"
+          className="voile-cookies fixed inset-0 z-[90] flex items-end justify-center md:items-center"
           onClick={(e) => e.target === e.currentTarget && setPreferences(false)}
         >
           <div
@@ -128,21 +125,21 @@ export default function Cookies() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="cookies-titre"
-            className="flex max-h-[88svh] w-full flex-col bg-blanc text-encre md:max-w-[44rem]"
+            className="verre-cookies feuille-cookies flex max-h-[88svh] w-full flex-col md:max-w-[44rem]"
             /* Le panneau prend le focus pour le clavier, sans le cadre rouge
               * de « :focus-visible », qui n'est pas calqué et l'emporterait
               * sur un utilitaire. */
             style={{ outline: "none" }}
           >
             <div className="flex items-center justify-between gap-4 border-b border-fil px-5 py-4 md:px-7">
-              <h2 id="cookies-titre" className="legende text-encre">
+              <h2 id="cookies-titre" className="legende">
                 {L.titrePreferences}
               </h2>
               <button
                 type="button"
                 onClick={() => setPreferences(false)}
                 aria-label={L.fermer}
-                className="flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-encre text-blanc transition-colors duration-500 hover:bg-action hover:text-sur-image"
+                className="flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-white text-[#14100c] transition-colors duration-500 hover:bg-action hover:text-white"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[0.8rem] w-[0.8rem]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                   <path d="M5 5l14 14M19 5L5 19" />
@@ -159,7 +156,7 @@ export default function Cookies() {
               <button
                 type="button"
                 onClick={() => setPlus(!plus)}
-                className="lien-nav souligne mt-3 text-action"
+                className="lien-nav souligne rouge-vitre mt-3"
               >
                 {plus ? L.afficherMoins : L.afficherPlus}
               </button>
@@ -193,7 +190,7 @@ export default function Cookies() {
                           {cat.nom}
                         </button>
                         {fixe ? (
-                          <span className="mention text-action">{L.toujoursActif}</span>
+                          <span className="mention rouge-vitre">{L.toujoursActif}</span>
                         ) : (
                           <button
                             type="button"
@@ -201,7 +198,7 @@ export default function Cookies() {
                             aria-checked={actif}
                             aria-label={cat.nom}
                             onClick={() => setChoix({ ...choix, [cle]: !actif })}
-                            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${actif ? "bg-action" : "bg-sable"}`}
+                            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${actif ? "bg-action" : "bg-white/25"}`}
                           >
                             <span
                               aria-hidden="true"
@@ -218,13 +215,13 @@ export default function Cookies() {
             </div>
 
             <div className="grid grid-cols-1 gap-2.5 border-t border-fil px-5 py-4 sm:grid-cols-[1fr_1.5fr_1fr] md:px-7">
-              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(RIEN)}>
+              <button type="button" className="bouton-trait cookies-inverse" style={{ paddingInline: "0.75rem" }} onClick={() => decider(RIEN)}>
                 {L.toutRefuser}
               </button>
-              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(choix)}>
+              <button type="button" className="bouton-trait cookies-inverse" style={{ paddingInline: "0.75rem" }} onClick={() => decider(choix)}>
                 {L.enregistrer}
               </button>
-              <button type="button" className="bouton-trait cookies-plein" style={{ paddingInline: "0.75rem" }} onClick={() => decider(TOUT)}>
+              <button type="button" className="bouton-trait cookies-inverse" style={{ paddingInline: "0.75rem" }} onClick={() => decider(TOUT)}>
                 {L.toutAccepter}
               </button>
             </div>

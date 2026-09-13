@@ -1220,19 +1220,49 @@ html[data-ouverture]::before {
     animation: none;
   }
 }
+/* La fenêtre des préférences : en bas de l'écran au doigt, arrondie en
+ * haut seulement ; centrée ailleurs, arrondie partout. */
+.verre-cookies.feuille-cookies {
+  border-radius: 16px 16px 0 0;
+  border-bottom: 0;
+}
+@media (min-width: 768px) {
+  .verre-cookies.feuille-cookies {
+    border-radius: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+}
+
+/* Sur la vitre, les styles du site portent leur couleur et ne sont pas
+ * calqués : le blanc doit être redit sur eux. */
+.verre-cookies .legende {
+  color: rgba(255, 255, 255, 0.72);
+}
+.verre-cookies .texte,
+.verre-cookies .lien-nav,
+.verre-cookies .mention {
+  color: #ffffff;
+}
+.verre-cookies .text-plomb {
+  color: rgba(255, 255, 255, 0.7);
+}
+.verre-cookies .border-fil {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+/* Le rouge de la maison ne se lit pas sur une vitre sombre : il
+ * s'éclaircit, sans quitter sa famille. */
+.verre-cookies .rouge-vitre {
+  color: color-mix(in srgb, var(--color-accent) 55%, white);
+}
+
+/* Les boutons gardent l'angle de tous les boutons du site, quatre
+ * pixels : seule la couleur change. */
 .bouton-trait.cookies-inverse {
   background: #ffffff;
   border-color: #ffffff;
   color: #14100c;
-  border-radius: 8px;
 }
-.bouton-trait.cookies-plein {
-  background: var(--color-encre);
-  border-color: var(--color-encre);
-  color: var(--color-blanc);
-}
-.bouton-trait.cookies-inverse:hover,
-.bouton-trait.cookies-plein:hover {
+.bouton-trait.cookies-inverse:hover {
   background: var(--color-action);
   border-color: var(--color-action);
   color: var(--color-sur-image);
