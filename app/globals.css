@@ -1244,13 +1244,45 @@ html[data-ouverture]::before {
   backdrop-filter: blur(6px);
   animation: voile-cookies 400ms var(--ease-doux) both;
 }
+/* L'attente du premier choix, posée avant la première peinture par le
+ * gabarit : la page floutée et en noir et blanc — vidéos comprises —,
+ * sans défilement, jusqu'à ce que la visiteuse accepte, refuse ou
+ * enregistre ses préférences. Le voile est porté par la racine elle-même
+ * pour exister avant l'hydratation ; il retient les clics, sous le
+ * bandeau et sous le rideau d'ouverture. La gouttière de la barre de
+ * défilement est gardée : rien ne saute quand le site se libère. */
+html[data-cookies-attente] {
+  overflow: hidden;
+  overscroll-behavior: none;
+  scrollbar-gutter: stable;
+}
+html[data-cookies-attente]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 88;
+  background: rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(6px) grayscale(1);
+  backdrop-filter: blur(6px) grayscale(1);
+  touch-action: none;
+  animation: voile-cookies 400ms var(--ease-doux) both;
+}
+/* La fenêtre des préférences garde son voile pour les visites suivantes ;
+ * pendant l'attente, celui de la racine suffit — deux flous se
+ * cumuleraient. */
+html[data-cookies-attente] .voile-cookies {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 @keyframes voile-cookies {
   from {
     opacity: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .voile-cookies {
+  .voile-cookies,
+  html[data-cookies-attente]::after {
     animation: none;
   }
 }

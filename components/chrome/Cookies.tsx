@@ -15,6 +15,7 @@ import {
   type Choix,
 } from "@/lib/consentement";
 import { luminositeSous } from "@/lib/luminosite";
+import { reprendreLenis } from "@/lib/mouvement";
 
 /*
  * Le bandeau de consentement aux cookies.
@@ -33,6 +34,21 @@ import { luminositeSous } from "@/lib/luminosite";
  * fait.
  */
 
+/*
+ * Le choix est fait : la page reprend ses couleurs et son défilement, et
+ * les vidéos suspendues pendant l'attente — déjà chargées — démarrent.
+ */
+function liberer() {
+  const racine = document.documentElement;
+  if (!racine.hasAttribute("data-cookies-attente")) return;
+  racine.removeAttribute("data-cookies-attente");
+  reprendreLenis();
+  document.querySelectorAll<HTMLVideoElement>("video[data-cookies-reprendre]").forEach((v) => {
+    v.removeAttribute("data-cookies-reprendre");
+    v.play().catch(() => {});
+  });
+}
+
 export default function Cookies() {
   const L = t(langueDe(usePathname() ?? "/")).cookies;
   const [bandeau, setBandeau] = useState(false);
@@ -42,6 +58,7 @@ export default function Cookies() {
   const [deplie, setDeplie] = useState<string | null>(null);
   const panneau = useRef<HTMLDivElement>(null);
   const bandeauRef = useRef<HTMLDivElement>(null);
+  const [attente, setAttente] = useState(false);
 
   /*
    * La vitre suit ce qu'elle recouvre : claire sur un fond sombre, sombre
@@ -90,8 +107,13 @@ export default function Cookies() {
 
   useEffect(() => {
     const enregistre = lireConsentement();
-    if (enregistre) setChoix(enregistre);
-    else setBandeau(true);
+    if (enregistre) {
+      setChoix(enregistre);
+      liberer();
+    } else {
+      setBandeau(true);
+      setAttente(document.documentElement.hasAttribute("data-cookies-attente"));
+    }
     const ouvrir = () => {
       setChoix(lireConsentement() ?? RIEN);
       setPreferences(true);
@@ -109,11 +131,43 @@ export default function Cookies() {
     return () => window.removeEventListener("keydown", touche);
   }, [preferences]);
 
+  /*
+   * Pendant l'attente, la page ne défile pas.
+   *
+   * Le CSS coupe le défilement de la racine, mais Safari sur iPhone passe
+   * outre : on retient aussi le doigt et la molette, et on repose la page
+   * où elle était si elle a glissé quand même. Seule la liste des
+   * préférences reste libre de défiler.
+   */
+  useEffect(() => {
+    if (!attente) return;
+    const x = window.scrollX;
+    const y = window.scrollY;
+    const tenir = () => {
+      if (window.scrollX !== x || window.scrollY !== y) window.scrollTo(x, y);
+    };
+    const retenir = (e: Event) => {
+      const cible = e.target as Element | null;
+      if (cible?.closest?.("[data-defile-cookies]")) return;
+      if (e.cancelable) e.preventDefault();
+    };
+    window.addEventListener("touchmove", retenir, { passive: false });
+    window.addEventListener("wheel", retenir, { passive: false });
+    window.addEventListener("scroll", tenir, { passive: true });
+    return () => {
+      window.removeEventListener("touchmove", retenir);
+      window.removeEventListener("wheel", retenir);
+      window.removeEventListener("scroll", tenir);
+    };
+  }, [attente]);
+
   const decider = (c: Choix) => {
     enregistrerConsentement(c);
     setChoix(c);
     setBandeau(false);
     setPreferences(false);
+    setAttente(false);
+    liberer();
   };
 
   const CATS: { cle: "necessaire" | Categorie; fixe?: boolean }[] = [
@@ -128,7 +182,9 @@ export default function Cookies() {
           * ait choisi — accepter, refuser ou personnaliser. Le voile retient
           * les clics sans rien imposer : refuser ouvre le site aussi
           * sûrement qu'accepter. Au-dessus du menu et d'Élise, sous le
-          * rideau d'ouverture. */
+          * rideau d'ouverture. Pendant l'attente du premier choix, c'est
+          * le voile de la racine qui floute et décolore ; celui-ci ne sert
+          * que si le navigateur refuse le stockage. */
         <div aria-hidden="true" data-sonde-ignorer className="voile-cookies fixed inset-0 z-[88]" />
       )}
 
@@ -197,7 +253,7 @@ export default function Cookies() {
               </button>
             </div>
 
-            <div className="overflow-y-auto overscroll-contain px-5 py-5 md:px-7">
+            <div data-defile-cookies className="overflow-y-auto overscroll-contain px-5 py-5 md:px-7">
               <div className="texte space-y-3 text-[0.9375rem] leading-relaxed">
                 {(plus ? L.paragraphes : L.paragraphes.slice(0, 1)).map((p) => (
                   <p key={p}>{p}</p>

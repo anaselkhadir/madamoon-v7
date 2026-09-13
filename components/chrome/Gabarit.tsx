@@ -111,6 +111,39 @@ setTimeout(function(){d.removeAttribute("data-ouverture")},6000);
 }catch(e){}})();`,
           }}
         />
+        {/*
+          * L'attente des cookies, posée elle aussi avant la première
+          * peinture.
+          *
+          * Tant que la visiteuse n'a pas choisi, « data-cookies-attente »
+          * reste sur la racine : le CSS floute la page, la passe en noir et
+          * blanc et bloque le défilement. Le même critère que
+          * « lireConsentement() » — version 1, moins de six mois —, sans
+          * quoi la page se figerait chez qui a déjà répondu.
+          *
+          * Les vidéos, elles, ne démarrent pas : toute lecture demandée
+          * pendant l'attente est suspendue aussitôt et marquée. Le
+          * chargement, lui, continue — la vidéo est prête à partir dès que
+          * le choix est fait, et « Cookies » relance celles qui attendaient.
+          *
+          * Si le stockage est refusé, on ne fige rien : le bandeau
+          * reparaîtrait à chaque page, et le site avec lui.
+          */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{
+var s=localStorage,d=document.documentElement,e=null;
+try{e=JSON.parse(s.getItem("madamoon.consentement")||"null")}catch(x){}
+if(e&&e.version===1&&Date.now()-e.date<=15724800000)return;
+d.setAttribute("data-cookies-attente","");
+document.addEventListener("play",function(v){
+if(!d.hasAttribute("data-cookies-attente"))return;
+v=v.target;if(!v||!v.pause)return;
+v.setAttribute("data-cookies-reprendre","");v.preload="auto";v.pause();
+},true);
+}catch(x){}})();`,
+          }}
+        />
       </head>
       <body>
         <a
