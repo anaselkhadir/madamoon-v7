@@ -87,7 +87,7 @@ const FR = {
      * leur nombre change avec les collections, et la ligne n'a pas à
      * être reprise chaque fois. */
     lieux:
-      "Biarritz, Newport Beach, Rome, Dallas, Barcelone — les plus belles robes des collections nuptiales, choisies une par une pour vous.",
+      "Biarritz, Newport Beach, Rome, Dallas, Lviv — les plus belles robes des collections nuptiales, choisies une par une pour vous.",
     autres: "Autres créateurs",
     autresNote: "De petits ateliers, trouvés un par un.",
     precedentes: "Voir les maisons précédentes",
@@ -511,7 +511,7 @@ const EN: Textes = {
     legende: "The designers",
     titre: "Several houses. None by chance.",
     lieux:
-      "Biarritz, Newport Beach, Rome, Dallas, Barcelona — the finest dresses of the bridal collections, chosen one by one for you.",
+      "Biarritz, Newport Beach, Rome, Dallas, Lviv — the finest dresses of the bridal collections, chosen one by one for you.",
     autres: "Other designers",
     autresNote: "Small ateliers, found one by one.",
     precedentes: "See the previous houses",

@@ -67,7 +67,7 @@ export const CREATEURS: Createur[] = [
   {
     nom: "Olya Mak",
     slug: "olya-mak",
-    origine: "Barcelone",
+    origine: "Lviv",
     note: "Le drapé, la transparence, la sensualité retenue. Des robes qui bougent avec celle qui les porte.",
     ouverture: { robe: "venus", vue: 1 },
   },

@@ -90,7 +90,7 @@ export const CREATEUR_NOTE: Record<string, string> = {
 export const CREATEUR_ORIGINE: Record<string, string> = {
   "watters-designs": "Dallas",
   "casablanca-bridal": "Newport Beach",
-  "olya-mak": "Barcelona",
+  "olya-mak": "Lviv",
   "angeola-biarritz": "Biarritz",
   "monica-loretti": "Rome",
   "autres-createurs": "Small ateliers",
