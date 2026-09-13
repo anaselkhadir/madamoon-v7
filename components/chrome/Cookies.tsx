@@ -14,6 +14,7 @@ import {
   type Categorie,
   type Choix,
 } from "@/lib/consentement";
+import { luminositeSous } from "@/lib/luminosite";
 
 /*
  * Le bandeau de consentement aux cookies.
@@ -40,6 +41,52 @@ export default function Cookies() {
   const [plus, setPlus] = useState(false);
   const [deplie, setDeplie] = useState<string | null>(null);
   const panneau = useRef<HTMLDivElement>(null);
+  const bandeauRef = useRef<HTMLDivElement>(null);
+
+  /*
+   * La vitre suit ce qu'elle recouvre : claire sur un fond sombre, sombre
+   * sur un fond clair.
+   *
+   * Le fond de la page décide d'abord — noir en mode sombre, blanc en mode
+   * clair —, et la mesure de ce qui passe sous la vitre le contredit
+   * quand c'est franc : une vidéo ou une photographie très sombre en mode
+   * clair, très lumineuse en mode sombre. Les photographies de robes, de
+   * luminosité moyenne, ne font pas basculer la vitre à chaque rangée.
+   *
+   * La mesure se refait au défilement, au redimensionnement, et toutes les
+   * deux secondes et demie pour suivre la vidéo du hero.
+   */
+  useEffect(() => {
+    if (!bandeau && !preferences) return;
+    let demande = 0;
+    const mesurer = () => {
+      demande = 0;
+      for (const el of [bandeauRef.current, panneau.current]) {
+        if (!el) continue;
+        const l = luminositeSous(el.getBoundingClientRect());
+        const pageSombre = document.documentElement.getAttribute("data-theme") === "sombre";
+        const claire = pageSombre ? !(l !== null && l > 0.45) : l !== null && l < 0.12;
+        el.dataset.vitre = claire ? "claire" : "sombre";
+      }
+    };
+    const planifier = () => {
+      if (!demande) demande = requestAnimationFrame(mesurer);
+    };
+    planifier();
+    const t1 = window.setTimeout(planifier, 400);
+    const t2 = window.setTimeout(planifier, 1500);
+    const cadence = window.setInterval(planifier, 2500);
+    window.addEventListener("scroll", planifier, { passive: true });
+    window.addEventListener("resize", planifier);
+    return () => {
+      cancelAnimationFrame(demande);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.clearInterval(cadence);
+      window.removeEventListener("scroll", planifier);
+      window.removeEventListener("resize", planifier);
+    };
+  }, [bandeau, preferences]);
 
   useEffect(() => {
     const enregistre = lireConsentement();
@@ -82,11 +129,13 @@ export default function Cookies() {
           * les clics sans rien imposer : refuser ouvre le site aussi
           * sûrement qu'accepter. Au-dessus du menu et d'Élise, sous le
           * rideau d'ouverture. */
-        <div aria-hidden="true" className="voile-cookies fixed inset-0 z-[88]" />
+        <div aria-hidden="true" data-sonde-ignorer className="voile-cookies fixed inset-0 z-[88]" />
       )}
 
       {bandeau && !preferences && (
         <div
+          ref={bandeauRef}
+          data-sonde-ignorer
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
@@ -116,6 +165,7 @@ export default function Cookies() {
 
       {preferences && (
         <div
+          data-sonde-ignorer
           className="voile-cookies fixed inset-0 z-[90] flex items-end justify-center md:items-center"
           onClick={(e) => e.target === e.currentTarget && setPreferences(false)}
         >
@@ -139,7 +189,7 @@ export default function Cookies() {
                 type="button"
                 onClick={() => setPreferences(false)}
                 aria-label={L.fermer}
-                className="flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full bg-white text-[#14100c] transition-colors duration-500 hover:bg-action hover:text-white"
+                className="croix-cookies flex h-[2.125rem] w-[2.125rem] shrink-0 items-center justify-center rounded-full transition-colors duration-500"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[0.8rem] w-[0.8rem]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                   <path d="M5 5l14 14M19 5L5 19" />
@@ -156,7 +206,7 @@ export default function Cookies() {
               <button
                 type="button"
                 onClick={() => setPlus(!plus)}
-                className="lien-nav souligne rouge-vitre mt-3"
+                className="puce-rouge mt-3"
               >
                 {plus ? L.afficherMoins : L.afficherPlus}
               </button>
@@ -190,7 +240,7 @@ export default function Cookies() {
                           {cat.nom}
                         </button>
                         {fixe ? (
-                          <span className="mention rouge-vitre">{L.toujoursActif}</span>
+                          <span className="puce-rouge">{L.toujoursActif}</span>
                         ) : (
                           <button
                             type="button"
@@ -198,7 +248,7 @@ export default function Cookies() {
                             aria-checked={actif}
                             aria-label={cat.nom}
                             onClick={() => setChoix({ ...choix, [cle]: !actif })}
-                            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${actif ? "bg-action" : "bg-white/25"}`}
+                            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${actif ? "bg-action" : "interrupteur-eteint"}`}
                           >
                             <span
                               aria-hidden="true"
