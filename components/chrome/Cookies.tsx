@@ -90,7 +90,7 @@ export default function Cookies() {
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
-          className="verre-cookies fixed inset-x-3 bottom-3 z-[89] p-5 md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
+          className="verre-cookies fixed inset-x-3 bottom-3 z-[89] p-5 md:inset-x-auto md:bottom-12 md:right-[3.75rem] md:w-[27rem] md:p-6"
         >
           <p className="legende">{L.titre}</p>
           <p className="texte mt-3 text-[0.9375rem] leading-relaxed">
