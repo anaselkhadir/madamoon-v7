@@ -211,6 +211,9 @@ function parCoupe(): Groupe[] {
 export default function Entete() {
   const chemin = usePathname();
   const [onglet, setOnglet] = useState<"robes" | "coupes" | "morphologies">("robes");
+  /* La maison dépliée dans l'onglet des robes. Une seule à la fois : la
+   * liste reste courte, et l'on voit toujours où l'on en est. */
+  const [maisonOuverte, setMaisonOuverte] = useState<string | null>(null);
   /* Le gabarit ne reçoit pas de propriété : il lit la langue sur
    * l'adresse, comme il lit déjà la page courante. */
   const l = langueDe(chemin ?? "/");
@@ -570,21 +573,106 @@ export default function Entete() {
                   hidden={onglet !== o.cle}
                   className="pt-5"
                 >
-                  {o.liens().map((l) => (
-                    <li key={l.href}>
-                      <Link
-                        href={l.href}
-                        data-actif={cheminFr === l.href}
-                        /* « Toutes les robes » ouvre le catalogue entier : il
-                          * se détache des maisons qu'il rassemble. */
-                        className={`block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action ${
-                          l.href === "/robes" ? "font-bold" : ""
-                        }`}
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {o.cle === "robes" ? (
+                    <>
+                      {/* « Toutes les robes » ouvre le catalogue entier : il
+                        * se détache des maisons qu'il rassemble. */}
+                      <li>
+                        <Link
+                          href="/robes"
+                          data-actif={cheminFr === "/robes"}
+                          className="block py-[0.52em] text-[0.9375rem] font-bold uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
+                        >
+                          {L.barre.toutesRobes}
+                        </Link>
+                      </li>
+                      <li className="legende mb-1 mt-4 text-plomb">{L.barre.filtrerParCreateur}</li>
+                      {/*
+                        * Chaque maison se déplie sur place : un toucher sur son
+                        * nom ouvre la liste de ses robes juste dessous, un
+                        * second la referme. La page de la maison reste à un
+                        * geste, en tête de la liste.
+                        */}
+                      {CREATEURS.map((c) => {
+                        const nom = createurNom(c, l);
+                        const ouverte = maisonOuverte === c.slug;
+                        const robes = robesDe(c.nom);
+                        return (
+                          <li key={c.slug}>
+                            <button
+                              type="button"
+                              aria-expanded={ouverte}
+                              aria-controls={`robes-${c.slug}`}
+                              onClick={() => setMaisonOuverte(ouverte ? null : c.slug)}
+                              className={`flex w-full items-center gap-2.5 py-[0.52em] text-left text-[0.9375rem] uppercase leading-none tracking-[0.06em] transition-colors duration-500 hover:text-action ${
+                                ouverte ? "text-action" : "text-encre"
+                              }`}
+                            >
+                              <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                                className={`h-3 w-3 shrink-0 transition-transform duration-500 ${ouverte ? "rotate-180" : ""}`}
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              >
+                                <path d="M6 9l6 6 6-6" />
+                              </svg>
+                              {nom}
+                            </button>
+                            {/* La hauteur se déplie en douceur : une grille qui
+                              * passe d'un rang nul à un rang entier. */}
+                            <div
+                              id={`robes-${c.slug}`}
+                              className={`grid transition-[grid-template-rows] duration-500 [transition-timing-function:var(--ease-doux)] ${
+                                ouverte ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                              }`}
+                            >
+                              <ul className="overflow-hidden pl-[1.375rem]" inert={!ouverte || undefined}>
+                                <li>
+                                  <Link
+                                    href={`/createurs/${c.slug}`}
+                                    className="legende souligne mb-1 mt-1.5 inline-block"
+                                    /* « .legende » porte sa couleur et n'est pas calquée :
+                                      * le rouge du lien doit être redit ici. */
+                                    style={{ color: "var(--color-action)" }}
+                                  >
+                                    {L.barre.voirLaMaison(nom)}
+                                  </Link>
+                                </li>
+                                {robes.map((r) => (
+                                  <li key={r.slug}>
+                                    <Link
+                                      href={`/robes/${r.slug}`}
+                                      data-actif={cheminFr === `/robes/${r.slug}`}
+                                      className="block py-[0.3em] font-serif text-[1.0625rem] leading-snug text-plume transition-colors duration-500 hover:text-action"
+                                    >
+                                      {r.nom}
+                                    </Link>
+                                  </li>
+                                ))}
+                                <li aria-hidden="true" className="h-2" />
+                              </ul>
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </>
+                  ) : (
+                    o.liens().map((lien) => (
+                      <li key={lien.href}>
+                        <Link
+                          href={lien.href}
+                          data-actif={cheminFr === lien.href}
+                          className="block py-[0.52em] text-[0.9375rem] uppercase leading-none tracking-[0.06em] text-encre transition-colors duration-500 hover:text-action"
+                        >
+                          {lien.label}
+                        </Link>
+                      </li>
+                    ))
+                  )}
                 </ul>
               ))}
 

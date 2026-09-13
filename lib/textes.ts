@@ -38,6 +38,8 @@ const FR = {
     catalogueEntier: "Le catalogue entier",
     sixCoupes: "Les six coupes",
     sixMorphologies: "Les six morphologies",
+    filtrerParCreateur: "Filtrer par créateur",
+    voirLaMaison: (nom: string) => `Voir la page ${nom}`,
   },
   raccourcis: {
     toutesRobes: "Toutes les robes",
@@ -465,6 +467,8 @@ const EN: Textes = {
     catalogueEntier: "The whole catalogue",
     sixCoupes: "The six silhouettes",
     sixMorphologies: "The six body shapes",
+    filtrerParCreateur: "Filter by designer",
+    voirLaMaison: (nom: string) => `View the ${nom} page`,
   },
   raccourcis: {
     toutesRobes: "All dresses",
