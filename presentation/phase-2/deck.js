@@ -270,6 +270,23 @@ intercalaire(pres, { numero: "02", titre: "Au-delà de Google", ligne: "Douze mo
   ], { y: 3.2, h: 2.75 });
 }
 
+{
+  const s = page(pres, {
+    rubrique: "Mesure et protection",
+    titre: "Voir ce que font vraiment les visiteuses",
+    chapeau: `Deux outils installés sur le site, pour cesser de deviner${NB}: l'un rend la publicité moins chère, l'autre montre le parcours réel de chaque visite.`,
+    n: p(),
+  });
+  cartes(s, [
+    { label: "Facebook et Instagram", titre: "Meta Pixel",
+      texte: "Meta ne compte plus chaque visite comme une réussite : il apprend les vraies actions — fiche consultée, rendez-vous demandé — et vise les profils qui réservent. Le coût par rendez-vous baisse." },
+    { label: "Le parcours en vidéo", titre: "Microsoft Clarity",
+      texte: "Chaque visite se revoit en vidéo, et des cartes de chaleur montrent où l'on clique et où l'on renonce : ce qu'il faut mettre en avant, ce qui se trouve mal." },
+    { label: "Conformité", titre: "Le consentement",
+      texte: "Les deux outils ne s'activent qu'avec l'accord de la visiteuse, par un bandeau conforme aux règles de la CNIL. Clarity masque les informations saisies dans les formulaires." },
+  ], { y: 3.1, h: 3.05 });
+}
+
 /* ═════════════════════════════════════════════ 03 — calendrier et investissement ═════ */
 intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne: "Les dates qui comptent, et ce que représente la phase 2." });
 
@@ -278,9 +295,9 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
   const y = 3.05, x0 = T.MARGE, x1 = T.MARGE + T.COLONNE;
   s.addShape("rect", { x: x0, y, w: T.COLONNE, h: 0.02, fill: { color: T.NOIR }, line: { type: "none" } });
   const jalons = [
-    { quand: "30 septembre 2026", quoi: "Fin du test", detail: "Le site est éprouvé par la boutique. Décision de lancer la phase 2.", accent: true },
-    { quand: "Octobre 2026", quoi: "Les fondations", detail: "Mise en ligne sur madamoon.fr, migration, cybersécurité, Google Business Profile, revendication Pinterest." },
-    { quand: "15 novembre 2026", quoi: "La première page", detail: "Objectif : les 8 intentions en première page de Google.", accent: true },
+    { quand: "30 septembre 2026", quoi: "Fin du test", detail: `Décision de lancer la phase 2. Premier versement${NB}: ${euros(1500)}.`, accent: true },
+    { quand: "Octobre 2026", quoi: "Les fondations", detail: "Mise en ligne sur madamoon.fr, cybersécurité, Google Business Profile, Pinterest, Meta Pixel et Clarity." },
+    { quand: "15 novembre 2026", quoi: "La première page", detail: `Second versement${NB}: ${euros(1000)}. Objectif${NB}: les 8 intentions en première page de Google.`, accent: true },
     { quand: "31 décembre 2026", quoi: "Le top 3", detail: "Objectif : les 8 intentions dans les trois premiers résultats.", accent: true },
     { quand: "Jusqu'en septembre 2027", quoi: "Le suivi", detail: "Support, une semaine par section, espace client, rendez-vous, Élise 2.0, e-mail marketing, pendant douze mois." },
   ];
@@ -310,6 +327,7 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
     ["Flashs statistiques du trafic organique", 1200],
     ["Suivi des indicateurs clés", 1800],
     ["Protections de cybersécurité", 2000],
+    ["Meta Pixel et Microsoft Clarity, avec bandeau de consentement", 2200],
     ["Pinterest : revendication du compte, épingles enrichies, tableaux", 1200],
   ];
   const total = services.reduce((a, [, v]) => a + v, 0);
@@ -317,20 +335,27 @@ intercalaire(pres, { numero: "03", titre: "Calendrier et investissement", ligne:
     ["Service", "Valeur marchande"],
     ...services.map(([t, v]) => [t, euros(v)]),
     [{ t: "Total", gras: true, filet: T.NOIR }, { t: euros(total), gras: true, c: T.NOIR, filet: T.NOIR }],
-  ], { x: T.MARGE, y: 2.15, w: 7.4, colW: [5.6, 1.8], taille: 10, hauteur: 0.285, aligne: ["left", "right"] });
+  ], { x: T.MARGE, y: 2.15, w: 7.4, colW: [5.6, 1.8], taille: 9.5, hauteur: 0.27, aligne: ["left", "right"] });
 
   const x = 8.75, l = 3.73;
   texte(s, "VALEUR MARCHANDE", { x, y: 2.2, w: l, h: 0.24, fontFace: T.MONO, fontSize: 8.5, color: T.GRIS_CLAIR, charSpacing: spc(8.5), valign: "middle" });
   texte(s, [{ text: euros(total), options: { strike: "sngStrike" } }], { x, y: 2.5, w: l, h: 0.8, fontFace: T.TITRE, fontSize: 40, color: T.GRIS_CLAIR, charSpacing: spc(40), valign: "middle" });
   texte(s, "VOTRE INVESTISSEMENT", { x, y: 3.6, w: l, h: 0.24, fontFace: T.MONO, fontSize: 8.5, color: T.ACCENT, charSpacing: spc(8.5), valign: "middle" });
-  texte(s, euros(2000), { x, y: 3.84, w: l, h: 1.38, fontFace: T.TITRE, fontSize: 80, color: T.ACCENT, charSpacing: spc(80), valign: "middle" });
+  texte(s, euros(2500), { x, y: 3.84, w: l, h: 1.38, fontFace: T.TITRE, fontSize: 80, color: T.ACCENT, charSpacing: spc(80), valign: "middle" });
   s.addShape("rect", { x, y: 5.28, w: 0.9, h: 0.02, fill: { color: T.ACCENT }, line: { type: "none" } });
-  const remise = Math.round((1 - 2000 / total) * 100);
-  texte(s, `Soit ${remise}${NB}% de moins que la valeur marchande de ces services, pour douze mois d'accompagnement.`, {
-    x, y: 5.44, w: l, h: 0.66, fontFace: T.TITRE, fontSize: 12.5, color: T.NOIR, charSpacing: spc(12.5), lineSpacingMultiple: 1.35, valign: "top",
+  const remise = Math.round((1 - 2500 / total) * 100);
+  texte(s, `Soit ${remise}${NB}% de moins que la valeur marchande, pour douze mois.`, {
+    x, y: 5.44, w: l, h: 0.42, fontFace: T.TITRE, fontSize: 12.5, color: T.NOIR, charSpacing: spc(12.5), lineSpacingMultiple: 1.35, valign: "top",
   });
-  texte(s, "Valeurs marchandes indicatives, fondées sur les tarifs pratiqués en France par des prestataires indépendants.", {
-    x: T.MARGE, y: 6.82, w: 9.5, h: 0.24, fontFace: T.TITRE, fontSize: 9.5, color: T.GRIS_CLAIR, charSpacing: spc(9.5), valign: "middle",
+  texte(s, "Valeurs marchandes indicatives : tarifs d'indépendants en France.", {
+    x: T.MARGE, y: 6.84, w: 7.4, h: 0.24, fontFace: T.TITRE, fontSize: 9.5, color: T.GRIS_CLAIR, charSpacing: spc(9.5), valign: "middle",
+  });
+  texte(s, "ÉCHÉANCIER", { x, y: 6.1, w: l, h: 0.24, fontFace: T.MONO, fontSize: 8.5, color: T.GRIS_CLAIR, charSpacing: spc(8.5), valign: "middle" });
+  [[euros(1500), "au lancement de la phase 2"], [euros(1000), "le 15 novembre 2026"]].forEach(([v, q], i) => {
+    texte(s, [
+      { text: v, options: { bold: true, color: T.NOIR } },
+      { text: `  ${q}`, options: { color: T.GRIS } },
+    ], { x, y: 6.38 + i * 0.3, w: l, h: 0.28, fontFace: T.TITRE, fontSize: 12, charSpacing: spc(12), valign: "middle" });
   });
   console.log(`total ${total} — remise ${remise} %`);
 }
