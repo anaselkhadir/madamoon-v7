@@ -11,6 +11,7 @@ import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
 import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
+import Reseaux from "@/components/chrome/Reseaux";
 import Logo from "@/components/chrome/Logo";
 import { langueDe, versFrancais, type Langue } from "@/lib/langue";
 import { coupeNom, coupeNote, createurNom, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
@@ -173,6 +174,12 @@ const tableOnglets = (l: Langue) => [
     ],
   },
 ] as const;
+
+/* Le plan : l'adresse de la boutique, ouverte dans l'application de
+ * cartes du téléphone ou dans Google Maps sur ordinateur. */
+const PLAN = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `MADAMOON ${MAISON.adresse} ${MAISON.codePostal} ${MAISON.ville}`,
+)}`;
 
 /* Les adresses que les onglets du téléphone portent déjà. */
 const SECTIONS = new Set([
@@ -492,9 +499,23 @@ export default function Entete() {
       >
         <div className="gouttiere flex h-[var(--entete)] shrink-0 items-center justify-between md:h-[calc(var(--barre)+var(--entete))]">
           <Logo className="h-[0.9rem] w-auto md:h-[1.05rem]" />
-          <button type="button" onClick={() => setOuvert(false)} className="lien-nav text-encre">
-            {L.barre.fermer}
-          </button>
+          {/* L'apparence et la fermeture, côte à côte, dans deux cercles
+            * rouges : les deux gestes qu'on cherche d'abord en ouvrant le
+            * menu, au même endroit et à la même taille. */}
+          <div className="flex items-center gap-3">
+            <Theme cercle />
+            <button
+              type="button"
+              onClick={() => setOuvert(false)}
+              aria-label={L.barre.fermer}
+              title={L.barre.fermer}
+              className="rouge-menu flex h-10 w-10 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                <path d="M5 5l14 14M19 5L5 19" />
+              </svg>
+            </button>
+          </div>
         </div>
         {/* « min-h-full » sur le bloc intérieur : il se centre tant qu'il
           * tient, et pousse la barre de défilement dès qu'il déborde. */}
@@ -654,22 +675,37 @@ export default function Entete() {
                   );
                 })}
               </ul>
-              {/* L'apparence, au bas du menu : c'est là qu'on la cherche
-                * sur un téléphone, la barre n'ayant pas la place. */}
-              <div className="mt-6 flex items-center gap-3 lg:hidden">
-                <span className="legende text-plomb">{L.theme.intitule}</span>
-                {/* Le trait fait quinze pixels : la zone touchée, elle,
-                  * doit rester visable au pouce. */}
-                <Theme classe="-my-1 px-3 py-4" />
-              </div>
-
-              <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-2">
-                <a href={MAISON.telephoneHref} className="legende text-encre">
-                  {MAISON.telephone}
-                </a>
-                <span className="legende">
-                  {MAISON.adresse} — {MAISON.codePostal} {MAISON.ville}
-                </span>
+              {/* Le bas du menu : les réseaux par leur logo, puis l'appel et
+                * l'adresse en deux gestes — un bouton qui compose le numéro,
+                * une épingle qui ouvre le plan. Le numéro et l'adresse
+                * restent écrits pour les lecteurs d'écran. */}
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+                <Reseaux classe="-ml-2.5" />
+                <div className="flex items-center gap-3">
+                  <a
+                    href={MAISON.telephoneHref}
+                    aria-label={`${L.elise.appeler} — ${MAISON.telephone}`}
+                    className="rouge-menu flex h-10 items-center gap-2 rounded-full border border-action px-5 text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 3.5 5.5a2 2 0 0 1 2-2Z" />
+                    </svg>
+                    <span className="lien-nav">{L.elise.appelerCourt}</span>
+                  </a>
+                  <a
+                    href={PLAN}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`${MAISON.adresse} — ${MAISON.codePostal} ${MAISON.ville}`}
+                    title={`${MAISON.adresse} — ${MAISON.codePostal} ${MAISON.ville}`}
+                    className="rouge-menu flex h-10 w-10 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[1.05rem] w-[1.05rem]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+                      <circle cx="12" cy="10" r="2.3" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

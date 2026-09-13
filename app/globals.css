@@ -377,6 +377,25 @@ body {
   }
 }
 
+/*
+ * Les boutons ronds du menu, et les logos des réseaux.
+ *
+ * Rouge de la maison sur fond clair. En sombre, #910000 ne se lit plus
+ * sur le noir — deux pour un de contraste, sous le seuil d'un élément
+ * qu'on doit repérer. Ils prennent l'autre rouge de la maison, #CE0A2C,
+ * qui y tient plus de trois pour un : même famille, aucun rouge inventé.
+ */
+:root[data-theme="sombre"] .rouge-menu {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+/* Ces règles ne sont pas calquées et l'emportent sur les utilitaires :
+ * le survol des boutons ronds doit donc être redit ici. */
+:root[data-theme="sombre"] .rouge-menu.rounded-full:hover {
+  background: var(--color-accent);
+  color: var(--color-sur-image);
+}
+
 /* ———————————————————————————————————— le bandeau défilant ————— */
 
 /*

@@ -24,7 +24,7 @@ import { t } from "@/lib/textes";
 
 const CLE = "madamoon.theme";
 
-export default function Theme({ classe = "" }: { classe?: string }) {
+export default function Theme({ classe = "", cercle = false }: { classe?: string; cercle?: boolean }) {
   const L = t(langueDe(usePathname() ?? "/"));
   /* Rien au premier rendu : le serveur ne sait pas ce que la visiteuse a
    * choisi, et annoncer « sombre » à tout le monde ferait clignoter le
@@ -57,7 +57,11 @@ export default function Theme({ classe = "" }: { classe?: string }) {
       aria-pressed={sombre ?? false}
       aria-label={vaVersSombre ? L.theme.versSombre : L.theme.versClair}
       title={vaVersSombre ? L.theme.versSombre : L.theme.versClair}
-      className={`lien-nav flex shrink-0 items-center py-3 transition-colors duration-500 hover:text-action ${classe}`}
+      className={
+        cercle
+          ? `rouge-menu flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image ${classe}`
+          : `lien-nav flex shrink-0 items-center py-3 transition-colors duration-500 hover:text-action ${classe}`
+      }
     >
       {vaVersSombre ? (
         /* La lune : on va vers le sombre. */
