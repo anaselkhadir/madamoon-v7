@@ -7,7 +7,7 @@ import type { NomScene } from "@/lib/medias";
  * invente pas. Chaque extrait est muet, court, en boucle.
  *
  * Zina y figurait par le film du hero. Celui-ci est devenu l'extrait
- * Meredith — une robe Casablanca : la fiche d'une Angeola ne peut pas le
+ * Meredith — une robe Casablanca : la fiche de Zina ne peut pas le
  * montrer. Faute de film propre, elle n'en a plus.
  */
 export const FILMS: Record<string, { src: string; affiche: NomScene }> = {

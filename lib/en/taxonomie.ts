@@ -79,8 +79,6 @@ export const CREATEUR_NOTE: Record<string, string> = {
     "Mikado, duchess satin, clean lines. Constructed dresses, made for the light.",
   "olya-mak":
     "Draping, sheerness, restrained sensuality. Dresses that move with the woman wearing them.",
-  "angeola-biarritz":
-    "French lace and Atlantic romance, in contemporary cuts.",
   "monica-loretti":
     "The Italian school: true proportions, dense embroidery, bodice craft.",
   "autres-createurs":
@@ -91,7 +89,6 @@ export const CREATEUR_ORIGINE: Record<string, string> = {
   "watters-designs": "Dallas",
   "casablanca-bridal": "Newport Beach",
   "olya-mak": "Lviv",
-  "angeola-biarritz": "Biarritz",
   "monica-loretti": "Rome",
   "autres-createurs": "Small ateliers",
 };

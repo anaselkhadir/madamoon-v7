@@ -72,13 +72,6 @@ export const CREATEURS: Createur[] = [
     ouverture: { robe: "venus", vue: 1 },
   },
   {
-    nom: "Angeola Biarritz",
-    slug: "angeola-biarritz",
-    origine: "Biarritz",
-    note: "La dentelle française et le romantisme atlantique, dans des coupes contemporaines.",
-    ouverture: { robe: "sienna", vue: 1 },
-  },
-  {
     nom: "Monica Loretti",
     slug: "monica-loretti",
     origine: "Rome",

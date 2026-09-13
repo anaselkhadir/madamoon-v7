@@ -111,7 +111,7 @@ function reponseLocale(entree: string, l: Langue): { textes: string[]; options: 
       ],
     };
   if (
-    a("marque", "createur", "createurs", "maison", "watters", "casablanca", "olya", "angeola",
+    a("marque", "createur", "createurs", "maison", "watters", "casablanca", "olya", "loretti",
       "brand", "designer", "label", "house")
   )
     return {
