@@ -8,12 +8,12 @@ import Tuile from "@/components/Tuile";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import PartagerSelection from "@/components/parcours/PartagerSelection";
 import { ROBES } from "@/lib/madamoon";
-import { vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import { ajouter, decoder, PARAM, useCoupsDeCoeur, vider } from "@/lib/coupsDeCoeur";
 import { robeLigne } from "@/lib/contenu";
 import { langueDe, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import { couverture } from "@/lib/couverture";
 
 /*
  * Les coups de cœur.
@@ -47,7 +47,7 @@ function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Lan
   return (
     <div className="trame-tuiles mt-8 grid-cols-2 md:grid-cols-3">
       {robes.map((r, i) => {
-        const media = vues(r.slug)[0];
+        const media = couverture(r);
         if (!media) return null;
         return (
           <Tuile

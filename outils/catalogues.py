@@ -100,6 +100,8 @@ def charger():
     for m in re.finditer(r'\{\n    slug: "[^"]+",[\s\S]*?\n  \}', src[deb:fin]):
         b = m.group(0)
         morphos = re.search(r"morphos:\s*\[([^\]]*)\]", b)
+        # La vue qui représente la robe seule — la première par défaut.
+        couv = re.search(r"couverture:\s*(\d+)", b)
         robes.append(
             dict(
                 slug=champ(b, "slug"),
@@ -109,6 +111,7 @@ def charger():
                 regard=champ(b, "regard"),
                 createur=champ(b, "createur"),
                 morphos=re.findall(r'"([^"]+)"', morphos.group(1)) if morphos else [],
+                couverture=int(couv.group(1)) - 1 if couv else 0,
             )
         )
 
@@ -370,7 +373,7 @@ def page_robe(c, robe, medias, familles, rang=None, total=None):
     haut = HAUTEUR - MARGE
     bas = MARGE + 16 * MM
     col = (LARGEUR - 2 * MARGE) * 0.52
-    image = fichier_image(medias, robe["slug"])
+    image = fichier_image(medias, robe["slug"], robe.get("couverture", 0))
     if image:
         image_couvrante(c, image, MARGE, bas, col, haut - bas)
 
@@ -495,7 +498,7 @@ def catalogue(nom_fichier, surtitre, titre, ligne, robes, medias, familles, mais
     c.setAuthor("MADAMOON")
     c.setSubject("Robes de mariée, Paris 10e")
 
-    couv = image_couv or (fichier_image(medias, robes[0]["slug"]) if robes else None)
+    couv = image_couv or (fichier_image(medias, robes[0]["slug"], robes[0].get("couverture", 0)) if robes else None)
     couverture(c, surtitre, titre, ligne, couv)
     for i, r in enumerate(robes, 1):
         page_robe(c, r, medias, familles, i, len(robes))

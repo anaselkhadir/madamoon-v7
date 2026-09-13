@@ -9,7 +9,7 @@ import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import TitreSection from "@/components/TitreSection";
 import { ROBES, FAMILLES, MAISON, MORPHOLOGIES, SITE_URL } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
-import { SCENES, vues } from "@/lib/medias";
+import { SCENES } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
@@ -18,6 +18,7 @@ import { epingleRobe, offreRobe } from "@/lib/schema";
 
 import PageRobe from "@/components/pages/PageRobe";
 import { robeLigne, robeRegard } from "@/lib/contenu";
+import { couverture } from "@/lib/couverture";
 
 /*
  * La fiche d'une robe, en anglais.
@@ -45,7 +46,7 @@ export async function generateMetadata({
     ligne: robe.ligne,
     regard: robe.regard,
     createur: robe.createur,
-    media: vues(robe.slug)[0],
+    media: couverture(robe),
     alt: altRobe(robe, "en"),
   });
 

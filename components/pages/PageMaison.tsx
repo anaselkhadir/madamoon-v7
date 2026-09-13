@@ -14,7 +14,6 @@ import {
   robesDe,
   coupesDe,
 } from "@/lib/madamoon";
-import { vues } from "@/lib/medias";
 import { coupe } from "@/lib/coupes";
 import { altCoupe, altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
@@ -31,6 +30,7 @@ import {
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import { couverture } from "@/lib/couverture";
 
 /*
  * La page d'une maison.
@@ -121,7 +121,7 @@ export default async function PageMaison({
         <div className="gouttiere">
           <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
             {robes.map((robe, i) => {
-              const media = vues(robe.slug)[0];
+              const media = couverture(robe);
               if (!media) return null;
               return (
                 <Tuile
@@ -159,7 +159,7 @@ export default async function PageMaison({
                 /* L'image de la famille vient d'une robe de la maison :
                  * sur sa page, on ne montre pas le travail d'un autre. */
                 const sienne = robes.find((r) => r.categorie === nom);
-                const media = sienne ? vues(sienne.slug)[0] : undefined;
+                const media = sienne ? couverture(sienne) : undefined;
                 const famille = coupe(nom);
                 if (!media || !famille) return null;
                 return (

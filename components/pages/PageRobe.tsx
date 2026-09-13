@@ -36,6 +36,7 @@ import {
   robeLigne,
   robeRegard,
 } from "@/lib/contenu";
+import { couverture } from "@/lib/couverture";
 
 /*
  * La fiche d'une robe, dans les deux langues.
@@ -60,9 +61,10 @@ export default async function PageRobe({
 
   const photos = vues(robe.slug);
   const film = FILMS[robe.slug];
-  /* Les photographies qui ne sont pas déjà au premier écran. */
-  const galerie = film ? photos : photos.slice(1);
-  const premiere = film ? 1 : 2;
+  /* L'image de tête : sa couverture. Les photographies qui ne sont pas
+   * déjà au premier écran forment la galerie, dans leur ordre. */
+  const tete = couverture(robe);
+  const galerie = film ? photos : photos.filter((p) => p !== tete);
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
   const voisines = ROBES.filter(
@@ -93,7 +95,7 @@ export default async function PageRobe({
     ligne: robeLigne(robe, langue),
     regard: robeRegard(robe, langue),
     createur: robe.createur,
-    media: photos[0],
+    media: tete,
     alt: altRobe(robe, langue),
   });
 
@@ -163,9 +165,9 @@ export default async function PageRobe({
             className="absolute inset-0 h-full w-full"
           />
         ) : (
-          photos[0] && (
+          tete && (
             <Photo
-              media={photos[0]}
+              media={tete}
               dossier="robes"
               alt={altRobe(robe, langue)}
               sizes="100vw"
@@ -356,7 +358,7 @@ export default async function PageRobe({
                 <Photo
                   media={p}
                   dossier="robes"
-                  alt={altRobe(robe, langue, i + premiere)}
+                  alt={altRobe(robe, langue, photos.indexOf(p) + 1)}
                   sizes="(max-width: 768px) 92vw, 46vw"
                   className="h-full w-full object-cover"
                 />
@@ -391,7 +393,7 @@ export default async function PageRobe({
           <div className="gouttiere pb-[clamp(3rem,5.5vw,5rem)]">
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
               {voisines.map((v, i) => {
-                const media = vues(v.slug)[0];
+                const media = couverture(v);
                 if (!media) return null;
                 return (
                   <Tuile

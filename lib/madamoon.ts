@@ -199,6 +199,10 @@ export type Robe = {
   regard: string;
   /* Nombre de vues disponibles dans /public/robes. */
   vues: number;
+  /* La vue qui représente la robe quand une seule image la montre —
+   * tuile, partage, catalogue. La première par défaut. Tessa est une
+   * deux-en-un : sa vue avec surjupe dit mieux ce qu'elle est. */
+  couverture?: number;
   createur?: string;
   /* Les morphologies que cette robe sert en premier. Relevé sur les
    * fiches produit de la cliente, jamais déduit d'une photographie :
@@ -293,6 +297,7 @@ export const ROBES: Robe[] = [
     categorie: "Deux en un",
     regard: "Des fleurs de tissu sur une bretelle asymétrique, et une jupe qui s'enlève.",
     vues: 3,
+    couverture: 3,
     createur: "Casablanca Bridal",
     morphos: ["V", "H", "8", "X"],
   },

@@ -6,7 +6,6 @@ import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { coupeParAncre } from "@/lib/coupes";
-import { vues } from "@/lib/medias";
 import { altCoupe, altRobe } from "@/lib/alt";
 import {
   bas,
@@ -22,6 +21,7 @@ import {
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import { couverture } from "@/lib/couverture";
 
 /*
  * La page d'une coupe.
@@ -130,7 +130,7 @@ export default async function PageCoupe({
           <div className="gouttiere">
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
               {g.robes.map((robe, j) => {
-                const media = vues(robe.slug)[0];
+                const media = couverture(robe);
                 if (!media) return null;
                 return (
                   <Tuile

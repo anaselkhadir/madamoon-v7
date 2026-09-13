@@ -16,6 +16,7 @@ import {
   familleTexte,
   robeLigne,
 } from "@/lib/contenu";
+import { couverture } from "@/lib/couverture";
 
 /*
  * Le catalogue.
@@ -104,7 +105,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
               </p>
               <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
                 {famille.map((r, i) => {
-                  const media = vues(r.slug)[0];
+                  const media = couverture(r);
                   if (!media) return null;
                   return (
                     <Tuile

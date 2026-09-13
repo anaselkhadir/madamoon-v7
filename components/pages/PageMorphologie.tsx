@@ -33,6 +33,7 @@ import {
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import { couverture } from "@/lib/couverture";
 
 /*
  * La page d'une morphologie.
@@ -73,7 +74,7 @@ export default async function PageMorphologie({
     .map((c) => {
       const robes = robesDe(c);
       const vedette = robes.find((r) => vues(r.slug).length > 0);
-      const media = vedette ? vues(vedette.slug)[0] : undefined;
+      const media = vedette ? couverture(vedette) : undefined;
       if (!media) return null;
       return {
         nom: coupeNom(c, langue),
@@ -313,7 +314,7 @@ export default async function PageMorphologie({
               <p className="texte mesure-l mt-2 pb-6">{n.note}</p>
               <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
                 {n.robes.map((robe, i) => {
-                  const media = vues(robe.slug)[0];
+                  const media = couverture(robe);
                   if (!media) return null;
                   return (
                     <Tuile
