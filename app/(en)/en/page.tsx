@@ -25,7 +25,7 @@ export const metadata: Metadata = {
    * segment avec le gabarit et y échappe. */
   title: { absolute: "Wedding dresses in Paris — MADAMOON bridal boutique" },
   description:
-    "Bridal boutique in Paris 10e. The collections of five designers, private fittings by appointment, made to measure from €1,500.",
+    "Bridal boutique in Paris 10e. The collections of several designers, private fittings by appointment, made to measure from €1,500.",
   alternates: { canonical: "/en", languages: { fr: "/", en: "/en" } },
 };
 

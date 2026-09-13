@@ -330,9 +330,9 @@ const FR = {
     },
     maisonPage: {
       titre: "La maison",
-      accroche: "Une boutique parisienne, cinq créateurs, et le temps qu’il faut pour choisir.",
+      accroche: "Une boutique parisienne, plusieurs créateurs, et le temps qu’il faut pour choisir.",
       texteAvant:
-        "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez cinq créateurs — puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
+        "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez plusieurs créateurs — puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
       texteApres: " se privatise le temps d’un essayage.",
       prendreRendezvous: "Prendre rendez-vous",
       lesCreateurs: "Les créateurs",
@@ -364,7 +364,7 @@ const FR = {
         "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n’est « à éviter » — mais pour savoir lesquelles proposer en premier.",
       parLaMaison: "Par la maison",
       parLaMaisonTexte:
-        "Cinq créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d’Olya Mak.",
+        "Plusieurs créateurs, chacun avec sa main : les dentelles de Watters, le mikado de Casablanca, le drapé d’Olya Mak.",
       elise: (adresse: string) =>
         `Ou laissez-vous guider : Élise part de votre morphologie, en trois questions, et vous dit franchement si la réponse est chez une autre maison. Elle donne aussi l’adresse et les horaires — ${adresse}, sur rendez-vous.`,
     },
@@ -746,9 +746,9 @@ const EN: Textes = {
     },
     maisonPage: {
       titre: "The house",
-      accroche: "A Paris boutique, five designers, and the time it takes to choose.",
+      accroche: "A Paris boutique, several designers, and the time it takes to choose.",
       texteAvant:
-        "MADAMOON does not produce its own collections: the house chooses, dress by dress, from five designers — then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting.",
+        "MADAMOON does not produce its own collections: the house chooses, dress by dress, from several designers — then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting.",
       texteApres: "",
       prendreRendezvous: "Book an appointment",
       lesCreateurs: "The designers",
@@ -780,7 +780,7 @@ const EN: Textes = {
         "O, A, V, H, 8 or X. Not to rule dresses out — nothing is “to be avoided” — but to know which to offer first.",
       parLaMaison: "By house",
       parLaMaisonTexte:
-        "Five designers, each with their own hand: the laces of Watters, the mikado of Casablanca, the draping of Olya Mak.",
+        "Several designers, each with their own hand: the laces of Watters, the mikado of Casablanca, the draping of Olya Mak.",
       elise: (adresse: string) =>
         `Or let yourself be guided: Élise starts from your figure, in three questions, and tells you honestly if the answer lies with another house. She also gives the address and the hours — ${adresse}, by appointment.`,
     },

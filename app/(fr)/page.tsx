@@ -30,7 +30,7 @@ import Showroom from "@/components/accueil/Showroom";
 export const metadata: Metadata = {
   title: "Robes de mariée à Paris — Boutique MADAMOON",
   description:
-    "Boutique de robes de mariée à Paris 10e. Les collections de cinq créateurs, essayage privé sur rendez-vous, confection sur mesure à partir de 1 500 €.",
+    "Boutique de robes de mariée à Paris 10e. Les collections de plusieurs créateurs, essayage privé sur rendez-vous, confection sur mesure à partir de 1 500 €.",
   alternates: { canonical: "/", languages: { fr: "/", en: "/en" } },
 };
 

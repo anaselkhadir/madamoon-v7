@@ -4,7 +4,7 @@ import PageRobes from "@/components/pages/PageRobes";
 export const metadata: Metadata = {
   title: "Wedding dresses to try on in our Paris showroom",
   description:
-    "MADAMOON wedding dresses: mermaid, ball gown, sheath, A-line, minimalist, two-in-one. The collections of five designers, to try on by appointment in Paris 10e.",
+    "MADAMOON wedding dresses: mermaid, ball gown, sheath, A-line, minimalist, two-in-one. The collections of several designers, to try on by appointment in Paris 10e.",
   alternates: { canonical: "/en/dresses", languages: { fr: "/robes", en: "/en/dresses" } },
 };
 

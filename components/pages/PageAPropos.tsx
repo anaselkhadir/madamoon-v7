@@ -12,7 +12,7 @@ import type { Langue } from "@/lib/langue";
  * La maison.
  *
  * MADAMOON n'est pas une maison de couture : c'est une boutique
- * parisienne qui choisit des robes chez cinq créateurs et les fait
+ * parisienne qui choisit des robes chez plusieurs créateurs et les fait
  * ajuster. La page le dit en peu de mots, et montre.
  */
 

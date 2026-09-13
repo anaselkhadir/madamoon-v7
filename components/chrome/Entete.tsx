@@ -600,7 +600,7 @@ export default function Entete() {
             {/* ————— le catalogue ————— */}
             <nav aria-label="Le catalogue" className="mt-[clamp(1.5rem,3vw,2.5rem)] max-lg:hidden">
               <div /* Six colonnes au plus large : les deux classements comptent
-                  * six groupes — cinq maisons plus les modèles sans maison, et
+                  * cinq groupes — quatre maisons et les autres créateurs —, et
                   * les six coupes. À cinq, le dernier retombait seul sur une
                   * ligne. */
                 className="grid gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
