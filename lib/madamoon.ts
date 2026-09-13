@@ -512,7 +512,7 @@ export const ROBES: Robe[] = [
     nom: "Gabriel",
     ligne: "Courte, jupe transparente amovible",
     categorie: "Deux en un",
-    regard: "Une robe courte en plumetis, une jupe transparente par-dessus.",
+    regard: "Une robe courte délicatement perlée, une jupe transparente en dessous.",
     vues: 3,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

@@ -137,7 +137,7 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   },
   "gabriel": {
     ligne: "Short, with a removable sheer skirt",
-    regard: "A short dress in dotted swiss, a sheer skirt over it.",
+    regard: "A delicately beaded short dress, with a sheer skirt beneath.",
   },
   "emerald": {
     ligne: "Bodice and tulle, a dress with character",
