@@ -10,7 +10,6 @@ import PartagerSelection from "@/components/parcours/PartagerSelection";
 import { ROBES } from "@/lib/madamoon";
 import { altRobe } from "@/lib/alt";
 import { ajouter, decoder, PARAM, useCoupsDeCoeur, vider } from "@/lib/coupsDeCoeur";
-import { robeLigne } from "@/lib/contenu";
 import { langueDe, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { couverture } from "@/lib/couverture";
@@ -59,8 +58,6 @@ function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Lan
             dossier="robes"
             alt={altRobe(r, langue)}
             nom={r.nom}
-            note={robeLigne(r, langue)}
-            noteAuLarge
             repere={r.createur ?? t(langue).createurs.autres}
             priorite={i < 3}
             sizes="(max-width: 768px) 50vw, 31vw"

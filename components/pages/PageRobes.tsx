@@ -74,8 +74,6 @@ export default function PageRobes({ langue }: { langue: Langue }) {
                 dossier="robes"
                 alt={altRobe(r, langue)}
                 nom={r.nom}
-                note={robeLigne(r, langue)}
-                noteAuLarge
                 repere={r.createur ?? L.createurs.autres}
                 priorite={i < 3}
                 sizes="(max-width: 768px) 50vw, 31vw"

@@ -326,8 +326,6 @@ export default async function PageMorphologie({
                       dossier="robes"
                       alt={altRobe(robe, langue)}
                       nom={robe.nom}
-                      note={robeLigne(robe, langue)}
-                      noteAuLarge
                       sizes="(max-width: 768px) 50vw, 31vw"
                       priorite={rang === 0 && i < 3}
                     />

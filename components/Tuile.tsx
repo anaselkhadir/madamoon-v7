@@ -38,13 +38,6 @@ type Props = {
    * Les tuiles qui montrent une coupe ou une maison n'en ont pas — on
    * n'a pas de coup de cœur pour une catégorie. */
   coupDeCoeur?: string;
-  /* La ligne sous le nom ne paraît qu'au large. Les descriptions de
-   * robes — « Sirène en dentelle, dos illusion » — tiennent sur une
-   * ligne dans une tuile de 447 pixels, sur deux dans une tuile de 176,
-   * et couvrent alors l'ourlet de la robe. Au doigt, le nom suffit : la
-   * fiche est à un geste. Les tuiles de catégorie gardent la leur, qui
-   * tient en trois mots. */
-  noteAuLarge?: boolean;
   /* Le rapport de la tuile. Par défaut celui de la référence. */
   ratio?: string;
   /* Le décalage d'apparition, en millisecondes. Il se compte par colonne
@@ -67,7 +60,6 @@ export default function Tuile({
   position,
   repere,
   coupDeCoeur,
-  noteAuLarge = false,
   ratio,
   retard,
 }: Props) {
@@ -89,9 +81,10 @@ export default function Tuile({
       )}
       <span className="dans-image">
         <span className="nom-image">{nom}</span>
-        {note && (
-          <span className={`note-image mt-2${noteAuLarge ? " max-md:hidden" : ""}`}>{note}</span>
-        )}
+        {/* Les tuiles de robes ne portent que le nom : la description se lit
+          * sur la fiche. Seules les tuiles de catégorie gardent leur ligne,
+          * qui tient en trois mots. */}
+        {note && <span className="note-image mt-2">{note}</span>}
       </span>
     </>
   );
