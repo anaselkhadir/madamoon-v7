@@ -686,9 +686,9 @@ export default function Entete() {
                   <a
                     href={MAISON.telephoneHref}
                     aria-label={`${L.elise.appeler} — ${MAISON.telephone}`}
-                    className="bouton gap-2 px-5"
+                    className="bouton bouton-compact gap-1.5"
                   >
-                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[0.8rem] w-[0.8rem]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5v3a2 2 0 0 1-2 2A17 17 0 0 1 3.5 5.5a2 2 0 0 1 2-2Z" />
                     </svg>
                     {L.elise.appelerCourt}
@@ -699,7 +699,7 @@ export default function Entete() {
                     rel="noreferrer noopener"
                     aria-label={`${MAISON.adresse} — ${MAISON.codePostal} ${MAISON.ville}`}
                     title={`${MAISON.adresse} — ${MAISON.codePostal} ${MAISON.ville}`}
-                    className="rouge-menu flex h-10 w-10 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-action text-action transition-colors duration-500 hover:bg-action hover:text-sur-image"
                   >
                     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[1.05rem] w-[1.05rem]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />

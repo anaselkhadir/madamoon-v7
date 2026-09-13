@@ -378,22 +378,16 @@ body {
 }
 
 /*
- * Les boutons ronds du menu, et les logos des réseaux.
+ * « Appeler », dans le bas du menu.
  *
- * Rouge de la maison sur fond clair. En sombre, #910000 ne se lit plus
- * sur le noir — deux pour un de contraste, sous le seuil d'un élément
- * qu'on doit repérer. Ils prennent l'autre rouge de la maison, #CE0A2C,
- * qui y tient plus de trois pour un : même famille, aucun rouge inventé.
+ * Le bouton du site, un cran plus petit : il voisine avec des logos de
+ * vingt pixels, et à pleine taille il écrasait la ligne. Écrit ici et
+ * non en utilitaires — « .bouton » n'est pas calqué et l'emporterait.
  */
-:root[data-theme="sombre"] .rouge-menu {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-/* Ces règles ne sont pas calquées et l'emportent sur les utilitaires :
- * le survol des boutons ronds doit donc être redit ici. */
-:root[data-theme="sombre"] .rouge-menu.rounded-full:hover {
-  background: var(--color-accent);
-  color: var(--color-sur-image);
+.bouton-compact {
+  height: 2.125rem;
+  padding-inline: 0.875rem;
+  font-size: 0.6875rem;
 }
 
 /* ———————————————————————————————————— le bandeau défilant ————— */
@@ -535,7 +529,7 @@ body {
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .verre {
-    background: #1c1813;
+    background: #131313;
   }
 }
 
@@ -1129,20 +1123,24 @@ html[data-ouverture]::before {
  * lisibles sur du noir sans changer de famille.
  */
 :root[data-theme="sombre"] {
-  --color-blanc: #100d0a;
-  --color-ivoire: #16120e;
-  --color-craie: #1c1813;
-  --color-sable: #241f18;
-  --color-fil: #322b22;
+  /* Le fond est un noir absolu, à la demande de la maison. Les surfaces
+   * posées dessus — cartes, panneaux, filets — montent d'un cran en gris
+   * neutre, sans la teinte brune d'avant : sur du noir pur, elle se
+   * serait lue comme une tache. */
+  --color-blanc: #000000;
+  --color-ivoire: #0a0a0a;
+  --color-craie: #131313;
+  --color-sable: #1b1b1b;
+  --color-fil: #2a2a2a;
 
   --color-encre: #f5f0e8;
   --color-plume: #ded7cc;
   --color-plomb: #a89f92;
   --color-brume: #7d7568;
 
-  /* Les deux rouges ne bougent pas. Ce sont ceux de la maison, et une
-   * marque ne change pas de rouge parce que le fond a changé : #910000
-   * agit, #CE0A2C ponctue, en clair comme en sombre. */
+  /* Les deux rouges ne bougent pas. Ce sont ceux de madamoon.fr, relevés
+   * sur sa feuille de style : #910000 pour les boutons et les liens,
+   * #CE0A2C pour ponctuer — en clair comme en sombre. */
 
   color-scheme: dark;
 }

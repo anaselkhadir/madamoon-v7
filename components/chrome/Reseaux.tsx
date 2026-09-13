@@ -30,7 +30,7 @@ export default function Reseaux({ classe = "" }: { classe?: string }) {
             aria-label={r.label}
             title={r.label}
             /* Le logo fait vingt pixels ; la zone touchée, quarante. */
-            className="rouge-menu flex h-10 w-10 items-center justify-center text-action transition-opacity duration-300 hover:opacity-70"
+            className="flex h-10 w-10 items-center justify-center text-action transition-opacity duration-300 hover:opacity-70"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
               <path d={TRACES[r.label]} />
