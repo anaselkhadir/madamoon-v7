@@ -10,6 +10,7 @@ import { versLangue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import {
   coupeNom,
+  coupeApposition,
   coupeNote,
   coupePluriel,
   familleTexte,
@@ -93,7 +94,9 @@ export default function PageRobes({ langue }: { langue: Langue }) {
         return (
           <section key={s.ancre} id={s.ancre} className="scroll-mt-[7rem]">
             <TitreSection
-              titre={L.catalogue.robesDe(coupePluriel(s.nom, langue))}
+              titre={L.catalogue.robesDe(
+                langue === "fr" ? coupeApposition(s.nom, langue) : coupePluriel(s.nom, langue),
+              )}
             />
             <div className="gouttiere">
               <p className="texte mesure-l -mt-1 mb-6">

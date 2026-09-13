@@ -182,7 +182,7 @@ export const CATEGORIES: Categorie[] = [
 /* Ce que chaque famille de coupe veut dire, en boutique. */
 export const FAMILLES: Record<Categorie, string> = {
   Sirène: "Ajustée jusqu'aux cuisses, puis évasée. Elle dessine la taille et les hanches.",
-  Fluide: "Un tombé souple, sans structure apparente. Elle suit le mouvement.",
+  Fluide: "Un tombé souple qui suit naturellement le mouvement.",
   Trapèze: "Un buste ajusté, une jupe qui s'ouvre en A. La coupe la plus universelle.",
   Princesse: "Un bustier travaillé et un volume de jupe assumé. La robe d'apparat.",
   Minimaliste: "Le satin, la ligne, rien d'autre. Tout se joue dans la coupe.",
