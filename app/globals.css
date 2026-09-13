@@ -1175,9 +1175,10 @@ html[data-ouverture]::before {
 /* ———————————————————————————————————— le bandeau des cookies ————— */
 
 /*
- * Blanc sur blanc, le bandeau se perdait dans la page : il passe en encre,
- * texte ivoire, et ses boutons se remplissent. Les jetons s'inversent
- * d'eux-mêmes en mode sombre — un bandeau ivoire sur le noir.
+ * Le bandeau est une vitre sombre : on voit la page passer dessous,
+ * floutée, et le texte reste lisible dessus. Couleurs fixes et non
+ * jetons — la vitre reste sombre en mode clair comme en mode sombre, où
+ * le liseré et l'ombre suffisent à la détacher du noir.
  *
  * « Tout refuser » et « Tout accepter » gardent exactement le même
  * habit : la CNIL veut que refuser soit aussi visible qu'accepter.
@@ -1185,10 +1186,27 @@ html[data-ouverture]::before {
  * Ces règles viennent après « .bouton-trait » et le précisent : elles
  * l'emportent sur sa couleur sans toucher à sa forme.
  */
+.verre-cookies {
+  color: #ffffff;
+  background: rgba(14, 12, 10, 0.62);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 24px 60px -18px rgba(0, 0, 0, 0.55);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .verre-cookies {
+    background: rgba(14, 12, 10, 0.94);
+  }
+}
 .bouton-trait.cookies-inverse {
-  background: var(--color-blanc);
-  border-color: var(--color-blanc);
-  color: var(--color-encre);
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #14100c;
+  border-radius: 8px;
 }
 .bouton-trait.cookies-plein {
   background: var(--color-encre);

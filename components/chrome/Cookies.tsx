@@ -81,12 +81,12 @@ export default function Cookies() {
           role="dialog"
           aria-live="polite"
           aria-label={L.titre}
-          className="fixed inset-x-3 bottom-3 z-[75] border-t-2 border-action bg-encre p-5 text-blanc shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
+          className="verre-cookies fixed inset-x-3 bottom-3 z-[75] p-5 md:inset-x-auto md:bottom-12 md:left-12 md:w-[27rem] md:p-6"
         >
           {/* « .legende » et « .texte » portent leur couleur et ne sont pas
-            * calquées : l'ivoire du bandeau doit être redit sur eux. */}
-          <p className="legende" style={{ color: "var(--color-blanc)" }}>{L.titre}</p>
-          <p className="texte mt-3 text-[0.9375rem] leading-relaxed" style={{ color: "var(--color-blanc)" }}>
+            * calquées : le blanc de la vitre doit être redit sur eux. */}
+          <p className="legende" style={{ color: "rgba(255,255,255,0.78)" }}>{L.titre}</p>
+          <p className="texte mt-3 text-[0.9375rem] leading-relaxed" style={{ color: "#ffffff" }}>
             {L.resume}
           </p>
           <div className="mt-5 grid grid-cols-2 gap-2.5">
@@ -101,7 +101,7 @@ export default function Cookies() {
             type="button"
             onClick={() => setPreferences(true)}
             className="lien-nav souligne mt-4"
-            style={{ color: "var(--color-blanc)" }}
+            style={{ color: "#ffffff" }}
           >
             {L.personnaliser}
           </button>
