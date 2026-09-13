@@ -4,6 +4,7 @@ import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
 import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
+import Cookies from "@/components/chrome/Cookies";
 import Mouvement from "@/components/Mouvement";
 import { MAISON_SCHEMA } from "@/lib/schema";
 import { BASE } from "@/lib/chemin";
@@ -126,6 +127,7 @@ setTimeout(function(){d.removeAttribute("data-ouverture")},6000);
           * pour savoir de quelle maison partir. */}
         <Elise />
         <CarteRendezvous />
+        <Cookies />
         <Mouvement />
       </body>
     </html>

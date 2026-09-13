@@ -8,6 +8,7 @@ import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
 import Logo from "@/components/chrome/Logo";
 import { langueDe } from "@/lib/langue";
+import { ouvrirPreferences } from "@/lib/consentement";
 import { t } from "@/lib/textes";
 import { coupeNom, createurNom, maison } from "@/lib/contenu";
 
@@ -101,9 +102,17 @@ export default function Pied() {
       </div>
 
       <div className="filet mt-12" />
-      <p className="mention mt-6 text-plomb">
-        © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
-      </p>
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+        <p className="mention text-plomb">
+          © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
+        </p>
+        {/* Le choix des cookies se rouvre ici, à tout moment : la CNIL
+          * demande qu'on puisse le retirer aussi simplement qu'on l'a
+          * donné. */}
+        <button type="button" onClick={ouvrirPreferences} className="mention souligne text-plomb hover:text-encre">
+          {L.pied.gererCookies}
+        </button>
+      </div>
     </footer>
   );
 }

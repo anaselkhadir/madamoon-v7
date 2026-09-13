@@ -436,6 +436,56 @@ const FR = {
     robeDeMariee: "Robe de mariée",
     rendezvous: "Prendre rendez-vous",
     droits: "Boutique de robes de mariée à Paris",
+    gererCookies: "Gérer les cookies",
+  },
+  /* Le texte du bandeau de consentement de madamoon.fr, repris tel que la
+   * maison l'a validé. */
+  cookies: {
+    titre: "Nous respectons votre vie privée",
+    resume:
+      "Nous utilisons des cookies pour vous aider à naviguer efficacement et à exécuter certaines fonctionnalités.",
+    toutAccepter: "Tout accepter",
+    toutRefuser: "Tout refuser",
+    personnaliser: "Personnaliser",
+    enregistrer: "Enregistrer mes préférences",
+    titrePreferences: "Personnaliser les préférences de consentement",
+    fermer: "Fermer",
+    afficherPlus: "Afficher plus",
+    afficherMoins: "Afficher moins",
+    toujoursActif: "Toujours actif",
+    paragraphes: [
+      "Nous utilisons des cookies pour vous aider à naviguer efficacement et à exécuter certaines fonctionnalités. Vous trouverez des informations détaillées sur tous les cookies sous chaque catégorie de consentement ci-dessous.",
+      "Les cookies qui sont catégorisés comme « nécessaires » sont stockés sur votre navigateur car ils sont essentiels pour permettre les fonctionnalités de base du site.",
+      "Nous utilisons également des cookies tiers qui nous aident à analyser la façon dont vous utilisez ce site web, à enregistrer vos préférences et à vous fournir le contenu et les publicités qui vous sont pertinents. Ces cookies ne seront stockés dans votre navigateur qu'avec votre consentement préalable.",
+      "Vous pouvez choisir d'activer ou de désactiver tout ou partie de ces cookies, mais la désactivation de certains d'entre eux peut affecter votre expérience de navigation.",
+    ],
+    categories: {
+      necessaire: {
+        nom: "Nécessaire",
+        texte:
+          "Les cookies nécessaires sont cruciaux pour les fonctions de base du site Web et celui-ci ne fonctionnera pas comme prévu sans eux. Ces cookies ne stockent aucune donnée personnellement identifiable.",
+      },
+      fonctionnelle: {
+        nom: "Fonctionnelle",
+        texte:
+          "Les cookies fonctionnels permettent d'exécuter certaines fonctionnalités telles que le partage du contenu du site Web sur des plateformes de médias sociaux, la collecte de commentaires et d'autres fonctionnalités tierces.",
+      },
+      analytique: {
+        nom: "Analytique",
+        texte:
+          "Les cookies analytiques sont utilisés pour comprendre comment les visiteurs interagissent avec le site Web. Ces cookies aident à fournir des informations sur le nombre de visiteurs, le taux de rebond, la source de trafic, etc.",
+      },
+      performance: {
+        nom: "Performance",
+        texte:
+          "Les cookies de performance sont utilisés pour comprendre et analyser les indices de performance clés du site Web, ce qui permet de fournir une meilleure expérience utilisateur aux visiteurs.",
+      },
+      publicite: {
+        nom: "Publicité",
+        texte:
+          "Les cookies de publicité sont utilisés pour fournir aux visiteurs des publicités personnalisées basées sur les pages visitées précédemment et analyser l'efficacité de la campagne publicitaire.",
+      },
+    },
   },
 };
 
@@ -854,6 +904,54 @@ const EN: Textes = {
     robeDeMariee: "Wedding dress",
     rendezvous: "Book an appointment",
     droits: "Bridal boutique in Paris",
+    gererCookies: "Manage cookies",
+  },
+  cookies: {
+    titre: "We value your privacy",
+    resume:
+      "We use cookies to help you navigate efficiently and perform certain functions.",
+    toutAccepter: "Accept all",
+    toutRefuser: "Reject all",
+    personnaliser: "Customise",
+    enregistrer: "Save my preferences",
+    titrePreferences: "Customise consent preferences",
+    fermer: "Close",
+    afficherPlus: "Show more",
+    afficherMoins: "Show less",
+    toujoursActif: "Always active",
+    paragraphes: [
+      "We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.",
+      "Cookies categorised as “necessary” are stored on your browser as they are essential for enabling the basic functionalities of the site.",
+      "We also use third-party cookies that help us analyse how you use this website, store your preferences, and provide the content and advertisements that are relevant to you. These cookies will only be stored in your browser with your prior consent.",
+      "You can choose to enable or disable some or all of these cookies, but disabling some of them may affect your browsing experience.",
+    ],
+    categories: {
+      necessaire: {
+        nom: "Necessary",
+        texte:
+          "Necessary cookies are required to enable the basic features of this site. The site will not work as intended without them. These cookies do not store any personally identifiable data.",
+      },
+      fonctionnelle: {
+        nom: "Functional",
+        texte:
+          "Functional cookies help perform certain functions such as sharing the content of the website on social media platforms, collecting feedback, and other third-party features.",
+      },
+      analytique: {
+        nom: "Analytics",
+        texte:
+          "Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.",
+      },
+      performance: {
+        nom: "Performance",
+        texte:
+          "Performance cookies are used to understand and analyse the key performance indexes of the website, which helps in delivering a better user experience for the visitors.",
+      },
+      publicite: {
+        nom: "Advertisement",
+        texte:
+          "Advertisement cookies are used to provide visitors with customised advertisements based on the pages they visited previously and to analyse the effectiveness of the ad campaigns.",
+      },
+    },
   },
 };
 
