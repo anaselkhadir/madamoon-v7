@@ -103,7 +103,7 @@ function intercalaire(pres, { numero: num, titre, ligne }) {
   const s = pres.addSlide();
   fond(s, T.NOIR);
   texte(s, num, {
-    x: T.MARGE, y: 1.95, w: 3.4, h: 1.58,
+    x: T.MARGE, y: 1.84, w: 3.4, h: 1.74,
     fontFace: T.TITRE, fontSize: 104, color: T.ACCENT, charSpacing: spc(104), valign: "middle",
   });
   texte(s, titre, {
