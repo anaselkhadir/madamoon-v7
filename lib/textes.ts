@@ -93,7 +93,7 @@ const FR = {
     lieux:
       "Biarritz, Newport Beach, Rome, Dallas, Lviv, Barcelone — les plus belles robes des collections nuptiales, choisies une par une pour vous.",
     autres: "Autres créateurs",
-    autresNote: "De petits ateliers, trouvés un par un.",
+    autresNote: "De petits ateliers indépendants, trouvés un par un.",
     precedentes: "Voir les maisons précédentes",
     suivantes: "Voir les maisons suivantes",
   },
@@ -571,7 +571,7 @@ const EN: Textes = {
     lieux:
       "Biarritz, Newport Beach, Rome, Dallas, Lviv, Barcelona — the finest dresses of the bridal collections, chosen one by one for you.",
     autres: "Other designers",
-    autresNote: "Small ateliers, found one by one.",
+    autresNote: "Small independent ateliers, found one by one.",
     precedentes: "See the previous houses",
     suivantes: "See the next houses",
   },

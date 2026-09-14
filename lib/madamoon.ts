@@ -103,8 +103,8 @@ export const CREATEURS: Createur[] = [
   {
     nom: "Autres créateurs",
     slug: "autres-createurs",
-    origine: "Petits ateliers",
-    note: "De petits ateliers, trouvés un par un. Des pièces rares, souvent uniques, que l'on ne verra pas ailleurs à Paris.",
+    origine: "Petits ateliers indépendants",
+    note: "De petits ateliers indépendants, trouvés un par un. Des pièces rares, souvent uniques, que l'on ne verra pas ailleurs à Paris.",
     ouverture: { robe: "hera", vue: 1 },
   },
 ];

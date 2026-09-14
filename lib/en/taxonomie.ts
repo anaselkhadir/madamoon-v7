@@ -82,7 +82,7 @@ export const CREATEUR_NOTE: Record<string, string> = {
   "monica-loretti":
     "The Italian school: true proportions, dense embroidery, bodice craft.",
   "autres-createurs":
-    "Small ateliers, found one by one. Rare pieces, often unique, not seen elsewhere in Paris.",
+    "Small independent ateliers, found one by one. Rare pieces, often unique, not seen elsewhere in Paris.",
 };
 
 export const CREATEUR_ORIGINE: Record<string, string> = {
@@ -90,7 +90,7 @@ export const CREATEUR_ORIGINE: Record<string, string> = {
   "casablanca-bridal": "Newport Beach",
   "olya-mak": "Lviv",
   "monica-loretti": "Rome",
-  "autres-createurs": "Small ateliers",
+  "autres-createurs": "Small independent ateliers",
 };
 
 export const MAISON_EN = {
