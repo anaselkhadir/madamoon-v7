@@ -138,7 +138,7 @@ export default function Cookies() {
               </button>
             </div>
 
-            <div className="overflow-y-auto overscroll-contain px-5 py-5 md:px-7">
+            <div data-lenis-prevent className="overflow-y-auto overscroll-contain px-5 py-5 md:px-7">
               <div className="texte space-y-3 text-[0.9375rem] leading-relaxed">
                 {(plus ? L.paragraphes : L.paragraphes.slice(0, 1)).map((p) => (
                   <p key={p}>{p}</p>

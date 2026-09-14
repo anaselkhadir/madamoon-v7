@@ -523,7 +523,10 @@ export default function Entete() {
         </div>
         {/* « min-h-full » sur le bloc intérieur : il se centre tant qu'il
           * tient, et pousse la barre de défilement dès qu'il déborde. */}
-        <div className="gouttiere flex-1 overflow-y-auto overscroll-contain">
+        {/* « data-lenis-prevent » : sans lui, Lenis capte la molette pour
+          * faire défiler la page — bloquée sous le menu — et la liste ne
+          * bouge qu'à la barre de défilement. */}
+        <div data-lenis-prevent className="gouttiere flex-1 overflow-y-auto overscroll-contain">
           {/* Le bloc ne se centre plus : un catalogue se lit du haut. */}
           <div className="flex min-h-full flex-col py-[clamp(1.5rem,3vw,2.5rem)]">
             {/*
