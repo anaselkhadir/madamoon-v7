@@ -416,8 +416,8 @@ def page_robe(c, robe, medias, familles, rang=None, total=None):
         y -= 2 * MM
     filet(c, x, y + 2 * MM, LARGEUR - MARGE)
 
-    if rang and total:
-        legende(c, f"{rang} sur {total}", LARGEUR - MARGE - 22 * MM, MARGE, BRUME)
+    # Pas de folio « 3 sur 12 » : il dirait combien de robes compte le
+    # catalogue, et le site ne donne jamais ce nombre.
     poser(c, "MADAMOON", MARGE, MARGE, SANS_G, 7.2, BRUME, espacement=1.15)
 
     c.showPage()
@@ -521,7 +521,7 @@ def main():
         faits.append(catalogue(
             f'coupe-{cp["ancre"]}.pdf', "La coupe", cp["nom"],
             f'{cp["note"]}. {familles.get(cp["nom"], "")} '
-            f'{len(lot)} modèles au showroom, à essayer sur rendez-vous.',
+            f'Au showroom, à essayer sur rendez-vous.',
             lot, medias, familles, maison))
 
     for cr in createurs:

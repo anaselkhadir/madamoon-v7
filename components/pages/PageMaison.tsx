@@ -151,7 +151,7 @@ export default async function PageMaison({
             lien={{ href: "/coupes", label: L.toutesLesCoupes }}
           />
           <div className="gouttiere">
-            <p className="texte mesure pb-6">{L.travaille(nomMaison, coupes.length)}</p>
+            <p className="texte mesure pb-6">{L.travaille}</p>
             <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
               {coupes.map((nom, i) => {
                 /* L'image de la famille vient d'une robe de la maison :

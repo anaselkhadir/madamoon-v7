@@ -35,6 +35,11 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
           </h2>
         </span>
         <p className="texte mesure-l mt-4">{L.silhouette.texte}</p>
+        {/* Le rappel des pages de morphologie : une piste, jamais une
+          * règle. */}
+        <p className="texte mesure-l mt-3 text-[0.875rem] italic" style={{ color: "var(--color-plomb)" }}>
+          {L.silhouette.mention}
+        </p>
 
         <ul
           className="mt-[clamp(2.5rem,5vw,4rem)] grid grid-cols-2 gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-[clamp(2.5rem,4vw,3.5rem)] sm:grid-cols-3 lg:grid-cols-6"

@@ -37,7 +37,7 @@ const FR = {
     toutesRobes: "Toutes les robes",
     catalogueEntier: "Le catalogue entier",
     sixCoupes: "Les six coupes",
-    sixMorphologies: "Les six morphologies",
+    sixMorphologies: "Les morphologies",
     filtrerParCreateur: "Filtrer par créateur",
     voirLaMaison: (nom: string) => `Voir la page ${nom}`,
   },
@@ -69,8 +69,10 @@ const FR = {
     legende: "Les morphologies",
     titre: "Avant la robe, la morphologie.",
     texte:
-      "Six morphologies, et pour chacune les coupes de robes de mariée qui allongent, équilibrent ou révèlent la silhouette.",
-    lien: "Les six morphologies",
+      "Plusieurs morphologies, et pour chacune les coupes de robes de mariée qui allongent, équilibrent ou révèlent la silhouette.",
+    mention:
+      "Une morphologie n’exclut jamais une robe : elle ouvre des pistes. Rien n’est « à éviter » — c’est un conseil de style, pas une règle, et au showroom on essaie aussi ce qui n’était pas prévu.",
+    lien: "Toutes les morphologies",
     precedentes: "Voir les morphologies précédentes",
     suivantes: "Voir les morphologies suivantes",
   },
@@ -274,8 +276,8 @@ const FR = {
       voirToutesLesRobes: "Voir toutes les robes",
       sesCoupes: "Ses coupes",
       toutesLesCoupes: "Toutes les coupes",
-      travaille: (nom: string, combien: number) =>
-        `${nom} travaille ${combien === 1 ? "une seule coupe" : `${combien} coupes`} au catalogue MADAMOON. L’image est prise sur l’une de ses robes, jamais sur celle d’une autre maison.`,
+      travaille:
+        "Chaque image est prise sur l’une des robes de cette maison, jamais sur celle d’une autre.",
       aQuiCesCoupesVont: "À qui ces coupes vont",
       toutesLesMorphologies: "Toutes les morphologies",
       pistes: (dela: string) =>
@@ -516,7 +518,7 @@ const EN: Textes = {
     toutesRobes: "All dresses",
     catalogueEntier: "The whole catalogue",
     sixCoupes: "The six silhouettes",
-    sixMorphologies: "The six body shapes",
+    sixMorphologies: "Body shapes",
     filtrerParCreateur: "Filter by designer",
     voirLaMaison: (nom: string) => `View the ${nom} page`,
   },
@@ -548,8 +550,10 @@ const EN: Textes = {
     legende: "Body shapes",
     titre: "Before the dress, the body shape.",
     texte:
-      "Six body shapes, and for each the wedding dress cuts that lengthen, balance or reveal the figure.",
-    lien: "The six body shapes",
+      "Several body shapes, and for each the wedding dress cuts that lengthen, balance or reveal the figure.",
+    mention:
+      "A body shape never rules a dress out: it opens paths. Nothing is “to be avoided” — it is advice on style, not a rule, and in the showroom we also try what was not planned.",
+    lien: "All body shapes",
     precedentes: "See the previous body shapes",
     suivantes: "See the next body shapes",
   },
@@ -742,8 +746,8 @@ const EN: Textes = {
       voirToutesLesRobes: "See all the dresses",
       sesCoupes: "Its silhouettes",
       toutesLesCoupes: "All silhouettes",
-      travaille: (nom: string, combien: number) =>
-        `${nom} works ${combien === 1 ? "a single cut" : `${combien} cuts`} in the MADAMOON catalogue. The image is taken from one of its own dresses, never from another house’s.`,
+      travaille:
+        "Each image is taken from one of this house’s own dresses, never from another’s.",
       aQuiCesCoupesVont: "Who these cuts suit",
       toutesLesMorphologies: "All body shapes",
       pistes: (dela: string) =>
