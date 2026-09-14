@@ -45,6 +45,10 @@ export type Createur = {
   /* La robe qui ouvre sa page : son film s'il en existe un, sa
    * photographie sinon. */
   ouverture: { robe: string; vue: number };
+  /* La photographie de sa vignette sur l'accueil, choisie par la maison.
+   * Sans « vue », elle vient de VIGNETTES_CREATEURS ; sans vignette, c'est
+   * celle de l'ouverture. */
+  vignette?: { robe: string; vue?: number };
 };
 
 export const CREATEURS: Createur[] = [
@@ -54,6 +58,7 @@ export const CREATEURS: Createur[] = [
     origine: "Dallas",
     note: "Dentelles travaillées, dos illusion, tombés légers. La maison d'Uma et de Pendant.",
     ouverture: { robe: "uma", vue: 1 },
+    vignette: { robe: "pendant" },
   },
   {
     nom: "Casablanca Bridal",
@@ -63,6 +68,7 @@ export const CREATEURS: Createur[] = [
     /* Meredith plutôt que Tessa : Tessa est le seul film « deux en un »
      * du catalogue, et la page de cette coupe en a plus besoin. */
     ouverture: { robe: "meredith", vue: 1 },
+    vignette: { robe: "ariel" },
   },
   {
     nom: "Olya Mak",
@@ -70,6 +76,7 @@ export const CREATEURS: Createur[] = [
     origine: "Lviv",
     note: "Le drapé, la transparence, la sensualité retenue. Des robes qui bougent avec celle qui les porte.",
     ouverture: { robe: "venus", vue: 1 },
+    vignette: { robe: "seraphina", vue: 3 },
   },
   {
     nom: "Monica Loretti",

@@ -3,7 +3,7 @@ import Photo from "@/components/media/Photo";
 import RailFleches from "@/components/accueil/RailFleches";
 import RailSouris from "@/components/accueil/RailSouris";
 import { AUTRES_CREATEURS, CREATEURS, ROBES, estEnVedette } from "@/lib/madamoon";
-import { vues } from "@/lib/medias";
+import { VIGNETTES_CREATEURS, vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
@@ -38,8 +38,15 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
   })();
 
   const maisons = CREATEURS.filter((c) => estEnVedette(c.slug)).map((c) => {
-    const robe = ROBES.find((r) => r.slug === c.ouverture.robe);
-    const media = robe ? vues(robe.slug)[c.ouverture.vue - 1] : undefined;
+    /* La photographie choisie par la maison pour sa vignette, sinon celle
+     * qui ouvre sa page. */
+    const choix = c.vignette ?? c.ouverture;
+    const robe = ROBES.find((r) => r.slug === choix.robe);
+    const media = !robe
+      ? undefined
+      : c.vignette && !c.vignette.vue
+        ? VIGNETTES_CREATEURS[c.slug]
+        : vues(robe.slug)[(choix.vue ?? 1) - 1];
     return robe && media ? { c, robe, media } : null;
   }).filter(Boolean) as {
     c: (typeof CREATEURS)[number];

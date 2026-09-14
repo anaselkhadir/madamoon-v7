@@ -3088,6 +3088,46 @@ export const SCENES = {
 
 export type NomScene = keyof typeof SCENES;
 
+/*
+ * Les vignettes des créateurs sur l'accueil, quand la maison a choisi une
+ * photographie qui n'est pas dans la galerie de la robe. Même pipeline,
+ * même dossier : outils/medias.py, fonction produire().
+ */
+export const VIGNETTES_CREATEURS: Record<string, Media> = {
+  "watters-designs": {
+    "name": "createur-watters-designs",
+    "w": 8736,
+    "h": 11648,
+    "widths": [
+      480,
+      800,
+      1200,
+      1700
+    ],
+    "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoPABQAPrVInkmnJCKhMAgA4BaJYwC7ABjvHW+PN3ilyXZuNuAA/tqGmiD1yHBFJm7wWLe2XteyVDmSL1w2S3P+yWBRczgBMTIgbl89BctDUknq/2czeGNvx0Il4MmI3CYNnBBIE1o9gADl32nRZkZkHB0Hi6xdiMMEZW8UcqyrEQSUAAA=",
+    "jpgw": [
+      480,
+      800
+    ]
+  },
+  "casablanca-bridal": {
+    "name": "createur-casablanca-bridal",
+    "w": 4480,
+    "h": 6720,
+    "widths": [
+      480,
+      800,
+      1200,
+      1700
+    ],
+    "blur": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwAOcAKYLqMHn8uJyD05wAD70dcnIpn3ANHKzFYJBJmtQ5PBigqKgJQGHOSn6Q6/1/j3SyidKonnTgpRv9hNlSviLs89zjJ/LYMxVIcxX0I7/bFlYL68/+vK0ls5UppDY/zqpD3n/Jf4PRmWvfZm7iXDgAAA",
+    "jpgw": [
+      480,
+      800
+    ]
+  }
+};
+
 export function vues(slug: string): Media[] {
   return ROBE_MEDIAS[slug] ?? [];
 }
