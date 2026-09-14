@@ -69,15 +69,15 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
             {L.createurs.titre}
           </h2>
         </span>
-        <div className="flex items-end justify-between gap-8">
-          <p className="texte mesure-l mt-4">{L.createurs.lieux}</p>
-          <RailFleches cible="rail-createurs" quoi="createurs" />
-        </div>
+        <p className="texte mesure-l mt-4">{L.createurs.lieux}</p>
       </div>
 
       {/* La bande. Elle déborde volontairement à droite : c'est ce débord
         * qui donne sa course à la dérive. */}
-      <div className="mt-[clamp(2.5rem,5vw,4rem)]">
+      {/* Les flèches encadrent le rail, à droite et à gauche : plus
+        * claires pour les mariées que groupées au-dessus. */}
+      <div className="relative mt-[clamp(2.5rem,5vw,4rem)]">
+        <RailFleches cible="rail-createurs" quoi="createurs" cotes />
         <div
           id="rail-createurs"
           className="rail flex snap-x snap-mandatory scroll-pl-[var(--gouttiere)] gap-[clamp(1rem,2.2vw,2rem)] overflow-x-auto px-[var(--gouttiere)] pb-2"
