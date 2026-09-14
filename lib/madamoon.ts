@@ -57,7 +57,7 @@ export const CREATEURS: Createur[] = [
     slug: "watters-designs",
     origine: "Dallas",
     note: "Dentelles travaillées, dos illusion, tombés légers. La maison d'Uma et de Pendant.",
-    ouverture: { robe: "uma", vue: 1 },
+    ouverture: { robe: "uma", vue: 2 },
     vignette: { robe: "pendant" },
   },
   {
@@ -224,6 +224,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un dos entier de dentelle fermé par une ligne de boutons, jusqu'à la nuque.",
     vues: 4,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     createur: "Watters Designs",
     morphos: ["V", "H", "8", "X"],
   },
@@ -234,6 +236,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Un voile immense qui prend la lumière et double le volume de la robe.",
     vues: 4,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
@@ -273,6 +277,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Des manches longues en dentelle qui se portent — ou non — sur un bustier droit.",
     vues: 3,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
@@ -510,6 +516,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Une dentelle florale et une traîne large qui se déploie au sol.",
     vues: 3,
+    /* La photographie de face : la première est de dos. */
+    couverture: 3,
     createur: "Casablanca Bridal",
     morphos: ["V", "8", "X"],
   },
@@ -548,6 +556,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Un tulle blush très clair, une fente discrète.",
     vues: 3,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
   },
   {
     slug: "angel",
@@ -572,6 +582,8 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard: "Une dentelle sur les épaules et un bas de jupe bordé au sol.",
     vues: 2,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
   },
   {
     slug: "dolores",
@@ -596,6 +608,8 @@ export const ROBES: Robe[] = [
     categorie: "Sirène",
     regard: "Un bustier corseté et des manches courtes en organza, portées sur l'épaule.",
     vues: 2,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     createur: "Watters Designs",
     morphos: ["V", "H", "8", "X"],
   },
@@ -800,6 +814,8 @@ export const ROBES: Robe[] = [
     categorie: "Fluide",
     regard: "Un corset de dentelle à fleurs en relief, sur une jupe de mousseline qui ne pèse rien.",
     vues: 2,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     morphos: ["O", "A", "V", "H", "8", "X"],
   }
 ];

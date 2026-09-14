@@ -128,7 +128,7 @@ export default async function PageCoupe({
             {...(g.lien ? { lien: { href: g.lien, label: L.laMaison } } : {})}
           />
           <div className="gouttiere">
-            <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
+            <div className="trame-tuiles grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {g.robes.map((robe, j) => {
                 const media = couverture(robe);
                 if (!media) return null;

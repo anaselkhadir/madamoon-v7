@@ -60,7 +60,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
         * rubrique propre — les pages de coupe et l'onglet du menu — : ici,
         * on parcourt le catalogue sans rien avoir à choisir. */}
       <div className="gouttiere">
-        <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
+        <div className="trame-tuiles grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {ROBES.map((r, i) => {
             const media = couverture(r);
             if (!media) return null;

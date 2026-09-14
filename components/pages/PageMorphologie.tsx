@@ -312,7 +312,7 @@ export default async function PageMorphologie({
             <div className="gouttiere">
               <h3 className="legende">{n.titre}</h3>
               <p className="texte mesure-l mt-2 pb-6">{n.note}</p>
-              <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
+              <div className="trame-tuiles grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {n.robes.map((robe, i) => {
                   const media = couverture(robe);
                   if (!media) return null;

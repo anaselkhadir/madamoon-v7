@@ -119,7 +119,7 @@ export default async function PageMaison({
           lien={{ href: "/robes", label: L.voirToutesLesRobes }}
         />
         <div className="gouttiere">
-          <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
+          <div className="trame-tuiles grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {robes.map((robe, i) => {
               const media = couverture(robe);
               if (!media) return null;

@@ -44,7 +44,7 @@ function robesDe(slugs: readonly string[]) {
 
 function Trame({ robes, langue }: { robes: (typeof ROBES)[number][]; langue: Langue }) {
   return (
-    <div className="trame-tuiles mt-8 grid-cols-2 md:grid-cols-3">
+    <div className="trame-tuiles mt-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {robes.map((r, i) => {
         const media = couverture(r);
         if (!media) return null;
