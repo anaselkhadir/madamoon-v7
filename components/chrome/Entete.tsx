@@ -695,6 +695,18 @@ export default function Entete() {
 
             {/* ————— le classement ————— */}
             <div className="hidden items-baseline gap-6 lg:flex" role="group" aria-label={L.barre.classer}>
+              {/* « Toutes les robes » en tête, en gras, comme sur téléphone :
+                * le catalogue entier, sans classement par coupe ni par
+                * créateur. */}
+              <Link
+                href="/robes"
+                data-actif={cheminFr === "/robes"}
+                className="lien-nav souligne text-encre transition-colors duration-500 hover:text-action"
+                style={{ fontWeight: 700 }}
+              >
+                {L.barre.toutesRobes}
+              </Link>
+              <span aria-hidden="true" className="h-3 w-px self-center bg-fil" />
               {(["createur", "coupe"] as const).map((c) => (
                 <button
                   key={c}
