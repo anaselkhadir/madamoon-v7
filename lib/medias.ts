@@ -3083,6 +3083,36 @@ export const SCENES = {
       640,
       1000
     ]
+  },
+  "film-seraphina": {
+    "name": "robe-de-mariee-princesse-seraphina-film-madamoon",
+    "w": 1920,
+    "h": 1080,
+    "widths": [
+      480,
+      800,
+      1200,
+      1700
+    ],
+    "blur": "data:image/webp;base64,UklGRmwBAABXRUJQVlA4IGABAAAQBwCdASokABQAPrVOoUwnJCMiKqgA4BaJZQCxH5j2AN0E6H+y4ccqFUD8e1ye5Cd2e+0Cnx0q21ESKqxuZ86OwADN8PEWyjuryfxhcr0YGVYy03djJqQ/ORGJXi8pSQrBUhCB210owwoVth4yP6UVmv7NMNndMmdCzDQ+1m883k65GmzhVCYNaeRvkoOYzL2DSFpz7gPFDt9GpWI9vNx2cblcqzJDTW5DskCOEywq/CSjJWJbjZYSV1CCXKzNuhpKs7ud/zbcZ8zwfdnBIzCKMywjuZ+0y22Cz+lahCQ9YqY74sVvrfk0O0VPEHM5rn8ExlbvnLuQbyDV9NACfBjAAxcxEvmqx19kPfVh7Y8R/I1xf8Jw9yNb8195lPvh4v4mKcPc38B/xe0y3MRux4n7ppcLOgUi2Ss9mZ1vwgToMxg6VYGvJaGOHe6LG5MSwGsKG208QqnWHbv9rjPZfAAA",
+    "jpgw": [
+      480,
+      800
+    ]
+  },
+  "film-seraphina-mobile": {
+    "name": "robe-de-mariee-princesse-seraphina-film-madamoon-mobile",
+    "w": 1080,
+    "h": 1920,
+    "widths": [
+      480,
+      800
+    ],
+    "blur": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoLABQAPrVInkmnJCKhMAgA4BaJYwCdMoAlsRelRMdyqTWt8gAA/vJlrWHvaMmIhir2F+ZOWHwlMVeaqzuJnn2Dcw1zOgXFCRBeNgyCf3g4VQEKcbkFCQC6zwmGMnLkNgS4W02D21nPWb8Tr6NZ7A74ZE7ztQf5wfXRvSIO/N4+PfI1gpFu6LPCLA0JOkqjxqy6DQAA",
+    "jpgw": [
+      480,
+      800
+    ]
   }
 } as const satisfies Record<string, Media>;
 

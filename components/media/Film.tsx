@@ -16,13 +16,15 @@ import { media as chemin } from "@/lib/chemin";
 
 type Props = {
   src: string;
+  /* La version portrait, pour le téléphone. */
+  srcMobile?: string;
   affiche: Media;
   alt: string;
   className?: string;
   position?: string;
 };
 
-export default function Film({ src, affiche, alt, className = "", position }: Props) {
+export default function Film({ src, srcMobile, affiche, alt, className = "", position }: Props) {
   const cadre = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [charge, setCharge] = useState(false);
@@ -71,7 +73,7 @@ export default function Film({ src, affiche, alt, className = "", position }: Pr
       {charge && (
         <video
           ref={video}
-          src={chemin(src)}
+          src={srcMobile ? undefined : chemin(src)}
           muted
           loop
           playsInline
@@ -82,7 +84,14 @@ export default function Film({ src, affiche, alt, className = "", position }: Pr
             prete ? "opacity-100" : "opacity-0"
           }`}
           style={{ objectPosition: position }}
-        />
+        >
+          {srcMobile && (
+            <>
+              <source src={chemin(srcMobile)} type="video/mp4" media="(max-width: 700px)" />
+              <source src={chemin(src)} type="video/mp4" />
+            </>
+          )}
+        </video>
       )}
     </div>
   );

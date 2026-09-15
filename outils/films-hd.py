@@ -51,6 +51,12 @@ FILMS_HD = {
     "solana": ("BL452 -Solana.mp4", 23.982, 169, None, 1920, 1080, 21, 7000),
     "tessa": ("2565 - Tessa.mp4", 18.018, 168, None, 1920, 1080, 21, 7000),
     "venus": ("BL456- Venus.mp4", 14.014, 168, None, 1920, 1080, 21, 7000),
+    # Seraphina est filmée en portrait, en 60 images par seconde : le
+    # téléphone la garde entière, l'ordinateur en prend une bande au
+    # format paysage centrée à 30 % de la hauteur — les visages et le
+    # corsage. Les deux passent à 30 images par seconde.
+    "seraphina": ("/Users/mac/Desktop/Anas EL KHADIR - web site/Seraphina vidéo.mp4", 0.0, 396, (0, 545, 2160, 1215), 1920, 1080, 21, 7000),
+    "seraphina-mobile": ("/Users/mac/Desktop/Anas EL KHADIR - web site/Seraphina vidéo.mp4", 0.0, 396, None, 1080, 1920, 22, 4500),
 }
 
 
@@ -62,10 +68,14 @@ def encoder(nom):
 
     provisoire = FILMS / f"{nom}.hd.mp4"
     sortie = av.open(str(provisoire), mode="w", options={"movflags": "+faststart"})
-    piste = sortie.add_stream("libx264", rate=v.average_rate)
+    # Au-delà de 40 images par seconde, on n'en garde qu'une sur deux :
+    # un film muet en boucle n'a rien à gagner à soixante.
+    pas = 2 if v.average_rate > 40 else 1
+    cadence = v.average_rate / pas
+    piste = sortie.add_stream("libx264", rate=cadence)
     piste.width, piste.height = largeur, hauteur
     piste.pix_fmt = "yuv420p"
-    piste.time_base = Fraction(1, 1) / v.average_rate
+    piste.time_base = Fraction(1, 1) / cadence
     piste.options = {
         "crf": str(crf),
         "preset": "slow",
@@ -75,7 +85,7 @@ def encoder(nom):
         "bufsize": f"{plafond * 2}k",
         # Une image clé toutes les deux secondes : la boucle et la reprise
         # après une pause repartent sans attendre.
-        "g": "48",
+        "g": str(round(cadence * 2)),
         "x264-params": "colorprim=bt709:transfer=bt709:colormatrix=bt709",
     }
 
@@ -96,8 +106,12 @@ def encoder(nom):
         entree.seek(int((debut - 1) / v.time_base), stream=v)
 
     rendues = 0
+    lues = 0
     for image in entree.decode(v):
         if image.time is None or image.time < debut - 0.02:
+            continue
+        lues += 1
+        if (lues - 1) % pas:
             continue
         graphe.push(image)
         while True:
@@ -106,7 +120,7 @@ def encoder(nom):
             except (av.BlockingIOError, av.EOFError):
                 break
             prete.pts = rendues
-            prete.time_base = Fraction(1, 1) / v.average_rate
+            prete.time_base = Fraction(1, 1) / cadence
             for p in piste.encode(prete):
                 sortie.mux(p)
             rendues += 1

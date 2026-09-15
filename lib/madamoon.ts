@@ -75,7 +75,8 @@ export const CREATEURS: Createur[] = [
     slug: "olya-mak",
     origine: "Lviv",
     note: "Le drapé, la transparence, la sensualité retenue. Des robes qui bougent avec celle qui les porte.",
-    ouverture: { robe: "venus", vue: 1 },
+    /* Le film de Seraphina, envoyé par la maison pour sa page. */
+    ouverture: { robe: "seraphina", vue: 1 },
     vignette: { robe: "seraphina", vue: 3 },
   },
   {
@@ -967,7 +968,8 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "8",
-    ouverture: { robe: "venus", vue: 1 },
+    /* Le film de Seraphina, envoyé par la maison pour sa page. */
+    ouverture: { robe: "seraphina", vue: 1 },
     nom: "Morphologie en 8",
     silhouette: "Des épaules et des hanches équilibrées, une taille marquée.",
     objectif: "Sublimer une harmonie qui existe déjà.",

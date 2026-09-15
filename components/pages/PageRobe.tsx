@@ -162,6 +162,7 @@ export default async function PageRobe({
         {film ? (
           <Film
             src={film.src}
+            srcMobile={film.srcMobile}
             affiche={SCENES[film.affiche]}
             alt={altRobe(robe, langue)}
             className="absolute inset-0 h-full w-full"

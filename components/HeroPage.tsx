@@ -29,6 +29,9 @@ import type { Langue } from "@/lib/langue";
 const jeu = (media: Media, ext: string, largeurs: readonly number[], dossier: string) =>
   largeurs.map((w) => `${chemin(`/${dossier}/${media.name}-${w}.${ext}`)} ${w}w`).join(", ");
 
+/* Le seuil du film portrait, le même que celui du hero de l'accueil. */
+const MOBILE = "(max-width: 700px)";
+
 export default function HeroPage({
   surtitre,
   titre,
@@ -65,6 +68,7 @@ export default function HeroPage({
    * elle-même — dans les deux cas, l'image sur laquelle on ouvre. */
   const affiche: Media | undefined = film ? SCENES[film.affiche] : vues(robe)[vue - 1];
   const dossier = film ? "scenes" : "robes";
+  const afficheMobile: Media | undefined = film?.afficheMobile ? SCENES[film.afficheMobile] : undefined;
 
   useEffect(() => {
     if (!film) return;
@@ -92,6 +96,22 @@ export default function HeroPage({
   return (
     <section className="relative h-[calc(100svh-var(--barre))] min-h-[34rem] w-full overflow-hidden bg-craie">
       <picture>
+        {afficheMobile && (
+          <>
+            <source
+              type="image/avif"
+              media={MOBILE}
+              srcSet={jeu(afficheMobile, "avif", afficheMobile.widths, dossier)}
+              sizes="100vw"
+            />
+            <source
+              type="image/webp"
+              media={MOBILE}
+              srcSet={jeu(afficheMobile, "webp", afficheMobile.widths, dossier)}
+              sizes="100vw"
+            />
+          </>
+        )}
         <source
           type="image/avif"
           srcSet={jeu(affiche, "avif", affiche.widths, dossier)}
@@ -130,6 +150,9 @@ export default function HeroPage({
             prete ? "opacity-100" : "opacity-0"
           }`}
         >
+          {film.srcMobile && (
+            <source src={chemin(film.srcMobile)} type="video/mp4" media={MOBILE} />
+          )}
           <source src={chemin(film.src)} type="video/mp4" />
         </video>
       )}
