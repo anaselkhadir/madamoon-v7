@@ -80,7 +80,7 @@ export const CREATEUR_NOTE: Record<string, string> = {
   "olya-mak":
     "Draping, sheerness, restrained sensuality. Dresses that move with the woman wearing them.",
   "monica-loretti":
-    "The Italian school: true proportions, dense embroidery, bodice craft.",
+    "The Italian school: true proportions, dense embroidery, noble fabrics.",
   "autres-createurs":
     "Small independent ateliers, found one by one. Rare pieces, often unique, not seen elsewhere in Paris.",
 };

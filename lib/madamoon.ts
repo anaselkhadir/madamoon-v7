@@ -83,7 +83,7 @@ export const CREATEURS: Createur[] = [
     nom: "Monica Loretti",
     slug: "monica-loretti",
     origine: "Rome",
-    note: "L'école italienne : proportions justes, broderies denses, savoir-faire de bustier.",
+    note: "L'école italienne : proportions justes, broderies denses, matières nobles.",
     /* Monica plutôt que Lorette : Lorette est passée aux petits
      * ateliers, et Monica porte le nom de la maison sur une place
      * romaine — son origine, dans l'image. */
