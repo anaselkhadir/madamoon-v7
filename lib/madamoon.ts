@@ -64,7 +64,7 @@ export const CREATEURS: Createur[] = [
     nom: "Casablanca Bridal",
     slug: "casablanca-bridal",
     origine: "Newport Beach",
-    note: "Le mikado, le satin duchesse, les lignes nettes. Des robes construites, faites pour la lumière.",
+    note: "Satin de soie, dentelle française… des robes faites pour la lumière.",
     /* Meredith plutôt que Tessa : Tessa est le seul film « deux en un »
      * du catalogue, et la page de cette coupe en a plus besoin. */
     ouverture: { robe: "meredith", vue: 1 },
@@ -105,7 +105,7 @@ export const CREATEURS: Createur[] = [
     nom: "Autres créateurs",
     slug: "autres-createurs",
     origine: "Petits ateliers indépendants",
-    note: "De petits ateliers indépendants, trouvés un par un. Des pièces rares, souvent uniques, que l'on ne verra pas ailleurs à Paris.",
+    note: "Des ateliers européens indépendants, avec des modèles exclusifs.",
     ouverture: { robe: "hera", vue: 1 },
   },
 ];

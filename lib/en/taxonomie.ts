@@ -76,13 +76,13 @@ export const CREATEUR_NOTE: Record<string, string> = {
   "watters-designs":
     "Worked lace, illusion backs, light falls. The house of Uma and Pendant.",
   "casablanca-bridal":
-    "Mikado, duchess satin, clean lines. Constructed dresses, made for the light.",
+    "Silk satin, French lace… dresses made for the light.",
   "olya-mak":
     "Draping, sheerness, restrained sensuality. Dresses that move with the woman wearing them.",
   "monica-loretti":
     "The Italian school: true proportions, dense embroidery, noble fabrics.",
   "autres-createurs":
-    "Small independent ateliers, found one by one. Rare pieces, often unique, not seen elsewhere in Paris.",
+    "Independent European ateliers, with exclusive designs.",
 };
 
 export const CREATEUR_ORIGINE: Record<string, string> = {
