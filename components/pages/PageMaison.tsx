@@ -1,4 +1,3 @@
-import AppelElise from "@/components/AppelElise";
 import { notFound } from "next/navigation";
 import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
@@ -6,26 +5,17 @@ import TitreSection from "@/components/TitreSection";
 import Showroom from "@/components/accueil/Showroom";
 import {
   AUTRES_CREATEURS,
-  FAMILLES,
   MAISON,
   SITE_URL,
   createurParSlug,
-  morphologiesDe,
   robesDe,
   coupesDe,
 } from "@/lib/madamoon";
-import { coupe } from "@/lib/coupes";
 import { altCoupe, altRobe } from "@/lib/alt";
-import { de } from "@/lib/francais";
 import {
-  coupeNom,
   createurNom,
   createurNote,
   createurOrigine,
-  familleTexte,
-  morphoConseil,
-  morphoNom,
-  morphoSilhouette,
   robeLigne,
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
@@ -36,9 +26,12 @@ import { couverture } from "@/lib/couverture";
  * La page d'une maison.
  *
  * Le rythme de l'accueil, au nom d'un créateur : une image plein cadre,
- * puis des sections courtes. La différence tient en un mot — la page est
- * un filtre. On n'y montre que ses robes, que les coupes qu'il
- * travaille, que les morphologies auxquelles ses coupes répondent.
+ * puis ses robes. La différence tient en un mot — la page est un filtre :
+ * on n'y montre que ses robes.
+ *
+ * Les sections « Ses coupes » et « À qui ces coupes vont » ont été
+ * retirées : la page ne dépend plus que de la liste des robes, et
+ * l'arrivée de nouveaux modèles ne demande rien d'autre.
  *
  * Rien n'est complété par le reste du catalogue : une maison qui n'a que
  * deux robes en a deux sur sa page. C'est la seule façon que le filtre
@@ -67,11 +60,6 @@ export default async function PageMaison({
   const trouver = collective ? t(langue).raccourcis.trouverMaRobe : L.trouverMaRobeDe(nomMaison);
   const robes = robesDe(createur.nom);
   const coupes = coupesDe(createur.nom);
-  const morphologies = morphologiesDe(createur.nom);
-
-  /* En français la maison se met au génitif — « les coupes d'Olya Mak » ;
-   * en anglais le nom se pose devant, sans rien. */
-  const dela = langue === "fr" ? de(nomMaison) : nomMaison;
 
   const donnees = {
     "@context": "https://schema.org",
@@ -133,7 +121,7 @@ export default async function PageMaison({
                   dossier="robes"
                   alt={altRobe(robe, langue)}
                   nom={robe.nom}
-                  sizes="(max-width: 768px) 50vw, 31vw"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   priorite={i < 3}
                 />
               );
@@ -141,72 +129,6 @@ export default async function PageMaison({
           </div>
         </div>
       </section>
-
-      {/* ————————————————————————————— ses coupes ————— */}
-      {coupes.length > 0 && (
-        <section aria-labelledby="ses-coupes">
-          <TitreSection
-            id="ses-coupes"
-            titre={L.sesCoupes}
-            lien={{ href: "/coupes", label: L.toutesLesCoupes }}
-          />
-          <div className="gouttiere">
-            <p className="texte mesure pb-6">{L.travaille}</p>
-            <div className="trame-tuiles grid-cols-2 md:grid-cols-3">
-              {coupes.map((nom, i) => {
-                /* L'image de la famille vient d'une robe de la maison :
-                 * sur sa page, on ne montre pas le travail d'un autre. */
-                const sienne = robes.find((r) => r.categorie === nom);
-                const media = sienne ? couverture(sienne) : undefined;
-                const famille = coupe(nom);
-                if (!media || !famille) return null;
-                return (
-                  <Tuile
-                    key={nom}
-                    retard={(i % 3) * 70}
-                    href={`/coupes/${famille.ancre}`}
-                    media={media}
-                    dossier="robes"
-                    alt={altCoupe(nom, langue, { maison: nomMaison })}
-                    nom={coupeNom(nom, langue)}
-                    note={familleTexte(nom, langue, FAMILLES[nom])}
-                    sizes="(max-width: 768px) 50vw, 31vw"
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ————————————————————————————— les morphologies ————— */}
-      {morphologies.length > 0 && (
-        <section aria-labelledby="ses-morphologies">
-          <TitreSection
-            id="ses-morphologies"
-            titre={L.aQuiCesCoupesVont}
-            lien={{ href: "/morphologies", label: L.toutesLesMorphologies }}
-          />
-          <div className="gouttiere pb-[clamp(3rem,5vw,5rem)]">
-            <p className="texte mesure pb-8">{L.pistes(dela)}</p>
-            <dl className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-              {morphologies.map((m) => (
-                <div key={m.lettre}>
-                  <dt className="flex items-baseline gap-3">
-                    <span className="affiche text-[2rem] leading-none text-action">{m.lettre}</span>
-                    <span className="legende">{morphoNom(m, langue)}</span>
-                  </dt>
-                  <dd className="texte mt-3">{morphoSilhouette(m, langue)}</dd>
-                  <dd className="note-image mt-2 text-plomb">{morphoConseil(m, langue)}</dd>
-                </div>
-              ))}
-            </dl>
-            <AppelElise maison={createur.nom} className="bouton-trait mt-8">
-              {trouver}
-            </AppelElise>
-          </div>
-        </section>
-      )}
 
       <Showroom langue={langue} />
     </>
