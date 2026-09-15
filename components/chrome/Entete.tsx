@@ -306,25 +306,33 @@ export default function Entete() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50" onMouseLeave={() => setMega(null)}>
-        {/* Le bandeau. Toujours blanc, toujours discret. */}
-        <div className="hidden h-[var(--barre)] items-center justify-between border-b border-fil bg-blanc text-encre md:flex gouttiere">
-          <ul className="flex items-center gap-7">
+        {/* Le bandeau. Toujours blanc, toujours discret.
+          * Rien n'y passe à la ligne : sur une tablette, les noms coupés en
+          * deux débordaient de ses 38 px. Les intervalles se resserrent, et
+          * l'adresse ne paraît qu'à partir de 1024 px, où elle a sa place.
+          *
+          * Il n'apparaît qu'au-dessus de 900 px, le seuil où « --barre »
+          * lui donne sa hauteur. Entre 768 et 900 px il s'affichait avec
+          * une hauteur nulle : ses textes glissaient sous la barre
+          * principale et n'en dépassait que la moitié basse. */}
+        <div className="hidden h-[var(--barre)] items-center justify-between gap-6 border-b border-fil bg-blanc text-encre min-[901px]:flex gouttiere">
+          <ul className="flex min-w-0 items-center gap-5 lg:gap-7">
             {CREATEURS.slice(0, 4).map((c) => (
               <li key={c.slug}>
                 <Link
                   href={`/createurs/${c.slug}`}
-                  className="mention souligne text-plomb hover:text-encre"
+                  className="mention souligne whitespace-nowrap text-plomb hover:text-encre"
                 >
                   {createurNom(c, l)}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="flex items-center gap-7">
-            <span className="mention text-plomb">
+          <div className="flex shrink-0 items-center gap-5 lg:gap-7">
+            <span className="mention hidden whitespace-nowrap text-plomb lg:inline">
               {MAISON.adresse}, {MAISON.ville} {MAISON.codePostal.slice(-2)}e
             </span>
-            <a href={MAISON.telephoneHref} className="mention souligne text-encre">
+            <a href={MAISON.telephoneHref} className="mention souligne whitespace-nowrap text-encre">
               {MAISON.telephone}
             </a>
           </div>
