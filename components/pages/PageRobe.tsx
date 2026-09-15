@@ -359,6 +359,31 @@ export default async function PageRobe({
           aria-label={L.fiche.autresVues(robe.nom)}
           className="gouttiere"
         >
+          {galerie.length > 4 ? (
+            /* Beaucoup de vues — la maison en envoie jusqu'à une
+             * cinquantaine : une trame régulière, deux colonnes au doigt,
+             * trois sur ordinateur, au format des photographies. La
+             * quinconce, faite pour trois images, aurait déroulé des
+             * dizaines d'écrans. */
+            <div className="grid grid-cols-2 gap-[clamp(0.5rem,1.2vw,1rem)] md:grid-cols-3">
+              {galerie.map((p, i) => (
+                <div
+                  key={p.name}
+                  data-rideau
+                  data-retard={(i % 3) * 90}
+                  className="relative aspect-[2/3] overflow-hidden bg-craie"
+                >
+                  <Photo
+                    media={p}
+                    dossier="robes"
+                    alt={altRobe(robe, langue, photos.indexOf(p) + 1)}
+                    sizes="(max-width: 768px) 46vw, 31vw"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
           <div className="grid gap-[clamp(1rem,2.5vw,2.5rem)] md:grid-cols-[1.15fr_0.85fr]">
             {galerie.map((p, i) => (
               <div
@@ -383,6 +408,7 @@ export default async function PageRobe({
               </div>
             ))}
           </div>
+          )}
         </section>
       )}
 
