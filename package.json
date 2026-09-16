@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack -p 5600",
     "build": "next build --turbopack",
     "start": "next start",
-    "build:pages": "PAGES=1 next build --turbopack"
+    "build:pages": "PAGES=1 next build --turbopack",
+    "build:hostinger": "PAGES=1 BASE_PATH= APERCU=0 next build --turbopack"
   },
   "dependencies": {
     "gsap": "^3.15.0",
