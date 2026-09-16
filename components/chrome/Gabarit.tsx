@@ -5,6 +5,7 @@ import Elise from "@/components/Elise";
 import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Cookies from "@/components/chrome/Cookies";
+import Clarity from "@/components/chrome/Clarity";
 import Mouvement from "@/components/Mouvement";
 import { MAISON_SCHEMA } from "@/lib/schema";
 import { BASE } from "@/lib/chemin";
@@ -128,6 +129,8 @@ setTimeout(function(){d.removeAttribute("data-ouverture")},6000);
         <Elise />
         <CarteRendezvous />
         <Cookies />
+        {/* Clarity ne part qu'avec le consentement analytique. */}
+        <Clarity />
         <Mouvement />
       </body>
     </html>
