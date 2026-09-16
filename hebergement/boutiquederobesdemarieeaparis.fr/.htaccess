@@ -1,0 +1,18 @@
+# boutiquederobesdemarieeaparis.fr → madamoon.fr
+#
+# Ce domaine n'héberge aucune page : il redirige. Tout le référencement
+# reste sur madamoon.fr, et les liens que ce nom a pu recevoir lui
+# profitent — c'est ce que fait une redirection 301, permanente.
+#
+# À déposer seul dans le dossier de ce domaine chez Hostinger
+# (hPanel → Sites web → Ajouter un site web, puis Gestionnaire de
+# fichiers, « Afficher les fichiers cachés » pour le voir).
+#
+# La racine mène à l'accueil : c'est la page qui dit « boutique de robes
+# de mariée à Paris ». Toute autre adresse garde son chemin, au cas où
+# une ancienne adresse traînerait quelque part.
+
+RewriteEngine On
+
+RewriteRule ^$ https://madamoon.fr/ [R=301,L]
+RewriteRule ^(.*)$ https://madamoon.fr/$1 [R=301,L]

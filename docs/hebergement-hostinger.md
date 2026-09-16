@@ -103,3 +103,42 @@ npm run build:hostinger
 puis renvoyer `out/`. Les photographies et les vidéos ne changent
 presque jamais : en FTP, seuls les fichiers modifiés repartent, et une
 mise à jour de textes ne pèse que quelques centaines de kilo-octets.
+
+---
+
+## 5. Les deux autres domaines
+
+La cliente possède trois noms :
+
+| Domaine | Rôle |
+|---|---|
+| `madamoon.fr` | le site, et lui seul |
+| `boutiquederobesdemarieeaparis.fr` | redirige vers l'accueil |
+| `robemarieeparis.fr` | redirige vers `/robes/` |
+
+Les deux derniers sont des noms de mots-clés. **Ils ne doivent pas
+porter une copie du site** : Google verrait le même contenu à trois
+adresses, ne saurait pas lequel classer, et les trois y perdraient. Ils
+redirigent donc, en 301 — une redirection permanente, qui transmet à
+madamoon.fr les liens et l'ancienneté que ces noms ont pu accumuler.
+
+Pour chacun, dans hPanel :
+
+1. **Sites web → Ajouter un site web**, avec le domaine. Hostinger lui
+   crée son propre dossier (par exemple `domains/robemarieeparis.fr/public_html`).
+2. Y déposer le `.htaccess` correspondant, pris dans `hebergement/` de
+   ce dépôt. Rien d'autre : pas d'`index.html`.
+3. **Sécurité → SSL** : activer le certificat gratuit. Sans lui, un
+   visiteur qui tape l'adresse en `https://` voit une alerte avant même
+   d'être redirigé.
+
+Vérification, une fois en place :
+
+```bash
+curl -sI https://robemarieeparis.fr/ | head -3
+# HTTP/… 301  +  location: https://madamoon.fr/robes/
+```
+
+Ces domaines restent disponibles pour autre chose plus tard — une page
+d'atterrissage de campagne, par exemple. Il suffira de remplacer leur
+`.htaccess` par de vraies pages, avec un texte qui leur est propre.
