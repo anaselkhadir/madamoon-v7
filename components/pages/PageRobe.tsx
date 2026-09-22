@@ -13,6 +13,7 @@ import {
   MORPHOLOGIES,
   SITE_URL,
   createurParNom,
+  SEMI_MESURE,
 } from "@/lib/madamoon";
 import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
@@ -338,7 +339,9 @@ export default async function PageRobe({
 
           <div className="border-b border-fil py-5">
             <dt className="legende">{L.fiche.confection}</dt>
-            <dd className="texte mt-2">{L.fiche.surMesure}</dd>
+            <dd className="texte mt-2">
+              {robe.createur === SEMI_MESURE ? L.fiche.semiMesure : L.fiche.surMesure}
+            </dd>
           </div>
 
           {/* Pas de prix sur la fiche d'une robe. « À partir de 1 500 € »

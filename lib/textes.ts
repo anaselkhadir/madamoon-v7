@@ -145,6 +145,10 @@ const FR = {
     maison: "La maison",
     confection: "La confection",
     surMesure: "Sur mesure, retouches incluses",
+    /* Watters Designs travaille en demi-mesure : la robe se décline sur
+     * un patron de la maison, puis s'ajuste. Le dire, plutôt que de
+     * laisser croire au sur-mesure des autres. */
+    semiMesure: "Semi-mesure, retouches incluses",
     aPartirDe: "À partir de",
     essayer: "L’essayer au showroom",
     memeFamille: "Dans la même famille",
@@ -619,6 +623,7 @@ const EN: Textes = {
     maison: "House",
     confection: "Made to order",
     surMesure: "Made to measure, alterations included",
+    semiMesure: "Semi-bespoke, alterations included",
     aPartirDe: "From",
     essayer: "Try it on at the showroom",
     memeFamille: "In the same family",

@@ -1,4 +1,4 @@
-import { MAISON, SITE_URL } from "@/lib/madamoon";
+import { MAISON, SITE_URL, SEMI_MESURE } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
 
 /*
@@ -206,7 +206,11 @@ export function epingleRobe(o: {
   const large = o.media ? Math.max(...o.media.jpgw) : 0;
   return {
     titre: `Robe de mariée ${o.nom} — ${o.ligne}`,
-    description: `${o.regard} Sur mesure, retouches incluses, à partir de ${MAISON.prixDepart}. À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
+    /* Watters Designs travaille en demi-mesure : l'épingle le dit
+     * comme la fiche. */
+    description: `${o.regard} ${
+      o.createur === SEMI_MESURE ? "Semi-mesure" : "Sur mesure"
+    }, retouches incluses, à partir de ${MAISON.prixDepart}. À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
     url: `${SITE_URL}/robes/${o.slug}`,
     image: o.media
       ? {

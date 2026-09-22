@@ -405,7 +405,11 @@ def page_robe(c, robe, medias, familles, rang=None, total=None):
             "Les silhouettes",
             "Toutes" if toutes else ", ".join(robe["morphos"]),
         ))
-    lignes.append(("La confection", "Sur mesure, retouches incluses"))
+    # Watters Designs travaille en demi-mesure : la fiche le dit.
+    confection = ("Semi-mesure, retouches incluses"
+                  if robe.get("createur") == "Watters Designs"
+                  else "Sur mesure, retouches incluses")
+    lignes.append(("La confection", confection))
 
     for intitule, valeur in lignes:
         filet(c, x, y, LARGEUR - MARGE)

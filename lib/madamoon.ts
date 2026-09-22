@@ -124,6 +124,11 @@ export function createurParNom(nom: string | undefined): Createur | undefined {
 /* Le nom sous lequel se rangent les robes sans maison. */
 export const AUTRES_CREATEURS = "Autres créateurs";
 
+/* La maison qui travaille en demi-mesure : la robe part d'un patron
+ * maison et s'ajuste, là où les autres taillent pour une seule mariée.
+ * La fiche le dit, plutôt que de laisser croire au sur-mesure. */
+export const SEMI_MESURE = "Watters Designs";
+
 export function robesDe(nom: string): Robe[] {
   if (nom === AUTRES_CREATEURS) return ROBES.filter((r) => !r.createur);
   return ROBES.filter((r) => r.createur === nom);
