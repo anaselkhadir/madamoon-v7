@@ -302,9 +302,10 @@ export const ROBES: Robe[] = [
   {
     slug: "charlize",
     nom: "Charlize",
-    ligne: "Sirène corset, fente haute",
+    ligne: "Satin mat et dentelle de Chantilly",
     categorie: "Sirène",
-    regard: "Un corset apparent, une fente haute et des gants de dentelle en option.",
+    regard:
+      "Un corset transparent — ou doublé, si vous n'appréciez pas la transparence — et une jolie fente qui s'ouvre sur une jupe en dentelle de Chantilly.",
     vues: 10,
     createur: "Casablanca Bridal",
     morphos: ["V", "H", "8", "X"],

@@ -48,8 +48,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard: "A refined, daring and resolutely singular wedding dress.",
   },
   "charlize": {
-    ligne: "Corset mermaid, high slit",
-    regard: "A visible corset, a high slit, and lace gloves if you want them.",
+    ligne: "Matte satin and Chantilly lace",
+    regard:
+      "A sheer corset — or lined, if you would rather not have the transparency — and a pretty slit opening onto a Chantilly lace skirt.",
   },
   "tessa": {
     ligne: "Mermaid with a detachable overskirt",
