@@ -315,7 +315,8 @@ export const ROBES: Robe[] = [
     nom: "Tessa",
     ligne: "Sirène, surjupe détachable",
     categorie: "Deux en un",
-    regard: "Des fleurs de tissu sur une bretelle asymétrique, et une jupe qui s'enlève.",
+    regard:
+      "Une robe de mariée au charme vintage-chic, un corset structuré et des bretelles amovibles pour un autre look.",
     vues: 13,
     couverture: 3,
     createur: "Casablanca Bridal",

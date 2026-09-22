@@ -54,7 +54,8 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   },
   "tessa": {
     ligne: "Mermaid with a detachable overskirt",
-    regard: "Fabric flowers on an asymmetric strap, and a skirt that comes away.",
+    regard:
+      "A wedding dress with vintage-chic charm, a structured corset and detachable straps for another look.",
   },
   "addison": {
     ligne: "Mikado ball gown, off the shoulder",
