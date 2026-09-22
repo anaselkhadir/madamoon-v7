@@ -87,36 +87,39 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "A mermaid wedding dress in matte satin: a sweetheart neckline, raised floral petals, a visible corset at the back and detachable straps.",
   },
   "montana": {
-    ligne: "Crêpe mermaid, lace sleeves",
-    regard: "A very clean square neckline, and sheer lace sleeves.",
+    ligne: "Mermaid in matte satin, long lace sleeves and an illusion back",
+    regard:
+      "A minimalist, elegant wedding dress that sets off the silhouette with timeless sophistication.",
   },
   "zina": {
-    ligne: "Draped satin, laced back",
-    regard: "A drape that turns around the body, closed at the back with a lacing.",
+    ligne: "Mermaid with a slit, optional 3D flowers",
+    regard:
+      "A mermaid wedding dress in stretch georgette and matte satin, set with hand-made 3D flowers, a centre slit and a laced corset. A spectacular dress that celebrates femininity with daring and sophistication.",
   },
   "sienna": {
-    ligne: "A-line, lace over nude",
-    regard: "Blush lace set over a nude ground: the colour of skin, softer.",
+    ligne: "Ball gown or A-line in lace",
+    regard:
+      "The bodice, with its subtly reworked sweetheart neckline, sets off the bust with femininity, while the full skirt brings generous volume and a silhouette worthy of the finest fairy tales.",
   },
   "amandine": {
-    ligne: "Lace ball gown",
-    regard: "Dense lace over blush tulle, and fine straps at the shoulder.",
+    ligne: "Ball gown in lace, plunging neckline",
+    regard:
+      "A wedding dress worthy of the finest wedding venues. Its lace carries motifs in a royal style, while its V neckline gives it a modern air.",
   },
-  "lorette": {
-    ligne: "Embroidered mermaid, the house signature",
-    regard: "Embroidery running unbroken from the bodice to the end of the train.",
-  },
-  "charlotte": {
-    ligne: "A-line in sequinned tulle",
-    regard: "A plunging bodice and a tulle that catches the light without shining.",
+    "charlotte": {
+    ligne: "Ball gown or A-line in Caterina lace",
+    regard:
+      "A strapless dress with a sweetheart neckline, a basque-waist corset and Caterina lace: the dream of the romantic, elegant bride. It also exists without the plunging neckline, for a more covered version.",
   },
   "dove": {
-    ligne: "Satin, absolute minimalism",
-    regard: "Ivory satin, a bare back, a veil — and nothing more.",
+    ligne: "A fluid fall in matte satin, draped neckline, off the shoulder",
+    regard:
+      "The wedding dress that brings together timeless elegance and absolute comfort. With its open back and its endless line of buttons down to the train, Dove promises a poetic, pure look.",
   },
   "finell": {
-    ligne: "A clean cut in ivory mikado",
-    regard: "A sweetheart bodice and a skirt that falls straight, without a fold too many.",
+    ligne: "Sweetheart satin bodice, A-line skirt",
+    regard:
+      "An unforgettable neckline, thanks to this sculpted sweetheart shape. Finell offers a corset that marks the waist, structured seams and an elegant A-line skirt with a chapel train.",
   },
   "ryle": {
     ligne: "Sheath with balloon sleeves",

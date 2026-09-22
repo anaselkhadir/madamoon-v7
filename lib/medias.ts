@@ -4018,40 +4018,6 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     }
   ],
-  "lorette": [
-    {
-      "name": "robe-de-mariee-sirene-lorette-1",
-      "w": 3625,
-      "h": 5438,
-      "widths": [
-        480,
-        800,
-        1200,
-        1700
-      ],
-      "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJYwCsABuM9EKFjt8ZJOY0AAD+5+4Rszc9zt7l/QNsN6/uMpZfIggMts+R+6gFzpRx1saQ8xENF9m4m7CU0RVd1wOU3oEWt8byb3u9AX9G4yQA",
-      "jpgw": [
-        480,
-        800
-      ]
-    },
-    {
-      "name": "robe-de-mariee-sirene-lorette-2",
-      "w": 3609,
-      "h": 5413,
-      "widths": [
-        480,
-        800,
-        1200,
-        1700
-      ],
-      "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAwCdASoNABQAPrVInkonJCKhsAgA4BaJYwCdAB9FJFHqeSrLvqAAAP7GAlPejfTJDfu5FoOMQ4IWp2FJfb4GKYhXPLqeLbWbsCl/Sh0d7liVETdh31fSBhwJIJ8EgSqg0cDkBAmAmAAA",
-      "jpgw": [
-        480,
-        800
-      ]
-    }
-  ],
   "angel": [
     {
       "name": "robe-de-mariee-trapeze-angel-1",

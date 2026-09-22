@@ -84,9 +84,8 @@ export const CREATEURS: Createur[] = [
     slug: "monica-loretti",
     origine: "Rome",
     note: "L'école italienne : proportions justes, broderies denses, matières nobles.",
-    /* Monica plutôt que Lorette : Lorette est passée aux petits
-     * ateliers, et Monica porte le nom de la maison sur une place
-     * romaine — son origine, dans l'image. */
+    /* Monica porte le nom de la maison sur une place romaine : son
+     * origine, dans l'image. */
     ouverture: { robe: "monica", vue: 1 },
   },
   /*
@@ -390,9 +389,10 @@ export const ROBES: Robe[] = [
   {
     slug: "montana",
     nom: "Montana",
-    ligne: "Sirène en crêpe, manches de dentelle",
+    ligne: "Sirène en satin mat, manches longues en dentelle et dos illusion",
     categorie: "Sirène",
-    regard: "Une encolure carrée très nette, et des manches de dentelle transparentes.",
+    regard:
+      "Une robe de mariée minimaliste et élégante, qui sublime la silhouette avec une sophistication intemporelle.",
     vues: 4,
     createur: "Casablanca Bridal",
     morphos: ["A", "H", "8", "X"],
@@ -400,9 +400,10 @@ export const ROBES: Robe[] = [
   {
     slug: "zina",
     nom: "Zina",
-    ligne: "Drapé de satin, laçage dos",
+    ligne: "Sirène à fente, fleurs 3D optionnelles",
     categorie: "Sirène",
-    regard: "Un drapé qui tourne autour du corps, fermé au dos par un laçage.",
+    regard:
+      "Une robe de mariée sirène en georgette stretch et satin mat, ornée de fleurs 3D faites main, avec fente centrale et corset à laçage. Une robe spectaculaire, qui célèbre la féminité avec audace et sophistication.",
     vues: 9,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -410,9 +411,10 @@ export const ROBES: Robe[] = [
   {
     slug: "sienna",
     nom: "Sienna",
-    ligne: "Trapèze, dentelle sur nude",
+    ligne: "Princesse ou trapèze en dentelle",
     categorie: "Trapèze",
-    regard: "Une dentelle blush posée sur un fond nude : la couleur de la peau, en plus doux.",
+    regard:
+      "Le bustier, avec son décolleté en cœur subtilement revisité, met en valeur le buste avec féminité, tandis que sa jupe ample apporte un volume généreux et une silhouette digne des plus beaux contes de fées.",
     vues: 4,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -420,25 +422,19 @@ export const ROBES: Robe[] = [
   {
     slug: "amandine",
     nom: "Amandine",
-    ligne: "Princesse en dentelle",
+    ligne: "Princesse en dentelle, décolleté plongeant",
     categorie: "Princesse",
-    regard: "Une dentelle dense sur un tulle blush, et des bretelles fines sur l'épaule.",
+    regard:
+      "Une robe de mariée digne des plus beaux lieux de mariage. Sa dentelle arbore des motifs d'un style royal, tandis que son encolure en V lui donne une allure moderne.",
     vues: 3,
-  },
-  {
-    slug: "lorette",
-    nom: "Lorette",
-    ligne: "Sirène brodée, signature de la maison",
-    categorie: "Sirène",
-    regard: "Une broderie continue du bustier au bas de la traîne.",
-    vues: 2,
   },
   {
     slug: "charlotte",
     nom: "Charlotte",
-    ligne: "Trapèze en tulle pailleté",
+    ligne: "Princesse ou trapèze en dentelle Caterina",
     categorie: "Trapèze",
-    regard: "Un bustier plongeant et un tulle qui accroche la lumière sans briller.",
+    regard:
+      "Robe bustier au décolleté en cœur, corset en taille basque et dentelle Caterina : le rêve de la mariée romantique et élégante. Elle existe aussi sans le décolleté plongeant, pour une version plus couvrante.",
     vues: 4,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -446,9 +442,10 @@ export const ROBES: Robe[] = [
   {
     slug: "dove",
     nom: "Dove",
-    ligne: "Satin, minimalisme absolu",
+    ligne: "Tombé fluide en satin mat, décolleté drapé et épaules dénudées",
     categorie: "Fluide",
-    regard: "Un satin ivoire, un dos nu, un voile — et rien de plus.",
+    regard:
+      "La robe de mariée qui réunit l'élégance intemporelle et le confort absolu. Avec son dos ouvert et sa ligne infinie de boutons jusqu'à la traîne, Dove promet une allure poétique et pure.",
     vues: 6,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -456,9 +453,10 @@ export const ROBES: Robe[] = [
   {
     slug: "finell",
     nom: "Finell",
-    ligne: "Coupe nette en mikado ivoire",
+    ligne: "Bustier cœur en satin, jupe trapèze",
     categorie: "Trapèze",
-    regard: "Un bustier cœur et une jupe qui tombe droit, sans un pli de trop.",
+    regard:
+      "Un décolleté inoubliable, grâce à cette encolure en cœur sculptée. Finell offre un corset qui marque la taille, des coutures structurées et une élégante jupe trapèze à traîne chapelle.",
     vues: 6,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
