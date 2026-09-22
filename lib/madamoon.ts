@@ -292,9 +292,9 @@ export const ROBES: Robe[] = [
   {
     slug: "fern",
     nom: "Fern",
-    ligne: "Broderie végétale sur mikado",
+    ligne: "Mikado brodé de fleurs de perles",
     categorie: "Princesse",
-    regard: "Un bustier brodé feuille à feuille sur une jupe de mikado parfaitement lisse.",
+    regard: "Une robe de mariée raffinée, audacieuse et résolument unique.",
     vues: 3,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

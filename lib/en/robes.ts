@@ -44,8 +44,8 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard: "Long lace sleeves, worn — or not — over a straight bodice.",
   },
   "fern": {
-    ligne: "Leaf embroidery on mikado",
-    regard: "A bodice embroidered leaf by leaf over a perfectly smooth mikado skirt.",
+    ligne: "Mikado embroidered with pearl flowers",
+    regard: "A refined, daring and resolutely singular wedding dress.",
   },
   "charlize": {
     ligne: "Corset mermaid, high slit",
