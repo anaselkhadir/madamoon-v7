@@ -191,7 +191,7 @@ export const FAMILLES: Record<Categorie, string> = {
   Sirène: "Ajustée jusqu'aux cuisses, puis évasée. Elle dessine la taille et les hanches.",
   Fluide: "Un tombé souple qui suit naturellement le mouvement.",
   Trapèze: "Un buste ajusté, une jupe qui s'ouvre en A. La coupe la plus universelle.",
-  Princesse: "Un bustier travaillé et un volume de jupe assumé. La robe d'apparat.",
+  Princesse: "Un corset travaillé et un volume de jupe assumé.",
   Minimaliste: "Le satin, la ligne, rien d'autre. Tout se joue dans la coupe.",
   "Deux en un": "Une robe, deux allures : une surjupe ou une traîne qui se détache.",
 };
