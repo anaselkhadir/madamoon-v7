@@ -35,8 +35,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "A flattering cut with a touch of glamour, thanks to its side slit.",
   },
   "amaryllis": {
-    ligne: "Satin cowl neck, buttoned back",
-    regard: "The drape of the cowl, and a line of covered buttons down the back.",
+    ligne: "Sheath or mermaid in charmeuse, buttons at the side",
+    regard:
+      "A modern, daring piece with a line of buttons at the side. Amaryllis's straps sit on the shoulders for the classic look, or on the arms if you prefer them dropped.",
   },
   "aster": {
     ligne: "Mikado with lace sleeves",

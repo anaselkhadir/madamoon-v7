@@ -269,9 +269,10 @@ export const ROBES: Robe[] = [
   {
     slug: "amaryllis",
     nom: "Amaryllis",
-    ligne: "Satin col bénitier, dos boutonné",
+    ligne: "Coupe droite ou sirène en charmeuse, boutons sur le côté",
     categorie: "Sirène",
-    regard: "Le drapé du col bénitier, et une file de boutons couverts le long du dos.",
+    regard:
+      "Une création moderne et audacieuse avec une file de boutons sur le côté. Les bretelles d'Amaryllis se portent sur les épaules pour la version classique, ou sur les bras si vous préférez les bretelles tombantes.",
     vues: 5,
     createur: "Watters Designs",
     morphos: ["V", "H", "8", "X"],
