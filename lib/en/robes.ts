@@ -17,7 +17,7 @@
 export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   "uma": {
     ligne: "Lace mermaid, illusion back",
-    regard: "A whole back of lace closed by a line of buttons, up to the nape.",
+    regard: "A fine lace and a sheer back closed by a line of pretty ivory buttons.",
   },
   "pendant": {
     ligne: "A-line in lace and tulle",

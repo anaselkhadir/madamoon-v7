@@ -225,7 +225,7 @@ export const ROBES: Robe[] = [
     nom: "Uma",
     ligne: "Sirène en dentelle, dos illusion",
     categorie: "Sirène",
-    regard: "Un dos entier de dentelle fermé par une ligne de boutons, jusqu'à la nuque.",
+    regard: "Une dentelle fine et un dos transparent fermé par une ligne de jolis boutons couleur ivoire.",
     vues: 9,
     /* La photographie de face : la première est de dos. */
     couverture: 2,
