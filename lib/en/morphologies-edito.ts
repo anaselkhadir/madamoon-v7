@@ -42,8 +42,6 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "It grips nowhere. The fabric falls in one piece, from the bust to the hem, and the line looks longer than it is.",
       Trapèze:
         "The bust is held, the skirt opens into an A from the high waist. The eye stops at the neckline, and the dress leaves all the rest free.",
-      Minimaliste:
-        "Satin makes no noise. When the cut is right, there is nothing to add and nothing to weigh it down.",
       Princesse:
         "A worked bodice carries the eye upward, and the fullness of the skirt answers the bust without competing with it.",
     },
@@ -145,8 +143,6 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "It draws what is not yet visible. Fitted through the thigh then flared, it creates the curve instead of underlining it.",
       Fluide:
         "Fitted at the waist or worn with a belt, it marks where you decide, and nowhere else.",
-      Minimaliste:
-        "Nothing draws the eye from the line. On a long figure, it is often the truest dress.",
       Trapèze:
         "The skirt opens from a high waist and brings movement where the line is straight.",
     },
@@ -174,8 +170,6 @@ export const EDITO_EN: Record<Lettre, Edito> = {
     pourquoi: {
       Sirène:
         "It follows a line that is already proportioned. Fitted through the thigh, it corrects nothing: it follows.",
-      Minimaliste:
-        "Satin tells only the cut. On a balanced figure, it is the boldest choice there is.",
       Princesse:
         "The bodice nips in at the waist and the fullness starts from there. The contrast is clear, and that is the whole effect.",
       Fluide:
@@ -211,8 +205,6 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "The fullness starts from a waist that is already fine: the contrast happens by itself, with nothing forced.",
       Fluide:
         "It builds nothing, and has no need to. The line is enough; the fabric only goes along with it.",
-      Minimaliste:
-        "One cut, one fabric, nothing else. When the proportions are right, plainness becomes the luxury.",
       Trapèze:
         "The easiest to live in, and the quietest. It suits when the dress must not be the subject of the day.",
     },
@@ -314,7 +306,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
   "8": [
     {
       q: "Which wedding dress for a marked waist and curves?",
-      r: "Mermaids and sheaths, which follow a line already in proportion without having to create it. Minimalist satin works for the same reason: it tells only the cut.",
+      r: "Mermaids and sheaths, which follow a line already in proportion without having to create it. Unadorned satin works for the same reason: it tells only the cut.",
     },
     {
       q: "Does a ball gown suit an 8 shape?",
@@ -328,7 +320,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
   X: [
     {
       q: "Which wedding dress should I choose for an X shape?",
-      r: "Almost every cut suits you — that is the honest answer. Mermaid, ball gown, sheath or minimalist: the question becomes one of the style of the wedding, not of the body shape.",
+      r: "Almost every cut suits you — that is the honest answer. Mermaid, ball gown, sheath or A-line: the question becomes one of the style of the wedding, not of the body shape.",
     },
     {
       q: "How do I choose when every cut works?",

@@ -49,17 +49,6 @@ export const COUPES: Coupe[] = [
     ouverture: { robe: "solana", vue: 1 },
   },
   {
-    nom: "Minimaliste",
-    ancre: "minimaliste",
-    note: "Nette et épurée",
-    /* Marie porte la coupe fluide au catalogue : c'est sa photographie
-     * que la maison veut ici, pour l'épure. La description de l'image
-     * nomme donc la coupe et non la robe — sans quoi elle annoncerait
-     * « fluide » sur la carte du minimalisme. */
-    robe: "marie",
-    vue: 1,
-  },
-  {
     nom: "Deux en un",
     ancre: "deux-en-un",
     note: "Deux allures, une robe",
@@ -77,7 +66,7 @@ export function coupe(nom: Categorie): Coupe {
 
 /*
  * Le pluriel se dit sur les pages ; le catalogue n'en garde que le
- * singulier. « Deux en un » n'en prend pas, « minimaliste » ni « fluide »
+ * singulier. « Deux en un » n'en prend pas, « fluide »
  * non plus sans le mot « robes ».
  */
 export const PLURIEL: Record<Categorie, string> = {
@@ -85,7 +74,6 @@ export const PLURIEL: Record<Categorie, string> = {
   Fluide: "robes fluides",
   Trapèze: "trapèzes",
   Princesse: "robes princesse",
-  Minimaliste: "robes minimalistes",
   "Deux en un": "deux-en-un",
 };
 
@@ -93,7 +81,7 @@ export const PLURIEL: Record<Categorie, string> = {
  * La forme employée après « robes de mariée ».
  *
  * Certaines coupes s'accordent — « robes fluides », « robes
- * minimalistes » — et d'autres restent invariables parce qu'elles sont
+ * sirènes » — et d'autres restent invariables parce qu'elles sont
  * des noms en apposition : on écrit « robes de mariée sirène », jamais
  * « sirènes ». Une table est plus sûre qu'une règle.
  */
@@ -102,7 +90,6 @@ export const APPOSITION: Record<Categorie, string> = {
   Fluide: "fluides",
   Trapèze: "trapèze",
   Princesse: "princesse",
-  Minimaliste: "minimalistes",
   "Deux en un": "deux-en-un",
 };
 

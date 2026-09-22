@@ -36,7 +36,7 @@ const FR = {
     autresModeles: "Autres modèles",
     toutesRobes: "Toutes les robes",
     catalogueEntier: "Le catalogue entier",
-    sixCoupes: "Les six coupes",
+    sixCoupes: "Les coupes",
     sixMorphologies: "Les morphologies",
     filtrerParCreateur: "Filtrer par créateur",
     voirLaMaison: (nom: string) => `Voir la page ${nom}`,
@@ -79,7 +79,7 @@ const FR = {
   coupes: {
     legende: "Les coupes",
     titre: "Trouvez la coupe qui vous va.",
-    texte: "La coupe, c’est la forme de la robe. En voici six.",
+    texte: "La coupe, c’est la forme de la robe.",
     lien: "Toutes les coupes",
     presentee: "Coupe présentée",
     les: "Les",
@@ -256,7 +256,7 @@ const FR = {
     coupes: {
       titre: "Les coupes",
       intro:
-        "Six coupes. La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
+        "La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
     },
     morphologies: {
       titre: "Les morphologies",
@@ -366,7 +366,7 @@ const FR = {
         "Trois portes, et aucune n’est la bonne. Ce sont des pistes, pas des règles : au showroom, beaucoup de mariées repartent avec une robe qu’elles n’auraient pas choisie sur photo.",
       parLaCoupe: "Par la coupe",
       parLaCoupeTexte:
-        "Sirène, princesse, fluide, trapèze, minimaliste, deux-en-un. Le mot que les mariées emploient en boutique, et le tri qui fait gagner une heure d’essayage.",
+        "Sirène, princesse, fluide, trapèze, deux-en-un. Le mot que les mariées emploient en boutique, et le tri qui fait gagner une heure d’essayage.",
       parLaMorphologie: "Par la morphologie",
       parLaMorphologieTexte:
         "En O, A, V, H, 8 ou X. Non pour exclure des robes — rien n’est « à éviter » — mais pour savoir lesquelles proposer en premier.",
@@ -521,7 +521,7 @@ const EN: Textes = {
     autresModeles: "Other dresses",
     toutesRobes: "All dresses",
     catalogueEntier: "The whole catalogue",
-    sixCoupes: "The six silhouettes",
+    sixCoupes: "The silhouettes",
     sixMorphologies: "Body shapes",
     filtrerParCreateur: "Filter by designer",
     voirLaMaison: (nom: string) => `View the ${nom} page`,
@@ -564,7 +564,7 @@ const EN: Textes = {
   coupes: {
     legende: "The silhouettes",
     titre: "Find the cut that suits you.",
-    texte: "The cut is the shape of the dress. Here are six.",
+    texte: "The cut is the shape of the dress.",
     lien: "All silhouettes",
     presentee: "Silhouette shown",
     les: "All",
@@ -727,7 +727,7 @@ const EN: Textes = {
     coupes: {
       titre: "The silhouettes",
       intro:
-        "Six cuts. The cut is not a rule: it is the first sorting, the one that saves an hour of fittings.",
+        "The cut is not a rule: it is the first sorting, the one that saves an hour of fittings.",
     },
     morphologies: {
       titre: "Body shapes",
@@ -837,7 +837,7 @@ const EN: Textes = {
         "Three doors, and none of them is the right one. These are paths, not rules: at the showroom, many brides leave with a dress they would never have chosen from a photograph.",
       parLaCoupe: "By silhouette",
       parLaCoupeTexte:
-        "Mermaid, ball gown, sheath, A-line, minimalist, two-in-one. The word brides use in the boutique, and the sorting that saves an hour of fittings.",
+        "Mermaid, ball gown, sheath, A-line, two-in-one. The word brides use in the boutique, and the sorting that saves an hour of fittings.",
       parLaMorphologie: "By body shape",
       parLaMorphologieTexte:
         "O, A, V, H, 8 or X. Not to rule dresses out — nothing is “to be avoided” — but to know which to offer first.",

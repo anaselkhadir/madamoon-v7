@@ -38,7 +38,7 @@ export default function PageCoupes({ langue }: { langue: Langue }) {
                 dossier="robes"
                 /* La description nomme la coupe, jamais la robe qui
                    * l'illustre : celle-ci peut appartenir à une autre
-                   * famille — Marie est fluide et ouvre le minimalisme. */
+                   * famille : la coupe qu'elle illustre, pas la robe. */
                 alt={altCoupe(s.nom, langue)}
                 nom={coupeNom(s, langue)}
                 note={coupeNote(s, langue)}

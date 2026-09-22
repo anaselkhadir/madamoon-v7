@@ -179,7 +179,6 @@ export type Categorie =
   | "Fluide"
   | "Trapèze"
   | "Princesse"
-  | "Minimaliste"
   | "Deux en un";
 
 export const CATEGORIES: Categorie[] = [
@@ -187,7 +186,6 @@ export const CATEGORIES: Categorie[] = [
   "Fluide",
   "Trapèze",
   "Princesse",
-  "Minimaliste",
   "Deux en un",
 ];
 
@@ -197,7 +195,6 @@ export const FAMILLES: Record<Categorie, string> = {
   Fluide: "Un tombé souple qui suit naturellement le mouvement.",
   Trapèze: "Un buste ajusté, une jupe qui s'ouvre en A. La coupe la plus universelle.",
   Princesse: "Un corset travaillé et un volume de jupe assumé.",
-  Minimaliste: "Le satin, la ligne, rien d'autre. Tout se joue dans la coupe.",
   "Deux en un": "Une robe, deux allures : une surjupe ou une traîne qui se détache.",
 };
 
@@ -270,7 +267,7 @@ export const ROBES: Robe[] = [
     slug: "amaryllis",
     nom: "Amaryllis",
     ligne: "Satin col bénitier, dos boutonné",
-    categorie: "Minimaliste",
+    categorie: "Sirène",
     regard: "Le drapé du col bénitier, et une file de boutons couverts le long du dos.",
     vues: 5,
     createur: "Watters Designs",
@@ -439,7 +436,7 @@ export const ROBES: Robe[] = [
     slug: "dove",
     nom: "Dove",
     ligne: "Satin, minimalisme absolu",
-    categorie: "Minimaliste",
+    categorie: "Fluide",
     regard: "Un satin ivoire, un dos nu, un voile — et rien de plus.",
     vues: 6,
     createur: "Casablanca Bridal",
@@ -449,7 +446,7 @@ export const ROBES: Robe[] = [
     slug: "finell",
     nom: "Finell",
     ligne: "Coupe nette en mikado ivoire",
-    categorie: "Minimaliste",
+    categorie: "Trapèze",
     regard: "Un bustier cœur et une jupe qui tombe droit, sans un pli de trop.",
     vues: 6,
     createur: "Watters Designs",
@@ -753,7 +750,7 @@ export const ROBES: Robe[] = [
     slug: "milan",
     nom: "Milan",
     ligne: "Crêpe léger, fente moderne",
-    categorie: "Minimaliste",
+    categorie: "Fluide",
     regard: "Aucun ornement : une ligne nette, et la fente pour seule audace.",
     vues: 4,
     createur: "Monica Loretti",
@@ -793,7 +790,7 @@ export const ROBES: Robe[] = [
     slug: "elin",
     nom: "Elin",
     ligne: "Courte en crêpe, pour la mairie",
-    categorie: "Minimaliste",
+    categorie: "Sirène",
     regard: "Faite pour la cérémonie civile : nette, légère, sans traîne.",
     vues: 2,
     createur: "Olya Mak",
@@ -919,7 +916,7 @@ export const MORPHOLOGIES: Morphologie[] = [
       "Les décolletés en V ou en cœur.",
     ],
     premieres: ["Fluide", "Trapèze"],
-    secondes: ["Minimaliste", "Princesse"],
+    secondes: ["Princesse", "Sirène"],
     conseil:
       "Les tombés fluides et les coupes trapèze allongent joliment la ligne. Un décolleté en V ou en cœur met la poitrine en valeur.",
   },
@@ -967,7 +964,7 @@ export const MORPHOLOGIES: Morphologie[] = [
       "Les coupes empire, qui allongent.",
     ],
     premieres: ["Fluide", "Sirène"],
-    secondes: ["Minimaliste", "Trapèze"],
+    secondes: ["Trapèze", "Princesse"],
     conseil:
       "Les modèles cintrés à la taille et les sirènes légères dessinent des courbes tout en allongeant la ligne.",
   },
@@ -983,8 +980,8 @@ export const MORPHOLOGIES: Morphologie[] = [
       "Les bustiers cœur et les encolures en V.",
       "Tout ce qui se cintre à la taille.",
     ],
-    premieres: ["Sirène", "Minimaliste"],
-    secondes: ["Princesse", "Fluide"],
+    premieres: ["Sirène", "Fluide"],
+    secondes: ["Princesse", "Trapèze"],
     conseil:
       "Les sirènes et les fourreaux épousent les courbes ; un bustier cœur ou une encolure en V accentue l'équilibre naturel.",
   },
@@ -996,10 +993,10 @@ export const MORPHOLOGIES: Morphologie[] = [
     objectif: "Valoriser sans en faire trop.",
     coupes: [
       "Bonne nouvelle : presque toutes les coupes vous vont.",
-      "Princesse, sirène, fluide ou minimaliste — laissez le style du mariage décider.",
+      "Princesse, sirène, fluide ou trapèze — laissez le style du mariage décider.",
     ],
     premieres: ["Sirène", "Princesse", "Fluide"],
-    secondes: ["Minimaliste", "Trapèze"],
+    secondes: ["Trapèze", "Deux en un"],
     conseil:
       "Bonne nouvelle : presque toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
   },

@@ -66,7 +66,7 @@ export const MORPHO_COUPES: Record<string, string[]> = {
   ],
   X: [
     "Good news: almost every cut suits you.",
-    "Ball gown, mermaid, sheath or minimalist — let the style of the wedding decide.",
+    "Ball gown, mermaid, sheath or A-line — let the style of the wedding decide.",
   ],
 };
 

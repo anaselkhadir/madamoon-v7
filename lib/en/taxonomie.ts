@@ -22,7 +22,6 @@ export const COUPE_NOM: Record<Categorie, string> = {
   Princesse: "Ball gown",
   Fluide: "Sheath",
   Trapèze: "A-line",
-  Minimaliste: "Minimalist",
   "Deux en un": "Two-in-one",
 };
 
@@ -31,7 +30,6 @@ export const COUPE_PLURIEL: Record<Categorie, string> = {
   Princesse: "ball gowns",
   Fluide: "sheath dresses",
   Trapèze: "A-line dresses",
-  Minimaliste: "minimalist dresses",
   "Deux en un": "two-in-one dresses",
 };
 
@@ -42,7 +40,6 @@ export const COUPE_APPOSITION: Record<Categorie, string> = {
   Princesse: "ball gown",
   Fluide: "sheath",
   Trapèze: "A-line",
-  Minimaliste: "minimalist",
   "Deux en un": "two-in-one",
 };
 
@@ -51,7 +48,6 @@ export const COUPE_NOTE: Record<Categorie, string> = {
   Princesse: "Refined and stately",
   Fluide: "Soft and light",
   Trapèze: "True and timeless",
-  Minimaliste: "Clean and pared back",
   "Deux en un": "Two looks, one dress",
 };
 
@@ -60,7 +56,6 @@ export const FAMILLE: Record<Categorie, string> = {
   Fluide: "A soft fall that follows the movement naturally.",
   Trapèze: "A fitted bodice, a skirt that opens in an A. The most universal cut.",
   Princesse: "A worked corset and a skirt that owns its volume.",
-  Minimaliste: "Satin, line, nothing else. Everything rests on the cut.",
   "Deux en un": "One dress, two looks: an overskirt or a train that comes away.",
 };
 

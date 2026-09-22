@@ -43,7 +43,6 @@ export const COUPES_EN: Record<string, string> = {
   princesse: "ball-gown",
   fluide: "sheath",
   trapeze: "a-line",
-  minimaliste: "minimalist",
   "deux-en-un": "two-in-one",
 };
 

@@ -67,8 +67,6 @@ export const EDITO: Record<Lettre, Edito> = {
         "Elle ne serre nulle part. Le tissu descend d'un seul tenant, du buste à l'ourlet, et la ligne paraît plus longue qu'elle ne l'est.",
       Trapèze:
         "Le buste est tenu, la jupe part en A dès la taille haute. Le regard s'arrête sur le décolleté, et la robe laisse tout le reste libre.",
-      Minimaliste:
-        "Le satin ne fait aucun bruit. Quand la coupe est juste, il n'y a rien à ajouter et rien qui vienne alourdir.",
       Princesse:
         "Un bustier travaillé porte le regard vers le haut, et l'ampleur de la jupe répond au buste sans le concurrencer.",
     },
@@ -166,8 +164,6 @@ export const EDITO: Record<Lettre, Edito> = {
         "Elle dessine ce qui ne se voit pas encore. Ajustée jusqu'aux cuisses puis évasée, elle crée la courbe au lieu de la souligner.",
       Fluide:
         "Cintrée à la taille ou portée avec une ceinture, elle marque là où vous le décidez, et nulle part ailleurs.",
-      Minimaliste:
-        "Rien ne détourne de la ligne. Sur une ligne longue, c'est souvent la robe la plus juste.",
       Trapèze:
         "La jupe s'ouvre à partir d'une taille haute et donne du mouvement là où la ligne est droite.",
     },
@@ -193,8 +189,6 @@ export const EDITO: Record<Lettre, Edito> = {
     pourquoi: {
       Sirène:
         "Elle épouse une ligne déjà proportionnée. Ajustée jusqu'aux cuisses, elle ne corrige rien : elle suit.",
-      Minimaliste:
-        "Le satin ne raconte que la coupe. Sur des proportions équilibrées, c'est le parti pris le plus fort.",
       Princesse:
         "Le bustier se cintre à la taille et l'ampleur part de là. Le contraste est net, et c'est tout l'effet recherché.",
       Fluide:
@@ -229,8 +223,6 @@ export const EDITO: Record<Lettre, Edito> = {
         "L'ampleur part d'une taille déjà fine : le contraste se fait tout seul, sans que la robe ait à forcer.",
       Fluide:
         "Elle ne construit rien et n'en a pas besoin. La ligne se suffit ; le tissu ne fait que l'accompagner.",
-      Minimaliste:
-        "Une coupe, une matière, rien d'autre. Quand les proportions sont justes, le dépouillement devient le luxe.",
       Trapèze:
         "La plus simple à vivre, et la plus discrète. Elle convient quand la robe ne doit pas être le sujet de la journée.",
     },
@@ -346,7 +338,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
   "8": [
     {
       q: "Quelle robe de mariée pour une taille marquée et des courbes ?",
-      r: "Les sirènes et les fourreaux, qui suivent une ligne déjà proportionnée sans avoir à la créer. Le satin minimaliste fonctionne pour la même raison : il ne raconte que la coupe.",
+      r: "Les sirènes et les fourreaux, qui suivent une ligne déjà proportionnée sans avoir à la créer. Le satin sans ornement fonctionne pour la même raison : il ne raconte que la coupe.",
     },
     {
       q: "La robe princesse convient-elle à une morphologie en 8 ?",
@@ -360,7 +352,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
   X: [
     {
       q: "Quelle robe de mariée choisir pour une morphologie en X ?",
-      r: "Presque toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide ou minimaliste : la question devient celle du style du mariage, et non celle de la morphologie.",
+      r: "Presque toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide ou trapèze : la question devient celle du style du mariage, et non celle de la morphologie.",
     },
     {
       q: "Comment choisir quand toutes les coupes conviennent ?",

@@ -1092,7 +1092,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "amaryllis": [
     {
-      "name": "robe-de-mariee-minimaliste-amaryllis-1",
+      "name": "robe-de-mariee-sirene-amaryllis-1",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1108,7 +1108,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-amaryllis-2",
+      "name": "robe-de-mariee-sirene-amaryllis-2",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1124,7 +1124,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-amaryllis-3",
+      "name": "robe-de-mariee-sirene-amaryllis-3",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1140,7 +1140,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-amaryllis-4",
+      "name": "robe-de-mariee-sirene-amaryllis-4",
       "w": 8070,
       "h": 10760,
       "widths": [
@@ -1156,7 +1156,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-amaryllis-5",
+      "name": "robe-de-mariee-sirene-amaryllis-5",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -2532,7 +2532,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "finell": [
     {
-      "name": "robe-de-mariee-minimaliste-finell-1",
+      "name": "robe-de-mariee-trapeze-finell-1",
       "w": 4388,
       "h": 6582,
       "widths": [
@@ -2548,7 +2548,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-finell-2",
+      "name": "robe-de-mariee-trapeze-finell-2",
       "w": 4388,
       "h": 6582,
       "widths": [
@@ -2564,7 +2564,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-finell-3",
+      "name": "robe-de-mariee-trapeze-finell-3",
       "w": 4380,
       "h": 6570,
       "widths": [
@@ -2580,7 +2580,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-finell-4",
+      "name": "robe-de-mariee-trapeze-finell-4",
       "w": 6489,
       "h": 4326,
       "widths": [
@@ -2596,7 +2596,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-finell-5",
+      "name": "robe-de-mariee-trapeze-finell-5",
       "w": 1500,
       "h": 2250,
       "widths": [
@@ -2611,7 +2611,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-finell-6",
+      "name": "robe-de-mariee-trapeze-finell-6",
       "w": 6720,
       "h": 4480,
       "widths": [
@@ -3133,7 +3133,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "dove": [
     {
-      "name": "robe-de-mariee-minimaliste-dove-1",
+      "name": "robe-de-mariee-fluide-dove-1",
       "w": 4480,
       "h": 6720,
       "widths": [
@@ -3149,7 +3149,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-dove-2",
+      "name": "robe-de-mariee-fluide-dove-2",
       "w": 4480,
       "h": 6720,
       "widths": [
@@ -3165,7 +3165,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-dove-3",
+      "name": "robe-de-mariee-fluide-dove-3",
       "w": 2986,
       "h": 4480,
       "widths": [
@@ -3181,7 +3181,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-dove-4",
+      "name": "robe-de-mariee-fluide-dove-4",
       "w": 4480,
       "h": 6720,
       "widths": [
@@ -3197,7 +3197,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-dove-5",
+      "name": "robe-de-mariee-fluide-dove-5",
       "w": 4480,
       "h": 6720,
       "widths": [
@@ -3213,7 +3213,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-dove-6",
+      "name": "robe-de-mariee-fluide-dove-6",
       "w": 4388,
       "h": 6582,
       "widths": [
@@ -4610,7 +4610,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "milan": [
     {
-      "name": "robe-de-mariee-minimaliste-milan-1",
+      "name": "robe-de-mariee-fluide-milan-1",
       "w": 2000,
       "h": 3000,
       "widths": [
@@ -4626,7 +4626,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-milan-2",
+      "name": "robe-de-mariee-fluide-milan-2",
       "w": 2000,
       "h": 3000,
       "widths": [
@@ -4642,7 +4642,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-milan-3",
+      "name": "robe-de-mariee-fluide-milan-3",
       "w": 2000,
       "h": 3000,
       "widths": [
@@ -4658,7 +4658,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-milan-4",
+      "name": "robe-de-mariee-fluide-milan-4",
       "w": 2000,
       "h": 3000,
       "widths": [
@@ -4842,7 +4842,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "elin": [
     {
-      "name": "robe-de-mariee-minimaliste-elin-1",
+      "name": "robe-de-mariee-sirene-elin-1",
       "w": 1200,
       "h": 1800,
       "widths": [
@@ -4857,7 +4857,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-minimaliste-elin-2",
+      "name": "robe-de-mariee-sirene-elin-2",
       "w": 1200,
       "h": 1800,
       "widths": [
