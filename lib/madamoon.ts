@@ -258,9 +258,10 @@ export const ROBES: Robe[] = [
   {
     slug: "trinity",
     nom: "Trinity",
-    ligne: "Mikado plissé, épaules dénudées",
+    ligne: "En mikado ou en jacquard, épaules dénudées",
     categorie: "Princesse",
-    regard: "Un pli creux au centre de la jupe et deux nœuds de mikado sur les épaules.",
+    regard:
+      "Une coupe flatteuse avec une touche de glamour grâce à sa fente sur le côté.",
     vues: 11,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

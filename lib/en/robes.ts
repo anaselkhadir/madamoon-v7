@@ -30,8 +30,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Minimalist elegance with a resolutely modern air. Made in a delicate charmeuse, it follows the silhouette harmoniously while offering a fluid, sophisticated fall.",
   },
   "trinity": {
-    ligne: "Pleated mikado, off the shoulder",
-    regard: "An inverted pleat at the centre of the skirt and two mikado bows at the shoulders.",
+    ligne: "In mikado or jacquard, off the shoulder",
+    regard:
+      "A flattering cut with a touch of glamour, thanks to its side slit.",
   },
   "amaryllis": {
     ligne: "Satin cowl neck, buttoned back",
