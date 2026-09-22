@@ -325,9 +325,10 @@ export const ROBES: Robe[] = [
   {
     slug: "meredith",
     nom: "Meredith",
-    ligne: "Sirène en dentelle 3D, manches longues",
+    ligne: "Sirène, dentelle en relief pour un look sophistiqué",
     categorie: "Sirène",
-    regard: "Des fleurs en relief posées une à une, jusqu'au bas de la traîne.",
+    regard:
+      "Décolleté en cœur, une ligne féminine et romantique qui sublime le buste avec élégance.",
     vues: 8,
     createur: "Casablanca Bridal",
     morphos: ["V", "H", "8", "X"],
@@ -345,9 +346,10 @@ export const ROBES: Robe[] = [
   {
     slug: "solana",
     nom: "Solana",
-    ligne: "Trapèze en dentelle, veste amovible",
+    ligne: "Trapèze, appliqués de dentelle et sequins mats",
     categorie: "Trapèze",
-    regard: "Une épaule asymétrique et une petite veste de dentelle qui change tout.",
+    regard:
+      "Une somptueuse robe de mariée princesse ou trapèze, en tulle et dentelle florale, avec veste asymétrique amovible, décolleté en cœur et longue traîne.",
     vues: 8,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],

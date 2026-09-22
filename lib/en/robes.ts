@@ -63,16 +63,18 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Romantic floral motifs, appliquéd by hand in chiffon, bring a poetic relief to Addison. Its pared-back skirt has proper pockets and an endless line of buttons running to the very end of the train.",
   },
   "meredith": {
-    ligne: "3D lace mermaid, long sleeves",
-    regard: "Raised flowers set one by one, all the way down the train.",
+    ligne: "Mermaid, raised lace for a sophisticated look",
+    regard:
+      "A sweetheart neckline, a feminine and romantic line that sets off the bust with elegance.",
   },
   "clover": {
     ligne: "Short floral dress with an overskirt",
     regard: "A short dress embroidered with coloured flowers, and a long overskirt at will.",
   },
   "solana": {
-    ligne: "Lace A-line, removable jacket",
-    regard: "An asymmetric shoulder and a small lace jacket that changes everything.",
+    ligne: "A-line, lace appliqués and matte sequins",
+    regard:
+      "A sumptuous ball gown or A-line in tulle and floral lace, with a detachable asymmetric jacket, a sweetheart neckline and a long train.",
   },
   "venus": {
     ligne: "Crêpe mermaid, lace train",
