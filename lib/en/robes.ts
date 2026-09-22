@@ -40,7 +40,7 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "A modern, daring piece with a line of buttons at the side. Amaryllis's straps sit on the shoulders for the classic look, or on the arms if you prefer them dropped.",
   },
   "aster": {
-    ligne: "Mikado with lace sleeves",
+    ligne: "Chantilly lace, satin and detachable sleeves",
     regard: "Long lace sleeves, worn — or not — over a straight bodice.",
   },
   "fern": {

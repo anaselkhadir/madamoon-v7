@@ -280,8 +280,8 @@ export const ROBES: Robe[] = [
   {
     slug: "aster",
     nom: "Aster",
-    ligne: "Mikado et manches de dentelle",
-    categorie: "Princesse",
+    ligne: "Dentelle de Chantilly, satin et manches amovibles",
+    categorie: "Trapèze",
     regard: "Des manches longues en dentelle qui se portent — ou non — sur un bustier droit.",
     vues: 6,
     /* La photographie de face : la première est de dos. */

@@ -1224,7 +1224,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   ],
   "aster": [
     {
-      "name": "robe-de-mariee-princesse-aster-1",
+      "name": "robe-de-mariee-trapeze-aster-1",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1240,7 +1240,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-princesse-aster-2",
+      "name": "robe-de-mariee-trapeze-aster-2",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1256,7 +1256,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-princesse-aster-3",
+      "name": "robe-de-mariee-trapeze-aster-3",
       "w": 7143,
       "h": 9524,
       "widths": [
@@ -1272,7 +1272,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-princesse-aster-4",
+      "name": "robe-de-mariee-trapeze-aster-4",
       "w": 3648,
       "h": 5472,
       "widths": [
@@ -1288,7 +1288,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-princesse-aster-5",
+      "name": "robe-de-mariee-trapeze-aster-5",
       "w": 8736,
       "h": 11648,
       "widths": [
@@ -1304,7 +1304,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
       ]
     },
     {
-      "name": "robe-de-mariee-princesse-aster-6",
+      "name": "robe-de-mariee-trapeze-aster-6",
       "w": 8736,
       "h": 11648,
       "widths": [
