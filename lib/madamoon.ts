@@ -375,9 +375,10 @@ export const ROBES: Robe[] = [
   {
     slug: "addison",
     nom: "Addison",
-    ligne: "Princesse en mikado, épaules dénudées",
+    ligne: "Satin de soie, bretelles tombantes amovibles",
     categorie: "Princesse",
-    regard: "Le volume net du mikado ivoire, et de vraies poches.",
+    regard:
+      "De romantiques motifs floraux appliqués à la main, en mousseline, apportent un relief poétique à la robe Addison. Sa jupe épurée est dotée de poches bien pratiques et d'une infinité de boutons qui court jusqu'au bout de la traîne.",
     vues: 7,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],

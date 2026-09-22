@@ -58,8 +58,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "A wedding dress with vintage-chic charm, a structured corset and detachable straps for another look.",
   },
   "addison": {
-    ligne: "Mikado ball gown, off the shoulder",
-    regard: "The clean volume of ivory mikado, and real pockets.",
+    ligne: "Silk satin, detachable dropped straps",
+    regard:
+      "Romantic floral motifs, appliquéd by hand in chiffon, bring a poetic relief to Addison. Its pared-back skirt has proper pockets and an endless line of buttons running to the very end of the train.",
   },
   "meredith": {
     ligne: "3D lace mermaid, long sleeves",
