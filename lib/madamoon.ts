@@ -250,7 +250,8 @@ export const ROBES: Robe[] = [
     nom: "Adularia",
     ligne: "Fluide en charmeuse",
     categorie: "Fluide",
-    regard: "Une manche ample, un décolleté croisé, la souplesse du satin lavé.",
+    regard:
+      "L'élégance minimaliste avec une allure résolument moderne. Confectionnée dans une délicate étoffe charmeuse, elle épouse harmonieusement la silhouette tout en offrant un tombé fluide et sophistiqué.",
     vues: 4,
     createur: "Watters Designs",
   },

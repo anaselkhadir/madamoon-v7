@@ -26,7 +26,8 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   },
   "adularia": {
     ligne: "Charmeuse sheath",
-    regard: "A full sleeve, a crossed neckline, the softness of washed satin.",
+    regard:
+      "Minimalist elegance with a resolutely modern air. Made in a delicate charmeuse, it follows the silhouette harmoniously while offering a fluid, sophisticated fall.",
   },
   "trinity": {
     ligne: "Pleated mikado, off the shoulder",
