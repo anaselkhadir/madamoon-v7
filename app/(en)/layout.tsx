@@ -34,6 +34,11 @@ export const metadata: Metadata = {
   /* L'aperçu GitHub Pages est fermé aux moteurs : une copie indexée
    * ferait concurrence au vrai site. */
   robots: APERCU ? { index: false, follow: false } : { index: true, follow: true },
+  /* La revendication du domaine chez Pinterest : sans elle, les épingles
+   * du site ne portent pas le nom de la maison et ne rapportent aucune
+   * statistique. La balise doit rester sur toutes les pages — Pinterest
+   * relit la racine, mais une revendication ne se retire pas. */
+  verification: { other: { "p:domain_verify": "3186bf4f89c6999a6178fa094b93f66e" } },
 };
 
 export const viewport: Viewport = {
