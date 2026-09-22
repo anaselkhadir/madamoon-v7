@@ -20,8 +20,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard: "A fine lace and a sheer back closed by a line of pretty ivory buttons.",
   },
   "pendant": {
-    ligne: "A-line in lace and tulle",
-    regard: "An immense veil that catches the light and doubles the volume of the dress.",
+    ligne: "A-line in lace, with long sleeves",
+    regard:
+      "A wedding dress where romance meets majesty. Its off-the-shoulder neckline delicately reveals the top of the bust, while its long lace sleeves bring a touch of sophistication and femininity.",
   },
   "adularia": {
     ligne: "Charmeuse sheath",

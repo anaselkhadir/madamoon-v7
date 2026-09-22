@@ -235,9 +235,10 @@ export const ROBES: Robe[] = [
   {
     slug: "pendant",
     nom: "Pendant",
-    ligne: "Trapèze en dentelle et tulle",
+    ligne: "Trapèze en dentelle, avec des manches longues",
     categorie: "Trapèze",
-    regard: "Un voile immense qui prend la lumière et double le volume de la robe.",
+    regard:
+      "Une robe de mariée où le romantisme rencontre la majesté. Son décolleté épaules dénudées dévoile délicatement le haut du buste, tandis que ses longues manches en dentelle apportent une touche de sophistication et de féminité.",
     vues: 47,
     /* La photographie de face : la première est de dos. */
     couverture: 2,
