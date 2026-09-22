@@ -357,9 +357,10 @@ export const ROBES: Robe[] = [
   {
     slug: "venus",
     nom: "Venus",
-    ligne: "Sirène en crêpe, traîne de dentelle",
+    ligne: "Sirène en satin mat, traîne majestueuse et dos en dentelle",
     categorie: "Sirène",
-    regard: "Un crêpe mat sur le corps, une traîne de dentelle qui s'ouvre au sol.",
+    regard:
+      "Son décolleté graphique, souligné par de fines bretelles ornées de perles, apporte une touche de modernité et de raffinement. Son corsage structuré par des baleines discrètes dessine harmonieusement la silhouette, tandis que son dos en tulle illusion dévoile une transparence subtile et sophistiquée.",
     vues: 8,
     createur: "Casablanca Bridal",
     morphos: ["H", "8", "X"],
@@ -367,9 +368,10 @@ export const ROBES: Robe[] = [
   {
     slug: "ariel",
     nom: "Ariel",
-    ligne: "Sirène brodée, cape amovible",
+    ligne: "Sirène en satin mat, pétales de mousseline posés à la main",
     categorie: "Sirène",
-    regard: "Un corset transparent brodé, et une cape de tulle qui suit la marche.",
+    regard:
+      "Une robe de mariée sirène en satin mat : décolleté en cœur, pétales floraux en relief, corset apparent dans le dos et bretelles amovibles.",
     vues: 10,
     createur: "Casablanca Bridal",
     morphos: ["V", "H", "8", "X"],

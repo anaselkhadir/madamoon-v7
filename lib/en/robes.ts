@@ -77,12 +77,14 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "A sumptuous ball gown or A-line in tulle and floral lace, with a detachable asymmetric jacket, a sweetheart neckline and a long train.",
   },
   "venus": {
-    ligne: "Crêpe mermaid, lace train",
-    regard: "Matte crêpe on the body, a lace train that opens on the floor.",
+    ligne: "Mermaid in matte satin, a majestic train and a lace back",
+    regard:
+      "Its graphic neckline, underlined by fine pearl-set straps, brings a touch of modernity and refinement. Its bodice, structured by discreet boning, follows the silhouette harmoniously, while its illusion tulle back reveals a subtle, sophisticated transparency.",
   },
   "ariel": {
-    ligne: "Embroidered mermaid, removable cape",
-    regard: "A sheer embroidered corset, and a tulle cape that follows your walk.",
+    ligne: "Mermaid in matte satin, chiffon petals set by hand",
+    regard:
+      "A mermaid wedding dress in matte satin: a sweetheart neckline, raised floral petals, a visible corset at the back and detachable straps.",
   },
   "montana": {
     ligne: "Crêpe mermaid, lace sleeves",
