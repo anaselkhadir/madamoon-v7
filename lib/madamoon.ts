@@ -323,16 +323,6 @@ export const ROBES: Robe[] = [
     morphos: ["V", "H", "8", "X"],
   },
   {
-    slug: "addison",
-    nom: "Addison",
-    ligne: "Princesse en mikado, épaules dénudées",
-    categorie: "Princesse",
-    regard: "Le volume net du mikado ivoire, et de vraies poches.",
-    vues: 7,
-    createur: "Casablanca Bridal",
-    morphos: ["O", "A", "V", "H", "8", "X"],
-  },
-  {
     slug: "meredith",
     nom: "Meredith",
     ligne: "Sirène en dentelle 3D, manches longues",
@@ -381,6 +371,16 @@ export const ROBES: Robe[] = [
     vues: 10,
     createur: "Casablanca Bridal",
     morphos: ["V", "H", "8", "X"],
+  },
+  {
+    slug: "addison",
+    nom: "Addison",
+    ligne: "Princesse en mikado, épaules dénudées",
+    categorie: "Princesse",
+    regard: "Le volume net du mikado ivoire, et de vraies poches.",
+    vues: 7,
+    createur: "Casablanca Bridal",
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "montana",
