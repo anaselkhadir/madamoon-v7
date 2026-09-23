@@ -594,9 +594,10 @@ export const ROBES: Robe[] = [
   {
     slug: "riviera",
     nom: "Riviera",
-    ligne: "Sirène en crêpe, manches bouffantes",
+    ligne: "Sirène en charmeuse, corset structuré et manches amovibles",
     categorie: "Sirène",
-    regard: "Un bustier corseté et des manches courtes en organza, portées sur l'épaule.",
+    regard:
+      "Le corsage et les manches amovibles sont sublimés par des regroupements de perles délicatement travaillés, qui apportent une touche de lumière et de sophistication à la silhouette. Les manches détachables permettent de personnaliser le look et de varier les styles, selon les envies.",
     vues: 2,
     /* La photographie de face : la première est de dos. */
     couverture: 2,
@@ -617,9 +618,10 @@ export const ROBES: Robe[] = [
   {
     slug: "nirali",
     nom: "Nirali",
-    ligne: "Trapèze à taille basse, fleurs à l'encolure",
+    ligne: "Trapèze, taille basse et décolleté droit",
     categorie: "Trapèze",
-    regard: "Des fleurs faites main, posées une à une le long de l'encolure droite.",
+    regard:
+      "Résolument moderne et délicatement romantique, Nirali séduit par sa silhouette élégante et par ses fleurs faites main, disposées le long du décolleté.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

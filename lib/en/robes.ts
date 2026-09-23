@@ -190,12 +190,14 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard: "A clear V, a marked waist, a skirt that stands on its own.",
   },
   "riviera": {
-    ligne: "Crêpe mermaid, puff sleeves",
-    regard: "A corseted bodice and short organza sleeves, worn off the shoulder.",
+    ligne: "Mermaid in charmeuse, structured corset and detachable sleeves",
+    regard:
+      "The bodice and the detachable sleeves are set off by delicately worked clusters of pearls, which bring a touch of light and sophistication to the silhouette. The sleeves come away, to make the look your own and change it as you please.",
   },
   "nirali": {
-    ligne: "Drop-waist A-line, flowers at the neckline",
-    regard: "Handmade flowers, set one by one along the straight neckline.",
+    ligne: "A-line, dropped waist and a straight neckline",
+    regard:
+      "Resolutely modern and delicately romantic, Nirali wins you over by its elegant silhouette and by its hand-made flowers, set along the neckline.",
   },
   "calla": {
     ligne: "Lace A-line over soft tulle",
