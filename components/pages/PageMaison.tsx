@@ -130,6 +130,12 @@ export default async function PageMaison({
         </div>
       </section>
 
+      {/* La dernière rangée de tuiles touchait la photographie du
+        * showroom : les noms des robes se retrouvaient collés au bord,
+        * et la trame semblait coupée. L'air qu'elle aurait laissé — le
+        * même que sur la page d'une coupe. */}
+      <div className="py-[clamp(1.5rem,2.75vw,2.5rem)]" />
+
       <Showroom langue={langue} />
     </>
   );
