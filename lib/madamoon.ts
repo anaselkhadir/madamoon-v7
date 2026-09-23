@@ -543,28 +543,34 @@ export const ROBES: Robe[] = [
   {
     slug: "alicia",
     nom: "Alicia",
-    ligne: "Trapèze, épaules dénudées",
+    ligne: "Trapèze ou volume princesse, épaules dégagées et fente",
     categorie: "Trapèze",
-    regard: "Une dentelle appliquée qui s'efface vers le bas de la jupe.",
+    regard:
+      "Alicia est une magnifique robe de mariée en dentelle et tulle : une légèreté appréciable, et un look féerique et mémorable.",
     vues: 3,
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "lovia",
     nom: "Lovia",
-    ligne: "Trapèze, dentelle délicate",
+    ligne: "Trapèze ou volume princesse, dentelle délicate, corset à encolure en V et fente",
     categorie: "Trapèze",
-    regard: "Un tulle blush très clair, une fente discrète.",
+    regard:
+      "Avec ses bretelles fines ornées de toutes petites perles, son corset qui marque bien la taille et son décolleté en V, Lovia est parfaite pour un look sensuel, inspiré par la nature.",
     vues: 3,
+    morphos: ["O", "A", "V", "H", "8", "X"],
     /* La photographie de face : la première est de dos. */
     couverture: 2,
   },
   {
     slug: "angel",
     nom: "Angel",
-    ligne: "Trapèze en tulle, voile et légèreté",
+    ligne: "Trapèze, perles et paillettes",
     categorie: "Trapèze",
-    regard: "Un buste brodé sur une jupe de tulle presque immatérielle.",
+    regard:
+      "Angel est idéale pour la mariée pétillante, qui aime les paillettes. Son décolleté et son dos en V créent un parfait équilibre sur ce corset qui souligne la taille. La jupe simple contraste avec le haut, perlé à la main.",
     vues: 2,
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "agnessa",

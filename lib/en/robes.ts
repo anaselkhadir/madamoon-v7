@@ -161,16 +161,19 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Its A-line silhouette sets off the curves harmoniously, while its illusion bodice reveals sumptuous embroidery and beadwork in delicately interlaced motifs. Its fine spaghetti straps and classic V neckline underline the bust with femininity. At the back, the V shape extends this elegant line and brings a touch of subtle sensuality.",
   },
   "alicia": {
-    ligne: "A-line, off the shoulder",
-    regard: "Applied lace that fades away towards the hem.",
+    ligne: "A-line or ball-gown volume, off the shoulder, with a slit",
+    regard:
+      "Alicia is a beautiful wedding dress in lace and tulle: a welcome lightness, and a look that is enchanted and memorable.",
   },
   "lovia": {
-    ligne: "A-line, delicate lace",
-    regard: "A very pale blush tulle, a discreet slit.",
+    ligne: "A-line or ball-gown volume, delicate lace, V-neck corset and a slit",
+    regard:
+      "With its fine straps set with tiny pearls, its corset that marks the waist and its V neckline, Lovia is perfect for a sensual look, inspired by nature.",
   },
   "angel": {
-    ligne: "Tulle A-line, veil and lightness",
-    regard: "An embroidered bodice over a tulle skirt that is barely there.",
+    ligne: "A-line, pearls and sequins",
+    regard:
+      "Angel is made for the sparkling bride, the one who loves sequins. Its neckline and V back create a perfect balance on this corset that underlines the waist. The plain skirt contrasts with the top, beaded by hand.",
   },
   "agnessa": {
     ligne: "Sheath, a long line",
