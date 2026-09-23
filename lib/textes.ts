@@ -441,6 +441,17 @@ const FR = {
     telecharger: (intitule: string) => `Télécharger le catalogue ${intitule}`,
     fichier: (intitule: string) => `MADAMOON — Catalogue ${intitule}.pdf`,
   },
+  /* L'espace de la mariée : la page d'attente, tant que les comptes ne
+   * sont pas ouverts. */
+  espace: {
+    titre: "Votre espace arrive",
+    accroche: "Bientôt, vos coups de cœur vous suivront.",
+    texte:
+      "Nous préparons un espace personnel : vos coups de cœur gardés d'un appareil à l'autre, votre rendez-vous à suivre, et vos essayages retrouvés. Il ouvrira dans quelques semaines.",
+    entretemps:
+      "En attendant, vos coups de cœur sont gardés dans ce navigateur, et le rendez-vous se prend en deux minutes.",
+    voirLesRobes: "Voir les robes",
+  },
   pied: {
     coupes: "Coupes",
     createurs: "Créateurs",
@@ -915,6 +926,15 @@ const EN: Textes = {
     robesDe: (pluriel: string) => `The ${pluriel}`,
     telecharger: (intitule: string) => `Download the ${intitule} catalogue`,
     fichier: (intitule: string) => `MADAMOON — ${intitule} catalogue.pdf`,
+  },
+  espace: {
+    titre: "Your space is coming",
+    accroche: "Soon, your favourites will follow you.",
+    texte:
+      "We are preparing a personal space: your favourites kept from one device to the next, your appointment to follow, and your fittings remembered. It opens in a few weeks.",
+    entretemps:
+      "In the meantime, your favourites are kept in this browser, and an appointment takes two minutes to book.",
+    voirLesRobes: "See the dresses",
   },
   pied: {
     coupes: "Silhouettes",

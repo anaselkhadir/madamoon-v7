@@ -30,6 +30,7 @@ export const SEGMENTS: Record<string, string> = {
   "rendez-vous": "appointment",
   "trouver-ma-robe": "find-my-dress",
   "coups-de-coeur": "favourites",
+  espace: "my-space",
 };
 
 /*

@@ -3,12 +3,13 @@
 import Link from "@/components/Lien";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { MAISON, CREATEURS, ESPACE_URL, MORPHOLOGIES, ROBES, CATEGORIES, robesDe } from "@/lib/madamoon";
+import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES, robesDe } from "@/lib/madamoon";
 import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
+import Espace from "@/components/chrome/Espace";
 import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
 import Reseaux from "@/components/chrome/Reseaux";
@@ -133,7 +134,7 @@ const tableRaccourcis = (l: Langue) => {
     { href: "/showroom", label: R.leShowroom },
     { href: "/a-propos", label: R.laMaison },
     { href: "/rendez-vous", label: R.prendreRendezvous },
-    { href: ESPACE_URL, label: R.monEspace, dehors: true },
+    { href: "/espace", label: R.monEspace },
   ];
 };
 
@@ -434,15 +435,6 @@ export default function Entete() {
                     </li>
                   );
                 })}
-                {/* L'espace de la mariée. Il vit sur son propre
-                  * sous-domaine — le site est un export de fichiers —,
-                  * d'où le lien ordinaire : même onglet, même design, la
-                  * frontière ne se voit pas. */}
-                <li>
-                  <a href={ESPACE_URL} className="lien-nav souligne">
-                    {L.raccourcis.monEspace}
-                  </a>
-                </li>
               </ul>
 
               {/* Le même bouton rouge que dans le hero. Il ne paraît pas
@@ -456,6 +448,10 @@ export default function Entete() {
                 * le seul endroit où la visiteuse retrouve ce qu'elle a
                 * aimé, et le seul que le téléphone garde en vue. */}
               <Panier />
+
+              {/* L'espace de la mariée, en icône : elle mène à la page
+                * d'attente tant que les comptes ne sont pas ouverts. */}
+              <Espace />
 
               {/* La langue, juste après le cœur : deux lettres, pas un
                 * drapeau — un drapeau désigne un pays, pas une langue. */}
@@ -790,11 +786,7 @@ export default function Entete() {
                         * rendez-vous. */
                       className={SECTIONS.has(l.href) ? "hidden lg:block" : undefined}
                     >
-                      {"dehors" in l && l.dehors ? (
-                        <a href={l.href} className={habits}>
-                          {l.label}
-                        </a>
-                      ) : l.href ? (
+                      {l.href ? (
                         <Link href={l.href} className={habits}>
                           {l.label}
                         </Link>

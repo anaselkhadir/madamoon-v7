@@ -7,7 +7,7 @@ import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import PartagerSelection from "@/components/parcours/PartagerSelection";
-import { ROBES, ESPACE_URL } from "@/lib/madamoon";
+import { ROBES } from "@/lib/madamoon";
 import { altRobe } from "@/lib/alt";
 import { ajouter, decoder, PARAM, useCoupsDeCoeur, vider } from "@/lib/coupsDeCoeur";
 import { langueDe, type Langue } from "@/lib/langue";
@@ -191,9 +191,9 @@ export default function ListeCoupsDeCoeur() {
               * ne suivent ni le téléphone ni l'ordinateur d'à côté. */}
             <div className="mt-10 border-t border-fil pt-8">
               <p className="texte mesure-l">{L.garderEspace}</p>
-              <a href={ESPACE_URL} className="bouton-trait mt-5 inline-flex">
+              <Link href="/espace" className="bouton-trait mt-5 inline-flex">
                 {L.creerEspace}
-              </a>
+              </Link>
             </div>
           </>
         )}

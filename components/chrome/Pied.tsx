@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "@/components/Lien";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
-import { MAISON, CREATEURS, ESPACE_URL } from "@/lib/madamoon";
+import { MAISON, CREATEURS } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { media as chemin } from "@/lib/chemin";
 import Logo from "@/components/chrome/Logo";
@@ -101,9 +101,9 @@ export default function Pied() {
 
           {/* L'espace de la mariée, sur son sous-domaine. */}
           <p className="mt-5">
-            <a href={ESPACE_URL} className="lien-nav souligne text-plomb hover:text-encre">
+            <Link href="/espace" className="lien-nav souligne text-plomb hover:text-encre">
               {L.raccourcis.monEspace}
-            </a>
+            </Link>
           </p>
         </div>
       </div>
