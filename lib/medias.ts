@@ -3807,7 +3807,7 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
         1200,
         1700
       ],
-      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoOABQAPrVOn0onJCKhsAgA4BaJZwAAXuL8X+X1opZyZsAA/d7zg7lZU+HSzucwMznX2QMXuvN3ZnRmChBKi9bmVbhhKmTAv4dyfLAA",
+      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoOABQAPrVOn0onJCKhsAgA4BaJZwAAXuL8X+Y4BRhYdcAA/d7zg7lZU+HSzucwMznX2QMXuvN3ZnQwcmA1+RUQa7bmwFV0xOrP1cAA",
       "jpgw": [
         480,
         800,

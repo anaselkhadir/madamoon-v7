@@ -589,6 +589,8 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un V franc, une taille marquée, une jupe qui tient toute seule.",
     vues: 2,
+    /* La photographie de face : la première est de dos. */
+    couverture: 2,
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
