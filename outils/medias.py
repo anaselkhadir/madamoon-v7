@@ -48,12 +48,25 @@ QUALITES = {"avif": 55, "webp": 78, "jpg": 82}
 
 
 def echelle(largeur_source, plafond=None):
-    """Les largeurs à produire pour une source donnée."""
+    """
+    Les largeurs à produire pour une source donnée.
+
+    L'échelle fixe ne suffisait pas : une photographie de 700 pixels ne
+    tombait que sur 480 — la seule marche en dessous d'elle —, et le
+    site servait donc 480 pixels d'une image qui en avait 700. Étirée
+    sur un écran, elle paraissait floue. La largeur de la source est
+    maintenant produite elle aussi, sauf si une marche l'approche déjà
+    de très près : deux fichiers presque identiques ne valent pas leur
+    poids.
+    """
     haut = min(largeur_source, plafond) if plafond else largeur_source
     tenues = [w for w in LARGEURS if w <= haut]
-    # Une source plus étroite que la plus petite largeur reste elle-même :
-    # mieux vaut une image de 356 pixels que rien.
-    return tenues or [largeur_source]
+    # On n'ajoute la largeur native que si la source reste sous le haut
+    # de l'échelle : au-delà, l'échelle est un plafond voulu, et un
+    # fichier de 3 840 pixels n'a rien à faire sur un site.
+    if not tenues or (haut < LARGEURS[-1] and haut > tenues[-1] * 1.05):
+        tenues.append(haut)
+    return tenues
 
 
 def apercu(im):

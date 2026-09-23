@@ -123,39 +123,42 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   },
   "ryle": {
     ligne: "Sheath with balloon sleeves",
-    regard: "Balloon sleeves in satin and a very deep V neckline.",
+    regard:
+      "Balloon sleeves, a deep V neckline and a breathtaking fall, in a delicate charmeuse.",
   },
   "shiloh": {
-    ligne: "Crêpe mermaid, open back",
-    regard: "A back left entirely open between two lace sleeves.",
+    ligne: "Mermaid in Chantilly lace, crepe skirt and a centre slit",
+    regard:
+      "A dress with character: Shiloh was imagined for the modern bride, after a chic and singular look.",
   },
   "carrie": {
-    ligne: "Sequinned A-line, fine straps",
-    regard: "A shimmering tulle and a plunging neckline held by two threads.",
+    ligne: "Sequined A-line, fine straps and a corset beaded by hand",
+    regard:
+      "A fairy-tale dream. Carrie sets off every silhouette with its enchanted air and its delicately shimmering details. Its beaded bodice reveals beautiful motifs of leaves and vines, carried by fine double spaghetti straps. The full skirt is made of several layers of sequined tulle, light and airy, which give the silhouette a spectacular dimension.",
   },
   "kensington": {
     ligne: "Mikado ball gown, off the shoulder",
-    regard: "An embroidered bodice and a mikado skirt that holds its shape all evening.",
+    regard:
+      "This ball gown stands out by its bodice, wholly set with sumptuous silver beadwork that runs delicately along the sleeves falling off the shoulders. Its spectacular skirt, made entirely in mikado, brings structure and volume to the silhouette, while its two-metre train creates a grand allure.",
   },
   "maribel": {
-    ligne: "Sheath, lace and a slit",
-    regard: "A lace bodice over a slit crêpe skirt.",
+    ligne: "Minimalist sheath in stretch chiffon, bodice embroidered by hand",
+    regard:
+      "A modern wedding dress: a V neckline, a bodice embroidered and beaded by hand, a fluid chiffon skirt, a slit and a light train.",
   },
-  "arden": {
-    ligne: "Romantic lace mermaid",
-    regard: "A graphic lace and a back that plunges to the waist.",
-  },
-  "summer": {
-    ligne: "Lace mermaid, bohemian spirit",
-    regard: "A floral lace and a wide train that spreads on the floor.",
+    "summer": {
+    ligne: "Mermaid in Alençon lace, V neckline and a long train",
+    regard:
+      "The beauty of French lace in a feminine, refined silhouette. Its flared mermaid cut follows the curves delicately before opening with elegance, for a look at once romantic and glamorous.",
   },
   "gabriel": {
     ligne: "Short, with a removable sheer skirt",
     regard: "A delicately beaded short dress, with a sheer skirt beneath.",
   },
   "emerald": {
-    ligne: "Bodice and tulle, a dress with character",
-    regard: "A structured bodice over metres of pleated tulle.",
+    ligne: "A-line, beaded bodice, V neckline and a skirt in tulle or satin",
+    regard:
+      "Its A-line silhouette sets off the curves harmoniously, while its illusion bodice reveals sumptuous embroidery and beadwork in delicately interlaced motifs. Its fine spaghetti straps and classic V neckline underline the bust with femininity. At the back, the V shape extends this elegant line and brings a touch of subtle sensuality.",
   },
   "alicia": {
     ligne: "A-line, off the shoulder",
