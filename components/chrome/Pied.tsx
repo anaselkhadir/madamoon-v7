@@ -98,13 +98,6 @@ export default function Pied() {
           <AppelRendezvous className="bouton mt-6">
             {L.pied.rendezvous}
           </AppelRendezvous>
-
-          {/* L'espace de la mariée, sur son sous-domaine. */}
-          <p className="mt-5">
-            <Link href="/espace" className="lien-nav souligne text-plomb hover:text-encre">
-              {L.raccourcis.monEspace}
-            </Link>
-          </p>
         </div>
       </div>
 

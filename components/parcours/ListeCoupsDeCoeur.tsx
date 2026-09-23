@@ -186,15 +186,6 @@ export default function ListeCoupsDeCoeur() {
             </div>
 
             <p className="legende mt-10 text-brume">{L.gardee}</p>
-
-            {/* L'espace de la mariée : les coups de cœur d'un navigateur
-              * ne suivent ni le téléphone ni l'ordinateur d'à côté. */}
-            <div className="mt-10 border-t border-fil pt-8">
-              <p className="texte mesure-l">{L.garderEspace}</p>
-              <Link href="/espace" className="bouton-trait mt-5 inline-flex">
-                {L.creerEspace}
-              </Link>
-            </div>
           </>
         )}
       </div>

@@ -9,7 +9,6 @@ import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import Panier from "@/components/chrome/Panier";
-import Espace from "@/components/chrome/Espace";
 import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
 import Reseaux from "@/components/chrome/Reseaux";
@@ -134,7 +133,6 @@ const tableRaccourcis = (l: Langue) => {
     { href: "/showroom", label: R.leShowroom },
     { href: "/a-propos", label: R.laMaison },
     { href: "/rendez-vous", label: R.prendreRendezvous },
-    { href: "/espace", label: R.monEspace },
   ];
 };
 
@@ -449,9 +447,6 @@ export default function Entete() {
                 * aimé, et le seul que le téléphone garde en vue. */}
               <Panier />
 
-              {/* L'espace de la mariée, en icône : elle mène à la page
-                * d'attente tant que les comptes ne sont pas ouverts. */}
-              <Espace />
 
               {/* La langue, juste après le cœur : deux lettres, pas un
                 * drapeau — un drapeau désigne un pays, pas une langue. */}

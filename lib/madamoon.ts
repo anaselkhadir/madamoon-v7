@@ -34,16 +34,6 @@ export const MAISON = {
 
 export const SITE_URL = "https://madamoon.fr";
 
-/*
- * L'espace de la mariée.
- *
- * Il vivra sur son propre sous-domaine : le site, lui, reste un export
- * de fichiers, sans serveur ni base — c'est ce qui le rend rapide et
- * incassable. Tant qu'il n'est pas ouvert, les liens du site mènent à
- * « /espace », la page qui l'annonce ; il suffira alors d'y pointer
- * cette adresse.
- */
-export const ESPACE_URL = process.env.NEXT_PUBLIC_ESPACE ?? "https://espace.madamoon.fr";
 
 /* Les maisons dont MADAMOON présente les collections. */
 export type Createur = {
