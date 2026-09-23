@@ -3,7 +3,7 @@
 import Link from "@/components/Lien";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { MAISON, CREATEURS, MORPHOLOGIES, ROBES, CATEGORIES, robesDe } from "@/lib/madamoon";
+import { MAISON, CREATEURS, ESPACE_URL, MORPHOLOGIES, ROBES, CATEGORIES, robesDe } from "@/lib/madamoon";
 import { COUPES, coupe as familleDeCoupe } from "@/lib/coupes";
 import { media as ressource } from "@/lib/chemin";
 import AppelElise from "@/components/AppelElise";
@@ -133,6 +133,7 @@ const tableRaccourcis = (l: Langue) => {
     { href: "/showroom", label: R.leShowroom },
     { href: "/a-propos", label: R.laMaison },
     { href: "/rendez-vous", label: R.prendreRendezvous },
+    { href: ESPACE_URL, label: R.monEspace, dehors: true },
   ];
 };
 
@@ -433,6 +434,15 @@ export default function Entete() {
                     </li>
                   );
                 })}
+                {/* L'espace de la mariée. Il vit sur son propre
+                  * sous-domaine — le site est un export de fichiers —,
+                  * d'où le lien ordinaire : même onglet, même design, la
+                  * frontière ne se voit pas. */}
+                <li>
+                  <a href={ESPACE_URL} className="lien-nav souligne">
+                    {L.raccourcis.monEspace}
+                  </a>
+                </li>
               </ul>
 
               {/* Le même bouton rouge que dans le hero. Il ne paraît pas
@@ -780,7 +790,11 @@ export default function Entete() {
                         * rendez-vous. */
                       className={SECTIONS.has(l.href) ? "hidden lg:block" : undefined}
                     >
-                      {l.href ? (
+                      {"dehors" in l && l.dehors ? (
+                        <a href={l.href} className={habits}>
+                          {l.label}
+                        </a>
+                      ) : l.href ? (
                         <Link href={l.href} className={habits}>
                           {l.label}
                         </Link>

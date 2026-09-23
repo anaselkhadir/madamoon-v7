@@ -49,6 +49,7 @@ const FR = {
     leShowroom: "Le showroom",
     laMaison: "La maison",
     prendreRendezvous: "Prendre rendez-vous",
+    monEspace: "Mon espace",
   },
   hero: {
     titre: "Vous vous mariez bientôt ?",
@@ -406,6 +407,11 @@ const FR = {
     dejaDedans: "Déjà dans vos coups de cœur",
     ajouterAuxMiens: "Ajouter à mes coups de cœur",
     voirLesMiens: "Voir mes coups de cœur",
+    /* Les coups de cœur ne vivent que dans le navigateur : l'espace les
+     * garde d'un appareil à l'autre. */
+    garderEspace:
+      "Vos coups de cœur ne vivent que dans ce navigateur. Créez votre espace pour les retrouver sur votre téléphone comme sur votre ordinateur, et suivre votre rendez-vous.",
+    creerEspace: "Créer mon espace",
     plusAuCatalogue: (n: number) =>
       n === 1
         ? "Une robe de ce lien n’est plus au catalogue."
@@ -534,6 +540,7 @@ const EN: Textes = {
     leShowroom: "The showroom",
     laMaison: "The house",
     prendreRendezvous: "Book an appointment",
+    monEspace: "My space",
   },
   hero: {
     titre: "Getting married soon?",
@@ -877,6 +884,9 @@ const EN: Textes = {
     dejaDedans: "Already in your favourites",
     ajouterAuxMiens: "Add to my favourites",
     voirLesMiens: "See my favourites",
+    garderEspace:
+      "Your favourites live in this browser only. Create your space to find them again on your phone as on your computer, and to follow your appointment.",
+    creerEspace: "Create my space",
     plusAuCatalogue: (n: number) =>
       n === 1
         ? "One dress from this link is no longer in the catalogue."

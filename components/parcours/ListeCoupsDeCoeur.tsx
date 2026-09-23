@@ -7,7 +7,7 @@ import TitreSection from "@/components/TitreSection";
 import Tuile from "@/components/Tuile";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import PartagerSelection from "@/components/parcours/PartagerSelection";
-import { ROBES } from "@/lib/madamoon";
+import { ROBES, ESPACE_URL } from "@/lib/madamoon";
 import { altRobe } from "@/lib/alt";
 import { ajouter, decoder, PARAM, useCoupsDeCoeur, vider } from "@/lib/coupsDeCoeur";
 import { langueDe, type Langue } from "@/lib/langue";
@@ -186,6 +186,15 @@ export default function ListeCoupsDeCoeur() {
             </div>
 
             <p className="legende mt-10 text-brume">{L.gardee}</p>
+
+            {/* L'espace de la mariée : les coups de cœur d'un navigateur
+              * ne suivent ni le téléphone ni l'ordinateur d'à côté. */}
+            <div className="mt-10 border-t border-fil pt-8">
+              <p className="texte mesure-l">{L.garderEspace}</p>
+              <a href={ESPACE_URL} className="bouton-trait mt-5 inline-flex">
+                {L.creerEspace}
+              </a>
+            </div>
           </>
         )}
       </div>
