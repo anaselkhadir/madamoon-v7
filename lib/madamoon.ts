@@ -573,30 +573,14 @@ export const ROBES: Robe[] = [
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
-    slug: "agnessa",
-    nom: "Agnessa",
-    ligne: "Fluide, tombé longiligne",
-    categorie: "Fluide",
-    regard: "Un décolleté en V profond sur une jupe de tulle nude.",
-    vues: 2,
-  },
-  {
-    slug: "camille",
-    nom: "Camille",
-    ligne: "Trapèze en dentelle, manches longues",
-    categorie: "Trapèze",
-    regard: "Une dentelle sur les épaules et un bas de jupe bordé au sol.",
-    vues: 2,
-    /* La photographie de face : la première est de dos. */
-    couverture: 2,
-  },
-  {
     slug: "dolores",
     nom: "Dolores",
-    ligne: "Trapèze, tulle blush",
+    ligne: "Trapèze ou princesse en tulle, col carré",
     categorie: "Trapèze",
-    regard: "Un dégradé de rosé très pâle du bustier jusqu'au sol.",
+    regard:
+      "Confectionnée en tulle, dentelle et perles, elle se caractérise par son encolure carrée, qui flatte le buste. Son dos transparent en dentelle est joliment orné de boutons, jusqu'au bas du corset.",
     vues: 2,
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "livia",
@@ -605,6 +589,7 @@ export const ROBES: Robe[] = [
     categorie: "Princesse",
     regard: "Un V franc, une taille marquée, une jupe qui tient toute seule.",
     vues: 2,
+    morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "riviera",
@@ -737,6 +722,16 @@ export const ROBES: Robe[] = [
     regard: "Un dos en V profond, et une fente qui ouvre la mousseline à chaque pas.",
     vues: 3,
     createur: "Monica Loretti",
+    morphos: ["O", "A", "V", "H", "8", "X"],
+  },
+  {
+    slug: "agnessa",
+    nom: "Agnessa",
+    ligne: "Fluide, décolleté et dos spectaculaires en V",
+    categorie: "Fluide",
+    regard:
+      "Un corset perlé à la main, combiné à une jupe de tulle fluide : Agnessa est idéale pour une allure naturellement glamour.",
+    vues: 2,
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {

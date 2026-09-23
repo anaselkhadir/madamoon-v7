@@ -3790,10 +3790,11 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
         1200,
         1700
       ],
-      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoOABQAPrVKn0mnJCKhMAgA4BaJZwAAXuL8X+XWDGIfAAD93vODuVlT4dLO5xx7nX2QMXuvN7jTozBQb+0ppKyZRZL/tZiDuhGOAAAA",
+      "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoOABQAPrVOoUmnJKOhMAgA4BaJaQAAUXdKeoo6tArIMADXMeoLvPIPTzzgg8u6+qlSLQ5wx0zW7mBDY/W0RGXHRsQyWm2Awei0vw1UAAAAAA==",
       "jpgw": [
         480,
-        800
+        800,
+        1000
       ]
     },
     {
@@ -3806,10 +3807,11 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
         1200,
         1700
       ],
-      "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoOABQAPrVWoUsnJSMhsAgA4BaJaQAAUXdKeoo6tAnOAADXMeoLvPIPTzzgg8vDI7Qwi55riSJrdzAhsfptG97B3pEiEyR9FwRrXWAAAAA=",
+      "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoOABQAPrVOn0onJCKhsAgA4BaJZwAAXuL8X+X1opZyZsAA/d7zg7lZU+HSzucwMznX2QMXuvN3ZnRmChBKi9bmVbhhKmTAv4dyfLAA",
       "jpgw": [
         480,
-        800
+        800,
+        1000
       ]
     }
   ],
@@ -3941,36 +3943,6 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
         1700
       ],
       "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABwAwCdASoNABQAPrVInkmnJCKhMAgA4BaJYwCdMoADU3Dsc+AA/rHEhXJ3kisRjwtAxGWvatZl8Xx17fJ+zWQJ4L1Yr4SWijp6Y5DANcgDP2Py3b+1uvaiioeJDgAA",
-      "jpgw": [
-        480,
-        800
-      ]
-    }
-  ],
-  "camille": [
-    {
-      "name": "robe-de-mariee-trapeze-camille-1",
-      "w": 933,
-      "h": 1400,
-      "widths": [
-        480,
-        800
-      ],
-      "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAwCdASoNABQAPxFysFAsJqSisAgBgCIJYgCsABY3lexMJAr2k0ewAP4YO2xtoWD+aybmiZZk9TZpNpUPvARB72Aahsw45sfxgOXbPJGb1YaoellL055gAnn4Zyh9M00NZAVWrAAAAA==",
-      "jpgw": [
-        480,
-        800
-      ]
-    },
-    {
-      "name": "robe-de-mariee-trapeze-camille-2",
-      "w": 933,
-      "h": 1400,
-      "widths": [
-        480,
-        800
-      ],
-      "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAwCdASoNABQAPxFysFAsJqSisAgBgCIJQBOgA4H9TRD/rgAA/hnVHLV+7Q+z7mljxYzA+A/aROQQ1Qo8vTZhdq6y2qTlnidJSUL8USvF0s6CNqf5Y2KTE9ev/myNVbtthBZM1SMe5FtZFbkvrmp6EAA=",
       "jpgw": [
         480,
         800

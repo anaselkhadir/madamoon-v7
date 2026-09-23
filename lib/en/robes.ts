@@ -176,16 +176,14 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Angel is made for the sparkling bride, the one who loves sequins. Its neckline and V back create a perfect balance on this corset that underlines the waist. The plain skirt contrasts with the top, beaded by hand.",
   },
   "agnessa": {
-    ligne: "Sheath, a long line",
-    regard: "A deep V neckline over a nude tulle skirt.",
+    ligne: "Sheath, spectacular V neckline and V back",
+    regard:
+      "A corset beaded by hand, set against a fluid tulle skirt: Agnessa is made for a naturally glamorous look.",
   },
-  "camille": {
-    ligne: "Lace A-line, long sleeves",
-    regard: "Lace over the shoulders and a hem finished at the floor.",
-  },
-  "dolores": {
-    ligne: "A-line, blush tulle",
-    regard: "A very pale pink graduating from the bodice to the floor.",
+    "dolores": {
+    ligne: "A-line or ball gown in tulle, square neckline",
+    regard:
+      "Made in tulle, lace and pearls, it is marked by its square neckline, which flatters the bust. Its sheer lace back is prettily set with buttons, down to the base of the corset.",
   },
   "livia": {
     ligne: "Mikado ball gown, V neckline",
