@@ -132,9 +132,10 @@ export default async function PageMaison({
 
       {/* La dernière rangée de tuiles touchait la photographie du
         * showroom : les noms des robes se retrouvaient collés au bord,
-        * et la trame semblait coupée. L'air qu'elle aurait laissé — le
-        * même que sur la page d'une coupe. */}
-      <div className="py-[clamp(1.5rem,2.75vw,2.5rem)]" />
+        * et la trame semblait coupée. Juste l'air qu'il faut pour que la
+        * trame se termine — moins qu'en bas d'une page de coupe, où la
+        * page s'arrête vraiment. */}
+      <div className="py-[clamp(1rem,1.9vw,1.75rem)]" />
 
       <Showroom langue={langue} />
     </>
