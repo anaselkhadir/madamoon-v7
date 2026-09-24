@@ -13,6 +13,7 @@ import Commutateur from "@/components/chrome/Langue";
 import Theme from "@/components/chrome/Theme";
 import Reseaux from "@/components/chrome/Reseaux";
 import Logo from "@/components/chrome/Logo";
+import Annonce from "@/components/chrome/Annonce";
 import { langueDe, versFrancais, type Langue } from "@/lib/langue";
 import { coupeNom, coupeNote, createurNom, createurOrigine, morphoNom, morphoObjectif } from "@/lib/contenu";
 import { t } from "@/lib/textes";
@@ -315,7 +316,10 @@ export default function Entete() {
           * lui donne sa hauteur. Entre 768 et 900 px il s'affichait avec
           * une hauteur nulle : ses textes glissaient sous la barre
           * principale et n'en dépassait que la moitié basse. */}
-        <div className="hidden h-[var(--barre)] items-center justify-between gap-6 border-b border-fil bg-blanc text-encre min-[901px]:flex gouttiere">
+        <div className="relative hidden h-[var(--barre)] items-center justify-between gap-6 overflow-hidden border-b border-fil bg-blanc text-encre min-[901px]:flex gouttiere">
+          {/* L'annonce, quand il y en a une : elle descend sur le
+            * bandeau, dit sa ligne, et le rend. */}
+          <Annonce />
           <ul className="flex min-w-0 items-center gap-5 lg:gap-7">
             {CREATEURS.slice(0, 4).map((c) => (
               <li key={c.slug}>
