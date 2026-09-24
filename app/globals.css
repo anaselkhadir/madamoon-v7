@@ -786,23 +786,6 @@ body {
   transform-origin: left;
 }
 
-/*
- * L'annonce du bandeau, quand le mouvement est refusé.
- *
- * Elle ne glisse plus : elle paraît et s'efface. Une nouvelle reste une
- * information — la taire serait la retirer à celles qui ont demandé
- * moins de mouvement, pas moins de site.
- */
-@media (prefers-reduced-motion: reduce) {
-  .annonce {
-    transform: none !important;
-    transition: opacity 300ms linear !important;
-  }
-  .annonce.-translate-y-full {
-    opacity: 0;
-  }
-}
-
 /* ———————————————————————————————————— apparitions ————— */
 
 /*
