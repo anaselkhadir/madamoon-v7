@@ -108,10 +108,15 @@ export default function Pied() {
       <div className="filet mt-12" />
       {/* Trois colonnes égales à partir de sept cent soixante-huit pixels :
         * c'est la seule façon de poser la signature au milieu de la page
-        * et non au milieu de ce qui reste. Sous ce seuil, les trois
-        * lignes s'empilent à gauche. */}
+        * et non au milieu de ce qui reste.
+        *
+        * Sous ce seuil, les trois lignes s'empilent, et l'ordre change :
+        * le copyright et les cookies vont ensemble — ce sont les mentions
+        * de la maison —, la signature se détache dessous. Les « order »
+        * font ce déplacement sans toucher à l'ordre du document, que les
+        * colonnes suivent au-delà du seuil. */}
       <div className="mt-6 grid gap-x-6 gap-y-3 md:grid-cols-3 md:items-center">
-        <p className="mention text-plomb">
+        <p className="order-1 mention text-plomb">
           © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
         </p>
 
@@ -131,7 +136,7 @@ export default function Pied() {
           /* Centrée aussi sur téléphone, où la ligne occupe toute la
             * largeur : le copyright et les cookies restent à gauche, la
             * signature se pose au milieu comme sur ordinateur. */
-          className="flex items-center justify-center gap-3 text-plomb transition-colors duration-500 hover:text-encre md:justify-self-center"
+          className="order-3 mt-4 flex items-center justify-center gap-3 text-plomb transition-colors duration-500 hover:text-encre md:order-2 md:mt-0 md:justify-self-center"
         >
           <span className="mention">{L.pied.signature}</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -159,7 +164,7 @@ export default function Pied() {
         <button
           type="button"
           onClick={ouvrirPreferences}
-          className="mention souligne justify-self-start text-plomb hover:text-encre md:justify-self-end"
+          className="order-2 mention souligne justify-self-start text-plomb hover:text-encre md:order-3 md:justify-self-end"
         >
           {L.pied.gererCookies}
         </button>
