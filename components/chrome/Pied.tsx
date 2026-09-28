@@ -128,7 +128,10 @@ export default function Pied() {
           href={ANVSLAB}
           target="_blank"
           rel="noreferrer noopener"
-          className="flex items-center gap-3 text-plomb transition-colors duration-500 hover:text-encre md:justify-self-center"
+          /* Centrée aussi sur téléphone, où la ligne occupe toute la
+            * largeur : le copyright et les cookies restent à gauche, la
+            * signature se pose au milieu comme sur ordinateur. */
+          className="flex items-center justify-center gap-3 text-plomb transition-colors duration-500 hover:text-encre md:justify-self-center"
         >
           <span className="mention">{L.pied.signature}</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
