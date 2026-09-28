@@ -24,6 +24,10 @@ import { coupeNom, createurNom, maison } from "@/lib/contenu";
  * que des liens, qui le sont déjà.
  */
 
+/* L'atelier qui a fait le site. Une seule ligne à changer le jour où
+ * anvslab.com prend la place de l'adresse d'aperçu. */
+const ANVSLAB = "https://anaselkhadir.github.io/anvslab/";
+
 export default function Pied() {
   const l = langueDe(usePathname() ?? "/");
   const L = t(l);
@@ -106,12 +110,49 @@ export default function Pied() {
         <p className="mention text-plomb">
           © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
         </p>
-        {/* Le choix des cookies se rouvre ici, à tout moment : la CNIL
-          * demande qu'on puisse le retirer aussi simplement qu'on l'a
-          * donné. */}
-        <button type="button" onClick={ouvrirPreferences} className="mention souligne text-plomb hover:text-encre">
-          {L.pied.gererCookies}
-        </button>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          {/* Le choix des cookies se rouvre ici, à tout moment : la CNIL
+            * demande qu'on puisse le retirer aussi simplement qu'on l'a
+            * donné. */}
+          <button type="button" onClick={ouvrirPreferences} className="mention souligne text-plomb hover:text-encre">
+            {L.pied.gererCookies}
+          </button>
+
+          {/*
+            * La signature de l'atelier qui a fait le site.
+            *
+            * Deux fichiers, l'encre et le blanc, l'un masqué par la
+            * feuille de style selon le thème — le même mécanisme que le
+            * sigle de la maison, et pour la même raison : un logo qui
+            * sauterait d'une image à l'autre au chargement se remarque
+            * plus que le logo lui-même.
+            */}
+          <a
+            href={ANVSLAB}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex items-center gap-2.5 text-plomb transition-colors duration-500 hover:text-encre"
+          >
+            <span className="mention">{L.pied.signature}</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={chemin("/marque/anvslab-noir.png")}
+              alt="ANVSLAB"
+              width={360}
+              height={111}
+              className="logo-clair h-[1.15rem] w-auto"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={chemin("/marque/anvslab-blanc.png")}
+              alt=""
+              aria-hidden="true"
+              width={360}
+              height={111}
+              className="logo-sombre h-[1.15rem] w-auto"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );

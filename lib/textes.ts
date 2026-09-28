@@ -443,6 +443,7 @@ const FR = {
     rendezvous: "Prendre rendez-vous",
     droits: "Boutique de robes de mariée à Paris",
     gererCookies: "Gérer les cookies",
+    signature: "Site créé et référencé par",
   },
   /* Le texte du bandeau de consentement de madamoon.fr, repris tel que la
    * maison l'a validé. */
@@ -914,6 +915,7 @@ const EN: Textes = {
     rendezvous: "Book an appointment",
     droits: "Bridal boutique in Paris",
     gererCookies: "Manage cookies",
+    signature: "Site built and optimised by",
   },
   cookies: {
     titre: "We value your privacy",
