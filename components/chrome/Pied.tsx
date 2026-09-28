@@ -106,53 +106,60 @@ export default function Pied() {
       </div>
 
       <div className="filet mt-12" />
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+      {/* Trois colonnes égales à partir de sept cent soixante-huit pixels :
+        * c'est la seule façon de poser la signature au milieu de la page
+        * et non au milieu de ce qui reste. Sous ce seuil, les trois
+        * lignes s'empilent à gauche. */}
+      <div className="mt-6 grid gap-x-6 gap-y-3 md:grid-cols-3 md:items-center">
         <p className="mention text-plomb">
           © {new Date().getFullYear()} {MAISON.nom} — {L.pied.droits}
         </p>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-          {/* Le choix des cookies se rouvre ici, à tout moment : la CNIL
-            * demande qu'on puisse le retirer aussi simplement qu'on l'a
-            * donné. */}
-          <button type="button" onClick={ouvrirPreferences} className="mention souligne text-plomb hover:text-encre">
-            {L.pied.gererCookies}
-          </button>
 
-          {/*
-            * La signature de l'atelier qui a fait le site.
-            *
-            * Deux fichiers, l'encre et le blanc, l'un masqué par la
-            * feuille de style selon le thème — le même mécanisme que le
-            * sigle de la maison, et pour la même raison : un logo qui
-            * sauterait d'une image à l'autre au chargement se remarque
-            * plus que le logo lui-même.
-            */}
-          <a
-            href={ANVSLAB}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-center gap-2.5 text-plomb transition-colors duration-500 hover:text-encre"
-          >
-            <span className="mention">{L.pied.signature}</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={chemin("/marque/anvslab-noir.png")}
-              alt="ANVSLAB"
-              width={360}
-              height={111}
-              className="logo-clair h-[1.15rem] w-auto"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={chemin("/marque/anvslab-blanc.png")}
-              alt=""
-              aria-hidden="true"
-              width={360}
-              height={111}
-              className="logo-sombre h-[1.15rem] w-auto"
-            />
-          </a>
-        </div>
+        {/*
+          * La signature de l'atelier qui a fait le site.
+          *
+          * Deux fichiers, l'encre et le blanc, l'un masqué par la feuille
+          * de style selon le thème — le même mécanisme que le sigle de la
+          * maison, et pour la même raison : un logo qui sauterait d'une
+          * image à l'autre au chargement se remarque plus que le logo
+          * lui-même.
+          */}
+        <a
+          href={ANVSLAB}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="flex items-center gap-3 text-plomb transition-colors duration-500 hover:text-encre md:justify-self-center"
+        >
+          <span className="mention">{L.pied.signature}</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={chemin("/marque/anvslab-noir.png")}
+            alt="ANVSLAB"
+            width={360}
+            height={111}
+            className="logo-clair h-[1.6rem] w-auto"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={chemin("/marque/anvslab-blanc.png")}
+            alt=""
+            aria-hidden="true"
+            width={360}
+            height={111}
+            className="logo-sombre h-[1.6rem] w-auto"
+          />
+        </a>
+
+        {/* Le choix des cookies se rouvre ici, à tout moment : la CNIL
+          * demande qu'on puisse le retirer aussi simplement qu'on l'a
+          * donné. */}
+        <button
+          type="button"
+          onClick={ouvrirPreferences}
+          className="mention souligne justify-self-start text-plomb hover:text-encre md:justify-self-end"
+        >
+          {L.pied.gererCookies}
+        </button>
       </div>
     </footer>
   );
