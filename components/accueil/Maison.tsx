@@ -33,12 +33,18 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
               {/* L'anglaise a l'œil plus petit qu'un romain de même
                 * corps : relevée d'un tiers, elle se tient sur la même
                 * ligne que la suite. L'interligne revient à un, sinon
-                * ses déliés écartent les deux lignes du titre. */}
+                * ses déliés écartent les deux lignes du titre.
+                *
+                * Le rouge est écrit en propre : « .phrase » porte sa
+                * couleur hors calque et l'emporterait sur un utilitaire.
+                * C'est le rouge des liens et des boutons, le même en
+                * clair et en sombre — la maison l'a voulu ainsi. */}
               <span
                 style={{
                   fontFamily: "var(--font-anglaise)",
                   fontSize: "1.35em",
                   lineHeight: 1,
+                  color: "var(--color-action)",
                 }}
               >
                 {L.nom}
