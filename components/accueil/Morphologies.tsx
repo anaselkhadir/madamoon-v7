@@ -71,7 +71,17 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
             /* Trois parts égales de la place disponible : les cartes la
               * remplissent d'un bord à l'autre. Sous le seuil, deux de
               * front — un téléphone n'a pas de place à perdre. */
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(0.75rem,1.2vw,1rem)] sm:grid-cols-3 lg:mt-0"
+            /* La largeur de la trame est écrite, et elle se cale à
+              * droite : les cartes gardent une taille de vignette au lieu
+              * de grandir avec l'écran, et le blanc qui reste passe entre
+              * le texte et elles — non entre les cartes.
+              *
+              * « w » et non « max-w » : posée sur un élément de grille,
+              * « ml-auto » lui retire son étirement, il se réduit alors à
+              * son contenu et une largeur maximale ne le rattrape pas.
+              *
+              * Une seule valeur à bouger si elles doivent encore maigrir. */
+            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(0.75rem,1.2vw,1rem)] sm:grid-cols-3 lg:ml-auto lg:mt-0 lg:w-[clamp(28rem,50vw,52rem)] lg:max-w-full"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
