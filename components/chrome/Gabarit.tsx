@@ -1,4 +1,4 @@
-import { Instrument_Serif, Quattrocento_Sans } from "next/font/google";
+import { Inter, Instrument_Serif, Quattrocento_Sans } from "next/font/google";
 
 import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
@@ -32,6 +32,16 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
+/* Inter, pour le seul paragraphe d'introduction de l'accueil : la
+ * boutique l'a demandée là et nulle part ailleurs. Une graisse, un
+ * alphabet latin — la police ne pèse que ce qu'elle sert. */
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--police-inter",
+  display: "swap",
+});
+
 const sans = Quattrocento_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -51,7 +61,7 @@ export default function Gabarit({
 
     /* Lenis pose ses propres classes sur <html> : React ne doit pas s'en
      * inquiéter au moment de l'hydratation. */
-    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable}`}>
+    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${inter.variable}`}>
       <head>
         {/*
           * Le thème, reposé avant la première peinture.

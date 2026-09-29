@@ -40,6 +40,9 @@
 
   --font-serif: var(--police-serif), "Times New Roman", serif;
   --font-sans: var(--police-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Demandée par la boutique pour le seul paragraphe d'introduction de
+   * l'accueil. Elle n'entre nulle part ailleurs. */
+  --font-inter: var(--police-inter), ui-sans-serif, system-ui, sans-serif;
 
   --ease-doux: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-rideau: cubic-bezier(0.16, 1, 0.3, 1);
