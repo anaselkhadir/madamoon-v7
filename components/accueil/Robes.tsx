@@ -83,7 +83,7 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
                   * source, donc la robe se donne en pied et la rangée
                   * gagne un cinquième de hauteur sans prendre un pixel de
                   * large. Le recadrage part du centre. */}
-                <div className="relative aspect-[3/5] overflow-hidden rounded-[4px] bg-craie">
+                <div className="relative aspect-[3/5] overflow-hidden bg-craie">
                   <Photo
                     media={media}
                     dossier="robes"
