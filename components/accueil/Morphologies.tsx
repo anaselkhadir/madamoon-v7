@@ -91,11 +91,15 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                     * carte, et c'est elle qui tient la description au bas
                     * du dessin. Sous le seuil, la description reprend sa
                     * place dessous et l'enveloppe grandit avec elle. */}
-                  <div className="relative lg:overflow-hidden lg:rounded-[1.125rem]">
+                  <div className="relative lg:overflow-hidden lg:rounded-[4px]">
                   {/* La carte. L'intitulé en tête — la lettre et le nom à
                     * gauche, le plus à droite, qui dit qu'il y a une page
                     * derrière —, et le dessin dessous. */}
-                  <div className="flex aspect-[8/9] flex-col rounded-[1.125rem] bg-gris p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-gris-appuye">
+                  {/* Quatre pixels d'angle : celui des boutons du site.
+                    * Un arrondi plus ample faisait une vignette
+                    * d'application au milieu d'une page qui n'en a
+                    * aucune. */}
+                  <div className="flex aspect-[8/9] flex-col rounded-[4px] bg-gris p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-gris-appuye">
                     <span className="flex shrink-0 items-start justify-between gap-2">
                       {/* Le nom seul : la lettre le précédait, et « O
                         * Morphologie en O » la disait deux fois. */}
