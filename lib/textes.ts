@@ -65,6 +65,21 @@ const FR = {
     retouches: "Retouches incluses",
     aPartirDe: "À partir de",
   },
+  /* L'introduction de l'accueil, avant les morphologies : qui est la
+   * maison, où elle se trouve, ce qu'on y vit. Demandée par la
+   * boutique — on entrait dans la silhouette sans savoir où l'on
+   * était. Les mots sont ceux de la page « La maison », resserrés. */
+  introMaison: {
+    legende: "La maison",
+    titre: "Une boutique parisienne, plusieurs créateurs, et le temps qu’il faut pour choisir.",
+    texteAvant:
+      "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez plusieurs créateurs, puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
+    texteApres:
+      " se privatise le temps d’un essayage — une heure, la boutique pour vous seule, et quelqu’un qui connaît chaque robe.",
+    /* Pas « La maison » : le repère au-dessus le dit déjà, et deux fois
+     * le même mot dans le même bloc se lit comme une redite. */
+    lien: "Découvrir la maison",
+  },
   silhouette: {
     legende: "Les morphologies",
     titre: "Avant la robe, la morphologie.",
@@ -550,6 +565,14 @@ const EN: Textes = {
     surMesure: "Made to measure",
     retouches: "Alterations included",
     aPartirDe: "From",
+  },
+  introMaison: {
+    legende: "The house",
+    titre: "A Paris boutique, several designers, and the time it takes to choose.",
+    texteAvant:
+      "MADAMOON does not produce its own collections: the house chooses, dress by dress, from several designers, then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting — one hour, the boutique to yourself, and someone who knows every dress.",
+    texteApres: "",
+    lien: "Discover the house",
   },
   silhouette: {
     legende: "Body shapes",

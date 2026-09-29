@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Ouverture from "@/components/accueil/Ouverture";
 import Hero from "@/components/accueil/Hero";
+import Maison from "@/components/accueil/Maison";
 import Morphologies from "@/components/accueil/Morphologies";
 import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
@@ -39,6 +40,7 @@ export default function Accueil() {
     <>
       <Ouverture />
       <Hero langue="fr" />
+      <Maison langue="fr" />
       <Morphologies langue="fr" />
       <Coupes langue="fr" />
       <Createurs langue="fr" />
