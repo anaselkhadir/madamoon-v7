@@ -19,6 +19,12 @@
   --color-sable: #ece5da;
   --color-fil: #e3dcd1;
 
+  /* Le gris des cartes de morphologie, demandé par la boutique. À peine
+   * tiède — un gris franc aurait fait tache au milieu d'une page bâtie
+   * sur l'ivoire —, et deux crans : le fond, puis celui du survol. */
+  --color-gris: #f3f2f1;
+  --color-gris-appuye: #e9e7e5;
+
   /* Le blanc du texte posé sur une photographie. Il ne bascule jamais :
    * une image reste une image, et son voile de lecture est calculé pour
    * du blanc. « blanc » désigne une surface, et une surface s'assombrit ;
@@ -1167,6 +1173,11 @@ html[data-ouverture]::before {
   --color-craie: #131313;
   --color-sable: #1b1b1b;
   --color-fil: #2a2a2a;
+
+  /* Le gris des cartes suit le reste : sur du noir, c'est la surface qui
+   * monte d'un cran, pas la teinte qui s'inverse. */
+  --color-gris: #131313;
+  --color-gris-appuye: #1e1e1e;
 
   --color-encre: #f5f0e8;
   --color-plume: #ded7cc;

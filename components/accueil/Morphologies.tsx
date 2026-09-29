@@ -85,13 +85,12 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. L'intitulé en tête — la lettre et le nom à
                     * gauche, le plus à droite, qui dit qu'il y a une page
                     * derrière —, et le dessin dessous. */}
-                  <div className="flex aspect-[8/9] flex-col rounded-[1.125rem] bg-craie p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[8/9] flex-col rounded-[1.125rem] bg-gris p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-gris-appuye">
                     <span className="flex shrink-0 items-start justify-between gap-2">
-                      <span className="flex items-baseline gap-2">
-                        <span className="font-serif text-[clamp(1rem,1.3vw,1.25rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
-                          {m.lettre}
-                        </span>
-                        <span className="legende leading-tight">{morphoNom(m, langue)}</span>
+                      {/* Le nom seul : la lettre le précédait, et « O
+                        * Morphologie en O » la disait deux fois. */}
+                      <span className="legende leading-tight transition-colors duration-500 group-hover:text-encre">
+                        {morphoNom(m, langue)}
                       </span>
                       <span
                         aria-hidden="true"
@@ -124,7 +123,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                     * sous la carte et s'y lit toujours : il n'y a pas de
                     * survol sous le pouce. */}
                   <span
-                    className="mt-2 block lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:bg-gradient-to-t lg:from-sable lg:from-55% lg:to-transparent lg:px-[clamp(0.75rem,1vw,1rem)] lg:pb-[clamp(0.75rem,1vw,1rem)] lg:pt-10 lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100"
+                    className="mt-2 block lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:bg-gradient-to-t lg:from-gris-appuye lg:from-55% lg:to-transparent lg:px-[clamp(0.75rem,1vw,1rem)] lg:pb-[clamp(0.75rem,1vw,1rem)] lg:pt-10 lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100"
                   >
                     <span className="texte block text-[0.75rem] leading-[1.35]">
                       {morphoSilhouette(m, langue)}
