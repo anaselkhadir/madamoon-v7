@@ -60,12 +60,17 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
         </Link>
       </div>
 
-      {/* La rangée. Six colonnes au large ; sous le seuil elle défile au
-        * doigt, les photographies gardant leur taille plutôt que de se
-        * réduire à six vignettes illisibles. */}
+      {/* La rangée. Six colonnes au large, d'un bord à l'autre de la
+        * fenêtre : la gouttière est rendue aux photographies, comme le
+        * fait déjà le premier écran. Sous le seuil elle défile au doigt,
+        * les photographies gardant leur taille plutôt que de se réduire
+        * à six vignettes illisibles. */}
       <ul
         aria-label={L.rangee}
-        className="gouttiere mt-[clamp(2rem,4vw,3.5rem)] flex snap-x snap-mandatory gap-[clamp(0.5rem,0.9vw,0.875rem)] overflow-x-auto pb-1 lg:grid lg:grid-cols-6 lg:overflow-visible"
+        /* La gouttière est écrite en utilitaire et non par « .gouttiere » :
+          * cette classe n'est pas calquée et l'emporterait sur le
+          * « lg:px-0 » qui rend le bord aux photographies. */
+        className="mt-[clamp(2rem,4vw,3.5rem)] flex snap-x snap-mandatory gap-[clamp(0.375rem,0.6vw,0.5rem)] overflow-x-auto px-[var(--gouttiere)] pb-1 lg:grid lg:grid-cols-6 lg:overflow-visible lg:px-0"
         data-suite
       >
         {choisies.map((robe, i) => {
@@ -74,13 +79,18 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
           return (
             <li key={robe.slug} className="w-[58vw] shrink-0 snap-start sm:w-[38vw] lg:w-auto">
               <Link href={`/robes/${robe.slug}`} className="group block">
-                <div className="relative overflow-hidden rounded-[4px] bg-craie">
+                {/* Trois cinquièmes : plus haut que le rapport de la
+                  * source, donc la robe se donne en pied et la rangée
+                  * gagne un cinquième de hauteur sans prendre un pixel de
+                  * large. Le recadrage part du centre. */}
+                <div className="relative aspect-[3/5] overflow-hidden rounded-[4px] bg-craie">
                   <Photo
                     media={media}
                     dossier="robes"
                     alt={altRobe(robe, langue)}
-                    sizes="(max-width: 640px) 58vw, (max-width: 1024px) 38vw, 16vw"
+                    sizes="(max-width: 640px) 58vw, (max-width: 1024px) 38vw, 17vw"
                     priorite={i < 3}
+                    className="h-full w-full object-cover"
                   />
                   {/* Le bouton au cœur de la photographie. Il ne paraît
                     * qu'au survol, et seulement là où il y a un survol :
@@ -103,7 +113,7 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
                   * place : la rangée ne bouge pas quand elle paraît. Sous
                   * le seuil elle se lit toujours — il n'y a pas de survol
                   * sous le pouce. */}
-                <span className="mt-3 block lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
+                <span className="mt-3 block px-[clamp(0.375rem,0.6vw,0.5rem)] lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
                   <span className="nom-carte block">{robe.nom}</span>
                   <span className="texte mt-1 block text-[0.75rem] leading-[1.35]">
                     {robeLigne(robe, langue)}
