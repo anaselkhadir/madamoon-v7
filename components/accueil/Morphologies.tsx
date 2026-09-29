@@ -44,7 +44,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
           * place. « minmax(0, 1fr) » les empêche de la déborder — une
           * colonne souple prend sinon la largeur de son contenu, et la
           * grille sortait de la gouttière. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(1.75rem,3vw,3rem)]">
+        <div className="lg:grid lg:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(1.5rem,2.2vw,2rem)]">
           {/* ————— le texte : au-dessus sur téléphone, à gauche sur
             * ordinateur ————— */}
           <div>
@@ -69,7 +69,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
 
           {/* ————— les cartes : deux rangs de trois ————— */}
           <ul
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.875rem,1.6vw,1.5rem)] gap-y-[clamp(1.5rem,2.5vw,2.25rem)] sm:grid-cols-3 lg:mt-0"
+            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(1rem,1.6vw,1.25rem)] sm:grid-cols-3 lg:mt-0"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
@@ -78,7 +78,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. Le dessin au centre, la lettre et le nom
                     * en bas, le plus en haut à droite — il dit qu'il y a
                     * une page derrière. */}
-                  <div className="flex aspect-[2/3] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[5/8] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span
                       aria-hidden="true"
                       className="flex h-7 w-7 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
@@ -112,11 +112,11 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                     * hauteur — la grille ne bouge donc jamais. Sous mille
                     * vingt-quatre pixels elle reste lue : il n'y a pas de
                     * survol sous le pouce. */}
-                  <span className="mt-3 block lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
-                    <span className="texte block text-[0.8125rem]">
+                  <span className="mt-2 block lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
+                    <span className="texte block text-[0.8125rem] leading-[1.45]">
                       {morphoSilhouette(m, langue)}
                     </span>
-                    <span className="legende mt-2 block" style={{ color: "var(--color-brume)" }}>
+                    <span className="legende mt-1.5 block" style={{ color: "var(--color-brume)" }}>
                       {m.premieres.map((c) => coupeNom(c, langue)).join(", ")}
                     </span>
                   </span>
