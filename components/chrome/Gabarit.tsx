@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif, Pinyon_Script, Quattrocento_Sans } from "next/font/google";
+import { Inter, Instrument_Serif, Pinyon_Script } from "next/font/google";
 
 import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
@@ -32,16 +32,6 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
-/* Inter, pour le seul paragraphe d'introduction de l'accueil : la
- * boutique l'a demandée là et nulle part ailleurs. Une graisse, un
- * alphabet latin — la police ne pèse que ce qu'elle sert. */
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--police-inter",
-  display: "swap",
-});
-
 /* L'anglaise du nom de la maison, sur l'accueil. Une copperplate gravée,
  * dans l'esprit de la référence choisie par la boutique — et sous
  * licence ouverte, contrairement à celle-là. Elle ne sert qu'à un mot :
@@ -53,7 +43,14 @@ const anglaise = Pinyon_Script({
   display: "swap",
 });
 
-const sans = Quattrocento_Sans({
+/* Le texte courant du site. Inter a remplacé le Quattrocento Sans à la
+ * demande de la boutique : son œil est plus grand et son dessin plus
+ * neutre — les paragraphes se lisent mieux à petite taille, sur
+ * téléphone surtout.
+ *
+ * Deux graisses seulement, le romain et le gras : le site n'en emploie
+ * pas d'autre, et chacune se télécharge. */
+const sans = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--police-sans",
@@ -72,7 +69,7 @@ export default function Gabarit({
 
     /* Lenis pose ses propres classes sur <html> : React ne doit pas s'en
      * inquiéter au moment de l'hydratation. */
-    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${inter.variable} ${anglaise.variable}`}>
+    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${anglaise.variable}`}>
       <head>
         {/*
           * Le thème, reposé avant la première peinture.

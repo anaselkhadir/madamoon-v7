@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Quattrocento_Sans } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import PageIntrouvable from "@/components/pages/PageIntrouvable";
 import "./globals.css";
 
@@ -30,7 +30,7 @@ const serif = Instrument_Serif({
   variable: "--police-serif",
 });
 
-const sans = Quattrocento_Sans({
+const sans = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",

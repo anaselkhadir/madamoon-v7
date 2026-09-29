@@ -55,10 +55,7 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
           {/* L'exposant est une convention française : « le 10ᵉ ». En
             * anglais l'arrondissement s'écrit en toutes lettres, et la
             * phrase se tient d'un seul tenant. */}
-          {/* Inter, demandée par la boutique pour ce paragraphe seul.
-            * Écrite en propre : « .texte » n'est pas calquée et tient
-            * déjà la taille, l'interligne et la couleur. */}
-          <p className="texte mt-5" style={{ fontFamily: "var(--font-inter)" }}>
+          <p className="texte mt-5">
             {L.texteAvant}
             {langue === "fr" && (
               <>
