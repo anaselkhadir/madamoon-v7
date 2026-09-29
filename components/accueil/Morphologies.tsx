@@ -44,7 +44,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
           * place. « minmax(0, 1fr) » les empêche de la déborder — une
           * colonne souple prend sinon la largeur de son contenu, et la
           * grille sortait de la gouttière. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3.5vw,3.5rem)]">
+        <div className="lg:grid lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(1.75rem,3vw,3rem)]">
           {/* ————— le texte : au-dessus sur téléphone, à gauche sur
             * ordinateur ————— */}
           <div>
@@ -78,7 +78,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. Le dessin au centre, la lettre et le nom
                     * en bas, le plus en haut à droite — il dit qu'il y a
                     * une page derrière. */}
-                  <div className="flex aspect-[3/4] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[2/3] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span
                       aria-hidden="true"
                       className="flex h-7 w-7 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
