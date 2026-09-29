@@ -30,6 +30,19 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
         <div className="mesure-l mx-auto text-center">
           <span data-ligne className="block">
             <h2 id="la-maison" className="phrase">
+              {/* L'anglaise a l'œil plus petit qu'un romain de même
+                * corps : relevée d'un tiers, elle se tient sur la même
+                * ligne que la suite. L'interligne revient à un, sinon
+                * ses déliés écartent les deux lignes du titre. */}
+              <span
+                style={{
+                  fontFamily: "var(--font-anglaise)",
+                  fontSize: "1.35em",
+                  lineHeight: 1,
+                }}
+              >
+                {L.nom}
+              </span>
               {L.titre}
             </h2>
           </span>

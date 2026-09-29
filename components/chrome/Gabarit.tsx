@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif, Quattrocento_Sans } from "next/font/google";
+import { Inter, Instrument_Serif, Pinyon_Script, Quattrocento_Sans } from "next/font/google";
 
 import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
@@ -42,6 +42,17 @@ const inter = Inter({
   display: "swap",
 });
 
+/* L'anglaise du nom de la maison, sur l'accueil. Une copperplate gravée,
+ * dans l'esprit de la référence choisie par la boutique — et sous
+ * licence ouverte, contrairement à celle-là. Elle ne sert qu'à un mot :
+ * une graisse, l'alphabet latin, rien de plus. */
+const anglaise = Pinyon_Script({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--police-anglaise",
+  display: "swap",
+});
+
 const sans = Quattrocento_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -61,7 +72,7 @@ export default function Gabarit({
 
     /* Lenis pose ses propres classes sur <html> : React ne doit pas s'en
      * inquiéter au moment de l'hydratation. */
-    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${inter.variable}`}>
+    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${inter.variable} ${anglaise.variable}`}>
       <head>
         {/*
           * Le thème, reposé avant la première peinture.

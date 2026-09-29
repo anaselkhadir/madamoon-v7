@@ -70,7 +70,11 @@ const FR = {
    * boutique — on entrait dans la silhouette sans savoir où l'on
    * était. Le texte est celui de Mouna, mot pour mot. */
   introMaison: {
-    titre: "MADAMOON, votre boutique de robes de mariée à Paris",
+    /* Le nom se détache du reste du titre : il est écrit à l'anglaise, et
+     * une anglaise ne s'écrit pas en capitales — ses majuscules ouvrent
+     * un mot, elles ne se suivent pas. D'où « Madamoon ». */
+    nom: "Madamoon",
+    titre: ", votre boutique de robes de mariée à Paris",
     texteAvant: "Au cœur du 10",
     texteApres:
       " arrondissement de Paris, MADAMOON vous accueille dans un showroom pensé comme un véritable écrin dédié à la robe de mariée. Plus qu’un simple essayage, nous vous proposons une expérience personnalisée, attentive et chaleureuse, pour prendre le temps de découvrir les coupes, les matières et les détails qui vous correspondent. Chaque rendez-vous est une étape privilégiée pour trouver la robe dans laquelle vous vous sentirez pleinement vous-même.",
@@ -563,7 +567,8 @@ const EN: Textes = {
     aPartirDe: "From",
   },
   introMaison: {
-    titre: "MADAMOON, your wedding dress boutique in Paris",
+    nom: "Madamoon",
+    titre: ", your wedding dress boutique in Paris",
     texteAvant:
       "In the heart of the 10th arrondissement of Paris, MADAMOON welcomes you into a showroom conceived as a jewel case for the wedding dress. More than a simple fitting, we offer a personal, attentive and warm experience — the time to discover the cuts, the fabrics and the details that suit you. Every appointment is a moment apart, to find the dress in which you feel entirely yourself.",
     texteApres: "",

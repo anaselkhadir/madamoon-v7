@@ -43,6 +43,8 @@
   /* Demandée par la boutique pour le seul paragraphe d'introduction de
    * l'accueil. Elle n'entre nulle part ailleurs. */
   --font-inter: var(--police-inter), ui-sans-serif, system-ui, sans-serif;
+  /* L'anglaise du nom de la maison, sur le titre de l'accueil. */
+  --font-anglaise: var(--police-anglaise), "Snell Roundhand", cursive;
 
   --ease-doux: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-rideau: cubic-bezier(0.16, 1, 0.3, 1);
