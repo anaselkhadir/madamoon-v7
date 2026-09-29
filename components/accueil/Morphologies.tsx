@@ -43,10 +43,21 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
           * ce qui reste : les cartes remplissent leur zone d'un bord à
           * l'autre. C'est leur hauteur, non leur largeur, qui les avait
           * fait paraître énormes — d'où un cadre presque carré. */}
-        <div className="lg:grid lg:grid-cols-[clamp(14rem,29vw,30rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3vw,3rem)]">
-          {/* ————— le texte : au-dessus sur téléphone, à gauche sur
-            * ordinateur ————— */}
-          <div>
+        {/*
+          * Quatre blocs, dans deux ordres.
+          *
+          * Sur ordinateur, la colonne de gauche les empile — l'amorce, le
+          * rappel, le lien — et les cartes tiennent la colonne de droite
+          * sur toute la hauteur. Sous le seuil, tout se met en une
+          * colonne et le rappel passe après les cartes : c'est une note
+          * sur ce qu'on vient de voir, elle se lit mieux après qu'avant.
+          *
+          * Les « order » font ce déplacement, et le placement explicite
+          * en lignes le défait au-delà du seuil : le texte n'est écrit
+          * qu'une fois.
+          */}
+        <div className="grid gap-y-[clamp(1.5rem,3vw,2rem)] lg:grid-cols-[clamp(14rem,29vw,30rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3vw,3rem)] lg:gap-y-0">
+          <div className="order-1 lg:col-start-1 lg:row-start-1">
             <p className="legende">{L.silhouette.legende}</p>
             <span data-ligne className="mt-4 block">
               <h2 id="morphologies" className="phrase">
@@ -54,16 +65,21 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
               </h2>
             </span>
             <p className="texte mesure-l mt-4">{L.silhouette.texte}</p>
-            {/* Le rappel des pages de morphologie : une piste, jamais une
-              * règle. */}
-            <p className="texte mesure-l mt-3 text-[0.875rem] italic" style={{ color: "var(--color-plomb)" }}>
-              {L.silhouette.mention}
-            </p>
-            <div className="pt-[clamp(1.5rem,2.5vw,2.25rem)]">
-              <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
-                {L.silhouette.lien}
-              </Link>
-            </div>
+          </div>
+
+          {/* Le rappel des pages de morphologie : une piste, jamais une
+            * règle. */}
+          <p
+            className="texte mesure-l order-3 text-[0.875rem] italic lg:order-none lg:col-start-1 lg:row-start-2 lg:mt-3"
+            style={{ color: "var(--color-plomb)" }}
+          >
+            {L.silhouette.mention}
+          </p>
+
+          <div className="order-4 lg:order-none lg:col-start-1 lg:row-start-3 lg:pt-[clamp(1.5rem,2.5vw,2.25rem)]">
+            <Link href="/morphologies" className="lien-nav souligne inline-block text-action">
+              {L.silhouette.lien}
+            </Link>
           </div>
 
           {/* ————— les cartes : deux rangs de trois ————— */}
@@ -81,7 +97,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
               * son contenu et une largeur maximale ne le rattrape pas.
               *
               * Une seule valeur à bouger si elles doivent encore maigrir. */
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(0.75rem,1.2vw,1rem)] sm:grid-cols-3 lg:ml-auto lg:mt-0 lg:w-[clamp(28rem,50vw,52rem)] lg:max-w-full"
+            className="order-2 mt-[clamp(1rem,2vw,1.5rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(0.75rem,1.2vw,1rem)] sm:grid-cols-3 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3 lg:ml-auto lg:mt-0 lg:w-[clamp(28rem,50vw,52rem)] lg:max-w-full"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
