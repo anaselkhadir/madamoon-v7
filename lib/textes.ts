@@ -80,6 +80,15 @@ const FR = {
       " arrondissement de Paris, MADAMOON vous accueille dans un showroom pensé comme un véritable écrin dédié à la robe de mariée. Plus qu’un simple essayage, nous vous proposons une expérience personnalisée, attentive et chaleureuse, pour prendre le temps de découvrir les coupes, les matières et les détails qui vous correspondent. Chaque rendez-vous est une étape privilégiée pour trouver la robe dans laquelle vous vous sentirez pleinement vous-même.",
     lien: "Découvrir la maison",
   },
+  /* La rangée de robes de l'accueil. La sélection elle-même est dans le
+   * composant : ce sont des identifiants, pas des mots. */
+  robesAccueil: {
+    legende: "Les robes",
+    titre: "Quelques robes, pour commencer.",
+    voirTout: "Voir toutes les robes",
+    voirPlus: "Voir plus",
+    rangee: "Une sélection de robes",
+  },
   silhouette: {
     legende: "Les morphologies",
     titre: "Avant la robe, la morphologie.",
@@ -573,6 +582,13 @@ const EN: Textes = {
       "In the heart of the 10th arrondissement of Paris, MADAMOON welcomes you into a showroom conceived as a jewel case for the wedding dress. More than a simple fitting, we offer a personal, attentive and warm experience — the time to discover the cuts, the fabrics and the details that suit you. Every appointment is a moment apart, to find the dress in which you feel entirely yourself.",
     texteApres: "",
     lien: "Discover the house",
+  },
+  robesAccueil: {
+    legende: "The dresses",
+    titre: "A few dresses, to begin with.",
+    voirTout: "See all the dresses",
+    voirPlus: "See more",
+    rangee: "A selection of dresses",
   },
   silhouette: {
     legende: "Body shapes",
