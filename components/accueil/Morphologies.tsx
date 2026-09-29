@@ -77,35 +77,36 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
             {MORPHOLOGIES.map((m) => (
               <li key={m.lettre}>
                 <Link href={`/morphologies/${m.lettre.toLowerCase()}`} className="group block">
-                  {/* La carte. Le dessin au centre, la lettre et le nom
-                    * en bas, le plus en haut à droite — il dit qu'il y a
-                    * une page derrière. */}
+                  {/* La carte. L'intitulé en tête — la lettre et le nom à
+                    * gauche, le plus à droite, qui dit qu'il y a une page
+                    * derrière —, et le dessin dessous. */}
                   <div className="flex aspect-[6/7] flex-col rounded-[1.125rem] bg-craie p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-sable">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-6 w-6 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
-                    >
-                      <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
+                    <span className="flex shrink-0 items-start justify-between gap-2">
+                      <span className="flex items-baseline gap-2">
+                        <span className="font-serif text-[clamp(1rem,1.3vw,1.25rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
+                          {m.lettre}
+                        </span>
+                        <span className="legende leading-tight">{morphoNom(m, langue)}</span>
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
+                      >
+                        <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                          <path d="M12 5v14M5 12h14" />
+                        </svg>
+                      </span>
                     </span>
 
                     {/* Le croquis se mesure en hauteur : la planche est
                       * haute et étroite — cinq cents sur douze cent un —,
                       * et une largeur imposée l'aurait fait déborder de
                       * la carte. */}
-                    <span className="flex min-h-0 flex-1 items-center justify-center py-2">
+                    <span className="flex min-h-0 flex-1 items-center justify-center pt-2">
                       <Croquis
                         lettre={m.lettre}
                         className="h-full w-auto text-plume transition-colors duration-700 group-hover:text-action"
                       />
-                    </span>
-
-                    <span className="flex shrink-0 items-baseline gap-2">
-                      <span className="font-serif text-[clamp(1rem,1.3vw,1.25rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
-                        {m.lettre}
-                      </span>
-                      <span className="legende leading-tight">{morphoNom(m, langue)}</span>
                     </span>
                   </div>
 
