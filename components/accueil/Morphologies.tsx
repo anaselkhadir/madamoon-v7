@@ -43,7 +43,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
           * ce qui reste : les cartes remplissent leur zone d'un bord à
           * l'autre. C'est leur hauteur, non leur largeur, qui les avait
           * fait paraître énormes — d'où un cadre presque carré. */}
-        <div className="lg:grid lg:grid-cols-[clamp(14rem,24vw,26rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3vw,3rem)]">
+        <div className="lg:grid lg:grid-cols-[clamp(14rem,29vw,30rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3vw,3rem)]">
           {/* ————— le texte : au-dessus sur téléphone, à gauche sur
             * ordinateur ————— */}
           <div>
@@ -85,7 +85,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. L'intitulé en tête — la lettre et le nom à
                     * gauche, le plus à droite, qui dit qu'il y a une page
                     * derrière —, et le dessin dessous. */}
-                  <div className="flex aspect-[6/7] flex-col rounded-[1.125rem] bg-craie p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[8/9] flex-col rounded-[1.125rem] bg-craie p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span className="flex shrink-0 items-start justify-between gap-2">
                       <span className="flex items-baseline gap-2">
                         <span className="font-serif text-[clamp(1rem,1.3vw,1.25rem)] leading-none text-encre transition-colors duration-500 group-hover:text-action">
