@@ -39,11 +39,15 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
       className="relative z-10 bg-blanc pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,8vw,7rem)]"
     >
       <div className="gouttiere">
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(15rem,20rem)] lg:items-start lg:gap-x-[clamp(2rem,4vw,4.5rem)]">
-          {/* ————— le texte : au-dessus sur téléphone, à droite sur
-            * ordinateur. Il est écrit en premier — c'est l'ordre de
-            * lecture, et celui que suit un lecteur d'écran. ————— */}
-          <div className="lg:order-2">
+        {/* La colonne du texte est bornée en haut comme en bas : le reste
+          * revient aux cartes, qui n'ont donc plus qu'à remplir leur
+          * place. « minmax(0, 1fr) » les empêche de la déborder — une
+          * colonne souple prend sinon la largeur de son contenu, et la
+          * grille sortait de la gouttière. */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3.5vw,3.5rem)]">
+          {/* ————— le texte : au-dessus sur téléphone, à gauche sur
+            * ordinateur ————— */}
+          <div>
             <p className="legende">{L.silhouette.legende}</p>
             <span data-ligne className="mt-4 block">
               <h2 id="morphologies" className="phrase">
@@ -65,7 +69,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
 
           {/* ————— les cartes : deux rangs de trois ————— */}
           <ul
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid grid-cols-2 gap-x-[clamp(0.875rem,1.6vw,1.5rem)] gap-y-[clamp(1.5rem,2.5vw,2.25rem)] sm:grid-cols-3 lg:order-1 lg:mt-0"
+            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.875rem,1.6vw,1.5rem)] gap-y-[clamp(1.5rem,2.5vw,2.25rem)] sm:grid-cols-3 lg:mt-0"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
@@ -74,7 +78,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. Le dessin au centre, la lettre et le nom
                     * en bas, le plus en haut à droite — il dit qu'il y a
                     * une page derrière. */}
-                  <div className="flex aspect-[4/5] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[3/4] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span
                       aria-hidden="true"
                       className="flex h-7 w-7 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
