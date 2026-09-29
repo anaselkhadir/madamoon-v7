@@ -77,6 +77,11 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
             {MORPHOLOGIES.map((m) => (
               <li key={m.lettre}>
                 <Link href={`/morphologies/${m.lettre.toLowerCase()}`} className="group block">
+                  {/* L'enveloppe : sur ordinateur, elle a la taille de la
+                    * carte, et c'est elle qui tient la description au bas
+                    * du dessin. Sous le seuil, la description reprend sa
+                    * place dessous et l'enveloppe grandit avec elle. */}
+                  <div className="relative lg:overflow-hidden lg:rounded-[1.125rem]">
                   {/* La carte. L'intitulé en tête — la lettre et le nom à
                     * gauche, le plus à droite, qui dit qu'il y a une page
                     * derrière —, et le dessin dessous. */}
@@ -110,12 +115,17 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                     </span>
                   </div>
 
-                  {/* La description, gardée dans sa place : invisible tant
-                    * qu'on ne survole pas, mais elle occupe déjà la
-                    * hauteur — la grille ne bouge donc jamais. Sous mille
-                    * vingt-quatre pixels elle reste lue : il n'y a pas de
+                  {/* La description. Sur ordinateur elle monte du bas de
+                    * la carte, sur le dessin : plus rien n'est gardé
+                    * dessous, et les deux rangs se touchent presque. Le
+                    * dégradé la détache du trait sans poser un bandeau.
+                    *
+                    * Sous mille vingt-quatre pixels elle reprend sa place
+                    * sous la carte et s'y lit toujours : il n'y a pas de
                     * survol sous le pouce. */}
-                  <span className="mt-2 block lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
+                  <span
+                    className="mt-2 block lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:bg-gradient-to-t lg:from-sable lg:from-55% lg:to-transparent lg:px-[clamp(0.75rem,1vw,1rem)] lg:pb-[clamp(0.75rem,1vw,1rem)] lg:pt-10 lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100"
+                  >
                     <span className="texte block text-[0.75rem] leading-[1.35]">
                       {morphoSilhouette(m, langue)}
                     </span>
@@ -126,6 +136,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                       {m.premieres.map((c) => coupeNom(c, langue)).join(", ")}
                     </span>
                   </span>
+                  </div>
                 </Link>
               </li>
             ))}
