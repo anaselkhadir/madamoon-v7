@@ -68,16 +68,12 @@ const FR = {
   /* L'introduction de l'accueil, avant les morphologies : qui est la
    * maison, où elle se trouve, ce qu'on y vit. Demandée par la
    * boutique — on entrait dans la silhouette sans savoir où l'on
-   * était. Les mots sont ceux de la page « La maison », resserrés. */
+   * était. Le texte est celui de Mouna, mot pour mot. */
   introMaison: {
-    legende: "La maison",
-    titre: "Une boutique parisienne, plusieurs créateurs, et le temps qu’il faut pour choisir.",
-    texteAvant:
-      "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez plusieurs créateurs, puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
+    titre: "MADAMOON, votre boutique de robes de mariée à Paris",
+    texteAvant: "Au cœur du 10",
     texteApres:
-      " se privatise le temps d’un essayage — une heure, la boutique pour vous seule, et quelqu’un qui connaît chaque robe.",
-    /* Pas « La maison » : le repère au-dessus le dit déjà, et deux fois
-     * le même mot dans le même bloc se lit comme une redite. */
+      " arrondissement de Paris, MADAMOON vous accueille dans un showroom pensé comme un véritable écrin dédié à la robe de mariée. Plus qu’un simple essayage, nous vous proposons une expérience personnalisée, attentive et chaleureuse, pour prendre le temps de découvrir les coupes, les matières et les détails qui vous correspondent. Chaque rendez-vous est une étape privilégiée pour trouver la robe dans laquelle vous vous sentirez pleinement vous-même.",
     lien: "Découvrir la maison",
   },
   silhouette: {
@@ -567,10 +563,9 @@ const EN: Textes = {
     aPartirDe: "From",
   },
   introMaison: {
-    legende: "The house",
-    titre: "A Paris boutique, several designers, and the time it takes to choose.",
+    titre: "MADAMOON, your wedding dress boutique in Paris",
     texteAvant:
-      "MADAMOON does not produce its own collections: the house chooses, dress by dress, from several designers, then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting — one hour, the boutique to yourself, and someone who knows every dress.",
+      "In the heart of the 10th arrondissement of Paris, MADAMOON welcomes you into a showroom conceived as a jewel case for the wedding dress. More than a simple fitting, we offer a personal, attentive and warm experience — the time to discover the cuts, the fabrics and the details that suit you. Every appointment is a moment apart, to find the dress in which you feel entirely yourself.",
     texteApres: "",
     lien: "Discover the house",
   },
