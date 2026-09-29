@@ -39,12 +39,11 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
       className="relative z-10 bg-blanc pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,8vw,7rem)]"
     >
       <div className="gouttiere">
-        {/* C'est la taille des cartes qui commande, pas la largeur
-          * disponible : leur colonne se mesure à ce qu'elle porte, et le
-          * texte prend tout le reste. L'inverse — des cartes qui
-          * remplissent la place — les faisait grandir avec l'écran, et
-          * la boutique les veut petites. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-[clamp(2rem,4vw,4rem)]">
+        {/* La colonne du texte est mesurée, celle des cartes prend tout
+          * ce qui reste : les cartes remplissent leur zone d'un bord à
+          * l'autre. C'est leur hauteur, non leur largeur, qui les avait
+          * fait paraître énormes — d'où un cadre presque carré. */}
+        <div className="lg:grid lg:grid-cols-[clamp(14rem,24vw,26rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(2rem,3vw,3rem)]">
           {/* ————— le texte : au-dessus sur téléphone, à gauche sur
             * ordinateur ————— */}
           <div>
@@ -69,12 +68,10 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
 
           {/* ————— les cartes : deux rangs de trois ————— */}
           <ul
-            /* Trois pistes d'une largeur mesurée, et non trois parts de
-              * ce qui reste : les cartes gardent leur taille quelle que
-              * soit celle de l'écran. Sous le seuil, elles se mettent à
-              * deux de front et occupent la largeur — un téléphone n'a
-              * pas de place à perdre. */
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(1.25rem,2vw,1.75rem)] sm:grid-cols-3 lg:mt-0 lg:grid-cols-[repeat(3,clamp(9rem,13vw,14rem))]"
+            /* Trois parts égales de la place disponible : les cartes la
+              * remplissent d'un bord à l'autre. Sous le seuil, deux de
+              * front — un téléphone n'a pas de place à perdre. */
+            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(0.75rem,1.2vw,1rem)] sm:grid-cols-3 lg:mt-0"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
@@ -83,7 +80,7 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. Le dessin au centre, la lettre et le nom
                     * en bas, le plus en haut à droite — il dit qu'il y a
                     * une page derrière. */}
-                  <div className="flex aspect-[4/5] flex-col rounded-[1rem] bg-craie p-[clamp(0.625rem,0.9vw,0.875rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[6/7] flex-col rounded-[1.125rem] bg-craie p-[clamp(0.75rem,1vw,1rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span
                       aria-hidden="true"
                       className="flex h-6 w-6 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
@@ -118,10 +115,13 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                     * vingt-quatre pixels elle reste lue : il n'y a pas de
                     * survol sous le pouce. */}
                   <span className="mt-2 block lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100">
-                    <span className="texte block text-[0.8125rem] leading-[1.45]">
+                    <span className="texte block text-[0.75rem] leading-[1.35]">
                       {morphoSilhouette(m, langue)}
                     </span>
-                    <span className="legende mt-1.5 block" style={{ color: "var(--color-brume)" }}>
+                    <span
+                      className="legende mt-1 block text-[0.625rem]"
+                      style={{ color: "var(--color-brume)" }}
+                    >
                       {m.premieres.map((c) => coupeNom(c, langue)).join(", ")}
                     </span>
                   </span>
