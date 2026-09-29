@@ -55,7 +55,13 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
           {/* L'exposant est une convention française : « le 10ᵉ ». En
             * anglais l'arrondissement s'écrit en toutes lettres, et la
             * phrase se tient d'un seul tenant. */}
-          <p className="texte mt-5">
+          {/* Le paragraphe monte après le titre, le lien après lui : la
+            * section se découvre dans l'ordre où elle se lit. Les
+            * retards sont courts — on ouvre une page, on n'assiste pas à
+            * une démonstration. « Mouvement » révèle tout de suite ce qui
+            * est déjà à l'écran, et la préférence de mouvement réduit
+            * annule les trois d'un coup. */}
+          <p className="texte mt-5" data-lever data-retard="120">
             {L.texteAvant}
             {langue === "fr" && (
               <>
@@ -64,7 +70,7 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
               </>
             )}
           </p>
-          <div className="pt-[clamp(1.5rem,2.5vw,2.25rem)]">
+          <div className="pt-[clamp(1.5rem,2.5vw,2.25rem)]" data-lever data-retard="240">
             <Link href="/a-propos" className="lien-nav souligne inline-block text-action">
               {L.lien}
             </Link>
