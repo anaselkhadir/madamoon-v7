@@ -39,12 +39,12 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
       className="relative z-10 bg-blanc pb-[clamp(3rem,6vw,6rem)] pt-[clamp(3rem,8vw,7rem)]"
     >
       <div className="gouttiere">
-        {/* La colonne du texte est bornée en haut comme en bas : le reste
-          * revient aux cartes, qui n'ont donc plus qu'à remplir leur
-          * place. « minmax(0, 1fr) » les empêche de la déborder — une
-          * colonne souple prend sinon la largeur de son contenu, et la
-          * grille sortait de la gouttière. */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] lg:items-start lg:gap-x-[clamp(1.5rem,2.2vw,2rem)]">
+        {/* C'est la taille des cartes qui commande, pas la largeur
+          * disponible : leur colonne se mesure à ce qu'elle porte, et le
+          * texte prend tout le reste. L'inverse — des cartes qui
+          * remplissent la place — les faisait grandir avec l'écran, et
+          * la boutique les veut petites. */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-x-[clamp(2rem,4vw,4rem)]">
           {/* ————— le texte : au-dessus sur téléphone, à gauche sur
             * ordinateur ————— */}
           <div>
@@ -69,7 +69,12 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
 
           {/* ————— les cartes : deux rangs de trois ————— */}
           <ul
-            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(1rem,1.6vw,1.25rem)] sm:grid-cols-3 lg:mt-0"
+            /* Trois pistes d'une largeur mesurée, et non trois parts de
+              * ce qui reste : les cartes gardent leur taille quelle que
+              * soit celle de l'écran. Sous le seuil, elles se mettent à
+              * deux de front et occupent la largeur — un téléphone n'a
+              * pas de place à perdre. */
+            className="mt-[clamp(2.5rem,5vw,4rem)] grid min-w-0 grid-cols-2 gap-x-[clamp(0.625rem,1.1vw,1rem)] gap-y-[clamp(1.25rem,2vw,1.75rem)] sm:grid-cols-3 lg:mt-0 lg:grid-cols-[repeat(3,clamp(9rem,13vw,14rem))]"
             data-suite
           >
             {MORPHOLOGIES.map((m) => (
@@ -78,12 +83,12 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   {/* La carte. Le dessin au centre, la lettre et le nom
                     * en bas, le plus en haut à droite — il dit qu'il y a
                     * une page derrière. */}
-                  <div className="flex aspect-[5/8] flex-col rounded-[1.25rem] bg-craie p-[clamp(0.75rem,1.2vw,1.125rem)] transition-colors duration-500 group-hover:bg-sable">
+                  <div className="flex aspect-[4/5] flex-col rounded-[1rem] bg-craie p-[clamp(0.625rem,0.9vw,0.875rem)] transition-colors duration-500 group-hover:bg-sable">
                     <span
                       aria-hidden="true"
-                      className="flex h-7 w-7 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
+                      className="flex h-6 w-6 shrink-0 items-center justify-center self-end rounded-full border border-fil text-plomb transition-colors duration-500 group-hover:border-action group-hover:text-action"
                     >
-                      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                      <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                         <path d="M12 5v14M5 12h14" />
                       </svg>
                     </span>
