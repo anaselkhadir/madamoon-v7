@@ -196,9 +196,14 @@ export default async function PageRobe({
                 * dessein : agrandi du double il était mou de toute façon,
                 * et un flou assumé se lit comme une matière quand une
                 * image molle se lit comme un défaut. L'échelle évite la
-                * frange claire que le flou creuse sur les bords. */
+                * frange claire que le flou creuse sur les bords.
+                *
+                * Seulement là où la photographie nette est posée à
+                * droite, c'est-à-dire à partir de mille vingt-quatre
+                * pixels. Sous le pouce elle n'y est pas : flouter le fond
+                * n'aurait laissé que le flou. */
               className={`absolute inset-0 h-full w-full object-cover ${
-                petiteTete ? "scale-105 blur-[7px]" : ""
+                petiteTete ? "lg:scale-105 lg:blur-[7px]" : ""
               }`}
             />
           )
@@ -252,7 +257,9 @@ export default async function PageRobe({
                   dossier="robes"
                   alt=""
                   sizes="28vw"
-                  priorite
+                  /* Sans priorité, donc chargée paresseusement : sous le
+                    * pouce le cadre est masqué, et une image pressée y
+                    * aurait été téléchargée pour rien. */
                   className="block h-full w-auto"
                 />
               </span>
