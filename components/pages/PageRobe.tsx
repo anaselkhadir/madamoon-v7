@@ -266,9 +266,16 @@ export default async function PageRobe({
           {L.fiche.laFiche} {langue === "fr" ? de(robe.nom) : robe.nom}
         </h2>
 
-        {/* Ce que l'on remarque en premier, à la taille d'une phrase. */}
+        {/* La description, à la taille d'une phrase et posée au milieu.
+          * Les fiches de la maison sont passées d'une ligne à un
+          * paragraphe : calé à gauche dans une colonne étroite, un texte
+          * de dix lignes penchait la page d'un côté. Centré, il tient
+          * debout tout seul, comme la présentation de l'accueil.
+          *
+          * La mesure ne bouge pas — quarante-huit caractères : sans elle,
+          * un texte centré s'étale et devient une bannière. */}
         <span data-ligne className="mb-[clamp(2.5rem,5vw,4rem)] block">
-          <p className="phrase mesure-l">{robeRegard(robe, langue)}</p>
+          <p className="phrase mesure-l mx-auto text-center">{robeRegard(robe, langue)}</p>
         </span>
 
         <dl className="grid gap-x-[clamp(2rem,5vw,5rem)] border-t border-fil md:grid-cols-2">
