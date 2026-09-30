@@ -642,9 +642,10 @@ export const ROBES: Robe[] = [
   {
     slug: "fortune",
     nom: "Fortune",
-    ligne: "Trapèze en crêpe et organza",
+    ligne: "Bustier trapèze en crêpe stretch et organza satin",
     categorie: "Trapèze",
-    regard: "Un bustier sans bretelles, et la jupe qui s'ouvre d'un seul mouvement.",
+    regard:
+      "Découvrez Fortune, une robe de mariée bustier à la silhouette trapèze, confectionnée en crêpe et organza satin pour une allure élégante et intemporelle.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

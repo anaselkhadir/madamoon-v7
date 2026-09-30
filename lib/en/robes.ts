@@ -205,8 +205,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "The Calla wedding dress charms with its soft, airy presence. Made of very supple tulle and delicate Highclare lace, it brings together comfort, femininity and refinement. Its structured corset bodice flatters the figure, while its round neckline adds an elegant, timeless note. The lace, delicately worked and carefully placed on the bodice, enriches the dress with fine detail while keeping it light and natural. A dress for the bride looking for something romantic, elegant and comfortable, lifted by delicate lacework.",
   },
   "fortune": {
-    ligne: "A-line in crêpe and organza",
-    regard: "A strapless bodice, and a skirt that opens in a single movement.",
+    ligne: "Strapless A-line in stretch crêpe and satin organza",
+    regard:
+      "Fortune is a strapless wedding dress with an A-line silhouette, made of stretch crêpe and satin organza for an elegant, timeless presence.",
   },
   "siddalee": {
     ligne: "Floral mermaid, long train",
