@@ -210,16 +210,19 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Fortune is a strapless wedding dress with an A-line silhouette, made of stretch crêpe and satin organza for an elegant, timeless presence.",
   },
   "siddalee": {
-    ligne: "Floral mermaid, long train",
-    regard: "A removable strap at the shoulder, and a train that goes on and on.",
+    ligne: "Floral sheath, sequinned tulle and long train",
+    regard:
+      "Siddalee is a sheath wedding dress adorned with floral motifs, with removable straps, sequinned tulle and a long, spectacular train.",
   },
   "mitra": {
-    ligne: "Drop-waist ball gown, velvet ribbons",
-    regard: "Velvet ribbons set where the drapes of the skirt begin.",
+    ligne: "Drop-waist A-line, Cassie lace and velvet ribbons",
+    regard:
+      "A drop-waist A-line wedding dress, lifted by hand-applied Cassie lace and delicate velvet ribbons for a look at once enchanting and elegant.",
   },
   "ember": {
-    ligne: "Dupioni ball gown, corseted bodice",
-    regard: "A sweetheart neckline cut with a V, and a waist dropped very low.",
+    ligne: "Structured corset and couture line",
+    regard:
+      "Ember charms with its elegant, contemporary presence. Made of refined Dupioni, this wedding dress is defined by the corset that structures the figure. Its sweetheart neckline, lifted by an elegant V cut, flatters the bust. The dramatic dropped waist continues into a full, light skirt, for a silhouette at once modern, feminine and sophisticated. A dress for the bride looking for couture — firm lines and luxurious fabrics.",
   },
   "rowan": {
     ligne: "Charmeuse mermaid, sheer corset",

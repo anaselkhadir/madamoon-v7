@@ -653,9 +653,12 @@ export const ROBES: Robe[] = [
   {
     slug: "siddalee",
     nom: "Siddalee",
-    ligne: "Sirène à motifs floraux, longue traîne",
+    /* « Fourreau ou sirène » chez la maison : la coupe est déjà dite
+     * au-dessus du nom, la ligne garde donc l'autre mot. */
+    ligne: "Fourreau à motifs floraux, tulle pailleté et longue traîne",
     categorie: "Sirène",
-    regard: "Une bretelle amovible sur l'épaule, et une traîne qui n'en finit pas.",
+    regard:
+      "Découvrez Siddalee, une robe de mariée fourreau ornée de motifs floraux, avec des bretelles amovibles, tulle pailleté et une longue traîne spectaculaire.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -663,9 +666,10 @@ export const ROBES: Robe[] = [
   {
     slug: "mitra",
     nom: "Mitra",
-    ligne: "Princesse à taille basse, rubans de velours",
-    categorie: "Princesse",
-    regard: "Des rubans de velours posés à la naissance des drapés de la jupe.",
+    ligne: "Trapèze à taille basse, dentelle Cassie et rubans de velours",
+    categorie: "Trapèze",
+    regard:
+      "Découvrez cette robe de mariée trapèze ou A-line à taille basse, sublimée par une dentelle Cassie appliquée à la main et de délicats rubans de velours pour un look à la fois féérique et élégant.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -673,9 +677,10 @@ export const ROBES: Robe[] = [
   {
     slug: "ember",
     nom: "Ember",
-    ligne: "Princesse en dupion, bustier corseté",
+    ligne: "Corset structuré et silhouette couture",
     categorie: "Princesse",
-    regard: "Un décolleté cœur entaillé d'un V, et la taille descendue très bas.",
+    regard:
+      "Ember séduit par son allure élégante et contemporaine. Confectionnée en Dupioni raffiné, cette robe de mariée se distingue par son corset qui structure la silhouette. Son décolleté cœur, sublimé par une élégante découpe en V, met joliment en valeur la poitrine. La taille basse spectaculaire se prolonge par une jupe ample et légère, créant une silhouette à la fois moderne, féminine et sophistiquée. Une création idéale pour la mariée à la recherche d'une robe de mariée couture, aux lignes affirmées et aux matières luxueuses.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
