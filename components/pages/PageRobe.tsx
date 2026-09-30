@@ -72,6 +72,16 @@ export default async function PageRobe({
    * toute la largeur, et c'est tout. Elle est donc reprise dans la
    * galerie, où elle se montre à sa taille. */
   const tete = couverture(robe);
+  /*
+   * Les robes dont la photographie ne fait pas un premier écran.
+   *
+   * Le premier écran occupe toute la largeur : une photographie de moins
+   * de mille deux cents pixels y est agrandie du double et devient molle.
+   * Elle reste au fond — le voile sombre la tient, et la barre de
+   * navigation a besoin d'une image sous elle pour rester blanche — mais
+   * on en pose une seconde à droite, à sa taille vraie, nette.
+   */
+  const petiteTete = !film && !!tete && tete.w < 1200;
   const galerie = film || photos.length === 1 ? photos : photos.filter((p) => p !== tete);
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
@@ -182,7 +192,14 @@ export default async function PageRobe({
               sizes="100vw"
               priorite
               position="50% 30%"
-              className="absolute inset-0 h-full w-full object-cover"
+              /* Sur les petites photographies, le fond est flouté à
+                * dessein : agrandi du double il était mou de toute façon,
+                * et un flou assumé se lit comme une matière quand une
+                * image molle se lit comme un défaut. L'échelle évite la
+                * frange claire que le flou creuse sur les bords. */
+              className={`absolute inset-0 h-full w-full object-cover ${
+                petiteTete ? "scale-105 blur-[7px]" : ""
+              }`}
             />
           )
         )}
@@ -217,6 +234,30 @@ export default async function PageRobe({
               "linear-gradient(to top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0) 56%)",
           }}
         />
+        {/* La photographie à sa taille vraie, posée à droite. Elle ne
+          * paraît que sur les robes dont l'image est trop petite pour un
+          * plein écran, et seulement là où il y a la place : sous le
+          * pouce, le fond suffit. Décorative — le fond porte déjà le
+          * texte de remplacement. */}
+        {petiteTete && tete && (
+          <div className="absolute inset-y-0 right-[var(--gouttiere)] hidden items-center max-lg:hidden lg:flex">
+            <span
+              aria-hidden="true"
+              className="block overflow-hidden"
+              style={{ height: `min(68svh, ${tete.h}px)` }}
+            >
+              <Photo
+                media={tete}
+                dossier="robes"
+                alt=""
+                sizes="28vw"
+                priorite
+                className="block h-full w-auto"
+              />
+            </span>
+          </div>
+        )}
+
         {/*
           * Sur petit écran le bloc se range en bas plutôt qu'au milieu.
           * Centré, il tombait en travers de la robe — le buste, la
@@ -224,7 +265,7 @@ export default async function PageRobe({
           * laisse la photographie entière au-dessus de lui.
           */}
         <div className="gouttiere absolute inset-0 flex flex-col justify-center max-md:justify-end max-md:pb-[clamp(2rem,7vw,3rem)]">
-          <div className="max-w-[52vw] max-md:max-w-full">
+          <div className={`max-md:max-w-full ${petiteTete ? "max-w-[46vw]" : "max-w-[52vw]"}`}>
             <p className="mention text-sur-image/85">
               {coupeNom(robe.categorie, langue)}
               {maisonDeLaRobe && (
