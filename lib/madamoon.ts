@@ -688,9 +688,12 @@ export const ROBES: Robe[] = [
   {
     slug: "rowan",
     nom: "Rowan",
-    ligne: "Sirène en charmeuse, corset transparent",
+    /* « Fourreau ou sirène » chez la maison : la coupe est déjà dite
+     * au-dessus du nom, la ligne garde donc l'autre mot. */
+    ligne: "Fourreau en charmeuse, corset perlé et dentelle Mori",
     categorie: "Sirène",
-    regard: "Un corset brodé que l'on voit à travers, sous une encolure drapée.",
+    regard:
+      "Rowan est une robe de mariée près du corps qui associe élégance contemporaine et détails délicats. Confectionnée en Charmeuse, elle épouse harmonieusement la silhouette pour une allure féminine et sophistiquée. Son corset transparent orné de perles apporte une touche de sensualité et de lumière, tandis que la nouvelle dentelle Mori sublime délicatement cette création. Son décolleté drapé apporte douceur et élégance à la silhouette. Pour une version plus couvrante, le corset peut également être proposé avec une doublure.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["V", "H", "8", "X"],

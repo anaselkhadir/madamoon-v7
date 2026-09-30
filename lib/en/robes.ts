@@ -225,8 +225,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Ember charms with its elegant, contemporary presence. Made of refined Dupioni, this wedding dress is defined by the corset that structures the figure. Its sweetheart neckline, lifted by an elegant V cut, flatters the bust. The dramatic dropped waist continues into a full, light skirt, for a silhouette at once modern, feminine and sophisticated. A dress for the bride looking for couture — firm lines and luxurious fabrics.",
   },
   "rowan": {
-    ligne: "Charmeuse mermaid, sheer corset",
-    regard: "An embroidered corset you can see through, under a draped neckline.",
+    ligne: "Charmeuse sheath, beaded corset and Mori lace",
+    regard:
+      "Rowan is a close-fitting wedding dress that brings together contemporary elegance and delicate detail. Made of charmeuse, it follows the figure for a feminine, sophisticated presence. Its sheer corset, set with beads, adds sensuality and light, while the new Mori lace lifts the whole. Its draped neckline brings softness and elegance to the line. For more coverage, the corset can also be lined.",
   },
   "clover-perles": {
     ligne: "Caterina lace ball gown, pearls at the neckline",
