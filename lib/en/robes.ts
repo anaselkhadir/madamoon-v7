@@ -194,6 +194,56 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
     regard:
       "The bodice and the detachable sleeves are set off by delicately worked clusters of pearls, which bring a touch of light and sophistication to the silhouette. The sleeves come away, to make the look your own and change it as you please.",
   },
+  "santana": {
+    ligne: "Ball gown with basque waist in organza and tulle, floral lace",
+    regard:
+      "Santana is a fairy-tale ball gown wedding dress, reinterpreted in a modern, elegant spirit. Its V neckline and fine spaghetti straps flatter the figure, while its sheer bodice is lifted by delicate floral lace. Its full tulle and organza skirt, set with floral motifs, continues into a spectacular train and a scalloped hem. Santana charms with its romantic, airy, timeless presence — for the bride looking for an elegant, enchanted wedding dress. For a couture touch, it can be worn with the sheer silk tulle gloves set with floral lace, and a matching fingertip veil, both available separately.",
+  },
+  "sheridan": {
+    ligne: "Mermaid in matte satin and lace, with matching cape",
+    regard:
+      "Sheridan is a mermaid wedding dress with a modern, elegant line. Its strapless fit-and-flare cut follows the curves, while its pointed sweetheart neckline adds a graphic, sophisticated note. Made of soft matte satin with a stretch lining, it is lifted by floral lace appliqués that light up the corset and continue gently onto the skirt. A dress that brings together architectural lines, femininity and timeless elegance. For a dramatic ceremony look, the asymmetric pleated tulle cape, set with the same lace, turns the silhouette into a true couture piece.",
+  },
+  "guinevere": {
+    ligne: "Strapless ball gown in jacquard, pointed basque corset",
+    regard:
+      "Guinevere is a ball gown with couture presence, mixing architectural lines and luminous elegance. Its strapless corset has a deep, pointed sweetheart neckline, lifted by a basque waist that traces the figure. Made of textured floral jacquard, Guinevere reveals a sumptuous full ball-gown skirt with discreet pockets and a long train. A majestic, refined dress for the bride looking for something elegant and couture.",
+  },
+  "aleida": {
+    ligne: "Mermaid in lace and shimmering tulle",
+    regard:
+      "Aleida is a luminous, refined mermaid wedding dress, made to flatter the figure from every angle. Its fine spaghetti straps frame a plunging neckline, continued by a pointed basque corset that gives both hold and sensuality. Delicate floral lace appliqués run across the dress, while the skirt brings soft tulle together with gathered lace for depth and movement. A built-in layer of tulle gives an elegant sheer effect right to the scalloped lace train.",
+  },
+  "oksana": {
+    ligne: "Mermaid in Chantilly lace, pointed basque corset",
+    regard:
+      "Oksana is a mermaid wedding dress of modern, sophisticated sensuality. Made entirely of Chantilly lace, it follows the figure elegantly. Its pointed sweetheart neckline, set with delicate chains of pearls and removable sequins, comes with fine beaded spaghetti straps, also removable, so the look can be made your own. Its structured basque waist sculpts the body before opening into a majestic train.",
+  },
+  "hayes": {
+    ligne: "Ball gown or A-line in matte satin and lace",
+    regard:
+      "The contrast between the clean lines of the revisited sweetheart bodice and the airy movement of the skirt creates a silhouette at once contemporary, feminine and refined. Hayes is for the bride looking for a note of originality in her wedding dress.",
+  },
+  "enid": {
+    ligne: "Mermaid, modern and minimal",
+    regard:
+      "A fit-and-flare wedding dress in neoprene, with a straight neckline, bare shoulders, and an endless line of buttons running down the back to the end of the train. Enid can be worn strapless or off the shoulder.",
+  },
+  "bondi": {
+    ligne: "Minimal crêpe mermaid, bare shoulders, slit",
+    regard:
+      "This minimal dress, made for the modern bride, brings a contemporary, singular note to the wedding day. Made of crêpe, it follows the curves exactly through its fit-and-flare silhouette. A high thigh slit brings character and makes movement easy. Its off-the-shoulder V neckline frames the shoulders and traces the upper bust. At the back, an elegant row of buttons runs from the bodice to the train.",
+  },
+  "bella": {
+    ligne: "Satin mermaid or sheath, beads, open back and long sleeves",
+    regard:
+      "The Bella wedding dress is made of premium satin and set with pretty beads for a measured glamour. Bella is for the bride looking for something chic, timeless, and couture in spirit.",
+  },
+  "fancy": {
+    ligne: "Mermaid in lace and shimmering detail",
+    regard:
+      "Worked throughout in shimmering floral lace, the Fancy dress follows the body elegantly before flaring into a spectacular sheer lace train. Its corset marks and narrows the waist, creating a beautiful feminine curve between waist and hips. It can also be worn strapless: the dropped straps are optional.",
+  },
   "nirali": {
     ligne: "A-line, dropped waist and a straight neckline",
     regard:

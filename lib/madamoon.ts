@@ -617,6 +617,113 @@ export const ROBES: Robe[] = [
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
+
+  /* ————— La collection que la maison a reçue en dernier —————
+   *
+   * Dix modèles Casablanca Bridal, avec leurs mots et leurs
+   * photographies. Aucune n'a de morphologies : elles se relèvent sur
+   * les fiches produit de la cliente, jamais sur une photographie —
+   * c'est elle qui fait essayer les robes. Elles viendront. */
+  {
+    slug: "santana",
+    nom: "Santana",
+    ligne: "Princesse avec taille basque en organza et tulle, dentelle florale",
+    categorie: "Princesse",
+    regard:
+      "Santana est une robe de mariée princesse inspirée des contes de fées, réinterprétée dans un esprit moderne et élégant. Son décolleté V et ses fines bretelles spaghetti mettent en valeur la silhouette, tandis que son corsage transparent est sublimé par une délicate dentelle florale. Sa jupe volumineuse en tulle et organza, ornée de motifs floraux, se prolonge jusqu'à une spectaculaire traîne et un ourlet festonné. Santana séduit par son allure romantique, aérienne et intemporelle, idéale pour une mariée à la recherche d'une robe de mariée élégante et féerique. Pour une touche couture, elle peut être accessoirisée avec les gants transparents en tulle de soie, ornés de dentelle florale, ainsi qu'un voile assorti longueur « doigts », disponibles séparément.",
+    vues: 7,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "sheridan",
+    nom: "Sheridan",
+    ligne: "Sirène en satin mat et dentelle, avec cape assortie",
+    categorie: "Sirène",
+    regard:
+      "Sheridan est une robe de mariée sirène à la silhouette moderne et élégante. Sa coupe fit-and-flare sans bretelles épouse délicatement les courbes, tandis que son décolleté cœur pointu apporte une touche graphique et sophistiquée. Confectionnée en satin mat souple avec une doublure extensible, elle est sublimée par des applications de dentelle florale qui illuminent le corset et se prolongent délicatement sur la jupe. Une création qui associe lignes architecturales, féminité et élégance intemporelle. Pour une allure spectaculaire lors de la cérémonie, la cape en tulle plissé asymétrique et ornée de la même dentelle transforme la silhouette en une véritable pièce couture.",
+    vues: 8,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "guinevere",
+    nom: "Guinevere",
+    ligne: "Princesse bustier en jacquard, corset taille basque en pointe",
+    categorie: "Princesse",
+    regard:
+      "Guinevere est une robe de mariée princesse à l'allure couture, mêlant lignes architecturales et élégance lumineuse. Son corset bustier présente un décolleté cœur plongeant et pointu, sublimé par une taille basque qui souligne harmonieusement la silhouette. Confectionnée en jacquard floral texturé, Guinevere dévoile une somptueuse jupe volumineuse de robe de bal avec poches discrètes et une longue traîne. Une création majestueuse et raffinée, idéale pour une mariée à la recherche d'une robe de mariée élégante et couture.",
+    vues: 11,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "aleida",
+    nom: "Aleida",
+    ligne: "Sirène en dentelle et tulle scintillant",
+    categorie: "Sirène",
+    regard:
+      "Aleida est une robe de mariée sirène lumineuse et raffinée, conçue pour sublimer la silhouette sous tous les angles. Ses fines bretelles spaghetti encadrent un décolleté plongeant, prolongé par un corset à taille basque en pointe, offrant à la fois maintien et sensualité. De délicates applications de dentelle florale parcourent la robe, tandis que la jupe associe du tulle doux à une dentelle froncée pour créer profondeur et mouvement. Une couche de tulle intégrée apporte un élégant effet transparent jusqu'à la traîne en dentelle festonnée.",
+    vues: 6,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "oksana",
+    nom: "Oksana",
+    ligne: "Sirène en dentelle de Chantilly, corset basque en pointe",
+    categorie: "Sirène",
+    regard:
+      "Oksana incarne une robe de mariée sirène à la sensualité moderne et sophistiquée. Entièrement confectionnée en dentelle de Chantilly, elle épouse élégamment la silhouette. Son décolleté cœur pointu, orné de délicates chaînes de perles et de sequins amovibles, est accompagné de fines bretelles spaghetti perlées amovibles, permettant de personnaliser la tenue. Sa taille basque structurée sculpte le corps avant de s'épanouir en une majestueuse traîne.",
+    vues: 8,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "hayes",
+    nom: "Hayes",
+    ligne: "Princesse ou trapèze en satin mat et dentelle",
+    categorie: "Princesse",
+    regard:
+      "Le contraste entre les lignes épurées du bustier à encolure cœur revisitée et le mouvement aérien de la jupe crée une silhouette à la fois contemporaine, féminine et raffinée. Hayes est idéale pour la mariée qui recherche une touche d'originalité dans sa robe de mariée.",
+    vues: 4,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "enid",
+    nom: "Enid",
+    ligne: "Sirène, moderne et minimaliste",
+    categorie: "Sirène",
+    regard:
+      "Une robe de mariée fit-and-flare en néoprène, avec décolleté droit, épaules dénudées, et une infinité de boutons qui parcourent le dos de la robe jusqu'à la fin de la traîne. Enid se porte en bustier ou en col bardot.",
+    vues: 7,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "bondi",
+    nom: "Bondi",
+    ligne: "Sirène minimaliste en crêpe, épaules dégagées, fente",
+    categorie: "Sirène",
+    regard:
+      "Cette création minimaliste, pensée pour la mariée moderne, apporte une touche contemporaine et unique au jour du mariage. Confectionnée en crêpe, la robe épouse parfaitement les courbes grâce à sa silhouette fit-and-flare, sublimant naturellement le corps. Une fente haute sur la cuisse apporte une touche de caractère et facilite les mouvements. Son décolleté V épaules dénudées encadre joliment les épaules et souligne le haut du buste. Au dos, une élégante rangée de boutons descend du corsage jusqu'à la traîne.",
+    vues: 2,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "bella",
+    nom: "Bella",
+    ligne: "Sirène ou fourreau en satin, perles, dos nu et manches longues",
+    categorie: "Sirène",
+    regard:
+      "La robe de mariée Bella est confectionnée en satin haut de gamme et est ornée de jolies perles pour un look glamour maîtrisé. Bella est idéale pour la mariée qui recherche une robe de mariée chic, intemporelle et à l'esprit couture.",
+    vues: 3,
+    createur: "Casablanca Bridal",
+  },
+  {
+    slug: "fancy",
+    nom: "Fancy",
+    ligne: "Sirène en dentelle et détails scintillants",
+    categorie: "Sirène",
+    regard:
+      "Entièrement travaillée avec une dentelle florale scintillante, la robe Fancy épouse élégamment le corps avant de s'évaser en une spectaculaire traîne transparente en dentelle. Son corset marque et affine la taille, créant ainsi une magnifique courbe féminine entre la taille et les hanches. Elle se porte également en bustier : les bretelles tombantes sont optionnelles.",
+    vues: 4,
+    createur: "Casablanca Bridal",
+  },
   {
     slug: "nirali",
     nom: "Nirali",
