@@ -28,6 +28,24 @@ export function surDefilement(fn: () => void) {
   };
 }
 
+/*
+ * Resynchroniser Lenis sur la position réelle de la page.
+ *
+ * Lenis tient sa propre position et la rejoint à chaque image. Le
+ * routeur, lui, remonte la fenêtre en haut au changement de page — mais
+ * sans le dire à Lenis, qui à l'image suivante ramène la page là où elle
+ * était sur la page précédente. On arrivait donc en bas d'une fiche de
+ * robe quand on l'avait ouverte depuis le bas du catalogue.
+ *
+ * On ne force pas le zéro : on prend la position que le routeur vient de
+ * poser. Un retour en arrière, où il restaure la place d'avant, la garde
+ * donc lui aussi.
+ */
+export function accorderDefilement() {
+  if (typeof window === "undefined" || !instance) return;
+  instance.scrollTo(window.scrollY, { immediate: true, force: true });
+}
+
 /* Le mouvement se coupe entièrement si l'utilisatrice le demande. */
 export function mouvementReduit() {
   return (

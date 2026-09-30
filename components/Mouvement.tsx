@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
-import { enregistrerLenis, mouvementReduit } from "@/lib/mouvement";
+import { accorderDefilement, enregistrerLenis, mouvementReduit } from "@/lib/mouvement";
 
 /*
  * Le mouvement du site.
@@ -51,6 +51,19 @@ export default function Mouvement() {
       lenis.destroy();
     };
   }, []);
+
+  /*
+   * Le défilement, remis d'accord à chaque page.
+   *
+   * Sans cela, Lenis ramenait la nouvelle page à la hauteur de la
+   * précédente : on ouvrait une fiche de robe depuis le bas du catalogue
+   * et l'on arrivait en bas de la fiche. Une image d'attente, le temps
+   * que le routeur ait posé sa position.
+   */
+  useEffect(() => {
+    const image = requestAnimationFrame(accorderDefilement);
+    return () => cancelAnimationFrame(image);
+  }, [chemin]);
 
   /*
    * Les apparitions, remontées à chaque page.
