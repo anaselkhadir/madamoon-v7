@@ -701,9 +701,10 @@ export const ROBES: Robe[] = [
   {
     slug: "clover-perles",
     nom: "Clover avec ou sans perles",
-    ligne: "Princesse en dentelle Caterina, perles à l'encolure",
+    ligne: "Dentelle Caterina, décolleté carré et taille basse",
     categorie: "Princesse",
-    regard: "Une encolure carrée soulignée de perles, et la taille descendue sur la jupe.",
+    regard:
+      "La robe de mariée Clover associe la délicatesse de la dentelle Française à des lignes modernes et sophistiquées. Confectionnée en dentelle Caterina, elle séduit par son charme romantique et ses détails raffinés. Son décolleté carré apporte une touche contemporaine, tandis que sa taille basse sculptée souligne élégamment la silhouette. Le corsage structuré assure un bon maintien et se prolonge par une jupe ample au volume généreux, offrant une allure majestueuse tout en préservant le confort. De délicates perles soulignent le décolleté et les contours du corset, apportant une subtile touche de lumière. Clover est idéale pour une mariée en quête d'une robe de mariée princesse à la fois moderne, romantique et élégante.",
     vues: 8,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -713,7 +714,8 @@ export const ROBES: Robe[] = [
     nom: "Marie",
     ligne: "Fluide, ligne intemporelle",
     categorie: "Fluide",
-    regard: "Rien qui accroche : la robe tombe, et c'est tout ce qu'elle fait.",
+    regard:
+      "Pensée pour la mariée qui croit en l'amour, la beauté et l'élégance intemporelle, cette robe fait de chaque rêve une réalité. Une création raffinée et romantique, imaginée pour sublimer la mariée et l'accompagner avec grâce lors de l'un des plus beaux jours de sa vie.",
     vues: 2,
     createur: "Monica Loretti",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -721,9 +723,10 @@ export const ROBES: Robe[] = [
   {
     slug: "mathilda",
     nom: "Mathilda",
-    ligne: "Fluide à taille haute",
+    ligne: "Robe de mariée femme enceinte — élégante, fluide et confortable",
     categorie: "Fluide",
-    regard: "Une coupe pensée pour être portée enceinte sans rien changer à la ligne.",
+    regard:
+      "Découvrez une robe de mariée fluide et romantique spécialement pensée pour la femme enceinte. Elle permet de célébrer le mariage avec confort et style, sans renoncer à la beauté d'une robe de mariée classique. Une création idéale pour une mariée qui recherche une silhouette douce, élégante et intemporelle pour ce jour exceptionnel.",
     vues: 2,
     createur: "Monica Loretti",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -731,9 +734,10 @@ export const ROBES: Robe[] = [
   {
     slug: "murielle",
     nom: "Murielle",
-    ligne: "Mousseline, dentelle florale et manches illusion",
+    ligne: "Dentelle florale, décolleté plongeant, manches illusion et fente",
     categorie: "Fluide",
-    regard: "Un dos en V profond, et une fente qui ouvre la mousseline à chaque pas.",
+    regard:
+      "Découvrez cette robe de mariée romantique en dentelle florale et mousseline, avec décolleté plongeant en V, manches illusion, dos en V et fente haute. Murielle est disponible également sans fente.",
     vues: 3,
     createur: "Monica Loretti",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -751,9 +755,10 @@ export const ROBES: Robe[] = [
   {
     slug: "mira",
     nom: "Mira",
-    ligne: "Sirène en crêpe, fente haute",
+    ligne: "Sirène en crêpe, dentelle, fente et jupe amovible en tulle",
     categorie: "Sirène",
-    regard: "Des appliques de dentelle perlées qui accrochent la lumière au moindre geste.",
+    regard:
+      "Cette robe de mariée coupe sirène en crêpe lisse séduit par son allure moderne et sophistiquée. Sa silhouette fit-and-flare épouse élégamment les courbes avant de s'ouvrir délicatement sur une douce traîne. Son corsage est sublimé par de délicates applications de dentelle florale et de fines perles, créant un subtil éclat. Les détails transparents et le décolleté profond renforcent son allure romantique et féminine, tandis qu'une fente haute sur la cuisse apporte une touche de sensualité et de mouvement. Pour transformer complètement la silhouette, cette création peut être accompagnée d'une jupe amovible volumineuse en tulle. Elle permet ainsi de passer d'une allure sirène moderne et sensuelle à une silhouette plus spectaculaire, inspirée de la robe princesse. Une robe de mariée 2-en-1, idéale pour la mariée qui souhaite conjuguer élégance, modernité et plusieurs styles le jour de son mariage.",
     vues: 6,
     createur: "Monica Loretti",
     morphos: ["V", "H", "8", "X"],
@@ -761,9 +766,10 @@ export const ROBES: Robe[] = [
   {
     slug: "monica",
     nom: "Monica",
-    ligne: "Jacquard floral, ceinture large",
+    ligne: "Jacquard floral, décolleté V, ceinture et fente",
     categorie: "Trapèze",
-    regard: "Une ceinture large qui marque la taille, et la jupe qui s'ouvre en dessous.",
+    regard:
+      "Cette élégante robe de mariée séduit par son allure chic. Son tissu jacquard aux motifs floraux apporte une texture raffinée et un caractère sophistiqué. Son décolleté en V classique sublime le buste, tandis qu'une large ceinture souligne la taille et structure harmonieusement la silhouette. La jupe se distingue par une fente travaillée, qui apporte une touche contemporaine et une belle liberté de mouvement. Une création idéale pour une mariée à la recherche d'une robe de mariée élégante, moderne et intemporelle, où la simplicité est sublimée par de beaux détails.",
     vues: 5,
     createur: "Monica Loretti",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -771,9 +777,10 @@ export const ROBES: Robe[] = [
   {
     slug: "milan",
     nom: "Milan",
-    ligne: "Crêpe léger, fente moderne",
+    ligne: "Crêpe léger, fente, minimaliste",
     categorie: "Fluide",
-    regard: "Aucun ornement : une ligne nette, et la fente pour seule audace.",
+    regard:
+      "Pour la mariée qui recherche un style raffiné et minimaliste à la fois. La robe est confectionnée en crêpe léger et présente un joli drapé au niveau du buste et une fente sur le côté pour une touche de sensualité.",
     vues: 4,
     createur: "Monica Loretti",
     morphos: ["H", "8", "X"],
@@ -781,9 +788,10 @@ export const ROBES: Robe[] = [
   {
     slug: "chastity",
     nom: "Chastity",
-    ligne: "Dentelle et manches longues, volume amovible",
+    ligne: "Dentelle, manches longues, col montant et longue traîne",
     categorie: "Deux en un",
-    regard: "Un col haut, de la dentelle jusqu'aux poignets, et le volume qui part des hanches.",
+    regard:
+      "Cette magnifique robe de mariée en dentelle associe élégance, romantisme et charme traditionnel. Sa dentelle fine recouvre entièrement le corsage ainsi que les longues manches, créant un effet délicat et sophistiqué. Son décolleté montant apporte une touche classique et raffinée, tandis que la silhouette épouse le corps jusqu'aux hanches avant de s'évaser dans une jupe volumineuse en tulle. Une longue traîne vient compléter l'ensemble et apporte une dimension majestueuse et luxueuse à cette création. Une robe idéale pour la mariée qui recherche une robe de mariée deux-en-un.",
     vues: 4,
     createur: "Olya Mak",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -791,9 +799,10 @@ export const ROBES: Robe[] = [
   {
     slug: "river",
     nom: "River",
-    ligne: "Courte, ligne sculptée",
+    ligne: "Courte, décolleté carré et silhouette sculpturale",
     categorie: "Trapèze",
-    regard: "Une coupe qui tient toute seule, sans un pli de trop.",
+    regard:
+      "Cette robe de mariée courte issue d'une collection premium revisite avec audace les codes de la couture nuptiale. Sa silhouette épurée et sculpturale souligne la taille et épouse délicatement les courbes pour créer une allure moderne, affirmée et sophistiquée. Son tissu à la texture raffinée, spécialement développé pour cette création, est sublimé par des finitions et des détails réalisés à la main. Les larges bretelles et le décolleté carré apportent une touche graphique et contemporaine, tandis que sa longueur courte offre une sensation de légèreté, de liberté et de modernité. Parfaite pour un deuxième look de mariée, une réception ou une cérémonie moins conventionnelle, cette création séduit par sa simplicité apparente, qui dissimule un véritable travail de coupe et une confection particulièrement précise. Une robe de mariée pour celles qui souhaitent sortir des codes traditionnels et affirmer leur personnalité avec élégance.",
     vues: 2,
     createur: "Olya Mak",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -801,9 +810,10 @@ export const ROBES: Robe[] = [
   {
     slug: "seraphina",
     nom: "Seraphina",
-    ligne: "Princesse en dentelle brodée main",
+    ligne: "Dentelle brodée, dos nu, manches longues et silhouette princesse",
     categorie: "Princesse",
-    regard: "Chaque fleur de dentelle est posée à la main sur un bustier transparent.",
+    regard:
+      "Cette magnifique robe de mariée incarne une élégance intemporelle revisitée avec une touche contemporaine. Sa dentelle d'exception, richement brodée à la main, séduit par sa texture délicate et la profondeur de ses motifs. Le corsage transparent, les manches longues et la silhouette princesse composent une allure raffinée et majestueuse. Chaque application florale est minutieusement réalisée à la main, apportant une dimension romantique et unique à cette création. Sa jupe généreusement volumineuse donne à la silhouette une présence royale tout en conservant une légèreté aérienne. Une robe pensée pour les mariées qui recherchent une création sophistiquée, où le savoir-faire artisanal rencontre l'esprit haute couture. Idéale pour une cérémonie élégante et classique, cette robe se distingue par ses finitions précieuses et son travail artisanal, véritable signature d'une création d'exception.",
     vues: 4,
     createur: "Olya Mak",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -811,9 +821,10 @@ export const ROBES: Robe[] = [
   {
     slug: "elin",
     nom: "Elin",
-    ligne: "Courte en crêpe, pour la mairie",
+    ligne: "Courte en crêpe pour un mariage civil",
     categorie: "Sirène",
-    regard: "Faite pour la cérémonie civile : nette, légère, sans traîne.",
+    regard:
+      "Une robe de mariée parfaite pour une cérémonie civile. Sa légèreté, son aspect épuré ainsi que sa matière en crêpe, lui permettent de marquer joliment le contraste entre vos différentes cérémonies.",
     vues: 2,
     createur: "Olya Mak",
     morphos: ["O", "A", "V", "H", "8", "X"],
@@ -826,18 +837,20 @@ export const ROBES: Robe[] = [
   {
     slug: "hera",
     nom: "Héra",
-    ligne: "Trapèze en satin, fente devant",
+    ligne: "Trapèze en satin, bretelles tombantes, fente",
     categorie: "Trapèze",
-    regard: "Un décolleté Bardot qui dégage les épaules, et une fente qui ouvre la jupe sur le devant.",
+    regard:
+      "Cette robe de mariée élégante et féminine séduit par son allure à la fois romantique, moderne et intemporelle. Son décolleté Bardot, ou épaules dénudées, met délicatement en valeur les épaules et le haut du buste. Le corsage ajusté souligne naturellement la taille et crée une silhouette harmonieuse. La jupe se distingue par une fente sur le devant, dévoilant subtilement la jambe et apportant une touche de modernité et de sensualité à cette création. Ce détail contraste avec le volume romantique de la jupe et donne à la robe une allure résolument contemporaine.",
     vues: 3,
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
   {
     slug: "helene",
     nom: "Hélène",
-    ligne: "Mousseline fluide, corset perlé",
+    ligne: "Corset perlé à fleurs en relief, jupe fluide en mousseline",
     categorie: "Fluide",
-    regard: "Un corset de dentelle à fleurs en relief, sur une jupe de mousseline qui ne pèse rien.",
+    regard:
+      "La robe Hélène est dotée d'un corset lumineux grâce à sa jolie dentelle ornée de petites perles et de fleurs en relief. Sa jupe fluide est confectionnée en mousseline délicate et légère afin d'assurer un maximum de confort à la mariée qui préfère dire OUI dans un look bohème chic.",
     vues: 2,
     /* La photographie de face : la première est de dos. */
     couverture: 2,

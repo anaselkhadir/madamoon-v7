@@ -230,55 +230,68 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Rowan is a close-fitting wedding dress that brings together contemporary elegance and delicate detail. Made of charmeuse, it follows the figure for a feminine, sophisticated presence. Its sheer corset, set with beads, adds sensuality and light, while the new Mori lace lifts the whole. Its draped neckline brings softness and elegance to the line. For more coverage, the corset can also be lined.",
   },
   "clover-perles": {
-    ligne: "Caterina lace ball gown, pearls at the neckline",
-    regard: "A square neckline underlined with pearls, and the waist dropped onto the skirt.",
+    ligne: "Caterina lace, square neckline and dropped waist",
+    regard:
+      "The Clover wedding dress brings the delicacy of French lace to modern, sophisticated lines. Made of Caterina lace, it charms with its romantic feel and its fine detail. Its square neckline adds a contemporary note, while the sculpted dropped waist traces the figure. The structured bodice holds well and continues into a full, generous skirt, majestic and still comfortable. Delicate beads follow the neckline and the edges of the corset, for a subtle touch of light. Clover is for the bride looking for a ball gown at once modern, romantic and elegant.",
   },
   "marie": {
     ligne: "Sheath, a timeless line",
-    regard: "Nothing to catch the eye: the dress falls, and that is all it does.",
+    regard:
+      "For the bride who believes in love, beauty and timeless elegance, this dress makes every dream real. A refined, romantic creation, made to lift the bride and carry her with grace through one of the finest days of her life.",
   },
   "mathilda": {
-    ligne: "High-waisted sheath",
-    regard: "A cut made to be worn pregnant without changing the line.",
+    ligne: "A maternity wedding dress — elegant, fluid and comfortable",
+    regard:
+      "A fluid, romantic wedding dress made for the pregnant bride. It lets her celebrate in comfort and in style, without giving up the beauty of a classic wedding dress. For the bride looking for a soft, elegant, timeless line on this exceptional day.",
   },
   "murielle": {
-    ligne: "Chiffon, floral lace and illusion sleeves",
-    regard: "A deep V back, and a slit that opens the chiffon with every step.",
+    ligne: "Floral lace, plunging neckline, illusion sleeves and slit",
+    regard:
+      "A romantic wedding dress in floral lace and chiffon, with a plunging V neckline, illusion sleeves, a V back and a high slit. Murielle is also available without the slit.",
   },
   "mira": {
-    ligne: "Crêpe mermaid, high slit",
-    regard: "Beaded lace appliqués that catch the light at the slightest movement.",
+    ligne: "Crêpe mermaid, lace, slit and removable tulle skirt",
+    regard:
+      "This smooth crêpe mermaid wedding dress charms with its modern, sophisticated presence. Its fit-and-flare silhouette follows the curves before opening gently into a soft train. The bodice is lifted by delicate floral lace appliqués and fine beads, for a subtle shine. Sheer detail and a deep neckline deepen its romantic, feminine feel, while a high thigh slit brings sensuality and movement. To change the silhouette entirely, the dress can be worn with a full removable tulle overskirt — from a modern, sensual mermaid to something far more dramatic, close to a ball gown. A two-in-one wedding dress, for the bride who wants elegance, modernity and more than one look on her wedding day.",
   },
   "monica": {
-    ligne: "Floral jacquard, wide belt",
-    regard: "A wide belt that marks the waist, and the skirt opening below it.",
+    ligne: "Floral jacquard, V neckline, belt and slit",
+    regard:
+      "This elegant wedding dress charms with its chic presence. Its floral jacquard brings refined texture and a sophisticated character. Its classic V neckline flatters the bust, while a wide belt marks the waist and shapes the figure. The skirt is set apart by a worked slit, contemporary and generous in movement. For the bride looking for a wedding dress at once elegant, modern and timeless, where simplicity is lifted by fine detail.",
   },
   "milan": {
-    ligne: "Light crêpe, a modern slit",
-    regard: "No ornament: a clean line, and the slit for its only daring.",
+    ligne: "Light crêpe, a slit, minimal",
+    regard:
+      "For the bride looking for something refined and minimal at once. The dress is made of light crêpe, with a pretty drape at the bust and a slit at the side for a touch of sensuality.",
   },
   "chastity": {
-    ligne: "Lace and long sleeves, removable volume",
-    regard: "A high collar, lace to the wrists, and volume that starts at the hips.",
+    ligne: "Lace, long sleeves, high collar and long train",
+    regard:
+      "This lace wedding dress brings together elegance, romance and traditional charm. Fine lace covers the whole bodice and the long sleeves, delicate and sophisticated. Its high neckline adds a classic, refined note, while the silhouette follows the body to the hips before flaring into a full tulle skirt. A long train completes it, majestic and luxurious. For the bride looking for a two-in-one wedding dress.",
   },
   "river": {
-    ligne: "Short, a sculpted line",
-    regard: "A cut that holds on its own, without a fold too many.",
+    ligne: "Short, square neckline and sculptural line",
+    regard:
+      "This short wedding dress from a premium collection boldly revisits the codes of bridal couture. Its clean, sculptural silhouette marks the waist and follows the curves for a modern, assured, sophisticated presence. Its finely textured fabric, developed for this dress alone, is lifted by hand-made finishes and detail. The wide straps and square neckline add a graphic, contemporary note, while its short length gives a sense of lightness, freedom and modernity. Perfect as a second look, for a reception or a less conventional ceremony, it charms with an apparent simplicity that hides real cutting work and a particularly precise making. A wedding dress for those who want to step outside the traditional codes and assert who they are, with elegance.",
   },
   "seraphina": {
-    ligne: "Ball gown in hand-embroidered lace",
-    regard: "Every lace flower is set by hand on a sheer bodice.",
+    ligne: "Embroidered lace, open back, long sleeves and ball-gown line",
+    regard:
+      "This wedding dress is timeless elegance revisited with a contemporary touch. Its exceptional lace, richly hand-embroidered, charms with its delicate texture and the depth of its motifs. The sheer bodice, the long sleeves and the ball-gown silhouette compose a refined, majestic presence. Every floral appliqué is placed by hand, bringing a romantic, singular dimension. Its generously full skirt gives the figure a royal presence while keeping an airy lightness. A dress for brides looking for something sophisticated, where craft meets the spirit of haute couture. For an elegant, classic ceremony, it stands apart through its precious finishes and its handwork — the signature of an exceptional dress.",
   },
   "elin": {
-    ligne: "Short crêpe, for the town hall",
-    regard: "Made for the civil ceremony: clean, light, no train.",
+    ligne: "Short, in crêpe, for a civil wedding",
+    regard:
+      "A wedding dress made for a civil ceremony. Its lightness, its clean look and its crêpe make a fine contrast between your different ceremonies.",
   },
   "hera": {
-    ligne: "Satin A-line, front slit",
-    regard: "A Bardot neckline that clears the shoulders, and a slit that opens the skirt at the front.",
+    ligne: "Satin A-line, dropped straps, slit",
+    regard:
+      "This elegant, feminine wedding dress charms with a presence at once romantic, modern and timeless. Its Bardot, off-the-shoulder neckline gently flatters the shoulders and the upper bust. The fitted bodice marks the waist naturally and creates a harmonious line. The skirt is set apart by a slit at the front, revealing the leg and bringing a modern, sensual note — a detail that plays against the romantic volume of the skirt and makes the dress resolutely contemporary.",
   },
   "helene": {
-    ligne: "Flowing chiffon, beaded corset",
-    regard: "A lace corset with raised flowers, over a chiffon skirt that weighs nothing.",
+    ligne: "Beaded corset with raised flowers, fluid chiffon skirt",
+    regard:
+      "The Hélène dress has a luminous corset, its pretty lace set with small beads and raised flowers. Its fluid skirt is made of delicate, light chiffon, for the greatest comfort to the bride who would rather say yes in a bohemian look.",
   },
 };
