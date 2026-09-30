@@ -65,9 +65,14 @@ export default async function PageRobe({
   const film = FILMS[robe.slug];
   const maisonDeLaRobe = createurParNom(robe.createur);
   /* L'image de tête : sa couverture. Les photographies qui ne sont pas
-   * déjà au premier écran forment la galerie, dans leur ordre. */
+   * déjà au premier écran forment la galerie, dans leur ordre.
+   *
+   * Sauf quand la robe n'en a qu'une : la retirer laissait la page sans
+   * une seule photographie à regarder — le premier écran l'étire sur
+   * toute la largeur, et c'est tout. Elle est donc reprise dans la
+   * galerie, où elle se montre à sa taille. */
   const tete = couverture(robe);
-  const galerie = film ? photos : photos.filter((p) => p !== tete);
+  const galerie = film || photos.length === 1 ? photos : photos.filter((p) => p !== tete);
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
   const voisines = ROBES.filter(
@@ -362,7 +367,31 @@ export default async function PageRobe({
           aria-label={L.fiche.autresVues(robe.nom)}
           className="gouttiere"
         >
-          {galerie.length > 4 ? (
+          {galerie.length === 1 ? (
+            /* Une seule photographie, et elle vient souvent de l'ancien
+             * site : cinq cents pixels de large, parfois moins. Elle est
+             * posée au centre, sans jamais dépasser sa propre largeur —
+             * agrandie, elle serait floue, et c'est ce flou que la
+             * maison voyait au premier écran. */
+            <div className="flex justify-center">
+              <div
+                data-rideau
+                className="relative w-full overflow-hidden bg-craie"
+                style={{
+                  maxWidth: `${galerie[0].w}px`,
+                  aspectRatio: `${galerie[0].w} / ${galerie[0].h}`,
+                }}
+              >
+                <Photo
+                  media={galerie[0]}
+                  dossier="robes"
+                  alt={altRobe(robe, langue)}
+                  sizes={`(max-width: ${galerie[0].w}px) 92vw, ${galerie[0].w}px`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          ) : galerie.length > 4 ? (
             /* Beaucoup de vues — la maison en envoie jusqu'à une
              * cinquantaine : une trame régulière, deux colonnes au doigt,
              * trois sur ordinateur, au format des photographies. La
