@@ -60,12 +60,18 @@ SANS_G = "MadamoonSansGras"
 
 
 def polices():
-    """Les deux polices du site, converties depuis la construction."""
+    """Les deux polices du site, converties depuis la construction.
+
+    Inter a remplacé le Quattrocento Sans sur le site : le catalogue le
+    suit, sinon le document imprimé ne ressemblerait plus à la page dont
+    il est tiré. Inter est une police variable — le gras s'en extrait en
+    figeant l'axe de graisse à sept cents.
+    """
     paires = [
         (SERIF, "InstrumentSerif-Regular.ttf"),
         (SERIF_IT, "InstrumentSerif-Italic.ttf"),
-        (SANS, "QuattrocentoSans-Regular.ttf"),
-        (SANS_G, "QuattrocentoSans-Bold.ttf"),
+        (SANS, "Inter-Regular.ttf"),
+        (SANS_G, "Inter-Bold.ttf"),
     ]
     for nom, fichier in paires:
         chemin = os.path.join(POLICES, fichier)

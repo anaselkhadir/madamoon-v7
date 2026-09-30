@@ -631,9 +631,10 @@ export const ROBES: Robe[] = [
   {
     slug: "calla",
     nom: "Calla",
-    ligne: "Trapèze en dentelle sur tulle souple",
+    ligne: "Tulle fluide et dentelle Highclare, décolleté arrondi",
     categorie: "Trapèze",
-    regard: "La dentelle court sur le bustier corseté et s'arrête net à l'encolure ronde.",
+    regard:
+      "La robe de mariée Calla séduit par son allure douce et aérienne. Confectionnée en tulle très souple et en délicate dentelle Highclare, elle associe confort, féminité et raffinement. Son corsage structuré façon corset sublime la silhouette, tandis que son décolleté arrondi apporte une touche élégante et intemporelle. La dentelle, délicatement travaillée et minutieusement positionnée sur le corsage, vient enrichir la robe de détails raffinés tout en conservant une allure légère et naturelle. Une création idéale pour la mariée à la recherche d'une robe de mariée romantique, élégante et confortable, sublimée par un travail de dentelle délicat.",
     vues: 1,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],

@@ -200,8 +200,9 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
       "Resolutely modern and delicately romantic, Nirali wins you over by its elegant silhouette and by its hand-made flowers, set along the neckline.",
   },
   "calla": {
-    ligne: "Lace A-line over soft tulle",
-    regard: "The lace runs over the corseted bodice and stops clean at the round neckline.",
+    ligne: "Fluid tulle and Highclare lace, round neckline",
+    regard:
+      "The Calla wedding dress charms with its soft, airy presence. Made of very supple tulle and delicate Highclare lace, it brings together comfort, femininity and refinement. Its structured corset bodice flatters the figure, while its round neckline adds an elegant, timeless note. The lace, delicately worked and carefully placed on the bodice, enriches the dress with fine detail while keeping it light and natural. A dress for the bride looking for something romantic, elegant and comfortable, lifted by delicate lacework.",
   },
   "fortune": {
     ligne: "A-line in crêpe and organza",
