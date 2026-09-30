@@ -241,19 +241,21 @@ export default async function PageRobe({
           * texte de remplacement. */}
         {petiteTete && tete && (
           <div className="absolute inset-y-0 right-[var(--gouttiere)] hidden items-center max-lg:hidden lg:flex">
-            <span
-              aria-hidden="true"
-              className="block overflow-hidden"
-              style={{ height: `min(68svh, ${tete.h}px)` }}
-            >
-              <Photo
-                media={tete}
-                dossier="robes"
-                alt=""
-                sizes="28vw"
-                priorite
-                className="block h-full w-auto"
-              />
+            {/* Un liseré blanc autour, comme la marge d'un tirage. Le
+              * blanc est celui des textes posés sur une image et non
+              * celui des surfaces : une surface s'assombrit avec le
+              * thème, le cadre d'une photographie non. */}
+            <span aria-hidden="true" className="block bg-sur-image p-[clamp(0.5rem,0.7vw,0.75rem)]">
+              <span className="block" style={{ height: `min(64svh, ${tete.h}px)` }}>
+                <Photo
+                  media={tete}
+                  dossier="robes"
+                  alt=""
+                  sizes="28vw"
+                  priorite
+                  className="block h-full w-auto"
+                />
+              </span>
             </span>
           </div>
         )}
