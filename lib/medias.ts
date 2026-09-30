@@ -4020,14 +4020,44 @@ export const ROBE_MEDIAS: Record<string, Media[]> = {
   "nirali": [
     {
       "name": "robe-de-mariee-trapeze-nirali-1",
-      "w": 516,
-      "h": 761,
+      "w": 800,
+      "h": 1199,
       "widths": [
-        516
+        480,
+        800
       ],
-      "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACQAwCdASoUAB0APqlGm0qmJCKht+gAwBUJZwDOdDKXQfJX3ylQAP72CdzqxbKBKkGruXEfTTmutl/9TpNZUZiggHmPsWxXKfBaI35UxvvZfMJBOveo7WL6iaHD5Dk3ZxuKwsOdz17ILyOf0Bsvt8QA",
+      "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoNABQAPrVMnkmnJKKhMAgA4BaJZQCw7GS+mmN2zyvTOAMAAP7+Ml5rU4j8n/JbFiP5jrliKXmqrTkR9enUbDJkxwuUcMBRUhNYYn3KejYIw0aMevwAAA==",
       "jpgw": [
-        516
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-nirali-2",
+      "w": 800,
+      "h": 1199,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoNABQAPrVInkmnJCKhMAgA4BaJZwC+SCPOWkMpyW0OdvJqAAD+9N9oFlABZ4Fhlof1TRJBz9Ixw+9OHlEgWF0mTxEIfGJn4Wb9gP+AhLSUTW25kj8AAA==",
+      "jpgw": [
+        480,
+        800
+      ]
+    },
+    {
+      "name": "robe-de-mariee-trapeze-nirali-3",
+      "w": 800,
+      "h": 1200,
+      "widths": [
+        480,
+        800
+      ],
+      "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQAgCdASoNABQAAoBCJZQCw7Dc+DjzF5TF+pgA/vobc1VjUT7iW+HPmwJz+vKr35hcA/sddJKQsrXP+bo2e+8AEZpIN+SvlxyFvrO22Kv36IiL2AAAAA==",
+      "jpgw": [
+        480,
+        800
       ]
     }
   ],

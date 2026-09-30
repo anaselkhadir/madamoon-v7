@@ -624,7 +624,7 @@ export const ROBES: Robe[] = [
     categorie: "Trapèze",
     regard:
       "Résolument moderne et délicatement romantique, Nirali séduit par sa silhouette élégante et par ses fleurs faites main, disposées le long du décolleté.",
-    vues: 1,
+    vues: 3,
     createur: "Watters Designs",
     morphos: ["O", "A", "V", "H", "8", "X"],
   },
