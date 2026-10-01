@@ -119,25 +119,30 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
 
-      <p className="legende">{L.avis.legende}</p>
+      {/* Tout le haut de la section sur un seul axe : la légende, les
+        * étoiles, la phrase. La légende était à gauche, au bord de la
+        * page, pendant que les deux autres se tenaient au milieu — elle
+        * rejoint la colonne. */}
+      <div className="text-center">
+        <p className="legende">{L.avis.legende}</p>
 
-      {/* La note, puis ce qu'elle veut dire — l'un sous l'autre, au
-        * milieu. Les deux étaient côte à côte ; la maison les veut
-        * empilés et centrés. */}
-      <div className="mt-[clamp(2rem,4vw,3rem)] text-center">
-        {/* Le chiffre est une image de mot. Le titre porte donc sa
-          * phrase en propre plutôt que de la laisser déduire de son
-          * contenu : masquer le chiffre ne suffit pas — Chrome le
-          * reprend quand même dans le nom, et le titre bégayait
-          * « 5,0 5,0 sur 5 ». */}
-        {/* Cinq étoiles noires à la place du chiffre. Elles ne portent
-          * aucun texte : la note reste dite au lecteur d'écran par le
-          * titre, et à Google par les données structurées plus haut. */}
-        <h2 id="avis" aria-label={`${moyenne} / 5 — ${L.avis.experience}`}>
+        {/* Cinq étoiles noires, qui ont remplacé le « 5,0 ».
+          *
+          * Elles ne portent aucun texte, et le chiffre n'en portait pas
+          * davantage : il était une image de mot. La note reste dite au
+          * lecteur d'écran par le titre — masquer le chiffre n'aurait
+          * pas suffi, Chrome le reprenait dans le nom et le titre
+          * bégayait « 5,0 5,0 sur 5 » — et à Google par les données
+          * structurées plus haut. */}
+        <h2
+          id="avis"
+          aria-label={`${moyenne} / 5 — ${L.avis.experience}`}
+          className="mt-[clamp(1.5rem,3vw,2.25rem)]"
+        >
           <Etoiles
             note={5}
             className="flex justify-center gap-[0.2em] text-encre"
-            etoile="h-[clamp(1.75rem,4.2vw,3rem)] w-[clamp(1.75rem,4.2vw,3rem)]"
+            etoile="h-[clamp(1.375rem,3vw,2.25rem)] w-[clamp(1.375rem,3vw,2.25rem)]"
           />
         </h2>
 
