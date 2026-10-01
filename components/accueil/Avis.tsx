@@ -8,7 +8,7 @@ import { t } from "@/lib/textes";
 /*
  * Ce qu'elles en disent.
  *
- * La note d'abord, très grande, et deux voix seulement.
+ * La note d'abord, très grande, puis trois voix sur trois cartes.
  *
  * La section a longtemps fait l'inverse : quatre paragraphes de trente-six
  * pixels sur un écran et demi, et les mesures — cinq sur cinq, deux cents
@@ -17,23 +17,49 @@ import { t } from "@/lib/textes";
  * Une note parfaite sur deux cents avis ne se glisse pas en note de bas
  * de page : elle s'affiche.
  *
- * Deux voix, pas quatre. Elles sont choisies pour dire deux choses
- * différentes — l'accueil d'un côté, la comparaison de l'autre : celle
- * qui a fait sept boutiques et revient ici. Une troisième ne dirait rien
- * de plus et ferait rallonger la page.
+ * Les cartes sont venues ensuite, à la demande de la maison. Elles
+ * suivent le reste du site plutôt que le modèle montré : l'angle des
+ * boutons, un filet au lieu d'une ombre franche, et le rouge de la
+ * maison pour les étoiles et le guillemet.
  *
- * Aucune carte, aucune ombre, aucune étoile dessinée, aucun guillemet
- * décoratif. Le chiffre porte la section, le filet le pose, et le reste
- * est du texte.
+ * Pas de portraits. La maison n'a pas les photographies de ses
+ * clientes : une initiale tient la place, et l'on n'invente pas un
+ * visage.
  *
  * Le balisage schema.org porte les huit avis et l'avis entier de
  * chacune : c'est le texte publié que l'on déclare, jamais la coupe que
  * l'on affiche.
  */
 
-/* Les deux voix retenues. Nommées, jamais réécrites : le texte affiché
- * vient de `lib/avis.ts`, mot pour mot. */
-const CHOIX = ["Gwendoline Carrier", "Julia JF"];
+/* Les trois voix retenues. Nommées, jamais réécrites : le texte affiché
+ * vient de `lib/avis.ts`, mot pour mot.
+ *
+ * Elles disent trois choses différentes — l'essayage privé, l'accueil,
+ * la comparaison avec ce qu'on a vu ailleurs. Une quatrième ne dirait
+ * rien de plus. */
+const CHOIX = ["Mathilde Pln", "Gwendoline Carrier", "Julia JF"];
+
+/* Les étoiles. Dessinées, et non écrites : le caractère « ★ » n'existe
+ * pas dans toutes les polices et retombe sur celle du système. */
+function Etoiles({ note }: { note: number }) {
+  return (
+    <span aria-hidden="true" className="flex gap-[0.15em] text-action">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <svg
+          key={i}
+          viewBox="0 0 24 24"
+          className="h-[0.8rem] w-[0.8rem]"
+          fill={i <= note ? "currentColor" : "none"}
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinejoin="round"
+        >
+          <path d="M12 3.4l2.6 5.5 5.9.8-4.3 4.2 1 6-5.2-2.8-5.2 2.8 1-6-4.3-4.2 5.9-.8Z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
 
 export default function Avis({ langue = "fr" }: { langue?: Langue }) {
   const L = t(langue);
@@ -101,23 +127,55 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
         </div>
       </div>
 
-      {/* Deux voix, côte à côte. */}
-      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-[clamp(2.5rem,5vw,4rem)] md:grid-cols-2">
+      {/* Trois voix, sur trois cartes.
+        *
+        * La section n'en portait aucune : le chiffre tenait tout, et le
+        * reste était du texte nu. La maison les veut en cartes — alors
+        * elles le sont, mais à la mesure du site : l'angle des boutons,
+        * un filet plutôt qu'une ombre franche, et le rouge de la maison
+        * pour les étoiles et le guillemet. */}
+      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-[clamp(0.875rem,1.6vw,1.25rem)] md:grid-cols-3" data-suite>
         {voix.map((a) => (
-          <figure key={a.auteur}>
-            <span data-ligne className="block">
-              {/* « .phrase » n'est pas calquée : sa taille l'emporterait sur
-                  * l'utilitaire, et la citation sortirait à trente-six pixels.
-                  * On reprend donc ses composantes à la main. */}
-              <blockquote className="font-serif text-[clamp(1.125rem,1.8vw,1.5rem)] leading-[1.4] text-encre">
-                {typographie(a.extrait ?? a.texte)}
-                {/* Les crochets disent qu'il en manque : une coupe non
-                  * signalée est une citation faussée. */}
-                {a.extrait && <span className="text-brume"> […]</span>}
-              </blockquote>
-            </span>
-            <figcaption className="legende mt-4 text-brume" data-lever data-retard="200">
-              {a.auteur} — {a.date}
+          <figure
+            key={a.auteur}
+            className="flex flex-col rounded-[4px] border border-fil bg-blanc p-[clamp(1.125rem,1.8vw,1.5rem)]"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <Etoiles note={a.note} />
+              {/* Le guillemet, en rouge pâli : il ponctue, il ne parle
+                * pas. Écrit en propre — une teinte dérivée ne se dit pas
+                * en utilitaire. */}
+              <span
+                aria-hidden="true"
+                className="-mt-2 font-serif text-[2.75rem] leading-none"
+                style={{ color: "color-mix(in srgb, var(--color-action) 20%, transparent)" }}
+              >
+                &rdquo;
+              </span>
+            </div>
+
+            <blockquote className="texte mt-3 flex-1">
+              {typographie(a.extrait ?? a.texte)}
+              {/* Les crochets disent qu'il en manque : une coupe non
+                * signalée est une citation faussée. */}
+              {a.extrait && <span className="text-brume"> […]</span>}
+            </blockquote>
+
+            <figcaption className="mt-5 flex items-center gap-3 border-t border-fil pt-4">
+              {/* Une initiale, pas un portrait : la maison n'a pas les
+                * photographies de ses clientes, et on n'en invente pas. */}
+              <span
+                aria-hidden="true"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-craie font-serif text-[1rem] leading-none text-encre"
+              >
+                {a.auteur.charAt(0)}
+              </span>
+              <span className="min-w-0">
+                <span className="nom-carte block truncate">{a.auteur}</span>
+                <span className="legende block" style={{ color: "var(--color-brume)" }}>
+                  {a.date}
+                </span>
+              </span>
             </figcaption>
           </figure>
         ))}
