@@ -131,7 +131,13 @@ const FR = {
      * ne veut pas d'un chiffre qu'il faut tenir à jour, ni d'une
      * comparaison. La note reste, le décompte passe dans les données
      * structurées — invisible à la lecture, lu par Google. */
-    experience: "MADAMOON n’est pas une simple boutique à visiter, c’est une expérience à vivre.",
+    /* Le nom se détache du reste de la phrase, comme sur l'intro de
+     * l'accueil : il est écrit à l'anglaise, et une anglaise ne s'écrit
+     * pas en capitales — ses majuscules ouvrent un mot, elles ne se
+     * suivent pas. D'où « Madamoon » et non « MADAMOON ». La suite
+     * commence donc par une espace : elle continue le nom. */
+    nom: "Madamoon",
+    experience: " n’est pas une simple boutique à visiter, c’est une expérience à vivre.",
     lesAvis: "Voir les avis Google",
   },
   showroom: {
@@ -625,7 +631,8 @@ const EN: Textes = {
   },
   avis: {
     legende: "What they say",
-    experience: "MADAMOON is not simply a boutique to visit — it is an experience to live.",
+    nom: "Madamoon",
+    experience: " is not simply a boutique to visit — it is an experience to live.",
     lesAvis: "See the Google reviews",
   },
   showroom: {

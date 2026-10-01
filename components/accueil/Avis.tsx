@@ -88,6 +88,11 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
 
   const moyenne = NOTE.moyenne.toLocaleString("fr-FR", { minimumFractionDigits: 1 });
 
+  /* Le nom et sa suite sont rangés séparément pour que l'un puisse
+   * s'écrire à l'anglaise ; recollés ici, ils redonnent la phrase
+   * entière, celle que lit un lecteur d'écran. */
+  const phrase = `${L.avis.nom}${L.avis.experience}`;
+
   /*
    * La note et les avis se raccrochent à l'entité du gabarit par son
    * « @id », au lieu de déclarer une seconde maison. Deux nœuds de même
@@ -136,7 +141,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
           * structurées plus haut. */}
         <h2
           id="avis"
-          aria-label={`${moyenne} / 5 — ${L.avis.experience}`}
+          aria-label={`${moyenne} / 5 — ${phrase}`}
           className="mt-[clamp(1.5rem,3vw,2.25rem)]"
         >
           <Etoiles
@@ -146,10 +151,13 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
           />
         </h2>
 
-        {/* La phrase de la maison, en Inter et en noir.
+        {/* La phrase de la maison, en Inter et en noir — sauf son nom,
+          * qui s'écrit à l'anglaise et en rouge, exactement comme sur
+          * l'intro de l'accueil.
           *
-          * Elle a essayé l'anglaise, qui n'a pas plu : une phrase
-          * entière en copperplate se lit moins bien qu'un nom seul.
+          * La phrase entière avait essayé l'anglaise, qui n'a pas plu :
+          * un nom seul s'y lit, une phrase entière non. C'est bien le
+          * nom seul qui la garde.
           *
           * Le corps est plus bas que celui de l'anglaise : à taille
           * égale, Inter a l'œil bien plus grand et la même phrase
@@ -171,6 +179,21 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
             textWrap: "balance",
           }}
         >
+          {/* L'anglaise a l'œil plus petit qu'un romain de même corps :
+            * relevée d'un tiers, elle se tient sur la même ligne que la
+            * suite. L'interligne revient à un, sinon ses déliés
+            * écartent les lignes de la phrase. Les mêmes réglages qu'à
+            * l'intro, au mot près. */}
+          <span
+            style={{
+              fontFamily: "var(--font-anglaise)",
+              fontSize: "1.35em",
+              lineHeight: 1,
+              color: "var(--color-action)",
+            }}
+          >
+            {L.avis.nom}
+          </span>
           {L.avis.experience}
         </p>
       </div>
