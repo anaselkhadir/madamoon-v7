@@ -382,15 +382,32 @@ export default function Entete() {
               <ul className="ml-auto hidden items-center gap-8 lg:flex">
                 {GCH.map((l) => {
                   const groupe = GRP[l.href];
+                  /* La puce est une boîte flex centrée, et le lien
+                   * reçoit en haut la gouttière que « .souligne » lui
+                   * donne en bas.
+                   *
+                   * Sans cela, le lien restait une boîte en ligne posée
+                   * sur la ligne de base de la rangée, et les trois
+                   * pixels réservés sous lui au soulignement
+                   * descendaient son texte d'un pixel et demi. MENU et
+                   * FR, qui ne sont pas soulignés, se tenaient un pixel
+                   * et demi plus haut : c'est le décalage que la maison
+                   * a vu. Les deux gouttières égales remettent le texte
+                   * au milieu de sa boîte, et la boîte au milieu de la
+                   * rangée — sur l'axe du sigle, à soixante pixels. */
                   return (
-                    <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
+                    <li
+                      key={l.label}
+                      onMouseEnter={() => setMega(groupe ? l.href : null)}
+                      className="flex items-center"
+                    >
                       <Link
                         href={l.href}
                         data-actif={cheminFr === l.href}
                         onFocus={() => setMega(groupe ? l.href : null)}
                         aria-expanded={groupe ? mega === l.href : undefined}
                         aria-controls={groupe ? "mega-navigation" : undefined}
-                        className="lien-nav souligne"
+                        className="lien-nav souligne pt-[3px]"
                       >
                         {l.label}
                       </Link>
@@ -418,15 +435,32 @@ export default function Entete() {
               <ul className="hidden items-center gap-8 lg:flex">
                 {DRT.map((l) => {
                   const groupe = GRP[l.href];
+                  /* La puce est une boîte flex centrée, et le lien
+                   * reçoit en haut la gouttière que « .souligne » lui
+                   * donne en bas.
+                   *
+                   * Sans cela, le lien restait une boîte en ligne posée
+                   * sur la ligne de base de la rangée, et les trois
+                   * pixels réservés sous lui au soulignement
+                   * descendaient son texte d'un pixel et demi. MENU et
+                   * FR, qui ne sont pas soulignés, se tenaient un pixel
+                   * et demi plus haut : c'est le décalage que la maison
+                   * a vu. Les deux gouttières égales remettent le texte
+                   * au milieu de sa boîte, et la boîte au milieu de la
+                   * rangée — sur l'axe du sigle, à soixante pixels. */
                   return (
-                    <li key={l.label} onMouseEnter={() => setMega(groupe ? l.href : null)}>
+                    <li
+                      key={l.label}
+                      onMouseEnter={() => setMega(groupe ? l.href : null)}
+                      className="flex items-center"
+                    >
                       <Link
                         href={l.href}
                         data-actif={cheminFr === l.href}
                         onFocus={() => setMega(groupe ? l.href : null)}
                         aria-expanded={groupe ? mega === l.href : undefined}
                         aria-controls={groupe ? "mega-navigation" : undefined}
-                        className="lien-nav souligne"
+                        className="lien-nav souligne pt-[3px]"
                       >
                         {l.label}
                       </Link>
