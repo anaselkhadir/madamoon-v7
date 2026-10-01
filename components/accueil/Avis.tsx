@@ -137,11 +137,11 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
           <Etoiles
             note={5}
             className="flex justify-center gap-[0.2em] text-encre"
-            etoile="h-[clamp(2.25rem,5.5vw,4rem)] w-[clamp(2.25rem,5.5vw,4rem)]"
+            etoile="h-[clamp(1.75rem,4.2vw,3rem)] w-[clamp(1.75rem,4.2vw,3rem)]"
           />
         </h2>
 
-        {/* La phrase de la maison, en Inter et en rouge.
+        {/* La phrase de la maison, en Inter et en noir.
           *
           * Elle a essayé l'anglaise, qui n'a pas plu : une phrase
           * entière en copperplate se lit moins bien qu'un nom seul.
@@ -162,7 +162,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
             fontFamily: "var(--font-sans)",
             fontSize: "clamp(1.125rem, 2.2vw, 1.75rem)",
             lineHeight: 1.45,
-            color: "var(--color-action)",
+            color: "var(--color-encre)",
             textWrap: "balance",
           }}
         >
