@@ -20,7 +20,8 @@ import { t } from "@/lib/textes";
  * Les cartes sont venues ensuite, à la demande de la maison. Elles
  * suivent le reste du site plutôt que le modèle montré : l'angle des
  * boutons, un filet au lieu d'une ombre franche, et le rouge de la
- * maison pour les étoiles et le guillemet.
+ * maison pour les étoiles, et un très grand guillemet pâli dans le
+ * coin, comme sur le modèle.
  *
  * Pas de portraits. La maison n'a pas les photographies de ses
  * clientes : une initiale tient la place, et l'on n'invente pas un
@@ -138,20 +139,25 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
         {voix.map((a) => (
           <figure
             key={a.auteur}
-            className="flex flex-col rounded-[4px] border border-fil bg-blanc p-[clamp(1.125rem,1.8vw,1.5rem)]"
+            className="relative flex flex-col overflow-hidden rounded-[4px] border border-fil bg-blanc p-[clamp(1.125rem,1.8vw,1.5rem)]"
           >
-            <div className="flex items-start justify-between gap-4">
+            {/* Le guillemet, posé dans le coin, très grand et très pâli :
+              * il ponctue, il ne parle pas. En bâton — la paire de
+              * virgules pleines et rondes du modèle montré, que le serif
+              * ne donne pas : il en fait deux apostrophes fines.
+              *
+              * Hors du flux : il déborde volontairement la marge de la
+              * carte, et dans le flux il aurait poussé les étoiles. */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute right-[0.6rem] top-[0.1rem] select-none font-sans text-[6rem] font-bold leading-[0.8]"
+              style={{ color: "color-mix(in srgb, var(--color-action) 15%, transparent)" }}
+            >
+              &rdquo;
+            </span>
+
+            <div className="relative flex items-start">
               <Etoiles note={a.note} />
-              {/* Le guillemet, en rouge pâli : il ponctue, il ne parle
-                * pas. Écrit en propre — une teinte dérivée ne se dit pas
-                * en utilitaire. */}
-              <span
-                aria-hidden="true"
-                className="-mt-2 font-serif text-[2.75rem] leading-none"
-                style={{ color: "color-mix(in srgb, var(--color-action) 20%, transparent)" }}
-              >
-                &rdquo;
-              </span>
             </div>
 
             <blockquote className="texte mt-3 flex-1">
