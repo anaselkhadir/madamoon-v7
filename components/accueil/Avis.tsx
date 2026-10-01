@@ -17,11 +17,16 @@ import { t } from "@/lib/textes";
  * Une note parfaite sur deux cents avis ne se glisse pas en note de bas
  * de page : elle s'affiche.
  *
- * Les cartes sont venues ensuite, à la demande de la maison. Elles
- * suivent le reste du site plutôt que le modèle montré : l'angle des
- * boutons, un filet au lieu d'une ombre franche, et le rouge de la
- * maison pour les étoiles, et un très grand guillemet pâli dans le
- * coin, comme sur le modèle.
+ * Les cartes sont venues ensuite, à la demande de la maison, puis se
+ * sont dépouillées à sa demande encore : ni fond, ni filet, ni ombre —
+ * le fond blanc de la section, et rien pour l'encadrer. Ce qui les
+ * tient est ce qu'elles portent : les étoiles en rouge, le très grand
+ * guillemet pâli dans le coin, et le filet qui sépare la voix du nom.
+ *
+ * Sans cadre, la marge intérieure latérale n'avait plus rien à faire :
+ * elle décalait la première colonne de dix-huit pixels vers la droite,
+ * sans que rien ne le justifie à l'œil. C'est l'écart entre colonnes
+ * qui fait ce travail maintenant.
  *
  * Pas de portraits. La maison n'a pas les photographies de ses
  * clientes : une initiale tient la place, et l'on n'invente pas un
@@ -97,7 +102,7 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
   };
 
   return (
-    <section aria-labelledby="avis" className="gouttiere bg-ivoire py-[clamp(4rem,8vw,8rem)]">
+    <section aria-labelledby="avis" className="gouttiere bg-blanc py-[clamp(4rem,8vw,8rem)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
@@ -131,15 +136,15 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
       {/* Trois voix, sur trois cartes.
         *
         * La section n'en portait aucune : le chiffre tenait tout, et le
-        * reste était du texte nu. La maison les veut en cartes — alors
-        * elles le sont, mais à la mesure du site : l'angle des boutons,
-        * un filet plutôt qu'une ombre franche, et le rouge de la maison
-        * pour les étoiles et le guillemet. */}
-      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-[clamp(0.875rem,1.6vw,1.25rem)] md:grid-cols-3" data-suite>
+        * reste était du texte nu. La maison les veut en cartes, et les
+        * veut nues : pas de cadre, pas de fond. Ce sont trois colonnes
+        * sur le blanc de la page, tenues par les étoiles, le guillemet
+        * et le filet du bas. */}
+      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-x-[clamp(2.5rem,5vw,4rem)] gap-y-[clamp(2.5rem,5vw,3.5rem)] md:grid-cols-3" data-suite>
         {voix.map((a) => (
           <figure
             key={a.auteur}
-            className="relative flex flex-col overflow-hidden rounded-[4px] border border-fil bg-blanc p-[clamp(1.125rem,1.8vw,1.5rem)]"
+            className="relative flex flex-col overflow-hidden py-[clamp(1.125rem,1.8vw,1.5rem)]"
           >
             {/* Le guillemet, posé dans le coin, très grand et très pâli :
               * il ponctue, il ne parle pas. En bâton — la paire de
