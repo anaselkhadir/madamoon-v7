@@ -274,8 +274,8 @@ export default async function PageMorphologie({
               {stations.map((s) => {
                 const modeles = s.robes;
                 return (
-                  <p key={s.ancre} className="texte mt-3">
-                    <Link href={`/coupes/${s.ancre}`} className="souligne text-action">
+                  <p key={s.ancre} className="texte mt-4">
+                    <Link href={`/coupes/${s.ancre}`} className="lien-texte text-action">
                       {L.decouvrez(coupeApposition(s.categorie, langue), m.lettre)}
                     </Link>
                     {modeles.length > 0 && (
@@ -284,7 +284,7 @@ export default async function PageMorphologie({
                         {modeles.map((r, i) => (
                           <span key={r.slug}>
                             {i > 0 && (i === modeles.length - 1 ? L.et : ", ")}
-                            <Link href={`/robes/${r.slug}`} className="souligne text-encre">
+                            <Link href={`/robes/${r.slug}`} className="lien-texte text-encre">
                               {r.nom}, {bas(r.ligne, langue)}
                             </Link>
                           </span>

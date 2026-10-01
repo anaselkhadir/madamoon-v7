@@ -770,6 +770,30 @@ body {
   max-width: 48ch;
 }
 
+/*
+ * Un lien dans une phrase.
+ *
+ * « .souligne » est un bloc en ligne : son trait se dessine sur toute sa
+ * largeur, et un bloc ne se coupe pas en fin de ligne. Posé sur une
+ * ancre de dix mots — « Dove, tombé fluide en satin mat, décolleté
+ * drapé » —, il la rejetait entière à la ligne suivante, hachait la
+ * phrase et laissait le point final tout seul sur une ligne.
+ *
+ * Ici le soulignement est celui du texte : il suit les coupures, et la
+ * phrase se lit comme une phrase. Le trait est pâle au repos et se
+ * ferme au survol — même intention que l'autre, sans le bloc.
+ */
+.lien-texte {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  transition: text-decoration-color 0.4s var(--ease-doux);
+}
+.lien-texte:hover {
+  text-decoration-color: currentColor;
+}
+
 /* Le trait qui se dessine sous un lien. */
 .souligne {
   position: relative;
