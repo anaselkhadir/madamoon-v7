@@ -17,16 +17,15 @@ import { t } from "@/lib/textes";
  * Une note parfaite sur deux cents avis ne se glisse pas en note de bas
  * de page : elle s'affiche.
  *
- * Les cartes sont venues ensuite, à la demande de la maison, puis se
- * sont dépouillées à sa demande encore : ni fond, ni filet, ni ombre —
- * le fond blanc de la section, et rien pour l'encadrer. Ce qui les
- * tient est ce qu'elles portent : les étoiles en rouge, le très grand
- * guillemet pâli dans le coin, et le filet qui sépare la voix du nom.
+ * Les cartes sont venues ensuite, à la demande de la maison, et ont
+ * cherché leur forme en trois temps : un filet sur fond blanc, puis
+ * rien du tout, puis le gris doux des morphologies et l'angle des
+ * boutons. C'est cette dernière qui tient — la même carte que la
+ * section des morphologies, pour que la page n'ait qu'une façon de
+ * poser une carte.
  *
- * Sans cadre, la marge intérieure latérale n'avait plus rien à faire :
- * elle décalait la première colonne de dix-huit pixels vers la droite,
- * sans que rien ne le justifie à l'œil. C'est l'écart entre colonnes
- * qui fait ce travail maintenant.
+ * Le filet a disparu avec le fond : un gris plein se détache seul du
+ * blanc de la section, et un cadre par-dessus ne ferait que l'épaissir.
  *
  * Pas de portraits. La maison n'a pas les photographies de ses
  * clientes : une initiale tient la place, et l'on n'invente pas un
@@ -110,41 +109,60 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
 
       <p className="legende">{L.avis.legende}</p>
 
-      {/* La note. Le chiffre est posé à gauche, ce qu'il vaut à droite. */}
-      <div className="mt-[clamp(2rem,4vw,3rem)] grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-5 md:grid-cols-[auto_1fr] md:items-start">
+      {/* La note, puis ce qu'elle veut dire — l'un sous l'autre, au
+        * milieu. Les deux étaient côte à côte ; la maison les veut
+        * empilés et centrés. */}
+      <div className="mt-[clamp(2rem,4vw,3rem)] text-center">
         {/* Le chiffre est une image de mot. Le titre porte donc sa
           * phrase en propre plutôt que de la laisser déduire de son
           * contenu : masquer le chiffre ne suffit pas — Chrome le
           * reprend quand même dans le nom, et le titre bégayait
           * « 5,0 5,0 sur 5 ». */}
-        <h2
-          id="avis"
-          aria-label={`${moyenne} / 5 — ${L.avis.experience}`}
-          className="md:min-w-[8rem]"
-        >
-          <span className="block font-serif text-[clamp(5rem,12vw,11rem)] leading-[0.78] text-encre">
+        <h2 id="avis" aria-label={`${moyenne} / 5 — ${L.avis.experience}`}>
+          <span className="block font-sans text-[clamp(5rem,12vw,11rem)] font-bold leading-[0.78] text-encre">
             {moyenne}
           </span>
-          <span aria-hidden="true" className="mt-5 block h-px w-full bg-encre" />
         </h2>
 
-        <div className="md:pt-[clamp(0.5rem,1.5vw,1.5rem)]">
-          <p className="accroche text-encre">{L.avis.experience}</p>
-        </div>
+        {/* La phrase de la maison, en anglaise et en rouge — la même
+          * écriture que son nom sur l'accueil.
+          *
+          * Tout est écrit en propre : « .accroche » porte sa police et
+          * sa couleur hors calque et l'emporterait sur un utilitaire.
+          *
+          * L'anglaise a l'œil plus petit qu'un romain de même corps, et
+          * ses déliés montent et descendent loin : le corps est relevé,
+          * et l'interligne tient à un et demi pour que deux lignes ne
+          * s'accrochent pas l'une à l'autre.
+          *
+          * « balance » répartit la phrase sur ses deux lignes au lieu de
+          * remplir la première : sans lui, « vivre. » restait seul en
+          * bas — un mot d'orphelin sous une ligne pleine. */}
+        <p
+          className="mx-auto mt-[clamp(1.25rem,2.5vw,2rem)] max-w-[52rem]"
+          style={{
+            fontFamily: "var(--font-anglaise)",
+            fontSize: "clamp(1.75rem, 3.4vw, 2.75rem)",
+            lineHeight: 1.45,
+            color: "var(--color-action)",
+            textWrap: "balance",
+          }}
+        >
+          {L.avis.experience}
+        </p>
       </div>
 
       {/* Trois voix, sur trois cartes.
         *
         * La section n'en portait aucune : le chiffre tenait tout, et le
-        * reste était du texte nu. La maison les veut en cartes, et les
-        * veut nues : pas de cadre, pas de fond. Ce sont trois colonnes
-        * sur le blanc de la page, tenues par les étoiles, le guillemet
-        * et le filet du bas. */}
-      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-x-[clamp(2.5rem,5vw,4rem)] gap-y-[clamp(2.5rem,5vw,3.5rem)] md:grid-cols-3" data-suite>
+        * reste était du texte nu. Elles portent maintenant le gris
+        * doux et l'angle des morphologies, sans cadre : le gris se
+        * détache seul du blanc de la section. */}
+      <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-[clamp(0.875rem,1.6vw,1.25rem)] md:grid-cols-3" data-suite>
         {voix.map((a) => (
           <figure
             key={a.auteur}
-            className="relative flex flex-col overflow-hidden py-[clamp(1.125rem,1.8vw,1.5rem)]"
+            className="relative flex flex-col overflow-hidden rounded-[4px] bg-gris p-[clamp(1.125rem,1.8vw,1.5rem)]"
           >
             {/* Le guillemet, posé dans le coin, très grand et très pâli :
               * il ponctue, il ne parle pas. En bâton — la paire de
@@ -174,10 +192,15 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
 
             <figcaption className="mt-5 flex items-center gap-3 border-t border-fil pt-4">
               {/* Une initiale, pas un portrait : la maison n'a pas les
-                * photographies de ses clientes, et on n'en invente pas. */}
+                * photographies de ses clientes, et on n'en invente pas.
+                *
+                * La pastille est d'un gris appuyé, et non de la craie :
+                * la craie et le gris des cartes se ressemblent à un
+                * point près en clair, et sont le même noir en sombre —
+                * la pastille y disparaissait. */}
               <span
                 aria-hidden="true"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-craie font-serif text-[1rem] leading-none text-encre"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gris-appuye font-serif text-[1rem] leading-none text-encre"
               >
                 {a.auteur.charAt(0)}
               </span>
