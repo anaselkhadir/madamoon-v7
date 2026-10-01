@@ -45,15 +45,27 @@ import { t } from "@/lib/textes";
 const CHOIX = ["Mathilde Pln", "Gwendoline Carrier", "Julia JF"];
 
 /* Les étoiles. Dessinées, et non écrites : le caractère « ★ » n'existe
- * pas dans toutes les polices et retombe sur celle du système. */
-function Etoiles({ note }: { note: number }) {
+ * pas dans toutes les polices et retombe sur celle du système.
+ *
+ * Deux emplois, un seul dessin : petites et rouges sur les cartes,
+ * grandes et noires en tête de section, où elles ont remplacé le
+ * chiffre. */
+function Etoiles({
+  note,
+  className = "flex gap-[0.15em] text-action",
+  etoile = "h-[0.8rem] w-[0.8rem]",
+}: {
+  note: number;
+  className?: string;
+  etoile?: string;
+}) {
   return (
-    <span aria-hidden="true" className="flex gap-[0.15em] text-action">
+    <span aria-hidden="true" className={className}>
       {[1, 2, 3, 4, 5].map((i) => (
         <svg
           key={i}
           viewBox="0 0 24 24"
-          className="h-[0.8rem] w-[0.8rem]"
+          className={etoile}
           fill={i <= note ? "currentColor" : "none"}
           stroke="currentColor"
           strokeWidth="1.4"
@@ -118,31 +130,37 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
           * contenu : masquer le chiffre ne suffit pas — Chrome le
           * reprend quand même dans le nom, et le titre bégayait
           * « 5,0 5,0 sur 5 ». */}
+        {/* Cinq étoiles noires à la place du chiffre. Elles ne portent
+          * aucun texte : la note reste dite au lecteur d'écran par le
+          * titre, et à Google par les données structurées plus haut. */}
         <h2 id="avis" aria-label={`${moyenne} / 5 — ${L.avis.experience}`}>
-          <span className="block font-sans text-[clamp(5rem,12vw,11rem)] font-bold leading-[0.78] text-encre">
-            {moyenne}
-          </span>
+          <Etoiles
+            note={5}
+            className="flex justify-center gap-[0.2em] text-encre"
+            etoile="h-[clamp(2.25rem,5.5vw,4rem)] w-[clamp(2.25rem,5.5vw,4rem)]"
+          />
         </h2>
 
-        {/* La phrase de la maison, en anglaise et en rouge — la même
-          * écriture que son nom sur l'accueil.
+        {/* La phrase de la maison, en Inter et en rouge.
+          *
+          * Elle a essayé l'anglaise, qui n'a pas plu : une phrase
+          * entière en copperplate se lit moins bien qu'un nom seul.
+          *
+          * Le corps est plus bas que celui de l'anglaise : à taille
+          * égale, Inter a l'œil bien plus grand et la même phrase
+          * pèserait deux fois plus lourd sous les étoiles.
           *
           * Tout est écrit en propre : « .accroche » porte sa police et
-          * sa couleur hors calque et l'emporterait sur un utilitaire.
-          *
-          * L'anglaise a l'œil plus petit qu'un romain de même corps, et
-          * ses déliés montent et descendent loin : le corps est relevé,
-          * et l'interligne tient à un et demi pour que deux lignes ne
-          * s'accrochent pas l'une à l'autre.
+          * sa casse hors calque et l'emporterait sur un utilitaire.
           *
           * « balance » répartit la phrase sur ses deux lignes au lieu de
-          * remplir la première : sans lui, « vivre. » restait seul en
-          * bas — un mot d'orphelin sous une ligne pleine. */}
+          * remplir la première : sans lui, la fin restait seule en bas —
+          * un mot d'orphelin sous une ligne pleine. */}
         <p
-          className="mx-auto mt-[clamp(1.25rem,2.5vw,2rem)] max-w-[52rem]"
+          className="mx-auto mt-[clamp(1.25rem,2.5vw,2rem)] max-w-[46rem]"
           style={{
-            fontFamily: "var(--font-anglaise)",
-            fontSize: "clamp(1.75rem, 3.4vw, 2.75rem)",
+            fontFamily: "var(--font-sans)",
+            fontSize: "clamp(1.125rem, 2.2vw, 1.75rem)",
             lineHeight: 1.45,
             color: "var(--color-action)",
             textWrap: "balance",
