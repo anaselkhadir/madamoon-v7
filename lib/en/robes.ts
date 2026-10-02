@@ -95,7 +95,7 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   "zina": {
     ligne: "Mermaid with a slit, optional 3D flowers",
     regard:
-      "A mermaid wedding dress in stretch georgette and matte satin, set with hand-made 3D flowers, a centre slit and a laced corset. A spectacular dress that celebrates femininity with daring and sophistication.",
+      "A mermaid wedding dress in stretch georgette and matte satin, set with hand-made 3D flowers, a slit and a laced corset. A spectacular dress that celebrates femininity with daring and sophistication.",
   },
   "sienna": {
     ligne: "Ball gown or A-line in lace",

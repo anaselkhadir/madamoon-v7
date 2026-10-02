@@ -525,7 +525,7 @@ export const ROBES: Robe[] = [
     ligne: "Sirène à fente, fleurs 3D optionnelles",
     categorie: "Sirène",
     regard:
-      "Une robe de mariée sirène en georgette stretch et satin mat, ornée de fleurs 3D faites main, avec fente centrale et corset à laçage. Une robe spectaculaire, qui célèbre la féminité avec audace et sophistication.",
+      "Une robe de mariée sirène en georgette stretch et satin mat, ornée de fleurs 3D faites main, avec fente et corset à laçage. Une robe spectaculaire, qui célèbre la féminité avec audace et sophistication.",
     vues: 9,
     createur: "Casablanca Bridal",
     morphos: ["O", "A", "V", "H", "8", "X"],
