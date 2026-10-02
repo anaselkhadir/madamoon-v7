@@ -68,16 +68,51 @@ const FR = {
   /* L'introduction de l'accueil, avant les morphologies : qui est la
    * maison, où elle se trouve, ce qu'on y vit. Demandée par la
    * boutique — on entrait dans la silhouette sans savoir où l'on
-   * était. Le texte est celui de Mouna, mot pour mot. */
+   * était. Le texte est celui de Mouna, mot pour mot.
+   *
+   * Il est découpé en morceaux parce que trois passages sont mis en
+   * exergue et qu'un d'eux porte un exposant. Un morceau sans « fort »
+   * est du texte courant ; « exposant » et « apres » servent à tenir un
+   * exposant au milieu d'un passage en exergue, pour que le trait du
+   * soulignement ne se coupe pas en deux. */
   introMaison: {
-    /* Le nom se détache du reste du titre : il est écrit à l'anglaise, et
-     * une anglaise ne s'écrit pas en capitales — ses majuscules ouvrent
-     * un mot, elles ne se suivent pas. D'où « Madamoon ». */
+    /* Le nom se détache du titre : il est écrit à l'anglaise, et une
+     * anglaise ne s'écrit pas en capitales — ses majuscules ouvrent un
+     * mot, elles ne se suivent pas. D'où « Madamoon ». */
+    titreAvant: "L’expérience ",
     nom: "Madamoon",
-    titre: ", votre boutique de robes de mariée à Paris",
-    texteAvant: "Au cœur du 10",
-    texteApres:
-      " arrondissement de Paris, MADAMOON vous accueille dans un showroom pensé comme un véritable écrin dédié à la robe de mariée. Plus qu’un simple essayage, nous vous proposons une expérience personnalisée, attentive et chaleureuse, pour prendre le temps de découvrir les coupes, les matières et les détails qui vous correspondent. Chaque rendez-vous est une étape privilégiée pour trouver la robe dans laquelle vous vous sentirez pleinement vous-même.",
+    /* Espace fine insécable avant le point d'interrogation : le morceau
+     * commence par elle, et « typographie() » ne peut pas la poser
+     * puisque ce qui précède est dans une autre balise. */
+    titreApres: "\u202f?",
+    paragraphes: [
+      [
+        { texte: "Chez MADAMOON, chaque essayage commence par un véritable " },
+        { texte: "échange", fort: true },
+        {
+          texte:
+            ". Nous prenons le temps de découvrir votre personnalité, vos envies, vos goûts, ainsi que l’univers de votre mariage : thème, ambiance, lieu et architecture. Ces précieux échanges nous permettent de vous conseiller des robes de mariée adaptées à ",
+        },
+        {
+          texte: "votre morphologie, à votre personnalité et à l’esprit de votre mariage",
+          fort: true,
+        },
+        { texte: "." },
+      ],
+      [
+        { texte: "De plus, " },
+        {
+          texte: "notre boutique, nichée dans un élégant écrin du XIX",
+          exposant: "e",
+          apres: " siècle, vous offre un cadre véritablement hors du temps",
+          fort: true,
+        },
+        {
+          texte:
+            ", pensé pour faire de votre essayage de robe de mariée une expérience unique et mémorable, à partager avec vos proches !",
+        },
+      ],
+    ],
     lien: "Découvrir la maison",
   },
   /* La rangée de robes de l'accueil. La sélection elle-même est dans le
@@ -586,11 +621,36 @@ const EN: Textes = {
     aPartirDe: "From",
   },
   introMaison: {
+    titreAvant: "The ",
     nom: "Madamoon",
-    titre: ", your wedding dress boutique in Paris",
-    texteAvant:
-      "In the heart of the 10th arrondissement of Paris, MADAMOON welcomes you into a showroom conceived as a jewel case for the wedding dress. More than a simple fitting, we offer a personal, attentive and warm experience — the time to discover the cuts, the fabrics and the details that suit you. Every appointment is a moment apart, to find the dress in which you feel entirely yourself.",
-    texteApres: "",
+    titreApres: " experience?",
+    paragraphes: [
+      [
+        { texte: "At MADAMOON, every fitting begins with a real " },
+        { texte: "conversation", fort: true },
+        {
+          texte:
+            ". We take the time to learn your personality, your wishes, your taste, and the world of your wedding: its theme, its mood, its setting and its architecture. Those exchanges are what let us suggest wedding dresses suited to ",
+        },
+        {
+          texte: "your figure, your personality and the spirit of your wedding",
+          fort: true,
+        },
+        { texte: "." },
+      ],
+      [
+        { texte: "And our boutique, " },
+        {
+          texte:
+            "nestled in an elegant nineteenth-century setting, offers you a place truly out of time",
+          fort: true,
+        },
+        {
+          texte:
+            ", conceived to make trying on your wedding dress a unique and memorable experience, to share with those close to you!",
+        },
+      ],
+    ],
     lien: "Discover the house",
   },
   robesAccueil: {

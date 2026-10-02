@@ -1,13 +1,27 @@
+import { Fragment } from "react";
 import Link from "@/components/Lien";
+import { typographie } from "@/lib/francais";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+
+/* Un morceau de paragraphe. « fort » met le passage en exergue —
+ * gras et souligné, comme sur le document de la maison. « exposant »
+ * et « apres » tiennent un exposant au milieu d'un même passage, pour
+ * que le trait du soulignement ne se coupe pas en deux. */
+type Morceau = {
+  texte: string;
+  fort?: boolean;
+  exposant?: string;
+  apres?: string;
+};
 
 /*
  * L'introduction de l'accueil.
  *
  * On entrait dans les morphologies sans savoir où l'on était : la
- * boutique a demandé qu'on se présente d'abord. Le titre et le
- * paragraphe sont ceux de Mouna, mot pour mot.
+ * boutique a demandé qu'on se présente d'abord. Le titre et les deux
+ * paragraphes sont ceux de Mouna, mot pour mot, et les trois passages
+ * en exergue sont ceux qu'elle avait soulignés.
  *
  * Centrée, contrairement aux sections qui suivent, toutes calées à
  * gauche : c'est une adresse à la visiteuse et non une rubrique du site.
@@ -30,6 +44,7 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
         <div className="mesure-l mx-auto text-center">
           <span data-ligne className="block">
             <h2 id="la-maison" className="phrase">
+              {L.titreAvant}
               {/* L'anglaise a l'œil plus petit qu'un romain de même
                 * corps : relevée d'un tiers, elle se tient sur la même
                 * ligne que la suite. L'interligne revient à un, sinon
@@ -49,28 +64,48 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
               >
                 {L.nom}
               </span>
-              {L.titre}
+              {L.titreApres}
             </h2>
           </span>
-          {/* L'exposant est une convention française : « le 10ᵉ ». En
-            * anglais l'arrondissement s'écrit en toutes lettres, et la
-            * phrase se tient d'un seul tenant. */}
-          {/* Le paragraphe monte après le titre, le lien après lui : la
-            * section se découvre dans l'ordre où elle se lit. Les
+          {/* Les paragraphes montent après le titre, le lien après eux :
+            * la section se découvre dans l'ordre où elle se lit. Les
             * retards sont courts — on ouvre une page, on n'assiste pas à
             * une démonstration. « Mouvement » révèle tout de suite ce qui
             * est déjà à l'écran, et la préférence de mouvement réduit
-            * annule les trois d'un coup. */}
-          <p className="texte mt-5" data-lever data-retard="120">
-            {L.texteAvant}
-            {langue === "fr" && (
-              <>
-                <sup>e</sup>
-                {L.texteApres}
-              </>
-            )}
-          </p>
-          <div className="pt-[clamp(1.5rem,2.5vw,2.25rem)]" data-lever data-retard="240">
+            * annule tout d'un coup. */}
+          {(L.paragraphes as readonly (readonly Morceau[])[]).map((morceaux, i) => (
+            <p
+              key={i}
+              className={i === 0 ? "texte mt-5" : "texte mt-4"}
+              data-lever
+              data-retard={120 + i * 80}
+            >
+              {morceaux.map((m, j) => {
+                /* L'exposant est une convention française : « le XIXᵉ ».
+                  * En anglais le siècle s'écrit en toutes lettres, et le
+                  * morceau n'en porte pas. */
+                const contenu = (
+                  <>
+                    {typographie(m.texte)}
+                    {m.exposant && <sup>{m.exposant}</sup>}
+                    {m.apres && typographie(m.apres)}
+                  </>
+                );
+                return m.fort ? (
+                  <strong key={j} className="exergue">
+                    {contenu}
+                  </strong>
+                ) : (
+                  <Fragment key={j}>{contenu}</Fragment>
+                );
+              })}
+            </p>
+          ))}
+          <div
+            className="pt-[clamp(1.5rem,2.5vw,2.25rem)]"
+            data-lever
+            data-retard={120 + L.paragraphes.length * 80}
+          >
             <Link href="/a-propos" className="lien-nav souligne inline-block text-action">
               {L.lien}
             </Link>

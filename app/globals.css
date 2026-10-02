@@ -795,6 +795,25 @@ body {
 }
 
 /* Le trait qui se dessine sous un lien. */
+/* Les passages que la maison veut en exergue dans son introduction :
+ * gras et soulignés, comme sur le document qu'elle a envoyé.
+ *
+ * Le trait n'est pas celui des liens. Il est plus fin, posé plus bas,
+ * et il ne s'anime pas au survol — un lien de ce site se souligne en
+ * glissant, et le lecteur apprend vite à reconnaître ce geste. Le
+ * soulignement d'un lien se dessine ; celui-ci est déjà là.
+ *
+ * Il suit par ailleurs les jambages des lettres plutôt que de les
+ * trancher : c'est ce qui distingue un trait de typographe d'un trait
+ * de traitement de texte. */
+.exergue {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: auto;
+}
+
 .souligne {
   position: relative;
   display: inline-block;
