@@ -59,8 +59,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       },
       {
         titre: "The top",
-        texte:
-          "The shoulders are fine — often narrower than one believes when getting dressed.",
+        texte: "The shoulders are fine.",
       },
       {
         titre: "In front of the mirror",

@@ -84,8 +84,7 @@ export const EDITO: Record<Lettre, Edito> = {
       },
       {
         titre: "Le haut",
-        texte:
-          "Les épaules sont fines — souvent plus étroites qu'on ne le croit soi-même en s'habillant.",
+        texte: "Les épaules sont fines.",
       },
       {
         titre: "Devant le miroir",
