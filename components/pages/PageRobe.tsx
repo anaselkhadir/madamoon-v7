@@ -77,24 +77,29 @@ export default async function PageRobe({
    */
   const petiteTete = !film && !!tete && tete.w < 1200;
   /*
-   * La galerie montre toutes les photographies, couverture comprise.
+   * La galerie montre toutes les photographies, sans exception.
    *
-   * Elle en était retirée, au motif qu'on venait de la voir au premier
-   * écran. Mais le premier écran ne la montre pas : il la recadre en
-   * bandeau — une verticale de deux mille sur trois mille y perd les
-   * deux tiers de sa hauteur, et il n'en reste qu'un corsage. La
-   * retirer revenait donc à cacher une photographie pour de bon.
+   * La couverture en était retirée, au motif qu'on venait de la voir au
+   * premier écran. Mais le premier écran ne la montre pas : il la
+   * recadre en bandeau — une verticale de deux mille sur trois mille y
+   * perd les deux tiers de sa hauteur, et il n'en reste qu'un corsage.
+   * La retirer revenait donc à cacher une photographie pour de bon,
+   * et sur une robe qui n'en a que deux, à n'en montrer qu'une.
    *
-   * Fern le disait le plus clairement : trois vues, un dos et un détail
-   * dans la galerie, et la robe de face en pied nulle part sur sa page.
-   *
-   * L'exception est la petite tête. Celle-là est déjà reprise entière,
-   * à sa taille vraie, dans le cadre de droite : une troisième fois
-   * n'apprendrait rien. Sauf si la robe n'a que cette photographie —
-   * la galerie serait alors vide.
+   * Une exception avait d'abord été gardée pour les petites têtes,
+   * reprises entières dans le cadre de droite. Riviera l'a démentie :
+   * deux photographies, et une seule dans sa galerie. Le cadre de
+   * droite appartient au premier écran, pas à la galerie — on ne
+   * demande pas à une cliente de remonter pour voir une photographie
+   * qu'elle cherche en bas. Deux apparitions valent mieux qu'une
+   * absence.
    */
-  const galerie =
-    petiteTete && photos.length > 1 ? photos.filter((p) => p !== tete) : photos;
+  const galerie = photos;
+
+  /* Le regard, et le corps qu'il demande : voir plus bas, au rendu. */
+  const regard = robeRegard(robe, langue);
+  const corpsDuRegard =
+    regard.length > 520 ? "est-longue" : regard.length > 260 ? "est-moyenne" : "";
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
   const voisines = ROBES.filter(
@@ -336,8 +341,20 @@ export default async function PageRobe({
           *
           * La mesure ne bouge pas — quarante-huit caractères : sans elle,
           * un texte centré s'étale et devient une bannière. */}
+        {/* Le corps du regard suit sa longueur.
+          *
+          * « .phrase » est une voix de titre : à deux rems et quart, elle
+          * porte les deux lignes de Fern. Les mots que la maison a
+          * écrits pour ses dernières robes en font neuf cents — Santana,
+          * River, Mira, Seraphina — et au même corps, cela fait un mur.
+          *
+          * Deux paliers, donc, sur deux seuils tirés de la mesure des
+          * soixante-sept descriptions : quarante restent courtes, treize
+          * passent au palier moyen, quatorze au petit. La longueur est
+          * prise sur le texte de la langue affichée, l'anglais n'ayant
+          * pas celle du français. */}
         <span data-ligne className="mb-[clamp(2.5rem,5vw,4rem)] block">
-          <p className="phrase mesure-l mx-auto text-center">{robeRegard(robe, langue)}</p>
+          <p className={`phrase ${corpsDuRegard} mesure-l mx-auto text-center`}>{regard}</p>
         </span>
 
         <dl className="grid gap-x-[clamp(2rem,5vw,5rem)] border-t border-fil md:grid-cols-2">

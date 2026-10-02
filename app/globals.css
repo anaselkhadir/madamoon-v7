@@ -206,6 +206,24 @@ body {
   color: var(--color-encre);
 }
 
+/* Les deux paliers du regard d'une robe, quand sa description est
+ * longue. « .phrase » est une voix de titre, faite pour deux lignes ;
+ * elle tient mal les neuf cents signes de River ou les sept cents de
+ * Santana. Le corps baisse, et l'interligne s'ouvre en retour — un
+ * petit corps serré se lit moins bien qu'un grand.
+ *
+ * La classe est doublée pour peser plus lourd que « .phrase », qui
+ * n'est pas calquée et l'emporterait à spécificité égale. */
+.phrase.est-moyenne {
+  font-size: clamp(1.125rem, 1.9vw, 1.625rem);
+  line-height: 1.4;
+}
+
+.phrase.est-longue {
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.6;
+}
+
 .texte {
   font-size: clamp(0.9375rem, 1.05vw, 1.0625rem);
   line-height: 1.7;
