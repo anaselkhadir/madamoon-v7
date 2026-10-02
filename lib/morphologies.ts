@@ -150,7 +150,7 @@ export const EDITO: Record<Lettre, Edito> = {
       },
       {
         titre: "La taille",
-        texte: "Elle existe mais se devine peu, et beaucoup de robes glissent sans s'y accrocher.",
+        texte: "Peu marquée.",
       },
       {
         titre: "Devant le miroir",

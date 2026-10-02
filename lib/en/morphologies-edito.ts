@@ -128,8 +128,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       },
       {
         titre: "The waist",
-        texte:
-          "It exists but is barely guessed at, and many dresses glide past without catching on it.",
+        texte: "Barely defined.",
       },
       {
         titre: "In front of the mirror",
