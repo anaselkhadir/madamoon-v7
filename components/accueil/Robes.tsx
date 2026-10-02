@@ -13,20 +13,25 @@ import { t } from "@/lib/textes";
  * Six modèles entre la présentation de la maison et les morphologies :
  * on voit des robes avant d'entendre parler de silhouettes.
  *
- * Le choix n'est pas au hasard. Les fonds des six photographies ont été
- * mesurés — teinte de 28 à 33 degrés, clarté de 62 à 72 pour cent — et
- * la rangée va du plus sourd au plus clair. Posées côte à côte, elles
- * font une seule image ; prises dans le catalogue au hasard, elles
- * faisaient six vitrines l'une contre l'autre.
+ * Les six sont choisis par la maison, et dans son ordre. Le choix
+ * précédent était fait sur les fonds — teinte et clarté mesurées, du
+ * plus sourd au plus clair, pour que la rangée fasse une seule image.
+ * Celui-ci est fait sur les robes, ce qui est le bon critère : on ne
+ * vend pas un fond. Les six fonds ne s'enchaînent donc plus, et il
+ * faudrait six photographies prises le même jour pour qu'ils le
+ * fassent de nouveau.
  *
- * Quatre maisons sont représentées. Les deux qui manquent — Olya Mak et
- * Monica Loretti — n'ont pas de modèle photographié sur un fond clair :
- * en ajouter un aurait cassé la rangée pour une symétrie que personne
- * ne remarque.
+ * Deux Clover y figurent, de deux maisons : « clover-perles » est celle
+ * de Watters Designs, « clover » celle de Casablanca Bridal. Les noms
+ * se ressemblent, les robes non.
+ *
+ * Toutes sont vues de face, à la demande de la maison. Ce n'est pas
+ * réglé ici mais sur la robe, par sa couverture : la vue de face vaut
+ * pour le catalogue et pour sa fiche autant que pour cette rangée.
  */
 
-/* Les six, du fond le plus sourd au plus clair. */
-const SELECTION = ["meredith", "charlotte", "montana", "angel", "monica", "agnessa"];
+/* Les six, dans l'ordre donné par la maison. */
+const SELECTION = ["clover-perles", "amaryllis", "hayes", "clover", "charlize", "sheridan"];
 
 export default function Robes({ langue = "fr" }: { langue?: Langue }) {
   const L = t(langue).robesAccueil;

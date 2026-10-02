@@ -271,6 +271,8 @@ export const ROBES: Robe[] = [
     nom: "Amaryllis",
     ligne: "Coupe droite ou sirène en charmeuse, boutons sur le côté",
     categorie: "Sirène",
+    /* la seule vue de face en pied ; la 1 coupe à la hanche. */
+    couverture: 3,
     regard:
       "Une création moderne et audacieuse avec une file de boutons sur le côté. Les bretelles d'Amaryllis se portent sur les épaules pour la version classique, ou sur les bras si vous préférez les bretelles tombantes.",
     vues: 5,
@@ -304,6 +306,8 @@ export const ROBES: Robe[] = [
     nom: "Charlize",
     ligne: "Satin mat et dentelle de Chantilly",
     categorie: "Sirène",
+    /* de face, la robe entière et la traîne ; la vue 1 la prend de très loin. */
+    couverture: 10,
     regard:
       "Un corset transparent — ou doublé, si vous n'appréciez pas la transparence — et une jolie fente qui s'ouvre sur une jupe en dentelle de Chantilly.",
     vues: 10,
@@ -338,6 +342,8 @@ export const ROBES: Robe[] = [
     nom: "Clover",
     ligne: "Robe courte florale et surjupe",
     categorie: "Deux en un",
+    /* de face, la robe longue ; la vue 1 la prend de loin, au bout d'une allée. */
+    couverture: 3,
     regard: "Une robe courte brodée de fleurs de couleur, et une surjupe longue à volonté.",
     vues: 6,
     createur: "Casablanca Bridal",
@@ -639,6 +645,8 @@ export const ROBES: Robe[] = [
     nom: "Sheridan",
     ligne: "Sirène en satin mat et dentelle, avec cape assortie",
     categorie: "Sirène",
+    /* de face et avec la cape, demandée par la maison ; la vue 1 est sans. */
+    couverture: 6,
     regard:
       "Sheridan est une robe de mariée sirène à la silhouette moderne et élégante. Sa coupe fit-and-flare sans bretelles épouse délicatement les courbes, tandis que son décolleté cœur pointu apporte une touche graphique et sophistiquée. Confectionnée en satin mat souple avec une doublure extensible, elle est sublimée par des applications de dentelle florale qui illuminent le corset et se prolongent délicatement sur la jupe. Une création qui associe lignes architecturales, féminité et élégance intemporelle. Pour une allure spectaculaire lors de la cérémonie, la cape en tulle plissé asymétrique et ornée de la même dentelle transforme la silhouette en une véritable pièce couture.",
     vues: 8,
@@ -810,6 +818,8 @@ export const ROBES: Robe[] = [
     nom: "Clover avec ou sans perles",
     ligne: "Dentelle Caterina, décolleté carré et taille basse",
     categorie: "Princesse",
+    /* de face sous la pergola, la robe entière lisible ; la vue 1 est une source de 487 pixels. */
+    couverture: 2,
     regard:
       "La robe de mariée Clover associe la délicatesse de la dentelle Française à des lignes modernes et sophistiquées. Confectionnée en dentelle Caterina, elle séduit par son charme romantique et ses détails raffinés. Son décolleté carré apporte une touche contemporaine, tandis que sa taille basse sculptée souligne élégamment la silhouette. Le corsage structuré assure un bon maintien et se prolonge par une jupe ample au volume généreux, offrant une allure majestueuse tout en préservant le confort. De délicates perles soulignent le décolleté et les contours du corset, apportant une subtile touche de lumière. Clover est idéale pour une mariée en quête d'une robe de mariée princesse à la fois moderne, romantique et élégante.",
     vues: 8,
