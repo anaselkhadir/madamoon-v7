@@ -1069,7 +1069,22 @@ export type Morphologie = {
 export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "O",
-    ouverture: { robe: "montana", vue: 1 },
+    /* Agnessa, et non plus le film de Montana.
+     *
+     * Montana est une sirène, et cette page recommande d'abord les
+     * tombés fluides et les trapèzes : son premier écran disait le
+     * contraire de son conseil. La maison l'a vu.
+     *
+     * Agnessa est fluide, elle sert cette morphologie, et son décolleté
+     * en V est précisément le détail que la page retient. La mariée s'y
+     * tient à droite du cadre : le titre, calé à gauche, ne lui passe
+     * pas dessus.
+     *
+     * La page perd son film — aucun des huit n'est d'une coupe que le O
+     * recommande en premier, et le seul trapèze filmé, Solana, ouvre
+     * déjà la page du A. Une photographie juste vaut mieux qu'un film
+     * qui dément le texte. */
+    ouverture: { robe: "agnessa", vue: 1 },
     nom: "Morphologie en O",
     silhouette: "Des courbes généreuses, une poitrine et un ventre marqués.",
     objectif: "Allonger la ligne et mettre la poitrine en valeur.",

@@ -124,7 +124,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       {
         titre: "The marker",
         texte:
-          "Shoulders, waist and hips sit almost on one line, straight and long.",
+          "Shoulders, waist and hips sit on one straight, vertical line.",
       },
       {
         titre: "The waist",

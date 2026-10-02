@@ -146,7 +146,7 @@ export const EDITO: Record<Lettre, Edito> = {
     reperes: [
       {
         titre: "Le repère",
-        texte: "Épaules, taille et hanches sont presque sur une même ligne, droite et longue.",
+        texte: "Épaules, taille et hanches sont sur une même ligne droite et verticale.",
       },
       {
         titre: "La taille",
