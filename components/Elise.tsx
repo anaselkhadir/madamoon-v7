@@ -670,8 +670,18 @@ export default function Elise() {
         </div>
       )}
 
+      {/* Le pied : la saisie, puis ce qu'il faut savoir d'Élise.
+        *
+        * La mention est posée là et non au premier message, parce qu'un
+        * premier message se lit une fois, avant d'avoir rien demandé.
+        * Ici, elle reste sous les yeux de la cliente à chaque question
+        * qu'elle tape — c'est le moment où elle compte.
+        *
+        * Elle est hors du champ de saisie et non dans son indication :
+        * une indication disparaît dès le premier caractère. */}
+      <div className="border-t border-fil">
       <form
-        className="flex items-center gap-3 border-t border-fil px-6 py-4"
+        className="flex items-center gap-3 px-6 pt-4"
         onSubmit={(e) => {
           e.preventDefault();
           envoyer();
@@ -697,6 +707,15 @@ export default function Elise() {
           {T.envoyer}
         </button>
       </form>
+
+      {/* « .text-plomb » et non « .text-brume » : dans le verre, la
+        * brume tombe à cinquante-quatre pour cent d'ivoire et devient
+        * la chose la plus pâle du panneau. Une mention de cette nature
+        * ne doit pas être ce qui se lit le moins bien à l'écran. */}
+      <p className="px-6 pb-4 pt-3 text-[11px] leading-[1.5] text-plomb">
+        {T.avertissement}
+      </p>
+      </div>
     </div>
   );
 }

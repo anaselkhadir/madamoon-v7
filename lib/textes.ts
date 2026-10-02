@@ -244,6 +244,13 @@ const FR = {
     champ: "Écrivez à Élise…",
     champLabel: "Votre message pour Élise",
     envoyer: "Envoyer",
+    /* La mention reste sous les yeux pendant toute la conversation, et
+     * non au seul premier message : on la lirait une fois, au moment où
+     * l'on n'a encore rien demandé. « Élise » est un prénom, et le mot
+     * « conseillère » laisse croire à une personne — c'est précisément
+     * pour cela qu'il faut le dire, et le dire en toutes lettres. */
+    avertissement:
+      "Élise est une intelligence artificielle. Elle peut se tromper : pour une réponse sûre, appelez la boutique.",
 
     trouverMaCoupe: "Trouver ma coupe",
     prendreRendezvous: "Prendre rendez-vous",
@@ -767,6 +774,8 @@ const EN: Textes = {
     champ: "Write to Élise…",
     champLabel: "Your message for Élise",
     envoyer: "Send",
+    avertissement:
+      "Élise is an artificial intelligence. She can be wrong — for a certain answer, please call the boutique.",
 
     trouverMaCoupe: "Find my silhouette",
     prendreRendezvous: "Book an appointment",
