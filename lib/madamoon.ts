@@ -885,7 +885,7 @@ export const ROBES: Robe[] = [
     slug: "milan",
     nom: "Milan",
     ligne: "Crêpe léger, fente, minimaliste",
-    categorie: "Fluide",
+    categorie: "Sirène",
     regard:
       "Pour la mariée qui recherche un style raffiné et minimaliste à la fois. La robe est confectionnée en crêpe léger et présente un joli drapé au niveau du buste et une fente sur le côté pour une touche de sensualité.",
     vues: 4,
