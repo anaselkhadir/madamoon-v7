@@ -161,8 +161,9 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       { titre: "The curves", texte: "They are marked, and even from top to bottom." },
       {
         titre: "In front of the mirror",
-        texte:
-          "Fitted clothes suit you without alteration; it is the straight cuts that float.",
+        /* Le français rime — « flattent », « flottent ». L'anglais n'a pas
+          * la rime et garde l'allitération : « flatter », « float ». */
+        texte: "Fitted clothes flatter you, it is the straight cuts that float.",
       },
     ],
     proportions: "Shoulders and hips in line, a hollowed waist, marked curves.",

@@ -182,7 +182,10 @@ export const EDITO: Record<Lettre, Edito> = {
       { titre: "Les courbes", texte: "Elles sont marquées, et régulières du haut jusqu'au bas." },
       {
         titre: "Devant le miroir",
-        texte: "Les vêtements cintrés vous vont sans retouche ; ce sont les coupes droites qui flottent.",
+        /* Le jeu de mots est de la maison, et la virgule aussi : le
+          * point-virgule écartait les deux verbes, la virgule les tient
+          * assez près pour qu'on entende la rime. */
+        texte: "Les vêtements cintrés vous flattent, ce sont les coupes droites qui flottent.",
       },
     ],
     proportions: "Épaules et hanches alignées, taille creusée, courbes marquées.",
