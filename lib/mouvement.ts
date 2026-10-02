@@ -46,6 +46,36 @@ export function accorderDefilement() {
   instance.scrollTo(window.scrollY, { immediate: true, force: true });
 }
 
+/*
+ * Geler la page, le temps d'une visionneuse.
+ *
+ * Deux verrous, parce qu'il y a deux cas. Lenis s'arrête quand il
+ * existe ; il n'existe pas quand la visiteuse a demandé moins de
+ * mouvement, et c'est alors le style qui retient la page.
+ *
+ * Le verrou va sur l'élément racine et non sur le corps : c'est lui qui
+ * défile, et un « overflow » posé sur le corps seul ne retient rien. La
+ * largeur de la barre de défilement est rendue en marge, sinon la page
+ * saute de quinze pixels à l'ouverture et les reprend à la fermeture.
+ */
+let margeAvantGel = "";
+
+export function gelerDefilement() {
+  if (typeof document === "undefined") return;
+  instance?.stop();
+  const barre = window.innerWidth - document.documentElement.clientWidth;
+  margeAvantGel = document.body.style.paddingRight;
+  document.documentElement.style.overflow = "hidden";
+  if (barre > 0) document.body.style.paddingRight = `${barre}px`;
+}
+
+export function degelerDefilement() {
+  if (typeof document === "undefined") return;
+  document.documentElement.style.overflow = "";
+  document.body.style.paddingRight = margeAvantGel;
+  instance?.start();
+}
+
 /* Le mouvement se coupe entièrement si l'utilisatrice le demande. */
 export function mouvementReduit() {
   return (

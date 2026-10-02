@@ -208,6 +208,15 @@ const FR = {
   },
   fiche: {
     autresVues: (nom: string) => `Autres vues de ${nom}`,
+    /* La visionneuse. Les commandes n'ont que des dessins : leur nom
+     * n'existe que pour les lecteurs d'écran, et doit donc dire ce que
+     * fait le bouton, pas ce qu'il montre. */
+    agrandir: "Agrandir la photographie",
+    fermerVue: "Fermer",
+    vuePrecedente: "Photographie précédente",
+    vueSuivante: "Photographie suivante",
+    rangDeLaVue: (i: number, n: number) => `${i} sur ${n}`,
+    vuesDe: (nom: string) => `Photographies de ${nom}`,
     laFiche: "La fiche",
     silhouettes: "Les morphologies qu’elle sublime",
     coupe: "La coupe",
@@ -728,6 +737,12 @@ const EN: Textes = {
   },
   fiche: {
     autresVues: (nom: string) => `Other views of ${nom}`,
+    agrandir: "Enlarge the photograph",
+    fermerVue: "Close",
+    vuePrecedente: "Previous photograph",
+    vueSuivante: "Next photograph",
+    rangDeLaVue: (i: number, n: number) => `${i} of ${n}`,
+    vuesDe: (nom: string) => `Photographs of ${nom}`,
     laFiche: "About",
     silhouettes: "The body shapes it flatters",
     coupe: "Silhouette",

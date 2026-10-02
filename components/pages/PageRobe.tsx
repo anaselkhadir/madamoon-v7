@@ -1,6 +1,7 @@
 import Link from "@/components/Lien";
 import { notFound } from "next/navigation";
 import Photo from "@/components/media/Photo";
+import Galerie from "@/components/robe/Galerie";
 import Film from "@/components/media/Film";
 import Tuile from "@/components/Tuile";
 import Catalogue from "@/components/Catalogue";
@@ -444,91 +445,27 @@ export default async function PageRobe({
       </section>
 
       {/* ————————————————————————————— les autres vues —————
-        * Le premier écran montre la première photographie, sauf quand la
-        * robe a un film : il la remplace alors, et la galerie doit la
-        * reprendre. Sans quoi la vue de face — toujours la première —
-        * n'apparaissait nulle part, et Meredith ne se voyait que de dos. */}
-      {galerie.length > 0 && (
-        <section
-          aria-label={L.fiche.autresVues(robe.nom)}
-          className="gouttiere"
-        >
-          {galerie.length === 1 ? (
-            /* Une seule photographie, et elle vient souvent de l'ancien
-             * site : cinq cents pixels de large, parfois moins. Elle est
-             * posée au centre, sans jamais dépasser sa propre largeur —
-             * agrandie, elle serait floue, et c'est ce flou que la
-             * maison voyait au premier écran. */
-            <div className="flex justify-center">
-              <div
-                data-rideau
-                className="relative w-full overflow-hidden bg-craie"
-                style={{
-                  maxWidth: `${galerie[0].w}px`,
-                  aspectRatio: `${galerie[0].w} / ${galerie[0].h}`,
-                }}
-              >
-                <Photo
-                  media={galerie[0]}
-                  dossier="robes"
-                  alt={altRobe(robe, langue)}
-                  sizes={`(max-width: ${galerie[0].w}px) 92vw, ${galerie[0].w}px`}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-          ) : galerie.length > 4 ? (
-            /* Beaucoup de vues — la maison en envoie jusqu'à une
-             * cinquantaine : une trame régulière, deux colonnes au doigt,
-             * trois sur ordinateur, au format des photographies. La
-             * quinconce, faite pour trois images, aurait déroulé des
-             * dizaines d'écrans. */
-            <div className="grid grid-cols-2 gap-[clamp(0.5rem,1.2vw,1rem)] md:grid-cols-3">
-              {galerie.map((p, i) => (
-                <div
-                  key={p.name}
-                  data-rideau
-                  data-retard={(i % 3) * 90}
-                  className="relative aspect-[2/3] overflow-hidden bg-craie"
-                >
-                  <Photo
-                    media={p}
-                    dossier="robes"
-                    alt={altRobe(robe, langue, photos.indexOf(p) + 1)}
-                    sizes="(max-width: 768px) 46vw, 31vw"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          ) : (
-          <div className="grid gap-[clamp(1rem,2.5vw,2.5rem)] md:grid-cols-[1.15fr_0.85fr]">
-            {galerie.map((p, i) => (
-              <div
-                key={p.name}
-                data-rideau
-                data-retard={(i % 2) * 120}
-                /* En quinconce : la colonne de droite descend d'un quart
-                 * de sa hauteur. Deux images alignées feraient planche
-                 * contact ; décalées, elles se lisent l'une après
-                 * l'autre. */
-                className={`relative overflow-hidden ${
-                  i % 2 === 1 ? "md:mt-[8%]" : ""
-                } ${i % 2 === 1 ? "aspect-[4/5]" : "aspect-[5/6]"}`}
-              >
-                <Photo
-                  media={p}
-                  dossier="robes"
-                  alt={altRobe(robe, langue, photos.indexOf(p) + 1)}
-                  sizes="(max-width: 768px) 92vw, 46vw"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          )}
-        </section>
-      )}
+        * La galerie est passée côté client : chaque vue s'ouvre en grand
+        * au clic, et une fenêtre a besoin d'un état, d'un clavier et
+        * d'un focus. Les trois mises en page n'ont pas bougé d'un
+        * pixel — elles ont suivi le composant, telles quelles.
+        *
+        * Le premier écran, lui, ne s'ouvre pas : c'est un bandeau, et
+        * la maison l'a exclu. Sa photographie est de toute façon dans
+        * la galerie, où elle s'ouvre comme les autres. */}
+      <Galerie
+        photos={galerie}
+        alts={galerie.map((p) => altRobe(robe, langue, photos.indexOf(p) + 1))}
+        etiquette={L.fiche.autresVues(robe.nom)}
+        agrandir={L.fiche.agrandir}
+        libelles={{
+          titre: L.fiche.vuesDe(robe.nom),
+          fermer: L.fiche.fermerVue,
+          precedente: L.fiche.vuePrecedente,
+          suivante: L.fiche.vueSuivante,
+          rangs: galerie.map((_, i) => L.fiche.rangDeLaVue(i + 1, galerie.length)),
+        }}
+      />
 
       {/*
        * La bande « … vous attend au showroom » est retirée.
