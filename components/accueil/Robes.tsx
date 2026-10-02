@@ -53,13 +53,16 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
             </h2>
           </span>
         </div>
-        {/* La pilule : le seul angle rond du site, et il est voulu — un
-          * bouton de rubrique n'est pas un bouton d'action, il ne doit
-          * pas ressembler au rouge du rendez-vous. */}
+        {/* Le bouton de la rubrique. Il portait l'angle rond, seul de
+          * tout le site ; il prend celui des boutons, et le rouge de la
+          * maison au survol — la maison l'a demandé.
+          *
+          * Ses couleurs sont dans la feuille de style, sous
+          * « .bouton-rubrique » : « .legende » porte la sienne hors
+          * calque, et un utilitaire ne la déloge pas. */}
         <Link
           href="/robes"
-          className="legende inline-flex shrink-0 items-center rounded-full border border-encre px-[clamp(1rem,1.6vw,1.375rem)] py-[0.7rem] text-encre transition-colors duration-500 hover:bg-encre hover:text-blanc"
-          style={{ color: "inherit" }}
+          className="legende bouton-rubrique inline-flex shrink-0 items-center rounded-[4px] border px-[clamp(1rem,1.6vw,1.375rem)] py-[0.7rem]"
         >
           {L.voirTout}
         </Link>

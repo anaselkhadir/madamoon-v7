@@ -254,6 +254,37 @@ body {
     border-color 0.45s var(--ease-doux);
 }
 
+/*
+ * Le bouton d'une rubrique — « Voir toutes les robes », sur l'accueil.
+ *
+ * Il portait l'angle rond, seul de tout le site. La maison le veut à
+ * l'angle des boutons, et rouge au survol.
+ *
+ * Ses couleurs sont écrites ici et non en utilitaire : « .legende »
+ * porte la sienne hors calque et l'emporterait. Elle était jusqu'ici
+ * neutralisée par un « color: inherit » posé en style direct — et un
+ * style direct ne connaît pas le survol. Le « hover:text-blanc » du
+ * balisage ne s'appliquait donc jamais : au survol, le fond passait au
+ * sombre et le texte restait sombre dessus. La classe est doublée pour
+ * peser plus lourd que « .legende », et le survol redevient possible.
+ */
+.legende.bouton-rubrique {
+  color: var(--color-encre);
+  border-color: var(--color-encre);
+  transition:
+    background-color 0.45s var(--ease-doux),
+    border-color 0.45s var(--ease-doux),
+    color 0.45s var(--ease-doux);
+}
+
+/* Le blanc du texte est celui qui ne bascule pas : il se lit sur le
+ * rouge de la maison, pas sur la page. */
+.legende.bouton-rubrique:hover {
+  background: var(--color-action);
+  border-color: var(--color-action);
+  color: var(--color-sur-image);
+}
+
 /* L'action de la maison. La seule surface rouge du site. */
 .bouton {
   background: var(--color-action);
