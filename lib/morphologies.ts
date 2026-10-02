@@ -206,7 +206,7 @@ export const EDITO: Record<Lettre, Edito> = {
 
   X: {
     question: "Quelle robe pour une morphologie en X ?",
-    promesse: "Presque toutes les coupes vous vont. C'est le style du mariage qui tranchera.",
+    promesse: "Toutes les coupes vous vont. C'est le style du mariage qui tranchera.",
     reperes: [
       {
         titre: "Le repère",
@@ -231,6 +231,8 @@ export const EDITO: Record<Lettre, Edito> = {
         "Elle ne construit rien et n'en a pas besoin. La ligne se suffit ; le tissu ne fait que l'accompagner.",
       Trapèze:
         "La plus simple à vivre, et la plus discrète. Elle convient quand la robe ne doit pas être le sujet de la journée.",
+      "Deux en un":
+        "La surjupe se pose sur une ligne qui tient déjà debout, puis s'enlève sans que rien ne s'effondre. Deux robes, une seule silhouette.",
     },
     detail:
       "Ici, la question n'est plus « qu'est-ce qui me va ? » mais « qu'est-ce qui me ressemble ? ». C'est une meilleure question.",
@@ -358,7 +360,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
   X: [
     {
       q: "Quelle robe de mariée choisir pour une morphologie en X ?",
-      r: "Presque toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide ou trapèze : la question devient celle du style du mariage, et non celle de la morphologie.",
+      r: "Toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide, trapèze ou deux-en-un : la question devient celle du style du mariage, et non celle de la morphologie.",
     },
     {
       q: "Comment choisir quand toutes les coupes conviennent ?",

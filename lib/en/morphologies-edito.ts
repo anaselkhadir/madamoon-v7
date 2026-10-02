@@ -184,7 +184,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
 
   X: {
     question: "Which dress for an X shape?",
-    promesse: "Almost every cut suits you. The style of the wedding will decide.",
+    promesse: "Every cut suits you. The style of the wedding will decide.",
     reperes: [
       {
         titre: "The marker",
@@ -210,6 +210,8 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "It builds nothing, and has no need to. The line is enough; the fabric only goes along with it.",
       Trapèze:
         "The easiest to live in, and the quietest. It suits when the dress must not be the subject of the day.",
+      "Deux en un":
+        "The overskirt sits over a line that already stands on its own, then comes off without anything collapsing. Two dresses, one silhouette.",
     },
     detail:
       "Here the question is no longer “what suits me?” but “what looks like me?”. It is a better question.",
@@ -323,7 +325,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
   X: [
     {
       q: "Which wedding dress should I choose for an X shape?",
-      r: "Almost every cut suits you — that is the honest answer. Mermaid, ball gown, sheath or A-line: the question becomes one of the style of the wedding, not of the body shape.",
+      r: "Every cut suits you — that is the honest answer. Mermaid, ball gown, sheath, A-line or two-in-one: the question becomes one of the style of the wedding, not of the body shape.",
     },
     {
       q: "How do I choose when every cut works?",

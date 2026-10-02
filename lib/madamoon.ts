@@ -1179,13 +1179,19 @@ export const MORPHOLOGIES: Morphologie[] = [
     silhouette: "Des proportions équilibrées, des courbes douces, une taille fine.",
     objectif: "Valoriser sans en faire trop.",
     coupes: [
-      "Bonne nouvelle : presque toutes les coupes vous vont.",
-      "Princesse, sirène, fluide ou trapèze — laissez le style du mariage décider.",
+      "Bonne nouvelle : toutes les coupes vous vont.",
+      "Princesse, sirène, fluide, trapèze ou deux-en-un — laissez le style du mariage décider.",
     ],
-    premieres: ["Sirène", "Princesse", "Fluide"],
-    secondes: ["Trapèze", "Deux en un"],
+    /* Les cinq coupes, comme au 8.
+     *
+     * La page se contredisait : son texte annonçait « presque toutes
+     * les coupes vous vont » et n'en montrait que trois, les deux
+     * autres rangées sous « également intéressantes à essayer ». La
+     * maison a tranché : toutes, et le « presque » tombe avec. */
+    premieres: ["Sirène", "Princesse", "Fluide", "Trapèze", "Deux en un"],
+    secondes: [],
     conseil:
-      "Bonne nouvelle : presque toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
+      "Bonne nouvelle : toutes les coupes vous vont. Laissez le style de votre mariage guider le choix.",
   },
 ];
 
