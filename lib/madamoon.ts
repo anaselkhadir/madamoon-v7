@@ -246,8 +246,13 @@ export const ROBES: Robe[] = [
     nom: "Sheridan",
     ligne: "Sirène en satin mat et dentelle, avec cape assortie",
     categorie: "Sirène",
-    /* de face et avec la cape, demandée par la maison ; la vue 1 est sans. */
-    couverture: 6,
+    /* De face et avec la cape, demandée par la maison.
+     *
+     * La cape est la vue 5 : une mousseline drapée sur l'épaule, qui
+     * tombe jusqu'au sol avec la traîne. La 6 avait d'abord été prise
+     * pour elle — c'est un voile, posé sur la tête et arrêté à la
+     * hanche. Deux tulles, deux pièces différentes. */
+    couverture: 5,
     regard:
       "Sheridan est une robe de mariée sirène à la silhouette moderne et élégante. Sa coupe fit-and-flare sans bretelles épouse délicatement les courbes, tandis que son décolleté cœur pointu apporte une touche graphique et sophistiquée. Confectionnée en satin mat souple avec une doublure extensible, elle est sublimée par des applications de dentelle florale qui illuminent le corset et se prolongent délicatement sur la jupe. Une création qui associe lignes architecturales, féminité et élégance intemporelle. Pour une allure spectaculaire lors de la cérémonie, la cape en tulle plissé asymétrique et ornée de la même dentelle transforme la silhouette en une véritable pièce couture.",
     vues: 8,
