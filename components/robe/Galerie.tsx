@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import Photo from "@/components/media/Photo";
-import Visionneuse, { type Libelles } from "@/components/robe/Visionneuse";
+import Photo, { precharger } from "@/components/media/Photo";
+import Visionneuse, { MESURE, type Libelles } from "@/components/robe/Visionneuse";
 import type { Media } from "@/lib/medias";
 
 /*
@@ -63,10 +63,18 @@ function Vignette({
   sizes: string;
   surOuverture: (bouton: HTMLButtonElement) => void;
 }) {
+  /* La grande vue est demandée quand la souris arrive sur la vignette,
+   * ou quand le clavier s'y pose : le temps d'un geste suffit à la
+   * charger, et le clic n'attend plus rien. Au doigt il n'y a pas de
+   * survol — c'est la mesure juste qui tient le délai, pas ceci. */
+  const demander = () => precharger(media, "robes", MESURE);
+
   return (
     <button
       type="button"
       onClick={(e) => surOuverture(e.currentTarget)}
+      onPointerEnter={demander}
+      onFocus={demander}
       aria-label={libelle}
       className="absolute inset-0 block h-full w-full cursor-zoom-in"
     >

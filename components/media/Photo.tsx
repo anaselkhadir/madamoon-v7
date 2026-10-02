@@ -60,3 +60,24 @@ export default function Photo({
     </picture>
   );
 }
+
+/*
+ * Demander une photographie avant qu'on la regarde.
+ *
+ * Le navigateur choisit lui-même la largeur, exactement comme il le
+ * ferait pour la balise : on lui donne le même jeu et la même mesure,
+ * il retient le même fichier, et celui-ci est déjà là au moment de
+ * l'afficher.
+ *
+ * L'AVIF seul est demandé. C'est le format que tout navigateur capable
+ * de lire cette page retiendra de toute façon ; précharger les trois
+ * reviendrait à télécharger deux fichiers pour rien.
+ */
+export function precharger(media: Media, dossier: "robes" | "scenes", sizes: string) {
+  if (typeof window === "undefined") return;
+  const image = new Image();
+  image.sizes = sizes;
+  image.srcset = media.widths
+    .map((w) => `${chemin(`/${dossier}/${media.name}-${w}.avif`)} ${w}w`)
+    .join(", ");
+}

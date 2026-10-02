@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import Photo from "@/components/media/Photo";
+import Photo, { precharger } from "@/components/media/Photo";
 import type { Media } from "@/lib/medias";
 import { degelerDefilement, gelerDefilement } from "@/lib/mouvement";
 
@@ -50,6 +50,25 @@ type Props = {
   surFermeture: () => void;
 };
 
+/*
+ * La mesure de la photographie ouverte.
+ *
+ * Elle était écrite « 80vw », et c'était faux : l'image n'est pas
+ * tenue par sa largeur mais par sa hauteur — quatre-vingts pour cent
+ * de l'écran —, et une verticale de deux tiers y occupe à peu près la
+ * moitié de cette hauteur en largeur. Le navigateur, croyant devoir
+ * remplir quatre-vingts pour cent de la fenêtre, prenait le fichier de
+ * mille sept cents pixels : cent quarante-deux kilo-octets, quand la
+ * vignette avait déjà celui de huit cents en mémoire.
+ *
+ * À cinquante pour cent de la hauteur, il retient le même fichier que
+ * la vignette sur un écran d'ordinateur : la photographie est là au
+ * clic, sans un octet de plus. Au doigt, la vignette fait la moitié de
+ * la fenêtre et la photographie toute la largeur : celle-là monte d'un
+ * cran, et c'est justifié.
+ */
+export const MESURE = "(max-width: 900px) 92vw, 50vh";
+
 /* La croix et les chevrons sont dessinés : un « × » et un « ‹ » pris
  * dans la police n'ont ni la même graisse ni le même centre d'une
  * machine à l'autre. */
@@ -97,6 +116,16 @@ export default function Visionneuse({
     croix.current?.focus();
     return degelerDefilement;
   }, [ouverte]);
+
+  /* Les deux voisines sont demandées dès qu'une vue s'ouvre : la
+   * flèche, ensuite, ne fait plus attendre. */
+  useEffect(() => {
+    if (index === null || photos.length < 2) return;
+    const suivante = photos[(index + 1) % photos.length];
+    const precedente = photos[(index - 1 + photos.length) % photos.length];
+    precharger(suivante, "robes", MESURE);
+    precharger(precedente, "robes", MESURE);
+  }, [index, photos]);
 
   useEffect(() => {
     if (!ouverte) return;
@@ -224,7 +253,7 @@ export default function Visionneuse({
           media={media}
           dossier="robes"
           alt={alts[index] ?? ""}
-          sizes="(max-width: 900px) 92vw, 80vw"
+          sizes={MESURE}
           priorite
           className="max-h-[80svh] w-auto max-w-full object-contain"
         />
