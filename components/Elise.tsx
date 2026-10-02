@@ -18,7 +18,7 @@ import { langueDe, versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import {
   bas,
-  faq,
+  faqElise,
   morphoCoupes,
   morphoNom,
   morphoObjectif,
@@ -71,6 +71,50 @@ const accueil = (l: Langue): Option[] => {
  * très bien écrire « rdv » — elle a lu le site français avant — et une
  * francophone « price ». Séparer les tables n'aurait servi personne.
  */
+/*
+ * Les prix ne passent pas par Élise. Deux gardes, et non une.
+ *
+ * La maison est nette là-dessus : sa conseillère automatique ne chiffre
+ * rien. Un prix donné par une machine se retient comme une promesse, et
+ * c'est la boutique qui engage la maison, de vive voix.
+ *
+ * Le premier garde lit la question. Si l'on demande un prix, la réponse
+ * est écrite ici et l'IA n'est pas même appelée : la règle ne dépend
+ * donc pas de ce que le service a dans ses instructions.
+ *
+ * Le second lit la réponse. Si le service en renvoie une qui porte une
+ * somme — une devise, un montant, un mot d'argent —, elle est remplacée
+ * par la même phrase. Les instructions du service vivent hors de ce
+ * dépôt et peuvent changer sans nous ; cette page, elle, tient.
+ */
+/*
+ * Ce qui, dans une question, demande un prix.
+ *
+ * « combien » et « how much » n'y figurent pas, et c'est délibéré : ils
+ * parlent aussi de temps et de nombre. « How much time before the
+ * wedding ? » recevait la réponse sur les prix — l'essai l'a montré.
+ * Une demande de somme se reconnaît à un mot d'argent, pas à un mot de
+ * quantité. « Combien ça coûte » reste pris, par « coûte ».
+ */
+const DEMANDE_DE_PRIX =
+  /\b(prix|tarifs?|co[uû]ts?|co[uû]te|co[uû]tent|budget|chers?|ch[eè]res?|prices?|pricing|costs?|expensive|afford)\b/i;
+
+/* Une somme écrite : « 1 500 € », « €1,500 », « 1500 euros », « $2,000 ». */
+const UNE_SOMME = /(\d[\d  ,.]*\s*(€|eur\b|euros?\b|\$|usd\b|£|gbp\b))|((€|\$|£)\s*\d)/i;
+
+/*
+ * Ce qui, dans une réponse, chiffre.
+ *
+ * Plus étroit que la demande : « cher » et « chère » en sont sortis —
+ * « chère mariée » n'est pas un tarif. Il reste les sommes et les
+ * quatre noms qui désignent l'argent sans ambiguïté.
+ */
+const REPONSE_CHIFFREE = /\b(prix|tarifs?|co[uû]ts?|budget|prices?|pricing|cost)\b/i;
+
+export function parleDArgent(texte: string) {
+  return UNE_SOMME.test(texte) || REPONSE_CHIFFREE.test(texte);
+}
+
 function reponseLocale(entree: string, l: Langue): { textes: string[]; options: Option[] } {
   const T = t(l).elise;
   const M = MAISON;
@@ -92,12 +136,19 @@ function reponseLocale(entree: string, l: Langue): { textes: string[]; options: 
       ],
     };
   if (
+    /* « how much » est sorti d'ici aussi : il prenait « how much time
+      * before the wedding ». Un mot de quantité n'est pas un mot
+      * d'argent. */
     a("prix", "tarif", "cout", "coute", "budget", "cher",
-      "price", "cost", "expensive", "how much")
+      "price", "cost", "expensive", "afford")
   )
     return {
-      textes: [T.localPrix(M.prixDepart)],
-      options: [{ label: T.prendreRendezvous, next: "rdv" }],
+      textes: [T.localPrix()],
+      options: [
+        { label: T.trouverMaCoupe, next: "morpho" },
+        { label: T.prendreRendezvous, next: "rdv" },
+        { label: T.appeler, href: M.telephoneHref },
+      ],
     };
   if (
     a("horaire", "adresse", "ouvert", "situ", "metro", "acces",
@@ -140,7 +191,7 @@ function reponseLocale(entree: string, l: Langue): { textes: string[]; options: 
     };
   if (a("merci", "super", "parfait", "thank", "great", "perfect"))
     return { textes: [T.localMerci], options: accueil(l) };
-  const q0 = faq(l)[0];
+  const q0 = faqElise(l)[0];
   if (
     a("delai", "quand", "mois", "date", "temps", "avance", "how long", "when", "month", "ahead") &&
     q0
@@ -381,7 +432,7 @@ export default function Elise() {
   const aller = useCallback(
     (noeud: string) => {
       const nom = maisonRef.current;
-      const questions = faq(langue);
+      const questions = faqElise(langue);
       switch (noeud) {
         case "root": {
           dire(
@@ -542,9 +593,18 @@ export default function Elise() {
     return () => window.removeEventListener("elise:ouvrir", ouvrir);
   }, [aller, demarre, route]);
 
-  /* Texte libre → IA ; en cas d'échec, moteur local par mots-clés. */
+  /* Texte libre → IA ; en cas d'échec, moteur local par mots-clés.
+   *
+   * Sauf les prix : ceux-là n'atteignent jamais le service. Voir
+   * « parleDArgent » plus haut. */
   const demander = async (question: string) => {
     setOptions([]);
+    if (DEMANDE_DE_PRIX.test(question)) {
+      const { textes, options } = reponseLocale(question, langue);
+      historique.current.push({ role: "assistant", content: textes[0] ?? "" });
+      dire(textes, options);
+      return;
+    }
     setEcrit(true);
     try {
       const controleur = new AbortController();
@@ -562,8 +622,11 @@ export default function Elise() {
       clearTimeout(minuteur);
       if (!res.ok) throw new Error(`http_${res.status}`);
       const data = await res.json();
-      const reponse = typeof data?.reply === "string" ? data.reply.trim() : "";
-      if (!reponse) throw new Error("vide");
+      const brute = typeof data?.reply === "string" ? data.reply.trim() : "";
+      if (!brute) throw new Error("vide");
+      /* Le second garde : une réponse qui chiffre est remplacée, jamais
+       * montrée. */
+      const reponse = parleDArgent(brute) ? T.localPrix() : brute;
       historique.current.push({ role: "assistant", content: reponse });
       setEcrit(false);
       setMessages((m) => [...m, { de: "elise", texte: reponse }]);

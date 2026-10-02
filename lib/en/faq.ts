@@ -8,7 +8,7 @@ import { MAISON } from "@/lib/madamoon";
  * français, il change ici.
  */
 
-export const FAQ_EN: { q: string; r: string }[] = [
+export const FAQ_EN: { q: string; r: string; horsElise?: boolean }[] = [
   {
     q: "How long before the wedding should I come?",
     r: "Ideally, book your fitting eight to nine months before the wedding date. There is no need to worry if you have less time than that: we will always find a way. Simply book an appointment, and we take care of the rest.",
@@ -28,6 +28,7 @@ export const FAQ_EN: { q: string; r: string }[] = [
   {
     q: "What is the price range for a made-to-measure dress?",
     r: "For a made-to-measure dress, prices start from €1,500. Do contact us directly for more detail on the models you have in mind.",
+    horsElise: true,
   },
   {
     q: "May I bring someone with me?",

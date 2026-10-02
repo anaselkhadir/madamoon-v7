@@ -324,8 +324,13 @@ const FR = {
 
     localRdv: (adresse: string, cp: string) =>
       `Avec plaisir. Le showroom est privatisé pour vous pendant une heure, sur rendez-vous uniquement : lundi 12h–21h, du mardi au samedi 10h–19h, au ${adresse}, Paris ${cp}.`,
-    localPrix: (prix: string) =>
-      `Nos robes commencent à ${prix}, retouches comprises. Le sur-mesure se chiffre après l’essayage, selon la robe et le tissu.`,
+    /* Élise ne chiffre rien, et le dit sans détour. Une conseillère qui
+     * donne un prix sans avoir vu la robe engage la maison sur une
+     * somme qu'elle n'a pas décidée ; et un prix annoncé par une
+     * machine se retient comme une promesse. Elle renvoie donc à ce
+     * qu'elle sait faire, puis à la boutique. */
+    localPrix: () =>
+      `Je ne renseigne pas les prix — c’est la boutique qui en parle, et de vive voix. En revanche je peux vous aider sur votre morphologie, les coupes qui vous iront et le déroulé d’un essayage.`,
     localHoraires: (adresse: string, cp: string, ville: string) =>
       `Le showroom vous reçoit sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h — ${adresse}, ${cp} ${ville}.`,
     localCreateurs: (liste: string) =>
@@ -334,8 +339,11 @@ const FR = {
       "Chaque femme est unique. Le plus simple est un petit diagnostic ensemble, pour identifier les coupes qui vous mettront en valeur. On commence ?",
     localMerci:
       "Avec grand plaisir. Je reste à votre écoute, et au plaisir de vous accueillir au showroom.",
+    /* Ce qu'elle propose quand elle n'a pas compris. Les prix en sont
+     * sortis : les annoncer ici revenait à promettre ce qu'elle refuse
+     * deux lignes plus haut. */
     localDefaut:
-      "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre morphologie, nos prix et la prise de rendez-vous.",
+      "Je préfère vous répondre précisément plutôt que de m’avancer. Le mieux est d’en parler de vive voix avec la boutique — ou je peux vous guider ici sur votre morphologie, les coupes qui vous iront et la prise de rendez-vous.",
   },
   pages: {
     coupes: {
@@ -845,8 +853,8 @@ const EN: Textes = {
 
     localRdv: (adresse: string, cp: string) =>
       `With pleasure. The showroom is yours alone for an hour, by appointment only: Monday 12pm–9pm, Tuesday to Saturday 10am–7pm, at ${adresse}, Paris ${cp}.`,
-    localPrix: (prix: string) =>
-      `Our dresses start at ${prix}, alterations included. Made to measure is quoted after the fitting, depending on the dress and the fabric.`,
+    localPrix: () =>
+      `I don’t give prices — the boutique speaks about that, and in person. What I can help with is your body shape, the cuts that will suit you, and how a fitting goes.`,
     localHoraires: (adresse: string, cp: string, ville: string) =>
       `The showroom receives you by appointment only: Monday 12pm to 9pm, Tuesday to Saturday 10am to 7pm — ${adresse}, ${cp} ${ville}.`,
     localCreateurs: (liste: string) =>
@@ -856,7 +864,7 @@ const EN: Textes = {
     localMerci:
       "With great pleasure. I remain at your disposal, and I look forward to welcoming you at the showroom.",
     localDefaut:
-      "I would rather answer you precisely than guess. The best is to speak with the boutique directly — or I can guide you here on your figure, our prices and booking an appointment.",
+      "I would rather answer you precisely than guess. The best is to speak with the boutique directly — or I can guide you here on your figure, the cuts that will suit you, and booking an appointment.",
   },
   pages: {
     coupes: {

@@ -102,8 +102,22 @@ export const signatures = (l: Langue): { titre: string; texte: string }[] =>
   l === "fr" ? SIGNATURES.map((s) => ({ titre: s.titre, texte: s.texte })) : SIGNATURES_EN;
 
 /* La FAQ : même ordre, mêmes engagements, deux langues. */
-export const faq = (l: Langue): { q: string; r: string }[] =>
-  l === "fr" ? FAQ.map((f) => ({ q: f.q, r: f.r })) : FAQ_EN;
+export const faq = (l: Langue): { q: string; r: string; horsElise?: boolean }[] =>
+  l === "fr" ? FAQ.map((f) => ({ q: f.q, r: f.r, horsElise: "horsElise" in f })) : FAQ_EN;
+
+/*
+ * La FAQ telle qu'Élise la sert : celle du site, moins ce dont elle ne
+ * parle pas.
+ *
+ * Une seule question en sort aujourd'hui, celle des prix. La maison ne
+ * veut pas qu'une conseillère automatique chiffre quoi que ce soit —
+ * un prix donné par une machine se retient comme une promesse, et
+ * c'est la boutique qui engage la maison, de vive voix.
+ *
+ * La question reste sur la page du site, où elle est à sa place : le
+ * tri est celui d'Élise, pas celui de la maison.
+ */
+export const faqElise = (l: Langue) => faq(l).filter((f) => !f.horsElise);
 
 /* La matière rédigée des morphologies : l'édito, le bloc « au-delà » et
  * les questions. Trois tables jumelles, une seule porte. */

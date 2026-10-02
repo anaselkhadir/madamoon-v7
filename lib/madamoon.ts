@@ -1317,6 +1317,9 @@ export const FAQ = [
   {
     q: "Quelle est la fourchette de prix pour une robe sur mesure ?",
     r: "Pour une confection sur mesure, les prix commencent à partir de 1 500 €. Nous vous invitons à nous contacter directement pour avoir plus de précisions sur les modèles qui vous intéressent.",
+    /* Sur le site, oui ; chez Élise, non. La maison ne veut pas
+     * qu'une conseillère automatique parle d'argent. */
+    horsElise: true,
   },
   {
     q: "Puis-je venir accompagnée ?",
