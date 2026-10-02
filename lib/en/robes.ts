@@ -41,7 +41,8 @@ export const ROBE_EN: Record<string, { ligne: string; regard: string }> = {
   },
   "aster": {
     ligne: "Chantilly lace, satin and detachable sleeves",
-    regard: "Long lace sleeves, worn — or not — over a straight bodice.",
+    regard:
+      "Aster takes the great codes of the traditional wedding dress and reads them with a contemporary elegance. Its A-line silhouette, natural waist and softly draped bodice speak of a timeless sophistication, while Chantilly lace dresses the back and the sleeves with a heritage note.",
   },
   "fern": {
     ligne: "Mikado embroidered with pearl flowers",

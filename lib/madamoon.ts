@@ -398,7 +398,8 @@ export const ROBES: Robe[] = [
     nom: "Aster",
     ligne: "Dentelle de Chantilly, satin et manches amovibles",
     categorie: "Trapèze",
-    regard: "Des manches longues en dentelle qui se portent — ou non — sur un bustier droit.",
+    regard:
+      "Aster revisite les grands codes de la robe de mariée traditionnelle avec une élégance contemporaine. Sa silhouette A-line, sa taille naturelle et son corsage délicatement drapé évoquent une sophistication intemporelle, tandis que la dentelle de Chantilly habille le dos et les manches d’une touche Heritage.",
     vues: 6,
     /* La photographie de face : la première est de dos. */
     couverture: 2,

@@ -64,13 +64,7 @@ export default async function PageRobe({
   const photos = vues(robe.slug);
   const film = FILMS[robe.slug];
   const maisonDeLaRobe = createurParNom(robe.createur);
-  /* L'image de tête : sa couverture. Les photographies qui ne sont pas
-   * déjà au premier écran forment la galerie, dans leur ordre.
-   *
-   * Sauf quand la robe n'en a qu'une : la retirer laissait la page sans
-   * une seule photographie à regarder — le premier écran l'étire sur
-   * toute la largeur, et c'est tout. Elle est donc reprise dans la
-   * galerie, où elle se montre à sa taille. */
+  /* L'image de tête : sa couverture. */
   const tete = couverture(robe);
   /*
    * Les robes dont la photographie ne fait pas un premier écran.
@@ -82,7 +76,25 @@ export default async function PageRobe({
    * on en pose une seconde à droite, à sa taille vraie, nette.
    */
   const petiteTete = !film && !!tete && tete.w < 1200;
-  const galerie = film || photos.length === 1 ? photos : photos.filter((p) => p !== tete);
+  /*
+   * La galerie montre toutes les photographies, couverture comprise.
+   *
+   * Elle en était retirée, au motif qu'on venait de la voir au premier
+   * écran. Mais le premier écran ne la montre pas : il la recadre en
+   * bandeau — une verticale de deux mille sur trois mille y perd les
+   * deux tiers de sa hauteur, et il n'en reste qu'un corsage. La
+   * retirer revenait donc à cacher une photographie pour de bon.
+   *
+   * Fern le disait le plus clairement : trois vues, un dos et un détail
+   * dans la galerie, et la robe de face en pied nulle part sur sa page.
+   *
+   * L'exception est la petite tête. Celle-là est déjà reprise entière,
+   * à sa taille vraie, dans le cadre de droite : une troisième fois
+   * n'apprendrait rien. Sauf si la robe n'a que cette photographie —
+   * la galerie serait alors vide.
+   */
+  const galerie =
+    petiteTete && photos.length > 1 ? photos.filter((p) => p !== tete) : photos;
   const famille = coupe(robe.categorie);
   const servies = robe.morphos ?? [];
   const voisines = ROBES.filter(
