@@ -174,6 +174,10 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "The bodice nips in at the waist and the fullness starts from there. The contrast is clear, and that is the whole effect.",
       Fluide:
         "Worn with a belt or cut at the waist, it keeps the line while letting you breathe.",
+      Trapèze:
+        "It starts at the waist — already the narrowest point — and opens from there. There is nothing to draw: the dress follows a line that exists.",
+      "Deux en un":
+        "A fitted line for the ceremony, an overskirt you take off for the evening. The balance holds in both, which is not true of every silhouette.",
     },
     detail:
       "A sweetheart bodice or a V neckline carries the waist upward. Here, anything that nips in works.",

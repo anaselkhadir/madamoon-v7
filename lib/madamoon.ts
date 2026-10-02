@@ -1154,14 +1154,23 @@ export const MORPHOLOGIES: Morphologie[] = [
     silhouette: "Des épaules et des hanches équilibrées, une taille marquée.",
     objectif: "Sublimer une harmonie qui existe déjà.",
     coupes: [
+      "Toutes les coupes, sans exception : c'est le style du mariage qui tranchera.",
       "Les sirènes et les fourreaux, qui épousent la ligne.",
       "Les bustiers cœur et les encolures en V.",
-      "Tout ce qui se cintre à la taille.",
     ],
-    premieres: ["Sirène", "Fluide"],
-    secondes: ["Princesse", "Trapèze"],
+    /* Les cinq coupes, et aucune en second.
+     *
+     * La page n'en conseillait que deux, et rangeait les trois autres
+     * sous « également intéressantes à essayer » — une réserve que cette
+     * morphologie ne mérite pas. La maison l'a corrigé : au 8, tout va.
+     *
+     * « secondes » reste vide, et les deux niveaux du bas tombent
+     * d'eux-mêmes — ils sont filtrés quand ils n'ont aucune robe. La
+     * page ne garde qu'une liste, ce qui est le propos. */
+    premieres: ["Sirène", "Fluide", "Trapèze", "Princesse", "Deux en un"],
+    secondes: [],
     conseil:
-      "Les sirènes et les fourreaux épousent les courbes ; un bustier cœur ou une encolure en V accentue l'équilibre naturel.",
+      "Toutes les coupes conviennent : les sirènes et les fourreaux épousent les courbes, et tout ce qui se cintre à la taille accentue l'équilibre naturel.",
   },
   {
     lettre: "X",

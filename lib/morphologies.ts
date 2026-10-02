@@ -196,6 +196,10 @@ export const EDITO: Record<Lettre, Edito> = {
         "Le bustier se cintre à la taille et l'ampleur part de là. Le contraste est net, et c'est tout l'effet recherché.",
       Fluide:
         "Portée avec une ceinture ou coupée à la taille, elle garde la ligne tout en laissant respirer.",
+      Trapèze:
+        "Elle part de la taille, qui est déjà le point le plus étroit, et s'ouvre de là. Il n'y a rien à dessiner : la robe suit un tracé qui existe.",
+      "Deux en un":
+        "Une ligne ajustée pour la cérémonie, une surjupe que l'on retire pour la soirée. L'équilibre tient dans les deux — ce n'est pas vrai de toutes les silhouettes.",
     },
     detail:
       "Un bustier cœur ou une encolure en V prolonge la taille vers le haut. Ici, tout ce qui se cintre fonctionne.",
