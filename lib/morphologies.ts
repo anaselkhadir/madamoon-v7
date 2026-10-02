@@ -103,7 +103,7 @@ export const EDITO: Record<Lettre, Edito> = {
         "Une surjupe qui se retire au dîner : deux volumes dans la même soirée, et l'occasion de vivre les deux avant de trancher.",
     },
     detail:
-      "Une encolure bateau ou un bustier droit élargit visuellement l'épaule. Deux centimètres de tissu suffisent à changer toute la proportion.",
+      "Une encolure bateau ou un bustier droit élargit visuellement les épaules.",
   },
 
   V: {
@@ -306,7 +306,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
     },
     {
       q: "Comment équilibrer des hanches plus larges que les épaules ?",
-      r: "Par le haut, jamais en cachant le bas. Une encolure bateau ou un bustier droit ajoutent quelques centimètres de ligne à l'épaule, et cela suffit à changer toute la proportion.",
+      r: "Par le haut, jamais en cachant le bas. Une encolure bateau ou un bustier droit ajoutent quelques centimètres de ligne aux épaules, et cela suffit à changer toute la proportion.",
     },
     {
       q: "Une robe sirène convient-elle à une morphologie en A ?",

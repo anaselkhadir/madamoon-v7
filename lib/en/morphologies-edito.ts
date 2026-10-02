@@ -78,7 +78,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
         "An overskirt that comes off at dinner: two volumes in the same evening, and the chance to live both before deciding.",
     },
     detail:
-      "A boat neckline or a straight bodice widens the shoulder to the eye. Two centimetres of fabric are enough to change the whole proportion.",
+      "A boat neckline or a straight bodice widens the shoulders to the eye.",
   },
 
   V: {
@@ -271,7 +271,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
     },
     {
       q: "How do I balance hips that are broader than my shoulders?",
-      r: "From above, never by covering below. A boat neckline or a straight bodice add a few centimetres of line at the shoulder, and that is enough to change the whole proportion.",
+      r: "From above, never by covering below. A boat neckline or a straight bodice add a few centimetres of line at the shoulders, and that is enough to change the whole proportion.",
     },
     {
       q: "Does a mermaid dress suit an A shape?",
