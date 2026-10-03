@@ -15,6 +15,44 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
+# ————————————————————————————————— l'ancien site —————
+#
+# madamoon.fr portait un WordPress de cinq pages. Le nouveau site ne
+# garde aucune de ses adresses : sans ces redirections, les liens que la
+# maison a semés depuis des années — Instagram, annuaires, Google —
+# tomberaient tous sur une page introuvable le jour du basculement, et
+# l'ancienneté acquise par ces adresses serait perdue.
+#
+# En 301, permanent : c'est ce qui transmet le classement à la nouvelle
+# adresse. Posées avant la règle 404, et avant tout le reste, pour que
+# rien d'autre ne les devance.
+#
+#   ancienne adresse            nouvelle
+#   /votre-morphologie/     →   /morphologies/
+#   /catalogue-des-robes/   →   /robes/
+#   /prise-de-rendez-vous/  →   /rendez-vous/
+#   /faq/                   →   /a-propos/   (à revoir : voir plus bas)
+#
+# La racine ne bouge pas, elle reste la racine.
+#
+# Le cas de « /faq/ » n'est pas tranché. Le nouveau site n'a pas de page
+# de questions : celles de la maison — délais, essayages, paiement,
+# showroom — sont écrites dans le code mais ne paraissent nulle part,
+# sinon dans la bouche d'Élise. « /a-propos/ » est le moins mauvais
+# refuge en attendant ; une vraie page de questions serait mieux, et le
+# contenu existe déjà.
+RedirectMatch 301 ^/votre-morphologie/?$ https://madamoon.fr/morphologies/
+RedirectMatch 301 ^/catalogue-des-robes/?$ https://madamoon.fr/robes/
+RedirectMatch 301 ^/prise-de-rendez-vous/?$ https://madamoon.fr/rendez-vous/
+RedirectMatch 301 ^/faq/?$ https://madamoon.fr/a-propos/
+
+# Les restes du WordPress : son administration, ses dossiers internes et
+# les adresses de son greffon de boutique. Elles n'existeront plus, mais
+# les robots les demanderont encore longtemps. On les renvoie à
+# l'accueil plutôt que de laisser quatre cents pages d'erreur s'accumuler
+# dans la Search Console.
+RedirectMatch 301 ^/(wp-admin|wp-login\.php|wp-content|wp-includes|product|cart|checkout)(/.*)?$ https://madamoon.fr/
+
 # ————————————————————————————————— la page introuvable —————
 ErrorDocument 404 /404.html
 
