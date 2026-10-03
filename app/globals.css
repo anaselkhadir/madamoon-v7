@@ -1444,6 +1444,25 @@ html[data-ouverture]::before {
 .fleche-rail-droite {
   right: max(0.375rem, calc(var(--gouttiere) / 2 - 1.125rem));
 }
+/*
+ * Le rail des robes de l'accueil.
+ *
+ * Ses tuiles ne sont pas celles des maisons : trois cinquièmes au lieu
+ * de cinq septièmes, et cinquante-huit pour cent de la fenêtre au lieu
+ * de soixante-huit. La mi-hauteur se calcule donc à part — cinq tiers
+ * de la largeur, divisés par deux, soit cinq sixièmes.
+ *
+ * À six cent quarante pixels, la tuile passe à trente-huit pour cent.
+ */
+.fleche-rail-robes {
+  top: calc(58vw * 0.833);
+}
+@media (min-width: 640px) {
+  .fleche-rail-robes {
+    top: calc(38vw * 0.833);
+  }
+}
+
 @media (min-width: 1024px) {
   .fleche-rail {
     width: 2.75rem;

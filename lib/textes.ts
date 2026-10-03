@@ -123,6 +123,8 @@ const FR = {
     voirTout: "Voir toutes les robes",
     voirPlus: "Voir plus",
     rangee: "Une sélection de robes",
+    precedentes: "Voir les robes précédentes",
+    suivantes: "Voir les robes suivantes",
   },
   silhouette: {
     legende: "Les morphologies",
@@ -683,6 +685,8 @@ const EN: Textes = {
     voirTout: "See all the dresses",
     voirPlus: "See more",
     rangee: "A selection of dresses",
+    precedentes: "See the previous dresses",
+    suivantes: "See the next dresses",
   },
   silhouette: {
     legende: "Body shapes",

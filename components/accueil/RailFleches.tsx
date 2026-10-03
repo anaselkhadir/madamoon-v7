@@ -18,6 +18,7 @@ export default function RailFleches({
   cible,
   quoi = "morphologies",
   cotes = false,
+  enPlus = "",
 }: {
   cible: string;
   /* De part et d'autre du rail, à mi-hauteur des photographies, sur
@@ -26,10 +27,15 @@ export default function RailFleches({
   cotes?: boolean;
   /* Ce que le rail contient : les flèches le disent aux lecteurs
    * d'écran, et un rail de maisons n'annonce pas des morphologies. */
-  quoi?: "morphologies" | "createurs";
+  quoi?: "morphologies" | "createurs" | "robes";
+  /* Ce que le rail ajoute aux flèches : leur hauteur dépend du format
+   * de ses cartes, et tous les rails ne les montrent pas aux mêmes
+   * largeurs. Le rail des robes devient une grille sur ordinateur et
+   * n'a plus rien à pousser. */
+  enPlus?: string;
 }) {
   const T = t(langueDe(usePathname() ?? "/"));
-  const L = quoi === "createurs" ? T.createurs : T.silhouette;
+  const L = quoi === "createurs" ? T.createurs : quoi === "robes" ? T.robesAccueil : T.silhouette;
   const [debut, poserDebut] = useState(true);
   const [fin, poserFin] = useState(false);
   const rail = useRef<HTMLElement | null>(null);
@@ -91,7 +97,7 @@ export default function RailFleches({
               onClick={() => pousser(sens === "-1" ? -1 : 1)}
               disabled={inactif}
               aria-label={titre}
-              className={`fleche-rail ${place} grid place-items-center rounded-full bg-blanc text-encre shadow-[0_6px_20px_-8px_rgba(0,0,0,0.45)] transition-[opacity,background-color,color] duration-500 hover:bg-action hover:text-sur-image disabled:pointer-events-none disabled:opacity-0`}
+              className={`fleche-rail ${place} ${enPlus} grid place-items-center rounded-full bg-blanc text-encre shadow-[0_6px_20px_-8px_rgba(0,0,0,0.45)] transition-[opacity,background-color,color] duration-500 hover:bg-action hover:text-sur-image disabled:pointer-events-none disabled:opacity-0`}
             >
               <svg
                 viewBox="0 0 24 24"

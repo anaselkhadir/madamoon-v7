@@ -1,4 +1,5 @@
 import Link from "@/components/Lien";
+import RailFleches from "@/components/accueil/RailFleches";
 import Photo from "@/components/media/Photo";
 import { ROBES } from "@/lib/madamoon";
 import { couverture } from "@/lib/couverture";
@@ -72,13 +73,32 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
         * fenêtre : la gouttière est rendue aux photographies, comme le
         * fait déjà le premier écran. Sous le seuil elle défile au doigt,
         * les photographies gardant leur taille plutôt que de se réduire
-        * à six vignettes illisibles. */}
+        * à six vignettes illisibles.
+        *
+        * Les deux flèches n'y sont que sous le seuil, à la demande de la
+        * maison : au-delà, la rangée n'est plus un rail mais une grille
+        * de six colonnes, et il n'y a plus rien à pousser. C'est
+        * l'inverse du rail des maisons, qui défile à toutes les
+        * largeurs et garde donc ses flèches partout. */}
+      <div className="relative">
+        <RailFleches
+          cible="rail-robes"
+          quoi="robes"
+          cotes
+          enPlus="fleche-rail-robes lg:hidden"
+        />
       <ul
+        id="rail-robes"
         aria-label={L.rangee}
         /* La gouttière est écrite en utilitaire et non par « .gouttiere » :
           * cette classe n'est pas calquée et l'emporterait sur le
           * « lg:px-0 » qui rend le bord aux photographies. */
-        className="mt-[clamp(2rem,4vw,3.5rem)] flex snap-x snap-mandatory gap-[clamp(0.375rem,0.6vw,0.5rem)] overflow-x-auto px-[var(--gouttiere)] pb-1 lg:grid lg:grid-cols-6 lg:overflow-visible lg:px-0"
+        /* « scroll-pl » aligne les crans d'accrochage sur le bord de la
+          * gouttière, et non sur le bord du rail. Sans lui, le premier
+          * cran tombait à dix-huit pixels : le rail ne revenait jamais à
+          * zéro, et la flèche gauche ne s'éteignait donc jamais au
+          * début. Le rail des maisons le posait déjà. */
+        className="mt-[clamp(2rem,4vw,3.5rem)] flex snap-x snap-mandatory scroll-pl-[var(--gouttiere)] gap-[clamp(0.375rem,0.6vw,0.5rem)] overflow-x-auto px-[var(--gouttiere)] pb-1 lg:grid lg:grid-cols-6 lg:overflow-visible lg:px-0"
         data-suite
       >
         {choisies.map((robe, i) => {
@@ -132,6 +152,7 @@ export default function Robes({ langue = "fr" }: { langue?: Langue }) {
           );
         })}
       </ul>
+      </div>
     </section>
   );
 }
