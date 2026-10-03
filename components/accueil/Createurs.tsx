@@ -57,10 +57,25 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
 
   if (maisons.length === 0) return null;
 
+  /* Pas de respiration en bas, et c'est voulu.
+   *
+   * Cette section et celle des avis en portaient une pleine de part et
+   * d'autre : quatre-vingt-deux pixels chacune au seuil de l'ordinateur,
+   * soit cent soixante-quatre de blanc à leur jonction — le double de ce
+   * que la page met partout ailleurs. La maison l'a vu.
+   *
+   * Le chiffre n'est pas choisi au jugé : toutes les autres jonctions de
+   * l'accueil font quatre-vingt-deux pixels, celle-ci les fait
+   * maintenant aussi. La respiration de la section suivante suffit à
+   * les séparer.
+   *
+   * C'est le bas de celle-ci qui cède et non le haut de l'autre : la
+   * section des avis ouvre sur ses étoiles, et les serrer contre ce qui
+   * précède leur ôterait leur silence. */
   return (
     <section
       aria-labelledby="createurs"
-      className="bg-blanc py-[clamp(4rem,8vw,8rem)]"
+      className="bg-blanc pt-[clamp(4rem,8vw,8rem)]"
     >
       <div className="gouttiere">
         <p className="legende">{L.createurs.legende}</p>
