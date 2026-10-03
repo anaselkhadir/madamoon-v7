@@ -41,7 +41,7 @@ export function surDefilement(fn: () => void) {
  * poser. Un retour en arrière, où il restaure la place d'avant, la garde
  * donc lui aussi.
  */
-export function accorderDefilement(maxImages = 24) {
+export function accorderDefilement(forcerLeHaut = false, maxImages = 24) {
   if (typeof window === "undefined" || !instance) return () => {};
 
   /*
@@ -68,14 +68,41 @@ export function accorderDefilement(maxImages = 24) {
   let precedente = NaN;
 
   const pas = () => {
+    /*
+     * Deux régimes.
+     *
+     * « forcerLeHaut » : la maison veut que toute page s'ouvre en haut,
+     * sans exception. On ne lit donc plus la position, on l'impose — à
+     * la fenêtre et à Lenis — jusqu'à ce qu'elle tienne. Imposer une
+     * seule fois ne suffirait pas : le routeur peut encore écrire
+     * après nous, et c'est exactement ce qui causait le défaut.
+     *
+     * Sinon : on accorde Lenis sur ce que le routeur a posé, sans rien
+     * décider. C'est le régime du retour en arrière, où la position
+     * restaurée est la bonne.
+     */
+    if (forcerLeHaut) {
+      window.scrollTo(0, 0);
+      instance?.scrollTo(0, { immediate: true, force: true });
+    } else {
+      instance?.scrollTo(window.scrollY, { immediate: true, force: true });
+    }
     const y = window.scrollY;
-    instance?.scrollTo(y, { immediate: true, force: true });
     stables = y === precedente ? stables + 1 : 0;
     precedente = y;
     if (stables < 3 && --reste > 0) image = requestAnimationFrame(pas);
   };
 
-  image = requestAnimationFrame(pas);
+  /*
+   * Le premier pas est immédiat, les suivants attendent une image.
+   *
+   * Attendre la première image aurait laissé la page affichée une
+   * fraction de seconde à la hauteur de la précédente — et, dans un
+   * onglet d'arrière-plan ou sous une préférence de mouvement réduit,
+   * où les images se font rares ou nulles, le haut n'aurait jamais été
+   * imposé du tout. On pose donc tout de suite, puis l'on tient.
+   */
+  pas();
   return () => cancelAnimationFrame(image);
 }
 

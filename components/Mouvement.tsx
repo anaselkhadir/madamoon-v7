@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { accorderDefilement, enregistrerLenis, mouvementReduit } from "@/lib/mouvement";
@@ -62,10 +62,39 @@ export default function Mouvement() {
    * Une seule image d'attente ne suffisait pas — c'était un pari sur
    * l'ordre du routeur, perdu une fois sur quelques-unes, d'où le
    * « parfois » que la maison décrivait. L'accord se répète maintenant
-   * jusqu'à ce que la position se stabilise ; le détail est dans
-   * « accorderDefilement ».
+   * jusqu'à ce que la position se stabilise.
+   *
+   * Et il ne se contente plus d'accorder : la maison veut que toute
+   * page s'ouvre en haut, sans exception. On impose donc le zéro, à
+   * chaque image, jusqu'à ce qu'il tienne — le routeur peut encore
+   * écrire après nous.
+   *
+   * Deux cas y échappent, et ce ne sont pas des oublis.
+   *
+   * Le retour en arrière. Une mariée qui a parcouru soixante-sept robes,
+   * ouvert la dix-huitième et fait « précédent » doit retrouver sa
+   * place, pas le haut du catalogue. Ce n'est pas ouvrir une page,
+   * c'est y revenir.
+   *
+   * Une adresse à ancre. Elle demande un endroit précis de la page ;
+   * la renvoyer en haut reviendrait à ignorer ce qu'elle demande.
    */
-  useEffect(() => accorderDefilement(), [chemin]);
+  const retourArriere = useRef(false);
+
+  useEffect(() => {
+    const marquer = () => {
+      retourArriere.current = true;
+    };
+    window.addEventListener("popstate", marquer);
+    return () => window.removeEventListener("popstate", marquer);
+  }, []);
+
+  useEffect(() => {
+    const revenu = retourArriere.current;
+    retourArriere.current = false;
+    const ancre = typeof window !== "undefined" && window.location.hash.length > 1;
+    return accorderDefilement(!revenu && !ancre);
+  }, [chemin]);
 
   /*
    * Les apparitions, remontées à chaque page.
