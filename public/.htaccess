@@ -53,6 +53,18 @@ RedirectMatch 301 ^/faq/?$ https://madamoon.fr/a-propos/
 # dans la Search Console.
 RedirectMatch 301 ^/(wp-admin|wp-login\.php|wp-content|wp-includes|product|cart|checkout)(/.*)?$ https://madamoon.fr/
 
+# ————————————————————————————————— l'index du dossier —————
+#
+# Le domaine portait un WordPress. Si un « index.php » traîne encore
+# dans « public_html » le jour du basculement, Apache le sert avant
+# notre « index.html » — l'ancien site resterait à l'écran et personne
+# ne comprendrait pourquoi.
+#
+# Cette ligne met le nôtre en tête. Elle ne dispense pas de vider le
+# dossier : elle évite seulement que l'oubli d'un fichier fasse croire
+# à une mise en ligne ratée.
+DirectoryIndex index.html index.php
+
 # ————————————————————————————————— la page introuvable —————
 ErrorDocument 404 /404.html
 

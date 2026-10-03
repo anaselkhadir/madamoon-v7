@@ -50,6 +50,12 @@ jobs:
           server: ${{ secrets.FTP_SERVEUR }}
           username: ${{ secrets.FTP_UTILISATEUR }}
           password: ${{ secrets.FTP_MOTDEPASSE }}
+          # FTP simple envoie le mot de passe en clair sur le réseau, à
+          # chaque publication. « ftps » monte la même connexion sous
+          # TLS ; Hostinger le sert sur le même port. Si le serveur le
+          # refusait, l'envoi échouerait à la connexion — sans toucher
+          # au site.
+          protocol: ftps
           local-dir: ./out/
           server-dir: ${{ inputs.dossier }}
           dangerous-clean-slate: false
