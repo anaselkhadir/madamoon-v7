@@ -41,9 +41,42 @@ export function surDefilement(fn: () => void) {
  * poser. Un retour en arrière, où il restaure la place d'avant, la garde
  * donc lui aussi.
  */
-export function accorderDefilement() {
-  if (typeof window === "undefined" || !instance) return;
-  instance.scrollTo(window.scrollY, { immediate: true, force: true });
+export function accorderDefilement(maxImages = 24) {
+  if (typeof window === "undefined" || !instance) return () => {};
+
+  /*
+   * Une image ne suffisait pas, et c'est ce qui faisait le « parfois ».
+   *
+   * Au changement de page, deux choses se produisent sans ordre garanti :
+   * le routeur remonte la fenêtre en haut, et notre accord lit la
+   * position pour la donner à Lenis. Quand l'accord passait le premier,
+   * il lisait la position de la page précédente — cinq mille pixels, par
+   * exemple —, la donnait à Lenis, et Lenis y ramenait la page à l'image
+   * suivante. La fiche s'ouvrait alors en bas.
+   *
+   * On ne parie donc plus sur l'ordre : on accorde à chaque image
+   * jusqu'à ce que la position cesse de bouger. La dernière lecture est
+   * la bonne, quel que soit celui des deux qui a parlé en premier.
+   *
+   * Trois images identiques suffisent à dire que c'est posé — soit
+   * cinquante millisecondes dans le cas courant. La borne haute n'est là
+   * que pour un routeur lent, et pour ne jamais tourner sans fin.
+   */
+  let image = 0;
+  let reste = maxImages;
+  let stables = 0;
+  let precedente = NaN;
+
+  const pas = () => {
+    const y = window.scrollY;
+    instance?.scrollTo(y, { immediate: true, force: true });
+    stables = y === precedente ? stables + 1 : 0;
+    precedente = y;
+    if (stables < 3 && --reste > 0) image = requestAnimationFrame(pas);
+  };
+
+  image = requestAnimationFrame(pas);
+  return () => cancelAnimationFrame(image);
 }
 
 /*

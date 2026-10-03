@@ -57,13 +57,15 @@ export default function Mouvement() {
    *
    * Sans cela, Lenis ramenait la nouvelle page à la hauteur de la
    * précédente : on ouvrait une fiche de robe depuis le bas du catalogue
-   * et l'on arrivait en bas de la fiche. Une image d'attente, le temps
-   * que le routeur ait posé sa position.
+   * et l'on arrivait en bas de la fiche.
+   *
+   * Une seule image d'attente ne suffisait pas — c'était un pari sur
+   * l'ordre du routeur, perdu une fois sur quelques-unes, d'où le
+   * « parfois » que la maison décrivait. L'accord se répète maintenant
+   * jusqu'à ce que la position se stabilise ; le détail est dans
+   * « accorderDefilement ».
    */
-  useEffect(() => {
-    const image = requestAnimationFrame(accorderDefilement);
-    return () => cancelAnimationFrame(image);
-  }, [chemin]);
+  useEffect(() => accorderDefilement(), [chemin]);
 
   /*
    * Les apparitions, remontées à chaque page.
