@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { APERCU } from "@/lib/chemin";
 import { consenti, surConsentement } from "@/lib/consentement";
 
 /*
@@ -17,6 +18,13 @@ import { consenti, surConsentement } from "@/lib/consentement";
  * n'est plus envoyé ; au chargement suivant il ne reviendra pas.
  *
  * Le marqueur est celui du compte MADAMOON.
+ *
+ * Il ne part pas depuis l'aperçu. Le site de démonstration porte le même
+ * marqueur que le site public : sans ce garde, nos propres essais —
+ * cinquante pages ouvertes dans l'après-midi pour vérifier un bouton —
+ * se mêlaient aux visites des mariées dans les mêmes cartes de chaleur
+ * et les mêmes rejeux. Une statistique qui compte celui qui la regarde
+ * ne mesure plus rien.
  */
 
 const MARQUEUR = "yj46ivwiuf";
@@ -47,6 +55,10 @@ function poser() {
 
 export default function Clarity() {
   useEffect(() => {
+    /* Rien sur l'aperçu : voir l'en-tête. Le garde est dans l'effet et
+     * non avant lui — un retour placé devant un hook en saute un, et
+     * React compte les hooks. */
+    if (APERCU) return;
     if (consenti("analytique")) poser();
     return surConsentement((choix) => {
       if (choix.analytique) poser();
