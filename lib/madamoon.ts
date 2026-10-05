@@ -492,17 +492,6 @@ export const ROBES: Robe[] = [
     morphos: ["H", "8", "X"],
   },
   {
-    slug: "ariel",
-    nom: "Ariel",
-    ligne: "Sirène en satin mat, pétales de mousseline posés à la main",
-    categorie: "Sirène",
-    regard:
-      "Une robe de mariée sirène en satin mat : décolleté en cœur, pétales floraux en relief, corset apparent dans le dos et bretelles amovibles.",
-    vues: 10,
-    createur: "Casablanca Bridal",
-    morphos: ["V", "H", "8", "X"],
-  },
-  {
     slug: "addison",
     nom: "Addison",
     ligne: "Satin de soie, bretelles tombantes amovibles",
@@ -523,6 +512,23 @@ export const ROBES: Robe[] = [
     vues: 4,
     createur: "Casablanca Bridal",
     morphos: ["A", "H", "8", "X"],
+  },
+  {
+    /* Posée après Montana, et non plus contre Venus : les deux
+     * partagent la même serre, le même bois sombre et la même
+     * ligne de sirène. Côte à côte dans la trame, elles se lisaient
+     * comme une seule robe photographiée deux fois. La maison l'a
+     * vu. Addison et Montana, claires et d'une autre coupe, les
+     * séparent. */
+    slug: "ariel",
+    nom: "Ariel",
+    ligne: "Sirène en satin mat, pétales de mousseline posés à la main",
+    categorie: "Sirène",
+    regard:
+      "Une robe de mariée sirène en satin mat : décolleté en cœur, pétales floraux en relief, corset apparent dans le dos et bretelles amovibles.",
+    vues: 10,
+    createur: "Casablanca Bridal",
+    morphos: ["V", "H", "8", "X"],
   },
   {
     slug: "zina",
