@@ -1,7 +1,7 @@
 import Link from "@/components/Lien";
 import Croquis from "@/components/morphologie/Croquis";
 import { MORPHOLOGIES } from "@/lib/madamoon";
-import { coupeNom, morphoNom, morphoSilhouette } from "@/lib/contenu";
+import { morphoNom, morphoSilhouette } from "@/lib/contenu";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 
@@ -17,10 +17,9 @@ import { t } from "@/lib/textes";
  * décrivent, et ils se comparent d'un coup d'œil — ce qu'une rangée de
  * photographies ne permettait pas.
  *
- * Chacun est posé sur une carte, et la carte ne porte que la lettre et
- * le nom. Le reste — la silhouette, les coupes qui lui répondent — ne
- * paraît qu'au survol, sous la carte, dans une place qui lui est
- * gardée : rien ne bouge quand le texte arrive. Six descriptions posées
+ * Chacun est posé sur une carte, et la carte ne porte que le nom. La
+ * silhouette ne paraît qu'au survol, sous la carte, dans une place qui
+ * lui est gardée : rien ne bouge quand le texte arrive. Six descriptions posées
  * à plat se lisaient comme un formulaire ; il fallait pouvoir comparer
  * les dessins avant de lire.
  *
@@ -155,14 +154,17 @@ export default function Morphologies({ langue = "fr" }: { langue?: Langue }) {
                   <span
                     className="mt-2 block lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:bg-gradient-to-t lg:from-gris-appuye lg:from-55% lg:to-transparent lg:px-[clamp(0.75rem,1vw,1rem)] lg:pb-[clamp(0.75rem,1vw,1rem)] lg:pt-10 lg:opacity-0 lg:transition-opacity lg:duration-500 lg:group-focus-visible:opacity-100 lg:group-hover:opacity-100"
                   >
+                    {/* La silhouette, et elle seule.
+                      *
+                      * La liste des coupes — « fluide, trapèze » — tenait
+                      * sous chaque carte ; la maison l'a fait retirer. Et
+                      * elle avait raison : six cartes qui répètent les
+                      * mêmes quatre mots finissent par ne plus rien dire,
+                      * et deux morphologies voisines se ressemblaient
+                      * alors qu'elles se distinguent. La page de chaque
+                      * morphologie les détaille, à sa place. */}
                     <span className="texte block text-[0.75rem] leading-[1.35]">
                       {morphoSilhouette(m, langue)}
-                    </span>
-                    <span
-                      className="legende mt-1 block text-[0.625rem]"
-                      style={{ color: "var(--color-brume)" }}
-                    >
-                      {m.premieres.map((c) => coupeNom(c, langue)).join(", ")}
                     </span>
                   </span>
                   </div>
