@@ -4,10 +4,10 @@ import { typographie } from "@/lib/francais";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 
-/* Un morceau de paragraphe. « fort » met le passage en exergue —
- * gras et souligné, comme sur le document de la maison. « exposant »
- * et « apres » tiennent un exposant au milieu d'un même passage, pour
- * que le trait du soulignement ne se coupe pas en deux. */
+/* Un morceau de paragraphe. « fort » met le passage en exergue — gras
+ * et rouge. « exposant » et « apres » tiennent un exposant au milieu
+ * d'un même passage, pour qu'il ne se coupe pas en deux de part et
+ * d'autre. */
 type Morceau = {
   texte: string;
   fort?: boolean;
@@ -21,7 +21,8 @@ type Morceau = {
  * On entrait dans les morphologies sans savoir où l'on était : la
  * boutique a demandé qu'on se présente d'abord. Le titre et les deux
  * paragraphes sont ceux de Mouna, mot pour mot, et les trois passages
- * en exergue sont ceux qu'elle avait soulignés.
+ * en exergue sont ceux qu'elle avait soulignés sur son document — mis
+ * en gras et en rouge plutôt que soulignés, à sa demande.
  *
  * Centrée, contrairement aux sections qui suivent, toutes calées à
  * gauche : c'est une adresse à la visiteuse et non une rubrique du site.
