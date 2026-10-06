@@ -1075,22 +1075,28 @@ export type Morphologie = {
 export const MORPHOLOGIES: Morphologie[] = [
   {
     lettre: "O",
-    /* Agnessa, et non plus le film de Montana.
+    /* Héra, choisie par la maison, et sa troisième vue.
      *
-     * Montana est une sirène, et cette page recommande d'abord les
-     * tombés fluides et les trapèzes : son premier écran disait le
-     * contraire de son conseil. La maison l'a vu.
+     * Elle est trapèze — l'une des deux coupes que cette page conseille
+     * d'abord — et sert cette morphologie. Elle a remplacé Agnessa, qui
+     * remplaçait elle-même le film de Montana : celui-ci était une
+     * sirène, et le premier écran disait donc le contraire du conseil.
      *
-     * Agnessa est fluide, elle sert cette morphologie, et son décolleté
-     * en V est précisément le détail que la page retient. La mariée s'y
-     * tient à droite du cadre : le titre, calé à gauche, ne lui passe
-     * pas dessus.
+     * La vue trois, et non la première. Héra est photographiée devant
+     * la tour Eiffel, ce qui va bien à une maison parisienne, mais sur
+     * la première vue le titre — calé à gauche, à mi-hauteur — tombe en
+     * plein sur le visage de la mariée. Sur la troisième il se pose sur
+     * le parapet et la Seine floue, et la robe reste entière à droite.
      *
-     * La page perd son film — aucun des huit n'est d'une coupe que le O
-     * recommande en premier, et le seul trapèze filmé, Solana, ouvre
-     * déjà la page du A. Une photographie juste vaut mieux qu'un film
-     * qui dément le texte. */
-    ouverture: { robe: "agnessa", vue: 1 },
+     * Sa source ne fait que huit cent cinquante-deux pixels de large :
+     * sur un grand écran, le bandeau sera un peu tendre. C'est le prix
+     * de cette photographie-là, et le voile sombre du premier écran en
+     * absorbe une partie. Une source plus large la rendrait nette.
+     *
+     * La page n'a pas de film : aucun des huit n'est d'une coupe que le
+     * O recommande en premier, et le seul trapèze filmé, Solana, ouvre
+     * déjà la page du A. */
+    ouverture: { robe: "hera", vue: 3 },
     nom: "Morphologie en O",
     silhouette: "Des courbes généreuses, une poitrine et un ventre marqués.",
     objectif: "Allonger la ligne et mettre la poitrine en valeur.",
