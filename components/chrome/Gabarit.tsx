@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif, Pinyon_Script } from "next/font/google";
+import { Inter, Instrument_Serif, Pinyon_Script, Caveat } from "next/font/google";
 
 import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
@@ -43,6 +43,25 @@ const anglaise = Pinyon_Script({
   display: "swap",
 });
 
+/*
+ * La main de Mouna.
+ *
+ * Elle signe sa photographie, et une signature ne se compose pas : la
+ * Pinyon Script est une anglaise gravée, une plume de faire-part, et la
+ * maison voulait un marqueur. Caveat est une écriture relevée à la main,
+ * et sa graisse 600 a l'épaisseur d'un feutre — la Permanent Marker,
+ * l'autre candidate, écrit sur une affiche, pas sur un tirage.
+ *
+ * Une seule graisse, et un seul mot à l'écran : cela ne coûte presque
+ * rien.
+ */
+const main = Caveat({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--police-main",
+  display: "swap",
+});
+
 /* Le texte courant du site. Inter a remplacé le Quattrocento Sans à la
  * demande de la boutique : son œil est plus grand et son dessin plus
  * neutre — les paragraphes se lisent mieux à petite taille, sur
@@ -76,7 +95,7 @@ export default function Gabarit({
 
     /* Lenis pose ses propres classes sur <html> : React ne doit pas s'en
      * inquiéter au moment de l'hydratation. */
-    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${anglaise.variable}`}>
+    <html lang={langue} suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${anglaise.variable} ${main.variable}`}>
       <head>
         {/*
           * Le thème, reposé avant la première peinture.

@@ -165,14 +165,6 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
             >
               {L.citation}
             </p>
-            {/* L'attribution se voit maintenant sur la photographie,
-              * écrite à la main dans la marge du tirage. Elle reste ici
-              * pour les lecteurs d'écran : une citation doit dire de qui
-              * elle est, et une légende d'image ne se rattache pas à elle
-              * dans l'arbre du document. */}
-            <footer className="sr-only">
-              {L.signature} — {L.fonction}
-            </footer>
           </blockquote>
 
           {/*
@@ -200,7 +192,7 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
               style={{
                 background: "var(--color-sur-image)",
                 padding: "clamp(0.6875rem,1.3vw,1rem)",
-                paddingBottom: "clamp(3rem,5.4vw,4.25rem)",
+                paddingBottom: "clamp(4.5rem,7.4vw,6rem)",
                 boxShadow: "0 26px 56px -24px rgba(0,0,0,0.55), 0 4px 10px -4px rgba(0,0,0,0.3)",
                 transform: "rotate(-1.5deg)",
               }}
@@ -219,29 +211,44 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                 />
               </div>
 
-              {/* Le nom, écrit à la main dans la marge du tirage.
+              {/*
+                * La signature, dans la marge du tirage.
                 *
-                * C'est l'usage de ce format, et c'est ce que la maison a
-                * demandé. L'anglaise est la sienne, déjà chargée.
+                * Le nom est d'une main — Caveat en 600, l'épaisseur d'un
+                * feutre —, et la fonction est de la maison : l'Inter du
+                * site, en petites capitales espacées. Les deux ne se
+                * disent pas de la même voix, et c'est exactement ce qui
+                * fait qu'une photographie paraît signée.
                 *
-                * Le noir est « sous-image » et non « encre » : il fait la
-                * paire avec le blanc fixe du cadre, et comme lui il ne
-                * s'inverse pas. Écrit en « encre », le nom aurait blanchi
-                * en thème sombre — sur un cadre resté blanc.
+                * Les deux couleurs sont « sous-image », fixes comme le
+                * blanc du cadre. Écrites en « encre », elles auraient
+                * blanchi en thème sombre, sur un cadre resté blanc.
                 *
-                * Posée en absolu plutôt qu'au fil du document : elle se
-                * centre ainsi dans la marge sans que sa hauteur ne la
-                * creuse, et les jambages de l'anglaise ne poussent pas le
-                * cadre. */}
+                * Posé en absolu plutôt qu'au fil du document : le bloc se
+                * centre dans la marge sans que les jambages de l'écriture
+                * ne poussent le cadre.
+                */}
               <figcaption
-                className="font-anglaise absolute inset-x-0 text-center leading-none"
-                style={{
-                  bottom: "clamp(0.5rem,0.9vw,0.75rem)",
-                  fontSize: "clamp(1.5rem,2.6vw,2rem)",
-                  color: "var(--color-sous-image)",
-                }}
+                className="absolute inset-x-0 text-center"
+                style={{ bottom: "clamp(0.75rem,1.3vw,1.125rem)" }}
               >
-                {L.signature}
+                <span
+                  className="block leading-none"
+                  style={{
+                    fontFamily: "var(--font-main)",
+                    fontWeight: 600,
+                    fontSize: "clamp(1.75rem,3vw,2.375rem)",
+                    color: "var(--color-sous-image)",
+                  }}
+                >
+                  {L.signature}
+                </span>
+                <span
+                  className="legende mt-[0.45rem] block"
+                  style={{ color: "rgba(20,16,12,0.66)" }}
+                >
+                  {L.fonction}
+                </span>
               </figcaption>
             </figure>
           </div>
