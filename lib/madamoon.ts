@@ -1128,7 +1128,25 @@ export const MORPHOLOGIES: Morphologie[] = [
   },
   {
     lettre: "V",
-    ouverture: { robe: "addison", vue: 1 },
+    /* Charlotte, choisie par la maison, et sa troisième vue.
+     *
+     * La troisième parce que c'est la seule des quatre où le bandeau ne
+     * coupe pas tout : le voile et le menton restent dans le cadre. Les
+     * autres ne laissent qu'un buste.
+     *
+     * Deux réserves, dites à la maison avant qu'elle tranche, et
+     * tranchées par elle.
+     *
+     * Charlotte est un trapèze, quand cette page conseille d'abord les
+     * fluides et les princesses. Le trapèze est en seconde liste ici.
+     *
+     * Et le cadrage du bandeau, qui prend la bande médiane d'une
+     * verticale, laisse la mariée sans visage sur un mur nu — là où
+     * Addison, qu'elle remplace, montrait un regard et un escalier.
+     *
+     * La photographie, elle, est ample : trois mille deux cents pixels,
+     * le bandeau sera net. */
+    ouverture: { robe: "charlotte", vue: 3 },
     nom: "Morphologie en V",
     silhouette: "Des épaules larges, des hanches plus étroites.",
     objectif: "Adoucir le haut et donner du volume au bas.",
