@@ -41,7 +41,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       Fluide:
         "It grips nowhere. The fabric falls in one piece, from the bust to the hem, and the line looks longer than it is.",
       Trapèze:
-        "The bust is held, the skirt opens into an A from the high waist. The eye stops at the neckline, and the dress leaves all the rest free.",
+        "The bust is held, the skirt opens into an A from the waist. The eye stops at the neckline, and the dress leaves all the rest free.",
       Princesse:
         "A worked bodice carries the eye upward, and the fullness of the skirt answers the bust without competing with it.",
     },

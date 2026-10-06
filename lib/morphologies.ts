@@ -66,7 +66,7 @@ export const EDITO: Record<Lettre, Edito> = {
       Fluide:
         "Elle ne serre nulle part. Le tissu descend d'un seul tenant, du buste à l'ourlet, et la ligne paraît plus longue qu'elle ne l'est.",
       Trapèze:
-        "Le buste est tenu, la jupe part en A dès la taille haute. Le regard s'arrête sur le décolleté, et la robe laisse tout le reste libre.",
+        "Le buste est tenu, la jupe part en A dès la taille. Le regard s'arrête sur le décolleté, et la robe laisse tout le reste libre.",
       Princesse:
         "Un bustier travaillé porte le regard vers le haut, et l'ampleur de la jupe répond au buste sans le concurrencer.",
     },
