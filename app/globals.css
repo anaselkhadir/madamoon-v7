@@ -853,14 +853,17 @@ body {
  * phrases soulignées qui ne mènent nulle part font cliquer dans le
  * vide. La maison l'a vu d'elle-même et a demandé le changement.
  *
- * Le gras reste, et il n'est pas décoratif : le rouge est déjà la
- * couleur des liens de ce site. Rouge seul, ces passages se seraient
- * donnés pour des liens à leur tour — on aurait remplacé un faux
- * signal par un autre. Le gras est ce qui les en distingue, aucun lien
- * n'étant gras ici.
+ * L'italique a remplacé le gras, à la demande de la maison, et elle
+ * joue le même rôle : le rouge est déjà la couleur des liens de ce
+ * site. Rouge seul, ces passages se seraient donnés pour des liens à
+ * leur tour — on aurait remplacé un faux signal par un autre. Aucun
+ * lien n'est en italique ici, et c'est ce qui les en distingue.
+ *
+ * Elle demande en revanche que la police porte une vraie italique :
+ * voir « Gabarit », où elle est désormais téléchargée.
  */
 .exergue {
-  font-weight: 700;
+  font-style: italic;
   color: var(--color-action);
 }
 

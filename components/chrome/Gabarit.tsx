@@ -49,10 +49,17 @@ const anglaise = Pinyon_Script({
  * téléphone surtout.
  *
  * Deux graisses seulement, le romain et le gras : le site n'en emploie
- * pas d'autre, et chacune se télécharge. */
+ * pas d'autre, et chacune se télécharge.
+ *
+ * L'italique est demandée depuis que les passages en exergue de
+ * l'introduction la portent. Sans elle le navigateur en fabrique une :
+ * il penche le romain d'une dizaine de degrés, ce qui n'est pas une
+ * italique mais un romain de travers — les courbes ne sont pas
+ * redessinées, et cela se voit sur un « a » ou un « e ». */
 const sans = Inter({
   subsets: ["latin"],
   weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--police-sans",
   display: "swap",
 });

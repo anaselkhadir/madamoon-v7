@@ -92,10 +92,18 @@ export default function Maison({ langue = "fr" }: { langue?: Langue }) {
                     {m.apres && typographie(m.apres)}
                   </>
                 );
+                /* « em » et non « strong » : depuis que ces passages
+                  * sont en italique et non plus en gras, c'est de
+                  * l'emphase qu'il s'agit, pas d'une importance accrue
+                  * — et l'italique est le rendu naturel de « em ».
+                  *
+                  * « strong » portait son gras de naissance : la règle
+                  * avait beau ne plus en demander, la balise l'imposait
+                  * toujours. */
                 return m.fort ? (
-                  <strong key={j} className="exergue">
+                  <em key={j} className="exergue">
                     {contenu}
-                  </strong>
+                  </em>
                 ) : (
                   <Fragment key={j}>{contenu}</Fragment>
                 );
