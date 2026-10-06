@@ -164,9 +164,40 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   textWrap: "balance",
                 }}
               >
-                <span style={{ color: "rgba(255,255,255,0.6)" }}>&laquo;&#8239;</span>
+                {/*
+                  * Le grand guillemet anglais, au début de la première
+                  * ligne. Demandé par la maison, et dessiné comme sur sa
+                  * référence : deux virgules pleines et rondes. Le serif
+                  * de la maison les dessine ainsi ; l'Inter du texte les
+                  * taille en biseaux droits, et les chevrons français
+                  * sont des traits qui ne grossissent pas.
+                  *
+                  * Sa taille est en « em » : il suit le corps de la
+                  * citation à toutes les largeurs. L'interligne nul
+                  * l'empêche de creuser la première ligne, et
+                  * l'alignement vertical le pose dessus plutôt qu'au
+                  * milieu.
+                  *
+                  * Le guillemet fermant est tombé : un signe ouvrant de
+                  * cette taille n'est plus une ponctuation mais une
+                  * marque, et une marque ne se ferme pas. Le signe est
+                  * caché aux lecteurs d'écran — « blockquote » dit déjà
+                  * que c'est une citation.
+                  */}
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "3em",
+                    lineHeight: 0,
+                    verticalAlign: "-0.42em",
+                    marginRight: "0.04em",
+                    color: "var(--color-sur-image)",
+                  }}
+                >
+                  &ldquo;
+                </span>
                 {L.citation}
-                <span style={{ color: "rgba(255,255,255,0.6)" }}>&#8239;&raquo;</span>
               </p>
             </blockquote>
 
