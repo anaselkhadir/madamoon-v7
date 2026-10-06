@@ -103,154 +103,157 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
        * du bloc. Posé dans une boîte avec une gouttière à sa droite, il
        * laissait une bande morte le long de l'écran et se lisait comme
        * une vignette ; au bord, il fait corps avec le texte. */}
-      <header className="gouttiere pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--entete)+clamp(2.5rem,5.5vw,5rem))]">
-        <h1 className="affiche">{L.titre}</h1>
-        <p className="phrase est-moyenne mesure-l mt-5" style={{ color: "var(--color-plomb)" }}>
-          {L.sousTitre}
-        </p>
-      </header>
-
       {/*
-       * La parole de la maison, sur son rouge.
+       * L'ouverture entière sur le rouge de la maison.
        *
-       * Demandé par la boutique : le fond rouge MADAMOON, la citation à
-       * la main, et de l'air. C'est le seul endroit du site où le rouge
-       * occupe une pleine largeur — ailleurs il n'est qu'un bouton ou un
-       * trait. Il ne se représentera pas : une couleur d'action qui
-       * couvre deux sections n'est plus une couleur d'action.
+       * Demandé par la boutique : le titre, le slogan, la citation et le
+       * portrait sur le même fond. C'est le seul endroit du site où le
+       * rouge occupe une pleine largeur — ailleurs il n'est qu'un bouton
+       * ou un trait —, et il ne se représentera pas : une couleur
+       * d'action qui couvre deux sections n'en est plus une.
        *
-       * L'anglaise est celle de la maison, déjà chargée pour l'accueil
-       * et pour la signature. Elle demande trois choses qu'un texte
-       * courant ne demande pas : un grand corps — ses hampes et ses
-       * jambages mangent l'œil —, un interligne large, et de la place.
-       * On lui donne les trois. Les guillemets sont tombés : une parole
-       * écrite à la main, signée dessous, n'a pas besoin qu'on la
-       * désigne comme une citation.
+       * Le couple citation-photographie est resserré et centré dans le
+       * bloc, plutôt que poussé aux deux bords. Écartés, ils se lisaient
+       * comme deux éléments qui s'ignorent ; rapprochés, la photographie
+       * illustre la phrase.
        *
-       * Le blanc du texte sur ce rouge donne 9,5 de contraste, soit le
-       * double du minimum. Le cadre de la photographie, lui, n'a jamais
-       * aussi bien porté son nom.
+       * Toutes les couleurs sont écrites en style : « .affiche »,
+       * « .texte » et « .legende » posent chacune la leur et ne sont pas
+       * calquées — elles l'emporteraient sur des utilitaires.
        */}
-      <section style={{ background: "var(--color-action)" }}>
-        <div className="gouttiere grid gap-x-[clamp(2.5rem,6vw,6rem)] gap-y-[clamp(3rem,6vw,4.5rem)] py-[clamp(3.5rem,8vw,8rem)] md:grid-cols-[1fr_auto] md:items-center">
-          {/*
-            * La citation est centrée dans sa colonne, et non calée à
-            * gauche : entre le bord de la page et le cadre, la colonne
-            * est plus large que le texte: aligné à gauche, il laissait
-            * un vide à droite qui ressemblait à un oubli. Centré, le
-            * vide se partage et le bloc se tient.
-            *
-            * Le corps est celui d'un texte, pas d'un titre. La maison
-            * l'a demandé plus petit, et elle a raison : sur une pleine
-            * largeur de rouge, une phrase énorme crie. Petite et au
-            * milieu de son espace, elle se lit comme une carte posée.
-            *
-            * La graisse reste la romaine d'Inter — l'interligne, lui,
-            * monte à 1,7 : un texte centré se suit mal si ses lignes se
-            * touchent.
-            */}
-          <blockquote data-lever className="m-0">
+      <section className="pt-[var(--entete)]" style={{ background: "var(--color-action)" }}>
+        <div className="gouttiere py-[clamp(3rem,6.5vw,6rem)]">
+          {/* Centrés avec le reste du bloc : le titre calé à gauche
+            * au-dessus d'une citation et d'une photographie centrées
+            * tirait la composition d'un côté. */}
+          <header className="text-center">
+            <h1 className="affiche" style={{ color: "var(--color-sur-image)" }}>
+              {L.titre}
+            </h1>
             <p
-              className="mx-auto"
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "clamp(1.0625rem,1.5vw,1.375rem)",
-                lineHeight: 1.7,
-                letterSpacing: "0.004em",
-                color: "var(--color-sur-image)",
-                maxWidth: "42ch",
-                textAlign: "center",
-                textWrap: "balance",
-              }}
+              className="phrase est-moyenne mesure-l mx-auto mt-5"
+              style={{ color: "rgba(255,255,255,0.8)" }}
             >
-              {L.citation}
+              {L.sousTitre}
             </p>
-          </blockquote>
+          </header>
 
-          {/*
-           * Le portrait, en tirage encadré.
-           *
-           * Demandé par la maison : cadre blanc, esprit ancien. Les
-           * proportions sont celles d'un tirage instantané — une marge
-           * égale sur trois côtés, et le triple en bas. C'est cette marge
-           * basse, et elle seule, qui fait reconnaître le format ; un
-           * liseré régulier ne serait qu'un cadre.
-           *
-           * Le blanc est « sur-image » et non « blanc » : le jeton blanc
-           * désigne la surface du site, qui noircit en thème sombre, et
-           * le cadre serait devenu noir. Un tirage reste blanc.
-           *
-           * L'inclinaison est d'un degré et demi : assez pour qu'on voie
-           * une photographie posée plutôt que collée, trop peu pour qu'on
-           * la croie de travers. Elle est portée par le cadre, et la
-           * révélation par l'enveloppe — « data-lever » écrit lui aussi
-           * une transformation, et les deux s'écraseraient.
-           */}
-          <div data-lever className="flex justify-center md:justify-end">
-            <figure
-              className="relative m-0 w-full max-w-[20rem] md:w-[clamp(15rem,26vw,22rem)]"
-              style={{
-                background: "var(--color-sur-image)",
-                padding: "clamp(0.6875rem,1.3vw,1rem)",
-                paddingBottom: "clamp(4.5rem,7.4vw,6rem)",
-                boxShadow: "0 26px 56px -24px rgba(0,0,0,0.55), 0 4px 10px -4px rgba(0,0,0,0.3)",
-                transform: "rotate(-1.5deg)",
-              }}
-            >
-              <div
-                className="relative overflow-hidden"
-                style={{ aspectRatio: "3 / 4", boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)" }}
+          <div className="mt-[clamp(2rem,4vw,3rem)] grid gap-x-[clamp(1.75rem,3.5vw,3.5rem)] gap-y-[clamp(1rem,2vw,1.75rem)] md:grid-cols-[minmax(0,30rem)_auto] md:items-center md:justify-center">
+            {/*
+              * La citation est centrée dans sa colonne : alignée à
+              * gauche, elle laissait à droite un vide qui ressemblait à
+              * un oubli. Les guillemets sont inline et non suspendus —
+              * un signe suspendu n'a de sens que sur un texte aligné à
+              * gauche, où il marque la marge ; sur un bloc centré il
+              * déséquilibre la première ligne.
+              *
+              * L'espace fine insécable avant et après est celle que le
+              * français demande à l'intérieur des guillemets.
+              */}
+            <blockquote data-lever className="m-0">
+              <p
+                className="mx-auto"
+                style={{
+                  fontFamily: "var(--font-sans)",
+                  fontSize: "clamp(1.0625rem,1.5vw,1.375rem)",
+                  lineHeight: 1.7,
+                  letterSpacing: "0.004em",
+                  color: "var(--color-sur-image)",
+                  maxWidth: "42ch",
+                  textAlign: "center",
+                  textWrap: "balance",
+                }}
               >
-                <Photo
-                  media={SCENES["mouna"]}
-                  dossier="scenes"
-                  alt={L.altMouna}
-                  sizes="(max-width: 768px) 85vw, 26vw"
-                  priorite
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
+                <span style={{ color: "rgba(255,255,255,0.6)" }}>&laquo;&#8239;</span>
+                {L.citation}
+                <span style={{ color: "rgba(255,255,255,0.6)" }}>&#8239;&raquo;</span>
+              </p>
+            </blockquote>
 
-              {/*
-                * La signature, dans la marge du tirage.
-                *
-                * Le nom est d'une main — Caveat en 600, l'épaisseur d'un
-                * feutre —, et la fonction est de la maison : l'Inter du
-                * site, en petites capitales espacées. Les deux ne se
-                * disent pas de la même voix, et c'est exactement ce qui
-                * fait qu'une photographie paraît signée.
-                *
-                * Les deux couleurs sont « sous-image », fixes comme le
-                * blanc du cadre. Écrites en « encre », elles auraient
-                * blanchi en thème sombre, sur un cadre resté blanc.
-                *
-                * Posé en absolu plutôt qu'au fil du document : le bloc se
-                * centre dans la marge sans que les jambages de l'écriture
-                * ne poussent le cadre.
-                */}
-              <figcaption
-                className="absolute inset-x-0 text-center"
-                style={{ bottom: "clamp(0.75rem,1.3vw,1.125rem)" }}
+            {/*
+             * Le portrait, en tirage encadré.
+             *
+             * Demandé par la maison : cadre blanc, esprit ancien. Les
+             * proportions sont celles d'un tirage instantané — une marge
+             * égale sur trois côtés, et davantage en bas, où se pose la
+             * signature. C'est cette marge basse, et elle seule, qui fait
+             * reconnaître le format ; un liseré régulier ne serait qu'un
+             * cadre.
+             *
+             * Le blanc est « sur-image » et non « blanc » : le jeton
+             * blanc désigne la surface du site, qui noircit en thème
+             * sombre, et le cadre serait devenu noir. Un tirage reste
+             * blanc.
+             *
+             * L'inclinaison est d'un degré et demi : assez pour qu'on
+             * voie une photographie posée plutôt que collée, trop peu
+             * pour qu'on la croie de travers. Elle est portée par le
+             * cadre, et la révélation par l'enveloppe — « data-lever »
+             * écrit lui aussi une transformation, et les deux
+             * s'écraseraient.
+             */}
+            <div data-lever className="flex justify-center">
+              <figure
+                className="relative m-0 w-full max-w-[19rem] md:w-[clamp(14rem,22vw,19rem)]"
+                style={{
+                  background: "var(--color-sur-image)",
+                  padding: "clamp(0.6875rem,1.3vw,1rem)",
+                  paddingBottom: "clamp(4.5rem,7.4vw,6rem)",
+                  boxShadow: "0 26px 56px -24px rgba(0,0,0,0.55), 0 4px 10px -4px rgba(0,0,0,0.3)",
+                  transform: "rotate(-1.5deg)",
+                }}
               >
-                <span
-                  className="block leading-none"
-                  style={{
-                    fontFamily: "var(--font-main)",
-                    fontWeight: 600,
-                    fontSize: "clamp(1.75rem,3vw,2.375rem)",
-                    color: "var(--color-sous-image)",
-                  }}
+                <div
+                  className="relative overflow-hidden"
+                  style={{ aspectRatio: "3 / 4", boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)" }}
                 >
-                  {L.signature}
-                </span>
-                <span
-                  className="legende mt-[0.45rem] block"
-                  style={{ color: "rgba(20,16,12,0.66)" }}
+                  <Photo
+                    media={SCENES["mouna"]}
+                    dossier="scenes"
+                    alt={L.altMouna}
+                    sizes="(max-width: 768px) 85vw, 22vw"
+                    priorite
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+
+                {/*
+                  * La signature, dans la marge du tirage.
+                  *
+                  * Le nom est d'une main — Caveat en 600, l'épaisseur
+                  * d'un feutre —, et la fonction est de la maison :
+                  * l'Inter du site, en petites capitales espacées. Les
+                  * deux ne se disent pas de la même voix, et c'est ce qui
+                  * fait qu'une photographie paraît signée.
+                  *
+                  * Les deux couleurs sont « sous-image », fixes comme le
+                  * blanc du cadre. En « encre », elles auraient blanchi
+                  * en thème sombre, sur un cadre resté blanc.
+                  */}
+                <figcaption
+                  className="absolute inset-x-0 text-center"
+                  style={{ bottom: "clamp(0.75rem,1.3vw,1.125rem)" }}
                 >
-                  {L.fonction}
-                </span>
-              </figcaption>
-            </figure>
+                  <span
+                    className="block leading-none"
+                    style={{
+                      fontFamily: "var(--font-main)",
+                      fontWeight: 600,
+                      fontSize: "clamp(1.75rem,3vw,2.375rem)",
+                      color: "var(--color-sous-image)",
+                    }}
+                  >
+                    {L.signature}
+                  </span>
+                  <span
+                    className="legende mt-[0.45rem] block"
+                    style={{ color: "rgba(20,16,12,0.66)" }}
+                  >
+                    {L.fonction}
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
