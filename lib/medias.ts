@@ -6283,14 +6283,16 @@ export const SCENES = {
   },
   "showroom": {
     "name": "showroom-robes-de-mariee-madamoon-paris-10e",
-    "w": 1800,
-    "h": 1350,
+    "w": 5712,
+    "h": 4284,
     "widths": [
       640,
       1000,
-      1500
+      1500,
+      2000,
+      2600
     ],
-    "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAwCdASoUAA8APxFysFAsJqSisAgBgCIJQBOgAxkEmZiS2TpfOAD+2h8k/kjmIVR3VTRdyumwK0rBcsGOh7Cz1yJMc+B2Fk5XPjOZ6lU+RcQto25aD6zkU3rtYUYmttZUfNbYSrkceGqEUaXcLjJNNCQ+AaIT0DHdMNDBoAA=",
+    "blur": "data:image/webp;base64,UklGRkwBAABXRUJQVlA4IEABAACwBgCdASobABQAPrVOoEqnJCMhsBgIAOAWiWwAnTKBFIiNeyKau8ai8P/7045cddBZZM/yIzaY5f9UJ/7wQAD9qC5fdqDOtOF9NX7Sq/ZYvsbyZjC+Thl174NfY0+/1/X3biiwjLQzOj2kpS8BZQCkb6c3MG+f7VG4qhZB0vz7/VGbusCSJVcx3aS9ue7gAZAQgVPZdRZ/DUtx7dDhQkgsCatqJI/meKVgZc3xl9JpXuIAYJGZyToWLizwjA/RzOQ/GiImILi9w6vBRH/y10WUzBN79a+PXu5s87v5UA4ddrw4d+TKheGUizVAPTBeIbkIgMmsENHJvvXqkafmCcgTqqhCeby1G4HhJ1OGPhK8KcUfcIJYz/XSrCGPXLxCcV3dDdtSw8iDnmrrN8J/kJHL9UVn+Ff05PVdnv6FcAAAAA==",
     "jpgw": [
       640,
       1000
@@ -6457,6 +6459,108 @@ export const SCENES = {
     "jpgw": [
       480,
       800
+    ]
+  },
+  "mouna": {
+    "name": "mouna-fondatrice-madamoon-paris",
+    "w": 3024,
+    "h": 4032,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADQAwCdASoPABQAPrVInkmnJCKhMAgA4BaJYwCdABIH8xt0h4JxKAAA8gBzDdQCA54DF+NZRC7Q01eVmEwCn5qgpCe1viJfenCnFYTeyHDHsHIlidtc0HbK3RJFbox3xoSABXHVlFdeGDkeZ/OtcThF0culJrIBuN2zKYUAbD9dR7kqxqaEddgGwgf9geP3PAA=",
+    "jpgw": [
+      640,
+      1000
+    ]
+  },
+  "mouna-ferroviaire": {
+    "name": "mouna-ingenieure-ferroviaire-avant-madamoon",
+    "w": 3024,
+    "h": 4032,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoPABQAPrVKnkonJCKhsAgA4BaJZABUSdgAydxqn9+2NIfc/920QAD9/IJs6jrj9yC1fab5WMKA9H5Mi/Jk8nkgItMHuxACbNh3hF9uiLJYCXdxDBDUOM/t4eTPAr+6GEaFLHSu/ChgfkjyGbnrEJSqJteCDRpzoaysX5RklMybjcHEpviUGn25e/jvgp/2/lPxlWcpaAAAAA==",
+    "jpgw": [
+      640,
+      1000
+    ]
+  },
+  "mouna-essayage": {
+    "name": "mouna-essayage-robe-de-mariee-2022",
+    "w": 3024,
+    "h": 4032,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoPABQAPrVInkmnJCKhMAgA4BaJQBOmUABqQVckpQh50fmagAD+l5RWgpoi9AG95sJ4vrQnDfCYPozowzKs07Cw0+ThEh3N+TLylii/raA2pUeUikguVwtmAvJ8MGHvzBr56EWyz94T9USJrCEfl+/fu+ktk2NGNs/4G99FgbL/4SXiHNtW2cAJEYAAAA==",
+    "jpgw": [
+      640,
+      1000
+    ]
+  },
+  "mouna-cliente": {
+    "name": "mouna-et-sa-mariee-showroom-madamoon-paris",
+    "w": 3024,
+    "h": 4032,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBACdASoPABQAPrVInkmnJCKhMAgA4BaJQBOmUAS1gf+IHD8AmV7DqAAA4fBTziHXMCSCDZZjKFAzxqn/IPyjmK2FfY6x0BFek54VQhYOzBo/2ZrbwmTc1lj3P6oe8X+aOQ35juxLJhAM3vK4nY1d+zc3US08ZnR4n8dmfdaoJpBpUJjovWsYzUTYD7eO4+TG9ggom1JmwNwW4C5cDYPAKd7b35//CctGX0/P/4EZ8SzOL/JbDWwCeiAAAA==",
+    "jpgw": [
+      640,
+      1000
+    ]
+  },
+  "vitrail": {
+    "name": "vitrail-escalier-showroom-madamoon-paris",
+    "w": 3658,
+    "h": 5120,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoOABQAPrVInkmnJCKhMAgA4BaJYgCw7BrZeX6JDaSR1im1kgAA/vhqZlje7yBUIyOWxhNEvSGM/URLrvUTt1T5N4p1UEkzcmFBcfl6OTpsTGEW53u8UB5DBaSpZLYIbxNXL6hH/Fxzq5yjHrQLvfXBW80TOqjXTsHp5saqJBtJgAAA",
+    "jpgw": [
+      640,
+      1000
+    ]
+  },
+  "anniversaire": {
+    "name": "anniversaire-madamoon-boutique-robes-de-mariee-paris",
+    "w": 5112,
+    "h": 3651,
+    "widths": [
+      640,
+      1000,
+      1500,
+      2000,
+      2600
+    ],
+    "blur": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAADQBQCdASocABQAPrVMnkmnJCKhMAgA4BaJZACdMoR2dZ/AVynn/YX4PctKMpp1h4+4OvwOzyVwAPz1X3WYeoMmBrsfRv4xpW46E1uA7Ofd5MDQeTz+pDtzQWyZRRjVepfW/QKlyE0+MtrMV+u8n92qA46FFCuXkMuKhElZSYwP0Ck4n/0jmqxlGSHVomSQnVJAJEOs30iOINeUj+wEvacW23xBxiTuWf/uMXFec+c0zzJposDIAToVpLzfG9r/OwbM3Lku8bn+DJwnbESdbdhmE1MKJJgRxjXw0dbJ4NJQdCh9lkVa3vtOFN6CgAAA",
+    "jpgw": [
+      640,
+      1000
     ]
   }
 } as const satisfies Record<string, Media>;

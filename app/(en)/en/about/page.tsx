@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PageAPropos from "@/components/pages/PageAPropos";
 
 export const metadata: Metadata = {
-  title: "The house — bridal boutique in Paris",
+  title: "The MADAMOON story, by its founder",
   description:
-    "MADAMOON, a wedding dress boutique in Paris 10e: several selected designers, private fittings by appointment and made-to-measure dresses from €1,500.",
+    "Mouna left the running of a railway site to open MADAMOON, a wedding dress boutique in Paris 10e. Her story: the name, the turning point, the showroom.",
   alternates: {
     canonical: "/en/about/",
     languages: { fr: "/a-propos/", en: "/en/about/", "x-default": "/a-propos/" },

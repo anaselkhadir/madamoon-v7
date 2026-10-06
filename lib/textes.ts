@@ -435,14 +435,116 @@ const FR = {
       altScene: "Robes de mariée suspendues dans le showroom",
       altDetail: "Détail d’une robe de mariée",
     },
+    /*
+     * L'histoire de la maison, telle que Mouna l'a écrite.
+     *
+     * Son texte, pas le nôtre : on a corrigé la typographie et rien
+     * d'autre. C'est un récit à la première personne, et la première
+     * personne ne se réécrit pas — une fondatrice qui raconte sa
+     * reconversion n'a pas besoin qu'on lui prête une voix.
+     *
+     * Les paragraphes sont en tableaux plutôt qu'en un bloc : la mise
+     * en page en isole certains, et une phrase courte posée seule ne
+     * dit pas la même chose qu'une phrase noyée dans un paragraphe.
+     */
     maisonPage: {
-      titre: "La maison",
-      accroche: "Une boutique parisienne, plusieurs créateurs, et le temps qu’il faut pour choisir.",
-      texteAvant:
-        "MADAMOON n’édite pas ses propres collections : la maison choisit, robe par robe, chez plusieurs créateurs — puis fait confectionner et ajuster la vôtre à l’atelier. Le showroom du 10",
-      texteApres: " se privatise le temps d’un essayage.",
+      titre: "L'histoire de MADAMOON",
+      sousTitre: "Une autre façon de vivre l'essayage",
+      citation:
+        "Je n'ai pas créé MADAMOON uniquement pour vendre des robes de mariée. Je l'ai créée pour que chaque future mariée vive un essayage dont elle se souviendra.",
+      altMouna: "Mouna, fondatrice de MADAMOON, dans le showroom, devant l'escalier",
+
+      nomTitre: "Je m'appelle Mouna, mes amis m'appellent Moon.",
+      nomAvant: "Madame Moon",
+      nomApres: "MADAMOON",
+      nomTexte: [
+        "C'est de là qu'est né le nom MADAMOON. À l'origine, Madame Moon… mais cela me semblait un peu trop sérieux. J'ai donc choisi de l'alléger pour créer MADAMOON : un nom qui me ressemble davantage, à la fois élégant, moderne et un peu espiègle.",
+        "Mais derrière ce nom se cache surtout une histoire de reconversion, de passion et une conviction profonde : l'essayage d'une robe de mariée doit être une expérience à part entière.",
+      ],
+
+      avantTitre: "De l'ingénierie industrielle aux robes de mariée",
+      avantLegende: "Dix ans dans le ferroviaire",
+      avantTexte: [
+        "Avant de créer MADAMOON, j'ai travaillé pendant 10 ans dans le secteur ferroviaire. Ingénieure industrielle de formation, j'ai progressivement évolué entre la technique et le management jusqu'à devenir directrice de site de maintenance des trains.",
+        "Un parcours qui peut sembler bien éloigné de l'univers de la robe de mariée.",
+        "Et pourtant, ma passion pour les belles matières, les tissus, les coupes et les robes de cérémonie a toujours occupé une place particulière dans ma vie.",
+        "J'ai grandi dans une famille très attachée à la couture et au savoir-faire. J'ai toujours aimé observer la façon dont un vêtement peut transformer une silhouette.",
+        "Et parmi toutes les créations, ce sont les robes de mariée qui m'ont toujours particulièrement fascinée.",
+      ],
+      altAvant:
+        "Mouna en veste de chantier ferroviaire, du temps où elle dirigeait un site de maintenance des trains",
+
+      declicTitre: "Le déclic",
+      declicDate: "Avril 2022",
+      declicTexte: [
+        "C'est lors de mes propres essayages de robe de mariée que tout a changé.",
+        "En vivant cette expérience de l'autre côté du miroir, j'ai réalisé à quel point le choix d'une robe représente bien plus qu'un simple achat.",
+        "C'est se découvrir dans une silhouette que l'on n'a jamais portée, se projeter, douter, changer d'avis, être conseillée, rire, parfois avoir les larmes aux yeux… et partager un moment que l'on gardera longtemps en mémoire.",
+        "J'ai alors compris que c'était précisément là que je voulais apporter quelque chose de différent.",
+      ],
+      altDeclic: "Mouna lors de son propre essayage de robe de mariée, en avril 2022",
+
+      autrementTitre: "MADAMOON : penser l'essayage autrement",
+      autrementTexte: [
+        "Lorsque j'ai imaginé MADAMOON, je ne voulais pas simplement créer une boutique de robes de mariée à Paris.",
+        "Je voulais créer un lieu où l'on prend le temps.",
+        "Un lieu où l'on commence par apprendre à connaître la future mariée avant de lui présenter des robes.",
+      ],
+      autrementListe: [
+        "Ses goûts.",
+        "Sa personnalité.",
+        "Sa morphologie.",
+        "Les matières qu'elle aime — et celles qu'elle n'aime pas.",
+        "Mais aussi l'univers de son mariage, son lieu, son architecture, son ambiance et l'histoire qu'elle souhaite raconter.",
+      ],
+      autrementCroyance:
+        "Parce que je crois qu'une belle robe n'est pas nécessairement la bonne robe.",
+      autrementVerite: "La bonne robe est celle qui vous ressemble.",
+
+      experienceTitre: "L'expérience MADAMOON",
+      experienceTexte: [
+        "C'est pourquoi j'ai choisi de placer l'expérience de l'essayage au cœur de tout ce que nous faisons.",
+        "Chez MADAMOON, chaque essayage est privé et personnalisé. Notre rôle est de vous écouter, de vous conseiller et de vous accompagner dans la découverte de la mode nuptiale dans sa globalité.",
+        "Bien sûr, j'espère que vous trouverez votre robe chez MADAMOON.",
+        "Mais j'ai toujours voulu aller plus loin.",
+        "Je voulais qu'un essayage MADAMOON reste un beau souvenir, même si votre robe devait finalement être trouvée ailleurs.",
+        "Parce que pour moi, la réussite d'un essayage ne se mesure pas uniquement à une vente.",
+        "Elle se mesure aussi à ce que vous ressentez en quittant la boutique.",
+      ],
+      altExperience: "Mouna et une mariée, la housse MADAMOON à la main, dans le showroom",
+
+      ecrinTitre: "Un écrin hors du temps",
+      ecrinTexte: [
+        "MADAMOON a également été pensée comme un lieu à part.",
+        "Notre showroom parisien, installé dans un écrin du XIXᵉ siècle, offre un cadre intimiste et hors du temps, particulièrement propice à cette expérience. Le lieu s'inscrit lui-même dans l'histoire de la couture et du savoir-faire parisien.",
+        "Ici, le temps ralentit.",
+        "Pendant votre essayage, le showroom vous est entièrement dédié, pour vous permettre de vous concentrer sur l'essentiel : vous, votre robe et ce moment avec vos proches.",
+      ],
+      altEcrin:
+        "Le vitrail Art nouveau en haut de l'escalier du showroom, et des robes de mariée suspendues à la rampe",
+
+      visionTitre: "Ma vision de MADAMOON",
+      visionTexte: [
+        "Aujourd'hui, ce qui me passionne le plus dans mon métier n'est pas seulement de choisir de belles robes.",
+        "C'est de styliser une mariée.",
+        "Comprendre qui elle est, ce qu'elle aime, ce qu'elle veut transmettre à travers son mariage, puis l'accompagner jusqu'à cette silhouette dans laquelle elle se reconnaît pleinement.",
+        "C'est cette approche qui guide MADAMOON depuis le premier rendez-vous jusqu'à la confection et aux dernières retouches de votre robe.",
+      ],
+      altVision: "Mouna et le gâteau d'anniversaire de MADAMOON, en forme de robe de mariée",
+
+      trois: [
+        "Une robe choisie avec attention.",
+        "Un accompagnement personnalisé.",
+        "Et surtout, une expérience dont vous vous souviendrez.",
+      ],
+      bienvenue: "Bienvenue chez MADAMOON.",
+      signature: "Mouna",
+      fonction: "Fondatrice de MADAMOON",
+
       prendreRendezvous: "Prendre rendez-vous",
       lesCreateurs: "Les créateurs",
+      lesCreateursNote:
+        "MADAMOON n'édite pas ses propres collections : la maison choisit, robe par robe, chez plusieurs créateurs — puis fait confectionner et ajuster la vôtre à l'atelier.",
       voirLesRobes: "Voir les robes",
       altScene: "Robe de mariée présentée en boutique",
     },
@@ -992,13 +1094,103 @@ const EN: Textes = {
       altDetail: "A detail of a wedding dress",
     },
     maisonPage: {
-      titre: "The house",
-      accroche: "A Paris boutique, several designers, and the time it takes to choose.",
-      texteAvant:
-        "MADAMOON does not produce its own collections: the house chooses, dress by dress, from several designers — then has yours made and fitted in the atelier. The showroom in the 10th arrondissement is yours alone for the length of a fitting.",
-      texteApres: "",
+      titre: "The MADAMOON story",
+      sousTitre: "Another way to live a fitting",
+      citation:
+        "I did not create MADAMOON only to sell wedding dresses. I created it so that every bride-to-be would live a fitting she remembers.",
+      altMouna: "Mouna, founder of MADAMOON, in the showroom, in front of the staircase",
+
+      nomTitre: "My name is Mouna. My friends call me Moon.",
+      nomAvant: "Madame Moon",
+      nomApres: "MADAMOON",
+      nomTexte: [
+        "That is where the name MADAMOON came from. Madame Moon, at first — but that felt a little too solemn. So I lightened it into MADAMOON: a name that suits me better, elegant and modern, and a little mischievous.",
+        "Behind the name, though, there is above all a story of changing careers, of passion, and of one deep conviction: trying on a wedding dress should be an experience in its own right.",
+      ],
+
+      avantTitre: "From industrial engineering to wedding dresses",
+      avantLegende: "Ten years on the railways",
+      avantTexte: [
+        "Before MADAMOON, I spent 10 years in the railway industry. An industrial engineer by training, I moved gradually between the technical side and management, until I was running a train maintenance site.",
+        "A path that may seem a long way from the world of wedding dresses.",
+        "And yet my love of beautiful materials, of fabrics, of cuts and of occasion dresses has always had a particular place in my life.",
+        "I grew up in a family deeply attached to sewing and to craft. I have always loved watching the way a garment can transform a silhouette.",
+        "And of everything that is made, it is wedding dresses that have always fascinated me most.",
+      ],
+      altAvant:
+        "Mouna in a railway worksite jacket, from the years when she ran a train maintenance site",
+
+      declicTitre: "The moment it turned",
+      declicDate: "April 2022",
+      declicTexte: [
+        "Everything changed during my own wedding dress fittings.",
+        "Living that experience from the other side of the mirror, I understood how much choosing a dress is more than simply buying one.",
+        "It is discovering yourself in a silhouette you have never worn, imagining the day, doubting, changing your mind, being advised, laughing, sometimes with tears in your eyes… and sharing a moment you will keep for a long time.",
+        "That is when I understood that this was exactly where I wanted to do something different.",
+      ],
+      altDeclic: "Mouna at her own wedding dress fitting, in April 2022",
+
+      autrementTitre: "MADAMOON: thinking the fitting differently",
+      autrementTexte: [
+        "When I imagined MADAMOON, I did not simply want to open a wedding dress boutique in Paris.",
+        "I wanted to create a place where one takes one's time.",
+        "A place where we begin by getting to know the bride-to-be before showing her any dress.",
+      ],
+      autrementListe: [
+        "Her taste.",
+        "Her character.",
+        "Her body shape.",
+        "The materials she loves — and the ones she does not.",
+        "And the world of her wedding too: the place, its architecture, its mood, and the story she wishes to tell.",
+      ],
+      autrementCroyance:
+        "Because I believe a beautiful dress is not necessarily the right dress.",
+      autrementVerite: "The right dress is the one that looks like you.",
+
+      experienceTitre: "The MADAMOON experience",
+      experienceTexte: [
+        "That is why I chose to put the experience of the fitting at the heart of everything we do.",
+        "At MADAMOON, every fitting is private and personal. Our part is to listen to you, to advise you, and to guide you through bridal fashion as a whole.",
+        "Of course, I hope you will find your dress at MADAMOON.",
+        "But I have always wanted to go further.",
+        "I wanted a MADAMOON fitting to remain a fine memory, even if your dress were finally found elsewhere.",
+        "Because to my mind, a fitting is not judged on a sale alone.",
+        "It is judged just as much on what you feel as you leave the boutique.",
+      ],
+      altExperience: "Mouna and a bride, the MADAMOON dress bag in hand, in the showroom",
+
+      ecrinTitre: "A place out of time",
+      ecrinTexte: [
+        "MADAMOON was also conceived as a place apart.",
+        "Our Paris showroom, set in a nineteenth-century interior, offers an intimate frame out of time, particularly suited to this experience. The place belongs itself to the history of Parisian couture and craft.",
+        "Here, time slows down.",
+        "During your fitting the showroom is yours alone, so that you can turn to what matters: you, your dress, and this moment with the people you love.",
+      ],
+      altEcrin:
+        "The Art Nouveau stained-glass window at the top of the showroom staircase, with wedding dresses hanging from the rail",
+
+      visionTitre: "What MADAMOON means to me",
+      visionTexte: [
+        "What I love most in my work today is not only choosing beautiful dresses.",
+        "It is styling a bride.",
+        "Understanding who she is, what she loves, what she wants her wedding to say — then walking with her to the silhouette in which she fully recognises herself.",
+        "That approach guides MADAMOON from the first appointment through to the making of your dress and its final alterations.",
+      ],
+      altVision: "Mouna and the MADAMOON anniversary cake, shaped like a wedding dress",
+
+      trois: [
+        "A dress chosen with care.",
+        "Guidance that is yours alone.",
+        "And above all, an experience you will remember.",
+      ],
+      bienvenue: "Welcome to MADAMOON.",
+      signature: "Mouna",
+      fonction: "Founder of MADAMOON",
+
       prendreRendezvous: "Book an appointment",
       lesCreateurs: "The designers",
+      lesCreateursNote:
+        "MADAMOON does not produce its own collections: the house chooses, dress by dress, from several designers — then has yours made and fitted in the atelier.",
       voirLesRobes: "See the dresses",
       altScene: "A wedding dress shown in the boutique",
     },

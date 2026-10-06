@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PageAPropos from "@/components/pages/PageAPropos";
 
 export const metadata: Metadata = {
-  title: "La maison — boutique de robes de mariée à Paris",
+  title: "L'histoire de MADAMOON, par sa fondatrice",
   description:
-    "MADAMOON, boutique de robes de mariée à Paris 10e : plusieurs créateurs sélectionnés, essayage privé sur rendez-vous et confection sur mesure à partir de 1 500 €.",
+    "Mouna a quitté la direction d'un site ferroviaire pour ouvrir MADAMOON, boutique de robes de mariée à Paris 10e. Son récit : le nom, le déclic, le showroom.",
   alternates: {
     canonical: "/a-propos/",
     languages: { fr: "/a-propos/", en: "/en/about/", "x-default": "/a-propos/" },
