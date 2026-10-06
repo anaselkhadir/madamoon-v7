@@ -6,6 +6,7 @@ import { altCoupe, altRobe } from "@/lib/alt";
 import { coupeNom, coupeNote } from "@/lib/contenu";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Les six coupes.
@@ -22,6 +23,7 @@ export default function PageCoupes({ langue }: { langue: Langue }) {
   const L = t(langue).pages.coupes;
   return (
     <div className="pt-[var(--entete)]">
+      <FilDAriane langue={langue} rangs={[{ nom: t(langue).barre.coupes, adresse: "/coupes" }]} />
       <TitreSection niveau={1} titre={L.titre} />
       <div className="gouttiere">
         <p className="texte mesure-l pb-8">{L.intro}</p>

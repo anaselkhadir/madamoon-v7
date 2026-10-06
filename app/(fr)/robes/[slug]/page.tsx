@@ -12,9 +12,10 @@ import { FILMS } from "@/lib/films";
 import { SCENES } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
+import { coupeNom } from "@/lib/contenu";
 import { de } from "@/lib/francais";
 import { CoeurFiche } from "@/components/parcours/Coeur";
-import { epingleRobe, offreRobe } from "@/lib/schema";
+import { epingleRobe } from "@/lib/schema";
 
 import PageRobe from "@/components/pages/PageRobe";
 import { couverture } from "@/lib/couverture";
@@ -49,12 +50,33 @@ export async function generateMetadata({
     alt: altRobe(robe, "fr"),
   });
 
+  /* La première lettre de la ligne tombe en minuscule, et elle seule :
+   * « toLowerCase() » sur toute la phrase écrasait aussi les noms propres
+   * des maisons qu'elle cite. */
+  const ligneBasse = robe.ligne.charAt(0).toLowerCase() + robe.ligne.slice(1);
+
   return {
-    title: `Robe de mariée ${robe.nom} — ${robe.ligne}`,
-    description: `${robe.nom} : ${robe.ligne.toLowerCase()}. ${robe.regard} À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
+    /*
+     * Court, parce que Google coupe.
+     *
+     * Le titre portait la ligne entière, et la description y ajoutait le
+     * regard : chez Santana, cela donnait cent deux caractères de titre
+     * et neuf cents de description, là où le résultat de recherche en
+     * montre une soixantaine et cent soixante. Ce qui dépassait était
+     * remplacé par des points de suspension — l'adresse du showroom, qui
+     * est précisément ce qu'une mariée cherche, n'apparaissait jamais.
+     * Le titre ne garde donc que le nom et la coupe, la description la
+     * ligne et le rendez-vous. Le regard reste sur la page, où il se lit.
+     */
+    title: `Robe de mariée ${robe.nom} — ${coupeNom(robe.categorie, "fr").toLowerCase()}`,
+    description: `${robe.nom} : ${ligneBasse}. À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
     alternates: {
-      canonical: `/robes/${robe.slug}`,
-      languages: { fr: `/robes/${robe.slug}`, en: `/en/dresses/${robe.slug}` },
+      canonical: `/robes/${robe.slug}/`,
+      languages: {
+        fr: `/robes/${robe.slug}/`,
+        en: `/en/dresses/${robe.slug}/`,
+        "x-default": `/robes/${robe.slug}/`,
+      },
     },
     /*
      * L'Open Graph du gabarit est écarté ici, et réécrit dans la page.

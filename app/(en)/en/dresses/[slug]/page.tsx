@@ -14,10 +14,10 @@ import { coupe, PLURIEL } from "@/lib/coupes";
 import { altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
 import { CoeurFiche } from "@/components/parcours/Coeur";
-import { epingleRobe, offreRobe } from "@/lib/schema";
+import { epingleRobe } from "@/lib/schema";
 
 import PageRobe from "@/components/pages/PageRobe";
-import { robeLigne, robeRegard } from "@/lib/contenu";
+import { coupeNom, robeLigne } from "@/lib/contenu";
 import { couverture } from "@/lib/couverture";
 
 /*
@@ -50,12 +50,22 @@ export async function generateMetadata({
     alt: altRobe(robe, "en"),
   });
 
+  const ligne = robeLigne(robe, "en");
+  const ligneBasse = ligne.charAt(0).toLowerCase() + ligne.slice(1);
+
   return {
-    title: `${robe.nom} wedding dress — ${robeLigne(robe, "en")}`,
-    description: `${robe.nom}: ${robeLigne(robe, "en").toLowerCase()}. ${robeRegard(robe, "en")} To try on by appointment at the MADAMOON showroom, Paris 10e.`,
+    /* Court, pour la même raison que la fiche française : le résultat de
+     * recherche montre une soixantaine de caractères de titre et cent
+     * soixante de description, et coupait l'adresse du showroom. */
+    title: `${robe.nom} wedding dress — ${coupeNom(robe.categorie, "en").toLowerCase()}`,
+    description: `${robe.nom}: ${ligneBasse}. To try on by appointment at the MADAMOON showroom, Paris 10e.`,
     alternates: {
-      canonical: `/en/dresses/${robe.slug}`,
-      languages: { fr: `/robes/${robe.slug}`, en: `/en/dresses/${robe.slug}` },
+      canonical: `/en/dresses/${robe.slug}/`,
+      languages: {
+        fr: `/robes/${robe.slug}/`,
+        en: `/en/dresses/${robe.slug}/`,
+        "x-default": `/robes/${robe.slug}/`,
+      },
     },
     /*
      * L'Open Graph du gabarit est écarté ici, et réécrit dans la page.

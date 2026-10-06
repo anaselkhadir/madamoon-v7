@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Vos coups de cœur",
   description:
     "Les robes de mariée que vous avez retenues chez MADAMOON, à retrouver avant votre essayage privé à Paris 10e.",
-  alternates: { canonical: "/coups-de-coeur" },
+  alternates: { canonical: "/coups-de-coeur/" },
   robots: { index: false, follow: true },
 };
 

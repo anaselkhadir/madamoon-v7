@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "O, A, V, H, 8 or X: the wedding dress cuts we recommend for each body shape, to try on at the MADAMOON showroom, Paris 10e.",
   alternates: {
-    canonical: "/en/body-shapes",
-    languages: { fr: "/morphologies", en: "/en/body-shapes" },
+    canonical: "/en/body-shapes/",
+    languages: { fr: "/morphologies/", en: "/en/body-shapes/", "x-default": "/morphologies/" },
   },
 };
 

@@ -5,6 +5,7 @@ import { MORPHOLOGIES } from "@/lib/madamoon";
 import { coupeNom, morphoNom, morphoSilhouette } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Les six morphologies.
@@ -19,6 +20,10 @@ export default function PageMorphologies({ langue }: { langue: Langue }) {
   const L = t(langue).pages.morphologies;
   return (
     <div className="pt-[var(--entete)]">
+      <FilDAriane
+        langue={langue}
+        rangs={[{ nom: t(langue).barre.morphologies, adresse: "/morphologies" }]}
+      />
       <TitreSection
         niveau={1}
         titre={L.titre}

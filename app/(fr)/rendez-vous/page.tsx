@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Réservez votre essayage privé de robe de mariée au showroom MADAMOON, 234 rue du Faubourg Saint-Martin, Paris 10e. Une heure, le showroom pour vous seule.",
   alternates: {
-    canonical: "/rendez-vous",
-    languages: { fr: "/rendez-vous", en: "/en/appointment" },
+    canonical: "/rendez-vous/",
+    languages: { fr: "/rendez-vous/", en: "/en/appointment/", "x-default": "/rendez-vous/" },
   },
 };
 

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "The MADAMOON showroom, 234 rue du Faubourg Saint-Martin in Paris 10e: a private one-hour fitting, by appointment, with whoever you wish to bring.",
   alternates: {
-    canonical: "/en/showroom",
-    languages: { fr: "/showroom", en: "/en/showroom" },
+    canonical: "/en/showroom/",
+    languages: { fr: "/showroom/", en: "/en/showroom/", "x-default": "/showroom/" },
   },
 };
 

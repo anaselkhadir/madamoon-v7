@@ -21,6 +21,7 @@ import {
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { couverture } from "@/lib/couverture";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * La page d'une maison.
@@ -67,14 +68,14 @@ export default async function PageMaison({
     inLanguage: langue === "fr" ? "fr-FR" : "en-GB",
     name: langue === "fr" ? `Robes de mariée ${nomMaison}` : `${nomMaison} wedding dresses`,
     description: createurNote(createur, langue),
-    url: `${SITE_URL}${versLangue(`/createurs/${createur.slug}`, langue)}`,
+    url: `${SITE_URL}${versLangue(`/createurs/${createur.slug}`, langue)}/`,
     about: { "@type": "Brand", name: nomMaison },
     isPartOf: { "@type": "WebSite", name: MAISON.nom, url: SITE_URL },
     hasPart: robes.map((r) => ({
       "@type": "Product",
       name: langue === "fr" ? `Robe de mariée ${r.nom}` : `${r.nom} wedding dress`,
       description: robeLigne(r, langue),
-      url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}`,
+      url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}/`,
       brand: { "@type": "Brand", name: nomMaison },
     })),
   };
@@ -84,6 +85,13 @@ export default async function PageMaison({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
+      />
+      <FilDAriane
+        langue={langue}
+        rangs={[
+          { nom: t(langue).ariane.createurs, adresse: "/robes" },
+          { nom: nomMaison, adresse: `/createurs/${createur.slug}` },
+        ]}
       />
 
       <HeroPage

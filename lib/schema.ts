@@ -48,14 +48,16 @@ export const PRIX_PLANCHER = Number(MAISON.prixDepart.replace(/[^\d]/g, ""));
  * Le vendeur est la maison elle-même, désignée par son identité : c'est
  * ce qui dit qu'aucune de ces robes ne se trouve ailleurs.
  */
-export function offreRobe(slug: string) {
+export function offreRobe(slug: string, adresse = `/robes/${slug}`) {
   return {
     "@type": "AggregateOffer",
     lowPrice: PRIX_PLANCHER,
     priceCurrency: "EUR",
     availability: "https://schema.org/InStoreOnly",
     itemCondition: "https://schema.org/NewCondition",
-    url: `${SITE_URL}/robes/${slug}`,
+    /* L'offre pointe la page qui la porte : sur la fiche anglaise, c'est
+     * l'anglaise, et non la française que son canonique désavoue. */
+    url: `${SITE_URL}${adresse}/`,
     seller: { "@id": ID_MAISON },
     offeredBy: { "@id": ID_MAISON },
     areaServed: { "@type": "City", name: "Paris" },
@@ -211,7 +213,7 @@ export function epingleRobe(o: {
     description: `${o.regard} ${
       o.createur === SEMI_MESURE ? "Semi-mesure" : "Sur mesure"
     }, retouches incluses, à partir de ${MAISON.prixDepart}. À essayer sur rendez-vous au showroom MADAMOON, Paris 10e.`,
-    url: `${SITE_URL}/robes/${o.slug}`,
+    url: `${SITE_URL}/robes/${o.slug}/`,
     image: o.media
       ? {
           url: `${SITE_URL}/robes/${o.media.name}-${large}.jpg`,
@@ -223,5 +225,56 @@ export function epingleRobe(o: {
     marque: o.createur,
     reference: o.slug,
     prix: PRIX_PLANCHER,
+  };
+}
+
+/*
+ * Le site lui-même.
+ *
+ * Un nœud « WebSite » dit trois choses qu'aucun autre ne disait : que
+ * les pages du site forment un seul site, quel nom il porte, et qui
+ * l'édite. C'est ce nom que Google affiche au-dessus d'un résultat, à la
+ * place du domaine, et c'est par ce nœud qu'il raccorde une page à
+ * l'entité de la maison — « publisher » pointe sur le même « @id » que
+ * le balisage du commerce.
+ *
+ * Aucune « SearchAction » n'est déclarée : le site n'a pas de moteur de
+ * recherche interne, et en annoncer un que l'on n'a pas est une fausse
+ * déclaration — Google essaie l'adresse, ne trouve rien, et retire la
+ * fonction.
+ */
+export const SITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#site`,
+  name: MAISON.nom,
+  alternateName: "MADAMOON Paris",
+  url: SITE_URL,
+  inLanguage: ["fr-FR", "en"],
+  publisher: { "@id": ID_MAISON },
+};
+
+/*
+ * Le fil d'Ariane.
+ *
+ * Dans un résultat de recherche, il remplace l'adresse brute :
+ * « madamoon.fr › robes › uma » devient « Accueil › Robes de mariée ›
+ * Uma ». Deux gains, et le second compte autant que le premier : la
+ * mariée voit où mène le lien, et le moteur apprend la hiérarchie du
+ * site — qu'une fiche dépend du catalogue, qui dépend de l'accueil.
+ *
+ * Les adresses sont absolues : un fil relatif se résout à la page
+ * courante, et le deuxième barreau pointait alors sur lui-même.
+ */
+export function filDAriane(rangs: { nom: string; adresse: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: rangs.map((r, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: r.nom,
+      item: `${SITE_URL}${r.adresse === "/" ? "" : r.adresse}/`,
+    })),
   };
 }

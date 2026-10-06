@@ -33,8 +33,12 @@ export async function generateMetadata({
     title: `${nom} wedding dresses in Paris`,
     description: `The ${nom.toLowerCase()} wedding dresses of the MADAMOON showroom, Paris 10e. ${familleTexte(s.nom, "en", FAMILLES[s.nom])} Private fitting by appointment.`,
     alternates: {
-      canonical: `/en/silhouettes/${coupe}`,
-      languages: { fr: `/coupes/${s.ancre}`, en: `/en/silhouettes/${coupe}` },
+      canonical: `/en/silhouettes/${coupe}/`,
+      languages: {
+        fr: `/coupes/${s.ancre}/`,
+        en: `/en/silhouettes/${coupe}/`,
+        "x-default": `/coupes/${s.ancre}/`,
+      },
     },
   };
 }

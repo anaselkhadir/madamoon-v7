@@ -22,8 +22,12 @@ export async function generateMetadata({
     title: `Robe de mariée ${s.nom.toLowerCase()} à Paris`,
     description: `Les robes de mariée ${s.nom.toLowerCase()} du showroom MADAMOON, Paris 10e. ${FAMILLES[s.nom]} Essayage privé sur rendez-vous.`,
     alternates: {
-      canonical: `/coupes/${s.ancre}`,
-      languages: { fr: `/coupes/${s.ancre}`, en: `/en/silhouettes/${en}` },
+      canonical: `/coupes/${s.ancre}/`,
+      languages: {
+        fr: `/coupes/${s.ancre}/`,
+        en: `/en/silhouettes/${en}/`,
+        "x-default": `/coupes/${s.ancre}/`,
+      },
     },
   };
 }

@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Morphologie en O, A, V, H, 8 ou X : les coupes de robe de mariée conseillées pour chaque morphologie, à essayer au showroom MADAMOON, Paris 10e.",
   alternates: {
-    canonical: "/morphologies",
-    languages: { fr: "/morphologies", en: "/en/body-shapes" },
+    canonical: "/morphologies/",
+    languages: { fr: "/morphologies/", en: "/en/body-shapes/", "x-default": "/morphologies/" },
   },
 };
 

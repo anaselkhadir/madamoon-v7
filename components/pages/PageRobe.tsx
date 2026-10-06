@@ -40,6 +40,7 @@ import {
   robeRegard,
 } from "@/lib/contenu";
 import { couverture } from "@/lib/couverture";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * La fiche d'une robe, dans les deux langues.
@@ -112,7 +113,7 @@ export default async function PageRobe({
     "@type": "Product",
     name: `${L.pied.robeDeMariee} ${robe.nom}`,
     description: `${robeLigne(robe, langue)}. ${robeRegard(robe, langue)}`,
-    url: `${SITE_URL}${versLangue(`/robes/${robe.slug}`, langue)}`,
+    url: `${SITE_URL}${versLangue(`/robes/${robe.slug}`, langue)}/`,
     brand: { "@type": "Brand", name: robe.createur ?? MAISON.nom },
     category: `${L.pied.robeDeMariee} ${coupeNom(robe.categorie, langue).toLowerCase()}`,
     image: photos.map(
@@ -122,7 +123,7 @@ export default async function PageRobe({
     /* La robe est vendue par la maison, et seulement par elle. Le vendeur
      * est désigné par l'identité déclarée dans le gabarit : c'est ce qui
      * relie chaque modèle au showroom du dixième. */
-    offers: offreRobe(robe.slug),
+    offers: offreRobe(robe.slug, versLangue(`/robes/${robe.slug}`, langue)),
   };
 
   const epingle = epingleRobe({
@@ -141,6 +142,13 @@ export default async function PageRobe({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
+      <FilDAriane
+        langue={langue}
+        rangs={[
+          { nom: L.barre.robes, adresse: "/robes" },
+          { nom: robe.nom, adresse: `/robes/${robe.slug}` },
+        ]}
+      />
 
       {/*
        * L'épingle Pinterest.
@@ -156,8 +164,15 @@ export default async function PageRobe({
        */}
       <meta property="og:type" content="product" />
       <meta property="og:site_name" content={MAISON.nom} />
-      <meta property="og:locale" content="fr_FR" />
-      <meta property="og:url" content={epingle.url} />
+      {/* La langue et l'adresse sont celles de la page, et non celles du
+        * français : la fiche anglaise annonçait « fr_FR » et l'adresse
+        * française, en contradiction avec son propre canonique. Partagée,
+        * elle ouvrait la version française. */}
+      <meta property="og:locale" content={langue === "fr" ? "fr_FR" : "en_GB"} />
+      <meta
+        property="og:url"
+        content={`${SITE_URL}${versLangue(`/robes/${robe.slug}`, langue)}/`}
+      />
       <meta property="og:title" content={epingle.titre} />
       <meta property="og:description" content={epingle.description} />
       {epingle.image && (

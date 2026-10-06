@@ -7,7 +7,7 @@ import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Cookies from "@/components/chrome/Cookies";
 import Clarity from "@/components/chrome/Clarity";
 import Mouvement from "@/components/Mouvement";
-import { MAISON_SCHEMA } from "@/lib/schema";
+import { MAISON_SCHEMA, SITE_SCHEMA } from "@/lib/schema";
 import { BASE } from "@/lib/chemin";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
@@ -99,6 +99,13 @@ export default function Gabarit({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(MAISON_SCHEMA) }}
+        />
+        {/* Le site comme entité, raccroché à la maison par « publisher ».
+          * C'est ce nœud qui autorise Google à écrire « MADAMOON » au-dessus
+          * d'un résultat, à la place de « madamoon.fr ». */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_SCHEMA) }}
         />
         {/*
           * Le garde de l'ouverture.

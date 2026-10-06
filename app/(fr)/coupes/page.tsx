@@ -5,7 +5,10 @@ export const metadata: Metadata = {
   title: "Les coupes de robe de mariée",
   description:
     "Sirène, princesse, fluide, trapèze, deux-en-un : les coupes du showroom MADAMOON, Paris 10e. Essayage privé sur rendez-vous.",
-  alternates: { canonical: "/coupes", languages: { fr: "/coupes", en: "/en/silhouettes" } },
+  alternates: {
+    canonical: "/coupes/",
+    languages: { fr: "/coupes/", en: "/en/silhouettes/", "x-default": "/coupes/" },
+  },
 };
 
 export default function Coupes() {

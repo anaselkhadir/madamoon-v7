@@ -50,6 +50,15 @@ const FR = {
     laMaison: "La maison",
     prendreRendezvous: "Prendre rendez-vous",
   },
+  /* Les barreaux du fil d'Ariane, celui que les moteurs lisent dans le
+   * balisage et affichent au-dessus du titre du résultat, à la place de
+   * l'adresse brute. Ils reprennent les mots de la barre — un résultat
+   * de recherche ne doit pas nommer les rubriques autrement que le
+   * site. */
+  ariane: {
+    accueil: "Accueil",
+    createurs: "Créateurs",
+  },
   hero: {
     titre: "Vous vous mariez bientôt ?",
     accroche: "Robes de mariée, essayage privé — Paris 10",
@@ -435,6 +444,7 @@ const FR = {
       lesCreateurs: "Les créateurs",
       voirLesRobes: "Voir les robes",
       altScene: "Robe de mariée présentée en boutique",
+      questions: "Questions fréquentes",
     },
     rendezvous: {
       surtitre: "Essayage privé, sur rendez-vous",
@@ -624,6 +634,10 @@ const EN: Textes = {
     leShowroom: "The showroom",
     laMaison: "The house",
     prendreRendezvous: "Book an appointment",
+  },
+  ariane: {
+    accueil: "Home",
+    createurs: "Designers",
   },
   hero: {
     titre: "Getting married soon?",
@@ -952,6 +966,7 @@ const EN: Textes = {
       lesCreateurs: "The designers",
       voirLesRobes: "See the dresses",
       altScene: "A wedding dress shown in the boutique",
+      questions: "Frequently asked questions",
     },
     rendezvous: {
       surtitre: "Private fitting, by appointment",

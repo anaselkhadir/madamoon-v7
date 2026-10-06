@@ -6,8 +6,12 @@ export const metadata: Metadata = {
   description:
     "Three ways to begin: by silhouette, by your body shape, or in conversation with Élise. MADAMOON wedding dresses, showroom in Paris 10e.",
   alternates: {
-    canonical: "/en/find-my-dress",
-    languages: { fr: "/trouver-ma-robe", en: "/en/find-my-dress" },
+    canonical: "/en/find-my-dress/",
+    languages: {
+      fr: "/trouver-ma-robe/",
+      en: "/en/find-my-dress/",
+      "x-default": "/trouver-ma-robe/",
+    },
   },
 };
 

@@ -34,6 +34,7 @@ import {
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { couverture } from "@/lib/couverture";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * La page d'une morphologie.
@@ -130,7 +131,7 @@ export default async function PageMorphologie({
     "@type": "Article",
     headline: e.question,
     description: e.promesse,
-    url: `${SITE_URL}${versLangue(`/morphologies/${m.lettre.toLowerCase()}`, langue)}`,
+    url: `${SITE_URL}${versLangue(`/morphologies/${m.lettre.toLowerCase()}/`, langue)}`,
     inLanguage: langue === "fr" ? "fr-FR" : "en-GB",
     isPartOf: { "@type": "WebSite", name: MAISON.nom, url: SITE_URL },
     publisher: { "@type": "Organization", name: MAISON.nom, url: SITE_URL },
@@ -145,7 +146,7 @@ export default async function PageMorphologie({
         langue === "fr"
           ? `Robe de mariée ${s.nom.toLowerCase()}`
           : `${s.nom} wedding dress`,
-      url: `${SITE_URL}${versLangue(`/coupes/${s.ancre}`, langue)}`,
+      url: `${SITE_URL}${versLangue(`/coupes/${s.ancre}`, langue)}/`,
     })),
       },
       {
@@ -170,6 +171,13 @@ export default async function PageMorphologie({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
+      />
+      <FilDAriane
+        langue={langue}
+        rangs={[
+          { nom: t(langue).barre.morphologies, adresse: "/morphologies" },
+          { nom: morphoNom(m, langue), adresse: `/morphologies/${m.lettre.toLowerCase()}` },
+        ]}
       />
 
       {/* ————————————————————————————— 01 · le premier écran ————— */}

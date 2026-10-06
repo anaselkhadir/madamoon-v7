@@ -133,17 +133,16 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
 
         {/* Cinq étoiles noires, qui ont remplacé le « 5,0 ».
           *
-          * Elles ne portent aucun texte, et le chiffre n'en portait pas
-          * davantage : il était une image de mot. La note reste dite au
-          * lecteur d'écran par le titre — masquer le chiffre n'aurait
-          * pas suffi, Chrome le reprenait dans le nom et le titre
-          * bégayait « 5,0 5,0 sur 5 » — et à Google par les données
-          * structurées plus haut. */}
-        <h2
-          id="avis"
-          aria-label={`${moyenne} / 5 — ${phrase}`}
-          className="mt-[clamp(1.5rem,3vw,2.25rem)]"
-        >
+          * Le titre porte sa phrase en texte, masqué à l'œil mais présent
+          * dans la page. Un « aria-label » ne suffisait pas : il parle
+          * aux lecteurs d'écran, et à eux seuls. Les moteurs, eux,
+          * lisaient un titre vide — la section la plus flatteuse de
+          * l'accueil n'avait donc, pour eux, pas d'intitulé.
+          *
+          * Le chiffre n'est pas répété à l'écran : il est dans les
+          * données structurées, et les étoiles le disent à l'œil. */}
+        <h2 id="avis" className="mt-[clamp(1.5rem,3vw,2.25rem)]">
+          <span className="sr-only">{`${moyenne} / 5 — ${phrase}`}</span>
           <Etoiles
             note={5}
             className="flex justify-center gap-[0.2em] text-encre"

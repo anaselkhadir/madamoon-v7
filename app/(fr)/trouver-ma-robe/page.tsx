@@ -6,8 +6,12 @@ export const metadata: Metadata = {
   description:
     "Trois façons de commencer : par la coupe, par votre morphologie, ou en conversation avec Élise. Robes de mariée MADAMOON, showroom Paris 10e.",
   alternates: {
-    canonical: "/trouver-ma-robe",
-    languages: { fr: "/trouver-ma-robe", en: "/en/find-my-dress" },
+    canonical: "/trouver-ma-robe/",
+    languages: {
+      fr: "/trouver-ma-robe/",
+      en: "/en/find-my-dress/",
+      "x-default": "/trouver-ma-robe/",
+    },
   },
 };
 

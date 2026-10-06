@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: { absolute: "Wedding dresses in Paris — MADAMOON bridal boutique" },
   description:
     "Bridal boutique in Paris 10e. The collections of several designers, private fittings by appointment, made to measure from €1,500.",
-  alternates: { canonical: "/en", languages: { fr: "/", en: "/en" } },
+  alternates: { canonical: "/en/", languages: { fr: "/", en: "/en/", "x-default": "/" } },
 };
 
 export default function Home() {

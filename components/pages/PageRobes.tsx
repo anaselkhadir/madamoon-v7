@@ -8,6 +8,7 @@ import { versLangue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { robeLigne } from "@/lib/contenu";
 import { couverture } from "@/lib/couverture";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Le catalogue.
@@ -26,12 +27,12 @@ const liste = (langue: Langue) => ({
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: t(langue).catalogue.nom,
-  url: `${SITE_URL}${versLangue("/robes", langue)}`,
+  url: `${SITE_URL}${versLangue("/robes", langue)}/`,
   hasPart: ROBES.map((r) => ({
     "@type": "Product",
     name: `${t(langue).pied.robeDeMariee} ${r.nom}`,
     description: robeLigne(r, langue),
-    url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}`,
+    url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}/`,
     brand: r.createur ?? "MADAMOON",
   })),
 });
@@ -46,6 +47,7 @@ export default function PageRobes({ langue }: { langue: Langue }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(LISTE) }}
       />
+      <FilDAriane langue={langue} rangs={[{ nom: t(langue).barre.robes, adresse: "/robes" }]} />
 
       {/* L'en-tête de page : sous la barre, à la gouttière, rien d'autre. */}
       <div className="pt-[var(--entete)]">

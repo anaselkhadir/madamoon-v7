@@ -22,6 +22,7 @@ import {
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
 import { couverture } from "@/lib/couverture";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * La page d'une coupe.
@@ -88,13 +89,13 @@ export default async function PageCoupe({
     inLanguage: langue === "fr" ? "fr-FR" : "en-GB",
     name: langue === "fr" ? `Robes de mariée ${nom.toLowerCase()}` : `${nom} wedding dresses`,
     description: familleTexte(s.nom, langue, FAMILLES[s.nom]),
-    url: `${SITE_URL}${versLangue(`/coupes/${s.ancre}`, langue)}`,
+    url: `${SITE_URL}${versLangue(`/coupes/${s.ancre}`, langue)}/`,
     isPartOf: { "@type": "WebSite", name: MAISON.nom, url: SITE_URL },
     hasPart: siennes.map((r) => ({
       "@type": "Product",
       name: langue === "fr" ? `Robe de mariée ${r.nom}` : `${r.nom} wedding dress`,
       description: robeLigne(r, langue),
-      url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}`,
+      url: `${SITE_URL}${versLangue(`/robes/${r.slug}`, langue)}/`,
       ...(r.createur && { brand: { "@type": "Brand", name: r.createur } }),
     })),
   };
@@ -104,6 +105,13 @@ export default async function PageCoupe({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
+      />
+      <FilDAriane
+        langue={langue}
+        rangs={[
+          { nom: t(langue).barre.coupes, adresse: "/coupes" },
+          { nom, adresse: `/coupes/${s.ancre}` },
+        ]}
       />
 
       <HeroPage

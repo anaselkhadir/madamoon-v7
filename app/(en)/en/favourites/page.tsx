@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Your favourites",
   description:
     "The MADAMOON wedding dresses you have kept, to find again before your private fitting in Paris 10e.",
-  alternates: { canonical: "/en/favourites" },
+  alternates: { canonical: "/en/favourites/" },
   robots: { index: false, follow: true },
 };
 

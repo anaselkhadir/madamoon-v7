@@ -23,8 +23,12 @@ export async function generateMetadata({
     title: `Robe de mariée pour une morphologie en ${m.lettre}`,
     description: `${e.promesse} Comment reconnaître une morphologie en ${m.lettre}, les coupes qui la mettent en valeur et les modèles à essayer au showroom MADAMOON, Paris 10e.`,
     alternates: {
-      canonical: `/morphologies/${slug}`,
-      languages: { fr: `/morphologies/${slug}`, en: `/en/body-shapes/${slug}` },
+      canonical: `/morphologies/${slug}/`,
+      languages: {
+        fr: `/morphologies/${slug}/`,
+        en: `/en/body-shapes/${slug}/`,
+        "x-default": `/morphologies/${slug}/`,
+      },
     },
   };
 }

@@ -21,7 +21,25 @@ export const metadata: Metadata = {
     "boutique robe de mariée Paris",
     "showroom robe de mariée Paris",
   ],
-  alternates: { canonical: "/" },
+  /*
+   * L'image de partage, et les liens de langue.
+   *
+   * Sans « images », un lien du site collé dans WhatsApp, sur Instagram
+   * ou dans Pinterest sortait sans visuel — seules les fiches de robe en
+   * avaient une, héritée de leur photographie. L'image est le showroom
+   * de la maison, et non une robe : un lien partagé doit dire « voici
+   * une vraie boutique à Paris », ce qu'aucune photographie de robe ne
+   * dit. Mille deux cents sur six cent trente, la mesure que tous
+   * attendent.
+   *
+   * « languages » déclare enfin que le français et l'anglais sont la
+   * même page en deux langues. Sans cela, Google voyait deux sites qui
+   * se répètent et devait deviner lequel servir à qui.
+   */
+  alternates: {
+    canonical: "/",
+    languages: { fr: "/", en: "/en/", "x-default": "/" },
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -30,6 +48,18 @@ export const metadata: Metadata = {
     title: "Robes de mariée à Paris — Boutique MADAMOON",
     description:
       "Showroom de robes de mariée à Paris 10e. Essayage privé sur rendez-vous, créateurs sélectionnés, confection sur mesure.",
+    images: [
+      {
+        url: "/partage/madamoon-showroom-paris.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Le showroom MADAMOON à Paris 10e, ses portants de robes de mariée et son escalier",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/partage/madamoon-showroom-paris.jpg"],
   },
   /* L'aperçu GitHub Pages est fermé aux moteurs : une copie indexée
    * ferait concurrence au vrai site. */

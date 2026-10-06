@@ -22,10 +22,11 @@ export async function generateMetadata({
     title: `${nom} wedding dresses in Paris`,
     description: `The ${nom} wedding dresses (${createurOrigine(createur, "en").toLowerCase()}) at the MADAMOON showroom, Paris 10e. ${createurNote(createur, "en")} Private fitting by appointment.`,
     alternates: {
-      canonical: `/en/designers/${createur.slug}`,
+      canonical: `/en/designers/${createur.slug}/`,
       languages: {
-        fr: `/createurs/${createur.slug}`,
-        en: `/en/designers/${createur.slug}`,
+        fr: `/createurs/${createur.slug}/`,
+        en: `/en/designers/${createur.slug}/`,
+        "x-default": `/createurs/${createur.slug}/`,
       },
     },
   };

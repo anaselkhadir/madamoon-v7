@@ -7,6 +7,7 @@ import { altScene } from "@/lib/alt";
 import { maison, signatures } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Le rendez-vous.
@@ -27,6 +28,10 @@ export default function PageRendezVous({ langue }: { langue: Langue }) {
 
   return (
     <>
+      <FilDAriane
+        langue={langue}
+        rangs={[{ nom: t(langue).barre.rendezvous, adresse: "/rendez-vous" }]}
+      />
       <section className="grid md:grid-cols-2">
         <div className="relative min-h-[42svh] overflow-hidden md:min-h-svh">
           <Photo

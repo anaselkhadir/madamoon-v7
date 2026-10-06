@@ -10,10 +10,15 @@ import { versLangue } from "@/lib/langue";
 /*
  * Le plan du site, dans les deux langues.
  *
- * Chaque adresse française est déclarée une fois, avec sa jumelle
- * anglaise en « alternates ». C'est la forme que Google attend : une
- * entrée par page, et les langues rattachées à elle plutôt que deux
- * entrées qui s'ignorent.
+ * Chaque page est déclarée dans les deux langues, et chacune des deux
+ * entrées porte la liste complète des langues. C'est la forme que Google
+ * demande : une entrée par adresse, et non une seule pour le français
+ * avec l'anglais en annexe — une page qui ne figure nulle part en
+ * « loc » n'est pas soumise, elle n'est au mieux que découverte par les
+ * liens du site.
+ *
+ * « x-default » désigne le français : c'est la version servie à qui ne
+ * demande ni l'une ni l'autre.
  *
  * Les coups de cœur n'y figurent pas. Cette page n'existe que dans le
  * navigateur de la visiteuse, et elle porte « noindex » : l'annoncer
@@ -31,24 +36,36 @@ const PAGES = [
   "/rendez-vous",
 ];
 
-/* Une entrée bilingue : l'adresse française, et les deux langues. */
+/* Les deux entrées d'une page : la française et l'anglaise. */
 function entree(adresseFr: string, priority: number) {
-  const fr = `${SITE_URL}${adresseFr}`;
-  const en = `${SITE_URL}${versLangue(adresseFr || "/", "en")}`;
-  return {
-    url: fr,
-    changeFrequency: "monthly" as const,
-    priority,
-    alternates: { languages: { fr, en } },
-  };
+  /* La barre oblique finale, parce que c'est ainsi que le site est
+   * servi : l'export statique écrit des dossiers, et « /robes » renvoie
+   * une redirection vers « /robes/ ». Un plan de site qui n'annonce que
+   * des redirections fait perdre un aller-retour à chaque adresse, et la
+   * Search Console le signale. */
+  const barre = (a: string) => `${SITE_URL}${a === "/" || a === "" ? "" : a}/`;
+  const fr = barre(adresseFr);
+  const en = barre(versLangue(adresseFr || "/", "en"));
+  const langues = { fr, en, "x-default": fr };
+  return [
+    { url: fr, changeFrequency: "monthly" as const, priority, alternates: { languages: langues } },
+    {
+      url: en,
+      changeFrequency: "monthly" as const,
+      /* L'anglais vient après : la maison est parisienne, et ses mariées
+       * cherchent en français. */
+      priority: Math.round((priority - 0.1) * 10) / 10,
+      alternates: { languages: langues },
+    },
+  ];
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    ...PAGES.map((p) => entree(p, p === "" ? 1 : 0.8)),
-    ...CREATEURS.map((c) => entree(`/createurs/${c.slug}`, 0.7)),
-    ...COUPES.map((s) => entree(`/coupes/${s.ancre}`, 0.7)),
-    ...MORPHOLOGIES.map((m) => entree(`/morphologies/${m.lettre.toLowerCase()}`, 0.7)),
-    ...ROBES.map((r) => entree(`/robes/${r.slug}`, 0.6)),
+    ...PAGES.flatMap((p) => entree(p, p === "" ? 1 : 0.8)),
+    ...CREATEURS.flatMap((c) => entree(`/createurs/${c.slug}`, 0.7)),
+    ...COUPES.flatMap((s) => entree(`/coupes/${s.ancre}`, 0.7)),
+    ...MORPHOLOGIES.flatMap((m) => entree(`/morphologies/${m.lettre.toLowerCase()}`, 0.7)),
+    ...ROBES.flatMap((r) => entree(`/robes/${r.slug}`, 0.6)),
   ];
 }

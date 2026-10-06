@@ -5,7 +5,10 @@ export const metadata: Metadata = {
   title: "La maison — boutique de robes de mariée à Paris",
   description:
     "MADAMOON, boutique de robes de mariée à Paris 10e : plusieurs créateurs sélectionnés, essayage privé sur rendez-vous et confection sur mesure à partir de 1 500 €.",
-  alternates: { canonical: "/a-propos", languages: { fr: "/a-propos", en: "/en/about" } },
+  alternates: {
+    canonical: "/a-propos/",
+    languages: { fr: "/a-propos/", en: "/en/about/", "x-default": "/a-propos/" },
+  },
 };
 
 export default function AProps() {

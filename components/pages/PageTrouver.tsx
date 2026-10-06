@@ -4,6 +4,7 @@ import TitreSection from "@/components/TitreSection";
 import { maison } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Trouver ma robe — le carrefour.
@@ -34,6 +35,10 @@ export default function PageTrouver({ langue }: { langue: Langue }) {
 
   return (
     <div className="pt-[var(--entete)]">
+      <FilDAriane
+        langue={langue}
+        rangs={[{ nom: t(langue).raccourcis.trouverMaRobe, adresse: "/trouver-ma-robe" }]}
+      />
       <TitreSection
         niveau={1}
         titre={L.titre}

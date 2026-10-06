@@ -19,10 +19,11 @@ export async function generateMetadata({
     title: `Robes de mariée ${createur.nom} à Paris`,
     description: `Les robes de mariée ${createur.nom} (${createur.origine.toLowerCase()}) au showroom MADAMOON, Paris 10e. ${createur.note} Essayage privé sur rendez-vous.`,
     alternates: {
-      canonical: `/createurs/${createur.slug}`,
+      canonical: `/createurs/${createur.slug}/`,
       languages: {
-        fr: `/createurs/${createur.slug}`,
-        en: `/en/designers/${createur.slug}`,
+        fr: `/createurs/${createur.slug}/`,
+        en: `/en/designers/${createur.slug}/`,
+        "x-default": `/createurs/${createur.slug}/`,
       },
     },
   };

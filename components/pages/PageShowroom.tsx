@@ -6,6 +6,7 @@ import { altScene } from "@/lib/alt";
 import { maison, signatures } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
+import FilDAriane from "@/components/FilDAriane";
 
 /*
  * Le showroom.
@@ -22,6 +23,10 @@ export default function PageShowroom({ langue }: { langue: Langue }) {
 
   return (
     <>
+      <FilDAriane
+        langue={langue}
+        rangs={[{ nom: t(langue).barre.showroom, adresse: "/showroom" }]}
+      />
       <section className="relative h-[80svh] min-h-[28rem] overflow-hidden">
         <Photo
           media={SCENES["showroom"]}

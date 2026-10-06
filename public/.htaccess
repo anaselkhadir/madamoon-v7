@@ -31,20 +31,20 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 #   /votre-morphologie/     →   /morphologies/
 #   /catalogue-des-robes/   →   /robes/
 #   /prise-de-rendez-vous/  →   /rendez-vous/
-#   /faq/                   →   /a-propos/   (à revoir : voir plus bas)
+#   /faq/                   →   /a-propos/#questions
 #
 # La racine ne bouge pas, elle reste la racine.
 #
-# Le cas de « /faq/ » n'est pas tranché. Le nouveau site n'a pas de page
-# de questions : celles de la maison — délais, essayages, paiement,
-# showroom — sont écrites dans le code mais ne paraissent nulle part,
-# sinon dans la bouche d'Élise. « /a-propos/ » est le moins mauvais
-# refuge en attendant ; une vraie page de questions serait mieux, et le
-# contenu existe déjà.
+# « /faq/ » est tranché : les sept questions de la maison — délais,
+# essayages, étapes du sur-mesure, paiement, prix, accompagnement,
+# adresse — paraissent désormais en clair au bas de « /a-propos/ », avec
+# leur balisage. Elles ne vivaient jusque-là que dans la conversation
+# d'Élise, c'est-à-dire nulle part pour un moteur. La redirection mène
+# donc à un contenu qui répond, et non à un refuge.
 RedirectMatch 301 ^/votre-morphologie/?$ https://madamoon.fr/morphologies/
 RedirectMatch 301 ^/catalogue-des-robes/?$ https://madamoon.fr/robes/
 RedirectMatch 301 ^/prise-de-rendez-vous/?$ https://madamoon.fr/rendez-vous/
-RedirectMatch 301 ^/faq/?$ https://madamoon.fr/a-propos/
+RedirectMatch 301 ^/faq/?$ https://madamoon.fr/a-propos/#questions
 
 # Les restes du WordPress : son administration, ses dossiers internes et
 # les adresses de son greffon de boutique. Elles n'existeront plus, mais

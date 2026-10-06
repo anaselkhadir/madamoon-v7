@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Mermaid, ball gown, sheath, A-line, two-in-one: the silhouettes of the MADAMOON showroom, Paris 10e. Private fitting by appointment.",
   alternates: {
-    canonical: "/en/silhouettes",
-    languages: { fr: "/coupes", en: "/en/silhouettes" },
+    canonical: "/en/silhouettes/",
+    languages: { fr: "/coupes/", en: "/en/silhouettes/", "x-default": "/coupes/" },
   },
 };
 

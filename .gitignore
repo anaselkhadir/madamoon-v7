@@ -59,3 +59,7 @@ presentation/*.pptx
 presentation/ql/
 presentation/travail/
 presentation/.venv/
+
+# L'archive du site WordPress, prise avant la mise en ligne : 538 Mo,
+# qui n'ont rien à faire dans un dépôt.
+madamoon-site.zip

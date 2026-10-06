@@ -23,8 +23,12 @@ export async function generateMetadata({
     title: `Wedding dresses for the ${m.lettre} body shape`,
     description: `${e.promesse} How to recognise the ${m.lettre} shape, the cuts that suit it and the models to try on at the MADAMOON showroom, Paris 10e.`,
     alternates: {
-      canonical: `/en/body-shapes/${slug}`,
-      languages: { fr: `/morphologies/${slug}`, en: `/en/body-shapes/${slug}` },
+      canonical: `/en/body-shapes/${slug}/`,
+      languages: {
+        fr: `/morphologies/${slug}/`,
+        en: `/en/body-shapes/${slug}/`,
+        "x-default": `/morphologies/${slug}/`,
+      },
     },
   };
 }

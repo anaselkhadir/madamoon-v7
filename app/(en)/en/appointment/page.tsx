@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Book your private wedding dress fitting at the MADAMOON showroom, 234 rue du Faubourg Saint-Martin, Paris 10e. One hour, the showroom to yourself.",
   alternates: {
-    canonical: "/en/appointment",
-    languages: { fr: "/rendez-vous", en: "/en/appointment" },
+    canonical: "/en/appointment/",
+    languages: { fr: "/rendez-vous/", en: "/en/appointment/", "x-default": "/rendez-vous/" },
   },
 };
 
