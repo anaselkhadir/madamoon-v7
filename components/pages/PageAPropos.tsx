@@ -154,12 +154,19 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
               <p
                 className="mx-auto"
                 style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "clamp(1.0625rem,1.5vw,1.375rem)",
-                  lineHeight: 1.7,
-                  letterSpacing: "0.004em",
+                  /* La main de Mouna, comme sa signature sur le tirage.
+                   * Le corps monte d'un tiers : l'œil de cette écriture
+                   * est petit, et elle paraîtrait minuscule au corps de
+                   * l'Inter. L'interligne s'ouvre pour la même raison —
+                   * les hampes et les jambages d'une main se croisent si
+                   * les lignes se serrent. L'approche retombe à zéro :
+                   * on n'espace pas une écriture manuscrite. */
+                  fontFamily: "var(--font-main)",
+                  fontWeight: 500,
+                  fontSize: "clamp(1.375rem,2.2vw,1.875rem)",
+                  lineHeight: 1.5,
                   color: "var(--color-sur-image)",
-                  maxWidth: "42ch",
+                  maxWidth: "34ch",
                   textAlign: "center",
                   textWrap: "balance",
                 }}

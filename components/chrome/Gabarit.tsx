@@ -52,12 +52,13 @@ const anglaise = Pinyon_Script({
  * et sa graisse 600 a l'épaisseur d'un feutre — la Permanent Marker,
  * l'autre candidate, écrit sur une affiche, pas sur un tirage.
  *
- * Une seule graisse, et un seul mot à l'écran : cela ne coûte presque
- * rien.
+ * Deux graisses : la 600 pour la signature, qui est un trait de feutre,
+ * et la 500 pour la citation — cent quarante signes en gras se lisent
+ * mal, et une main qui écrit longtemps appuie moins.
  */
 const main = Caveat({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["500", "600"],
   variable: "--police-main",
   display: "swap",
 });
