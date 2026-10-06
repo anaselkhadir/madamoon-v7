@@ -104,8 +104,8 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
        * laissait une bande morte le long de l'écran et se lisait comme
        * une vignette ; au bord, il fait corps avec le texte. */}
       <section className="pt-[var(--entete)]">
-        <div className="grid md:grid-cols-[1fr_auto] md:items-stretch">
-          <header className="gouttiere flex flex-col justify-center py-[clamp(2.5rem,5.5vw,5rem)]">
+        <div className="gouttiere grid gap-x-[clamp(2rem,5vw,4.5rem)] gap-y-[clamp(2.5rem,5vw,4rem)] py-[clamp(2.5rem,5.5vw,5rem)] md:grid-cols-[1fr_auto] md:items-center">
+          <header>
             <h1 className="affiche">{L.titre}</h1>
             <p className="phrase est-moyenne mesure-l mt-5" style={{ color: "var(--color-plomb)" }}>
               {L.sousTitre}
@@ -136,18 +136,58 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
             </blockquote>
           </header>
 
-          <div
-            data-voile
-            className="relative min-h-[60svh] w-full overflow-hidden md:min-h-full md:w-[clamp(18rem,34vw,30rem)]"
-          >
-            <Photo
-              media={SCENES["mouna"]}
-              dossier="scenes"
-              alt={L.altMouna}
-              sizes="(max-width: 768px) 100vw, 34vw"
-              priorite
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+          {/*
+           * Le portrait, en tirage encadré.
+           *
+           * Demandé par la maison : cadre blanc, esprit ancien. La
+           * photographie filait jusqu'au bord de l'écran — un cadre ne
+           * peut pas border une image qui sort de la page, elle revient
+           * donc dans la gouttière et redevient un objet posé.
+           *
+           * Les proportions sont celles d'un tirage instantané : une
+           * marge égale sur trois côtés, et le triple en bas. C'est
+           * cette marge basse, et elle seule, qui fait reconnaître le
+           * format — un liseré régulier ne serait qu'un cadre.
+           *
+           * Le blanc est « sur-image » et non « blanc » : le jeton blanc
+           * désigne la surface du site, qui noircit en thème sombre, et
+           * le cadre serait devenu noir. Un tirage reste blanc.
+           *
+           * L'inclinaison est d'un degré et demi : assez pour qu'on voie
+           * une photographie posée plutôt que collée, trop peu pour
+           * qu'on la croie de travers. Elle est portée par le cadre, et
+           * la révélation par l'enveloppe — « data-lever » écrit lui
+           * aussi une transformation, et les deux s'écraseraient.
+           */}
+          <div data-lever className="flex justify-center md:justify-end">
+            <figure
+              className="m-0 w-full max-w-[20rem] md:w-[clamp(15rem,26vw,22rem)]"
+              style={{
+                background: "var(--color-sur-image)",
+                padding: "clamp(0.6875rem,1.3vw,1rem)",
+                paddingBottom: "clamp(2.5rem,4.5vw,3.5rem)",
+                boxShadow:
+                  "0 22px 48px -26px rgba(20,16,12,0.5), 0 3px 8px -4px rgba(20,16,12,0.22)",
+                transform: "rotate(-1.5deg)",
+              }}
+            >
+              <div
+                className="relative overflow-hidden"
+                style={{
+                  aspectRatio: "3 / 4",
+                  boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)",
+                }}
+              >
+                <Photo
+                  media={SCENES["mouna"]}
+                  dossier="scenes"
+                  alt={L.altMouna}
+                  sizes="(max-width: 768px) 85vw, 26vw"
+                  priorite
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            </figure>
           </div>
         </div>
       </section>
