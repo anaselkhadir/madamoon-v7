@@ -106,7 +106,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
       Fluide:
         "Nothing is built at the shoulders. The fabric falls from the bust, and the upper body stops being what the dress rests on.",
       Princesse:
-        "The fullness of the skirt gives the lower half the room it does not naturally have. The shoulder no longer leads the figure.",
+        "The fullness of the skirt gives the lower half the room it does not naturally have. The shoulders no longer set the line.",
       Trapèze:
         "The same effect, more quietly: the skirt opens, the line balances, and the dress stays easy to live in.",
       "Deux en un":

@@ -129,7 +129,7 @@ export const EDITO: Record<Lettre, Edito> = {
       Fluide:
         "Rien n'est construit aux épaules. Le tissu tombe depuis le buste, et le haut du corps cesse d'être le point d'appui de la robe.",
       Princesse:
-        "L'ampleur de la jupe donne au bas la place qu'il n'a pas naturellement. L'épaule, du coup, ne mène plus la ligne.",
+        "L'ampleur de la jupe donne au bas la place qu'il n'a pas naturellement. Les épaules n'imposent plus la ligne.",
       Trapèze:
         "Le même effet, en plus discret : la jupe s'ouvre, la ligne s'équilibre, et la robe reste simple à vivre.",
       "Deux en un":
