@@ -108,7 +108,7 @@ export const EDITO: Record<Lettre, Edito> = {
 
   V: {
     question: "Quelle robe pour une morphologie en V ?",
-    promesse: "Adoucir l'épaule, donner de l'ampleur au bas : la robe rééquilibre sans effort.",
+    promesse: "Adoucir les épaules, donner de l'ampleur au bas : la robe rééquilibre sans effort.",
     reperes: [
       {
         titre: "Le repère",
@@ -304,7 +304,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
   A: [
     {
       q: "Quelle robe de mariée met en valeur une morphologie en A ?",
-      r: "Celles qui donnent au haut du corps de quoi retenir le regard : un bustier brodé, drapé, ou une encolure qui élargit l'épaule. La jupe, elle, n'a rien à démontrer — évasée, elle répond aux hanches sans les souligner.",
+      r: "Celles qui donnent au haut du corps de quoi retenir le regard : un bustier brodé, drapé, ou une encolure qui élargit les épaules. La jupe, elle, n'a rien à démontrer — évasée, elle répond aux hanches sans les souligner.",
     },
     {
       q: "Comment équilibrer des hanches plus larges que les épaules ?",
@@ -326,7 +326,7 @@ export const QUESTIONS: Record<Lettre, Question[]> = {
     },
     {
       q: "Peut-on porter des manches bouffantes avec une morphologie en V ?",
-      r: "Oui, et cela peut très bien fonctionner si la jupe a du volume pour répondre. Portée sur une jupe droite, la manche ballon accentue en revanche la largeur de l'épaule — c'est une question d'équilibre, pas d'interdit.",
+      r: "Oui, et cela peut très bien fonctionner si la jupe a du volume pour répondre. Portée sur une jupe droite, la manche ballon accentue en revanche la largeur des épaules — c'est une question d'équilibre, pas d'interdit.",
     },
   ],
   H: [

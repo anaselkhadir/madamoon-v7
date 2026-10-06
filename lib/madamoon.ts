@@ -1119,7 +1119,7 @@ export const MORPHOLOGIES: Morphologie[] = [
     coupes: [
       "Un bustier travaillé, riche en détails.",
       "Une jupe évasée qui équilibre les hanches.",
-      "Les encolures bateau ou les bustiers droits, qui élargissent l'épaule.",
+      "Les encolures bateau ou les bustiers droits, qui élargissent les épaules.",
     ],
     premieres: ["Princesse", "Trapèze"],
     secondes: ["Fluide", "Deux en un"],

@@ -47,11 +47,11 @@ export const MORPHO_COUPES: Record<string, string[]> = {
   A: [
     "A worked bodice, rich in detail.",
     "A flared skirt, that balances the hips.",
-    "Boat necklines or straight bodices, that widen the shoulder.",
+    "Boat necklines or straight bodices, that widen the shoulders.",
   ],
   V: [
     "Full skirts, A-line or ball gown.",
-    "Light structures, barely built at the shoulder.",
+    "Light structures, barely built at the shoulders.",
     "V necklines, crossed or asymmetric.",
   ],
   H: [

@@ -84,7 +84,7 @@ export const EDITO_EN: Record<Lettre, Edito> = {
   V: {
     question: "Which dress for a V shape?",
     promesse:
-      "Soften the shoulder, give fullness below: the dress rebalances without effort.",
+      "Soften the shoulders, give fullness below: the dress rebalances without effort.",
     reperes: [
       {
         titre: "The marker",
@@ -269,7 +269,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
   A: [
     {
       q: "Which wedding dress suits an A shape best?",
-      r: "The ones that give the upper body something to hold the eye: an embroidered or draped bodice, or a neckline that widens the shoulder. The skirt has nothing to prove — flared, it answers the hips without underlining them.",
+      r: "The ones that give the upper body something to hold the eye: an embroidered or draped bodice, or a neckline that widens the shoulders. The skirt has nothing to prove — flared, it answers the hips without underlining them.",
     },
     {
       q: "How do I balance hips that are broader than my shoulders?",
@@ -291,7 +291,7 @@ export const QUESTIONS_EN: Record<Lettre, Question[]> = {
     },
     {
       q: "Can I wear puff sleeves with a V shape?",
-      r: "Yes, and it can work very well if the skirt has volume to answer it. Worn over a straight skirt, the puff sleeve does emphasise the width of the shoulder — it is a question of balance, not of prohibition.",
+      r: "Yes, and it can work very well if the skirt has volume to answer it. Worn over a straight skirt, the puff sleeve does emphasise the width of the shoulders — it is a question of balance, not of prohibition.",
     },
   ],
   H: [
