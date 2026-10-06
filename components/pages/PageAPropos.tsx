@@ -185,11 +185,13 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   * l'alignement vertical le pose dessus plutôt qu'au
                   * milieu.
                   *
-                  * Le guillemet fermant est tombé : un signe ouvrant de
-                  * cette taille n'est plus une ponctuation mais une
-                  * marque, et une marque ne se ferme pas. Le signe est
-                  * caché aux lecteurs d'écran — « blockquote » dit déjà
-                  * que c'est une citation.
+                  * Le fermant lui répond, au même corps et dans la même
+                  * lettre : la citation est tenue des deux bouts.
+                  *
+                  * Les deux sont cachés aux lecteurs d'écran —
+                  * « blockquote » dit déjà que c'est une citation, et
+                  * deux signes annoncés en plus ne feraient que doubler
+                  * ce que la balise porte.
                   */}
                 <span
                   aria-hidden="true"
@@ -205,6 +207,19 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   &ldquo;
                 </span>
                 {L.citation}
+                <span
+                  aria-hidden="true"
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "3em",
+                    lineHeight: 0,
+                    verticalAlign: "-0.42em",
+                    marginLeft: "0.04em",
+                    color: "var(--color-sur-image)",
+                  }}
+                >
+                  &rdquo;
+                </span>
               </p>
             </blockquote>
 
