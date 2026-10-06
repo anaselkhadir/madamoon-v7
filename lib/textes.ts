@@ -403,13 +403,8 @@ const FR = {
       nosRobes: "Nos robes pour cette morphologie",
       voirToutLeCatalogue: "Voir tout le catalogue",
       particulierement: "Particulièrement adaptées",
-      particulierementNote: "",
       egalement: "Également intéressantes à essayer",
-      egalementNote:
-        "Elles ne sont pas les plus évidentes, et c’est souvent l’une d’elles qui surprend.",
       selonVosEnvies: "À découvrir selon vos envies",
-      selonVosEnviesNote:
-        "Le reste de la sélection. En cabine tout se tente, et rien ici n’est écarté.",
       lesQuestions: "Les questions que l’on nous pose",
       poserLaVotre: "Poser la vôtre",
       commentSavoir: (lettre: string) => `Comment savoir si j’ai une morphologie en ${lettre} ?`,
@@ -925,13 +920,8 @@ const EN: Textes = {
       nosRobes: "Our dresses for this figure",
       voirToutLeCatalogue: "See the whole catalogue",
       particulierement: "Particularly suited",
-      particulierementNote: "",
       egalement: "Also worth trying",
-      egalementNote:
-        "They are not the most obvious ones, and it is often one of them that surprises.",
       selonVosEnvies: "To discover as you please",
-      selonVosEnviesNote:
-        "The rest of the selection. In the fitting room everything may be tried, and nothing here is ruled out.",
       lesQuestions: "The questions we are asked",
       poserLaVotre: "Ask yours",
       commentSavoir: (lettre: string) => `How do I know if I have the ${lettre} shape?`,

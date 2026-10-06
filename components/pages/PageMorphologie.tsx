@@ -95,17 +95,14 @@ export default async function PageMorphologie({
   const niveaux = [
     {
       titre: L.particulierement,
-      note: L.particulierementNote,
       robes: ROBES.filter((r) => m.premieres.includes(r.categorie)).slice(0, 6),
     },
     {
       titre: L.egalement,
-      note: L.egalementNote,
       robes: ROBES.filter((r) => m.secondes.includes(r.categorie)).slice(0, 3),
     },
     {
       titre: L.selonVosEnvies,
-      note: L.selonVosEnviesNote,
       robes: ROBES.filter(
         (r) => !m.premieres.includes(r.categorie) && !m.secondes.includes(r.categorie)
       ).slice(0, 3),
@@ -310,16 +307,11 @@ export default async function PageMorphologie({
         {niveaux.map((n, rang) => (
           <div key={n.titre} className={rang > 0 ? "pt-[clamp(2.5rem,5vw,5rem)]" : ""}>
             <div className="gouttiere">
-              <h3 className="legende">{n.titre}</h3>
-              {/* Le premier niveau n'a plus de note : la maison l'a fait
-                * retirer, son intitulé se suffisant. Les deux autres
-                * gardent la leur, qui dit pourquoi elles existent. Le
-                * blanc qu'elle occupait part avec elle. */}
-              {n.note ? (
-                <p className="texte mesure-l mt-2 pb-6">{n.note}</p>
-              ) : (
-                <div className="pb-6" />
-              )}
+              {/* Plus de sous-titre sous ces intitulés : la maison les a
+                * tous fait retirer. Ils expliquaient ce que leur titre
+                * disait déjà. Le blanc qu'ils occupaient demeure, sans
+                * quoi le titre se collerait aux photographies. */}
+              <h3 className="legende pb-6">{n.titre}</h3>
               <div className="trame-tuiles grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {n.robes.map((robe, i) => {
                   const media = couverture(robe);
