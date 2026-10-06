@@ -192,13 +192,13 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
              * écrit lui aussi une transformation, et les deux
              * s'écraseraient.
              */}
-            <div data-lever className="flex justify-center">
+            <div data-lever className="flex flex-col items-center">
               <figure
                 className="relative m-0 w-full max-w-[19rem] md:w-[clamp(14rem,22vw,19rem)]"
                 style={{
                   background: "var(--color-sur-image)",
                   padding: "clamp(0.6875rem,1.3vw,1rem)",
-                  paddingBottom: "clamp(4.5rem,7.4vw,6rem)",
+                  paddingBottom: "clamp(3.25rem,5.2vw,4.25rem)",
                   boxShadow: "0 26px 56px -24px rgba(0,0,0,0.55), 0 4px 10px -4px rgba(0,0,0,0.3)",
                   transform: "rotate(-1.5deg)",
                 }}
@@ -230,29 +230,33 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   * blanc du cadre. En « encre », elles auraient blanchi
                   * en thème sombre, sur un cadre resté blanc.
                   */}
+                {/* La signature seule dans la marge du tirage : c'est
+                  * ce qu'on écrit sur une photographie. La fonction, elle,
+                  * n'est pas de la main de Mouna — elle est de la maison,
+                  * et elle se range sous le cadre, hors du tirage. La
+                  * marge basse se resserre d'autant. */}
                 <figcaption
-                  className="absolute inset-x-0 text-center"
-                  style={{ bottom: "clamp(0.75rem,1.3vw,1.125rem)" }}
+                  className="absolute inset-x-0 text-center leading-none"
+                  style={{
+                    bottom: "clamp(0.625rem,1.1vw,0.9375rem)",
+                    fontFamily: "var(--font-main)",
+                    fontWeight: 600,
+                    fontSize: "clamp(1.75rem,3vw,2.375rem)",
+                    color: "var(--color-sous-image)",
+                  }}
                 >
-                  <span
-                    className="block leading-none"
-                    style={{
-                      fontFamily: "var(--font-main)",
-                      fontWeight: 600,
-                      fontSize: "clamp(1.75rem,3vw,2.375rem)",
-                      color: "var(--color-sous-image)",
-                    }}
-                  >
-                    {L.signature}
-                  </span>
-                  <span
-                    className="legende mt-[0.45rem] block"
-                    style={{ color: "rgba(20,16,12,0.66)" }}
-                  >
-                    {L.fonction}
-                  </span>
+                  {L.signature}
                 </figcaption>
               </figure>
+
+              {/* Droite sous un tirage penché : la fonction appartient à
+                * la page, pas à la photographie, et son aplomb le dit. */}
+              <p
+                className="legende mt-[clamp(1rem,2vw,1.5rem)] text-center"
+                style={{ color: "rgba(255,255,255,0.8)" }}
+              >
+                {L.fonction}
+              </p>
             </div>
           </div>
         </div>
