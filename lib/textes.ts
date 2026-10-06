@@ -403,8 +403,7 @@ const FR = {
       nosRobes: "Nos robes pour cette morphologie",
       voirToutLeCatalogue: "Voir tout le catalogue",
       particulierement: "Particulièrement adaptées",
-      particulierementNote:
-        "Les coupes que nous sortons en premier de la penderie quand vous poussez la porte.",
+      particulierementNote: "",
       egalement: "Également intéressantes à essayer",
       egalementNote:
         "Elles ne sont pas les plus évidentes, et c’est souvent l’une d’elles qui surprend.",
@@ -926,8 +925,7 @@ const EN: Textes = {
       nosRobes: "Our dresses for this figure",
       voirToutLeCatalogue: "See the whole catalogue",
       particulierement: "Particularly suited",
-      particulierementNote:
-        "The cuts we take out of the wardrobe first when you push the door open.",
+      particulierementNote: "",
       egalement: "Also worth trying",
       egalementNote:
         "They are not the most obvious ones, and it is often one of them that surprises.",
