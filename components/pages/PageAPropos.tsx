@@ -103,80 +103,111 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
        * du bloc. Posé dans une boîte avec une gouttière à sa droite, il
        * laissait une bande morte le long de l'écran et se lisait comme
        * une vignette ; au bord, il fait corps avec le texte. */}
-      <section className="pt-[var(--entete)]">
-        <div className="gouttiere grid gap-x-[clamp(2rem,5vw,4.5rem)] gap-y-[clamp(2.5rem,5vw,4rem)] py-[clamp(2.5rem,5.5vw,5rem)] md:grid-cols-[1fr_auto] md:items-center">
-          <header>
-            <h1 className="affiche">{L.titre}</h1>
-            <p className="phrase est-moyenne mesure-l mt-5" style={{ color: "var(--color-plomb)" }}>
-              {L.sousTitre}
+      <header className="gouttiere pb-[clamp(2.5rem,5vw,4rem)] pt-[calc(var(--entete)+clamp(2.5rem,5.5vw,5rem))]">
+        <h1 className="affiche">{L.titre}</h1>
+        <p className="phrase est-moyenne mesure-l mt-5" style={{ color: "var(--color-plomb)" }}>
+          {L.sousTitre}
+        </p>
+      </header>
+
+      {/*
+       * La parole de la maison, sur son rouge.
+       *
+       * Demandé par la boutique : le fond rouge MADAMOON, la citation à
+       * la main, et de l'air. C'est le seul endroit du site où le rouge
+       * occupe une pleine largeur — ailleurs il n'est qu'un bouton ou un
+       * trait. Il ne se représentera pas : une couleur d'action qui
+       * couvre deux sections n'est plus une couleur d'action.
+       *
+       * L'anglaise est celle de la maison, déjà chargée pour l'accueil
+       * et pour la signature. Elle demande trois choses qu'un texte
+       * courant ne demande pas : un grand corps — ses hampes et ses
+       * jambages mangent l'œil —, un interligne large, et de la place.
+       * On lui donne les trois. Les guillemets sont tombés : une parole
+       * écrite à la main, signée dessous, n'a pas besoin qu'on la
+       * désigne comme une citation.
+       *
+       * Le blanc du texte sur ce rouge donne 9,5 de contraste, soit le
+       * double du minimum. Le cadre de la photographie, lui, n'a jamais
+       * aussi bien porté son nom.
+       */}
+      <section style={{ background: "var(--color-action)" }}>
+        <div className="gouttiere grid gap-x-[clamp(2.5rem,6vw,6rem)] gap-y-[clamp(3rem,6vw,4.5rem)] py-[clamp(3.5rem,8vw,8rem)] md:grid-cols-[1fr_auto] md:items-center">
+          {/*
+            * La citation est centrée dans sa colonne, et non calée à
+            * gauche : entre le bord de la page et le cadre, la colonne
+            * est plus large que le texte: aligné à gauche, il laissait
+            * un vide à droite qui ressemblait à un oubli. Centré, le
+            * vide se partage et le bloc se tient.
+            *
+            * Le corps est celui d'un texte, pas d'un titre. La maison
+            * l'a demandé plus petit, et elle a raison : sur une pleine
+            * largeur de rouge, une phrase énorme crie. Petite et au
+            * milieu de son espace, elle se lit comme une carte posée.
+            *
+            * La graisse reste la romaine d'Inter — l'interligne, lui,
+            * monte à 1,7 : un texte centré se suit mal si ses lignes se
+            * touchent.
+            */}
+          <blockquote data-lever className="m-0">
+            <p
+              className="mx-auto"
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "clamp(1.0625rem,1.5vw,1.375rem)",
+                lineHeight: 1.7,
+                letterSpacing: "0.004em",
+                color: "var(--color-sur-image)",
+                maxWidth: "42ch",
+                textAlign: "center",
+                textWrap: "balance",
+              }}
+            >
+              {L.citation}
             </p>
-
-            <div className="filet mt-[clamp(2rem,4vw,3rem)] max-w-[22rem]" />
-
-            <blockquote data-lever className="m-0 mt-[clamp(1.5rem,3vw,2.25rem)]">
-              {/* Le guillemet est dessiné, pas écrit : à cette taille il
-                * appartient au décor, et un lecteur d'écran n'a pas à
-                * l'annoncer. */}
-              <span
-                aria-hidden="true"
-                className="block font-serif leading-[0.5]"
-                style={{
-                  fontSize: "clamp(3rem,6vw,5rem)",
-                  color: "color-mix(in srgb, var(--color-action) 22%, transparent)",
-                }}
-              >
-                &laquo;
-              </span>
-              <p className="phrase mesure-l mt-1" style={{ textWrap: "balance" }}>
-                {L.citation}
-              </p>
-              <footer className="legende mt-5">
-                {L.signature} — {L.fonction}
-              </footer>
-            </blockquote>
-          </header>
+            {/* L'attribution se voit maintenant sur la photographie,
+              * écrite à la main dans la marge du tirage. Elle reste ici
+              * pour les lecteurs d'écran : une citation doit dire de qui
+              * elle est, et une légende d'image ne se rattache pas à elle
+              * dans l'arbre du document. */}
+            <footer className="sr-only">
+              {L.signature} — {L.fonction}
+            </footer>
+          </blockquote>
 
           {/*
            * Le portrait, en tirage encadré.
            *
-           * Demandé par la maison : cadre blanc, esprit ancien. La
-           * photographie filait jusqu'au bord de l'écran — un cadre ne
-           * peut pas border une image qui sort de la page, elle revient
-           * donc dans la gouttière et redevient un objet posé.
-           *
-           * Les proportions sont celles d'un tirage instantané : une
-           * marge égale sur trois côtés, et le triple en bas. C'est
-           * cette marge basse, et elle seule, qui fait reconnaître le
-           * format — un liseré régulier ne serait qu'un cadre.
+           * Demandé par la maison : cadre blanc, esprit ancien. Les
+           * proportions sont celles d'un tirage instantané — une marge
+           * égale sur trois côtés, et le triple en bas. C'est cette marge
+           * basse, et elle seule, qui fait reconnaître le format ; un
+           * liseré régulier ne serait qu'un cadre.
            *
            * Le blanc est « sur-image » et non « blanc » : le jeton blanc
            * désigne la surface du site, qui noircit en thème sombre, et
            * le cadre serait devenu noir. Un tirage reste blanc.
            *
            * L'inclinaison est d'un degré et demi : assez pour qu'on voie
-           * une photographie posée plutôt que collée, trop peu pour
-           * qu'on la croie de travers. Elle est portée par le cadre, et
-           * la révélation par l'enveloppe — « data-lever » écrit lui
-           * aussi une transformation, et les deux s'écraseraient.
+           * une photographie posée plutôt que collée, trop peu pour qu'on
+           * la croie de travers. Elle est portée par le cadre, et la
+           * révélation par l'enveloppe — « data-lever » écrit lui aussi
+           * une transformation, et les deux s'écraseraient.
            */}
           <div data-lever className="flex justify-center md:justify-end">
             <figure
-              className="m-0 w-full max-w-[20rem] md:w-[clamp(15rem,26vw,22rem)]"
+              className="relative m-0 w-full max-w-[20rem] md:w-[clamp(15rem,26vw,22rem)]"
               style={{
                 background: "var(--color-sur-image)",
                 padding: "clamp(0.6875rem,1.3vw,1rem)",
-                paddingBottom: "clamp(2.5rem,4.5vw,3.5rem)",
-                boxShadow:
-                  "0 22px 48px -26px rgba(20,16,12,0.5), 0 3px 8px -4px rgba(20,16,12,0.22)",
+                paddingBottom: "clamp(3rem,5.4vw,4.25rem)",
+                boxShadow: "0 26px 56px -24px rgba(0,0,0,0.55), 0 4px 10px -4px rgba(0,0,0,0.3)",
                 transform: "rotate(-1.5deg)",
               }}
             >
               <div
                 className="relative overflow-hidden"
-                style={{
-                  aspectRatio: "3 / 4",
-                  boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)",
-                }}
+                style={{ aspectRatio: "3 / 4", boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)" }}
               >
                 <Photo
                   media={SCENES["mouna"]}
@@ -187,6 +218,31 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
+
+              {/* Le nom, écrit à la main dans la marge du tirage.
+                *
+                * C'est l'usage de ce format, et c'est ce que la maison a
+                * demandé. L'anglaise est la sienne, déjà chargée.
+                *
+                * Le noir est « sous-image » et non « encre » : il fait la
+                * paire avec le blanc fixe du cadre, et comme lui il ne
+                * s'inverse pas. Écrit en « encre », le nom aurait blanchi
+                * en thème sombre — sur un cadre resté blanc.
+                *
+                * Posée en absolu plutôt qu'au fil du document : elle se
+                * centre ainsi dans la marge sans que sa hauteur ne la
+                * creuse, et les jambages de l'anglaise ne poussent pas le
+                * cadre. */}
+              <figcaption
+                className="font-anglaise absolute inset-x-0 text-center leading-none"
+                style={{
+                  bottom: "clamp(0.5rem,0.9vw,0.75rem)",
+                  fontSize: "clamp(1.5rem,2.6vw,2rem)",
+                  color: "var(--color-sous-image)",
+                }}
+              >
+                {L.signature}
+              </figcaption>
             </figure>
           </div>
         </div>
