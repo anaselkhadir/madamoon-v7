@@ -132,6 +132,7 @@ const tableRaccourcis = (l: Langue) => {
     { href: "", label: R.trouverMaRobe },
     { href: "/showroom", label: R.leShowroom },
     { href: "/a-propos", label: R.laMaison },
+    { href: "/faq", label: R.lesQuestions },
     { href: "/rendez-vous", label: R.prendreRendezvous },
   ];
 };

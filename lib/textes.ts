@@ -48,6 +48,7 @@ const FR = {
     trouverMaRobe: "Trouver ma robe",
     leShowroom: "Le showroom",
     laMaison: "La maison",
+    lesQuestions: "Les questions",
     prendreRendezvous: "Prendre rendez-vous",
   },
   /* Les barreaux du fil d'Ariane, celui que les moteurs lisent dans le
@@ -444,7 +445,40 @@ const FR = {
       lesCreateurs: "Les créateurs",
       voirLesRobes: "Voir les robes",
       altScene: "Robe de mariée présentée en boutique",
-      questions: "Questions fréquentes",
+    },
+    /*
+     * La page des questions.
+     *
+     * Les questions et les réponses ne sont pas ici : elles viennent de
+     * « faq(langue) », la table unique que servent aussi Élise et le
+     * balisage. Ce bloc ne porte que ce que la mise en page ajoute —
+     * les intitulés des repères, et les deux mots que la frise affiche.
+     */
+    faq: {
+      titre: "Questions fréquentes",
+      accroche:
+        "Ce que les mariées nous demandent avant de pousser la porte : les délais, le déroulé d'un essayage, le sur-mesure, le prix.",
+      sommaire: "Au sommaire",
+      /* La frise du délai. Le chiffre redit ce que la réponse écrit en
+       * toutes lettres : s'il change là-bas, il change ici. */
+      delaiChiffre: "8–9",
+      delaiUnite: "mois",
+      delaiDebut: "Le premier essayage",
+      delaiFin: "Le jour du mariage",
+      altEssayage:
+        "Le showroom MADAMOON : l'escalier à tapis rouge, les portants de robes de mariée et le parquet en point de Hongrie",
+      lesEtapes: "Les quatre temps",
+      acompte: "L'acompte",
+      solde: "Le solde",
+      aPartirDe: "À partir de",
+      ladresse: "L'adresse",
+      lesHoraires: "Les horaires",
+      voirLaCarte: "Voir sur la carte",
+      autreQuestion: "Une autre question ?",
+      autreQuestionTexte:
+        "Élise répond sur la coupe, la morphologie et le déroulé d'un essayage. Pour tout le reste, le showroom est au bout du fil.",
+      demanderAElise: "Demander à Élise",
+      prendreRendezvous: "Prendre rendez-vous",
     },
     rendezvous: {
       surtitre: "Essayage privé, sur rendez-vous",
@@ -633,6 +667,7 @@ const EN: Textes = {
     trouverMaRobe: "Find my dress",
     leShowroom: "The showroom",
     laMaison: "The house",
+    lesQuestions: "The questions",
     prendreRendezvous: "Book an appointment",
   },
   ariane: {
@@ -966,7 +1001,30 @@ const EN: Textes = {
       lesCreateurs: "The designers",
       voirLesRobes: "See the dresses",
       altScene: "A wedding dress shown in the boutique",
-      questions: "Frequently asked questions",
+    },
+    faq: {
+      titre: "Frequently asked questions",
+      accroche:
+        "What brides ask us before they push the door open: how long it takes, how a fitting works, made-to-measure, the price.",
+      sommaire: "On this page",
+      delaiChiffre: "8–9",
+      delaiUnite: "months",
+      delaiDebut: "The first fitting",
+      delaiFin: "The wedding day",
+      altEssayage:
+        "The MADAMOON showroom: the red-carpeted staircase, the rails of wedding dresses and the herringbone parquet",
+      lesEtapes: "The four stages",
+      acompte: "The deposit",
+      solde: "The balance",
+      aPartirDe: "From",
+      ladresse: "The address",
+      lesHoraires: "Opening hours",
+      voirLaCarte: "See it on the map",
+      autreQuestion: "Another question?",
+      autreQuestionTexte:
+        "Élise answers on silhouette, body shape and how a fitting goes. For everything else, the showroom is at the end of the line.",
+      demanderAElise: "Ask Élise",
+      prendreRendezvous: "Book an appointment",
     },
     rendezvous: {
       surtitre: "Private fitting, by appointment",

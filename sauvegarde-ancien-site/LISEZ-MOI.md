@@ -22,7 +22,7 @@ ni catégories :
 | `/votre-morphologie/` | `/morphologies/` |
 | `/catalogue-des-robes/` | `/robes/` |
 | `/prise-de-rendez-vous/` | `/rendez-vous/` |
-| `/faq/` | `/a-propos/` *(provisoire)* |
+| `/faq/` | `/faq/` *(la page a été recréée)* |
 
 ## Le contenu de public_html
 

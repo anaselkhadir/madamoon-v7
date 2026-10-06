@@ -31,20 +31,17 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 #   /votre-morphologie/     →   /morphologies/
 #   /catalogue-des-robes/   →   /robes/
 #   /prise-de-rendez-vous/  →   /rendez-vous/
-#   /faq/                   →   /a-propos/#questions
 #
 # La racine ne bouge pas, elle reste la racine.
 #
-# « /faq/ » est tranché : les sept questions de la maison — délais,
-# essayages, étapes du sur-mesure, paiement, prix, accompagnement,
-# adresse — paraissent désormais en clair au bas de « /a-propos/ », avec
-# leur balisage. Elles ne vivaient jusque-là que dans la conversation
-# d'Élise, c'est-à-dire nulle part pour un moteur. La redirection mène
-# donc à un contenu qui répond, et non à un refuge.
+# « /faq/ » ne redirige pas : la page existe. L'ancien site en avait une,
+# elle était indexée, et le nouveau la reprend à la même adresse avec
+# les sept questions de la maison — délais, essayages, étapes du
+# sur-mesure, paiement, prix, accompagnement, adresse. Une redirection
+# aurait fait perdre à Google une adresse qu'il connaissait déjà.
 RedirectMatch 301 ^/votre-morphologie/?$ https://madamoon.fr/morphologies/
 RedirectMatch 301 ^/catalogue-des-robes/?$ https://madamoon.fr/robes/
 RedirectMatch 301 ^/prise-de-rendez-vous/?$ https://madamoon.fr/rendez-vous/
-RedirectMatch 301 ^/faq/?$ https://madamoon.fr/a-propos/#questions
 
 # Les restes du WordPress : son administration, ses dossiers internes et
 # les adresses de son greffon de boutique. Elles n'existeront plus, mais

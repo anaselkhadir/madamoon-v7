@@ -4,7 +4,7 @@ import Photo from "@/components/media/Photo";
 import { CREATEURS } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
 import { altScene } from "@/lib/alt";
-import { createurNom, createurNote, createurOrigine, faq, maison } from "@/lib/contenu";
+import { createurNom, createurNote, createurOrigine, maison } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
 import FilDAriane from "@/components/FilDAriane";
@@ -20,35 +20,9 @@ import FilDAriane from "@/components/FilDAriane";
 export default function PageAPropos({ langue }: { langue: Langue }) {
   const L = t(langue).pages.maisonPage;
   const M = maison(langue);
-  const questions = faq(langue);
-
-  /*
-   * Le balisage des questions.
-   *
-   * Google a fermé les extraits enrichis FAQ en 2023 : ils ne s'affichent
-   * plus que pour les sites publics et de santé. Le balisage reste
-   * néanmoins juste, et il sert ailleurs — les moteurs qui rédigent une
-   * réponse plutôt qu'une liste de liens y lisent directement la
-   * question et sa réponse. C'est surtout le texte visible qui compte :
-   * ces sept réponses n'existaient que dans la conversation d'Élise,
-   * c'est-à-dire nulle part pour un moteur.
-   */
-  const donnees = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: questions.map((x) => ({
-      "@type": "Question",
-      name: x.q,
-      acceptedAnswer: { "@type": "Answer", text: x.r },
-    })),
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
-      />
       <FilDAriane
         langue={langue}
         rangs={[{ nom: t(langue).barre.maison, adresse: "/a-propos" }]}
@@ -101,20 +75,6 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
               </h3>
               <p className="legende mt-1">{createurOrigine(c, langue)}</p>
               <p className="texte mesure-l mt-3">{createurNote(c, langue)}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Les questions, en clair. L'ancienne adresse /faq/ du site
-        * WordPress mène ici : elle doit trouver ses réponses. */}
-      <TitreSection id="questions" titre={L.questions} />
-      <div className="gouttiere">
-        <ul className="grid gap-x-10 md:grid-cols-2">
-          {questions.map((x) => (
-            <li key={x.q} data-lever className="border-t border-fil py-6">
-              <h3 className="titre-section">{x.q}</h3>
-              <p className="texte mt-3">{x.r}</p>
             </li>
           ))}
         </ul>

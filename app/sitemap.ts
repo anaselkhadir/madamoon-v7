@@ -34,6 +34,7 @@ const PAGES = [
   "/showroom",
   "/a-propos",
   "/rendez-vous",
+  "/faq",
 ];
 
 /* Les deux entrées d'une page : la française et l'anglaise. */
