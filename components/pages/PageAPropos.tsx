@@ -80,78 +80,129 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
       />
 
       {/* ————————————————————————————————————— l'ouverture —————
-       * Le titre, puis la phrase qui tient tout le récit, posée en grand
-       * à côté du portrait. La citation ouvre avant le premier chapitre
-       * parce que c'est ainsi que Mouna l'a écrite : on sait pourquoi la
-       * maison existe avant d'apprendre comment elle est née. */}
-      <header className="gouttiere pb-[clamp(2rem,4vw,3rem)] pt-[calc(var(--entete)+clamp(2.5rem,5.5vw,5rem))]">
-        <h1 className="affiche">{L.titre}</h1>
-        <p className="legende mt-5">{L.sousTitre}</p>
-      </header>
+       *
+       * Une seule composition, et non trois blocs empilés.
+       *
+       * Le titre, le sous-titre et la citation occupaient chacun leur
+       * bande, sans lien : le titre flottait seul dans un vide, le
+       * sous-titre tombait à onze pixels — la promesse de la page écrite
+       * en taille de légende —, et la citation arrivait ensuite sans
+       * qu'on sache encore qui parle.
+       *
+       * Les trois se rangent maintenant dans une seule colonne, en trois
+       * corps décroissants : le titre, le chapeau, la citation. La
+       * hiérarchie se fait par la taille et par l'espace, jamais par la
+       * couleur — une page qui n'a qu'un rouge ne peut pas s'en servir
+       * pour ranger trois niveaux.
+       *
+       * La citation est enfin attribuée. On lit la page entière à la
+       * première personne : il faut savoir dès la première ligne de qui
+       * elle est.
+       *
+       * Le portrait file jusqu'au bord droit et tient toute la hauteur
+       * du bloc. Posé dans une boîte avec une gouttière à sa droite, il
+       * laissait une bande morte le long de l'écran et se lisait comme
+       * une vignette ; au bord, il fait corps avec le texte. */}
+      <section className="pt-[var(--entete)]">
+        <div className="grid md:grid-cols-[1fr_auto] md:items-stretch">
+          <header className="gouttiere flex flex-col justify-center py-[clamp(2.5rem,5.5vw,5rem)]">
+            <h1 className="affiche">{L.titre}</h1>
+            <p className="phrase est-moyenne mesure-l mt-5" style={{ color: "var(--color-plomb)" }}>
+              {L.sousTitre}
+            </p>
 
-      <section className="gouttiere pb-[clamp(2.5rem,5vw,4.5rem)]">
-        <div className="grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-8 md:grid-cols-[1fr_auto] md:items-center">
-          <blockquote data-lever className="m-0 max-w-[26ch]">
-            {/* Le guillemet est dessiné, pas écrit : à cette taille il
-              * appartient au décor, et un lecteur d'écran n'a pas à
-              * l'annoncer. */}
-            <span
-              aria-hidden="true"
-              className="block font-serif leading-[0.6]"
-              style={{
-                fontSize: "clamp(3.5rem,7vw,6rem)",
-                color: "color-mix(in srgb, var(--color-action) 22%, transparent)",
-              }}
-            >
-              &laquo;
-            </span>
-            <p className="phrase est-moyenne mt-2">{L.citation}</p>
-          </blockquote>
+            <div className="filet mt-[clamp(2rem,4vw,3rem)] max-w-[22rem]" />
+
+            <blockquote data-lever className="m-0 mt-[clamp(1.5rem,3vw,2.25rem)]">
+              {/* Le guillemet est dessiné, pas écrit : à cette taille il
+                * appartient au décor, et un lecteur d'écran n'a pas à
+                * l'annoncer. */}
+              <span
+                aria-hidden="true"
+                className="block font-serif leading-[0.5]"
+                style={{
+                  fontSize: "clamp(3rem,6vw,5rem)",
+                  color: "color-mix(in srgb, var(--color-action) 22%, transparent)",
+                }}
+              >
+                &laquo;
+              </span>
+              <p className="phrase mesure-l mt-1" style={{ textWrap: "balance" }}>
+                {L.citation}
+              </p>
+              <footer className="legende mt-5">
+                {L.signature} — {L.fonction}
+              </footer>
+            </blockquote>
+          </header>
 
           <div
             data-voile
-            className="tuile w-full md:w-[clamp(18rem,30vw,26rem)]"
-            style={{ aspectRatio: "3 / 4" }}
+            className="relative min-h-[60svh] w-full overflow-hidden md:min-h-full md:w-[clamp(18rem,34vw,30rem)]"
           >
             <Photo
               media={SCENES["mouna"]}
               dossier="scenes"
               alt={L.altMouna}
-              sizes="(max-width: 768px) 100vw, 30vw"
+              sizes="(max-width: 768px) 100vw, 34vw"
               priorite
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         </div>
       </section>
 
       {/* ————————————————————————————————————————— le nom —————
-       * Rien d'autre que de la typographie. Le nom se démonte sous les
-       * yeux : « Madame Moon » dans l'anglaise des faire-part, la maison
-       * en capitales. */}
-      <section className="gouttiere py-[clamp(2.5rem,5.5vw,5rem)]">
-        <h2 className="phrase mesure-l">{L.nomTitre}</h2>
+       *
+       * Le meilleur moment du récit, et il était en petit.
+       *
+       * « Madame Moon » devenu MADAMOON tenait sur une ligne, au milieu
+       * d'un bloc, entre un titre et deux paragraphes : l'idée la plus
+       * singulière de la page passait pour une note. Elle devient le
+       * sommet visuel de la section — l'anglaise au-dessus, la maison en
+       * capitales au-dessous, et le trait vertical qui dit « devient ».
+       *
+       * Vertical, et non horizontal : un trait couché sépare deux noms
+       * de même rang, un trait debout en fait descendre un du premier.
+       *
+       * La section est centrée, seule de la page à l'être. C'est une
+       * respiration voulue entre deux chapitres alignés à gauche — mais
+       * les deux paragraphes, eux, restent alignés à gauche dans leur
+       * colonne : un texte courant centré se lit mal des deux côtés. */}
+      <section className="gouttiere py-[clamp(3rem,6vw,6rem)]">
+        <div className="mx-auto flex max-w-[34rem] flex-col items-center">
+          <h2 className="phrase text-center" style={{ textWrap: "balance" }}>
+            {L.nomTitre}
+          </h2>
 
-        <div
-          data-lever
-          className="mt-8 flex flex-wrap items-baseline gap-x-[clamp(1rem,3vw,2.5rem)] gap-y-3"
-        >
-          <span
-            className="font-anglaise leading-[1.1]"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)", color: "var(--color-plomb)" }}
+          <div
+            data-lever
+            className="mt-[clamp(2rem,4vw,3rem)] flex flex-col items-center gap-[clamp(0.75rem,1.6vw,1.25rem)]"
           >
-            {L.nomAvant}
-          </span>
-          <span aria-hidden="true" className="h-px w-[clamp(2rem,6vw,5rem)] bg-fil" />
-          <span className="affiche" style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}>
-            {L.nomApres}
-          </span>
-        </div>
+            <span
+              className="font-anglaise leading-[1.05]"
+              style={{ fontSize: "clamp(2.25rem,5.5vw,4rem)", color: "var(--color-plomb)" }}
+            >
+              {L.nomAvant}
+            </span>
+            <span
+              aria-hidden="true"
+              className="block w-px bg-fil"
+              style={{ height: "clamp(1.75rem,3.5vw,2.75rem)" }}
+            />
+            <span className="affiche" style={{ fontSize: "clamp(1.75rem,4vw,3rem)" }}>
+              {L.nomApres}
+            </span>
+          </div>
 
-        {L.nomTexte.map((p) => (
-          <p key={p} className="texte mesure-l mt-5">
-            {p}
-          </p>
-        ))}
+          <div className="mt-[clamp(2rem,4vw,3rem)] self-stretch">
+            {L.nomTexte.map((p) => (
+              <p key={p} className="texte mt-5 first:mt-0">
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ———————————————————————— l'ingénierie industrielle —————
