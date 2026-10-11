@@ -256,16 +256,34 @@ export function epingleRobe(o: {
  * déclaration — Google essaie l'adresse, ne trouve rien, et retire la
  * fonction.
  */
-export const SITE_SCHEMA = {
+export const siteSchema = (langue: "fr" | "en" = "fr") => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_URL}/#site`,
-  name: MAISON.nom,
-  alternateName: "MADAMOON Paris",
+  /*
+   * Le nom de site, celui que Google écrit au-dessus de l'adresse.
+   *
+   * « MADAMOON » seul ne disait rien à qui ne connaît pas la maison :
+   * dans une page de résultats, la ligne du haut est souvent la seule
+   * qu'on lit avant de cliquer. Les concurrentes y mettent leur métier
+   * et leur ville — « Robe Elysée | Robes de mariée à Toulouse » — et
+   * la boutique a demandé la même chose.
+   *
+   * Le nom court reste déclaré en « alternateName » : c'est ainsi
+   * qu'on la cherche, et Google doit continuer de faire le lien.
+   *
+   * Attention : ce nom-ci n'est pas celui du commerce. Le nœud
+   * « ClothingStore » garde « MADAMOON » au mot près, parce qu'il doit
+   * s'accorder avec la fiche Google du showroom — une adresse, un
+   * téléphone et un nom qui divergent font deux commerces aux yeux du
+   * moteur.
+   */
+  name: langue === "fr" ? "MADAMOON | Robes de mariée à Paris" : "MADAMOON | Wedding dresses in Paris",
+  alternateName: [MAISON.nom, "MADAMOON Paris"],
   url: SITE_URL,
   inLanguage: ["fr-FR", "en"],
   publisher: { "@id": ID_MAISON },
-};
+});
 
 /*
  * Le fil d'Ariane.

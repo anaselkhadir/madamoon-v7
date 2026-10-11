@@ -9,7 +9,7 @@ import { partage } from "@/lib/meta";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Wedding dresses in Paris — MADAMOON bridal boutique",
+    default: "MADAMOON | Wedding dresses in Paris",
     template: "%s — MADAMOON",
   },
   description:

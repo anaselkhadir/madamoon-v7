@@ -31,7 +31,10 @@ import { partage } from "@/lib/meta";
  */
 
 export const metadata: Metadata = {
-  title: "Robes de mariée à Paris — Boutique MADAMOON",
+  /* Le nom d'abord, puis le métier et la ville : c'est la forme que
+   * Google reprend au-dessus de l'adresse, et celle qu'une mariée
+   * reconnaît dans une page de résultats. */
+  title: { absolute: "MADAMOON | Robes de mariée à Paris" },
   description:
     "Boutique de robes de mariée à Paris 10e. Les collections de plusieurs créateurs, essayage privé sur rendez-vous, confection sur mesure à partir de 1 500 €.",
   alternates: { canonical: "/", languages: { fr: "/", en: "/en/", "x-default": "/" } },

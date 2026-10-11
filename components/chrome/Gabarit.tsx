@@ -7,7 +7,7 @@ import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Cookies from "@/components/chrome/Cookies";
 import Clarity from "@/components/chrome/Clarity";
 import Mouvement from "@/components/Mouvement";
-import { MAISON_SCHEMA, SITE_SCHEMA } from "@/lib/schema";
+import { MAISON_SCHEMA, siteSchema } from "@/lib/schema";
 import { BASE } from "@/lib/chemin";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
@@ -156,7 +156,7 @@ export default function Gabarit({
           * d'un résultat, à la place de « madamoon.fr ». */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_SCHEMA) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema(langue)) }}
         />
         {/*
           * Le garde de l'ouverture.

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
    * le modèle « %s — MADAMOON » s'y appliquerait — le titre disait deux
    * fois le nom de la maison. La page française, elle, partage son
    * segment avec le gabarit et y échappe. */
-  title: { absolute: "Wedding dresses in Paris — MADAMOON bridal boutique" },
+  title: { absolute: "MADAMOON | Wedding dresses in Paris" },
   description:
     "Bridal boutique in Paris 10e. The collections of several designers, private fittings by appointment, made to measure from €1,500.",
   alternates: { canonical: "/en/", languages: { fr: "/", en: "/en/", "x-default": "/" } },

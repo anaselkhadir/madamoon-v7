@@ -68,7 +68,9 @@ export function partage(url: string, langue: "fr" | "en" = "fr") {
   return {
     type: "website" as const,
     locale: langue === "fr" ? "fr_FR" : "en_GB",
-    siteName: "MADAMOON",
+    /* Le même nom que le nœud « WebSite » : Google lit les deux, et
+     * deux réponses différentes le laissent choisir. */
+    siteName: langue === "fr" ? "MADAMOON | Robes de mariée à Paris" : "MADAMOON | Wedding dresses in Paris",
     url,
     images: [
       {
