@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageMorphologie from "@/components/pages/PageMorphologie";
 import { MORPHOLOGIES, morphologieParSlug } from "@/lib/madamoon";
 import { EDITO } from "@/lib/morphologies";
+import { description } from "@/lib/meta";
 
 export function generateStaticParams() {
   return MORPHOLOGIES.map((m) => ({ lettre: m.lettre.toLowerCase() }));
@@ -21,7 +22,12 @@ export async function generateMetadata({
     /* Le gabarit ajoute « — MADAMOON » : ne pas le redire ici. Et la
      * lettre garde sa capitale — « morphologie en x » ne veut rien dire. */
     title: `Robe de mariée pour une morphologie en ${m.lettre}`,
-    description: `${e.promesse} Comment reconnaître une morphologie en ${m.lettre}, les coupes qui la mettent en valeur et les modèles à essayer au showroom MADAMOON, Paris 10e.`,
+    description: description(
+      `Morphologie en ${m.lettre} : comment la reconnaître, et les coupes qui la mettent en valeur.`,
+      e.promesse,
+      "À essayer au showroom MADAMOON, Paris 10e.",
+      "Les modèles sont à essayer au showroom MADAMOON, Paris 10e.",
+    ),
     alternates: {
       canonical: `/morphologies/${slug}/`,
       languages: {
@@ -30,6 +36,10 @@ export async function generateMetadata({
         "x-default": `/morphologies/${slug}/`,
       },
     },
+    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+     * un lien collé avec un paramètre de campagne devient un objet
+     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+    openGraph: { url: `/morphologies/${slug}/` },
   };
 }
 

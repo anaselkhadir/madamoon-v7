@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical: "/rendez-vous/",
     languages: { fr: "/rendez-vous/", en: "/en/appointment/", "x-default": "/rendez-vous/" },
   },
+  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+   * un lien collé avec un paramètre de campagne devient un objet
+   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+  openGraph: { url: "/rendez-vous/" },
 };
 
 export default function RendezVous() {

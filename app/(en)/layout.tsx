@@ -40,14 +40,23 @@ export const metadata: Metadata = {
     canonical: "/en/",
     languages: { fr: "/", en: "/en/", "x-default": "/" },
   },
+  /*
+   * Ni « title », ni « description », ni « url » ici.
+   *
+   * Un gabarit qui les fixe les impose à toutes ses pages : chaque fiche
+   * de robe, chaque page de coupe partageait le titre et l'adresse de
+   * l'accueil. Un lien vers « L'histoire de MADAMOON » collé dans
+   * WhatsApp annonçait « Robes de mariée à Paris » et renvoyait à la
+   * racine — et Pinterest attribuait l'épingle à l'accueil.
+   *
+   * Laissés vides, Next les reprend du titre et de la description de la
+   * page, et de son canonique. Seul ce qui est vrai partout reste ici :
+   * le type, la langue, le nom de la maison et l'image de partage.
+   */
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "MADAMOON",
-    url: `${SITE_URL}/en/`,
-    title: "Wedding dresses in Paris — MADAMOON bridal boutique",
-    description:
-      "Bridal showroom in Paris 10e. Private fittings by appointment, selected designers, made to measure.",
     images: [
       {
         url: "/partage/madamoon-showroom-paris.jpg",

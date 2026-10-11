@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description:
     "Les robes de mariée que vous avez retenues chez MADAMOON, à retrouver avant votre essayage privé à Paris 10e.",
   alternates: { canonical: "/coups-de-coeur/" },
+  /* L'adresse canonique sert aussi d'adresse de partage. */
+  openGraph: { url: "/coups-de-coeur/" },
   robots: { index: false, follow: true },
 };
 

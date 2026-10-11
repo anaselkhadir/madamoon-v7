@@ -4,6 +4,7 @@ import { FAMILLES } from "@/lib/madamoon";
 import { COUPES, coupeParAncre } from "@/lib/coupes";
 import { COUPES_EN } from "@/lib/langue";
 import { coupeNom, familleTexte } from "@/lib/contenu";
+import { description } from "@/lib/meta";
 
 /*
  * La page d'une coupe, en anglais.
@@ -31,7 +32,12 @@ export async function generateMetadata({
   const nom = coupeNom(s, "en");
   return {
     title: `${nom} wedding dresses in Paris`,
-    description: `The ${nom.toLowerCase()} wedding dresses of the MADAMOON showroom, Paris 10e. ${familleTexte(s.nom, "en", FAMILLES[s.nom])} Private fitting by appointment.`,
+    description: description(
+      `The ${nom.toLowerCase()} wedding dresses of the MADAMOON showroom, Paris 10e.`,
+      familleTexte(s.nom, "en", FAMILLES[s.nom]),
+      "Private fitting by appointment.",
+      "Private fitting by appointment, made to measure.",
+    ),
     alternates: {
       canonical: `/en/silhouettes/${coupe}/`,
       languages: {
@@ -40,6 +46,10 @@ export async function generateMetadata({
         "x-default": `/coupes/${s.ancre}/`,
       },
     },
+    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+     * un lien collé avec un paramètre de campagne devient un objet
+     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+    openGraph: { url: `/en/silhouettes/${coupe}/` },
   };
 }
 

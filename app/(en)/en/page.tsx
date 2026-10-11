@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   description:
     "Bridal boutique in Paris 10e. The collections of several designers, private fittings by appointment, made to measure from €1,500.",
   alternates: { canonical: "/en/", languages: { fr: "/", en: "/en/", "x-default": "/" } },
+  /* L'adresse canonique sert aussi d'adresse de partage. */
+  openGraph: { url: "/en/" },
 };
 
 export default function Home() {

@@ -24,7 +24,13 @@ jobs:
   publier:
     runs-on: ubuntu-latest
     steps:
+      # L'historique entier : le plan du site date chaque page d'après le
+      # dernier commit qui a touché son contenu, et un clone superficiel
+      # ne connaît qu'un seul commit — toutes les pages auraient porté la
+      # même date, ce que Google repère et ignore.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

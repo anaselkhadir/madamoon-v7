@@ -88,7 +88,20 @@ const HORAIRES = [
 
 export const MAISON_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "BridalShop",
+  /*
+   * « ClothingStore », et non « BridalShop ».
+   *
+   * BridalShop n'existe pas : schema.org rend une 404 sur ce nom. Il
+   * avait l'air juste — c'est exactement ce que la maison est — et il
+   * était faux. Un type que le vocabulaire ne connaît pas se lit comme
+   * « Thing », et la fiche perd d'un coup son éligibilité aux résultats
+   * enrichis de commerce local : horaires, adresse, note, carte.
+   *
+   * ClothingStore est le descendant de « Store » qui s'en approche le
+   * plus, et il est réel. Ce que la maison vend de plus précis se dit
+   * ailleurs : dans « makesOffer », dans le nom, dans la description.
+   */
+  "@type": "ClothingStore",
   "@id": ID_MAISON,
   name: MAISON.nom,
   description: MAISON.baseline,

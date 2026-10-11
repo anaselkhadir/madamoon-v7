@@ -6,6 +6,7 @@ export const dynamic = "force-static";
 import { CREATEURS, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { versLangue } from "@/lib/langue";
+import { execFileSync } from "node:child_process";
 
 /*
  * Le plan du site, dans les deux langues.
@@ -37,6 +38,57 @@ const PAGES = [
   "/faq",
 ];
 
+/*
+ * La date de dernière modification, prise dans l'historique.
+ *
+ * Google se sert de « lastmod » quand il le trouve fiable, et l'ignore
+ * sinon. La date du jour sur les cent quatre-vingt-quatre adresses
+ * aurait été le contraire d'une information : un site ne change pas
+ * entièrement à chaque publication.
+ *
+ * On date donc chaque section d'après le dernier commit qui a touché le
+ * fichier où son contenu est écrit. C'est vrai, c'est vérifiable, et
+ * cela donne des dates différentes — le catalogue n'a pas bougé le jour
+ * où les morphologies ont été réécrites.
+ *
+ * Si git n'est pas là, ou si le clone est superficiel, on ne date rien :
+ * une date fausse vaut moins que pas de date.
+ */
+const DATES = new Map<string, string | undefined>();
+
+function derniereTouche(fichier: string): string | undefined {
+  if (!DATES.has(fichier)) {
+    try {
+      const sortie = execFileSync("git", ["log", "-1", "--format=%cI", "--", fichier], {
+        encoding: "utf8",
+        stdio: ["ignore", "pipe", "ignore"],
+      }).trim();
+      DATES.set(fichier, sortie || undefined);
+    } catch {
+      DATES.set(fichier, undefined);
+    }
+  }
+  return DATES.get(fichier);
+}
+
+/* Où le contenu de chaque rubrique est écrit. Le premier motif qui
+ * correspond gagne ; la racine et les pages de la maison retombent sur
+ * la table des textes. */
+const SOURCES: [string, string][] = [
+  ["/robes", "lib/madamoon.ts"],
+  ["/createurs", "lib/madamoon.ts"],
+  ["/faq", "lib/madamoon.ts"],
+  ["/coupes", "lib/coupes.ts"],
+  ["/morphologies", "lib/morphologies.ts"],
+];
+
+function dateDe(adresseFr: string): Date | undefined {
+  const source =
+    SOURCES.find(([prefixe]) => adresseFr.startsWith(prefixe))?.[1] ?? "lib/textes.ts";
+  const quand = derniereTouche(source);
+  return quand ? new Date(quand) : undefined;
+}
+
 /* Les deux entrées d'une page : la française et l'anglaise. */
 function entree(adresseFr: string, priority: number) {
   /* La barre oblique finale, parce que c'est ainsi que le site est
@@ -48,10 +100,18 @@ function entree(adresseFr: string, priority: number) {
   const fr = barre(adresseFr);
   const en = barre(versLangue(adresseFr || "/", "en"));
   const langues = { fr, en, "x-default": fr };
+  const lastModified = dateDe(adresseFr || "/");
   return [
-    { url: fr, changeFrequency: "monthly" as const, priority, alternates: { languages: langues } },
+    {
+      url: fr,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority,
+      alternates: { languages: langues },
+    },
     {
       url: en,
+      lastModified,
       changeFrequency: "monthly" as const,
       /* L'anglais vient après : la maison est parisienne, et ses mariées
        * cherchent en français. */

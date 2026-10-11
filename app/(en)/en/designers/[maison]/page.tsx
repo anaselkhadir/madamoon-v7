@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageMaison from "@/components/pages/PageMaison";
 import { CREATEURS, createurParSlug } from "@/lib/madamoon";
 import { createurNom, createurNote, createurOrigine } from "@/lib/contenu";
+import { description } from "@/lib/meta";
 
 /* Les identifiants de maison ne se traduisent pas : « olya-mak » est un
  * nom propre, pas un mot. Seule la rubrique change. */
@@ -20,7 +21,12 @@ export async function generateMetadata({
   const nom = createurNom(createur, "en");
   return {
     title: `${nom} wedding dresses in Paris`,
-    description: `The ${nom} wedding dresses (${createurOrigine(createur, "en").toLowerCase()}) at the MADAMOON showroom, Paris 10e. ${createurNote(createur, "en")} Private fitting by appointment.`,
+    description: description(
+      `${nom} wedding dresses (${createurOrigine(createur, "en").toLowerCase()}) at the MADAMOON showroom, Paris 10e.`,
+      createurNote(createur, "en"),
+      "Private fitting by appointment.",
+      "Private fitting by appointment, made to measure.",
+    ),
     alternates: {
       canonical: `/en/designers/${createur.slug}/`,
       languages: {
@@ -29,6 +35,10 @@ export async function generateMetadata({
         "x-default": `/createurs/${createur.slug}/`,
       },
     },
+    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+     * un lien collé avec un paramètre de campagne devient un objet
+     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+    openGraph: { url: `/en/designers/${createur.slug}/` },
   };
 }
 

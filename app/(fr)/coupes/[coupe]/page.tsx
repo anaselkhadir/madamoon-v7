@@ -3,6 +3,7 @@ import PageCoupe from "@/components/pages/PageCoupe";
 import { FAMILLES } from "@/lib/madamoon";
 import { COUPES, coupeParAncre } from "@/lib/coupes";
 import { COUPES_EN } from "@/lib/langue";
+import { description } from "@/lib/meta";
 
 export function generateStaticParams() {
   return COUPES.map((s) => ({ coupe: s.ancre }));
@@ -20,7 +21,12 @@ export async function generateMetadata({
   return {
     /* Le gabarit du site ajoute « — MADAMOON » : ne pas le redire ici. */
     title: `Robe de mariée ${s.nom.toLowerCase()} à Paris`,
-    description: `Les robes de mariée ${s.nom.toLowerCase()} du showroom MADAMOON, Paris 10e. ${FAMILLES[s.nom]} Essayage privé sur rendez-vous.`,
+    description: description(
+      `Les robes de mariée ${s.nom.toLowerCase()} du showroom MADAMOON, Paris 10e.`,
+      FAMILLES[s.nom],
+      "Essayage privé sur rendez-vous.",
+      "Essayage privé sur rendez-vous, confection sur mesure.",
+    ),
     alternates: {
       canonical: `/coupes/${s.ancre}/`,
       languages: {
@@ -29,6 +35,10 @@ export async function generateMetadata({
         "x-default": `/coupes/${s.ancre}/`,
       },
     },
+    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+     * un lien collé avec un paramètre de campagne devient un objet
+     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+    openGraph: { url: `/coupes/${s.ancre}/` },
   };
 }
 

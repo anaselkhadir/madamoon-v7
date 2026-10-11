@@ -13,6 +13,10 @@ export const metadata: Metadata = {
       "x-default": "/trouver-ma-robe/",
     },
   },
+  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+   * un lien collé avec un paramètre de campagne devient un objet
+   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+  openGraph: { url: "/en/find-my-dress/" },
 };
 
 export default function FindMyDress() {

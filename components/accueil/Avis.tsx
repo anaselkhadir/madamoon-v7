@@ -101,7 +101,9 @@ export default function Avis({ langue = "fr" }: { langue?: Langue }) {
    */
   const donnees = {
     "@context": "https://schema.org",
-    "@type": "BridalShop",
+    /* Le même type que le gabarit : deux nœuds de même « @id » ne se
+     * fondent en un seul que s'ils s'accordent. */
+    "@type": "ClothingStore",
     "@id": ID_MAISON,
     aggregateRating: {
       "@type": "AggregateRating",

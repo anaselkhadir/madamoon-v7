@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical: "/robes/",
     languages: { fr: "/robes/", en: "/en/dresses/", "x-default": "/robes/" },
   },
+  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+   * un lien collé avec un paramètre de campagne devient un objet
+   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+  openGraph: { url: "/robes/" },
 };
 
 export default function Robes() {

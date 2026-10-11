@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageMorphologie from "@/components/pages/PageMorphologie";
 import { MORPHOLOGIES, morphologieParSlug } from "@/lib/madamoon";
 import { edito } from "@/lib/contenu";
+import { description } from "@/lib/meta";
 
 /* Les lettres ne se traduisent pas : /en/body-shapes/a comme
  * /morphologies/a. C'est un repère, pas un mot. */
@@ -21,7 +22,12 @@ export async function generateMetadata({
   const slug = m.lettre.toLowerCase();
   return {
     title: `Wedding dresses for the ${m.lettre} body shape`,
-    description: `${e.promesse} How to recognise the ${m.lettre} shape, the cuts that suit it and the models to try on at the MADAMOON showroom, Paris 10e.`,
+    description: description(
+      `The ${m.lettre} body shape: how to recognise it, and the cuts that suit it.`,
+      e.promesse,
+      "To try on at the MADAMOON showroom, Paris 10e.",
+      "The models are to try on at the MADAMOON showroom, Paris 10e.",
+    ),
     alternates: {
       canonical: `/en/body-shapes/${slug}/`,
       languages: {
@@ -30,6 +36,10 @@ export async function generateMetadata({
         "x-default": `/morphologies/${slug}/`,
       },
     },
+    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
+     * un lien collé avec un paramètre de campagne devient un objet
+     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
+    openGraph: { url: `/en/body-shapes/${slug}/` },
   };
 }
 

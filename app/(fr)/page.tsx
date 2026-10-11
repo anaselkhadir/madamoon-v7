@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   description:
     "Boutique de robes de mariée à Paris 10e. Les collections de plusieurs créateurs, essayage privé sur rendez-vous, confection sur mesure à partir de 1 500 €.",
   alternates: { canonical: "/", languages: { fr: "/", en: "/en/", "x-default": "/" } },
+  /* L'adresse canonique sert aussi d'adresse de partage. */
+  openGraph: { url: "/" },
 };
 
 export default function Accueil() {
