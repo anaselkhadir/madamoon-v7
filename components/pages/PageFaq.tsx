@@ -122,7 +122,15 @@ export default function PageFaq({ langue }: { langue: Langue }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
       />
-      <FilDAriane langue={langue} rangs={[{ nom: L.titre, adresse: "/faq" }]} />
+      {/* « FAQ », comme la barre — et non « Questions fréquentes »,
+        * comme le titre. Le fil d'Ariane paraît dans les résultats de
+        * recherche, et une rubrique ne s'y nomme pas autrement que dans
+        * le menu du site. Le titre de la page, lui, reste en toutes
+        * lettres : c'est ce qu'une mariée tape dans un moteur. */}
+      <FilDAriane
+        langue={langue}
+        rangs={[{ nom: T.raccourcis.lesQuestions, adresse: "/faq" }]}
+      />
 
       {/* ————————————————————————————————————— l'ouverture —————
        * Pas de photographie plein cadre : la page est faite pour être

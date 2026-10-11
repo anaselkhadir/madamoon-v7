@@ -48,7 +48,7 @@ const FR = {
     trouverMaRobe: "Trouver ma robe",
     leShowroom: "Le showroom",
     laMaison: "À propos",
-    lesQuestions: "Les questions",
+    lesQuestions: "FAQ",
     prendreRendezvous: "Prendre rendez-vous",
   },
   /* Les barreaux du fil d'Ariane, celui que les moteurs lisent dans le
@@ -769,7 +769,7 @@ const EN: Textes = {
     trouverMaRobe: "Find my dress",
     leShowroom: "The showroom",
     laMaison: "About",
-    lesQuestions: "The questions",
+    lesQuestions: "FAQ",
     prendreRendezvous: "Book an appointment",
   },
   ariane: {
