@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif, Pinyon_Script, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 
 import Entete from "@/components/chrome/Entete";
 import Elise from "@/components/Elise";
@@ -24,23 +24,53 @@ import { t } from "@/lib/textes";
  * Les groupes ne changent aucune adresse : (fr)/robes reste /robes.
  */
 
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+/*
+ * Les quatre polices, servies depuis le dépôt.
+ *
+ * Elles venaient de « next/font/google », qui les télécharge chez
+ * Google à la compilation. Quatre mises en ligne ont échoué pour cette
+ * seule raison : le serveur de Google ne répondait pas dans la seconde,
+ * et le site entier ne se construisait plus. Un déploiement ne doit pas
+ * dépendre d'un tiers.
+ *
+ * Les fichiers sont désormais dans « app/polices/ », tels que Google
+ * les servait — ce sont les mêmes octets, le rendu ne bouge pas. Deux
+ * cent trente-six kilo-octets dans le dépôt, et plus aucune requête
+ * vers un domaine Google au chargement : une connexion de moins à
+ * ouvrir pour la visiteuse, et un tiers de moins à déclarer.
+ *
+ * « display: swap » partout : le texte paraît tout de suite dans la
+ * police de secours, et se recompose quand la vraie arrive. L'inverse —
+ * attendre la police — laisse une page blanche.
+ */
+
+/* Le serif d'affichage : les titres, les phrases, les grands nombres.
+ * Une seule graisse, et son italique, que les passages en exergue de
+ * l'accueil demandent. Sans elle le navigateur en fabrique une : il
+ * penche le romain d'une dizaine de degrés, ce qui n'est pas une
+ * italique mais un romain de travers — les courbes ne sont pas
+ * redessinées, et cela se voit sur un « a » ou un « e ». */
+const serif = localFont({
+  src: [
+    { path: "../../app/polices/instrument-serif-400.woff2", weight: "400", style: "normal" },
+    { path: "../../app/polices/instrument-serif-400-italic.woff2", weight: "400", style: "italic" },
+  ],
   variable: "--police-serif",
   display: "swap",
+  fallback: ["Times New Roman", "serif"],
 });
 
-/* L'anglaise du nom de la maison, sur l'accueil. Une copperplate gravée,
- * dans l'esprit de la référence choisie par la boutique — et sous
- * licence ouverte, contrairement à celle-là. Elle ne sert qu'à un mot :
- * une graisse, l'alphabet latin, rien de plus. */
-const anglaise = Pinyon_Script({
-  subsets: ["latin"],
-  weight: ["400"],
+/* L'anglaise du nom de la maison, sur l'accueil. Une copperplate
+ * gravée, dans l'esprit de la référence choisie par la boutique — et
+ * sous licence ouverte, contrairement à celle-là. Elle ne sert qu'à un
+ * mot : une graisse, l'alphabet latin, rien de plus. */
+const anglaise = localFont({
+  src: "../../app/polices/pinyon-script-400.woff2",
+  weight: "400",
+  style: "normal",
   variable: "--police-anglaise",
   display: "swap",
+  fallback: ["Snell Roundhand", "cursive"],
 });
 
 /*
@@ -48,19 +78,23 @@ const anglaise = Pinyon_Script({
  *
  * Elle signe sa photographie, et une signature ne se compose pas : la
  * Pinyon Script est une anglaise gravée, une plume de faire-part, et la
- * maison voulait un marqueur. Caveat est une écriture relevée à la main,
- * et sa graisse 600 a l'épaisseur d'un feutre — la Permanent Marker,
- * l'autre candidate, écrit sur une affiche, pas sur un tirage.
+ * maison voulait un marqueur. Caveat est une écriture relevée à la
+ * main, et sa graisse 600 a l'épaisseur d'un feutre — la Permanent
+ * Marker, l'autre candidate, écrit sur une affiche, pas sur un tirage.
  *
- * Deux graisses : la 600 pour la signature, qui est un trait de feutre,
- * et la 500 pour la citation — cent quarante signes en gras se lisent
- * mal, et une main qui écrit longtemps appuie moins.
+ * C'est une police variable : un seul fichier porte toutes les graisses
+ * de l'axe. On déclare donc l'intervalle plutôt que deux poids, et le
+ * navigateur interpole — la 600 pour la signature, qui est un trait de
+ * feutre, et la 500 pour la citation, parce que cent quarante signes en
+ * gras se lisent mal et qu'une main qui écrit longtemps appuie moins.
  */
-const main = Caveat({
-  subsets: ["latin"],
-  weight: ["500", "600"],
+const main = localFont({
+  src: "../../app/polices/caveat-variable.woff2",
+  weight: "400 700",
+  style: "normal",
   variable: "--police-main",
   display: "swap",
+  fallback: ["Bradley Hand", "cursive"],
 });
 
 /* Le texte courant du site. Inter a remplacé le Quattrocento Sans à la
@@ -68,20 +102,17 @@ const main = Caveat({
  * neutre — les paragraphes se lisent mieux à petite taille, sur
  * téléphone surtout.
  *
- * Deux graisses seulement, le romain et le gras : le site n'en emploie
- * pas d'autre, et chacune se télécharge.
- *
- * L'italique est demandée depuis que les passages en exergue de
- * l'introduction la portent. Sans elle le navigateur en fabrique une :
- * il penche le romain d'une dizaine de degrés, ce qui n'est pas une
- * italique mais un romain de travers — les courbes ne sont pas
- * redessinées, et cela se voit sur un « a » ou un « e ». */
-const sans = Inter({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+ * Variable elle aussi, et en deux fichiers : le romain et l'italique.
+ * L'intervalle couvre les deux graisses que le site emploie, la 400 et
+ * la 700. */
+const sans = localFont({
+  src: [
+    { path: "../../app/polices/inter-variable.woff2", weight: "100 900", style: "normal" },
+    { path: "../../app/polices/inter-variable-italic.woff2", weight: "100 900", style: "italic" },
+  ],
   variable: "--police-sans",
   display: "swap",
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
 });
 
 export default function Gabarit({
