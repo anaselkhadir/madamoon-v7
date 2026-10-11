@@ -35,7 +35,8 @@ export default function PageRendezVous({ langue }: { langue: Langue }) {
       <section className="grid md:grid-cols-2">
         <div className="relative min-h-[42svh] overflow-hidden md:min-h-svh">
           <Photo
-            media={SCENES["seuil"]}
+            media={SCENES["showroom"]}
+            position="58% 50%"
             dossier="scenes"
             alt={altScene(L.altScene, langue)}
             sizes="(max-width: 768px) 100vw, 50vw"

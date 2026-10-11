@@ -1,12 +1,10 @@
-import Link from "@/components/Lien";
-import TitreSection from "@/components/TitreSection";
 import Photo from "@/components/media/Photo";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import FilDAriane from "@/components/FilDAriane";
-import { CREATEURS, MAISON, SITE_URL } from "@/lib/madamoon";
+import { MAISON, SITE_URL } from "@/lib/madamoon";
 import { SCENES } from "@/lib/medias";
 import { ID_MAISON } from "@/lib/schema";
-import { createurNom, createurNote, createurOrigine, maison } from "@/lib/contenu";
+import { maison } from "@/lib/contenu";
 import { t } from "@/lib/textes";
 import { versLangue, type Langue } from "@/lib/langue";
 
@@ -556,29 +554,6 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
           <span className="legende mt-2 block">{L.fonction}</span>
         </p>
       </section>
-
-      {/* ——————————————————————————————————— les créateurs —————
-       * Le récit est fini. Reste ce que la maison porte — et le maillage
-       * vers les cinq pages de créateurs, qui n'existe nulle part
-       * ailleurs sous cette forme groupée. */}
-      <TitreSection titre={L.lesCreateurs} lien={{ href: "/robes", label: L.voirLesRobes }} />
-      <div className="gouttiere">
-        <p className="texte mesure-l">{L.lesCreateursNote}</p>
-        <ul className="mt-8 grid gap-x-10 gap-y-8 md:grid-cols-2">
-          {CREATEURS.map((c) => (
-            <li key={c.nom} data-lever>
-              <div className="filet mb-4" />
-              <h3 className="titre-section">
-                <Link href={`/createurs/${c.slug}`} className="souligne hover:text-action">
-                  {createurNom(c, langue)}
-                </Link>
-              </h3>
-              <p className="legende mt-1">{createurOrigine(c, langue)}</p>
-              <p className="texte mesure-l mt-3">{createurNote(c, langue)}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
 
       <section className="gouttiere mt-[clamp(3rem,5.5vw,5rem)] bg-craie py-[clamp(3.5rem,7vw,7rem)]">
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">

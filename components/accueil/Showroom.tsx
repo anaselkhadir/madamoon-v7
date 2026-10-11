@@ -33,7 +33,7 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
     >
       <div className="absolute inset-0 respire">
         <Photo
-          media={SCENES["seuil"]}
+          media={SCENES["showroom"]}
           dossier="scenes"
           alt={altScene(L.showroom.alt, langue)}
           sizes="100vw"

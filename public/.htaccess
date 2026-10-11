@@ -75,6 +75,21 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ————————————————————————————————— la durée de cache —————
+# Les redirections ne sont pas des fichiers.
+#
+# « mod_expires » ne sait borner que ce qui a un nom de fichier : une 301
+# part sans « Cache-Control », et un cache en déduit ce qu'il veut. Celui
+# de Hostinger en a déduit l'éternité — la redirection de /faq/ vers
+# /a-propos/, retirée du site, a continué d'être servie quatre-vingt-sept
+# minutes après que la vraie page fut en ligne. Les visiteurs et Google
+# recevaient l'ancienne réponse ; seule une purge l'a délogée.
+#
+# Dix minutes, donc, comme pour le HTML : une redirection qu'on retire
+# disparaît alors d'elle-même dans le quart d'heure.
+<IfModule mod_headers.c>
+  Header always set Cache-Control "public, max-age=600" "expr=%{REQUEST_STATUS} >= 300 && %{REQUEST_STATUS} < 400"
+</IfModule>
+
 <IfModule mod_expires.c>
   ExpiresActive On
   # Les fichiers de Next portent leur empreinte dans leur nom : ils ne

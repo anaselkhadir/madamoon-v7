@@ -15,7 +15,23 @@ import FilDAriane from "@/components/FilDAriane";
  * qu'il faut savoir avant de venir. Le même langage que partout ailleurs.
  */
 
-const VUES = ["lumiere", "dentelle", "voile"] as const;
+/*
+ * Les trois vignettes de la visite.
+ *
+ * La maison a demandé que toutes les images présentées comme le
+ * showroom soient la photographie qu'elle a envoyée. Les trois
+ * montraient autre chose — un détail de dentelle, une robe en studio,
+ * et une mariée sous des palmiers devant un mur en pierre sèche, sur
+ * une page qui parle d'une boutique du dixième arrondissement.
+ *
+ * C'est donc la même photographie trois fois, mais pas le même cadrage.
+ * La tuile est un portrait de 447 sur 621 et la photographie un paysage
+ * de quatre tiers : chaque tranche n'en montre qu'un gros tiers. À
+ * gauche le piano et les vitraux, au milieu les fauteuils, à droite le
+ * portant. Trois cadrages identiques se seraient lus comme une panne
+ * d'affichage.
+ */
+const CADRAGES = ["12% 50%", "50% 52%", "88% 50%"] as const;
 
 export default function PageShowroom({ langue }: { langue: Langue }) {
   const L = t(langue).pages.showroom;
@@ -79,13 +95,14 @@ export default function PageShowroom({ langue }: { langue: Langue }) {
 
       <div className="gouttiere pt-[clamp(2rem,3.5vw,3.5rem)]">
         <div className="trame-tuiles md:grid-cols-3">
-          {VUES.map((v, i) => (
-            <div key={v} className="tuile" data-voile data-retard={i * 110}>
+          {CADRAGES.map((position, i) => (
+            <div key={position} className="tuile" data-voile data-retard={i * 110}>
               <Photo
-                media={SCENES[v]}
+                media={SCENES["showroom"]}
                 dossier="scenes"
-                alt={altScene(L.altDetail, langue)}
+                alt={altScene(L.altDetails[i], langue)}
                 sizes="(max-width: 768px) 100vw, 31vw"
+                position={position}
               />
             </div>
           ))}

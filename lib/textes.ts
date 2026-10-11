@@ -433,7 +433,14 @@ const FR = {
       uneHeure: "Une heure, le showroom privatisé, et quelqu’un qui connaît chaque robe.",
       venir: "Venir",
       altScene: "Robes de mariée suspendues dans le showroom",
-      altDetail: "Détail d’une robe de mariée",
+      /* Trois cadrages d'une même photographie : trois textes, et non
+       * trois fois le même. Un lecteur d'écran qui entend « détail d'une
+       * robe » trois fois de suite n'apprend rien la deuxième fois. */
+      altDetails: [
+        "Le piano, les vitraux et le miroir sur pied du showroom MADAMOON",
+        "Les fauteuils de velours bleu et la robe de mariée posée sur le buste",
+        "Le miroir doré, le portant de robes de mariée et les boiseries du showroom",
+      ],
     },
     /*
      * L'histoire de la maison, telle que Mouna l'a écrite.
@@ -1091,7 +1098,11 @@ const EN: Textes = {
       uneHeure: "An hour, the showroom to yourself, and someone who knows every dress.",
       venir: "Coming to us",
       altScene: "Wedding dresses hanging in the showroom",
-      altDetail: "A detail of a wedding dress",
+      altDetails: [
+        "The piano, the stained glass and the cheval mirror of the MADAMOON showroom",
+        "The blue velvet armchairs and the wedding dress on its stand",
+        "The gilt mirror, the rail of wedding dresses and the showroom's woodwork",
+      ],
     },
     maisonPage: {
       titre: "The MADAMOON story",
