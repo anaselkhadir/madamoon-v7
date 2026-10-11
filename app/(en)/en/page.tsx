@@ -7,6 +7,7 @@ import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
+import { partage } from "@/lib/meta";
 
 /*
  * L'accueil, en anglais.
@@ -29,8 +30,7 @@ export const metadata: Metadata = {
   description:
     "Bridal boutique in Paris 10e. The collections of several designers, private fittings by appointment, made to measure from €1,500.",
   alternates: { canonical: "/en/", languages: { fr: "/", en: "/en/", "x-default": "/" } },
-  /* L'adresse canonique sert aussi d'adresse de partage. */
-  openGraph: { url: "/en/" },
+  openGraph: partage("/en/", "en"),
 };
 
 export default function Home() {

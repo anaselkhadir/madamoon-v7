@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ListeCoupsDeCoeur from "@/components/parcours/ListeCoupsDeCoeur";
+import { partage } from "@/lib/meta";
 
 /*
  * Les coups de cœur, en anglais.
@@ -13,8 +14,7 @@ export const metadata: Metadata = {
   description:
     "The MADAMOON wedding dresses you have kept, to find again before your private fitting in Paris 10e.",
   alternates: { canonical: "/en/favourites/" },
-  /* L'adresse canonique sert aussi d'adresse de partage. */
-  openGraph: { url: "/en/favourites/" },
+  openGraph: partage("/en/favourites/", "en"),
   robots: { index: false, follow: true },
 };
 

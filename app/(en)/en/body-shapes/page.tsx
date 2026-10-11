@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageMorphologies from "@/components/pages/PageMorphologies";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Choosing a wedding dress for your body shape",
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
     canonical: "/en/body-shapes/",
     languages: { fr: "/morphologies/", en: "/en/body-shapes/", "x-default": "/morphologies/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/en/body-shapes/" },
+  openGraph: partage("/en/body-shapes/", "en"),
 };
 
 export default function BodyShapes() {

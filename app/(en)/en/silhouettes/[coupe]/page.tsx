@@ -4,7 +4,7 @@ import { FAMILLES } from "@/lib/madamoon";
 import { COUPES, coupeParAncre } from "@/lib/coupes";
 import { COUPES_EN } from "@/lib/langue";
 import { coupeNom, familleTexte } from "@/lib/contenu";
-import { description } from "@/lib/meta";
+import { description, partage } from "@/lib/meta";
 
 /*
  * La page d'une coupe, en anglais.
@@ -46,10 +46,7 @@ export async function generateMetadata({
         "x-default": `/coupes/${s.ancre}/`,
       },
     },
-    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-     * un lien collé avec un paramètre de campagne devient un objet
-     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-    openGraph: { url: `/en/silhouettes/${coupe}/` },
+    openGraph: partage(`/en/silhouettes/${coupe}/`, "en"),
   };
 }
 

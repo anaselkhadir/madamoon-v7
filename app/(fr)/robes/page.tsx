@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageRobes from "@/components/pages/PageRobes";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Robes de mariée à essayer en showroom à Paris",
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
     canonical: "/robes/",
     languages: { fr: "/robes/", en: "/en/dresses/", "x-default": "/robes/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/robes/" },
+  openGraph: partage("/robes/"),
 };
 
 export default function Robes() {

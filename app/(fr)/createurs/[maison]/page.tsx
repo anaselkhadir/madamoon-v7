@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageMaison from "@/components/pages/PageMaison";
 import { CREATEURS, createurParSlug } from "@/lib/madamoon";
-import { description } from "@/lib/meta";
+import { description, partage } from "@/lib/meta";
 
 export function generateStaticParams() {
   return CREATEURS.map((c) => ({ maison: c.slug }));
@@ -32,10 +32,7 @@ export async function generateMetadata({
         "x-default": `/createurs/${createur.slug}/`,
       },
     },
-    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-     * un lien collé avec un paramètre de campagne devient un objet
-     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-    openGraph: { url: `/createurs/${createur.slug}/` },
+    openGraph: partage(`/createurs/${createur.slug}/`),
   };
 }
 

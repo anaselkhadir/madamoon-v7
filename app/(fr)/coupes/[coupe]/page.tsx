@@ -3,7 +3,7 @@ import PageCoupe from "@/components/pages/PageCoupe";
 import { FAMILLES } from "@/lib/madamoon";
 import { COUPES, coupeParAncre } from "@/lib/coupes";
 import { COUPES_EN } from "@/lib/langue";
-import { description } from "@/lib/meta";
+import { description, partage } from "@/lib/meta";
 
 export function generateStaticParams() {
   return COUPES.map((s) => ({ coupe: s.ancre }));
@@ -35,10 +35,7 @@ export async function generateMetadata({
         "x-default": `/coupes/${s.ancre}/`,
       },
     },
-    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-     * un lien collé avec un paramètre de campagne devient un objet
-     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-    openGraph: { url: `/coupes/${s.ancre}/` },
+    openGraph: partage(`/coupes/${s.ancre}/`),
   };
 }
 

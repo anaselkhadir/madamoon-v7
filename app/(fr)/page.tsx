@@ -8,6 +8,7 @@ import Coupes from "@/components/accueil/Coupes";
 import Createurs from "@/components/accueil/Createurs";
 import Avis from "@/components/accueil/Avis";
 import Showroom from "@/components/accueil/Showroom";
+import { partage } from "@/lib/meta";
 
 /*
  * L'accueil.
@@ -34,8 +35,7 @@ export const metadata: Metadata = {
   description:
     "Boutique de robes de mariée à Paris 10e. Les collections de plusieurs créateurs, essayage privé sur rendez-vous, confection sur mesure à partir de 1 500 €.",
   alternates: { canonical: "/", languages: { fr: "/", en: "/en/", "x-default": "/" } },
-  /* L'adresse canonique sert aussi d'adresse de partage. */
-  openGraph: { url: "/" },
+  openGraph: partage("/"),
 };
 
 export default function Accueil() {

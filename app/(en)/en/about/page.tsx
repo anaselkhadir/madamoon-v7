@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageAPropos from "@/components/pages/PageAPropos";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "The MADAMOON story, by its founder",
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
     canonical: "/en/about/",
     languages: { fr: "/a-propos/", en: "/en/about/", "x-default": "/a-propos/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/en/about/" },
+  openGraph: partage("/en/about/", "en"),
 };
 
 export default function About() {

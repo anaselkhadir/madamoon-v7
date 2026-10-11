@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageTrouver from "@/components/pages/PageTrouver";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Find my wedding dress",
@@ -13,10 +14,7 @@ export const metadata: Metadata = {
       "x-default": "/trouver-ma-robe/",
     },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/en/find-my-dress/" },
+  openGraph: partage("/en/find-my-dress/", "en"),
 };
 
 export default function FindMyDress() {

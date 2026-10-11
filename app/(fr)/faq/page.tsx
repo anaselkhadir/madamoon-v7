@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageFaq from "@/components/pages/PageFaq";
+import { partage } from "@/lib/meta";
 
 /* L'adresse est celle de l'ancien site WordPress : /faq/ existait, elle
  * était indexée, et elle était renvoyée faute de page. Elle reprend sa
@@ -13,10 +14,7 @@ export const metadata: Metadata = {
     canonical: "/faq/",
     languages: { fr: "/faq/", en: "/en/faq/", "x-default": "/faq/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/faq/" },
+  openGraph: partage("/faq/"),
 };
 
 export default function Faq() {

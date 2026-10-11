@@ -4,6 +4,7 @@ import "../globals.css";
 
 import { SITE_URL } from "@/lib/madamoon";
 import { APERCU } from "@/lib/chemin";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,31 +42,20 @@ export const metadata: Metadata = {
     languages: { fr: "/", en: "/en/", "x-default": "/" },
   },
   /*
-   * Ni « title », ni « description », ni « url » ici.
+   * L'Open Graph vient de « partage() », comme sur chaque page.
    *
-   * Un gabarit qui les fixe les impose à toutes ses pages : chaque fiche
-   * de robe, chaque page de coupe partageait le titre et l'adresse de
-   * l'accueil. Un lien vers « L'histoire de MADAMOON » collé dans
-   * WhatsApp annonçait « Robes de mariée à Paris » et renvoyait à la
-   * racine — et Pinterest attribuait l'épingle à l'accueil.
+   * Le gabarit fixait ici le titre, la description et l'adresse, et les
+   * imposait à toutes ses pages : un lien vers « L'histoire de MADAMOON »
+   * collé dans WhatsApp annonçait « Robes de mariée à Paris » et renvoyait
+   * à la racine. Les pages ont donc déclaré le leur — et comme Next
+   * remplace « openGraph » au lieu de le compléter, elles ont effacé
+   * l'image du même coup. Une seule fonction les écrit maintenant toutes,
+   * et il n'y a plus qu'un endroit où se tromper.
    *
-   * Laissés vides, Next les reprend du titre et de la description de la
-   * page, et de son canonique. Seul ce qui est vrai partout reste ici :
-   * le type, la langue, le nom de la maison et l'image de partage.
+   * Le titre et la description restent absents : Next les reprend de la
+   * page, ce qui est exactement ce qu'on veut.
    */
-  openGraph: {
-    type: "website",
-    locale: "fr_FR",
-    siteName: "MADAMOON",
-    images: [
-      {
-        url: "/partage/madamoon-showroom-paris.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Le showroom MADAMOON à Paris 10e, ses portants de robes de mariée et son escalier",
-      },
-    ],
-  },
+  openGraph: partage("/"),
   twitter: {
     card: "summary_large_image",
     images: ["/partage/madamoon-showroom-paris.jpg"],

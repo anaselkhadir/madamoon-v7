@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageMorphologie from "@/components/pages/PageMorphologie";
 import { MORPHOLOGIES, morphologieParSlug } from "@/lib/madamoon";
 import { edito } from "@/lib/contenu";
-import { description } from "@/lib/meta";
+import { description, partage } from "@/lib/meta";
 
 /* Les lettres ne se traduisent pas : /en/body-shapes/a comme
  * /morphologies/a. C'est un repère, pas un mot. */
@@ -36,10 +36,7 @@ export async function generateMetadata({
         "x-default": `/morphologies/${slug}/`,
       },
     },
-    /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-     * un lien collé avec un paramètre de campagne devient un objet
-     * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-    openGraph: { url: `/en/body-shapes/${slug}/` },
+    openGraph: partage(`/en/body-shapes/${slug}/`, "en"),
   };
 }
 

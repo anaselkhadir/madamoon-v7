@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageFaq from "@/components/pages/PageFaq";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Wedding dress questions, answered",
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
     canonical: "/en/faq/",
     languages: { fr: "/faq/", en: "/en/faq/", "x-default": "/faq/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/en/faq/" },
+  openGraph: partage("/en/faq/", "en"),
 };
 
 export default function Faq() {

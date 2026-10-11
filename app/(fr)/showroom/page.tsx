@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageShowroom from "@/components/pages/PageShowroom";
+import { partage } from "@/lib/meta";
 
 export const metadata: Metadata = {
   title: "Showroom robe de mariée à Paris 10e",
@@ -9,10 +10,7 @@ export const metadata: Metadata = {
     canonical: "/showroom/",
     languages: { fr: "/showroom/", en: "/en/showroom/", "x-default": "/showroom/" },
   },
-  /* L'adresse canonique sert aussi d'adresse de partage : sans elle,
-   * un lien collé avec un paramètre de campagne devient un objet
-   * distinct pour Facebook et Pinterest, et l'attribution se divise. */
-  openGraph: { url: "/showroom/" },
+  openGraph: partage("/showroom/"),
 };
 
 export default function Showroom() {
