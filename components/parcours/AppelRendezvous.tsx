@@ -4,6 +4,7 @@ import Link from "@/components/Lien";
 import { useCallback, useRef } from "react";
 import { CALENDLY, urlCalendly } from "@/lib/calendly";
 import { media as chemin } from "@/lib/chemin";
+import { evenement } from "@/components/chrome/Balises";
 
 /*
  * Le bouton qui ouvre le rendez-vous.
@@ -95,6 +96,18 @@ export default function AppelRendezvous({
       e.preventDefault();
       attente.current = true;
       styleCalendly();
+
+      /* L'intention de rendez-vous, dite au conteneur.
+       *
+       * C'est l'événement qui compte pour la maison : tout le reste du
+       * site mène ici. Il est poussé au clic, et non à la réservation —
+       * celle-ci se termine chez Calendly, sur un autre domaine, et ne
+       * nous revient pas. On mesure donc une intention, pas une venue,
+       * et il faut le savoir en lisant les chiffres.
+       *
+       * La robe est jointe quand le bouton en nomme une : la maison
+       * saura laquelle appelle le plus de rendez-vous. */
+      evenement("rendezvous_clic", robe ? { robe } : undefined);
 
       const limite = new Promise<boolean>((r) => window.setTimeout(() => r(false), 2500));
       const pret = await Promise.race([scriptCalendly(), limite]);

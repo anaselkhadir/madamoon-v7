@@ -6,6 +6,7 @@ import Pied from "@/components/chrome/Pied";
 import CarteRendezvous from "@/components/chrome/CarteRendezvous";
 import Cookies from "@/components/chrome/Cookies";
 import Clarity from "@/components/chrome/Clarity";
+import Balises from "@/components/chrome/Balises";
 import Mouvement from "@/components/Mouvement";
 import { MAISON_SCHEMA, siteSchema } from "@/lib/schema";
 import { BASE } from "@/lib/chemin";
@@ -214,6 +215,10 @@ setTimeout(function(){d.removeAttribute("data-ouverture")},6000);
         <Cookies />
         {/* Clarity ne part qu'avec le consentement analytique. */}
         <Clarity />
+        {/* Le conteneur Tag Manager, lui, attend l'analytique ou la
+          * publicité — les deux seules catégories qu'une balise de
+          * mesure puisse servir. */}
+        <Balises />
         <Mouvement />
       </body>
     </html>
