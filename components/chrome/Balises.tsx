@@ -147,6 +147,43 @@ export default function Balises() {
     };
     document.addEventListener("click", auClic, { capture: true });
 
+    /*
+     * Le rendez-vous réellement pris.
+     *
+     * « rendezvous_clic » ne dit qu'une intention : la mariée a ouvert
+     * le formulaire. La maison veut savoir qui va au bout, parce que
+     * beaucoup n'y vont pas — c'est elle qui l'a demandé, et c'est la
+     * seule mesure qui vaille pour une publicité payée.
+     *
+     * La réservation se termine chez Calendly, sur un autre domaine : on
+     * ne peut donc pas la lire. Mais le widget prévient la page qui
+     * l'héberge, par un message, et il le fait aussi bien depuis la
+     * fenêtre surgissante que depuis la page de rendez-vous. Cela ne
+     * dépend d'aucune offre payante.
+     *
+     * L'origine est vérifiée avant toute chose : sans ce contrôle,
+     * n'importe quel site ouvert dans un autre onglet pourrait nous
+     * faire compter une conversion qui n'existe pas.
+     *
+     * Rien du contenu du message n'est repoussé — il porte les adresses
+     * d'interface de l'invitée, et une file de données n'a pas à
+     * recevoir ce qui touche à une personne.
+     *
+     * Attention en réglant le conteneur : le script de Calendly pousse
+     * déjà le sien, « calendly » avec « calendly_event: event_scheduled ».
+     * Il ne faut pas déclencher la conversion sur les deux, elle
+     * compterait double. Et c'est celui-ci qu'il faut garder : à
+     * l'essai, le leur a accepté un message forgé depuis la page même,
+     * quand celui-ci l'a écarté. Une conversion payée ne doit pas
+     * pouvoir être inventée par un script tiers.
+     */
+    const auMessage = (e: MessageEvent) => {
+      if (e.origin !== "https://calendly.com") return;
+      const d = e.data as { event?: string } | null;
+      if (d && d.event === "calendly.event_scheduled") evenement("rendezvous_confirme");
+    };
+    window.addEventListener("message", auMessage);
+
     const arreter = surConsentement((c) => {
       if (utile(c)) poser(c);
       else if (document.getElementById("gtm-madamoon")) {
@@ -160,6 +197,7 @@ export default function Balises() {
 
     return () => {
       document.removeEventListener("click", auClic, { capture: true });
+      window.removeEventListener("message", auMessage);
       arreter();
     };
   }, []);
