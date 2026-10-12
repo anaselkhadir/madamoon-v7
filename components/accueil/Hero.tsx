@@ -25,26 +25,8 @@ import { t } from "@/lib/textes";
  * refusé. La vidéo vient ensuite, en fondu, muette et en boucle.
  */
 
-/*
- * L'affiche du premier écran.
- *
- * C'était « hero-affiche » : une mariée dans un jardin de villa
- * californienne, palmiers et maison en stuc. Le nom du fichier disait
- * « showroom-madamoon-paris » ; l'image ne l'a jamais montré. La maison
- * a demandé que cette photographie disparaisse du site.
- *
- * C'est le showroom qui la remplace, aux deux largeurs. Une seule
- * image : la version mobile de l'ancienne était un cadrage vertical
- * propre, et la nouvelle est un paysage de quatre tiers qu'on recadre
- * par le milieu — le piano et les fauteuils tiennent dans la hauteur
- * d'un téléphone, le plafond et le parquet en sortent.
- *
- * Attention : le film qui se pose par-dessus montre toujours ce même
- * jardin. L'affiche ne se voit donc qu'avant son démarrage, et
- * durablement chez qui refuse le mouvement ou compte ses données.
- */
-const DESKTOP = SCENES["showroom"];
-const MOBILE = SCENES["showroom"];
+const DESKTOP = SCENES["hero-affiche"];
+const MOBILE = SCENES["hero-affiche-mobile"];
 
 
 const jeu = (media: { name: string }, ext: string, largeurs: readonly number[]) =>
