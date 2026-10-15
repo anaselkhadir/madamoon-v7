@@ -47,27 +47,25 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
         *
         * Point 132 de la maison : la photo du showroom, très saturée —
         * velours bleu électrique, vitraux, dorures —, criait plus fort que
-        * le reste de la page. Le verre la calme sans l'effacer : un flou
-        * de quelques pixels, qui garde les formes du lieu mais en retire
-        * le grain ; des couleurs adoucies — le bleu du velours surtout ;
-        * une luminosité baissée ; une teinte d'encre légère.
+        * le reste de la page. Le verre la calme sans l'effacer : des
+        * couleurs adoucies — le bleu du velours surtout —, une luminosité
+        * un peu baissée, une teinte d'encre légère.
         *
-        * C'est la recette du panneau d'Élise, en beaucoup plus doux. À
-        * quarante pixels de flou comme là-bas, on ne reconnaîtrait plus
-        * le showroom ; ici il doit rester lisible derrière la vitre. Sur
-        * téléphone, la photo est si recadrée que chaque pixel de flou y
-        * pèse plus : trois y suffisent, contre cinq sur grand écran.
+        * Aucun flou : la maison veut voir le showroom net, seulement plus
+        * doux. Et ce verre ne vit que dans ce bloc « Poussez la porte » —
+        * l'accueil, et le bas des pages coupe et morphologie qui le
+        * reprennent. La page du showroom garde ses photos telles quelles.
         *
         * L'encre est « sous-image », la seule qui ne s'inverse pas : en
         * thème sombre, « encre » devient clair, et le verre deviendrait
         * un voile laiteux sur la photographie.
         *
-        * Là où le navigateur ne sait pas flouter, la teinte seule assombrit
-        * déjà : la photo est moins agressive, simplement moins vitrée.
+        * Là où le navigateur ignore les filtres d'arrière-plan, la teinte
+        * seule assombrit déjà : la photo reste adoucie.
         */}
       <span
         aria-hidden="true"
-        className="absolute inset-0 backdrop-blur-[3px] backdrop-saturate-[.8] backdrop-brightness-[.74] sm:backdrop-blur-[5px]"
+        className="absolute inset-0 backdrop-saturate-[.8] backdrop-brightness-[.8]"
         style={{ background: "color-mix(in srgb, var(--color-sous-image) 30%, transparent)" }}
       />
       {/* Le dégradé reste, plus léger : le verre assombrit déjà, il ne
