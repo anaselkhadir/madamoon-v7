@@ -19,8 +19,8 @@ import { t } from "@/lib/textes";
  *
  * L'image se rapproche très lentement, quarante secondes pour six pour
  * cent. On ne le voit pas ; on sent seulement que l'image n'est pas
- * morte. Le voile est un dégradé, comme sur le hero : il ne teinte pas
- * la photographie, il tient le texte lisible dans son coin.
+ * morte. Par-dessus, un verre sombre la calme (voir plus bas), et un
+ * dégradé tient le texte lisible dans son coin.
  */
 
 export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
@@ -42,12 +42,42 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
         />
       </div>
 
+      {/*
+        * Le verre sombre, posé sur toute la photographie.
+        *
+        * Point 132 de la maison : la photo du showroom, très saturée —
+        * velours bleu électrique, vitraux, dorures —, criait plus fort que
+        * le reste de la page. Le verre la calme sans l'effacer : un flou
+        * de quelques pixels, qui garde les formes du lieu mais en retire
+        * le grain ; des couleurs adoucies — le bleu du velours surtout ;
+        * une luminosité baissée ; une teinte d'encre légère.
+        *
+        * C'est la recette du panneau d'Élise, en beaucoup plus doux. À
+        * quarante pixels de flou comme là-bas, on ne reconnaîtrait plus
+        * le showroom ; ici il doit rester lisible derrière la vitre. Sur
+        * téléphone, la photo est si recadrée que chaque pixel de flou y
+        * pèse plus : trois y suffisent, contre cinq sur grand écran.
+        *
+        * L'encre est « sous-image », la seule qui ne s'inverse pas : en
+        * thème sombre, « encre » devient clair, et le verre deviendrait
+        * un voile laiteux sur la photographie.
+        *
+        * Là où le navigateur ne sait pas flouter, la teinte seule assombrit
+        * déjà : la photo est moins agressive, simplement moins vitrée.
+        */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 backdrop-blur-[3px] backdrop-saturate-[.8] backdrop-brightness-[.74] sm:backdrop-blur-[5px]"
+        style={{ background: "color-mix(in srgb, var(--color-sous-image) 30%, transparent)" }}
+      />
+      {/* Le dégradé reste, plus léger : le verre assombrit déjà, il ne
+        * fait plus que tenir le texte lisible dans son coin. */}
       <span
         aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(10deg, rgba(0,0,0,0.56) 0%, rgba(0,0,0,0.24) 42%, rgba(0,0,0,0) 76%)",
+            "linear-gradient(10deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.16) 42%, rgba(0,0,0,0) 76%)",
         }}
       />
 
