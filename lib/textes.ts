@@ -462,7 +462,7 @@ const FR = {
       sousTitre: "Une autre façon de vivre l'essayage",
       citation:
         "Je n'ai pas créé MADAMOON uniquement pour vendre des robes de mariée. Je l'ai créée pour que chaque future mariée vive un essayage dont elle se souviendra.",
-      altMouna: "Mouna, fondatrice de MADAMOON, dans le showroom, devant l'escalier",
+      altMouna: "Mouna, fondatrice de MADAMOON, et le gâteau d'anniversaire de la maison en forme de robe de mariée",
 
       nomTitre: "Je m'appelle Mouna, mes amis m'appellent Moon.",
       nomAvant: "Madame Moon",
@@ -540,7 +540,7 @@ const FR = {
         "Comprendre qui elle est, ce qu'elle aime, ce qu'elle veut transmettre à travers son mariage, puis l'accompagner jusqu'à cette silhouette dans laquelle elle se reconnaît pleinement.",
         "C'est cette approche qui guide MADAMOON depuis le premier rendez-vous jusqu'à la confection et aux dernières retouches de votre robe.",
       ],
-      altVision: "Mouna et le gâteau d'anniversaire de MADAMOON, en forme de robe de mariée",
+      altVision: "Mouna dans la vitrine de MADAMOON, à côté d'une robe de mariée en dentelle",
 
       trois: [
         "Une robe choisie avec attention.",
@@ -1108,7 +1108,7 @@ const EN: Textes = {
       sousTitre: "Another way to live a fitting",
       citation:
         "I did not create MADAMOON only to sell wedding dresses. I created it so that every bride-to-be would live a fitting she remembers.",
-      altMouna: "Mouna, founder of MADAMOON, in the showroom, in front of the staircase",
+      altMouna: "Mouna, founder of MADAMOON, with the house anniversary cake shaped like a wedding dress",
 
       nomTitre: "My name is Mouna. My friends call me Moon.",
       nomAvant: "Madame Moon",
@@ -1186,7 +1186,7 @@ const EN: Textes = {
         "Understanding who she is, what she loves, what she wants her wedding to say — then walking with her to the silhouette in which she fully recognises herself.",
         "That approach guides MADAMOON from the first appointment through to the making of your dress and its final alterations.",
       ],
-      altVision: "Mouna and the MADAMOON anniversary cake, shaped like a wedding dress",
+      altVision: "Mouna in the MADAMOON shop window, next to a lace wedding dress",
 
       trois: [
         "A dress chosen with care.",

@@ -6479,9 +6479,9 @@ export const SCENES = {
     ]
   },
   "mouna-ferroviaire": {
-    "name": "mouna-ingenieure-ferroviaire-avant-madamoon",
-    "w": 3024,
-    "h": 4032,
+    "name": "mouna-ingenieure-ferroviaire-madamoon-paris",
+    "w": 2600,
+    "h": 3467,
     "widths": [
       640,
       1000,
@@ -6489,7 +6489,7 @@ export const SCENES = {
       2000,
       2600
     ],
-    "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoPABQAPrVKnkonJCKhsAgA4BaJZABUSdgAydxqn9+2NIfc/920QAD9/IJs6jrj9yC1fab5WMKA9H5Mi/Jk8nkgItMHuxACbNh3hF9uiLJYCXdxDBDUOM/t4eTPAr+6GEaFLHSu/ChgfkjyGbnrEJSqJteCDRpzoaysX5RklMybjcHEpviUGn25e/jvgp/2/lPxlWcpaAAAAA==",
+    "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoPABQAPrVInkmnJCKhMAgA4BaJZgBUHNgAydJqn+FnLN0/Ze0aiAD9/IJs6jpd2di1fab5WILocSB0QwDz0Ot75RJMPy2bOd6fj+fUZ1ptDli4c85BvMz8or8SG7/zJI84NmJvqQEJ+gd+gPI7iuk54cfb2vQMf97cYGWCY9TFzGtVHBdZVMGn24p/jvfx/2/lPx3vlSwAAA==",
     "jpgw": [
       640,
       1000
@@ -6561,6 +6561,18 @@ export const SCENES = {
     "jpgw": [
       640,
       1000
+    ]
+  },
+  "mouna-vitrine": {
+    "name": "mouna-vitrine-showroom-madamoon-paris",
+    "w": 277,
+    "h": 547,
+    "widths": [
+      277
+    ],
+    "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoKABQAPrVInkmnJCKhMAgA4BaJYwDE2CBvscucTCi2LJ9wTEAA/CL24Qq7htyNILiKie6C1HYs8skVw+ZkOaEx64XzFaSkNog4x4OBTohCYyQ/pveza0hWh4s2L/iKZNcVZEyV4lQ4MjpkxkFPiNBicEc4NRSITmgPAhOgwPAAAA==",
+    "jpgw": [
+      277
     ]
   }
 } as const satisfies Record<string, Media>;

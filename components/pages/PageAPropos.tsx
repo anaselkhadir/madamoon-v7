@@ -258,12 +258,18 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
                   className="relative overflow-hidden"
                   style={{ aspectRatio: "3 / 4", boxShadow: "inset 0 0 0 1px rgba(20,16,12,0.07)" }}
                 >
+                  {/* La photographie du gâteau d'anniversaire, demandée par
+                    * Mouna à la place de celle du showroom. Le tirage est en
+                    * 3:4 et la photographie en paysage : le cadrage se
+                    * décale un peu à gauche du centre pour garder à la fois
+                    * son visage et la robe-gâteau. */}
                   <Photo
-                    media={SCENES["mouna"]}
+                    media={SCENES["anniversaire"]}
                     dossier="scenes"
                     alt={L.altMouna}
                     sizes="(max-width: 768px) 85vw, 22vw"
                     priorite
+                    position="58% center"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
@@ -431,9 +437,17 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
       <section className="gouttiere py-[clamp(2.5rem,5.5vw,5rem)]">
         <Chapitre titre={L.autrementTitre} texte={L.autrementTexte} />
 
-        <ul data-lever className="mesure-l mt-8">
+        {/* Sans filets : les traits entre les lignes donnaient un rendu de
+          * sommaire de livre (remarque de Mouna). Les phrases se suivent
+          * comme elle les a écrites, chacune sur sa ligne, avec un simple
+          * trait de couleur à gauche pour les tenir ensemble. */}
+        <ul
+          data-lever
+          className="mesure-l mt-6 space-y-1.5 pl-5"
+          style={{ borderLeft: "2px solid var(--color-action)" }}
+        >
           {L.autrementListe.map((item) => (
-            <li key={item} className="texte border-t border-fil py-3">
+            <li key={item} className="texte">
               {item}
             </li>
           ))}
@@ -447,21 +461,12 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
 
       {/* ———————————————————————————— l'expérience MADAMOON —————
        * Sept paragraphes, dont quatre d'une seule phrase : le texte
-       * accélère ici. La photographie passe en bandeau sous le chapitre
-       * plutôt qu'à côté — à côté, elle aurait coupé ce souffle. */}
+       * accélère ici. Le bandeau photo qui suivait (Mouna et une mariée)
+       * a été retiré à la demande de Mouna. */}
       <section className="gouttiere py-[clamp(2.5rem,5.5vw,5rem)]">
         <Chapitre titre={L.experienceTitre} texte={L.experienceTexte} />
       </section>
 
-      <div data-voile className="relative h-[clamp(18rem,42vw,32rem)] overflow-hidden">
-        <Photo
-          media={SCENES["mouna-cliente"]}
-          dossier="scenes"
-          alt={L.altExperience}
-          sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
-        />
-      </div>
 
       {/* ————————————————————————————— un écrin hors du temps —————
        * Le seul bloc sombre de la page, et la seule photographie qui le
@@ -501,59 +506,71 @@ export default function PageAPropos({ langue }: { langue: Langue }) {
       </section>
 
       {/* ——————————————————————————————————————— ma vision —————
-       * La fin du récit. La photographie est celle de l'anniversaire de
-       * la maison : elle n'illustre pas la vision, elle en montre
-       * l'effet. */}
+       * La fin du récit. Mouna dans la vitrine, au milieu des robes : la
+       * maison vue de la rue, telle que les mariées la découvrent. La
+       * photographie du gâteau est montée dans le tirage du haut.
+       *
+       * La source ne fait que 277 pixels de large (la maison n'a pas
+       * l'original) : le cadre est donc en portrait et plafonné à
+       * seize rem, pour ne pas étirer l'image au-delà de ce qu'elle
+       * tient. À remplacer dès que l'original arrive. */}
       <section className="gouttiere py-[clamp(2.5rem,5.5vw,5rem)]">
         <div className="grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-10 md:grid-cols-2 md:items-center">
-          <div data-lever>
-            <Chapitre titre={L.visionTitre} texte={L.visionTexte} />
+          <div>
+            <div data-lever>
+              <Chapitre titre={L.visionTitre} texte={L.visionTexte} />
+            </div>
+
+            {/* La conclusion reste dans la vision, sans changement de fond :
+              * un bloc à part, sur fond crème, donnait l'impression que la
+              * page était finie et qu'on passait à autre chose (remarque de
+              * Mouna). Les trois promesses suivent le texte, sans filets,
+              * comme la liste de « penser l'essayage autrement ». */}
+            <ul
+              data-lever
+              className="mesure-l mt-8 space-y-2 pl-5"
+              style={{ borderLeft: "2px solid var(--color-action)" }}
+            >
+              {L.trois.map((item) => (
+                <li key={item} className="phrase est-moyenne">
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <p data-lever className="affiche mt-10">
+              {L.bienvenue}
+            </p>
+
+            {/* La signature, de la main de Mouna — l'anglaise plutôt qu'une
+              * image : elle se redimensionne, se lit aux lecteurs d'écran et
+              * ne pèse rien de plus, la police étant déjà chargée. */}
+            <p data-lever className="mt-8">
+              <span
+                className="font-anglaise block leading-[1.2]"
+                style={{ fontSize: "clamp(2rem,4vw,3rem)", color: "var(--color-action)" }}
+              >
+                {L.signature}
+              </span>
+              <span className="legende mt-2 block">{L.fonction}</span>
+            </p>
           </div>
           <div
             data-voile
             data-retard={120}
-            className="tuile w-full"
-            style={{ aspectRatio: "7 / 5" }}
+            className="tuile w-full max-w-[16rem] justify-self-center"
+            style={{ aspectRatio: "277 / 547" }}
           >
             <Photo
-              media={SCENES["anniversaire"]}
+              media={SCENES["mouna-vitrine"]}
               dossier="scenes"
               alt={L.altVision}
-              sizes="(max-width: 768px) 100vw, 47vw"
+              sizes="16rem"
             />
           </div>
         </div>
       </section>
 
-      <section
-        className="gouttiere py-[clamp(3rem,6vw,6rem)]"
-        style={{ background: "var(--color-craie)" }}
-      >
-        <ul data-lever className="mesure-l">
-          {L.trois.map((item) => (
-            <li key={item} className="phrase est-moyenne border-t border-fil py-4">
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <p data-lever className="affiche mt-10">
-          {L.bienvenue}
-        </p>
-
-        {/* La signature, de la main de Mouna — l'anglaise plutôt qu'une
-          * image : elle se redimensionne, se lit aux lecteurs d'écran et
-          * ne pèse rien de plus, la police étant déjà chargée. */}
-        <p data-lever className="mt-8">
-          <span
-            className="font-anglaise block leading-[1.2]"
-            style={{ fontSize: "clamp(2rem,4vw,3rem)", color: "var(--color-action)" }}
-          >
-            {L.signature}
-          </span>
-          <span className="legende mt-2 block">{L.fonction}</span>
-        </p>
-      </section>
 
       <section className="gouttiere mt-[clamp(3rem,5.5vw,5rem)] bg-craie py-[clamp(3.5rem,7vw,7rem)]">
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
