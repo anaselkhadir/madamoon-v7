@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: partage("/"),
   twitter: {
     card: "summary_large_image",
-    images: ["/partage/madamoon-showroom-paris.jpg"],
+    images: ["/partage/madamoon-showroom-paris-10e.jpg"],
   },
   /* L'aperçu GitHub Pages est fermé aux moteurs : une copie indexée
    * ferait concurrence au vrai site. */

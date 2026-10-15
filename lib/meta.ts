@@ -57,7 +57,7 @@ export function description(
  * demande « og:type: product », que l'API de Next ne sait pas produire.
  */
 
-const IMAGE_PARTAGE = "/partage/madamoon-showroom-paris.jpg";
+const IMAGE_PARTAGE = "/partage/madamoon-showroom-paris-10e.jpg";
 
 const ALT_PARTAGE = {
   fr: "Le showroom MADAMOON à Paris 10e, ses portants de robes de mariée et son escalier",

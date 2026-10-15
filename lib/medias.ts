@@ -6282,7 +6282,7 @@ export const SCENES = {
     ]
   },
   "showroom": {
-    "name": "showroom-robes-de-mariee-madamoon-paris-10e",
+    "name": "salon-showroom-robes-de-mariee-madamoon-paris-10e",
     "w": 5712,
     "h": 4284,
     "widths": [
