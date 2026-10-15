@@ -110,16 +110,19 @@ const FR = {
         { texte: "." },
       ],
       [
-        { texte: "De plus, " },
+        /* Le rouge ne tient plus que l'écrin du XIXᵉ siècle : sur toute la
+         * proposition, il chargeait le paragraphe. La maison l'a voulu
+         * plus léger, et c'est le lieu qu'on retient. */
+        { texte: "De plus, notre boutique, nichée dans " },
         {
-          texte: "notre boutique, nichée dans un élégant écrin du XIX",
+          texte: "un élégant écrin du XIX",
           exposant: "e",
-          apres: " siècle, vous offre un cadre véritablement hors du temps",
+          apres: " siècle",
           fort: true,
         },
         {
           texte:
-            ", pensé pour faire de votre essayage de robe de mariée une expérience unique et mémorable, à partager avec vos proches !",
+            ", vous offre un cadre véritablement hors du temps, pensé pour faire de votre essayage de robe de mariée une expérience unique et mémorable, à partager avec vos proches !",
         },
       ],
     ],
@@ -817,15 +820,11 @@ const EN: Textes = {
         { texte: "." },
       ],
       [
-        { texte: "And our boutique, " },
+        { texte: "And our boutique, nestled in " },
+        { texte: "an elegant nineteenth-century setting", fort: true },
         {
           texte:
-            "nestled in an elegant nineteenth-century setting, offers you a place truly out of time",
-          fort: true,
-        },
-        {
-          texte:
-            ", conceived to make trying on your wedding dress a unique and memorable experience, to share with those close to you!",
+            ", offers you a place truly out of time, conceived to make trying on your wedding dress a unique and memorable experience, to share with those close to you!",
         },
       ],
     ],
