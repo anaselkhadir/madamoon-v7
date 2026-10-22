@@ -55,6 +55,19 @@ const ANCRES = [
  * paragraphe entier sinon : une réponse réécrite doit s'afficher mal
  * plutôt que de disparaître.
  */
+/*
+ * Les thèmes des questions ajoutées, avec leur rang dans la table. Le
+ * rang, et non la question : la formulation peut changer, le rang suit
+ * la table de « faq(langue) ». Une question absente d'une langue est
+ * simplement sautée.
+ */
+const GROUPES: { cle: "choisir" | "essayage" | "calendrier" | "soin"; rangs: number[] }[] = [
+  { cle: "choisir", rangs: [7, 16, 12, 18] },
+  { cle: "essayage", rangs: [11, 13, 10, 15] },
+  { cle: "calendrier", rangs: [14, 8, 9] },
+  { cle: "soin", rangs: [17, 19] },
+];
+
 const phrases = (texte: string) => texte.split(/(?<=\.)\s+/).filter(Boolean);
 
 export default function PageFaq({ langue }: { langue: Langue }) {
@@ -83,7 +96,9 @@ export default function PageFaq({ langue }: { langue: Langue }) {
     })),
   };
 
-  const ancre = (i: number) => ANCRES[i] ?? `question-${i + 1}`;
+  /* Les sept premières gardent leurs ancres d'origine, déjà partagées ;
+   * les suivantes prennent l'adresse de leur page. */
+  const ancre = (i: number) => ANCRES[i] ?? SLUGS_QUESTIONS[i] ?? `question-${i + 1}`;
 
   /* Les quatre temps du sur-mesure. La troisième et la quatrième phrase
    * n'en font qu'un : « s'il y a besoin d'ajustement » et « un
@@ -102,6 +117,23 @@ export default function PageFaq({ langue }: { langue: Langue }) {
 
   /* La page dédiée d'une question, sous /faq/. */
   const page = (i: number) => `/faq/${SLUGS_QUESTIONS[i]}`;
+
+  /* Le bouton qui mène à la page d'une question. */
+  const EnSavoirPlus = ({ i, sombre = false }: { i: number; sombre?: boolean }) => (
+    <Link
+      href={page(i)}
+      /* Vingt boutons du même nom : un lecteur d'écran qui liste les
+       * liens doit pouvoir les distinguer. */
+      aria-label={`${L.enSavoirPlus} — ${questions[i]?.q}`}
+      className="legende bouton-rubrique inline-flex shrink-0 items-center gap-2 rounded-[4px] border px-[1rem] py-[0.6rem]"
+      style={
+        sombre ? { color: "var(--color-ivoire)", borderColor: "var(--color-ivoire)" } : undefined
+      }
+    >
+      {L.enSavoirPlus}
+      <span aria-hidden="true">→</span>
+    </Link>
+  );
 
   /*
    * Une question au titre du document, avec son ancre — et sa page.
@@ -155,21 +187,7 @@ export default function PageFaq({ langue }: { langue: Langue }) {
           {questions[i]?.q}
         </Link>
       </h2>
-      <Link
-        href={page(i)}
-        /* Sept boutons du même nom : un lecteur d'écran qui liste les
-         * liens doit pouvoir les distinguer. */
-        aria-label={`${L.enSavoirPlus} : ${questions[i]?.q}`}
-        className="legende bouton-rubrique inline-flex shrink-0 items-center gap-2 rounded-[4px] border px-[1rem] py-[0.6rem]"
-        style={
-          sombre
-            ? { color: "var(--color-ivoire)", borderColor: "var(--color-ivoire)" }
-            : undefined
-        }
-      >
-        {L.enSavoirPlus}
-        <span aria-hidden="true">→</span>
-      </Link>
+      <EnSavoirPlus i={i} sombre={sombre} />
     </div>
   );
 
@@ -452,6 +470,48 @@ export default function PageFaq({ langue }: { langue: Langue }) {
             <p className="legende mt-4">{M.mentionHoraires}</p>
           </div>
         </div>
+      </section>
+
+      {/* ———————————————————————————————— d'autres questions —————
+       * Les treize questions ajoutées après les sept premières. Elles ne
+       * reçoivent pas chacune leur mise en page : treize formes de plus
+       * auraient fait de la page un catalogue d'effets. Elles sont
+       * rangées par thème — le thème à gauche, les questions à droite —
+       * et chacune garde ce qui compte : son lien, sa réponse courte et
+       * son bouton. */}
+      <section className="gouttiere border-t border-fil py-[clamp(3rem,6vw,5.5rem)]">
+        <h2 className="titre-section">{L.dautresQuestions}</h2>
+        {GROUPES.map((g) => (
+          <div
+            key={g.cle}
+            className="mt-[clamp(2rem,4.5vw,3.5rem)] grid gap-x-[clamp(2rem,5vw,5rem)] gap-y-3 lg:grid-cols-12"
+          >
+            <h3 className="legende lg:col-span-3 lg:pt-6">{L.groupes[g.cle]}</h3>
+            <ul className="lg:col-span-9">
+              {g.rangs
+                .filter((i) => questions[i])
+                .map((i) => (
+                  <li key={i} className="border-t border-fil py-[clamp(1.25rem,2.5vw,1.75rem)]">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-4 md:flex-nowrap">
+                      <h4
+                        id={ancre(i)}
+                        className="phrase est-moyenne min-w-0 scroll-mt-[calc(var(--entete)+1.5rem)]"
+                      >
+                        <Link
+                          href={page(i)}
+                          className="decoration-1 underline-offset-[0.18em] transition-colors duration-500 hover:underline"
+                        >
+                          {questions[i]?.q}
+                        </Link>
+                      </h4>
+                      <EnSavoirPlus i={i} />
+                    </div>
+                    <p className="texte mesure-l mt-3">{questions[i]?.r}</p>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
       </section>
 
       {/* ————————————————————————————————————— la sortie ————— */}

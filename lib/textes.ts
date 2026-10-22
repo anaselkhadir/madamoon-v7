@@ -593,6 +593,15 @@ const FR = {
       prendreRendezvous: "Prendre rendez-vous",
       /* Le bouton posé à côté de chaque question : il mène à sa page. */
       enSavoirPlus: "En savoir plus",
+      /* Les questions ajoutées en octobre 2026, rangées par thème sous
+       * les sept premières. */
+      dautresQuestions: "D'autres questions",
+      groupes: {
+        choisir: "Choisir sa robe",
+        essayage: "L'essayage",
+        calendrier: "Le calendrier",
+        soin: "Entretien et retouches",
+      },
     },
     /* La page dédiée à une question. Ses textes viennent de
      * « lib/questions.ts » ; ce bloc ne porte que les intitulés. */
@@ -1246,6 +1255,13 @@ const EN: Textes = {
       demanderAElise: "Ask Élise",
       prendreRendezvous: "Book an appointment",
       enSavoirPlus: "Read more",
+      dautresQuestions: "More questions",
+      groupes: {
+        choisir: "Choosing your dress",
+        essayage: "The fitting",
+        calendrier: "The calendar",
+        soin: "Care and alterations",
+      },
     },
     question: {
       faq: "FAQ",

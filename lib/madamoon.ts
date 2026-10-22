@@ -1359,6 +1359,70 @@ export const FAQ = [
     q: "Où se trouve le showroom MADAMOON ?",
     r: `Au ${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}. Les essayages ont lieu sur rendez-vous uniquement : lundi de 12h à 21h, du mardi au samedi de 10h à 19h.`,
   },
+
+  /*
+   * Les questions ajoutées en octobre 2026, à la demande de la maison.
+   *
+   * Elles reprennent ce que les mariées tapent dans un moteur. Leurs
+   * réponses s'en tiennent à ce que le site sait déjà — le parcours, les
+   * coupes, les morphologies, le catalogue — et disent franchement ce qui
+   * se règle avec la boutique : la durée des retouches, une robe achetée
+   * ailleurs. Deux d'entre elles touchent au calendrier, comme la
+   * première : chacune y répond sous un angle différent, pour ne pas
+   * redire trois fois la même chose.
+   */
+  {
+    q: "Comment choisir sa robe de mariée selon sa morphologie ?",
+    r: "Partez de votre silhouette : les coupes fluides et trapèze allongent une morphologie en O, les princesses et les trapèzes équilibrent une morphologie en A, les sirènes légères dessinent des courbes sur une morphologie en H. Pour une silhouette en 8 ou en X, toutes les coupes conviennent. Ce sont des pistes, pas des règles : l'essayage tranche.",
+  },
+  {
+    q: "Combien de temps avant le mariage essayer sa robe ?",
+    r: "Le premier essayage se fait idéalement huit à neuf mois avant le mariage. Vous essayez ensuite votre robe une deuxième fois quand elle est prête, puis une dernière fois après les retouches, avant de la retirer.",
+  },
+  {
+    q: "Combien de temps pour les retouches d'une robe de mariée ?",
+    r: "Les retouches viennent après le deuxième essayage, une fois votre robe confectionnée. Elles sont faites sur place par nos couturières, et incluses dans la confection sur mesure. Leur durée dépend de la robe et des ajustements : le calendrier se fixe avec la boutique.",
+  },
+  {
+    q: "Combien d'essayages prévoir pour une robe de mariée ?",
+    r: "Comptez trois essayages : le premier pour choisir votre robe, un deuxième quand elle est prête, et un essayage final qui valide le tombé, la longueur et l'aisance. S'il faut ajuster, un rendez-vous de retouches s'ajoute entre les deux derniers.",
+  },
+  {
+    q: "Faut-il un rendez-vous pour essayer une robe de mariée ?",
+    r: "Oui. Le showroom MADAMOON reçoit sur rendez-vous uniquement, parce qu'il est privatisé pour chaque mariée pendant une heure. Le rendez-vous se prend en ligne, en quelques clics, ou par téléphone.",
+  },
+  {
+    q: "Quelle robe de mariée pour un mariage en hiver ?",
+    r: "Pensez aux manches longues, au col montant et aux matières qui ont de la tenue — mikado, satin, crêpe —, ou à une cape qui couvre les épaules. Plusieurs robes de la boutique ont des manches longues ou amovibles : Seraphina, Montana, Bella, Pendant ou Aster.",
+  },
+  {
+    q: "Qui emmener à l'essayage de sa robe de mariée ?",
+    r: "Celles dont l'avis compte vraiment pour vous et qui vous aident à voir clair : une mère, une sœur, une amie qui vous connaît bien. Le showroom étant privatisé, vos proches sont les bienvenues pendant tout l'essayage.",
+  },
+  {
+    q: "Quand commencer à chercher sa robe de mariée ?",
+    r: "Dès que la date est fixée, commencez à repérer les coupes et les robes qui vous plaisent. L'essayage en boutique, lui, se prévoit idéalement huit à neuf mois avant le mariage : arriver avec quelques coups de cœur rend ce premier rendez-vous plus efficace.",
+  },
+  {
+    q: "Combien de robes essayer avant de se décider ?",
+    r: "Il n'y a pas de bon nombre. Quelques robes bien choisies, dans des coupes différentes, valent mieux qu'une longue série : l'heure d'essayage sert à vous mener jusqu'à celle dans laquelle vous vous reconnaissez.",
+  },
+  {
+    q: "Robe sur mesure ou prêt-à-porter : quelle différence ?",
+    r: "Une robe de prêt-à-porter existe en tailles standard, puis se retouche. Une robe sur mesure est confectionnée selon vos mensurations. Chez MADAMOON, les robes sont réalisées à l'atelier sur mesure — en semi-mesure pour Watters Designs —, retouches incluses.",
+  },
+  {
+    q: "Comment entretenir une robe de mariée en dentelle ?",
+    r: "Avant le mariage, gardez-la dans une housse en tissu respirant, sur un cintre large, à l'abri de la lumière. Après, confiez-la à un pressing spécialisé dans les robes de mariée plutôt que de la laver vous-même : la dentelle se déforme et se marque facilement.",
+  },
+  {
+    q: "Que porter sous une robe de mariée sirène ?",
+    r: "Une lingerie sans coutures, couleur chair, qui ne marque pas : la sirène épouse la silhouette jusqu'aux genoux. Choisissez-la selon le décolleté et le dos de la robe, et portez-la dès le deuxième essayage, pour que la robe s'ajuste avec.",
+  },
+  {
+    q: "Peut-on retoucher une robe de mariée achetée en ligne ?",
+    r: "Le plus souvent, oui, chez une couturière habituée aux robes de mariée — tout dépend de la coupe, de la matière et de l'écart avec vos mesures. Chez MADAMOON, les retouches sont comprises pour les robes confectionnées par la boutique ; pour une robe achetée ailleurs, renseignez-vous directement auprès d'elle.",
+  },
 ] as const;
 
 /* ————————————————————————————————— Élise, conseillère ————— */
