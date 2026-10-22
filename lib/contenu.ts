@@ -16,6 +16,8 @@ import {
 } from "@/lib/en/taxonomie";
 import { ROBE_EN } from "@/lib/en/robes";
 import { FAQ_EN } from "@/lib/en/faq";
+import { ARTICLES } from "@/lib/questions";
+import { ARTICLES_EN } from "@/lib/en/questions";
 import { AU_DELA_EN, EDITO_EN, QUESTIONS_EN } from "@/lib/en/morphologies-edito";
 import { AU_DELA, EDITO, QUESTIONS } from "@/lib/morphologies";
 import type { Lettre } from "@/lib/madamoon";
@@ -118,6 +120,10 @@ export const faq = (l: Langue): { q: string; r: string; horsElise?: boolean }[] 
  * tri est celui d'Élise, pas celui de la maison.
  */
 export const faqElise = (l: Langue) => faq(l).filter((f) => !f.horsElise);
+
+/* Les pages dédiées aux questions, dans l'ordre de la FAQ. La réponse
+ * courte n'y est pas : elle reste celle de « faq(langue) ». */
+export const articles = (l: Langue) => (l === "fr" ? ARTICLES : ARTICLES_EN);
 
 /* La matière rédigée des morphologies : l'édito, le bloc « au-delà » et
  * les questions. Trois tables jumelles, une seule porte. */

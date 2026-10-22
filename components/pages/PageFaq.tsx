@@ -1,3 +1,4 @@
+import Link from "@/components/Lien";
 import Photo from "@/components/media/Photo";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
@@ -5,6 +6,7 @@ import FilDAriane from "@/components/FilDAriane";
 import { SCENES } from "@/lib/medias";
 import { FICHE_GOOGLE } from "@/lib/schema";
 import { faq, maison } from "@/lib/contenu";
+import { SLUGS_QUESTIONS } from "@/lib/questions";
 import { t } from "@/lib/textes";
 import type { Langue } from "@/lib/langue";
 
@@ -98,22 +100,77 @@ export default function PageFaq({ langue }: { langue: Langue }) {
     return p.length === 2 ? p : null;
   })();
 
-  /* Une question au titre du document, avec son ancre. Les sept sections
-   * la posent de la même façon : c'est le seul endroit où elles se
-   * ressemblent, et c'est voulu — un moteur comme une lectrice doivent
-   * retrouver la question au même rang partout. */
+  /* La page dédiée d'une question, sous /faq/. */
+  const page = (i: number) => `/faq/${SLUGS_QUESTIONS[i]}`;
+
+  /*
+   * Une question au titre du document, avec son ancre — et sa page.
+   *
+   * Les sept sections la posent de la même façon : c'est le seul endroit
+   * où elles se ressemblent, et c'est voulu — un moteur comme une
+   * lectrice doivent retrouver la question au même rang partout.
+   *
+   * La question est un lien vers sa page, et un bouton « En savoir plus »
+   * se tient à côté : la réponse courte reste ici, la réponse entière est
+   * là-bas. Le titre ne se souligne qu'au survol — souligné au repos, il
+   * se lirait comme un paragraphe de liens.
+   *
+   * « sombre » sert au bloc du prix, posé sur l'encre : le bouton y prend
+   * le clair, sans quoi son trait d'encre disparaîtrait dans le fond.
+   * « centre » sert à la question courte, centrée sur la page.
+   */
   const Question = ({
     i,
     className = "titre-section",
     style,
+    sombre = false,
+    centre = false,
   }: {
     i: number;
     className?: string;
     style?: React.CSSProperties;
+    sombre?: boolean;
+    centre?: boolean;
   }) => (
-    <h2 id={ancre(i)} className={`scroll-mt-[calc(var(--entete)+1.5rem)] ${className}`} style={style}>
-      {questions[i]?.q}
-    </h2>
+    /* Sur la même ligne dès la tablette, même dans une demi-colonne : le
+     * titre se resserre, le bouton ne passe pas dessous. Sur téléphone,
+     * il passe dessous — à côté, il ne laisserait que trois mots par
+     * ligne à la question. */
+    <div
+      className={`flex gap-x-6 gap-y-4 ${
+        centre
+          ? "flex-col items-center"
+          : "flex-wrap items-baseline justify-between md:flex-nowrap"
+      }`}
+    >
+      <h2
+        id={ancre(i)}
+        className={`min-w-0 scroll-mt-[calc(var(--entete)+1.5rem)] ${className}`}
+        style={style}
+      >
+        <Link
+          href={page(i)}
+          className="decoration-1 underline-offset-[0.18em] transition-colors duration-500 hover:underline"
+        >
+          {questions[i]?.q}
+        </Link>
+      </h2>
+      <Link
+        href={page(i)}
+        /* Sept boutons du même nom : un lecteur d'écran qui liste les
+         * liens doit pouvoir les distinguer. */
+        aria-label={`${L.enSavoirPlus} : ${questions[i]?.q}`}
+        className="legende bouton-rubrique inline-flex shrink-0 items-center gap-2 rounded-[4px] border px-[1rem] py-[0.6rem]"
+        style={
+          sombre
+            ? { color: "var(--color-ivoire)", borderColor: "var(--color-ivoire)" }
+            : undefined
+        }
+      >
+        {L.enSavoirPlus}
+        <span aria-hidden="true">→</span>
+      </Link>
+    </div>
   );
 
   return (
@@ -328,7 +385,7 @@ export default function PageFaq({ langue }: { langue: Langue }) {
             </p>
           </div>
           <div data-lever data-retard={120}>
-            <Question i={4} style={{ color: "var(--color-ivoire)" }} />
+            <Question i={4} style={{ color: "var(--color-ivoire)" }} sombre />
             <p className="texte mesure-l mt-4" style={{ color: "var(--color-sable)" }}>
               {questions[4]?.r}
             </p>
@@ -343,7 +400,7 @@ export default function PageFaq({ langue }: { langue: Langue }) {
        * devient la phrase. C'est la respiration de la page. */}
       <section className="gouttiere py-[clamp(3.5rem,7vw,7rem)]">
         <div className="mx-auto max-w-[46ch] text-center" data-lever>
-          <Question i={5} className="legende" />
+          <Question i={5} className="legende" centre />
           <p className="phrase mt-5" style={{ textWrap: "balance" }}>
             {questions[5]?.r}
           </p>

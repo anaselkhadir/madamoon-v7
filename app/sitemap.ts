@@ -5,6 +5,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 import { CREATEURS, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
+import { SLUGS_QUESTIONS } from "@/lib/questions";
 import { versLangue } from "@/lib/langue";
 import { execFileSync } from "node:child_process";
 
@@ -77,6 +78,8 @@ function derniereTouche(fichier: string): string | undefined {
 const SOURCES: [string, string][] = [
   ["/robes", "lib/madamoon.ts"],
   ["/createurs", "lib/madamoon.ts"],
+  /* Les pages des questions avant la FAQ : leur texte est ailleurs. */
+  ["/faq/", "lib/questions.ts"],
   ["/faq", "lib/madamoon.ts"],
   ["/coupes", "lib/coupes.ts"],
   ["/morphologies", "lib/morphologies.ts"],
@@ -128,5 +131,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...COUPES.flatMap((s) => entree(`/coupes/${s.ancre}`, 0.7)),
     ...MORPHOLOGIES.flatMap((m) => entree(`/morphologies/${m.lettre.toLowerCase()}`, 0.7)),
     ...ROBES.flatMap((r) => entree(`/robes/${r.slug}`, 0.6)),
+    ...SLUGS_QUESTIONS.flatMap((s) => entree(`/faq/${s}`, 0.6)),
   ];
 }

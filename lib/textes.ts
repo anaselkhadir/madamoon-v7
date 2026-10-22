@@ -591,6 +591,24 @@ const FR = {
         "Élise répond sur la coupe, la morphologie et le déroulé d'un essayage. Pour tout le reste, le showroom est au bout du fil.",
       demanderAElise: "Demander à Élise",
       prendreRendezvous: "Prendre rendez-vous",
+      /* Le bouton posé à côté de chaque question : il mène à sa page. */
+      enSavoirPlus: "En savoir plus",
+    },
+    /* La page dédiée à une question. Ses textes viennent de
+     * « lib/questions.ts » ; ce bloc ne porte que les intitulés. */
+    question: {
+      faq: "FAQ",
+      laReponseCourte: "La réponse courte",
+      aRetenir: "À retenir",
+      pourAllerPlusLoin: "Pour aller plus loin",
+      itineraire: "L'itinéraire sur Google Maps",
+      lesAutresQuestions: "Les autres questions",
+      toutesLesQuestions: "Toutes les questions",
+      uneAutreQuestion: "Une autre question ?",
+      uneAutreQuestionTexte:
+        "Élise répond sur la coupe, la morphologie et le déroulé d'un essayage. Pour tout le reste, le showroom est au bout du fil.",
+      demanderAElise: "Demander à Élise",
+      prendreRendezvous: "Prendre rendez-vous",
     },
     rendezvous: {
       surtitre: "Essayage privé, sur rendez-vous",
@@ -1224,6 +1242,21 @@ const EN: Textes = {
       voirLaCarte: "See it on the map",
       autreQuestion: "Another question?",
       autreQuestionTexte:
+        "Élise answers on silhouette, body shape and how a fitting goes. For everything else, the showroom is at the end of the line.",
+      demanderAElise: "Ask Élise",
+      prendreRendezvous: "Book an appointment",
+      enSavoirPlus: "Read more",
+    },
+    question: {
+      faq: "FAQ",
+      laReponseCourte: "The short answer",
+      aRetenir: "In short",
+      pourAllerPlusLoin: "Going further",
+      itineraire: "Directions on Google Maps",
+      lesAutresQuestions: "Other questions",
+      toutesLesQuestions: "All the questions",
+      uneAutreQuestion: "Another question?",
+      uneAutreQuestionTexte:
         "Élise answers on silhouette, body shape and how a fitting goes. For everything else, the showroom is at the end of the line.",
       demanderAElise: "Ask Élise",
       prendreRendezvous: "Book an appointment",

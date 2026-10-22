@@ -138,7 +138,7 @@ export const TRADUITES = new Set<string>([
 
 /* Les familles d'adresses entièrement traduites : toutes les fiches
  * robes plutôt que soixante lignes. */
-const PREFIXES_TRADUITS = ["/robes/", "/coupes/", "/morphologies/", "/createurs/"];
+const PREFIXES_TRADUITS = ["/robes/", "/coupes/", "/morphologies/", "/createurs/", "/faq/"];
 
 /** Vrai si la page a sa version anglaise. */
 export function estTraduite(adresseFr: string): boolean {
