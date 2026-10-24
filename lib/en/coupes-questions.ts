@@ -496,4 +496,582 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  princesse: [
+    {
+      slug: fr("princesse", 0),
+      q: "What is a ball gown wedding dress?",
+      r: "A dress with a fitted bodice, often built as a corset, from which a full skirt falls to the floor. It is the silhouette of the ball gown: a defined waist and an assumed volume. The boutique calls it refined and stately.",
+      description:
+        "What is a ball gown wedding dress? A crafted corset, a defined waist, a full skirt to the floor. Definition, and the ball gowns at MADAMOON, Paris.",
+      chapo:
+        "Refined and stately: the ball gown is the bride's evening gown. Here is what defines it.",
+      sections: [
+        {
+          titre: "A bodice, then the volume",
+          texte: [
+            "The top is fitted: a strapless bodice or a corset that follows the bust and defines the waist. From the waist — or from a basque or dropped waist, which sits a little lower — falls a full skirt that widens to the floor and often ends in a train.",
+          ],
+        },
+        {
+          titre: "What it does to the figure",
+          texte: [
+            "It slims the waist by contrast with the fullness of the skirt, and it entirely covers the hips and legs. It is the silhouette of formal ceremonies and grand venues.",
+          ],
+        },
+        {
+          titre: "The boutique's ball gowns",
+          texte: [
+            "From Casablanca Bridal, Guinevere in jacquard, Kensington in mikado, Addison in silk satin, Santana in tulle and organza; from Watters Designs, Clover in Caterina lace, Ember in Dupioni, Fern and Trinity in mikado; from Olya Mak, Seraphina in hand-embroidered lace.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A fitted bodice, a full skirt.",
+        "The waist defined by contrast.",
+        "Refined and stately.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gown dresses" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/kensington", label: "Kensington" },
+      ],
+    },
+    {
+      slug: fr("princesse", 1),
+      q: "Which body shape does a ball gown suit?",
+      r: "It is one of the first silhouettes to try for the A, V, 8 and X body shapes. For an O or H body shape, it comes second, and is worth trying. No body shape rules it out: it all comes down to the bodice and the volume of the skirt.",
+      description:
+        "Ball gown wedding dress: which body shapes does it suit? First for A, V, 8 and X, worth trying for O and H. Advice from the MADAMOON boutique.",
+      chapo:
+        "The ball gown suits more figures than people think. Here is who it comes first for, and why.",
+      sections: [
+        {
+          titre: "The body shapes it comes first for",
+          texte: [],
+          liste: [
+            "A — its crafted bodice draws the eye upwards, and the skirt answers the hips without marking them.",
+            "V — the full skirt adds volume below and balances broader shoulders.",
+            "8 — the bodice cinches at the waist and the fullness starts there: the contrast is clear.",
+            "X — the fullness starts from an already slim waist, without the dress having to force it.",
+          ],
+        },
+        {
+          titre: "The ones it is worth trying for",
+          texte: [
+            "For an O, choose a lighter skirt and a V or sweetheart neckline, which flatters the bust. For an H, a corset and a basque waist draw the waist the figure does not mark.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "Several of the boutique's ball gowns — Addison, Clover, Ember, Kensington, Livia, Seraphina — are listed, on their pages, for all six body shapes. The fitting decides.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First for A, V, 8 and X.",
+        "Worth trying for O and H.",
+        "The bodice and the volume make the difference.",
+      ],
+      liens: [
+        { href: "/morphologies/a/robe-princesse-morphologie-a", label: "The ball gown and the A body shape" },
+        { href: "/morphologies/8/robe-princesse-morphologie-8", label: "The ball gown and the 8 body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+      ],
+    },
+    {
+      slug: fr("princesse", 2),
+      q: "What is the difference between a ball gown and an A-line dress?",
+      r: "Both have a fitted bodice and a skirt that widens. The A-line opens in an A, evenly, without excessive fullness; the ball gown defines the waist with a corset and carries a real volume of skirt. Several dresses in the catalogue sit between the two.",
+      description:
+        "Ball gown or A-line: the A-line opens in an A, the ball gown defines the waist and carries volume. The difference, and the MADAMOON dresses in Paris.",
+      chapo:
+        "They share the same start, a fitted bodice. What sets them apart is the skirt.",
+      sections: [
+        {
+          titre: "What they share",
+          texte: [
+            "A fitted top and a skirt that widens towards the floor: neither follows the hips and thighs, unlike a mermaid.",
+          ],
+        },
+        {
+          titre: "What sets them apart",
+          texte: [],
+          liste: [
+            "The A-line — the skirt opens in an A, in a straight line from the waist. The boutique considers it the most universal silhouette.",
+            "The ball gown — a crafted corset, a defined waist and a full skirt with assumed volume: the silhouette of an evening gown.",
+          ],
+        },
+        {
+          titre: "Between the two",
+          texte: [
+            "Hayes, Sienna and Charlotte are described in the catalogue as \"ball gown or A-line\" dresses: the volume of their skirt puts them on the border. The fitting room shows which way they lean on you.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A-line: a skirt that opens in an A.",
+        "Ball gown: real volume, a defined waist.",
+        "Some dresses sit between the two.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+        { href: "/robes/hayes", label: "Hayes" },
+        { href: "/robes/charlotte", label: "Charlotte" },
+      ],
+    },
+    {
+      slug: fr("princesse", 3),
+      q: "Is a ball gown suitable for petite brides?",
+      r: "Yes, provided the volume is in proportion. A less wide skirt, a light fabric such as tulle or organza, a V neckline or a pointed basque waist lengthen the figure. And the length is set to you, at the alterations.",
+      description:
+        "Ball gown wedding dress for petite brides: proportioned volume, light fabrics, a V neckline to lengthen. Advice from MADAMOON, Paris.",
+      chapo:
+        "A ball gown is not reserved for tall figures. It simply asks for volume on your scale.",
+      sections: [
+        {
+          titre: "Proportion the volume",
+          texte: [
+            "This is the main advice: a skirt whose fullness stays in proportion to your height. A very wide, very structured skirt can overwhelm a petite figure; a more measured fullness lets it breathe.",
+          ],
+        },
+        {
+          titre: "What lengthens",
+          texte: [],
+          liste: [
+            "A V neckline — Livia, Amandine, Santana: it elongates the bust.",
+            "A pointed basque waist — Guinevere, Santana: it extends the line downwards.",
+            "Airy fabrics — tulle and organza give volume without weight.",
+          ],
+        },
+        {
+          titre: "The length",
+          texte: [
+            "After the fitting, the boutique takes your measurements to begin making the dress, and its seamstresses adjust it on site. A tip: come to your fittings in your wedding-day shoes, as the length is set to them.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, with volume on your scale.",
+        "The V and the basque waist lengthen.",
+        "The length is set to you.",
+      ],
+      liens: [
+        { href: "/robes/livia", label: "Livia" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "How long alterations take" },
+      ],
+    },
+    {
+      slug: fr("princesse", 4),
+      q: "How do you choose the skirt volume of a ball gown?",
+      r: "Based on three things: your figure, the venue and the day you want to live. The fabric decides too: mikado or jacquard hold a structured volume, tulle and organza an airy one. The surest way is to try two different fullnesses.",
+      description:
+        "Choosing the skirt volume of a ball gown wedding dress: figure, venue, fabric. Structured mikado or airy tulle, advice from MADAMOON in Paris.",
+      chapo:
+        "Volume makes the ball gown. It is chosen like a silhouette: to your figure, your venue, your day.",
+      sections: [
+        {
+          titre: "The fabric makes the volume",
+          texte: [],
+          liste: [
+            "Structured — Livia's mikado, \"a skirt that stands on its own\", or Kensington's, which brings structure and volume.",
+            "Textured — Guinevere's floral jacquard, for an evening-gown skirt.",
+            "Airy — Santana's tulle and organza, a voluminous yet light skirt.",
+            "Full and light — Ember's skirt, in Dupioni, or Seraphina's, voluminous while keeping \"an airy lightness\".",
+          ],
+        },
+        {
+          titre: "The venue and the day",
+          texte: [
+            "A tip: a large volume unfolds in a reception hall, a château, a church; it needs more room in a town hall, a car or on a busy dance floor. Think of the whole day, not just the entrance.",
+          ],
+        },
+        {
+          titre: "To your figure",
+          texte: [
+            "For a petite figure, a measured fullness; for broad shoulders, a generous skirt that rebalances. In the fitting room, compare two volumes: the difference shows at once.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The fabric makes the volume.",
+        "Think of the venue and the whole day.",
+        "Try two fullnesses.",
+      ],
+      liens: [
+        { href: "/robes/livia", label: "Livia" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/kensington", label: "Kensington" },
+      ],
+    },
+    {
+      slug: fr("princesse", 5),
+      q: "Is a ball gown comfortable to dance in?",
+      r: "Yes, if it fits well and its volume lets you move. A light skirt is easier to wear than a very structured one, and a train is easier bustled. The bodice must hold without hindering: check it at the fitting, by really moving.",
+      description:
+        "Ball gown wedding dress and dancing: a bodice that holds without squeezing, a light skirt, a bustled train. Advice from the MADAMOON boutique, Paris.",
+      chapo:
+        "A ball gown does not stop you dancing. It asks you to choose the dress for the evening as much as for the ceremony.",
+      sections: [
+        {
+          titre: "The bodice",
+          texte: [
+            "A structured bodice holds the dress: it carries the weight of the skirt. Clover's, according to its page, \"provides good support\". It must also let you raise your arms and breathe: at the fitting, make the gestures of the evening.",
+          ],
+        },
+        {
+          titre: "The skirt",
+          texte: [
+            "The lighter it is, the better it follows movement. Ember's skirt is described as \"full and light\"; Seraphina's keeps \"an airy lightness\". A very structured skirt, in mikado, wears beautifully but weighs more.",
+          ],
+        },
+        {
+          titre: "The train",
+          texte: [
+            "A tip: ask in the fitting room how the train is bustled or hooked up for the evening. A long train, like Kensington's two metres, is worn for the entrance, not for the dance floor.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A bodice that holds without squeezing.",
+        "A light skirt follows movement.",
+        "The train is bustled for dancing.",
+      ],
+      liens: [
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+    {
+      slug: fr("princesse", 6),
+      q: "Which bodice goes with a ball gown skirt?",
+      r: "The one that flatters your bust and balances the volume of the skirt. A sweetheart bodice, a V neckline, a square neckline, off-the-shoulder or long sleeves: the catalogue has each. A basque or dropped waist extends the bodice and slims the line.",
+      description:
+        "Which bodice for a ball gown wedding dress? Sweetheart, V, square, off-the-shoulder, long sleeves, basque waist. The MADAMOON ball gowns, Paris.",
+      chapo:
+        "The skirt makes the volume; the bodice makes the character. Here are the options, dress by dress.",
+      sections: [
+        {
+          titre: "The necklines",
+          texte: [],
+          liste: [
+            "Sweetheart — Guinevere, plunging and pointed; Hayes, reinterpreted; Ember, accented with a V cut-out.",
+            "V — Livia, a clean V; Amandine, plunging; Santana, on fine straps.",
+            "Square — Clover, in Caterina lace.",
+            "Off-the-shoulder — Kensington, beaded down to the sleeves; Trinity.",
+          ],
+        },
+        {
+          titre: "Sleeves and straps",
+          texte: [
+            "Seraphina, by Olya Mak, pairs a sheer bodice with long sleeves and an open back. Addison has removable off-the-shoulder straps: worn or not.",
+          ],
+        },
+        {
+          titre: "The waistline",
+          texte: [
+            "The basque waist, which dips to a point below the waist, extends the bodice: Guinevere, Santana. So does the dropped waist: Ember, Clover. They slim the line and start the volume a little lower. A tip: an ornate bodice calls for a plain skirt, and vice versa.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The bodice makes the character.",
+        "Sweetheart, V, square or off-the-shoulder.",
+        "The basque waist slims the line.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+    {
+      slug: fr("princesse", 7),
+      q: "What is the difference between a strapless bodice and a corset on a ball gown?",
+      r: "Strapless describes a shape: a top with no straps or sleeves, ending above the bust. Corset describes a construction: a structured bodice, often boned, that shapes the waist. A dress can be both, like Guinevere and its strapless corset.",
+      description:
+        "Strapless bodice or corset on a ball gown wedding dress: one is a shape without straps, the other a structure that shapes the waist. The difference explained.",
+      chapo:
+        "Two words often confused. One says what you see, the other what holds the dress.",
+      sections: [
+        {
+          titre: "Strapless, a shape",
+          texte: [
+            "A top with no straps or sleeves, leaving the shoulders and arms bare. It holds through its structure and its fit. Hayes, Sienna and Charlotte are strapless with a sweetheart neckline.",
+          ],
+        },
+        {
+          titre: "The corset, a construction",
+          texte: [
+            "A structured bodice, often boned, that shapes the waist and carries the weight of the skirt. It can have straps or sleeves. Ember has a corset \"that structures the figure\"; Clover, a structured bodice that \"provides good support\".",
+          ],
+        },
+        {
+          titre: "Both at once",
+          texte: [
+            "Guinevere combines the two: a strapless corset with a plunging sweetheart neckline, extended by a basque waist. So does Charlotte, with its basque-waist corset. At the fitting, check that the top holds on its own when you raise your arms.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Strapless is a shape: no straps.",
+        "A corset is a structure: it shapes the waist.",
+        "A dress can be both.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/coupes/princesse/corsage-robe-princesse", label: "Which bodice to choose" },
+      ],
+    },
+    {
+      slug: fr("princesse", 8),
+      q: "How do you keep a ball gown from looking too imposing?",
+      r: "By playing on three things: a skirt of measured fullness, a light fabric such as tulle or organza, and a bodice that balances the skirt. A moderate train also lightens the figure. And some dresses, between ball gown and A-line, are worth comparing in the fitting room.",
+      description:
+        "A ball gown wedding dress without excess: measured volume, light tulle, a balancing bodice, a moderate train. Advice and dresses from MADAMOON in Paris.",
+      chapo:
+        "You can love the ball gown without wanting to disappear into it. Here is how to keep the look and lighten the rest.",
+      sections: [
+        {
+          titre: "Lighten the skirt",
+          texte: [
+            "A measured fullness rather than the maximum, and an airy fabric: tulle and organza give volume without mass. A plain skirt, like Addison's in silk satin, keeps the line clean.",
+          ],
+        },
+        {
+          titre: "Balance the top",
+          texte: [
+            "A tip: when the skirt is generous, a simpler bodice lets it breathe, and a V neckline or bare shoulders open up the figure. A moderate train, rather than a cathedral train, lightens the whole further.",
+          ],
+        },
+        {
+          titre: "Between two silhouettes",
+          texte: [
+            "Hayes, Sienna and Charlotte, described as \"ball gown or A-line\", sit on the border between the two. Try them next to a fuller ball gown, to compare.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Measured fullness, a light fabric.",
+        "A bodice that balances the skirt.",
+        "Compare with a ball gown A-line.",
+      ],
+      liens: [
+        { href: "/robes/hayes", label: "Hayes" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/coupes/princesse/choisir-volume-jupe-robe-princesse", label: "Choosing the skirt volume" },
+      ],
+    },
+    {
+      slug: fr("princesse", 9),
+      q: "Does a ball gown suit an outdoor wedding?",
+      r: "Yes, with a few precautions. A light skirt in tulle or organza wears better than a very heavy one, and a short or bustled train avoids grass and gravel. Think of the ground, the season and the distance to cover.",
+      description:
+        "Ball gown wedding dress outdoors: a light skirt, a short or bustled train, a fabric suited to the ground. Advice from MADAMOON, Paris.",
+      chapo:
+        "A garden, a courtyard, an estate: the ball gown belongs there. It simply asks you to think about the ground.",
+      sections: [
+        {
+          titre: "The ground and the train",
+          texte: [
+            "A tip: on grass or gravel, a long train picks up everything it touches. A shorter train, or one bustled after the ceremony, lets you move around without thinking about it.",
+          ],
+        },
+        {
+          titre: "The fabric",
+          texte: [
+            "Tulle and organza, as on Santana, are airy and move with the breeze; mikado and jacquard hold their shape. In hot weather, a light skirt is the most pleasant to wear all day.",
+          ],
+        },
+        {
+          titre: "The season",
+          texte: [
+            "For a summer wedding, bare shoulders or fine straps; for the end of the season, long sleeves like Seraphina's. And for the evening, a stole or a cape.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, with a light skirt.",
+        "A short or bustled train.",
+        "Think of the ground and the season.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+        { href: "/faq/robe-de-mariee-hiver", label: "A dress for a winter wedding" },
+      ],
+    },
+    {
+      slug: fr("princesse", 10),
+      q: "Which veil goes with a ball gown wedding dress?",
+      r: "A veil that matches the volume and the train. A long veil, extending the train, underlines the formality; a shorter veil lets the back and skirt show. Santana even has its matching fingertip veil, sold separately.",
+      description:
+        "Which veil with a ball gown wedding dress? Long to extend the train, short to show the back. Santana's matching veil, at MADAMOON.",
+      chapo:
+        "With a ball gown, the veil completes the silhouette. Here is how to match it to the dress.",
+      sections: [
+        {
+          titre: "Long or short",
+          texte: [],
+          liste: [
+            "A long veil — it extends the train and suits a formal ceremony; it goes with a dress with a train, like Kensington or Guinevere.",
+            "A fingertip veil — it stops at the fingertips, arms by your sides, and lets the whole skirt show.",
+            "A short veil — it reveals the back and the bodice.",
+          ],
+        },
+        {
+          titre: "The back of the dress",
+          texte: [
+            "When the back is worked, let it show: Addison's row of buttons, running to the end of the train, or Seraphina's open back. A light, sheer tulle veil lets them through.",
+          ],
+        },
+        {
+          titre: "Santana's veil",
+          texte: [
+            "According to its page, Santana, by Casablanca Bridal, can be paired with a matching fingertip veil and sheer silk tulle gloves adorned with floral lace, sold separately.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Matched to the volume and the train.",
+        "Long for formality, short for the back.",
+        "Santana has its matching veil.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+    {
+      slug: fr("princesse", 11),
+      q: "How do you accessorise a ball gown without overloading the figure?",
+      r: "By choosing one focal point and keeping the rest discreet. A ball gown already carries volume: an embroidered bodice calls for little jewellery, a plain bodice can take a necklace or gloves. Veil, jewellery and hairstyle are chosen together.",
+      description:
+        "Accessorising a ball gown wedding dress without overload: one focal point, measured jewellery, a matched veil. Advice and dresses from MADAMOON, Paris.",
+      chapo:
+        "The ball gown is already a statement. The accessory extends it, as long as it does not compete with it.",
+      sections: [
+        {
+          titre: "One focal point",
+          texte: [
+            "A tip: decide what should draw the eye — the bodice, the veil, a piece of jewellery — and keep the rest in the background. With a beaded dress, like Kensington or Fern, earrings are enough.",
+          ],
+        },
+        {
+          titre: "The dresses' own pieces",
+          texte: [],
+          liste: [
+            "Santana — sheer silk tulle gloves adorned with floral lace, and a matching veil, sold separately.",
+            "Addison — removable off-the-shoulder straps.",
+            "Clover — with or without the pearls that accent the neckline and the edges of the corset.",
+          ],
+        },
+        {
+          titre: "Jewellery and neckline",
+          texte: [
+            "A V neckline, like Livia's, welcomes a pendant; a square neckline or bare shoulders show off a short necklace or bolder earrings; a sweetheart bodice is often enough on its own.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "One focal point.",
+        "Some dresses have their own pieces.",
+        "The jewellery follows the neckline.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/coupes/princesse/voile-robe-de-mariee-princesse", label: "Which veil to choose" },
+      ],
+    },
+    {
+      slug: fr("princesse", 12),
+      q: "Can you choose a ball gown in satin or in lace?",
+      r: "Yes, both. Satin makes a smooth, luminous ball gown, like Addison in silk satin; lace a romantic one, like Clover in Caterina lace or Seraphina, embroidered by hand. The catalogue also has mikado, jacquard and Dupioni.",
+      description:
+        "Ball gown wedding dress in satin or lace: Addison in silk satin, Clover and Seraphina in lace, and mikado too. The MADAMOON ball gowns, Paris.",
+      chapo:
+        "The ball gown comes in every noble fabric. Each gives it a different character.",
+      sections: [
+        {
+          titre: "In satin",
+          texte: [
+            "Smooth and luminous, it gives a clean line. Addison, by Casablanca Bridal, is in silk satin, with hand-appliquéd chiffon floral motifs; Hayes pairs matte satin with lace.",
+          ],
+        },
+        {
+          titre: "In lace",
+          texte: [
+            "Romantic, it dresses the bodice or the whole gown. Clover is in Caterina lace; Seraphina, by Olya Mak, in hand-embroidered lace; Amandine features regal motifs; Santana lays floral lace over a sheer bodice.",
+          ],
+        },
+        {
+          titre: "The other fabrics",
+          texte: [],
+          liste: [
+            "Mikado — Livia, Kensington, Fern, Trinity: a fabric that holds volume.",
+            "Jacquard — Guinevere, in textured floral jacquard.",
+            "Dupioni — Ember.",
+            "Tulle and organza — Santana's skirt.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, in satin as in lace.",
+        "Satin for a clean line, lace for romance.",
+        "Mikado for volume that holds.",
+      ],
+      liens: [
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/faq/entretenir-robe-de-mariee-dentelle", label: "Caring for a lace wedding dress" },
+      ],
+    },
+    {
+      slug: fr("princesse", 13),
+      q: "How do you move easily in a voluminous wedding dress?",
+      r: "By practising before the big day, in your shoes. A slightly shorter step, the skirt nudged forward with the tip of your foot, the front lifted on the stairs, the train bustled for the evening. And someone you trust to help you manage it.",
+      description:
+        "Moving in a voluminous wedding dress: walking, climbing stairs, sitting down, handling the train. Practical advice from the MADAMOON boutique, Paris.",
+      chapo:
+        "A ball gown is worn all day. A few simple gestures make it easy.",
+      sections: [
+        {
+          titre: "Walking",
+          texte: [
+            "A tip: a slightly shorter step, and the skirt nudged forward with the tip of your foot at each step, so you never tread on it. Practise at your fittings, in your wedding-day shoes.",
+          ],
+        },
+        {
+          titre: "Stairs, the car, a chair",
+          texte: [],
+          liste: [
+            "Stairs — lift the front of the skirt with both hands to see the steps; the train follows behind.",
+            "The car — sit down first, then bring in your legs and the skirt; someone can help tuck it in.",
+            "A chair — sit on the edge, let the skirt spread and bring the train to the side.",
+          ],
+        },
+        {
+          titre: "The train and the pockets",
+          texte: [
+            "Ask in the fitting room how the train is bustled for the evening. Some ball gowns have pockets: Guinevere, discreet pockets; Addison, \"very handy\" pockets — enough to keep a handkerchief within reach.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Practise in your shoes.",
+        "Lift the front on the stairs.",
+        "The train is bustled for the evening.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/coupes/princesse/robe-princesse-confortable-danser", label: "Dancing in a ball gown" },
+      ],
+    },
+  ],
 };

@@ -530,4 +530,609 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  princesse: [
+    /* ——————————————————————————————————————— la définition ————— */
+    {
+      slug: "qu-est-ce-qu-une-robe-de-mariee-princesse",
+      q: "Qu'est-ce qu'une robe de mariée princesse ?",
+      r: "Une robe au corsage ajusté, souvent structuré en corset, d'où part une jupe ample qui descend jusqu'au sol. C'est la silhouette des robes de bal : la taille est marquée, le volume assumé. La boutique la dit raffinée et solennelle.",
+      description:
+        "Qu'est-ce qu'une robe de mariée princesse ? Un corset travaillé, une taille marquée, une jupe ample jusqu'au sol. Définition et princesses MADAMOON, Paris.",
+      chapo:
+        "Raffinée et solennelle : la princesse est la robe de bal de la mariée. Voici ce qui la définit.",
+      sections: [
+        {
+          titre: "Un corsage, puis le volume",
+          texte: [
+            "Le haut est ajusté : un bustier ou un corset qui suit la poitrine et marque la taille. De la taille — ou d'une taille basque ou basse, qui descend un peu plus bas — part une jupe ample, qui s'élargit jusqu'au sol et se prolonge souvent d'une traîne.",
+          ],
+        },
+        {
+          titre: "Ce qu'elle fait à la silhouette",
+          texte: [
+            "Elle affine la taille par contraste avec l'ampleur de la jupe, et elle couvre entièrement les hanches et les jambes. C'est la coupe des cérémonies solennelles et des grands lieux.",
+          ],
+        },
+        {
+          titre: "Les princesses de la boutique",
+          texte: [
+            "Chez Casablanca Bridal, Guinevere en jacquard, Kensington en mikado, Addison en satin de soie, Santana en tulle et organza ; chez Watters Designs, Clover en dentelle Caterina, Ember en Dupioni, Fern et Trinity en mikado ; chez Olya Mak, Seraphina en dentelle brodée à la main.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un corsage ajusté, une jupe ample.",
+        "La taille marquée par contraste.",
+        "Raffinée et solennelle.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/kensington", label: "Kensington" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les morphologies ————— */
+    {
+      slug: "robe-princesse-quelle-morphologie",
+      q: "À quelle morphologie la robe princesse convient-elle ?",
+      r: "Elle fait partie des premières coupes à essayer pour les morphologies en A, en V, en 8 et en X. Pour une morphologie en O ou en H, elle vient en second, et vaut l'essai. Aucune morphologie ne l'interdit : tout se joue sur le corsage et le volume de la jupe.",
+      description:
+        "Robe de mariée princesse : à quelles morphologies convient-elle ? En premier pour A, V, 8 et X, à essayer pour O et H. Les conseils de la boutique MADAMOON.",
+      chapo:
+        "La princesse va à plus de silhouettes qu'on ne le croit. Voici pour qui elle vient en premier, et pourquoi.",
+      sections: [
+        {
+          titre: "Les morphologies pour qui elle vient en premier",
+          texte: [],
+          liste: [
+            "En A — son corsage travaillé ramène le regard vers le haut, et la jupe répond aux hanches sans les marquer.",
+            "En V — la jupe ample donne du volume au bas et équilibre des épaules plus larges.",
+            "En 8 — le corsage se cintre à la taille et l'ampleur part de là : le contraste est net.",
+            "En X — l'ampleur part d'une taille déjà fine, sans que la robe ait à forcer.",
+          ],
+        },
+        {
+          titre: "Celles pour qui elle vaut l'essai",
+          texte: [
+            "En O, préférez une jupe plus légère et un décolleté en V ou en cœur, qui met la poitrine en valeur. En H, un corset et une taille basque dessinent la taille que la silhouette ne marque pas.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "Plusieurs princesses de la boutique — Addison, Clover, Ember, Kensington, Livia, Seraphina — sont indiquées, sur leurs fiches, pour les six morphologies. C'est l'essayage qui tranche.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "En premier pour A, V, 8 et X.",
+        "À essayer pour O et H.",
+        "Le corsage et le volume font la différence.",
+      ],
+      liens: [
+        { href: "/morphologies/a/robe-princesse-morphologie-a", label: "La princesse et la morphologie en A" },
+        { href: "/morphologies/8/robe-princesse-morphologie-8", label: "La princesse et la morphologie en 8" },
+        { href: "/morphologies", label: "Les six morphologies" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la trapèze ————— */
+    {
+      slug: "difference-robe-princesse-robe-trapeze",
+      q: "Quelle différence entre une robe princesse et une robe trapèze ?",
+      r: "Les deux ont un buste ajusté et une jupe qui s'élargit. La trapèze s'ouvre en A, régulièrement, sans ampleur excessive ; la princesse marque la taille par un corset et assume un vrai volume de jupe. Plusieurs robes du catalogue se situent entre les deux.",
+      description:
+        "Robe princesse ou robe trapèze : la trapèze s'ouvre en A, la princesse marque la taille et assume le volume. La différence, et les modèles MADAMOON à Paris.",
+      chapo:
+        "Elles partagent un même départ, un buste ajusté. Ce qui les sépare, c'est la jupe.",
+      sections: [
+        {
+          titre: "Ce qu'elles partagent",
+          texte: [
+            "Un haut ajusté et une jupe qui s'élargit vers le sol : ni l'une ni l'autre ne suit les hanches et les cuisses, à la différence d'une sirène.",
+          ],
+        },
+        {
+          titre: "Ce qui les distingue",
+          texte: [],
+          liste: [
+            "La trapèze — la jupe s'ouvre en A, en ligne droite depuis la taille. La boutique la tient pour la coupe la plus universelle.",
+            "La princesse — un corset travaillé, une taille marquée et une jupe ample, au volume assumé : la silhouette d'une robe de bal.",
+          ],
+        },
+        {
+          titre: "Entre les deux",
+          texte: [
+            "Hayes, Sienna et Charlotte sont décrites au catalogue comme des robes « princesse ou trapèze » : le volume de leur jupe les place à la frontière. C'est en cabine que l'on voit de quel côté elles penchent sur vous.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Trapèze : une jupe qui s'ouvre en A.",
+        "Princesse : un vrai volume, une taille marquée.",
+        "Certaines robes sont entre les deux.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+        { href: "/robes/hayes", label: "Hayes" },
+        { href: "/robes/charlotte", label: "Charlotte" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les petites tailles ————— */
+    {
+      slug: "robe-princesse-petite-taille",
+      q: "Une robe princesse est-elle adaptée aux petites tailles ?",
+      r: "Oui, à condition de proportionner le volume. Une jupe moins large, une matière légère comme le tulle ou l'organza, un décolleté en V ou une taille basque en pointe allongent la silhouette. Et la longueur se règle sur vous, aux retouches.",
+      description:
+        "Robe de mariée princesse et petite taille : un volume proportionné, des matières légères, un décolleté en V pour allonger. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "Une princesse n'est pas réservée aux grandes silhouettes. Elle demande seulement que le volume soit à votre échelle.",
+      sections: [
+        {
+          titre: "Proportionner le volume",
+          texte: [
+            "C'est le conseil principal : une jupe dont l'ampleur reste en rapport avec votre taille. Une jupe très large et très structurée peut prendre le dessus sur une petite silhouette ; une ampleur plus mesurée la laisse respirer.",
+          ],
+        },
+        {
+          titre: "Ce qui allonge",
+          texte: [],
+          liste: [
+            "Un décolleté en V — Livia, Amandine, Santana : il étire le buste.",
+            "Une taille basque en pointe — Guinevere, Santana : elle prolonge la ligne vers le bas.",
+            "Des matières aériennes — le tulle et l'organza donnent du volume sans poids.",
+          ],
+        },
+        {
+          titre: "La longueur",
+          texte: [
+            "Après l'essayage, la boutique prend vos mensurations pour lancer la confection, et ses couturières ajustent la robe sur place. Un conseil : venez aux essayages avec les chaussures du jour J, la longueur se règle sur elles.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, avec un volume à votre échelle.",
+        "Le V et la taille basque allongent.",
+        "La longueur se règle sur vous.",
+      ],
+      liens: [
+        { href: "/robes/livia", label: "Livia" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "La durée des retouches" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le volume ————— */
+    {
+      slug: "choisir-volume-jupe-robe-princesse",
+      q: "Comment choisir le volume de jupe d'une robe princesse ?",
+      r: "Selon trois choses : votre silhouette, le lieu et la journée que vous voulez vivre. La matière décide aussi : le mikado ou le jacquard tiennent un volume structuré, le tulle et l'organza un volume aérien. Le plus sûr est d'essayer deux ampleurs différentes.",
+      description:
+        "Choisir le volume de jupe d'une robe de mariée princesse : silhouette, lieu, matière. Mikado structuré ou tulle aérien, les conseils de MADAMOON à Paris.",
+      chapo:
+        "Le volume fait la princesse. Il se choisit comme une coupe : à votre silhouette, à votre lieu, à votre journée.",
+      sections: [
+        {
+          titre: "La matière fait le volume",
+          texte: [],
+          liste: [
+            "Structuré — le mikado de Livia, « une jupe qui tient toute seule », ou celui de Kensington, qui apporte structure et volume.",
+            "Texturé — le jacquard floral de Guinevere, pour une jupe de robe de bal.",
+            "Aérien — le tulle et l'organza de Santana, une jupe volumineuse mais légère.",
+            "Ample et léger — la jupe d'Ember, en Dupioni, ou celle de Seraphina, volumineuse tout en gardant « une légèreté aérienne ».",
+          ],
+        },
+        {
+          titre: "Le lieu et la journée",
+          texte: [
+            "Un conseil : un grand volume se déploie dans une salle de réception, un château, une église ; il demande plus de place dans une mairie, une voiture ou sur une piste de danse animée. Pensez à toute la journée, pas seulement à l'entrée.",
+          ],
+        },
+        {
+          titre: "À votre silhouette",
+          texte: [
+            "Pour une petite silhouette, une ampleur mesurée ; pour des épaules larges, une jupe généreuse qui rééquilibre. En cabine, comparez deux volumes : la différence se voit tout de suite.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "La matière fait le volume.",
+        "Pensez au lieu et à toute la journée.",
+        "Essayez deux ampleurs.",
+      ],
+      liens: [
+        { href: "/robes/livia", label: "Livia" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/kensington", label: "Kensington" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la danse ————— */
+    {
+      slug: "robe-princesse-confortable-danser",
+      q: "Une robe princesse est-elle confortable pour danser ?",
+      r: "Oui, si elle est bien ajustée et que son volume vous laisse bouger. Une jupe légère se porte plus facilement qu'une jupe très structurée, et une traîne se gère mieux relevée. Le corsage doit tenir sans gêner : c'est à vérifier à l'essayage, en bougeant vraiment.",
+      description:
+        "Robe de mariée princesse et danse : un corsage qui tient sans serrer, une jupe légère, une traîne qu'on relève. Les conseils de la boutique MADAMOON, Paris.",
+      chapo:
+        "Une princesse n'empêche pas de danser. Elle demande de choisir la robe pour la soirée autant que pour la cérémonie.",
+      sections: [
+        {
+          titre: "Le corsage",
+          texte: [
+            "Un corsage structuré tient la robe : c'est lui qui porte le poids de la jupe. Celui de Clover, d'après sa fiche, « assure un bon maintien ». Il doit aussi vous laisser lever les bras et respirer : à l'essayage, faites les gestes de la soirée.",
+          ],
+        },
+        {
+          titre: "La jupe",
+          texte: [
+            "Plus elle est légère, plus elle suit le mouvement. La jupe d'Ember est décrite comme « ample et légère » ; celle de Seraphina garde « une légèreté aérienne ». Une jupe très structurée, en mikado, se porte magnifiquement mais pèse davantage.",
+          ],
+        },
+        {
+          titre: "La traîne",
+          texte: [
+            "Un conseil : demandez en cabine comment la traîne se relève ou s'accroche pour la soirée. Une traîne longue, comme celle de deux mètres de Kensington, se porte pour l'entrée, pas pour la piste.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un corsage qui tient sans serrer.",
+        "Une jupe légère suit le mouvement.",
+        "La traîne se relève pour danser.",
+      ],
+      liens: [
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le corsage ————— */
+    {
+      slug: "corsage-robe-princesse",
+      q: "Quel corsage choisir avec une jupe princesse ?",
+      r: "Celui qui met en valeur votre buste et équilibre le volume de la jupe. Un bustier cœur, un décolleté en V, une encolure carrée, des épaules dénudées ou des manches longues : le catalogue a chacun. Une taille basque ou basse prolonge le corsage et affine la ligne.",
+      description:
+        "Quel corsage pour une robe de mariée princesse ? Bustier cœur, V, carré, épaules dénudées, manches longues, taille basque. Les princesses MADAMOON, Paris.",
+      chapo:
+        "La jupe fait le volume ; le corsage fait le caractère. Voici les possibilités, robe par robe.",
+      sections: [
+        {
+          titre: "Les décolletés",
+          texte: [],
+          liste: [
+            "Cœur — Guinevere, plongeant et pointu ; Hayes, revisité ; Ember, souligné d'une découpe en V.",
+            "En V — Livia, un V franc ; Amandine, plongeant ; Santana, sur de fines bretelles.",
+            "Carré — Clover, en dentelle Caterina.",
+            "Épaules dénudées — Kensington, brodée de perles jusqu'aux manches ; Trinity.",
+          ],
+        },
+        {
+          titre: "Les manches et les bretelles",
+          texte: [
+            "Seraphina, d'Olya Mak, associe un corsage transparent à des manches longues et à un dos nu. Addison a des bretelles tombantes amovibles : on les porte ou non.",
+          ],
+        },
+        {
+          titre: "La ligne de taille",
+          texte: [
+            "La taille basque, qui descend en pointe sous la taille, prolonge le corsage : Guinevere, Santana. La taille basse aussi : Ember, Clover. Elles affinent la ligne et font partir le volume un peu plus bas. Un conseil : un corsage chargé appelle une jupe épurée, et l'inverse.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Le corsage fait le caractère.",
+        "Cœur, V, carré ou épaules dénudées.",
+        "La taille basque affine la ligne.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— bustier ou corset ————— */
+    {
+      slug: "difference-bustier-corset-robe-princesse",
+      q: "Quelle différence entre un bustier et un corset sur une robe princesse ?",
+      r: "Le bustier désigne une forme : un haut sans bretelles ni manches, qui s'arrête au-dessus de la poitrine. Le corset désigne une construction : un corsage structuré, souvent baleiné, qui modèle la taille. Une robe peut être les deux à la fois, comme Guinevere et son corset bustier.",
+      description:
+        "Bustier ou corset sur une robe de mariée princesse : l'un est une forme sans bretelles, l'autre une structure qui modèle la taille. La différence expliquée.",
+      chapo:
+        "Deux mots souvent confondus. L'un dit ce que l'on voit, l'autre ce qui tient la robe.",
+      sections: [
+        {
+          titre: "Le bustier, une forme",
+          texte: [
+            "Un haut sans bretelles ni manches, qui laisse les épaules et les bras nus. Il tient par sa structure et par l'ajustement. Hayes, Sienna et Charlotte sont des bustiers à décolleté cœur.",
+          ],
+        },
+        {
+          titre: "Le corset, une construction",
+          texte: [
+            "Un corsage structuré, souvent baleiné, qui modèle la taille et porte le poids de la jupe. Il peut avoir des bretelles ou des manches. Ember a un corset « qui structure la silhouette » ; Clover, un corsage structuré qui « assure un bon maintien ».",
+          ],
+        },
+        {
+          titre: "Les deux à la fois",
+          texte: [
+            "Guinevere réunit les deux : un corset bustier, à décolleté cœur plongeant, prolongé d'une taille basque. Charlotte aussi, avec son corset en taille basque. À l'essayage, vérifiez que le haut tient seul quand vous levez les bras.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Le bustier est une forme : sans bretelles.",
+        "Le corset est une structure : il modèle la taille.",
+        "Une robe peut être les deux.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/coupes/princesse/corsage-robe-princesse", label: "Quel corsage choisir" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— sans excès ————— */
+    {
+      slug: "robe-princesse-pas-trop-imposante",
+      q: "Comment éviter qu'une robe princesse soit trop imposante ?",
+      r: "En jouant sur trois choses : une jupe d'ampleur mesurée, une matière légère comme le tulle ou l'organza, et un corsage qui équilibre la jupe. Une traîne modérée allège aussi la silhouette. Et certaines robes, entre princesse et trapèze, sont à comparer en cabine.",
+      description:
+        "Une robe de mariée princesse sans excès : volume mesuré, tulle léger, corsage qui équilibre, traîne modérée. Les conseils et modèles de MADAMOON à Paris.",
+      chapo:
+        "On peut aimer la princesse sans vouloir disparaître dedans. Voici comment garder l'allure et alléger le reste.",
+      sections: [
+        {
+          titre: "Alléger la jupe",
+          texte: [
+            "Une ampleur mesurée plutôt que maximale, et une matière aérienne : le tulle et l'organza donnent du volume sans masse. Une jupe épurée, comme celle d'Addison, en satin de soie, garde la ligne nette.",
+          ],
+        },
+        {
+          titre: "Équilibrer le haut",
+          texte: [
+            "Un conseil : quand la jupe est généreuse, un corsage plus simple la laisse respirer, et un décolleté en V ou des épaules dégagées ouvrent la silhouette. Une traîne modérée, plutôt qu'une traîne cathédrale, allège encore l'ensemble.",
+          ],
+        },
+        {
+          titre: "Entre deux coupes",
+          texte: [
+            "Hayes, Sienna et Charlotte, décrites comme « princesse ou trapèze », sont à la frontière des deux. À essayer à côté d'une princesse plus ample, pour comparer.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une ampleur mesurée, une matière légère.",
+        "Un corsage qui équilibre la jupe.",
+        "Comparer avec une princesse-trapèze.",
+      ],
+      liens: [
+        { href: "/robes/hayes", label: "Hayes" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/coupes/princesse/choisir-volume-jupe-robe-princesse", label: "Choisir le volume de jupe" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— en extérieur ————— */
+    {
+      slug: "robe-princesse-mariage-exterieur",
+      q: "Une robe princesse convient-elle à un mariage en extérieur ?",
+      r: "Oui, avec quelques précautions. Une jupe légère en tulle ou en organza se porte mieux qu'une jupe très lourde, et une traîne courte ou qui se relève évite l'herbe et le gravier. Pensez au terrain, à la saison et à la distance à parcourir.",
+      description:
+        "Robe de mariée princesse en extérieur : une jupe légère, une traîne courte ou qu'on relève, une matière adaptée au terrain. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "Un jardin, une cour, un domaine : la princesse y a toute sa place. Elle demande simplement de penser au sol.",
+      sections: [
+        {
+          titre: "Le sol et la traîne",
+          texte: [
+            "Un conseil : sur l'herbe ou le gravier, une traîne longue ramasse tout ce qu'elle touche. Une traîne plus courte, ou qui se relève après la cérémonie, vous laisse circuler sans y penser.",
+          ],
+        },
+        {
+          titre: "La matière",
+          texte: [
+            "Le tulle et l'organza, comme sur Santana, sont aériens et bougent avec l'air ; le mikado et le jacquard tiennent leur forme. Par temps chaud, une jupe légère est la plus agréable à porter toute la journée.",
+          ],
+        },
+        {
+          titre: "La saison",
+          texte: [
+            "Pour un mariage d'été, des épaules dégagées ou de fines bretelles ; pour une fin de saison, des manches longues comme celles de Seraphina. Et pour le soir, une étole ou une cape.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, avec une jupe légère.",
+        "Une traîne courte ou qui se relève.",
+        "Pensez au terrain et à la saison.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+        { href: "/faq/robe-de-mariee-hiver", label: "Une robe pour un mariage en hiver" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le voile ————— */
+    {
+      slug: "voile-robe-de-mariee-princesse",
+      q: "Quel voile porter avec une robe de mariée princesse ?",
+      r: "Un voile qui s'accorde au volume et à la traîne. Un voile long, qui prolonge la traîne, souligne la solennité ; un voile plus court laisse voir le dos et la jupe. Santana a même son voile assorti, longueur « doigts », disponible séparément.",
+      description:
+        "Quel voile avec une robe de mariée princesse ? Long pour prolonger la traîne, court pour laisser voir le dos. Le voile assorti de Santana, chez MADAMOON.",
+      chapo:
+        "Avec une princesse, le voile complète la silhouette. Voici comment l'accorder à la robe.",
+      sections: [
+        {
+          titre: "Long ou court",
+          texte: [],
+          liste: [
+            "Un voile long — il prolonge la traîne et accompagne une cérémonie solennelle ; il va à une robe à traîne, comme Kensington ou Guinevere.",
+            "Un voile longueur « doigts » — il s'arrête au bout des doigts, bras le long du corps, et laisse voir toute la jupe.",
+            "Un voile court — il dégage le dos et le corsage.",
+          ],
+        },
+        {
+          titre: "Le dos de la robe",
+          texte: [
+            "Quand le dos est travaillé, laissez-le voir : la rangée de boutons d'Addison, qui court jusqu'au bout de la traîne, ou le dos nu de Seraphina. Un voile en tulle léger et transparent les laisse paraître.",
+          ],
+        },
+        {
+          titre: "Le voile de Santana",
+          texte: [
+            "D'après sa fiche, Santana, de Casablanca Bridal, peut être accompagnée d'un voile assorti, longueur « doigts », et de gants en tulle de soie ornés de dentelle florale, disponibles séparément.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Accordé au volume et à la traîne.",
+        "Long pour la solennité, court pour le dos.",
+        "Santana a son voile assorti.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les accessoires ————— */
+    {
+      slug: "accessoiriser-robe-princesse",
+      q: "Comment accessoiriser une robe princesse sans surcharger la silhouette ?",
+      r: "En choisissant un point fort et en laissant le reste discret. Une princesse porte déjà du volume : un corsage brodé appelle peu de bijoux, un corsage épuré peut accueillir un collier ou des gants. Voile, bijoux et coiffure se choisissent ensemble.",
+      description:
+        "Accessoiriser une robe de mariée princesse sans surcharge : un seul point fort, des bijoux mesurés, un voile accordé. Les conseils et modèles de MADAMOON, Paris.",
+      chapo:
+        "La princesse est déjà une déclaration. L'accessoire la prolonge, à condition de ne pas lui faire concurrence.",
+      sections: [
+        {
+          titre: "Un seul point fort",
+          texte: [
+            "Un conseil : décidez de ce qui doit attirer le regard — le corsage, le voile, un bijou — et laissez le reste en retrait. Avec une robe brodée de perles, comme Kensington ou Fern, des boucles d'oreilles suffisent.",
+          ],
+        },
+        {
+          titre: "Les pièces des robes",
+          texte: [],
+          liste: [
+            "Santana — des gants transparents en tulle de soie, ornés de dentelle florale, et un voile assorti, disponibles séparément.",
+            "Addison — des bretelles tombantes amovibles.",
+            "Clover — avec ou sans les perles qui soulignent le décolleté et les contours du corset.",
+          ],
+        },
+        {
+          titre: "Les bijoux et le décolleté",
+          texte: [
+            "Un décolleté en V, comme celui de Livia, accueille un pendentif ; une encolure carrée ou des épaules dénudées mettent en valeur un collier court ou des boucles plus marquées ; un bustier cœur se suffit souvent à lui-même.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un seul point fort.",
+        "Certaines robes ont leurs propres pièces.",
+        "Le bijou suit le décolleté.",
+      ],
+      liens: [
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/coupes/princesse/voile-robe-de-mariee-princesse", label: "Quel voile choisir" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les matières ————— */
+    {
+      slug: "robe-princesse-satin-ou-dentelle",
+      q: "Peut-on choisir une robe princesse en satin ou en dentelle ?",
+      r: "Oui, les deux. Le satin donne une princesse lisse et lumineuse, comme Addison en satin de soie ; la dentelle, une princesse romantique, comme Clover en dentelle Caterina ou Seraphina, brodée à la main. Le catalogue a aussi du mikado, du jacquard et du Dupioni.",
+      description:
+        "Robe de mariée princesse en satin ou en dentelle : Addison en satin de soie, Clover et Seraphina en dentelle, et aussi le mikado. Les princesses MADAMOON, Paris.",
+      chapo:
+        "La princesse se décline dans toutes les matières nobles. Chacune lui donne un caractère différent.",
+      sections: [
+        {
+          titre: "En satin",
+          texte: [
+            "Lisse et lumineux, il donne une ligne nette. Addison, de Casablanca Bridal, est en satin de soie, avec des motifs floraux en mousseline appliqués à la main ; Hayes associe le satin mat à la dentelle.",
+          ],
+        },
+        {
+          titre: "En dentelle",
+          texte: [
+            "Romantique, elle habille le corsage ou toute la robe. Clover est en dentelle Caterina ; Seraphina, d'Olya Mak, en dentelle brodée à la main ; Amandine arbore des motifs d'un style royal ; Santana pose une dentelle florale sur un corsage transparent.",
+          ],
+        },
+        {
+          titre: "Les autres matières",
+          texte: [],
+          liste: [
+            "Le mikado — Livia, Kensington, Fern, Trinity : une matière qui tient le volume.",
+            "Le jacquard — Guinevere, en jacquard floral texturé.",
+            "Le Dupioni — Ember.",
+            "Le tulle et l'organza — la jupe de Santana.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, en satin comme en dentelle.",
+        "Le satin pour une ligne nette, la dentelle pour le romantisme.",
+        "Le mikado pour un volume qui tient.",
+      ],
+      liens: [
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/robes/clover-perles", label: "Clover" },
+        { href: "/faq/entretenir-robe-de-mariee-dentelle", label: "Entretenir une robe en dentelle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— se déplacer ————— */
+    {
+      slug: "se-deplacer-robe-de-mariee-volumineuse",
+      q: "Comment se déplacer facilement avec une robe de mariée volumineuse ?",
+      r: "En vous entraînant avant le jour J, avec vos chaussures. Un pas un peu plus court, la jupe avancée du bout du pied, le devant relevé dans les escaliers, la traîne relevée pour la soirée. Et une personne de confiance pour vous aider à la manœuvrer.",
+      description:
+        "Se déplacer avec une robe de mariée volumineuse : marcher, monter un escalier, s'asseoir, gérer la traîne. Les conseils pratiques de la boutique MADAMOON, Paris.",
+      chapo:
+        "Une princesse se porte toute la journée. Quelques gestes simples la rendent facile.",
+      sections: [
+        {
+          titre: "Marcher",
+          texte: [
+            "Un conseil : un pas un peu plus court, et la jupe qu'on avance légèrement du bout du pied à chaque pas, pour ne pas marcher dessus. Entraînez-vous aux essayages, avec les chaussures du jour J.",
+          ],
+        },
+        {
+          titre: "L'escalier, la voiture, la chaise",
+          texte: [],
+          liste: [
+            "L'escalier — relevez le devant de la jupe des deux mains pour voir les marches ; la traîne suit derrière.",
+            "La voiture — asseyez-vous d'abord, puis rentrez les jambes et la jupe ; quelqu'un peut aider à la ranger.",
+            "La chaise — asseyez-vous au bord, laissez la jupe s'étaler et ramenez la traîne sur le côté.",
+          ],
+        },
+        {
+          titre: "La traîne et les poches",
+          texte: [
+            "Demandez en cabine comment la traîne se relève pour la soirée. Certaines princesses ont des poches : Guinevere, des poches discrètes ; Addison, des poches « bien pratiques » — de quoi garder un mouchoir à portée de main.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Entraînez-vous avec vos chaussures.",
+        "Relevez le devant dans les escaliers.",
+        "La traîne se relève pour la soirée.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/coupes/princesse/robe-princesse-confortable-danser", label: "Danser en robe princesse" },
+      ],
+    },
+  ],
 };
