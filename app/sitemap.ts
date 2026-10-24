@@ -137,9 +137,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...MORPHOLOGIES.flatMap((m) => entree(`/morphologies/${m.lettre.toLowerCase()}`, 0.7)),
     ...ROBES.flatMap((r) => entree(`/robes/${r.slug}`, 0.6)),
     ...SLUGS_QUESTIONS.flatMap((s) => entree(`/faq/${s}`, 0.6)),
-    ...COUPES.flatMap((s) =>
-      (QUESTIONS_COUPES[s.ancre] ?? []).flatMap((x) => entree(`/coupes/${s.ancre}/${x.slug}`, 0.6)),
-    ),
     ...MORPHOLOGIES.flatMap((m) =>
       (QUESTIONS_MORPHO[m.lettre] ?? []).flatMap((x) =>
         entree(`/morphologies/${m.lettre.toLowerCase()}/${x.slug}`, 0.6),
