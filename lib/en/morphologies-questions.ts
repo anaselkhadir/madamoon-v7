@@ -521,4 +521,501 @@ export const QUESTIONS_MORPHO_EN: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  A: [
+    {
+      slug: fr("A", 0),
+      q: "Which wedding dress should I choose for an A body shape?",
+      r: "Start with ball gowns and A-lines: a worked bodice holds the eye, and a skirt that opens answers the hips without highlighting them. A bateau neckline or a straight bodice widens the shoulders. Sheath and two-in-one dresses are worth trying too.",
+      description:
+        "Wedding dress for an A body shape: ball gown and A-line first, a worked bodice, a skirt that opens. Advice from the MADAMOON boutique, Paris 10e.",
+      chapo:
+        "A worked bodice, a skirt that opens: with an A body shape, the balance comes by itself. Here is where to start.",
+      sections: [
+        {
+          titre: "The two silhouettes to try first",
+          texte: [
+            "A ball gown plays everything on the bodice: embroidery, drape, neckline. The fullness of its skirt asks nothing — it answers the hips without touching them.",
+            "An A-line opens its skirt from the waist and follows the hips instead of hugging them. It is the easiest silhouette to wear for a whole day.",
+          ],
+        },
+        {
+          titre: "Those worth trying",
+          texte: [
+            "A sheath does not seek balance, it sidesteps it — and that is sometimes exactly what you want when you refuse a dress that builds. A two-in-one, with its overskirt removed for dinner, gives two volumes in the same evening.",
+          ],
+        },
+        {
+          titre: "The detail that changes the proportion",
+          texte: [
+            "A bateau neckline or a straight bodice visually widens the shoulders. A few centimetres of line at the top are enough to change the whole silhouette.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Ball gown and A-line first.",
+        "A worked bodice.",
+        "A neckline that widens the shoulders.",
+      ],
+      liens: [
+        { href: "/morphologies/a", label: "The A body shape" },
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+      ],
+    },
+    {
+      slug: fr("A", 1),
+      q: "How do I recognise an A or pear body shape?",
+      r: "Your hips are wider than your shoulders, and your waist is clearly defined; the shoulders are narrow. In front of the mirror, a fitted jacket suits you without alteration, while straight skirts pull at the hips.",
+      description:
+        "Recognising an A body shape, also called pear: hips wider than shoulders, a defined waist, narrow shoulders. Three simple markers.",
+      chapo:
+        "It is also called \"pear\" or \"triangle\". Three markers are enough to recognise it, one of them in front of the mirror.",
+      sections: [
+        {
+          titre: "The three markers",
+          texte: [],
+          liste: [
+            "The marker — your hips are wider than your shoulders, and your waist is clearly defined.",
+            "The top — the shoulders are narrow.",
+            "In front of the mirror — a fitted jacket suits you without alteration, while straight skirts pull.",
+          ],
+        },
+        {
+          titre: "Not to be confused with",
+          texte: [
+            "The V body shape is its opposite: broad shoulders and narrower hips. The 8 body shape has a defined waist like the A, but balanced shoulders and hips.",
+          ],
+        },
+        {
+          titre: "A figure, not a label",
+          texte: [
+            "Many brides find themselves between two body shapes. The recommended silhouettes overlap, and the fitting decides. If you are unsure, Élise, the site's advisor, points you in a direction in three questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Hips wider than shoulders.",
+        "A well-defined waist.",
+        "Straight skirts pull at the hips.",
+      ],
+      liens: [
+        { href: "/morphologies/a", label: "The A body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+        { href: "/trouver-ma-robe", label: "Find my dress with Élise" },
+      ],
+    },
+    {
+      slug: fr("A", 2),
+      q: "Which silhouette balances shoulders narrower than the hips?",
+      r: "The ball gown and the A-line: their structured top widens the line of the shoulders, and their skirt opens from the waist to go with the hips. Balance comes from the top, never by hiding the bottom.",
+      description:
+        "Balancing shoulders narrower than the hips: a ball gown or an A-line, a structured top, a skirt that opens from the waist. Advice from MADAMOON.",
+      chapo:
+        "Balancing a figure is not hiding what you like less: it is giving the rest something to answer with. Here is how.",
+      sections: [
+        {
+          titre: "From the top, never by hiding the bottom",
+          texte: [
+            "A bateau neckline or a straight bodice adds a few centimetres of line to the shoulders, and that is enough to change the whole proportion. The skirt has nothing to prove.",
+          ],
+        },
+        {
+          titre: "The two silhouettes that do it best",
+          texte: [
+            "The ball gown, with its worked bodice and the fullness of its skirt, which answers the hips without touching them. The A-line, whose skirt opens from the waist and follows the hips instead of hugging them.",
+          ],
+        },
+        {
+          titre: "Shoulders that take up room",
+          texte: [
+            "Off-the-shoulder necklines, as on Trinity or Kensington, dropped straps, as on Addison, or a square neck, as on Dolores, also widen the top line.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Ball gown or A-line.",
+        "A structured top that widens the shoulders.",
+        "A skirt that opens from the waist.",
+      ],
+      liens: [
+        { href: "/robes/trinity", label: "Trinity" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/morphologies/a", label: "The A body shape" },
+      ],
+    },
+    {
+      slug: fr("A", 3),
+      q: "Does a ball-gown wedding dress suit an A body shape?",
+      r: "Yes, it is one of the two silhouettes to try first. Everything is played on the bodice — embroidery, drape, neckline — and the fullness of the skirt answers the hips without touching them.",
+      description:
+        "Ball-gown wedding dress and A body shape: one of the two silhouettes to try first. Why it works, and the ball gowns at MADAMOON, Paris.",
+      chapo:
+        "The ball gown is made for an A body shape: it works the top and lets the skirt do the rest.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "The bodice holds the eye: embroidered, draped, structured. The full skirt answers the hips without highlighting them — it does not hug them, it goes with them.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "The bodice first: it makes the dress. Then the neckline, which can widen the shoulders. Mikado, a structured fabric, gives the skirt a clean fullness; tulle, a lighter one.",
+          ],
+        },
+        {
+          titre: "The boutique's ball gowns",
+          texte: ["Among them:"],
+          liste: [
+            "Trinity — mikado or jacquard, off the shoulder;",
+            "Fern — mikado embroidered with beaded flowers;",
+            "Kensington — mikado, off the shoulder;",
+            "Addison — silk satin, detachable dropped straps;",
+            "Ember — structured corset, couture silhouette.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the two silhouettes to try first.",
+        "Everything is played on the bodice.",
+        "The skirt answers the hips without highlighting them.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/robes/fern", label: "Fern" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/morphologies/a", label: "The A body shape" },
+      ],
+    },
+    {
+      slug: fr("A", 4),
+      q: "Is an A-line dress suited to an A body shape?",
+      r: "Yes, it is one of the two silhouettes to try first. Its skirt opens from the waist and follows the hips instead of hugging them: it is the easiest silhouette to wear for a whole day.",
+      description:
+        "A-line wedding dress and A body shape: one of the two silhouettes to try first, the easiest to wear. The A-line dresses at MADAMOON, Paris 10e.",
+      chapo:
+        "The A-line already has the shape of an A figure, and that is why it suits it so naturally.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "The skirt opens from the waist and follows the hips without moulding them. The waist, well defined in an A body shape, stays marked; the top is free to hold the eye.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "The bodice: beaded, embroidered or in lace, it balances the hips. And the neckline: a straight neckline, as on Nirali, or a sweetheart bodice, as on Finell, structure the top.",
+          ],
+        },
+        {
+          titre: "The boutique's A-line dresses",
+          texte: ["Among them:"],
+          liste: [
+            "Emerald — beaded bodice, V neckline;",
+            "Carrie — sequinned, hand-beaded corset;",
+            "Finell — satin sweetheart bodice;",
+            "Solana — lace appliqués and matte sequins;",
+            "Charlotte — Caterina lace.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the two silhouettes to try first.",
+        "The skirt follows the hips without moulding them.",
+        "A worked bodice to balance.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/carrie", label: "Carrie" },
+        { href: "/morphologies/a", label: "The A body shape" },
+      ],
+    },
+    {
+      slug: fr("A", 5),
+      q: "Can I wear a mermaid dress with an A body shape?",
+      r: "Yes, provided the top has something to balance with: a sleeve, a wide strap, a worked neckline. Many A-shaped brides leave with a mermaid they had not planned to try.",
+      description:
+        "Mermaid wedding dress and A body shape: yes, with a top that balances — sleeves, straps, a worked neckline. The mermaid dresses at MADAMOON, Paris.",
+      chapo:
+        "A mermaid hugs the hips: people assume it is not for an A body shape. Yet it is worn very well — here is on what condition.",
+      sections: [
+        {
+          titre: "Yes, with a top that balances",
+          texte: [
+            "A mermaid highlights the hips and waist. For it to balance the figure, the top needs weight: a sleeve, a wide strap, a worked neckline.",
+          ],
+        },
+        {
+          titre: "It is judged when worn",
+          texte: [
+            "Many A-shaped brides leave with a mermaid they had not planned to try. Try it after the ball gowns and A-lines, to compare.",
+          ],
+        },
+        {
+          titre: "The boutique's mermaid dresses",
+          texte: [
+            "Montana, in matte satin, has long lace sleeves and an illusion back: a top with something to balance with. Shiloh pairs Chantilly lace with a crêpe skirt; Zina has a slit and optional 3D flowers.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, with a top that balances.",
+        "Sleeves, wide straps, a worked neckline.",
+        "Try it after ball gowns and A-lines.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/robes/montana", label: "Montana" },
+        { href: "/robes/shiloh", label: "Shiloh" },
+      ],
+    },
+    {
+      slug: fr("A", 6),
+      q: "Which neckline visually widens the line of the shoulders?",
+      r: "A bateau neckline or a straight bodice: they draw a horizontal line that widens the shoulders. Off-the-shoulder necklines, dropped straps or a square neck have the same effect.",
+      description:
+        "Visually widening the shoulders: bateau neckline, straight bodice, off the shoulder, dropped straps, square neck. Advice from the MADAMOON boutique.",
+      chapo:
+        "A few centimetres of line at the top are enough to change the whole proportion. Here are the necklines that give them.",
+      sections: [
+        {
+          titre: "The bateau neckline and the straight bodice",
+          texte: [
+            "Both draw a horizontal line from one shoulder to the other, which widens the upper body. They are the necklines the boutique recommends first for an A body shape.",
+            "No dress in the catalogue is described with a bateau neckline. Nirali, by Watters Designs, has a straight neckline; Fortune, a strapless bodice.",
+          ],
+        },
+        {
+          titre: "Off the shoulder and dropped straps",
+          texte: [
+            "They extend the line beyond the shoulders. Trinity, Kensington and Dove are off the shoulder; Addison has detachable dropped straps; Hera, dropped straps.",
+          ],
+        },
+        {
+          titre: "The square neck",
+          texte: [
+            "More graphic, it draws a clean line across the bust. Dolores, Clover Perles and River have a square neck or neckline.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Bateau neckline or straight bodice.",
+        "Off the shoulder, dropped straps.",
+        "A square neck, more graphic.",
+      ],
+      liens: [
+        { href: "/robes/nirali", label: "Nirali" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/robes/dolores", label: "Dolores" },
+        { href: "/morphologies/a", label: "The A body shape" },
+      ],
+    },
+    {
+      slug: fr("A", 7),
+      q: "Is a strapless bodice suited to an A body shape?",
+      r: "Yes, and it is one of the necklines the boutique recommends: a straight bodice draws a line that widens the shoulders, and a worked bodice holds the eye at the top. Paired with a flared skirt, it balances the hips.",
+      description:
+        "Strapless wedding dress and A body shape: a straight bodice widens the shoulders, a worked bodice holds the eye. The bodices at MADAMOON, Paris.",
+      chapo:
+        "A bodice and a flared skirt: that is the pairing the boutique recommends first for an A body shape.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "A straight bodice draws a horizontal line that widens the shoulders. A worked bodice — embroidered, beaded, draped — holds the eye at the top of the body. With a flared skirt, it balances the hips.",
+          ],
+        },
+        {
+          titre: "Straight, sweetheart or corseted",
+          texte: [
+            "A straight bodice widens the line the most. A sweetheart bodice, as on Finell, softens the bust. A structured corset, as on Ember or Guinevere, draws the waist, already well defined in an A body shape.",
+          ],
+        },
+        {
+          titre: "Support",
+          texte: [
+            "A strapless bodice must hold without straps: its fit is what counts. The boutique's seamstresses fit it on you up to the last fitting, alterations included.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: a straight bodice widens the shoulders.",
+        "Worked, it holds the eye at the top.",
+        "With a flared skirt.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/robes/fortune", label: "Fortune" },
+      ],
+    },
+    {
+      slug: fr("A", 8),
+      q: "How do I choose a dress that draws the eye to the upper body?",
+      r: "Concentrate the dress's work at the top: an embroidered, beaded or draped bodice, a neckline that widens the shoulders, sleeves or straps that count. The skirt, simpler, lets the eye rise.",
+      description:
+        "Drawing the eye to the upper body: an embroidered or beaded bodice, a widening neckline, sleeves. Advice from the MADAMOON boutique, Paris 10e.",
+      chapo:
+        "The eye goes where the dress works. For an A body shape, the whole point is to carry it upwards.",
+      sections: [
+        {
+          titre: "Work at the top, simplicity below",
+          texte: [
+            "A dress with an embroidered, beaded or draped bodice and a simple skirt makes the eye rise by itself. That is the principle of the ball gown and the A-line.",
+          ],
+        },
+        {
+          titre: "The details that hold the eye",
+          texte: ["In the boutique's catalogue:"],
+          liste: [
+            "a beaded bodice, as on Emerald or Carrie;",
+            "embroidery, as on Fern, in mikado embroidered with beaded flowers;",
+            "an off-the-shoulder neckline, as on Trinity;",
+            "sleeves, long as on Pendant or balloon as on Ryle.",
+          ],
+        },
+        {
+          titre: "On the day",
+          texte: [
+            "A tip: hair and jewellery play the same role. An updo frees the shoulders, earrings carry the eye to the face.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The dress's work at the top.",
+        "Beaded bodice, embroidery, off the shoulder.",
+        "A simpler skirt.",
+      ],
+      liens: [
+        { href: "/robes/fern", label: "Fern" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+    {
+      slug: fr("A", 9),
+      q: "Which type of bodice should I choose for an A figure?",
+      r: "A worked bodice that gives weight to the upper body: embroidered, beaded, draped, or structured as a corset. Its line matters as much as its decoration — straight or square, it widens the shoulders.",
+      description:
+        "Which bodice for an A figure: embroidered, beaded, draped or corseted, with a straight or square line. The bodices of MADAMOON dresses, Paris 10e.",
+      chapo:
+        "The bodice is the part of the dress that works hardest for an A body shape. Here is how to choose it.",
+      sections: [
+        {
+          titre: "Decoration that holds the eye",
+          texte: [
+            "Embroidered, beaded or draped, the bodice gives the upper body something to hold the eye. Emerald and Carrie have a beaded bodice, Maribel a hand-embroidered bodice, Dove a draped neckline.",
+          ],
+        },
+        {
+          titre: "A construction that shapes",
+          texte: [
+            "A structured corset marks the waist, already well defined in an A body shape, and holds the bust. Ember has a structured corset, Guinevere and Santana a basque waist dipping to a point.",
+          ],
+        },
+        {
+          titre: "A line that widens",
+          texte: [
+            "The top line of the bodice matters as much as its decoration: straight, as on Nirali, or square, as on Dolores, it widens the shoulders.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Embroidered, beaded or draped.",
+        "A corset that marks the waist.",
+        "A straight or square line.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/nirali", label: "Nirali" },
+      ],
+    },
+    {
+      slug: fr("A", 10),
+      q: "Which wedding dress should I choose when my hips are wider than my shoulders?",
+      r: "A dress whose skirt opens from the waist and follows the hips without moulding them — a ball gown or an A-line — with a worked top that balances. Nothing to hide: the skirt goes with the hips, the top does the rest.",
+      description:
+        "Wedding dress for hips wider than shoulders: a skirt that opens from the waist, a worked top. Ball gown or A-line at MADAMOON.",
+      chapo:
+        "Hips wider than shoulders do not call for a dress that hides them, but for a dress that goes with them.",
+      sections: [
+        {
+          titre: "A skirt that goes with them",
+          texte: [
+            "The skirt opens from the waist and follows the hips instead of hugging them. The ball gown does it with fullness, the A-line with a lighter A line.",
+          ],
+        },
+        {
+          titre: "A fabric that falls",
+          texte: [
+            "Light tulle or lace gives an airy skirt that does not mark; mikado, a structured skirt that keeps its shape. A very fine satin, which clings, is judged at the fitting.",
+          ],
+        },
+        {
+          titre: "A top that balances",
+          texte: [
+            "The top does the other half of the work: a worked bodice, a neckline that widens the shoulders, sleeves or straps that count.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A skirt that opens from the waist.",
+        "Ball gown or A-line.",
+        "A worked top that balances.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+        { href: "/morphologies/a", label: "The A body shape" },
+      ],
+    },
+    {
+      slug: fr("A", 11),
+      q: "Which silhouettes should I try first with an A body shape?",
+      r: "The ball gown and the A-line, with a worked top and a neckline that widens the shoulders. Then a sheath and a two-in-one, to compare — and a mermaid if you feel like it.",
+      description:
+        "A body shape: which silhouettes to try first? The ball gown and the A-line, then a sheath and a two-in-one to compare. Advice from MADAMOON.",
+      chapo:
+        "The order of fittings helps you understand what suits you, and why. Here is the one the boutique recommends for an A body shape.",
+      sections: [
+        {
+          titre: "The order of fittings",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "A ball gown — to see the effect of a worked bodice and a full skirt.",
+            "An A-line — the A skirt from the waist, the easiest to wear.",
+            "A sheath — to compare with a dress that does not build.",
+            "A two-in-one — two volumes in the same dress.",
+          ],
+        },
+        {
+          titre: "And the mermaid",
+          texte: [
+            "It is not on the starting list, but it is worth trying if it attracts you, with a top that balances. Many A-shaped brides leave with a mermaid they had not planned to try.",
+          ],
+        },
+        {
+          titre: "Coming prepared",
+          texte: [
+            "Keep your favourite dresses in your favourites and mention them when you book: they will be ready when you arrive.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First a ball gown and an A-line.",
+        "Then a sheath and a two-in-one.",
+        "A mermaid if you feel like it.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+        { href: "/rendez-vous", label: "Book an appointment" },
+      ],
+    },
+  ],
 };

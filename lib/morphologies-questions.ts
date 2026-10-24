@@ -565,6 +565,526 @@ export const QUESTIONS_MORPHO: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  A: [
+    /* ——————————————————————————————————————— quelle robe ————— */
+    {
+      slug: "quelle-robe-de-mariee-morphologie-a",
+      q: "Quelle robe de mariée choisir pour une morphologie en A ?",
+      r: "Commencez par les princesses et les trapèzes : un haut de robe travaillé retient le regard, et une jupe qui s'ouvre répond aux hanches sans les souligner. Une encolure bateau ou un bustier droit élargit les épaules. Les fluides et les deux en un valent aussi l'essai.",
+      description:
+        "Robe de mariée et morphologie en A : princesse et trapèze en premier, un haut travaillé, une jupe qui s'ouvre. Les conseils de la boutique MADAMOON, Paris.",
+      chapo:
+        "Un haut de robe travaillé, une jupe qui s'ouvre : avec une morphologie en A, l'équilibre se fait seul. Voici par où commencer.",
+      sections: [
+        {
+          titre: "Les deux coupes à essayer en premier",
+          texte: [
+            "La princesse joue tout sur le bustier : broderie, drapé, encolure. L'ampleur de sa jupe ne demande rien — elle répond aux hanches sans y toucher.",
+            "La trapèze ouvre sa jupe dès la taille et suit les hanches au lieu de les épouser. C'est la coupe la plus facile à porter une journée entière.",
+          ],
+        },
+        {
+          titre: "Celles qui valent l'essai",
+          texte: [
+            "La fluide ne cherche pas l'équilibre, elle passe à côté — et c'est parfois exactement ce qu'on veut quand on refuse une robe qui construit. La deux en un, avec sa surjupe qui se retire au dîner, offre deux volumes dans la même soirée.",
+          ],
+        },
+        {
+          titre: "Le détail qui change la proportion",
+          texte: [
+            "Une encolure bateau ou un bustier droit élargit visuellement les épaules. Quelques centimètres de ligne en haut suffisent à changer toute la silhouette.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Princesse et trapèze en premier.",
+        "Un haut de robe travaillé.",
+        "Une encolure qui élargit les épaules.",
+      ],
+      liens: [
+        { href: "/morphologies/a", label: "La morphologie en A" },
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la reconnaître ————— */
+    {
+      slug: "reconnaitre-morphologie-a",
+      q: "Comment reconnaître une morphologie en A ou pyramide ?",
+      r: "Vos hanches sont plus larges que vos épaules, et votre taille se dessine nettement ; les épaules sont fines. Devant le miroir, une veste cintrée vous va sans retouche, alors que les jupes droites tirent sur les hanches.",
+      description:
+        "Reconnaître une morphologie en A, dite pyramide : des hanches plus larges que les épaules, une taille marquée, des épaules fines. Trois repères simples.",
+      chapo:
+        "On l'appelle aussi « pyramide » ou « triangle ». Trois repères suffisent pour s'y reconnaître, dont un devant le miroir.",
+      sections: [
+        {
+          titre: "Les trois repères",
+          texte: [],
+          liste: [
+            "Le repère — vos hanches sont plus larges que vos épaules, et votre taille se dessine nettement.",
+            "Le haut — les épaules sont fines.",
+            "Devant le miroir — une veste cintrée vous va sans retouche, alors que les jupes droites tirent.",
+          ],
+        },
+        {
+          titre: "À ne pas confondre",
+          texte: [
+            "La morphologie en V est son contraire : des épaules larges et des hanches plus étroites. La morphologie en 8 a une taille marquée comme le A, mais des épaules et des hanches équilibrées.",
+          ],
+        },
+        {
+          titre: "Une silhouette, pas une étiquette",
+          texte: [
+            "Beaucoup de mariées se trouvent entre deux morphologies. Les coupes conseillées se recoupent, et c'est l'essayage qui tranche. Si vous hésitez, Élise, la conseillère du site, vous oriente en trois questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Hanches plus larges que les épaules.",
+        "Une taille bien dessinée.",
+        "Les jupes droites tirent sur les hanches.",
+      ],
+      liens: [
+        { href: "/morphologies/a", label: "La morphologie en A" },
+        { href: "/morphologies", label: "Les six morphologies" },
+        { href: "/trouver-ma-robe", label: "Trouver ma robe avec Élise" },
+      ],
+    },
+
+    /* ——————————————————————————— des épaules plus étroites ————— */
+    {
+      slug: "equilibrer-epaules-etroites-hanches",
+      q: "Quelle coupe permet d'équilibrer des épaules plus étroites que les hanches ?",
+      r: "La princesse et la trapèze : leur haut structuré élargit la ligne des épaules, et leur jupe s'ouvre dès la taille pour accompagner les hanches. L'équilibre se fait par le haut, jamais en cachant le bas.",
+      description:
+        "Équilibrer des épaules plus étroites que les hanches : une princesse ou une trapèze, un haut structuré, une jupe qui s'ouvre dès la taille. Conseils MADAMOON.",
+      chapo:
+        "Équilibrer une silhouette, ce n'est pas cacher ce qu'on aime moins : c'est donner au reste de quoi répondre. Voici comment.",
+      sections: [
+        {
+          titre: "Par le haut, jamais en cachant le bas",
+          texte: [
+            "Une encolure bateau ou un bustier droit ajoutent quelques centimètres de ligne aux épaules, et cela suffit à changer toute la proportion. La jupe, elle, n'a rien à démontrer.",
+          ],
+        },
+        {
+          titre: "Les deux coupes qui le font le mieux",
+          texte: [
+            "La princesse, avec son bustier travaillé et l'ampleur de sa jupe, qui répond aux hanches sans y toucher. La trapèze, dont la jupe s'ouvre dès la taille et suit les hanches au lieu de les épouser.",
+          ],
+        },
+        {
+          titre: "Des épaules qui prennent de la place",
+          texte: [
+            "Des épaules dénudées, comme sur Trinity ou Kensington, des bretelles tombantes, comme sur Addison, ou un col carré, comme sur Dolores, élargissent aussi la ligne du haut.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Princesse ou trapèze.",
+        "Un haut structuré, qui élargit les épaules.",
+        "Une jupe qui s'ouvre dès la taille.",
+      ],
+      liens: [
+        { href: "/robes/trinity", label: "Trinity" },
+        { href: "/robes/addison", label: "Addison" },
+        { href: "/morphologies/a", label: "La morphologie en A" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la princesse ————— */
+    {
+      slug: "robe-princesse-morphologie-a",
+      q: "Une robe de mariée princesse convient-elle à une morphologie en A ?",
+      r: "Oui, c'est l'une des deux coupes à essayer en premier. Tout se joue sur le bustier — broderie, drapé, encolure —, et l'ampleur de la jupe répond aux hanches sans y toucher.",
+      description:
+        "Robe de mariée princesse et morphologie en A : l'une des deux coupes à essayer en premier. Pourquoi elle fonctionne, et les princesses de MADAMOON, Paris.",
+      chapo:
+        "La princesse est faite pour une morphologie en A : elle travaille le haut et laisse la jupe faire le reste.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Le bustier retient le regard : il est brodé, drapé, structuré. La jupe, ample, répond aux hanches sans les souligner — elle ne les épouse pas, elle les accompagne.",
+          ],
+        },
+        {
+          titre: "Ce qu'il faut regarder",
+          texte: [
+            "Le bustier d'abord : c'est lui qui fait la robe. Puis l'encolure, qui peut élargir les épaules. Le mikado, matière structurée, donne à la jupe une ampleur nette ; le tulle, une ampleur plus légère.",
+          ],
+        },
+        {
+          titre: "Les princesses de la boutique",
+          texte: ["Parmi elles :"],
+          liste: [
+            "Trinity — mikado ou jacquard, épaules dénudées ;",
+            "Fern — mikado brodé de fleurs de perles ;",
+            "Kensington — mikado, épaules dénudées ;",
+            "Addison — satin de soie, bretelles tombantes amovibles ;",
+            "Ember — corset structuré, silhouette couture.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des deux coupes à essayer en premier.",
+        "Tout se joue sur le bustier.",
+        "La jupe répond aux hanches sans les souligner.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/robes/fern", label: "Fern" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/morphologies/a", label: "La morphologie en A" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la trapèze ————— */
+    {
+      slug: "robe-trapeze-morphologie-a",
+      q: "Une robe trapèze est-elle adaptée à une morphologie en A ?",
+      r: "Oui, c'est l'une des deux coupes à essayer en premier. Sa jupe s'ouvre dès la taille et suit les hanches au lieu de les épouser : c'est la coupe la plus facile à porter une journée entière.",
+      description:
+        "Robe de mariée trapèze et morphologie en A : l'une des deux coupes à essayer en premier, la plus facile à porter. Les trapèzes de MADAMOON, Paris 10e.",
+      chapo:
+        "La trapèze porte bien son nom : elle a déjà la forme d'une silhouette en A, et c'est pour cela qu'elle lui va si naturellement.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "La jupe s'ouvre dès la taille et suit les hanches sans les mouler. La taille, bien dessinée chez une morphologie en A, reste marquée ; le haut est libre de retenir le regard.",
+          ],
+        },
+        {
+          titre: "Ce qu'il faut regarder",
+          texte: [
+            "Le corsage : perlé, brodé ou en dentelle, il équilibre les hanches. Et l'encolure : un décolleté droit, comme sur Nirali, ou un bustier cœur, comme sur Finell, structurent le haut.",
+          ],
+        },
+        {
+          titre: "Les trapèzes de la boutique",
+          texte: ["Parmi elles :"],
+          liste: [
+            "Emerald — corsage perlé, décolleté en V ;",
+            "Carrie — pailletée, corset perlé à la main ;",
+            "Finell — bustier cœur en satin ;",
+            "Solana — appliqués de dentelle et sequins mats ;",
+            "Charlotte — dentelle Caterina.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des deux coupes à essayer en premier.",
+        "La jupe suit les hanches sans les mouler.",
+        "Un corsage travaillé pour équilibrer.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/carrie", label: "Carrie" },
+        { href: "/morphologies/a", label: "La morphologie en A" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la sirène ————— */
+    {
+      slug: "robe-sirene-morphologie-a",
+      q: "Peut-on porter une robe sirène avec une morphologie en A ?",
+      r: "Oui, à condition que le haut ait de quoi équilibrer : une manche, une bretelle large, un décolleté travaillé. Beaucoup de mariées en A repartent avec une sirène qu'elles n'avaient pas prévu d'essayer.",
+      description:
+        "Robe de mariée sirène et morphologie en A : oui, avec un haut qui équilibre — manches, bretelles, décolleté travaillé. Les sirènes de MADAMOON, Paris.",
+      chapo:
+        "La sirène épouse les hanches : on la croit déconseillée pour une morphologie en A. Elle se porte pourtant très bien — voici à quelle condition.",
+      sections: [
+        {
+          titre: "Oui, avec un haut qui équilibre",
+          texte: [
+            "La sirène souligne les hanches et la taille. Pour qu'elle équilibre la silhouette, le haut doit avoir du poids : une manche, une bretelle large, un décolleté travaillé.",
+          ],
+        },
+        {
+          titre: "Elle se juge portée",
+          texte: [
+            "Beaucoup de mariées en A repartent avec une sirène qu'elles n'avaient pas prévu d'essayer. Essayez-la après les princesses et les trapèzes, pour comparer.",
+          ],
+        },
+        {
+          titre: "Les sirènes de la boutique",
+          texte: [
+            "Montana, en satin mat, a des manches longues en dentelle et un dos illusion : un haut qui a de quoi équilibrer. Shiloh associe une dentelle de Chantilly à une jupe en crêpe ; Zina a une fente et des fleurs 3D optionnelles.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, avec un haut qui équilibre.",
+        "Manches, bretelles larges, décolleté travaillé.",
+        "À essayer après les princesses et les trapèzes.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Les robes sirène" },
+        { href: "/robes/montana", label: "Montana" },
+        { href: "/robes/shiloh", label: "Shiloh" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— l'encolure ————— */
+    {
+      slug: "decollete-elargir-les-epaules",
+      q: "Quel décolleté choisir pour élargir visuellement la ligne des épaules ?",
+      r: "Une encolure bateau ou un bustier droit : ils tracent une ligne horizontale qui élargit les épaules. Des épaules dénudées, des bretelles tombantes ou un col carré produisent le même effet.",
+      description:
+        "Élargir visuellement les épaules : encolure bateau, bustier droit, épaules dénudées, bretelles tombantes, col carré. Les conseils de la boutique MADAMOON.",
+      chapo:
+        "Quelques centimètres de ligne en haut suffisent à changer toute la proportion. Voici les décolletés qui les donnent.",
+      sections: [
+        {
+          titre: "L'encolure bateau et le bustier droit",
+          texte: [
+            "Tous deux tracent une ligne horizontale, d'une épaule à l'autre, qui élargit le haut du corps. Ce sont les encolures que la boutique conseille d'abord pour une morphologie en A.",
+            "Aucune robe du catalogue n'est décrite avec une encolure bateau. Nirali, de Watters Designs, a un décolleté droit ; Fortune, un bustier.",
+          ],
+        },
+        {
+          titre: "Les épaules dénudées et les bretelles tombantes",
+          texte: [
+            "Elles prolongent la ligne au-delà des épaules. Trinity, Kensington et Dove ont les épaules dénudées ; Addison, des bretelles tombantes amovibles ; Hera, des bretelles tombantes.",
+          ],
+        },
+        {
+          titre: "Le col carré",
+          texte: [
+            "Plus graphique, il dessine une ligne nette sur le buste. Dolores, Clover Perles et River ont un col ou un décolleté carré.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Encolure bateau ou bustier droit.",
+        "Épaules dénudées, bretelles tombantes.",
+        "Un col carré, plus graphique.",
+      ],
+      liens: [
+        { href: "/robes/nirali", label: "Nirali" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/robes/dolores", label: "Dolores" },
+        { href: "/morphologies/a", label: "La morphologie en A" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le bustier ————— */
+    {
+      slug: "bustier-morphologie-a",
+      q: "Un bustier est-il adapté à une morphologie en A ?",
+      r: "Oui, et c'est l'une des encolures que la boutique conseille : un bustier droit trace une ligne qui élargit les épaules, et un bustier travaillé retient le regard en haut. Associé à une jupe évasée, il équilibre les hanches.",
+      description:
+        "Robe de mariée bustier et morphologie en A : un bustier droit élargit les épaules, un bustier travaillé retient le regard. Les bustiers de MADAMOON, Paris.",
+      chapo:
+        "Un bustier et une jupe évasée : c'est l'association que la boutique conseille d'abord pour une morphologie en A.",
+      sections: [
+        {
+          titre: "Pourquoi il fonctionne",
+          texte: [
+            "Un bustier droit trace une ligne horizontale qui élargit les épaules. Un bustier travaillé — brodé, perlé, drapé — retient le regard en haut du corps. Avec une jupe évasée, il équilibre les hanches.",
+          ],
+        },
+        {
+          titre: "Droit, cœur ou corseté",
+          texte: [
+            "Le bustier droit élargit le plus la ligne. Le bustier cœur, comme sur Finell, adoucit le buste. Le corset structuré, comme sur Ember ou Guinevere, dessine la taille, bien marquée chez une morphologie en A.",
+          ],
+        },
+        {
+          titre: "Le maintien",
+          texte: [
+            "Un bustier doit tenir sans bretelles : c'est son ajustement qui compte. Les couturières de la boutique l'ajustent sur vous jusqu'au dernier essayage, retouches incluses.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : un bustier droit élargit les épaules.",
+        "Travaillé, il retient le regard en haut.",
+        "Avec une jupe évasée.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/ember", label: "Ember" },
+        { href: "/robes/fortune", label: "Fortune" },
+      ],
+    },
+
+    /* ——————————————————————————————— attirer le regard vers le haut ————— */
+    {
+      slug: "robe-attirer-le-regard-haut-du-corps",
+      q: "Comment choisir une robe qui attire le regard vers le haut du corps ?",
+      r: "Concentrez le travail de la robe en haut : un corsage brodé, perlé ou drapé, une encolure qui élargit les épaules, des manches ou des bretelles qui comptent. La jupe, plus simple, laisse le regard monter.",
+      description:
+        "Attirer le regard vers le haut du corps : un corsage brodé ou perlé, une encolure qui élargit, des manches. Les conseils de la boutique MADAMOON, Paris 10e.",
+      chapo:
+        "Le regard va où la robe travaille. Pour une morphologie en A, tout l'enjeu est de le porter vers le haut.",
+      sections: [
+        {
+          titre: "Le travail en haut, la simplicité en bas",
+          texte: [
+            "Une robe dont le corsage est brodé, perlé ou drapé et dont la jupe reste simple fait monter le regard d'elle-même. C'est le principe de la princesse et de la trapèze.",
+          ],
+        },
+        {
+          titre: "Les détails qui retiennent le regard",
+          texte: ["Dans le catalogue de la boutique :"],
+          liste: [
+            "un corsage perlé, comme sur Emerald ou Carrie ;",
+            "des broderies, comme sur Fern, en mikado brodé de fleurs de perles ;",
+            "des épaules dénudées, comme sur Trinity ;",
+            "des manches, longues comme sur Pendant ou ballon comme sur Ryle.",
+          ],
+        },
+        {
+          titre: "Le jour J",
+          texte: [
+            "Un conseil : la coiffure et les bijoux jouent le même rôle. Un chignon dégage les épaules, des boucles d'oreilles portent le regard au visage.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Le travail de la robe en haut.",
+        "Corsage perlé, broderies, épaules dénudées.",
+        "Une jupe plus simple.",
+      ],
+      liens: [
+        { href: "/robes/fern", label: "Fern" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le corsage ————— */
+    {
+      slug: "corsage-robe-de-mariee-silhouette-a",
+      q: "Quel type de corsage choisir pour une silhouette en A ?",
+      r: "Un corsage travaillé, qui donne du poids au haut du corps : brodé, perlé, drapé, ou structuré en corset. Sa ligne compte autant que son décor — droite ou carrée, elle élargit les épaules.",
+      description:
+        "Quel corsage pour une silhouette en A : brodé, perlé, drapé ou corseté, avec une ligne droite ou carrée. Les corsages des robes MADAMOON, Paris 10e.",
+      chapo:
+        "Le corsage est la partie de la robe qui travaille le plus pour une morphologie en A. Voici comment le choisir.",
+      sections: [
+        {
+          titre: "Un décor qui retient le regard",
+          texte: [
+            "Brodé, perlé ou drapé, le corsage donne au haut du corps de quoi retenir le regard. Emerald et Carrie ont un corsage perlé, Maribel un corsage brodé à la main, Dove un décolleté drapé.",
+          ],
+        },
+        {
+          titre: "Une construction qui dessine",
+          texte: [
+            "Un corset structuré marque la taille, déjà bien dessinée chez une morphologie en A, et tient le buste. Ember a un corset structuré, Guinevere et Santana une taille basque qui descend en pointe.",
+          ],
+        },
+        {
+          titre: "Une ligne qui élargit",
+          texte: [
+            "La ligne du haut du corsage compte autant que son décor : droite, comme sur Nirali, ou carrée, comme sur Dolores, elle élargit les épaules.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Brodé, perlé ou drapé.",
+        "Un corset qui marque la taille.",
+        "Une ligne droite ou carrée.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/nirali", label: "Nirali" },
+      ],
+    },
+
+    /* ——————————————————————————————— des hanches plus larges ————— */
+    {
+      slug: "robe-de-mariee-hanches-larges",
+      q: "Quelle robe de mariée choisir quand les hanches sont plus larges que les épaules ?",
+      r: "Une robe dont la jupe s'ouvre dès la taille et suit les hanches sans les mouler — une princesse ou une trapèze —, avec un haut travaillé qui équilibre. Rien à cacher : la jupe accompagne les hanches, le haut fait le reste.",
+      description:
+        "Robe de mariée pour des hanches plus larges que les épaules : une jupe qui s'ouvre dès la taille, un haut travaillé. Princesse ou trapèze chez MADAMOON.",
+      chapo:
+        "Des hanches plus larges que les épaules n'appellent pas une robe qui les cache, mais une robe qui les accompagne.",
+      sections: [
+        {
+          titre: "Une jupe qui accompagne",
+          texte: [
+            "La jupe s'ouvre dès la taille et suit les hanches au lieu de les épouser. La princesse le fait avec ampleur, la trapèze avec une ligne en A plus légère.",
+          ],
+        },
+        {
+          titre: "Une matière qui tombe",
+          texte: [
+            "Un tulle léger ou une dentelle donnent une jupe aérienne qui ne marque pas ; un mikado, une jupe structurée qui garde sa forme. Un satin très fin, qui colle, se juge à l'essayage.",
+          ],
+        },
+        {
+          titre: "Un haut qui équilibre",
+          texte: [
+            "Le haut fait l'autre moitié du travail : un bustier travaillé, une encolure qui élargit les épaules, des manches ou des bretelles qui comptent.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une jupe qui s'ouvre dès la taille.",
+        "Princesse ou trapèze.",
+        "Un haut travaillé qui équilibre.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+        { href: "/morphologies/a", label: "La morphologie en A" },
+      ],
+    },
+
+    /* ——————————————————————————————— les premières à essayer ————— */
+    {
+      slug: "premieres-coupes-morphologie-a",
+      q: "Quelles coupes essayer en premier quand on a une morphologie en A ?",
+      r: "La princesse et la trapèze, avec un haut travaillé et une encolure qui élargit les épaules. Ensuite, une fluide et une deux en un, pour comparer — et une sirène si l'envie est là.",
+      description:
+        "Morphologie en A : quelles coupes essayer en premier ? La princesse et la trapèze, puis une fluide et une deux en un pour comparer. Les conseils MADAMOON.",
+      chapo:
+        "L'ordre des essayages aide à comprendre ce qui vous va, et pourquoi. Voici celui que la boutique conseille pour une morphologie en A.",
+      sections: [
+        {
+          titre: "L'ordre des essayages",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "Une princesse — pour voir l'effet d'un bustier travaillé et d'une jupe ample.",
+            "Une trapèze — la jupe en A dès la taille, la plus facile à porter.",
+            "Une fluide — pour comparer avec une robe qui ne construit pas.",
+            "Une deux en un — deux volumes dans la même robe.",
+          ],
+        },
+        {
+          titre: "Et la sirène",
+          texte: [
+            "Elle n'est pas dans la liste de départ, mais elle vaut l'essai si elle vous attire, avec un haut qui équilibre. Beaucoup de mariées en A repartent avec une sirène qu'elles n'avaient pas prévu d'essayer.",
+          ],
+        },
+        {
+          titre: "Venir préparée",
+          texte: [
+            "Gardez vos robes préférées dans vos coups de cœur et dites-le en réservant : elles seront prêtes à votre arrivée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "D'abord une princesse et une trapèze.",
+        "Puis une fluide et une deux en un.",
+        "Une sirène si l'envie est là.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+        { href: "/rendez-vous", label: "Prendre rendez-vous" },
+      ],
+    },
+  ],
 };
 
 /** Les questions d'une morphologie, ou rien si elle n'en a pas encore. */
