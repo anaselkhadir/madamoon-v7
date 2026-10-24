@@ -1503,4 +1503,488 @@ export const QUESTIONS_MORPHO_EN: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  "8": [
+    {
+      slug: fr("8", 0),
+      q: "Which wedding dress should I choose for an 8 body shape?",
+      r: "Every silhouette works: the balance is already there, the dress only has to follow it. Mermaid and column dresses hug the curves, and anything fitted at the waist highlights the natural balance.",
+      description:
+        "Wedding dress for an 8 body shape: every silhouette works, mermaid and column dresses first, anything fitted at the waist. Advice from MADAMOON, Paris.",
+      chapo:
+        "The balance is already there. The dress only has to follow it — and almost all of them know how.",
+      sections: [
+        {
+          titre: "Every silhouette works",
+          texte: [
+            "With shoulders and hips that answer each other and a clearly defined waist, there is nothing to correct. Mermaid, sheath, A-line, ball gown and two-in-one all work.",
+          ],
+        },
+        {
+          titre: "Those that follow the curves",
+          texte: [
+            "Mermaid and column dresses hug an already proportioned line: fitted to the thighs, they correct nothing, they follow. Unadorned satin works for the same reason: it tells only the cut.",
+          ],
+        },
+        {
+          titre: "The detail that extends the waist",
+          texte: [
+            "A sweetheart bodice or a V neckline extends the waist upwards. Here, anything fitted works.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Every silhouette works.",
+        "Mermaid and column dresses hug the curves.",
+        "Anything fitted at the waist works.",
+      ],
+      liens: [
+        { href: "/morphologies/8", label: "The 8 body shape" },
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/coupes", label: "Silhouettes" },
+      ],
+    },
+    {
+      slug: fr("8", 1),
+      q: "How do I recognise an 8 or hourglass body shape?",
+      r: "Your shoulders and hips answer each other, and the waist dips clearly between them; the curves are marked and even, from top to bottom. In front of the mirror, fitted clothes flatter you, and it is straight cuts that hang loose.",
+      description:
+        "Recognising an 8 body shape, also called hourglass: balanced shoulders and hips, a clearly defined waist, marked curves. Three simple markers.",
+      chapo:
+        "It is also called \"hourglass\". Three markers are enough to recognise it, one of them in front of the mirror.",
+      sections: [
+        {
+          titre: "The three markers",
+          texte: [],
+          liste: [
+            "The marker — shoulders and hips answer each other, and the waist dips clearly between them.",
+            "The curves — they are marked, and even from top to bottom.",
+            "In front of the mirror — fitted clothes flatter you, and it is straight cuts that hang loose.",
+          ],
+        },
+        {
+          titre: "Not to be confused with",
+          texte: [
+            "The X body shape is very similar: balanced shoulders and hips, a slim waist. The difference lies in the curves, clearly marked for the 8, softer for the X. The A body shape also has a defined waist, but hips wider than the shoulders.",
+          ],
+        },
+        {
+          titre: "A figure, not a label",
+          texte: [
+            "Many brides find themselves between two body shapes. For the 8 and the X, the advice largely overlaps. If you are unsure, Élise, the site's advisor, points you in a direction in three questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Balanced shoulders and hips.",
+        "A clearly defined waist.",
+        "Straight cuts hang loose.",
+      ],
+      liens: [
+        { href: "/morphologies/8", label: "The 8 body shape" },
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/trouver-ma-robe", label: "Find my dress with Élise" },
+      ],
+    },
+    {
+      slug: fr("8", 2),
+      q: "Which silhouette shows off a defined waist?",
+      r: "Any that is fitted at the waist: mermaid and column dresses follow it, ball gowns and A-lines start from it to open out, and a belted sheath highlights it. A sweetheart bodice or a V neckline extends the line upwards.",
+      description:
+        "Showing off a defined waist: mermaid, column, ball gown, A-line or belted sheath, a sweetheart bodice or a V. Advice from the MADAMOON boutique.",
+      chapo:
+        "A defined waist is an asset almost every silhouette knows how to show off. Here is how each one goes about it.",
+      sections: [
+        {
+          titre: "Those that follow it",
+          texte: [
+            "Mermaid and column dresses hug the waist and hips: they follow a line already drawn, without adding anything.",
+          ],
+        },
+        {
+          titre: "Those that start from it",
+          texte: [
+            "A ball gown fits its bodice at the waist and launches its fullness from there: the contrast is sharp. An A-line starts from the waist, already the narrowest point, and opens in an A.",
+          ],
+        },
+        {
+          titre: "Those that highlight it",
+          texte: [
+            "A sheath worn with a belt or cut at the waist keeps the line while letting you breathe. Monica, in floral jacquard, has a belt; Guinevere, a corset with a pointed basque waist.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Mermaid and column dresses follow it.",
+        "Ball gowns and A-lines start from it.",
+        "A belted sheath highlights it.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/morphologies/8", label: "The 8 body shape" },
+      ],
+    },
+    {
+      slug: fr("8", 3),
+      q: "Is a mermaid dress suited to an 8 body shape?",
+      r: "Yes, it is one of the silhouettes that suits it best. Fitted to the thighs, it hugs an already proportioned line: it corrects nothing, it follows.",
+      description:
+        "Mermaid wedding dress and 8 body shape: it hugs an already proportioned line, without correcting anything. The mermaids at MADAMOON, Paris 10e.",
+      chapo:
+        "The mermaid and the 8 figure are made for each other: the dress only has to follow what is already there.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "It hugs the bust, waist and hips, then flares below the thighs. On an 8 figure, it has nothing to create: it follows an already proportioned line.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "The fabric: unadorned satin tells only the cut; lace adds decoration without changing the line. And the point where the skirt flares, which is judged at the fitting.",
+          ],
+        },
+        {
+          titre: "The boutique's mermaid dresses",
+          texte: [
+            "Riviera, in charmeuse, with a structured corset and detachable sleeves; Meredith, in raised lace; Montana, in matte satin with long lace sleeves; Bella, in satin with long sleeves and an open back.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the silhouettes that suits it best.",
+        "It follows the line, without correcting anything.",
+        "Unadorned satin tells only the cut.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/montana", label: "Montana" },
+      ],
+    },
+    {
+      slug: fr("8", 4),
+      q: "Does a column dress suit an 8 figure?",
+      r: "Yes, very well. Like a mermaid, a column (fourreau) dress hugs the curves of an already proportioned line; it then falls straighter, without flaring. In the catalogue, column dresses are filed with the mermaids.",
+      description:
+        "Column wedding dress and 8 figure: it hugs the curves and falls straight. What to know, and the column dresses at MADAMOON, Paris 10e.",
+      chapo:
+        "The column is the silhouette closest to the body. For an 8 figure, it is an obvious choice — here is what to look at.",
+      sections: [
+        {
+          titre: "What a column dress is",
+          texte: [
+            "A fitted dress that follows the body from bust to hips, then falls straight or nearly so to the floor. Where a mermaid flares below the thighs, a column keeps its line.",
+          ],
+        },
+        {
+          titre: "Why it works",
+          texte: [
+            "It hugs the curves without adding or correcting anything. On an 8 figure, with marked and even curves, it shows everything off at once.",
+          ],
+        },
+        {
+          titre: "The boutique's column dresses",
+          texte: [
+            "The catalogue files them with the mermaids. Siddalee, by Watters Designs, is a column with floral motifs in sequinned tulle and a long train; Rowan, a charmeuse column with a beaded corset; Bella, by Casablanca Bridal, can be worn as a mermaid or a column.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: it hugs the curves.",
+        "Straighter than a mermaid, without flaring.",
+        "Filed with the mermaids in the catalogue.",
+      ],
+      liens: [
+        { href: "/robes/siddalee", label: "Siddalee" },
+        { href: "/robes/rowan", label: "Rowan" },
+        { href: "/robes/bella", label: "Bella" },
+      ],
+    },
+    {
+      slug: fr("8", 5),
+      q: "Can a ball gown show off an 8 body shape?",
+      r: "Yes. The bodice is fitted at the waist and the fullness starts from there: the contrast is sharp, and that is the whole effect. It simply needs room — think about the venue and the day.",
+      description:
+        "Ball-gown wedding dress and 8 body shape: a fitted bodice, fullness from the waist, a sharp contrast. The ball gowns at MADAMOON, Paris.",
+      chapo:
+        "A ball gown plays the contrast between a slim waist and a full skirt. On an 8 figure, it is striking.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "The bodice is fitted at the waist and the fullness starts from there. The contrast between the already defined waist and the volume of the skirt is sharp: that is the whole effect.",
+          ],
+        },
+        {
+          titre: "What it needs",
+          texte: [
+            "Room. A ball-gown skirt takes up space: think about the ceremony venue, the stairs, the car, the whole day. A two-in-one, whose overskirt comes off, can be a good compromise.",
+          ],
+        },
+        {
+          titre: "The boutique's ball gowns",
+          texte: [
+            "Guinevere, in jacquard, with a pointed basque corset; Santana, with a basque waist, in organza and tulle; Ember, with a structured corset; Seraphina, by Olya Mak, in embroidered lace with long sleeves.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: a sharp contrast between waist and skirt.",
+        "It needs room.",
+        "A two-in-one, a good compromise.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/seraphina", label: "Seraphina" },
+      ],
+    },
+    {
+      slug: fr("8", 6),
+      q: "Which neckline suits a figure with balanced shoulders and hips?",
+      r: "A sweetheart bodice or a V neckline: they extend the waist upwards and shape the bust. With balanced shoulders and hips, there is nothing to compensate — the neckline is chosen mainly for style and season.",
+      description:
+        "Neckline for a figure with balanced shoulders and hips: sweetheart or V first, then according to style. Advice from the MADAMOON boutique.",
+      chapo:
+        "When the proportions are balanced, the neckline has nothing to correct. It can therefore be chosen for what it says.",
+      sections: [
+        {
+          titre: "Sweetheart and V",
+          texte: [
+            "They extend the line of the waist upwards and shape the bust. It is the detail the boutique recommends first for an 8 body shape. Finell has a sweetheart bodice; Emerald, Monica and Livia, a V neckline.",
+          ],
+        },
+        {
+          titre: "Other options",
+          texte: [
+            "Off-the-shoulder necklines, as on Trinity or Kensington, uncover the shoulders; a square neck, as on Dolores, is more graphic; a high neck, as on Chastity, more covered. Nothing is to be avoided: it all depends on style.",
+          ],
+        },
+        {
+          titre: "Choose by style",
+          texte: [
+            "The season, the venue and the mood of the wedding matter more than the body shape. A high neck and sleeves for winter, bare shoulders for summer.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A sweetheart bodice or a V first.",
+        "Nothing to compensate.",
+        "Style and season decide.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/chastity", label: "Chastity" },
+      ],
+    },
+    {
+      slug: fr("8", 7),
+      q: "How do I choose a fitted dress without losing comfort?",
+      r: "A comfortable fitted dress comes down to three things: a fabric that moves with the body, such as crêpe or stretch chiffon; a corset fitted on you rather than tightened; and a fitting where you move. At MADAMOON, fitting continues up to the last fitting, alterations included.",
+      description:
+        "A fitted, comfortable wedding dress: a stretch fabric, a corset fitted on you, a fitting where you move. Advice from the MADAMOON boutique.",
+      chapo:
+        "A fitted dress is worn for twelve hours, not just for a photo. Here is how not to choose between allure and comfort.",
+      sections: [
+        {
+          titre: "A fabric that moves with you",
+          texte: [
+            "A stretch fabric follows the body instead of constraining it. Maribel is in stretch chiffon; Fortune pairs stretch crêpe with satin organza.",
+          ],
+        },
+        {
+          titre: "A corset fitted, not tightened",
+          texte: [
+            "A well-fitted corset holds without squeezing. At MADAMOON, the dress is made to your measurements, then fitted by the seamstresses up to the last fitting, alterations included.",
+          ],
+        },
+        {
+          titre: "A fitting where you move",
+          texte: [
+            "A tip: in the fitting room, sit down, raise your arms, walk, take a few dance steps. A dress that bothers you at the fitting will bother you all day.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A stretch fabric.",
+        "A corset fitted on you, not tightened.",
+        "Move at the fitting.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/fortune", label: "Fortune" },
+        { href: "/faq/etapes-robe-de-mariee-sur-mesure", label: "The stages of made-to-measure" },
+      ],
+    },
+    {
+      slug: fr("8", 8),
+      q: "What is the difference between an 8 and an X body shape?",
+      r: "They look alike and are often confused: both have balanced shoulders and hips and a defined waist. The 8 has clearly marked curves, the X softer curves and a slim waist. The advice largely overlaps.",
+      description:
+        "8 or X body shape: balanced shoulders and hips for both, marked curves for the 8, softer ones for the X. How to tell them apart.",
+      chapo:
+        "They are the two closest body shapes. Here is what sets them apart — and why the difference matters little when choosing a dress.",
+      sections: [
+        {
+          titre: "What they have in common",
+          texte: [
+            "Balanced shoulders and hips, a well-defined waist between them. For both, every silhouette works.",
+          ],
+        },
+        {
+          titre: "What sets them apart",
+          texte: [],
+          liste: [
+            "The 8 — marked curves, even from top to bottom; straight cuts hang loose.",
+            "The X — soft rather than pronounced curves, a slim waist; you hesitate between several styles in the fitting room, because they all suit you.",
+          ],
+        },
+        {
+          titre: "What it changes",
+          texte: [
+            "Little. For the 8, mermaid and column dresses hug assertive curves; for the X, the question becomes mainly one of wedding style. Both pages are worth reading.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Both: balanced shoulders and hips.",
+        "The 8: marked curves.",
+        "The X: soft curves, a slim waist.",
+      ],
+      liens: [
+        { href: "/morphologies/8", label: "The 8 body shape" },
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+      ],
+    },
+    {
+      slug: fr("8", 9),
+      q: "Can a sheath dress suit an 8 body shape?",
+      r: "Yes. Worn with a belt or cut at the waist, it keeps the line while letting you breathe. A completely straight sheath can hang loose where the waist dips, but taking it in at the waist settles the matter in one fitting.",
+      description:
+        "Sheath wedding dress and 8 body shape: yes, belted or cut at the waist. How to choose it, and the sheath dresses at MADAMOON, Paris 10e.",
+      chapo:
+        "A sheath is not the first silhouette that comes to mind for an 8 figure. Yet it suits it very well, on one condition.",
+      sections: [
+        {
+          titre: "Yes, with a marked waist",
+          texte: [
+            "Worn with a belt or cut at the waist, a sheath keeps the line of an 8 figure while letting you breathe. It is often the most comfortable to wear for a whole day.",
+          ],
+        },
+        {
+          titre: "If it hangs loose",
+          texte: [
+            "A straight cut sometimes hangs loose where the waist dips. A belt or taking it in at the waist settles the matter in one fitting: nothing is ruled out in advance.",
+          ],
+        },
+        {
+          titre: "The boutique's sheath dresses",
+          texte: [
+            "Dove, in matte satin with a draped neckline; Hélène, with a beaded corset and a chiffon skirt; Murielle, in floral lace with sheer sleeves; Marie, with a timeless line.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, belted or cut at the waist.",
+        "If it hangs loose, taking it in at the waist is enough.",
+        "Often the most comfortable.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/helene", label: "Hélène" },
+      ],
+    },
+    {
+      slug: fr("8", 10),
+      q: "Which dress details naturally emphasise the waist?",
+      r: "A belt, a pointed basque waist, a structured corset, a seam or a change of fabric at the waist, and a sweetheart or V neckline that extends the line upwards. On an already defined waist, one is enough.",
+      description:
+        "Details that emphasise the waist: belt, basque waist, corset, seam, sweetheart or V neckline. With the dresses of the MADAMOON boutique, Paris.",
+      chapo:
+        "A defined waist needs very little to show. Here are the details that emphasise it, without overdoing it.",
+      sections: [
+        {
+          titre: "The dress's details",
+          texte: ["In the boutique's catalogue:"],
+          liste: [
+            "a belt, as on Monica;",
+            "a pointed basque waist, as on Guinevere, Oksana or Santana;",
+            "a structured or beaded corset, as on Ember, Riviera or Carrie;",
+            "a contrast between a worked bodice and a simpler skirt.",
+          ],
+        },
+        {
+          titre: "The neckline",
+          texte: [
+            "A sweetheart bodice or a V neckline extends the waist upwards: the line of the bust and that of the waist answer each other.",
+          ],
+        },
+        {
+          titre: "One is enough",
+          texte: [
+            "On an 8 body shape, the waist already shows. One detail emphasises it; three overload it. Better to choose the one you like most.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Belt, basque waist, corset.",
+        "A sweetheart or V neckline.",
+        "On a defined waist, one is enough.",
+      ],
+      liens: [
+        { href: "/robes/oksana", label: "Oksana" },
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/monica", label: "Monica" },
+      ],
+    },
+    {
+      slug: fr("8", 11),
+      q: "Which silhouettes should I try first for an 8 body shape?",
+      r: "A mermaid or a column, which hug the curves, then a ball gown for contrast. Every silhouette suits you: the rest of the fitting is about the style of the wedding more than the body shape.",
+      description:
+        "8 body shape: which silhouettes to try first? A mermaid or a column, then a ball gown for contrast, then according to style.",
+      chapo:
+        "When every silhouette suits you, the order of fittings is mainly for comparing. Here is the one the boutique recommends for an 8 body shape.",
+      sections: [
+        {
+          titre: "The order of fittings",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "A mermaid or a column — they hug the curves without correcting anything.",
+            "A ball gown — for the contrast between waist and skirt.",
+            "An A-line — it starts from the waist and opens from there.",
+            "A belted sheath — often the most comfortable.",
+          ],
+        },
+        {
+          titre: "Then style decides",
+          texte: [
+            "A two-in-one keeps the balance in both versions, with and without the overskirt. Beyond that, the venue, the season and what you want to live that day decide.",
+          ],
+        },
+        {
+          titre: "Coming prepared",
+          texte: [
+            "Keep your favourite dresses in your favourites and mention them when you book: they will be ready when you arrive.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First a mermaid or a column.",
+        "Then a ball gown for contrast.",
+        "After that, style decides.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/rendez-vous", label: "Book an appointment" },
+      ],
+    },
+  ],
 };
