@@ -29,6 +29,7 @@ import {
   morphoObjectif,
   morphoSilhouette,
   questions,
+  questionsMorpho,
   robeLigne,
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
@@ -121,6 +122,16 @@ export default async function PageMorphologie({
     ...questions(m.lettre, langue),
   ];
 
+  /*
+   * Les questions de la maison, quand elle les a envoyées pour cette
+   * morphologie. Elles remplacent les anciennes : une rangée par
+   * question, la question seule et un bouton « Savoir plus » qui mène à
+   * sa page, où se trouve la réponse. Sans elles, la page garde les
+   * anciennes questions, réponses dépliées.
+   */
+  const nouvelles = questionsMorpho(m.lettre, langue);
+  const base = `/morphologies/${m.lettre.toLowerCase()}`;
+
   const maisons = maisonsPour(m.lettre).filter((o) => o.premieres.length > 0);
   const scene = vues(m.ouverture.robe)[1] ?? vues(m.ouverture.robe)[0];
 
@@ -149,6 +160,11 @@ export default async function PageMorphologie({
       url: `${SITE_URL}${versLangue(`/coupes/${s.ancre}`, langue)}/`,
     })),
       },
+      /* Le balisage des questions, pour l'ancien format seulement : les
+       * nouvelles questions n'affichent pas leur réponse sur cette page,
+       * et Google demande que la réponse d'un FAQPage y soit visible.
+       * Chacune a sa page, balisée comme article. */
+      ...(nouvelles ? [] : [
       {
         /* Le balisage des questions.
          *
@@ -162,7 +178,8 @@ export default async function PageMorphologie({
           name: x.q,
           acceptedAnswer: { "@type": "Answer", text: x.r },
         })),
-      },
+      }
+      ]),
     ],
   };
 
@@ -353,14 +370,49 @@ export default async function PageMorphologie({
           lien={{ href: "/rendez-vous", label: L.poserLaVotre }}
         />
         <div className="gouttiere pb-[clamp(2rem,4vw,4rem)]">
-          <dl className="mesure-l border-t border-fil" data-suite>
-            {lesQuestions.map((x) => (
-              <div key={x.q} className="border-b border-fil py-6">
-                <dt className="phrase text-[1.125rem] text-encre">{x.q}</dt>
-                <dd className="texte mt-3">{x.r}</dd>
-              </div>
-            ))}
-          </dl>
+          {nouvelles ? (
+            /* Le dessin de la maison : des rangées encadrées, la question
+             * à gauche, « Savoir plus » à droite. La rangée entière est
+             * le lien — un doigt sur téléphone n'a pas à viser le bouton. */
+            <ul className="flex max-w-[64rem] flex-col gap-3" data-suite>
+              {nouvelles.map((x) => (
+                <li key={x.slug}>
+                  <Link
+                    href={`${base}/${x.slug}`}
+                    className="rangee-question group flex items-center justify-between gap-3 rounded-[4px] border border-fil px-[clamp(0.875rem,2.2vw,1.75rem)] py-[clamp(0.9rem,1.6vw,1.25rem)] sm:gap-5"
+                  >
+                    {/* La taille est en style : « .phrase » n'est pas dans
+                      * une couche et l'emporterait sur un utilitaire. */}
+                    <span
+                      className="phrase min-w-0 text-encre transition-colors duration-500 group-hover:text-action"
+                      style={{ fontSize: "clamp(1.0625rem, 1.5vw, 1.3125rem)", lineHeight: 1.35 }}
+                    >
+                      {x.q}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      /* Plus serré sur téléphone, et sans flèche : à côté,
+                        * le bouton entier ne laissait que trois mots par
+                        * ligne à la question. */
+                      className="legende bouton-rubrique inline-flex shrink-0 items-center gap-2 rounded-[4px] border px-[0.6rem] py-[0.5rem] sm:px-[0.9rem] sm:py-[0.55rem]"
+                    >
+                      {L.savoirPlus}
+                      <span className="hidden sm:inline">→</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <dl className="mesure-l border-t border-fil" data-suite>
+              {lesQuestions.map((x) => (
+                <div key={x.q} className="border-b border-fil py-6">
+                  <dt className="phrase text-[1.125rem] text-encre">{x.q}</dt>
+                  <dd className="texte mt-3">{x.r}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
       </section>
 

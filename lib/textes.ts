@@ -420,6 +420,8 @@ const FR = {
       selonVosEnvies: "À découvrir selon vos envies",
       lesQuestions: "Les questions que l’on nous pose",
       poserLaVotre: "Poser la vôtre",
+      /* Le bouton de chaque question : il mène à sa page. */
+      savoirPlus: "Savoir plus",
       commentSavoir: (lettre: string) => `Comment savoir si j’ai une morphologie en ${lettre} ?`,
       auDela: "Au-delà de la morphologie",
       auDelaPhrase:
@@ -1108,6 +1110,7 @@ const EN: Textes = {
       selonVosEnvies: "To discover as you please",
       lesQuestions: "The questions we are asked",
       poserLaVotre: "Ask yours",
+      savoirPlus: "Read more",
       commentSavoir: (lettre: string) => `How do I know if I have the ${lettre} shape?`,
       auDela: "Beyond the body shape",
       auDelaPhrase:

@@ -286,6 +286,29 @@ body {
   color: var(--color-sur-image);
 }
 
+/*
+ * Une rangée de question, en bas des pages de morphologie.
+ *
+ * La rangée entière est le lien : à son survol, le cadre se fonce et le
+ * bouton « Savoir plus » prend le rouge de la maison, comme s'il était
+ * survolé lui-même — c'est bien lui que la mariée vise.
+ */
+.rangee-question {
+  transition: border-color 0.45s var(--ease-doux);
+}
+.rangee-question:hover {
+  border-color: var(--color-encre);
+}
+.rangee-question:hover .legende.bouton-rubrique {
+  background: var(--color-action);
+  border-color: var(--color-action);
+  color: var(--color-sur-image);
+}
+.rangee-question:focus-visible {
+  outline: 1px solid var(--color-action);
+  outline-offset: 3px;
+}
+
 /* L'action de la maison. La seule surface rouge du site. */
 .bouton {
   background: var(--color-action);
