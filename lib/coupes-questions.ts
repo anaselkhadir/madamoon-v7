@@ -1135,4 +1135,526 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  fluide: [
+    /* ——————————————————————————————————————— la définition ————— */
+    {
+      slug: "qu-est-ce-qu-une-robe-de-mariee-fluide",
+      q: "Qu'est-ce qu'une robe de mariée fluide ?",
+      r: "Une robe au tombé souple, qui suit naturellement le mouvement. Elle ne construit pas la silhouette par le volume : elle glisse sur le corps, dans une matière légère comme la mousseline, la charmeuse ou le satin mat. C'est la coupe la plus souple et la plus légère du catalogue.",
+      description:
+        "Qu'est-ce qu'une robe de mariée fluide ? Un tombé souple qui suit le mouvement, en mousseline, charmeuse ou satin mat. Définition et fluides MADAMOON, Paris.",
+      chapo:
+        "Souple et légère : la fluide est la robe qui bouge avec vous. Voici ce qui la définit.",
+      sections: [
+        {
+          titre: "Un tombé, plutôt qu'une construction",
+          texte: [
+            "La fluide ne cherche pas le volume. Sa matière tombe d'elle-même et suit le corps sans le serrer ; la jupe accompagne chaque pas. Elle peut être cintrée à la taille, reprise par un corset ou laissée libre.",
+          ],
+        },
+        {
+          titre: "Ce qu'elle fait à la silhouette",
+          texte: [
+            "Elle allonge la ligne. Sans ampleur pour élargir ni ajustement pour marquer, elle laisse la silhouette telle qu'elle est, et le tissu l'accompagne.",
+          ],
+        },
+        {
+          titre: "Les fluides de la boutique",
+          texte: [
+            "Chez Watters Designs, Adularia et Ryle en charmeuse ; chez Casablanca Bridal, Dove en satin mat et Maribel en mousseline stretch ; chez Monica Loretti, Marie, Murielle en dentelle florale et mousseline, et Mathilda, pensée pour la femme enceinte ; et Agnessa et Hélène, au corset perlé.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un tombé souple qui suit le mouvement.",
+        "Elle allonge la ligne.",
+        "Souple et légère.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/dove", label: "Dove" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les morphologies ————— */
+    {
+      slug: "robe-fluide-quelle-morphologie",
+      q: "À quelle morphologie la robe fluide convient-elle ?",
+      r: "C'est la coupe la plus souvent conseillée en premier : elle l'est pour les morphologies en O, en V, en H, en 8 et en X. Pour une morphologie en A, elle vient en second, et vaut l'essai. Aucune morphologie ne l'interdit.",
+      description:
+        "Robe de mariée fluide : à quelles morphologies convient-elle ? En premier pour O, V, H, 8 et X, à essayer pour A. Les conseils de la boutique MADAMOON, Paris.",
+      chapo:
+        "Parmi les cinq coupes, c'est celle que la boutique conseille en premier au plus grand nombre de silhouettes. Voici pourquoi.",
+      sections: [
+        {
+          titre: "Les morphologies pour qui elle vient en premier",
+          texte: [],
+          liste: [
+            "En O — elle glisse sans marquer et allonge la ligne.",
+            "En V — sa souplesse adoucit des épaules plus larges, surtout avec un décolleté en V.",
+            "En H — cintrée à la taille ou portée avec une ceinture, elle marque là où vous le décidez.",
+            "En 8 et en X — elle accompagne une ligne déjà équilibrée, sans rien avoir à construire.",
+          ],
+        },
+        {
+          titre: "Celle pour qui elle vaut l'essai",
+          texte: [
+            "En A, préférez une fluide au corsage travaillé — le corset perlé d'Agnessa ou d'Hélène, le décolleté drapé de Dove — qui ramène le regard vers le haut, et une jupe qui tombe sans coller aux hanches.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "Sur leurs fiches, presque toutes les fluides de la boutique sont indiquées pour les six morphologies ; Ryle l'est pour toutes, sauf la morphologie en O. C'est l'essayage qui tranche.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "En premier pour O, V, H, 8 et X.",
+        "À essayer pour A, avec un haut travaillé.",
+        "La coupe la plus souvent conseillée en premier.",
+      ],
+      liens: [
+        { href: "/morphologies/h/robe-fluide-morphologie-h", label: "La fluide et la morphologie en H" },
+        { href: "/morphologies/8/robe-fluide-morphologie-8", label: "La fluide et la morphologie en 8" },
+        { href: "/coupes/fluide/choisir-robe-fluide-selon-morphologie", label: "Choisir sa fluide selon sa morphologie" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— l'empire ————— */
+    {
+      slug: "difference-robe-fluide-robe-empire",
+      q: "Quelle différence entre une robe fluide et une robe empire ?",
+      r: "La fluide se définit par sa matière et son tombé ; l'empire, par sa coupe : une couture placée juste sous la poitrine, d'où la jupe tombe librement. Une robe empire est souvent fluide, mais une fluide n'est pas forcément empire. La boutique ne classe pas ses robes en « empire » : ses fluides en sont les plus proches.",
+      description:
+        "Robe fluide ou robe empire : l'une se définit par son tombé, l'autre par une couture sous la poitrine. La différence expliquée, et les fluides MADAMOON à Paris.",
+      chapo:
+        "Les deux mots se croisent souvent. L'un parle de la matière, l'autre de l'endroit où la robe se resserre.",
+      sections: [
+        {
+          titre: "La fluide, une affaire de tombé",
+          texte: [
+            "Une matière souple qui suit le mouvement. La taille peut être où l'on veut : marquée par un corset, comme chez Agnessa ou Hélène, ou laissée libre.",
+          ],
+        },
+        {
+          titre: "L'empire, une affaire de coupe",
+          texte: [
+            "La robe se resserre juste sous la poitrine, puis tombe sans marquer la taille ni les hanches. Elle met le buste en valeur et allonge tout ce qui suit.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "La boutique n'a pas de catégorie « empire » : ce sont ses fluides qui s'en rapprochent le plus. Mathilda, de Monica Loretti, pensée pour la femme enceinte, est rangée avec elles. La ligne exacte de chaque robe se voit en cabine.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Fluide : une matière, un tombé.",
+        "Empire : une couture sous la poitrine.",
+        "Au catalogue, les fluides en sont les plus proches.",
+      ],
+      liens: [
+        { href: "/robes/mathilda", label: "Mathilda" },
+        { href: "/morphologies/o/robe-empire-morphologie-o", label: "L'empire et la morphologie en O" },
+        { href: "/morphologies/h/robe-empire-morphologie-h", label: "L'empire et la morphologie en H" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la matière ————— */
+    {
+      slug: "matiere-robe-de-mariee-fluide",
+      q: "Quelle matière choisir pour une robe de mariée fluide ?",
+      r: "Celle qui donne le tombé que vous cherchez. La mousseline est la plus légère et la plus aérienne ; la charmeuse, lumineuse, suit le corps de près ; le satin mat a plus de tenue. Une version stretch ajoute de l'aisance.",
+      description:
+        "Matière d'une robe de mariée fluide : mousseline légère, charmeuse lumineuse, satin mat qui tient, tulle. Les fluides MADAMOON — Maribel, Adularia, Dove — à Paris.",
+      chapo:
+        "Dans une fluide, la matière fait la robe. Chacune tombe à sa manière.",
+      sections: [
+        {
+          titre: "Les matières du catalogue",
+          texte: [],
+          liste: [
+            "La mousseline — légère et aérienne : la jupe d'Hélène, celle de Murielle ; Maribel en mousseline stretch.",
+            "La charmeuse — lumineuse, elle épouse la silhouette : Adularia, Ryle.",
+            "Le satin mat — plus de tenue, une lumière douce : Dove.",
+            "Le tulle — une jupe fluide sous un corset perlé : Agnessa.",
+          ],
+        },
+        {
+          titre: "Choisir selon la journée",
+          texte: [
+            "Un conseil : pour un mariage d'été ou une longue journée, la mousseline et les versions stretch ; pour une cérémonie plus solennelle, le satin mat, qui garde sa ligne. La charmeuse, qui suit le corps de près, demande un ajustement précis.",
+          ],
+        },
+        {
+          titre: "La dentelle",
+          texte: [
+            "Elle se pose sur une fluide sans l'alourdir : en dentelle florale sur Murielle, ornée de perles et de fleurs en relief sur le corset d'Hélène.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Mousseline : la plus légère.",
+        "Charmeuse : lumineuse, près du corps.",
+        "Satin mat : plus de tenue.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/morphologies/o/matiere-robe-de-mariee-fluide-confortable", label: "Une matière fluide et confortable" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la bohème ————— */
+    {
+      slug: "robe-fluide-mariage-boheme",
+      q: "Une robe fluide convient-elle à un mariage bohème ?",
+      r: "Oui, c'est même la coupe la plus naturelle pour un mariage bohème. Une jupe en mousseline, de la dentelle florale, des manches légères : Hélène est pensée, d'après sa fiche, pour la mariée « qui préfère dire OUI dans un look bohème chic ».",
+      description:
+        "Robe de mariée fluide pour un mariage bohème : mousseline, dentelle florale, manches légères. Hélène et Murielle, les fluides bohèmes de MADAMOON à Paris.",
+      chapo:
+        "Le bohème aime ce qui bouge et ce qui respire. La fluide en a fait sa nature.",
+      sections: [
+        {
+          titre: "Les robes du catalogue",
+          texte: [],
+          liste: [
+            "Hélène — un corset en dentelle ornée de petites perles et de fleurs en relief, une jupe en mousseline « délicate et légère » : la fiche parle d'un look bohème chic.",
+            "Murielle — dentelle florale et mousseline, décolleté en V, manches illusion et fente haute.",
+            "Ryle — des manches ballon et un décolleté en V profond, en charmeuse.",
+          ],
+        },
+        {
+          titre: "Ce qui fait le bohème",
+          texte: [
+            "Un conseil : la dentelle florale, les manches légères ou transparentes, une traîne courte ou absente, et une coiffure souple. La robe doit pouvoir marcher dans l'herbe et danser pieds nus.",
+          ],
+        },
+        {
+          titre: "Bohème, mais pas négligé",
+          texte: [
+            "Une fluide bohème reste une robe de mariée : un corsage travaillé, comme celui d'Hélène, lui donne sa tenue et son éclat.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : la coupe la plus naturelle pour le bohème.",
+        "Mousseline, dentelle florale, manches légères.",
+        "Hélène est pensée pour un look bohème chic.",
+      ],
+      liens: [
+        { href: "/robes/helene", label: "Hélène" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— l'été ————— */
+    {
+      slug: "robe-fluide-mariage-ete",
+      q: "Une robe fluide est-elle adaptée à un mariage en été ?",
+      r: "Oui, c'est l'une des plus agréables à porter par la chaleur. Une matière légère comme la mousseline laisse respirer, et des épaules dégagées, un dos ouvert ou une fente allègent encore la robe. Prévoyez simplement une épaule couverte pour la cérémonie si le lieu le demande.",
+      description:
+        "Robe de mariée fluide pour un mariage en été : mousseline légère, épaules dégagées, dos ouvert, fente. Les fluides MADAMOON — Dove, Maribel, Murielle — à Paris.",
+      chapo:
+        "Quand il fait chaud, la légèreté n'est plus un style : c'est un confort. La fluide l'a par nature.",
+      sections: [
+        {
+          titre: "Une matière qui respire",
+          texte: [
+            "La mousseline est la plus légère du catalogue : la jupe d'Hélène, celle de Murielle, Maribel en mousseline stretch. La charmeuse et le satin mat restent fluides, avec un peu plus de corps.",
+          ],
+        },
+        {
+          titre: "Ce qui allège",
+          texte: [],
+          liste: [
+            "Des épaules dénudées — Dove, avec son décolleté drapé.",
+            "Un dos ouvert — Dove encore, et le dos en V de Murielle.",
+            "Une fente — Maribel, Murielle : elle laisse passer l'air et facilite la marche.",
+            "Des manches illusion — Murielle : couvrir sans avoir chaud.",
+          ],
+        },
+        {
+          titre: "La cérémonie et la soirée",
+          texte: [
+            "Un conseil : pour une cérémonie religieuse, un voile léger ou une étole couvrent les épaules le temps qu'il faut. Murielle existe aussi sans fente, d'après sa fiche, pour une version plus couvrante.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des plus agréables par la chaleur.",
+        "Mousseline, épaules dégagées, dos ouvert.",
+        "Un voile léger pour couvrir à la cérémonie.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la tenue ————— */
+    {
+      slug: "robe-fluide-belle-tenue",
+      q: "Comment choisir une robe fluide qui garde une belle tenue ?",
+      r: "En regardant trois choses : une matière qui a du poids, comme le satin mat ou la charmeuse ; un corsage qui tient, parfois structuré en corset ; et un ajustement précis. Une fluide bien choisie tombe droit, sans flotter ni coller.",
+      description:
+        "Une robe de mariée fluide qui garde sa tenue : matière qui a du poids, corsage structuré, ajustement précis. Les conseils et fluides de MADAMOON à Paris.",
+      chapo:
+        "Fluide ne veut pas dire flottante. Une belle fluide tombe juste — et cela se choisit.",
+      sections: [
+        {
+          titre: "Une matière qui a du poids",
+          texte: [
+            "Le satin mat de Dove et la charmeuse d'Adularia ou de Ryle tombent d'eux-mêmes : leur poids tire la robe vers le bas et dessine une ligne nette. La mousseline, plus légère, s'envole davantage ; un corsage structuré lui donne son ancrage.",
+          ],
+        },
+        {
+          titre: "Un corsage qui tient",
+          texte: [
+            "Un corset perlé, comme celui d'Agnessa ou d'Hélène, tient le haut et laisse la jupe libre. Le corsage brodé et perlé à la main de Maribel structure le buste au-dessus d'une jupe en mousseline.",
+          ],
+        },
+        {
+          titre: "Un ajustement précis",
+          texte: [
+            "Une fluide pardonne peu un ajustement approximatif. Après l'essayage, la boutique prend vos mensurations pour lancer la confection, et ses couturières ajustent la robe sur place. Un conseil : regardez-vous de profil et en marchant, pas seulement de face.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une matière qui a du poids.",
+        "Un corsage qui tient le haut.",
+        "Un ajustement précis.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "La durée des retouches" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le formel ————— */
+    {
+      slug: "robe-fluide-mariage-formel",
+      q: "Une robe fluide peut-elle être élégante pour un mariage formel ?",
+      r: "Oui. Dans un satin mat ou une charmeuse, avec une traîne et une ligne épurée, la fluide a toute la solennité d'une grande cérémonie. Dove, avec son dos ouvert et ses boutons jusqu'au bout de la traîne, en est l'exemple.",
+      description:
+        "Robe de mariée fluide pour un mariage formel : satin mat, charmeuse, ligne épurée, traîne. Dove, Adularia et Marie, les fluides élégantes de MADAMOON, Paris.",
+      chapo:
+        "On associe la fluide aux mariages champêtres. Elle sait aussi être la robe la plus élégante d'une cérémonie.",
+      sections: [
+        {
+          titre: "Les fluides les plus habillées",
+          texte: [],
+          liste: [
+            "Dove — satin mat, décolleté drapé, épaules dénudées, et une ligne de boutons qui court jusqu'à la traîne.",
+            "Adularia — en charmeuse, d'une « élégance minimaliste » à l'allure moderne.",
+            "Marie — de Monica Loretti, une ligne intemporelle.",
+          ],
+        },
+        {
+          titre: "Ce qui la rend formelle",
+          texte: [
+            "Un conseil : une matière qui a de la tenue plutôt qu'une mousseline très légère, une traîne, un décolleté net, et un voile long. La sobriété de la ligne fait le reste.",
+          ],
+        },
+        {
+          titre: "Pour une cérémonie religieuse",
+          texte: [
+            "Des épaules couvertes ou un voile qui les couvre. Murielle a des manches illusion et existe aussi sans fente, d'après sa fiche, pour une version plus couvrante.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, en satin mat ou en charmeuse.",
+        "Une traîne et une ligne épurée.",
+        "Dove en est l'exemple.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/marie", label: "Marie" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les chaussures ————— */
+    {
+      slug: "chaussures-robe-fluide",
+      q: "Quel type de chaussures porter avec une robe fluide ?",
+      r: "Des chaussures dans lesquelles vous tiendrez toute la journée, choisies avant les retouches : la longueur de la robe se règle sur elles. Avec une fente, elles se voient et méritent d'être choisies avec soin ; pour un mariage en plein air, préférez un talon large ou des sandales plates.",
+      description:
+        "Quelles chaussures avec une robe de mariée fluide ? Choisies avant les retouches, confortables, soignées si la robe a une fente. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "Avec une fluide, la chaussure se voit plus qu'on ne le croit : à chaque pas, la jupe bouge.",
+      sections: [
+        {
+          titre: "Avant les retouches",
+          texte: [
+            "Un conseil : achetez vos chaussures avant les retouches et apportez-les aux essayages. Une fluide qui frôle le sol se règle au centimètre, et la hauteur du talon change tout.",
+          ],
+        },
+        {
+          titre: "Avec une fente",
+          texte: [
+            "Maribel et Murielle ont une fente : la chaussure se voit à chaque pas. Une sandale fine ou un escarpin épuré prolongent la jambe.",
+          ],
+        },
+        {
+          titre: "Selon le lieu",
+          texte: [],
+          liste: [
+            "Dans l'herbe ou le gravier — un talon large, ou des sandales plates.",
+            "Pour un mariage bohème — des sandales plates, voire pieds nus pour la soirée.",
+            "Pour une longue journée — un talon modéré, et une seconde paire pour danser.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Choisies avant les retouches.",
+        "Soignées si la robe a une fente.",
+        "Adaptées au sol et à la journée.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "La durée des retouches" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le voile, les accessoires ————— */
+    {
+      slug: "voile-accessoires-robe-fluide",
+      q: "Quel voile ou accessoire associer à une robe fluide ?",
+      r: "Un voile léger, en tulle souple, qui bouge avec la robe ; une ceinture bijou pour marquer la taille ; un bijou de cheveux ou des boucles d'oreilles. Une fluide est épurée : un accessoire bien choisi suffit à la signer.",
+      description:
+        "Voile et accessoires pour une robe de mariée fluide : voile en tulle souple, ceinture bijou, bijou de cheveux. Les conseils et fluides de MADAMOON à Paris.",
+      chapo:
+        "Une fluide laisse de la place à l'accessoire. C'est une chance, à condition de n'en choisir qu'un ou deux.",
+      sections: [
+        {
+          titre: "Le voile",
+          texte: [
+            "Un conseil : un voile en tulle souple, qui suit le mouvement de la robe plutôt qu'un voile raide. Quand le dos est travaillé — la ligne de boutons de Dove, le dos en V de Murielle ou d'Agnessa —, un voile transparent le laisse voir.",
+          ],
+        },
+        {
+          titre: "La ceinture",
+          texte: [
+            "Sur une fluide sans taille marquée, une ceinture bijou dessine la taille là où vous le voulez. C'est aussi ce que la boutique conseille aux morphologies en H et en 8.",
+          ],
+        },
+        {
+          titre: "Les bijoux",
+          texte: [
+            "Avec un corsage perlé — Agnessa, Hélène, Maribel —, des boucles d'oreilles suffisent. Avec une fluide minimaliste, comme Adularia, un bijou plus marqué peut porter toute la tenue. Avec les manches ballon de Ryle, gardez le cou dégagé.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un voile souple, qui bouge avec la robe.",
+        "Une ceinture bijou pour marquer la taille.",
+        "Un ou deux accessoires, pas plus.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les petites mariées ————— */
+    {
+      slug: "robe-fluide-petite-mariee",
+      q: "Une robe fluide convient-elle aux petites mariées ?",
+      r: "Oui, très bien : sans volume pour l'élargir, la fluide allonge la ligne. Un décolleté en V, une taille marquée un peu haut et une longueur réglée sur vos chaussures accentuent l'effet. Évitez seulement l'excès de tissu, qui peut prendre le dessus.",
+      description:
+        "Robe de mariée fluide pour une petite mariée : une ligne qui allonge, un décolleté en V, une longueur réglée au centimètre. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "La fluide est l'une des coupes les plus flatteuses pour une petite silhouette. Voici comment en tirer le meilleur.",
+      sections: [
+        {
+          titre: "Une ligne qui allonge",
+          texte: [
+            "La fluide descend sans s'élargir : l'œil suit une ligne continue, du buste au sol. C'est ce qui allonge.",
+          ],
+        },
+        {
+          titre: "Ce qui accentue l'effet",
+          texte: [],
+          liste: [
+            "Un décolleté en V — Ryle, Maribel, Murielle, Agnessa : il étire le buste.",
+            "Une taille marquée un peu haut — elle allonge les jambes.",
+            "Une fente — Maribel, Murielle : elle dévoile la jambe en marchant.",
+          ],
+        },
+        {
+          titre: "La longueur",
+          texte: [
+            "Un conseil : évitez les manches trop volumineuses et l'excès de tissu, et réglez la longueur sur vos chaussures. Après l'essayage, la boutique prend vos mensurations et ses couturières ajustent la robe sur place.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : la fluide allonge la ligne.",
+        "Un V et une taille un peu haute.",
+        "Une longueur réglée sur vos chaussures.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/coupes/fluide/chaussures-robe-fluide", label: "Les chaussures avec une fluide" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— selon la morphologie ————— */
+    {
+      slug: "choisir-robe-fluide-selon-morphologie",
+      q: "Comment choisir une robe fluide selon sa morphologie ?",
+      r: "En choisissant les détails plutôt que la coupe : le décolleté, la taille et les manches. Un V pour une morphologie en O ou en V, une taille marquée pour une morphologie en H ou en 8, un corsage travaillé pour une morphologie en A. La fluide fait le reste.",
+      description:
+        "Choisir une robe de mariée fluide selon sa morphologie : décolleté, taille, manches, matière. Les conseils pour O, A, V, H, 8 et X, et les fluides MADAMOON.",
+      chapo:
+        "La fluide convient à presque toutes les silhouettes. Ce sont ses détails qui l'accordent à la vôtre.",
+      sections: [
+        {
+          titre: "Morphologie par morphologie",
+          texte: [],
+          liste: [
+            "En O — un tombé qui glisse sans marquer, et un décolleté en V ou en cœur qui met la poitrine en valeur.",
+            "En A — un corsage travaillé qui ramène le regard vers le haut : le corset perlé d'Agnessa ou d'Hélène, le décolleté drapé de Dove.",
+            "En V — un décolleté en V, une structure légère aux épaules ; des manches volumineuses, comme celles de Ryle, sont à essayer avec prudence.",
+            "En H — une taille marquée, par une coupe cintrée ou une ceinture.",
+            "En 8 et en X — une reprise à la taille, pour que la fluide ne flotte pas là où la taille se creuse.",
+          ],
+        },
+        {
+          titre: "La matière",
+          texte: [
+            "Un conseil : la mousseline glisse sans marquer, le satin mat structure davantage, la charmeuse suit le corps de près et demande un ajustement précis.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "Presque toutes les fluides de la boutique sont indiquées, sur leurs fiches, pour les six morphologies. L'essayage montre laquelle est la vôtre.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Les détails accordent la fluide à la silhouette.",
+        "Le décolleté, la taille, les manches.",
+        "L'essayage tranche.",
+      ],
+      liens: [
+        { href: "/morphologies", label: "Les six morphologies" },
+        { href: "/morphologies/x/robe-fluide-silhouette-equilibree", label: "La fluide et une silhouette équilibrée" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+      ],
+    },
+  ],
 };

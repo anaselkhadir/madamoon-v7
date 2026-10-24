@@ -1074,4 +1074,503 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  fluide: [
+    {
+      slug: fr("fluide", 0),
+      q: "What is a sheath wedding dress?",
+      r: "A dress with a soft, flowing drape that naturally follows movement. It does not build the figure through volume: it glides over the body, in a light fabric such as chiffon, charmeuse or matte satin. It is the softest, lightest silhouette in the catalogue.",
+      description:
+        "What is a sheath wedding dress? A soft drape that follows movement, in chiffon, charmeuse or matte satin. Definition, and the sheath dresses at MADAMOON, Paris.",
+      chapo:
+        "Soft and light: the sheath is the dress that moves with you. Here is what defines it.",
+      sections: [
+        {
+          titre: "A drape, rather than a construction",
+          texte: [
+            "The sheath does not seek volume. Its fabric falls on its own and follows the body without squeezing; the skirt goes with every step. It can be fitted at the waist, held by a corset or left free.",
+          ],
+        },
+        {
+          titre: "What it does to the figure",
+          texte: [
+            "It lengthens the line. With no fullness to widen and no fit to mark, it leaves the figure as it is, and the fabric goes with it.",
+          ],
+        },
+        {
+          titre: "The boutique's sheath dresses",
+          texte: [
+            "From Watters Designs, Adularia and Ryle in charmeuse; from Casablanca Bridal, Dove in matte satin and Maribel in stretch chiffon; from Monica Loretti, Marie, Murielle in floral lace and chiffon, and Mathilda, designed for expectant brides; and Agnessa and Hélène, with their beaded corsets.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A soft drape that follows movement.",
+        "It lengthens the line.",
+        "Soft and light.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/dove", label: "Dove" },
+      ],
+    },
+    {
+      slug: fr("fluide", 1),
+      q: "Which body shape does a sheath dress suit?",
+      r: "It is the silhouette most often recommended first: it is for the O, V, H, 8 and X body shapes. For an A body shape, it comes second, and is worth trying. No body shape rules it out.",
+      description:
+        "Sheath wedding dress: which body shapes does it suit? First for O, V, H, 8 and X, worth trying for A. Advice from the MADAMOON boutique, Paris.",
+      chapo:
+        "Of the five silhouettes, it is the one the boutique recommends first to the most figures. Here is why.",
+      sections: [
+        {
+          titre: "The body shapes it comes first for",
+          texte: [],
+          liste: [
+            "O — it glides without marking and lengthens the line.",
+            "V — its softness eases broader shoulders, especially with a V neckline.",
+            "H — fitted at the waist or worn with a belt, it marks where you decide.",
+            "8 and X — it goes with an already balanced line, with nothing to build.",
+          ],
+        },
+        {
+          titre: "The one it is worth trying for",
+          texte: [
+            "For an A, choose a sheath with a crafted bodice — Agnessa's or Hélène's beaded corset, Dove's draped neckline — which draws the eye upwards, and a skirt that falls without clinging to the hips.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "On their pages, almost all the boutique's sheath dresses are listed for all six body shapes; Ryle is listed for all but the O. The fitting decides.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First for O, V, H, 8 and X.",
+        "Worth trying for A, with a crafted top.",
+        "The silhouette most often recommended first.",
+      ],
+      liens: [
+        { href: "/morphologies/h/robe-fluide-morphologie-h", label: "The sheath and the H body shape" },
+        { href: "/morphologies/8/robe-fluide-morphologie-8", label: "The sheath and the 8 body shape" },
+        { href: "/coupes/fluide/choisir-robe-fluide-selon-morphologie", label: "Choosing a sheath for your body shape" },
+      ],
+    },
+    {
+      slug: fr("fluide", 2),
+      q: "What is the difference between a sheath dress and an empire dress?",
+      r: "A sheath is defined by its fabric and drape; an empire, by its cut: a seam placed just below the bust, from which the skirt falls freely. An empire dress is often flowing, but a sheath is not necessarily empire. The boutique does not file its dresses as \"empire\": its sheath dresses are the closest.",
+      description:
+        "Sheath or empire: one is defined by its drape, the other by a seam below the bust. The difference explained, and the MADAMOON sheath dresses in Paris.",
+      chapo:
+        "The two words often overlap. One speaks of the fabric, the other of where the dress draws in.",
+      sections: [
+        {
+          titre: "The sheath, a matter of drape",
+          texte: [
+            "A soft fabric that follows movement. The waist can sit wherever you like: marked by a corset, as on Agnessa or Hélène, or left free.",
+          ],
+        },
+        {
+          titre: "The empire, a matter of cut",
+          texte: [
+            "The dress draws in just below the bust, then falls without marking the waist or hips. It flatters the bust and lengthens everything below.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "The boutique has no \"empire\" category: its sheath dresses come closest. Mathilda, by Monica Loretti, designed for expectant brides, is filed with them. The exact line of each dress shows in the fitting room.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Sheath: a fabric, a drape.",
+        "Empire: a seam below the bust.",
+        "In the catalogue, the sheath dresses come closest.",
+      ],
+      liens: [
+        { href: "/robes/mathilda", label: "Mathilda" },
+        { href: "/morphologies/o/robe-empire-morphologie-o", label: "The empire and the O body shape" },
+        { href: "/morphologies/h/robe-empire-morphologie-h", label: "The empire and the H body shape" },
+      ],
+    },
+    {
+      slug: fr("fluide", 3),
+      q: "Which fabric should you choose for a sheath wedding dress?",
+      r: "The one that gives the drape you want. Chiffon is the lightest and airiest; charmeuse, luminous, follows the body closely; matte satin has more hold. A stretch version adds ease.",
+      description:
+        "Fabric for a sheath wedding dress: light chiffon, luminous charmeuse, matte satin that holds, tulle. The MADAMOON sheath dresses — Maribel, Adularia, Dove — in Paris.",
+      chapo:
+        "In a sheath, the fabric makes the dress. Each one falls in its own way.",
+      sections: [
+        {
+          titre: "The catalogue's fabrics",
+          texte: [],
+          liste: [
+            "Chiffon — light and airy: Hélène's skirt, Murielle's; Maribel in stretch chiffon.",
+            "Charmeuse — luminous, it hugs the figure: Adularia, Ryle.",
+            "Matte satin — more hold, a soft light: Dove.",
+            "Tulle — a flowing skirt under a beaded corset: Agnessa.",
+          ],
+        },
+        {
+          titre: "Choosing for the day",
+          texte: [
+            "A tip: for a summer wedding or a long day, chiffon and stretch versions; for a more formal ceremony, matte satin, which keeps its line. Charmeuse, which follows the body closely, needs a precise fit.",
+          ],
+        },
+        {
+          titre: "Lace",
+          texte: [
+            "It sits on a sheath without weighing it down: floral lace on Murielle, adorned with beads and raised flowers on Hélène's corset.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Chiffon: the lightest.",
+        "Charmeuse: luminous, close to the body.",
+        "Matte satin: more hold.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/morphologies/o/matiere-robe-de-mariee-fluide-confortable", label: "A flowing, comfortable fabric" },
+      ],
+    },
+    {
+      slug: fr("fluide", 4),
+      q: "Does a sheath dress suit a boho wedding?",
+      r: "Yes, it is even the most natural silhouette for a boho wedding. A chiffon skirt, floral lace, light sleeves: according to its page, Hélène is designed for the bride \"who prefers to say YES in a boho-chic look\".",
+      description:
+        "Sheath wedding dress for a boho wedding: chiffon, floral lace, light sleeves. Hélène and Murielle, the boho sheath dresses at MADAMOON in Paris.",
+      chapo:
+        "Boho loves what moves and what breathes. The sheath has made that its nature.",
+      sections: [
+        {
+          titre: "The catalogue's dresses",
+          texte: [],
+          liste: [
+            "Hélène — a lace corset adorned with tiny beads and raised flowers, a \"delicate and light\" chiffon skirt: its page speaks of a boho-chic look.",
+            "Murielle — floral lace and chiffon, a V neckline, illusion sleeves and a high slit.",
+            "Ryle — balloon sleeves and a deep V neckline, in charmeuse.",
+          ],
+        },
+        {
+          titre: "What makes it boho",
+          texte: [
+            "A tip: floral lace, light or sheer sleeves, a short train or none, and a soft hairstyle. The dress should be able to walk on grass and dance barefoot.",
+          ],
+        },
+        {
+          titre: "Boho, but not casual",
+          texte: [
+            "A boho sheath is still a wedding dress: a crafted bodice, like Hélène's, gives it its hold and its radiance.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: the most natural silhouette for boho.",
+        "Chiffon, floral lace, light sleeves.",
+        "Hélène is designed for a boho-chic look.",
+      ],
+      liens: [
+        { href: "/robes/helene", label: "Hélène" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+    {
+      slug: fr("fluide", 5),
+      q: "Is a sheath dress suitable for a summer wedding?",
+      r: "Yes, it is one of the most pleasant to wear in the heat. A light fabric such as chiffon lets you breathe, and bare shoulders, an open back or a slit lighten the dress further. Simply plan to cover your shoulders for the ceremony if the venue asks for it.",
+      description:
+        "Sheath wedding dress for a summer wedding: light chiffon, bare shoulders, open back, slit. The MADAMOON sheath dresses — Dove, Maribel, Murielle — in Paris.",
+      chapo:
+        "When it is hot, lightness is no longer a style: it is comfort. The sheath has it by nature.",
+      sections: [
+        {
+          titre: "A fabric that breathes",
+          texte: [
+            "Chiffon is the lightest in the catalogue: Hélène's skirt, Murielle's, Maribel in stretch chiffon. Charmeuse and matte satin stay flowing, with a little more body.",
+          ],
+        },
+        {
+          titre: "What lightens",
+          texte: [],
+          liste: [
+            "Bare shoulders — Dove, with its draped neckline.",
+            "An open back — Dove again, and Murielle's V back.",
+            "A slit — Maribel, Murielle: it lets air through and makes walking easier.",
+            "Illusion sleeves — Murielle: covered without being hot.",
+          ],
+        },
+        {
+          titre: "The ceremony and the evening",
+          texte: [
+            "A tip: for a religious ceremony, a light veil or a stole covers the shoulders as long as needed. According to its page, Murielle also comes without the slit, for a more covered version.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the most pleasant in the heat.",
+        "Chiffon, bare shoulders, an open back.",
+        "A light veil to cover up for the ceremony.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+      ],
+    },
+    {
+      slug: fr("fluide", 6),
+      q: "How do you choose a sheath dress that holds its shape beautifully?",
+      r: "By looking at three things: a fabric with weight, such as matte satin or charmeuse; a bodice that holds, sometimes built as a corset; and a precise fit. A well-chosen sheath falls straight, without floating or clinging.",
+      description:
+        "A sheath wedding dress that holds its shape: a fabric with weight, a structured bodice, a precise fit. Advice and sheath dresses from MADAMOON in Paris.",
+      chapo:
+        "Flowing does not mean floating. A beautiful sheath falls just right — and that can be chosen.",
+      sections: [
+        {
+          titre: "A fabric with weight",
+          texte: [
+            "Dove's matte satin and Adularia's or Ryle's charmeuse fall on their own: their weight draws the dress down and traces a clean line. Chiffon, lighter, floats more; a structured bodice anchors it.",
+          ],
+        },
+        {
+          titre: "A bodice that holds",
+          texte: [
+            "A beaded corset, like Agnessa's or Hélène's, holds the top and leaves the skirt free. Maribel's hand-embroidered, hand-beaded bodice structures the bust above a chiffon skirt.",
+          ],
+        },
+        {
+          titre: "A precise fit",
+          texte: [
+            "A sheath forgives little in an approximate fit. After the fitting, the boutique takes your measurements to begin making the dress, and its seamstresses adjust it on site. A tip: look at yourself in profile and walking, not just from the front.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A fabric with weight.",
+        "A bodice that holds the top.",
+        "A precise fit.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "How long alterations take" },
+      ],
+    },
+    {
+      slug: fr("fluide", 7),
+      q: "Can a sheath dress be elegant for a formal wedding?",
+      r: "Yes. In matte satin or charmeuse, with a train and a clean line, the sheath has all the formality of a grand ceremony. Dove, with its open back and buttons running to the end of the train, is the example.",
+      description:
+        "Sheath wedding dress for a formal wedding: matte satin, charmeuse, clean line, train. Dove, Adularia and Marie, the elegant sheath dresses at MADAMOON, Paris.",
+      chapo:
+        "The sheath is associated with country weddings. It can also be the most elegant dress at a ceremony.",
+      sections: [
+        {
+          titre: "The most formal sheath dresses",
+          texte: [],
+          liste: [
+            "Dove — matte satin, a draped neckline, bare shoulders, and a line of buttons running to the train.",
+            "Adularia — in charmeuse, of a \"minimalist elegance\" with a modern allure.",
+            "Marie — by Monica Loretti, a timeless line.",
+          ],
+        },
+        {
+          titre: "What makes it formal",
+          texte: [
+            "A tip: a fabric with hold rather than a very light chiffon, a train, a clean neckline, and a long veil. The simplicity of the line does the rest.",
+          ],
+        },
+        {
+          titre: "For a religious ceremony",
+          texte: [
+            "Covered shoulders, or a veil that covers them. Murielle has illusion sleeves and, according to its page, also comes without the slit, for a more covered version.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, in matte satin or charmeuse.",
+        "A train and a clean line.",
+        "Dove is the example.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/marie", label: "Marie" },
+      ],
+    },
+    {
+      slug: fr("fluide", 8),
+      q: "What shoes should you wear with a sheath dress?",
+      r: "Shoes you can stand in all day, chosen before the alterations: the length of the dress is set to them. With a slit, they show and deserve careful choice; for an outdoor wedding, prefer a block heel or flat sandals.",
+      description:
+        "Which shoes with a sheath wedding dress? Chosen before alterations, comfortable, carefully chosen if the dress has a slit. Advice from MADAMOON, Paris.",
+      chapo:
+        "With a sheath, the shoe shows more than you think: with every step, the skirt moves.",
+      sections: [
+        {
+          titre: "Before the alterations",
+          texte: [
+            "A tip: buy your shoes before the alterations and bring them to your fittings. A sheath that skims the floor is set to the centimetre, and the heel height changes everything.",
+          ],
+        },
+        {
+          titre: "With a slit",
+          texte: [
+            "Maribel and Murielle have a slit: the shoe shows with every step. A fine sandal or a clean court shoe lengthens the leg.",
+          ],
+        },
+        {
+          titre: "Depending on the venue",
+          texte: [],
+          liste: [
+            "On grass or gravel — a block heel, or flat sandals.",
+            "For a boho wedding — flat sandals, or even barefoot for the evening.",
+            "For a long day — a moderate heel, and a second pair for dancing.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Chosen before the alterations.",
+        "Chosen with care if the dress has a slit.",
+        "Suited to the ground and the day.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "How long alterations take" },
+      ],
+    },
+    {
+      slug: fr("fluide", 9),
+      q: "Which veil or accessory goes with a sheath dress?",
+      r: "A light veil, in soft tulle, that moves with the dress; a jewelled belt to mark the waist; a hair piece or earrings. A sheath is pared back: one well-chosen accessory is enough to sign it.",
+      description:
+        "Veil and accessories for a sheath wedding dress: soft tulle veil, jewelled belt, hair piece. Advice and sheath dresses from MADAMOON in Paris.",
+      chapo:
+        "A sheath leaves room for the accessory. That is an opportunity, as long as you choose only one or two.",
+      sections: [
+        {
+          titre: "The veil",
+          texte: [
+            "A tip: a soft tulle veil, which follows the movement of the dress, rather than a stiff one. When the back is worked — Dove's line of buttons, Murielle's or Agnessa's V back — a sheer veil lets it show.",
+          ],
+        },
+        {
+          titre: "The belt",
+          texte: [
+            "On a sheath with no defined waist, a jewelled belt draws the waist where you want it. It is also what the boutique recommends for the H and 8 body shapes.",
+          ],
+        },
+        {
+          titre: "Jewellery",
+          texte: [
+            "With a beaded bodice — Agnessa, Hélène, Maribel — earrings are enough. With a minimalist sheath, like Adularia, a bolder piece can carry the whole look. With Ryle's balloon sleeves, keep the neck clear.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A soft veil that moves with the dress.",
+        "A jewelled belt to mark the waist.",
+        "One or two accessories, no more.",
+      ],
+      liens: [
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/adularia", label: "Adularia" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+    {
+      slug: fr("fluide", 10),
+      q: "Does a sheath dress suit petite brides?",
+      r: "Yes, very well: with no volume to widen it, the sheath lengthens the line. A V neckline, a slightly high waist and a length set to your shoes heighten the effect. Just avoid excess fabric, which can overwhelm.",
+      description:
+        "Sheath wedding dress for a petite bride: a lengthening line, a V neckline, a length set to the centimetre. Advice from MADAMOON, Paris.",
+      chapo:
+        "The sheath is one of the most flattering silhouettes for a petite figure. Here is how to make the most of it.",
+      sections: [
+        {
+          titre: "A line that lengthens",
+          texte: [
+            "The sheath falls without widening: the eye follows an unbroken line, from the bust to the floor. That is what lengthens.",
+          ],
+        },
+        {
+          titre: "What heightens the effect",
+          texte: [],
+          liste: [
+            "A V neckline — Ryle, Maribel, Murielle, Agnessa: it elongates the bust.",
+            "A slightly high waist — it lengthens the legs.",
+            "A slit — Maribel, Murielle: it reveals the leg as you walk.",
+          ],
+        },
+        {
+          titre: "The length",
+          texte: [
+            "A tip: avoid very voluminous sleeves and excess fabric, and set the length to your shoes. After the fitting, the boutique takes your measurements and its seamstresses adjust the dress on site.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: the sheath lengthens the line.",
+        "A V and a slightly high waist.",
+        "A length set to your shoes.",
+      ],
+      liens: [
+        { href: "/robes/maribel", label: "Maribel" },
+        { href: "/robes/murielle", label: "Murielle" },
+        { href: "/coupes/fluide/chaussures-robe-fluide", label: "Shoes with a sheath dress" },
+      ],
+    },
+    {
+      slug: fr("fluide", 11),
+      q: "How do you choose a sheath dress for your body shape?",
+      r: "By choosing the details rather than the silhouette: the neckline, the waist and the sleeves. A V for an O or V body shape, a defined waist for an H or 8, a crafted bodice for an A. The sheath does the rest.",
+      description:
+        "Choosing a sheath wedding dress for your body shape: neckline, waist, sleeves, fabric. Advice for O, A, V, H, 8 and X, and the MADAMOON sheath dresses.",
+      chapo:
+        "The sheath suits almost every figure. It is its details that tune it to yours.",
+      sections: [
+        {
+          titre: "Body shape by body shape",
+          texte: [],
+          liste: [
+            "O — a drape that glides without marking, and a V or sweetheart neckline that flatters the bust.",
+            "A — a crafted bodice that draws the eye upwards: Agnessa's or Hélène's beaded corset, Dove's draped neckline.",
+            "V — a V neckline, a light structure at the shoulders; voluminous sleeves, like Ryle's, are worth trying with care.",
+            "H — a defined waist, through a fitted cut or a belt.",
+            "8 and X — a nip at the waist, so the sheath does not float where the waist curves in.",
+          ],
+        },
+        {
+          titre: "The fabric",
+          texte: [
+            "A tip: chiffon glides without marking, matte satin structures more, charmeuse follows the body closely and needs a precise fit.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "Almost all the boutique's sheath dresses are listed, on their pages, for all six body shapes. The fitting shows which one is yours.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The details tune the sheath to the figure.",
+        "The neckline, the waist, the sleeves.",
+        "The fitting decides.",
+      ],
+      liens: [
+        { href: "/morphologies", label: "The six body shapes" },
+        { href: "/morphologies/x/robe-fluide-silhouette-equilibree", label: "The sheath and a balanced figure" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+      ],
+    },
+  ],
 };
