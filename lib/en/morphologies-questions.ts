@@ -1987,4 +1987,489 @@ export const QUESTIONS_MORPHO_EN: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  X: [
+    {
+      slug: fr("X", 0),
+      q: "Which wedding dress should I choose for an X body shape?",
+      r: "Every silhouette suits you — that is the honest answer. Mermaid, ball gown, sheath, A-line or two-in-one: the question becomes one of wedding style, not of body shape.",
+      description:
+        "Wedding dress for an X body shape: every silhouette suits you, the style of the wedding decides. Advice from the MADAMOON boutique, Paris 10e.",
+      chapo:
+        "Every silhouette suits you. The style of the wedding will decide — and that is good news.",
+      sections: [
+        {
+          titre: "Every silhouette suits you",
+          texte: [
+            "Balanced proportions, a slim waist, soft curves: there is nothing to correct or build. A mermaid follows the waist, a ball gown starts from it, a sheath goes with it, an A-line lets it breathe, a two-in-one keeps the balance in both versions.",
+          ],
+        },
+        {
+          titre: "The better question",
+          texte: [
+            "Here, the question is no longer \"what suits me?\" but \"what is like me?\". It is a better question.",
+          ],
+        },
+        {
+          titre: "Enhance without overdoing it",
+          texte: [
+            "With a harmonious figure, the dress does not need to add anything. A clean cut, a beautiful fabric and one strong detail are often enough.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Every silhouette suits you.",
+        "The style of the wedding decides.",
+        "Enhance without overdoing it.",
+      ],
+      liens: [
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/coupes", label: "Silhouettes" },
+        { href: "/robes", label: "See all the dresses" },
+      ],
+    },
+    {
+      slug: fr("X", 1),
+      q: "How do I recognise an X body shape?",
+      r: "Your shoulders and hips are balanced, and your waist is slim and well defined; the curves are soft rather than pronounced. In the fitting room, you hesitate between several styles — most often because they all suit you.",
+      description:
+        "Recognising an X body shape: balanced shoulders and hips, a slim waist, soft curves. Three simple markers, one of them in the fitting room.",
+      chapo:
+        "Three markers are enough to recognise it — and the third is checked in the fitting room more than in front of a mirror.",
+      sections: [
+        {
+          titre: "The three markers",
+          texte: [],
+          liste: [
+            "The marker — shoulders and hips are balanced, and the waist is slim and well defined.",
+            "The curves — soft rather than pronounced, and the line stays harmonious.",
+            "In front of the mirror — you hesitate between several styles in the fitting room, most often because they all suit you.",
+          ],
+        },
+        {
+          titre: "Not to be confused with",
+          texte: [
+            "The 8 body shape is very similar, with more clearly marked curves. The H body shape also has balanced proportions, but a soft waist.",
+          ],
+        },
+        {
+          titre: "A figure, not a label",
+          texte: [
+            "Many brides find themselves between two body shapes. If you are unsure, Élise, the site's advisor, points you in a direction in three questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Balanced shoulders and hips.",
+        "A slim waist, soft curves.",
+        "Several styles suit you in the fitting room.",
+      ],
+      liens: [
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+        { href: "/trouver-ma-robe", label: "Find my dress with Élise" },
+      ],
+    },
+    {
+      slug: fr("X", 2),
+      q: "What is the difference between an X and an 8 body shape?",
+      r: "The X has soft curves and a slim waist; the 8, clearly marked curves. Both have balanced shoulders and hips, and the advice largely overlaps: every silhouette suits them.",
+      description:
+        "X or 8 body shape: a slim waist and soft curves for the X, marked curves for the 8. How to tell whether you are an X, in the fitting room.",
+      chapo:
+        "Seen from the X, the difference with the 8 comes down to one word: the softness of the curves. Here is how to be sure.",
+      sections: [
+        {
+          titre: "What makes an X",
+          texte: [
+            "A slim, well-defined waist between balanced shoulders and hips, and soft rather than pronounced curves. The line stays harmonious, with nothing emphatic.",
+          ],
+        },
+        {
+          titre: "What makes an 8",
+          texte: [
+            "The same proportions, but marked curves, even from top to bottom, and a clearly defined waist. Fitted clothes flatter, straight cuts hang loose.",
+          ],
+        },
+        {
+          titre: "Check it in the fitting room",
+          texte: [
+            "A mermaid or a column shows it quickly: on an 8, they hug assertive curves; on an X, they follow a softer line. Either way, every silhouette works — the difference matters little when choosing.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "X: slim waist, soft curves.",
+        "8: clearly marked curves.",
+        "Every silhouette suits both.",
+      ],
+      liens: [
+        { href: "/morphologies/8/difference-morphologie-8-morphologie-x", label: "The 8 and the X, seen from the 8" },
+        { href: "/morphologies/8", label: "The 8 body shape" },
+        { href: "/morphologies/x", label: "The X body shape" },
+      ],
+    },
+    {
+      slug: fr("X", 3),
+      q: "Can an X body shape wear every wedding dress silhouette?",
+      r: "Yes. Mermaid, ball gown, sheath, A-line and two-in-one: each finds its purpose on an X figure. It is not a polite formula — it is what the boutique sees in the fitting room.",
+      description:
+        "X body shape: yes, every wedding dress silhouette suits you. What each one brings, and how to choose when everything works. Advice from MADAMOON.",
+      chapo:
+        "Every silhouette suits you. Still, you need to know what each one brings, to choose the one that is like you.",
+      sections: [
+        {
+          titre: "What each silhouette brings",
+          texte: [],
+          liste: [
+            "The mermaid — fitted then flared, it follows the waist without having to create it: the silhouette that says the most with the least.",
+            "The ball gown — the fullness starts from an already slim waist, and the contrast happens by itself.",
+            "The sheath — it builds nothing and does not need to: the fabric only goes with the line.",
+            "The A-line — the easiest to live in, and the most discreet, when the dress is not meant to be the subject of the day.",
+            "The two-in-one — two dresses, one silhouette: the overskirt goes on, then comes off without anything collapsing.",
+          ],
+        },
+        {
+          titre: "Choosing when everything works",
+          texte: [
+            "By the venue, the season, and what you want to be able to do with your day. A two-metre train on a beach, heavy satin in August: the dress must last twelve hours, not just the photograph.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: every silhouette suits you.",
+        "Each one brings something different.",
+        "The venue, the season and the day decide.",
+      ],
+      liens: [
+        { href: "/coupes", label: "Silhouettes" },
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/robes", label: "See all the dresses" },
+      ],
+    },
+    {
+      slug: fr("X", 4),
+      q: "Does a mermaid dress show off an X body shape?",
+      r: "Yes. Fitted then flared, it follows the waist without having to create it. It is the silhouette that says the most with the least.",
+      description:
+        "Mermaid wedding dress and X body shape: it follows the waist without having to create it. What to look at, and the mermaids at MADAMOON, Paris.",
+      chapo:
+        "On an X figure, a mermaid has nothing to prove: it follows a line that already holds. Here is how to choose one.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "Fitted to the thighs, then flared, it hugs a slim waist and soft curves without forcing anything. It says a lot with very little.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "With soft curves, a supple fabric — crêpe, charmeuse — follows the line without hardening it; lace adds decoration. The point where the skirt flares is judged at the fitting.",
+          ],
+        },
+        {
+          titre: "The boutique's mermaid dresses",
+          texte: [
+            "Riviera and Rowan, in charmeuse; Mira and Milan by Monica Loretti, in crêpe; Meredith, in raised lace; Montana, in matte satin with long lace sleeves.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: it follows the waist without creating it.",
+        "A supple fabric follows soft curves.",
+        "The silhouette that says the most with the least.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+    {
+      slug: fr("X", 5),
+      q: "Does a ball gown suit an X figure?",
+      r: "Yes. The fullness starts from an already slim waist: the contrast happens by itself, without the dress having to force it. It simply needs room, and a venue that suits it.",
+      description:
+        "Ball-gown wedding dress and X figure: the fullness starts from an already slim waist, the contrast happens by itself. The ball gowns at MADAMOON.",
+      chapo:
+        "A ball gown needs a waist to exist. An X figure gives it one straight away.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "The bodice is fitted on an already slim waist, and the fullness starts from there. The contrast between waist and skirt happens by itself, with no heavy corset or construction.",
+          ],
+        },
+        {
+          titre: "What it needs",
+          texte: [
+            "Room, and a venue on its scale. A ball-gown skirt takes up space: think about the ceremony, the stairs, the whole day. A two-in-one lets you live both looks.",
+          ],
+        },
+        {
+          titre: "The boutique's ball gowns",
+          texte: [
+            "Kensington and Trinity, in off-the-shoulder mikado; Fern, in mikado embroidered with beaded flowers; Guinevere, in jacquard; Seraphina, by Olya Mak, in embroidered lace.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: the contrast happens by itself.",
+        "It needs room.",
+        "A venue on its scale.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Ball gowns" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/robes/fern", label: "Fern" },
+      ],
+    },
+    {
+      slug: fr("X", 6),
+      q: "How do I choose between a fitted dress and a full dress?",
+      r: "By the venue, the day and what you want to feel. A fitted dress — mermaid, column — moves more freely and looks more modern; a full dress — ball gown — is more ceremonial and needs room. A two-in-one lets you live both.",
+      description:
+        "Fitted or full wedding dress: mermaid and column, or ball gown? The venue, the day and your style decide. Advice from the MADAMOON boutique.",
+      chapo:
+        "When the figure allows everything, the choice between fitted and full becomes a matter of the day, the venue and desire.",
+      sections: [
+        {
+          titre: "The fitted dress",
+          texte: [
+            "Mermaid or column, it follows the body and lets you move freely. It goes anywhere, is easy to wear all day, and gives a more modern look.",
+          ],
+        },
+        {
+          titre: "The full dress",
+          texte: [
+            "A ball gown takes up space and marks the ceremony. It needs room — stairs, car, dance floor — and a venue that answers it.",
+          ],
+        },
+        {
+          titre: "Both at once",
+          texte: [
+            "A two-in-one brings both together: an overskirt for the ceremony, a fitted line for the evening. Tessa, Clover and Chastity are worn this way. A tip: try one dress from each family, one after the other; the comparison often decides by itself.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Fitted: free and modern.",
+        "Full: ceremonial, needs room.",
+        "A two-in-one, for both.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Two-in-one dresses" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/coupes/princesse", label: "Ball gowns" },
+      ],
+    },
+    {
+      slug: fr("X", 7),
+      q: "Which neckline should I choose for an X body shape?",
+      r: "The one that is like you: with balanced proportions, no neckline needs to compensate. A V or a sweetheart extends the waist upwards; off-the-shoulder, square or high necklines are chosen by style and season.",
+      description:
+        "Neckline and X body shape: none needs to compensate. V, sweetheart, off the shoulder, square or high neck, by style and season. Advice from MADAMOON.",
+      chapo:
+        "On an X figure, the neckline has nothing to correct. It can be chosen for what it says about you.",
+      sections: [
+        {
+          titre: "V and sweetheart",
+          texte: [
+            "They extend the slim waist upwards and shape the bust. Emerald, Monica and Livia have a V neckline; Finell, a sweetheart bodice.",
+          ],
+        },
+        {
+          titre: "Other options",
+          texte: [
+            "Off the shoulder, as on Kensington or Trinity; a square neck, as on Dolores or River; a high neck, as on Chastity; a draped neckline, as on Dove. None is to be avoided.",
+          ],
+        },
+        {
+          titre: "By style and season",
+          texte: [
+            "A high neck and sleeves for a winter wedding or a religious ceremony, bare shoulders for summer, a plunging V for an evening. The wedding decides.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "No neckline needs to compensate.",
+        "V and sweetheart extend the waist.",
+        "Style and season decide.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/dolores", label: "Dolores" },
+        { href: "/robes/chastity", label: "Chastity" },
+      ],
+    },
+    {
+      slug: fr("X", 8),
+      q: "How do I choose a wedding dress to suit the wedding's theme with an X body shape?",
+      r: "Start from the venue, the season and the mood: as every silhouette suits you, they decide. A ball gown for a château, a sheath for a country ceremony, a minimalist dress for the town hall, and no long train on a beach.",
+      description:
+        "Choosing a wedding dress to suit the theme with an X body shape: château, countryside, town hall, beach, winter. Advice from MADAMOON.",
+      chapo:
+        "When every silhouette suits you, the wedding itself chooses the dress. Here is how to let it.",
+      sections: [
+        {
+          titre: "The venue",
+          texte: [],
+          liste: [
+            "A château or a grand hall — a mikado ball gown, like Kensington or Fern, or a mermaid with a long train, like Siddalee.",
+            "A country ceremony — a sheath in lace or chiffon, like Murielle, Marie or Maribel.",
+            "The town hall — a minimalist crêpe dress, like Milan, or a short dress, like Elin, designed for a civil wedding.",
+            "A beach — a light fabric, and no two-metre train.",
+          ],
+        },
+        {
+          titre: "The season",
+          texte: [
+            "Heavy satin in August is hard to wear; sleeves and a high neck keep you warm in winter. The dress must last twelve hours, not just the photograph.",
+          ],
+        },
+        {
+          titre: "The day",
+          texte: [
+            "Think about what you want to be able to do: dance, walk, sit at the table. A two-in-one lets you change look between the ceremony and the evening.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The venue, the season and the mood decide.",
+        "A dress that lasts twelve hours.",
+        "A two-in-one to change look.",
+      ],
+      liens: [
+        { href: "/faq/robe-de-mariee-hiver", label: "A dress for a winter wedding" },
+        { href: "/robes/elin", label: "Elin" },
+        { href: "/robes/murielle", label: "Murielle" },
+      ],
+    },
+    {
+      slug: fr("X", 9),
+      q: "Does a sheath dress suit a balanced figure?",
+      r: "Yes. It builds nothing and does not need to: on a balanced figure, the line is enough, and the fabric only goes with it. It is often the most natural dress to wear.",
+      description:
+        "Sheath wedding dress and a balanced figure: it builds nothing and does not need to. How to choose it, and the sheath dresses at MADAMOON, Paris.",
+      chapo:
+        "The sheath is the dress that asks the least of the figure. On a balanced figure, it only has to follow.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "It builds nothing, and on a balanced figure it does not need to. The line is enough; the fabric only goes with it, from shoulder to hem.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "The fabric, which makes the whole dress: matte satin falls clean, chiffon floats, lace adds decoration. A belt marks the slim waist if you wish.",
+          ],
+        },
+        {
+          titre: "The boutique's sheath dresses",
+          texte: [
+            "Dove, in matte satin with a draped neckline; Marie, with a timeless line; Murielle, in floral lace; Agnessa, with a V neckline and V back; Maribel, in stretch chiffon with a hand-embroidered bodice.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: the line is enough.",
+        "The fabric makes the whole dress.",
+        "A belt, if you want to mark the waist.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+        { href: "/robes/dove", label: "Dove" },
+      ],
+    },
+    {
+      slug: fr("X", 10),
+      q: "Which details should I favour to show off a slim waist?",
+      r: "A single well-placed detail: a belt, a pointed basque waist, a bodice that stops sharply at the waist, or a V neckline that extends the line. On a slim waist, restraint has more effect than accumulation.",
+      description:
+        "Showing off a slim waist: a belt, a basque waist, a clean bodice, a V neckline — one detail is enough. Advice and dresses from MADAMOON.",
+      chapo:
+        "A slim waist shows by itself. The right detail emphasises it; too many details drown it.",
+      sections: [
+        {
+          titre: "The details that emphasise it",
+          texte: ["In the boutique's catalogue:"],
+          liste: [
+            "a belt, as on Monica;",
+            "a pointed basque waist, as on Guinevere or Santana;",
+            "a worked bodice stopping sharply at the waist, as on Emerald;",
+            "a V neckline that extends the line, as on Livia.",
+          ],
+        },
+        {
+          titre: "Restraint",
+          texte: [
+            "The X body shape calls for enhancing without overdoing it. One strong detail, on a dress with a clean cut, has more effect than three competing for attention.",
+          ],
+        },
+        {
+          titre: "The cut first",
+          texte: [
+            "A mermaid follows the waist, a ball gown starts from it: the cut itself already shows off a slim waist. The detail comes in addition, not instead.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A single well-placed detail.",
+        "Belt, basque waist, clean bodice, V.",
+        "Restraint has more effect.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/livia", label: "Livia" },
+      ],
+    },
+    {
+      slug: fr("X", 11),
+      q: "Which silhouettes should I try first for an X body shape?",
+      r: "One dress from each family, to compare: a mermaid, a ball gown and a sheath. All suit you; the fitting is mainly about discovering which one is like you, and which suits the venue and the season.",
+      description:
+        "X body shape: which silhouettes to try first? A mermaid, a ball gown and a sheath to compare, then style decides. Advice from MADAMOON.",
+      chapo:
+        "When every silhouette suits you, the fitting changes in nature: it is no longer about eliminating, but comparing.",
+      sections: [
+        {
+          titre: "The order of fittings",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "A mermaid — the silhouette that says the most with the least.",
+            "A ball gown — the contrast of a slim waist and a full skirt.",
+            "A sheath — the line alone, accompanied by the fabric.",
+            "Then an A-line or a two-in-one, depending on what the first three revealed.",
+          ],
+        },
+        {
+          titre: "Let style decide",
+          texte: [
+            "Here, the question is no longer \"what suits me?\" but \"what is like me?\". The venue, the season and what you want to live that day do the rest.",
+          ],
+        },
+        {
+          titre: "Coming prepared",
+          texte: [
+            "Keep your favourite dresses in your favourites and mention them when you book: they will be ready when you arrive.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "One dress from each family.",
+        "Compare rather than eliminate.",
+        "Style decides.",
+      ],
+      liens: [
+        { href: "/coupes", label: "Silhouettes" },
+        { href: "/morphologies/x", label: "The X body shape" },
+        { href: "/rendez-vous", label: "Book an appointment" },
+      ],
+    },
+  ],
 };

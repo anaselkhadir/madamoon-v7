@@ -2100,6 +2100,514 @@ export const QUESTIONS_MORPHO: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  X: [
+    /* ——————————————————————————————————————— quelle robe ————— */
+    {
+      slug: "quelle-robe-de-mariee-morphologie-x",
+      q: "Quelle robe de mariée choisir pour une morphologie en X ?",
+      r: "Toutes les coupes vous vont — c'est la réponse honnête. Sirène, princesse, fluide, trapèze ou deux en un : la question devient celle du style du mariage, et non celle de la morphologie.",
+      description:
+        "Robe de mariée et morphologie en X : toutes les coupes vous vont, c'est le style du mariage qui tranche. Les conseils de la boutique MADAMOON, Paris 10e.",
+      chapo:
+        "Toutes les coupes vous vont. C'est le style du mariage qui tranchera — et c'est une bonne nouvelle.",
+      sections: [
+        {
+          titre: "Toutes les coupes vous vont",
+          texte: [
+            "Des proportions équilibrées, une taille fine, des courbes douces : il n'y a rien à corriger ni à construire. La sirène suit la taille, la princesse en part, la fluide l'accompagne, la trapèze la laisse respirer, la deux en un garde l'équilibre dans ses deux versions.",
+          ],
+        },
+        {
+          titre: "La meilleure question",
+          texte: [
+            "Ici, la question n'est plus « qu'est-ce qui me va ? » mais « qu'est-ce qui me ressemble ? ». C'est une meilleure question.",
+          ],
+        },
+        {
+          titre: "Valoriser sans en faire trop",
+          texte: [
+            "Avec une silhouette harmonieuse, la robe n'a pas besoin d'en rajouter. Une coupe nette, une belle matière et un seul détail fort suffisent souvent.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Toutes les coupes vous vont.",
+        "Le style du mariage tranche.",
+        "Valoriser sans en faire trop.",
+      ],
+      liens: [
+        { href: "/morphologies/x", label: "La morphologie en X" },
+        { href: "/coupes", label: "Les coupes" },
+        { href: "/robes", label: "Voir toutes les robes" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la reconnaître ————— */
+    {
+      slug: "reconnaitre-morphologie-x",
+      q: "Comment reconnaître une morphologie en X ?",
+      r: "Vos épaules et vos hanches sont équilibrées, et votre taille est fine, bien dessinée ; les courbes sont douces plutôt que prononcées. Devant le miroir, vous hésitez entre plusieurs styles en cabine — le plus souvent parce qu'ils vous vont tous.",
+      description:
+        "Reconnaître une morphologie en X : épaules et hanches équilibrées, une taille fine, des courbes douces. Trois repères simples, dont un en cabine.",
+      chapo:
+        "Trois repères suffisent pour s'y reconnaître — et le troisième se vérifie en cabine plus que devant un miroir.",
+      sections: [
+        {
+          titre: "Les trois repères",
+          texte: [],
+          liste: [
+            "Le repère — épaules et hanches sont équilibrées, et la taille est fine, bien dessinée.",
+            "Les courbes — elles sont douces plutôt que prononcées, et la ligne reste harmonieuse.",
+            "Devant le miroir — vous hésitez entre plusieurs styles en cabine, le plus souvent parce qu'ils vous vont tous.",
+          ],
+        },
+        {
+          titre: "À ne pas confondre",
+          texte: [
+            "La morphologie en 8 lui ressemble beaucoup, avec des courbes plus franchement marquées. La morphologie en H a aussi des proportions équilibrées, mais une taille peu marquée.",
+          ],
+        },
+        {
+          titre: "Une silhouette, pas une étiquette",
+          texte: [
+            "Beaucoup de mariées se trouvent entre deux morphologies. Si vous hésitez, Élise, la conseillère du site, vous oriente en trois questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Épaules et hanches équilibrées.",
+        "Une taille fine, des courbes douces.",
+        "Plusieurs styles vous vont en cabine.",
+      ],
+      liens: [
+        { href: "/morphologies/x", label: "La morphologie en X" },
+        { href: "/morphologies", label: "Les six morphologies" },
+        { href: "/trouver-ma-robe", label: "Trouver ma robe avec Élise" },
+      ],
+    },
+
+    /* ——————————————————————————————————— le X et le 8 ————— */
+    {
+      slug: "difference-morphologie-x-morphologie-8",
+      q: "Quelle différence entre une morphologie en X et une morphologie en 8 ?",
+      r: "Le X a des courbes douces et une taille fine ; le 8, des courbes franchement marquées. Les deux ont des épaules et des hanches équilibrées, et les conseils se recoupent largement : toutes les coupes leur vont.",
+      description:
+        "Morphologie en X ou en 8 : une taille fine et des courbes douces pour le X, des courbes marquées pour le 8. Comment savoir si l'on est un X, en cabine.",
+      chapo:
+        "Vue depuis le X, la différence avec le 8 tient en un mot : la douceur des courbes. Voici comment s'en assurer.",
+      sections: [
+        {
+          titre: "Ce qui fait un X",
+          texte: [
+            "Une taille fine, bien dessinée, entre des épaules et des hanches équilibrées, et des courbes douces plutôt que prononcées. La ligne reste harmonieuse, sans rien d'appuyé.",
+          ],
+        },
+        {
+          titre: "Ce qui fait un 8",
+          texte: [
+            "Les mêmes proportions, mais des courbes marquées, régulières du haut jusqu'au bas, et une taille nettement creusée. Les vêtements cintrés flattent, les coupes droites flottent.",
+          ],
+        },
+        {
+          titre: "Le vérifier en cabine",
+          texte: [
+            "Une sirène ou un fourreau le montre vite : sur un 8, ils épousent des courbes affirmées ; sur un X, ils suivent une ligne plus douce. Dans les deux cas, toutes les coupes conviennent — la différence compte peu pour choisir.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "X : taille fine, courbes douces.",
+        "8 : courbes franchement marquées.",
+        "Toutes les coupes vont aux deux.",
+      ],
+      liens: [
+        { href: "/morphologies/8/difference-morphologie-8-morphologie-x", label: "Le 8 et le X, vus du 8" },
+        { href: "/morphologies/8", label: "La morphologie en 8" },
+        { href: "/morphologies/x", label: "La morphologie en X" },
+      ],
+    },
+
+    /* ——————————————————————————————————— toutes les coupes ————— */
+    {
+      slug: "toutes-les-coupes-morphologie-x",
+      q: "Une morphologie en X peut-elle porter toutes les coupes de robes de mariée ?",
+      r: "Oui. Sirène, princesse, fluide, trapèze et deux en un : chacune trouve sa raison d'être sur une silhouette en X. Ce n'est pas une formule de politesse — c'est ce que la boutique constate en cabine.",
+      description:
+        "Morphologie en X : oui, toutes les coupes de robes de mariée vous vont. Ce que chacune apporte, et comment choisir quand tout convient. Conseils MADAMOON.",
+      chapo:
+        "Toutes les coupes vous vont. Encore faut-il savoir ce que chacune apporte, pour choisir celle qui vous ressemble.",
+      sections: [
+        {
+          titre: "Ce que chaque coupe apporte",
+          texte: [],
+          liste: [
+            "La sirène — ajustée puis évasée, elle suit la taille sans avoir à la créer : c'est la coupe qui en dit le plus avec le moins.",
+            "La princesse — l'ampleur part d'une taille déjà fine, et le contraste se fait tout seul.",
+            "La fluide — elle ne construit rien et n'en a pas besoin : le tissu ne fait qu'accompagner la ligne.",
+            "La trapèze — la plus simple à vivre, et la plus discrète, quand la robe ne doit pas être le sujet de la journée.",
+            "La deux en un — deux robes, une seule silhouette : la surjupe se pose, puis s'enlève sans que rien ne s'effondre.",
+          ],
+        },
+        {
+          titre: "Choisir quand tout convient",
+          texte: [
+            "Par le lieu, la saison, et ce que vous voulez pouvoir faire de votre journée. Une traîne de deux mètres sur une plage, un satin lourd en août : la robe doit tenir douze heures, pas seulement la photographie.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : toutes les coupes vous vont.",
+        "Chacune apporte autre chose.",
+        "Le lieu, la saison et la journée décident.",
+      ],
+      liens: [
+        { href: "/coupes", label: "Les coupes" },
+        { href: "/morphologies/x", label: "La morphologie en X" },
+        { href: "/robes", label: "Voir toutes les robes" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la sirène ————— */
+    {
+      slug: "robe-sirene-morphologie-x",
+      q: "Une robe sirène met-elle en valeur une morphologie en X ?",
+      r: "Oui. Ajustée puis évasée, elle suit la taille sans avoir à la créer. C'est la coupe qui en dit le plus avec le moins.",
+      description:
+        "Robe de mariée sirène et morphologie en X : elle suit la taille sans avoir à la créer. Ce qu'il faut regarder, et les sirènes de MADAMOON, Paris 10e.",
+      chapo:
+        "Sur une silhouette en X, la sirène n'a rien à prouver : elle suit une ligne qui tient déjà. Voici comment la choisir.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Ajustée jusqu'aux cuisses, puis évasée, elle épouse une taille fine et des courbes douces sans rien forcer. Elle en dit beaucoup avec très peu.",
+          ],
+        },
+        {
+          titre: "Ce qu'il faut regarder",
+          texte: [
+            "Avec des courbes douces, une matière souple — un crêpe, une charmeuse — suit la ligne sans la durcir ; une dentelle ajoute du décor. Le point où s'évase la jupe se juge à l'essayage.",
+          ],
+        },
+        {
+          titre: "Les sirènes de la boutique",
+          texte: [
+            "Riviera et Rowan, en charmeuse ; Mira et Milan, de Monica Loretti, en crêpe ; Meredith, en dentelle en relief ; Montana, en satin mat aux manches longues en dentelle.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : elle suit la taille sans la créer.",
+        "Une matière souple suit les courbes douces.",
+        "La coupe qui en dit le plus avec le moins.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Les robes sirène" },
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la princesse ————— */
+    {
+      slug: "robe-princesse-silhouette-x",
+      q: "Une robe princesse convient-elle à une silhouette en X ?",
+      r: "Oui. L'ampleur part d'une taille déjà fine : le contraste se fait tout seul, sans que la robe ait à forcer. Elle demande simplement de la place, et un lieu qui lui ressemble.",
+      description:
+        "Robe de mariée princesse et silhouette en X : l'ampleur part d'une taille déjà fine, le contraste se fait seul. Les princesses de MADAMOON, Paris 10e.",
+      chapo:
+        "La princesse a besoin d'une taille pour exister. Une silhouette en X la lui donne d'emblée.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Le bustier se cintre sur une taille déjà fine, et l'ampleur part de là. Le contraste entre la taille et la jupe se fait tout seul, sans corset appuyé ni construction.",
+          ],
+        },
+        {
+          titre: "Ce qu'elle demande",
+          texte: [
+            "De la place, et un lieu à sa mesure. Une jupe de princesse occupe l'espace : pensez à la cérémonie, aux escaliers, à la journée entière. La deux en un permet de vivre les deux allures.",
+          ],
+        },
+        {
+          titre: "Les princesses de la boutique",
+          texte: [
+            "Kensington et Trinity, en mikado aux épaules dénudées ; Fern, en mikado brodé de fleurs de perles ; Guinevere, en jacquard ; Seraphina, d'Olya Mak, en dentelle brodée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : le contraste se fait tout seul.",
+        "Elle demande de la place.",
+        "Un lieu à sa mesure.",
+      ],
+      liens: [
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+        { href: "/robes/kensington", label: "Kensington" },
+        { href: "/robes/fern", label: "Fern" },
+      ],
+    },
+
+    /* ——————————————————————————————— ajustée ou volumineuse ————— */
+    {
+      slug: "robe-ajustee-ou-volumineuse",
+      q: "Comment choisir entre une robe ajustée et une robe volumineuse ?",
+      r: "Par le lieu, la journée et ce que vous voulez ressentir. Une robe ajustée — sirène, fourreau — est plus libre de ses mouvements et plus moderne ; une robe volumineuse — princesse — est plus cérémonielle et demande de la place. La deux en un permet de vivre les deux.",
+      description:
+        "Robe de mariée ajustée ou volumineuse : sirène et fourreau, ou princesse ? Le lieu, la journée et votre style décident. Les conseils de la boutique MADAMOON.",
+      chapo:
+        "Quand la silhouette permet tout, le choix entre ajusté et volumineux devient une affaire de journée, de lieu et d'envie.",
+      sections: [
+        {
+          titre: "La robe ajustée",
+          texte: [
+            "Sirène ou fourreau, elle suit le corps et laisse bouger librement. Elle passe partout, se porte facilement toute une journée, et donne une allure plus moderne.",
+          ],
+        },
+        {
+          titre: "La robe volumineuse",
+          texte: [
+            "La princesse occupe l'espace et marque la cérémonie. Elle demande de la place — escaliers, voiture, piste de danse — et un lieu qui lui répond.",
+          ],
+        },
+        {
+          titre: "Les deux à la fois",
+          texte: [
+            "La deux en un réunit les deux : une surjupe pour la cérémonie, une ligne ajustée pour la soirée. Tessa, Clover et Chastity se portent ainsi. Un conseil : essayez une robe de chaque famille, l'une après l'autre ; la comparaison tranche souvent d'elle-même.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Ajustée : libre et moderne.",
+        "Volumineuse : cérémonielle, demande de la place.",
+        "La deux en un, pour les deux.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Les robes deux en un" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/coupes/princesse", label: "Les robes princesse" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le décolleté ————— */
+    {
+      slug: "decollete-morphologie-x",
+      q: "Quel décolleté choisir pour une morphologie en X ?",
+      r: "Celui qui vous ressemble : avec des proportions équilibrées, aucun décolleté n'est à compenser. Un V ou un cœur prolongent la taille vers le haut ; des épaules dénudées, un col carré ou un col montant se choisissent selon le style et la saison.",
+      description:
+        "Décolleté et morphologie en X : aucun n'est à compenser. V, cœur, épaules dénudées, col carré ou montant, selon le style et la saison. Conseils MADAMOON.",
+      chapo:
+        "Sur une silhouette en X, le décolleté n'a rien à corriger. Il peut se choisir pour ce qu'il dit de vous.",
+      sections: [
+        {
+          titre: "Le V et le cœur",
+          texte: [
+            "Ils prolongent la taille fine vers le haut et dessinent la poitrine. Emerald, Monica et Livia ont un décolleté en V ; Finell, un bustier cœur.",
+          ],
+        },
+        {
+          titre: "Les autres options",
+          texte: [
+            "Des épaules dénudées, comme sur Kensington ou Trinity ; un col carré, comme sur Dolores ou River ; un col montant, comme sur Chastity ; un décolleté drapé, comme sur Dove. Aucun n'est à éviter.",
+          ],
+        },
+        {
+          titre: "Selon le style et la saison",
+          texte: [
+            "Un col montant et des manches pour un mariage d'hiver ou une cérémonie religieuse, des épaules nues pour l'été, un V plongeant pour une soirée. C'est le mariage qui décide.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Aucun décolleté n'est à compenser.",
+        "V et cœur prolongent la taille.",
+        "Le style et la saison décident.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/dolores", label: "Dolores" },
+        { href: "/robes/chastity", label: "Chastity" },
+      ],
+    },
+
+    /* ——————————————————————————————— selon le thème du mariage ————— */
+    {
+      slug: "robe-de-mariee-selon-theme-du-mariage",
+      q: "Comment choisir une robe de mariée selon le thème du mariage quand on a une morphologie en X ?",
+      r: "Partez du lieu, de la saison et de l'ambiance : toutes les coupes vous allant, ce sont eux qui tranchent. Une princesse pour un château, une fluide pour une cérémonie champêtre, une robe minimaliste pour la mairie, et pas de longue traîne sur une plage.",
+      description:
+        "Choisir sa robe de mariée selon le thème du mariage avec une morphologie en X : château, champêtre, mairie, plage, hiver. Les conseils MADAMOON.",
+      chapo:
+        "Quand toutes les coupes vous vont, c'est le mariage lui-même qui choisit la robe. Voici comment le laisser faire.",
+      sections: [
+        {
+          titre: "Le lieu",
+          texte: [],
+          liste: [
+            "Un château ou une grande salle — une princesse en mikado, comme Kensington ou Fern, ou une sirène à longue traîne, comme Siddalee.",
+            "Une cérémonie champêtre — une fluide en dentelle ou en mousseline, comme Murielle, Marie ou Maribel.",
+            "La mairie — une robe minimaliste en crêpe, comme Milan, ou une robe courte, comme Elin, pensée pour un mariage civil.",
+            "Une plage — une matière légère, et pas de traîne de deux mètres.",
+          ],
+        },
+        {
+          titre: "La saison",
+          texte: [
+            "Un satin lourd en août se porte mal ; des manches et un col montant tiennent chaud en hiver. La robe doit tenir douze heures, pas seulement la photographie.",
+          ],
+        },
+        {
+          titre: "La journée",
+          texte: [
+            "Pensez à ce que vous voulez pouvoir faire : danser, marcher, vous asseoir à table. Une deux en un permet de changer d'allure entre la cérémonie et la soirée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Le lieu, la saison et l'ambiance tranchent.",
+        "Une robe qui tient douze heures.",
+        "La deux en un pour changer d'allure.",
+      ],
+      liens: [
+        { href: "/faq/robe-de-mariee-hiver", label: "Une robe pour un mariage en hiver" },
+        { href: "/robes/elin", label: "Elin" },
+        { href: "/robes/murielle", label: "Murielle" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la fluide ————— */
+    {
+      slug: "robe-fluide-silhouette-equilibree",
+      q: "Une robe fluide convient-elle à une silhouette équilibrée ?",
+      r: "Oui. Elle ne construit rien et n'en a pas besoin : sur une silhouette équilibrée, la ligne se suffit, et le tissu ne fait que l'accompagner. C'est souvent la robe la plus naturelle à porter.",
+      description:
+        "Robe de mariée fluide et silhouette équilibrée : elle ne construit rien et n'en a pas besoin. Comment la choisir, et les robes fluides de MADAMOON, Paris.",
+      chapo:
+        "La fluide est la robe qui demande le moins à la silhouette. Sur une silhouette équilibrée, elle n'a qu'à suivre.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Elle ne construit rien, et sur une silhouette équilibrée elle n'en a pas besoin. La ligne se suffit ; le tissu ne fait que l'accompagner, de l'épaule à l'ourlet.",
+          ],
+        },
+        {
+          titre: "Ce qu'il faut regarder",
+          texte: [
+            "La matière, qui fait toute la robe : un satin mat tombe net, une mousseline flotte, une dentelle ajoute du décor. Une ceinture marque la taille fine si vous le souhaitez.",
+          ],
+        },
+        {
+          titre: "Les fluides de la boutique",
+          texte: [
+            "Dove, en satin mat au décolleté drapé ; Marie, à la ligne intemporelle ; Murielle, en dentelle florale ; Agnessa, au décolleté et au dos en V ; Maribel, en mousseline stretch au corsage brodé à la main.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : la ligne se suffit.",
+        "La matière fait toute la robe.",
+        "Une ceinture, si vous voulez marquer la taille.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/robes/agnessa", label: "Agnessa" },
+        { href: "/robes/dove", label: "Dove" },
+      ],
+    },
+
+    /* ——————————————————————————————— mettre en valeur une taille fine ————— */
+    {
+      slug: "details-mettre-en-valeur-taille-fine",
+      q: "Quels détails privilégier pour mettre en valeur une taille fine ?",
+      r: "Un seul détail bien placé : une ceinture, une taille basque en pointe, un corsage qui s'arrête net à la taille, ou un décolleté en V qui prolonge la ligne. Sur une taille fine, la retenue fait plus d'effet que l'accumulation.",
+      description:
+        "Mettre en valeur une taille fine : une ceinture, une taille basque, un corsage net, un décolleté en V — un seul détail suffit. Conseils et robes MADAMOON.",
+      chapo:
+        "Une taille fine se voit d'elle-même. Le bon détail la souligne ; trop de détails la noient.",
+      sections: [
+        {
+          titre: "Les détails qui la soulignent",
+          texte: ["Dans le catalogue de la boutique :"],
+          liste: [
+            "une ceinture, comme sur Monica ;",
+            "une taille basque en pointe, comme sur Guinevere ou Santana ;",
+            "un corsage travaillé qui s'arrête net à la taille, comme sur Emerald ;",
+            "un décolleté en V qui prolonge la ligne, comme sur Livia.",
+          ],
+        },
+        {
+          titre: "La retenue",
+          texte: [
+            "La morphologie en X demande de valoriser sans en faire trop. Un détail fort, sur une robe à la coupe nette, fait plus d'effet que trois qui se disputent le regard.",
+          ],
+        },
+        {
+          titre: "La coupe d'abord",
+          texte: [
+            "Une sirène suit la taille, une princesse en part : la coupe elle-même met déjà la taille fine en valeur. Le détail vient en plus, pas à la place.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un seul détail bien placé.",
+        "Ceinture, basque, corsage net, V.",
+        "La retenue fait plus d'effet.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/santana", label: "Santana" },
+        { href: "/robes/livia", label: "Livia" },
+      ],
+    },
+
+    /* ——————————————————————————————— les premières à essayer ————— */
+    {
+      slug: "premieres-coupes-morphologie-x",
+      q: "Quelles coupes essayer en premier pour une morphologie en X ?",
+      r: "Une robe de chaque famille, pour comparer : une sirène, une princesse et une fluide. Toutes vous vont ; l'essayage sert surtout à découvrir laquelle vous ressemble, et laquelle convient au lieu et à la saison.",
+      description:
+        "Morphologie en X : quelles coupes essayer en premier ? Une sirène, une princesse et une fluide pour comparer, puis le style décide. Conseils de MADAMOON.",
+      chapo:
+        "Quand toutes les coupes vous vont, l'essayage change de nature : il ne s'agit plus d'éliminer, mais de comparer.",
+      sections: [
+        {
+          titre: "L'ordre des essayages",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "Une sirène — la coupe qui en dit le plus avec le moins.",
+            "Une princesse — le contraste d'une taille fine et d'une jupe ample.",
+            "Une fluide — la ligne seule, accompagnée par le tissu.",
+            "Puis une trapèze ou une deux en un, selon ce que les trois premières ont révélé.",
+          ],
+        },
+        {
+          titre: "Laisser le style décider",
+          texte: [
+            "Ici, la question n'est plus « qu'est-ce qui me va ? » mais « qu'est-ce qui me ressemble ? ». Le lieu, la saison et ce que vous voulez vivre ce jour-là font le reste.",
+          ],
+        },
+        {
+          titre: "Venir préparée",
+          texte: [
+            "Gardez vos robes préférées dans vos coups de cœur et dites-le en réservant : elles seront prêtes à votre arrivée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une robe de chaque famille.",
+        "Comparer plutôt qu'éliminer.",
+        "Le style décide.",
+      ],
+      liens: [
+        { href: "/coupes", label: "Les coupes" },
+        { href: "/morphologies/x", label: "La morphologie en X" },
+        { href: "/rendez-vous", label: "Prendre rendez-vous" },
+      ],
+    },
+  ],
 };
 
 /** Les questions d'une morphologie, ou rien si elle n'en a pas encore. */
