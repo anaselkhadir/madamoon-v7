@@ -289,20 +289,25 @@ body {
 /*
  * Une rangée de question, en bas des pages de morphologie.
  *
- * La rangée entière est le lien : à son survol, le cadre se fonce et le
- * bouton « Savoir plus » prend le rouge de la maison, comme s'il était
- * survolé lui-même — c'est bien lui que la mariée vise.
+ * Un cadre gris — le gris des cartes de morphologie, qui s'appuie d'un
+ * cran au survol — et un bouton « Savoir plus » au rouge de la maison.
+ * La rangée entière est le lien : à son survol, le bouton se fonce
+ * comme s'il était survolé lui-même, c'est bien lui que la mariée vise.
  */
 .rangee-question {
-  transition: border-color 0.45s var(--ease-doux);
+  background: var(--color-gris);
+  transition: background-color 0.45s var(--ease-doux);
 }
 .rangee-question:hover {
-  border-color: var(--color-encre);
+  background: var(--color-gris-appuye);
 }
-.rangee-question:hover .legende.bouton-rubrique {
+.legende.bouton-question {
   background: var(--color-action);
-  border-color: var(--color-action);
   color: var(--color-sur-image);
+  transition: background-color 0.45s var(--ease-doux);
+}
+.rangee-question:hover .legende.bouton-question {
+  background: #760000;
 }
 .rangee-question:focus-visible {
   outline: 1px solid var(--color-action);

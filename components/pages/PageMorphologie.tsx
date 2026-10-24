@@ -374,18 +374,26 @@ export default async function PageMorphologie({
             /* Le dessin de la maison : des rangées encadrées, la question
              * à gauche, « Savoir plus » à droite. La rangée entière est
              * le lien — un doigt sur téléphone n'a pas à viser le bouton. */
-            <ul className="flex max-w-[64rem] flex-col gap-3" data-suite>
+            /* Centrée sur la page, à la demande de la maison. */
+            <ul className="mx-auto flex max-w-[64rem] flex-col gap-3" data-suite>
               {nouvelles.map((x) => (
                 <li key={x.slug}>
                   <Link
                     href={`${base}/${x.slug}`}
-                    className="rangee-question group flex items-center justify-between gap-3 rounded-[4px] border border-fil px-[clamp(0.875rem,2.2vw,1.75rem)] py-[clamp(0.9rem,1.6vw,1.25rem)] sm:gap-5"
+                    className="rangee-question group flex items-center justify-between gap-3 rounded-[4px] px-[clamp(0.875rem,2.2vw,1.75rem)] py-[clamp(0.9rem,1.6vw,1.25rem)] sm:gap-5"
                   >
-                    {/* La taille est en style : « .phrase » n'est pas dans
-                      * une couche et l'emporterait sur un utilitaire. */}
+                    {/* En Inter, la police du texte courant, à la demande de
+                      * la maison : la question se lit comme une phrase, pas
+                      * comme un titre. Taille et police en style, pour
+                      * qu'aucune classe de la maison ne les reprenne. */}
                     <span
-                      className="phrase min-w-0 text-encre transition-colors duration-500 group-hover:text-action"
-                      style={{ fontSize: "clamp(1.0625rem, 1.5vw, 1.3125rem)", lineHeight: 1.35 }}
+                      className="min-w-0 text-encre transition-colors duration-500 group-hover:text-action"
+                      style={{
+                        fontFamily: "var(--font-sans)",
+                        fontSize: "clamp(1rem, 1.25vw, 1.125rem)",
+                        fontWeight: 500,
+                        lineHeight: 1.45,
+                      }}
                     >
                       {x.q}
                     </span>
@@ -394,7 +402,7 @@ export default async function PageMorphologie({
                       /* Plus serré sur téléphone, et sans flèche : à côté,
                         * le bouton entier ne laissait que trois mots par
                         * ligne à la question. */
-                      className="legende bouton-rubrique inline-flex shrink-0 items-center gap-2 rounded-[4px] border px-[0.6rem] py-[0.5rem] sm:px-[0.9rem] sm:py-[0.55rem]"
+                      className="legende bouton-question inline-flex shrink-0 items-center gap-2 rounded-[4px] px-[0.6rem] py-[0.55rem] sm:px-[0.95rem] sm:py-[0.6rem]"
                     >
                       {L.savoirPlus}
                       <span className="hidden sm:inline">→</span>
