@@ -5,6 +5,7 @@ import HeroPage from "@/components/HeroPage";
 import Photo from "@/components/media/Photo";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
+import RangeesQuestions from "@/components/RangeesQuestions";
 import CoupesFixes, { type Station } from "@/components/morphologie/CoupesFixes";
 import Showroom from "@/components/accueil/Showroom";
 import {
@@ -371,47 +372,7 @@ export default async function PageMorphologie({
         />
         <div className="gouttiere pb-[clamp(2rem,4vw,4rem)]">
           {nouvelles ? (
-            /* Le dessin de la maison : des rangées encadrées, la question
-             * à gauche, « Savoir plus » à droite. La rangée entière est
-             * le lien — un doigt sur téléphone n'a pas à viser le bouton. */
-            /* Centrée sur la page, à la demande de la maison. */
-            <ul className="mx-auto flex max-w-[52rem] flex-col gap-2" data-suite>
-              {nouvelles.map((x) => (
-                <li key={x.slug}>
-                  <Link
-                    href={`${base}/${x.slug}`}
-                    className="rangee-question group flex items-center justify-between gap-3 rounded-[4px] px-[clamp(0.875rem,1.6vw,1.25rem)] py-[clamp(0.625rem,1vw,0.8125rem)] sm:gap-5"
-                  >
-                    {/* En Inter, la police du texte courant, à la demande de
-                      * la maison : la question se lit comme une phrase, pas
-                      * comme un titre. Taille et police en style, pour
-                      * qu'aucune classe de la maison ne les reprenne. */}
-                    <span
-                      className="min-w-0 text-encre transition-colors duration-500 group-hover:text-action"
-                      style={{
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "clamp(0.875rem, 1vw, 0.9375rem)",
-                        fontWeight: 500,
-                        lineHeight: 1.45,
-                      }}
-                    >
-                      {x.q}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      /* Plus serré sur téléphone, et sans flèche : à côté,
-                        * le bouton entier ne laissait que trois mots par
-                        * ligne à la question. */
-                      className="legende bouton-question inline-flex shrink-0 items-center gap-2 rounded-[4px] px-[0.55rem] py-[0.4rem] sm:px-[0.75rem] sm:py-[0.45rem]"
-                      style={{ fontSize: "0.625rem" }}
-                    >
-                      {L.savoirPlus}
-                      <span className="hidden sm:inline">→</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <RangeesQuestions base={base} questions={nouvelles} savoirPlus={L.savoirPlus} />
           ) : (
             <dl className="mesure-l border-t border-fil" data-suite>
               {lesQuestions.map((x) => (

@@ -7,6 +7,7 @@ import { CREATEURS, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { COUPES } from "@/lib/coupes";
 import { SLUGS_QUESTIONS } from "@/lib/questions";
 import { QUESTIONS_MORPHO } from "@/lib/morphologies-questions";
+import { QUESTIONS_COUPES } from "@/lib/coupes-questions";
 import { versLangue } from "@/lib/langue";
 import { execFileSync } from "node:child_process";
 
@@ -130,9 +131,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...PAGES.flatMap((p) => entree(p, p === "" ? 1 : 0.8)),
     ...CREATEURS.flatMap((c) => entree(`/createurs/${c.slug}`, 0.7)),
     ...COUPES.flatMap((s) => entree(`/coupes/${s.ancre}`, 0.7)),
+    ...COUPES.flatMap((s) =>
+      (QUESTIONS_COUPES[s.ancre] ?? []).flatMap((x) => entree(`/coupes/${s.ancre}/${x.slug}`, 0.6)),
+    ),
     ...MORPHOLOGIES.flatMap((m) => entree(`/morphologies/${m.lettre.toLowerCase()}`, 0.7)),
     ...ROBES.flatMap((r) => entree(`/robes/${r.slug}`, 0.6)),
     ...SLUGS_QUESTIONS.flatMap((s) => entree(`/faq/${s}`, 0.6)),
+    ...COUPES.flatMap((s) =>
+      (QUESTIONS_COUPES[s.ancre] ?? []).flatMap((x) => entree(`/coupes/${s.ancre}/${x.slug}`, 0.6)),
+    ),
     ...MORPHOLOGIES.flatMap((m) =>
       (QUESTIONS_MORPHO[m.lettre] ?? []).flatMap((x) =>
         entree(`/morphologies/${m.lettre.toLowerCase()}/${x.slug}`, 0.6),

@@ -20,6 +20,8 @@ import { ARTICLES } from "@/lib/questions";
 import { ARTICLES_EN } from "@/lib/en/questions";
 import { QUESTIONS_MORPHO } from "@/lib/morphologies-questions";
 import { QUESTIONS_MORPHO_EN } from "@/lib/en/morphologies-questions";
+import { QUESTIONS_COUPES } from "@/lib/coupes-questions";
+import { QUESTIONS_COUPES_EN } from "@/lib/en/coupes-questions";
 import { AU_DELA_EN, EDITO_EN, QUESTIONS_EN } from "@/lib/en/morphologies-edito";
 import { AU_DELA, EDITO, QUESTIONS } from "@/lib/morphologies";
 import type { Lettre } from "@/lib/madamoon";
@@ -132,6 +134,10 @@ export const articles = (l: Langue) => (l === "fr" ? ARTICLES : ARTICLES_EN);
  * français s'il manque, comme les autres tables. */
 export const questionsMorpho = (lettre: Lettre, l: Langue) =>
   l === "fr" ? QUESTIONS_MORPHO[lettre] : QUESTIONS_MORPHO_EN[lettre] ?? QUESTIONS_MORPHO[lettre];
+
+/* Les questions d'une page de coupe, par son ancre française. */
+export const questionsCoupe = (ancre: string, l: Langue) =>
+  l === "fr" ? QUESTIONS_COUPES[ancre] : QUESTIONS_COUPES_EN[ancre] ?? QUESTIONS_COUPES[ancre];
 
 /* La matière rédigée des morphologies : l'édito, le bloc « au-delà » et
  * les questions. Trois tables jumelles, une seule porte. */

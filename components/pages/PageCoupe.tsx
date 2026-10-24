@@ -3,6 +3,7 @@ import AppelElise from "@/components/AppelElise";
 import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
 import TitreSection from "@/components/TitreSection";
+import RangeesQuestions from "@/components/RangeesQuestions";
 import Showroom from "@/components/accueil/Showroom";
 import { CREATEURS, FAMILLES, MAISON, MORPHOLOGIES, ROBES, SITE_URL } from "@/lib/madamoon";
 import { coupeParAncre } from "@/lib/coupes";
@@ -17,6 +18,7 @@ import {
   morphoConseil,
   morphoNom,
   morphoSilhouette,
+  questionsCoupe,
   robeLigne,
 } from "@/lib/contenu";
 import { versLangue, type Langue } from "@/lib/langue";
@@ -49,6 +51,10 @@ export default async function PageCoupe({
   if (!s) notFound();
 
   const L = t(langue).pages.coupe;
+  /* Les intitulés du bloc des questions sont ceux des pages de
+   * morphologie : c'est le même bloc. */
+  const Q = t(langue).pages.morpho;
+  const questions = questionsCoupe(s.ancre, langue);
   const nom = coupeNom(s, langue);
   const siennes = ROBES.filter((r) => r.categorie === s.nom);
   const pluriel = coupePluriel(s.nom, langue);
@@ -190,6 +196,27 @@ export default async function PageCoupe({
       {/* Sans la section des morphologies, la dernière trame touchait la
         * photographie du showroom. L'air qu'elle aurait laissé. */}
       {morphologies.length === 0 && <div className="py-[clamp(1.5rem,2.75vw,2.5rem)]" />}
+
+      {/* ————————————————————————————— les questions —————
+       * Les questions de la maison sur cette coupe : une rangée par
+       * question, et sa page dédiée sous l'adresse de la coupe. Le même
+       * bloc que sur les pages de morphologie. */}
+      {questions && questions.length > 0 && (
+        <section aria-labelledby="questions" className="pb-[clamp(3rem,6vw,5rem)]">
+          <TitreSection
+            id="questions"
+            titre={Q.lesQuestions}
+            lien={{ href: "/rendez-vous", label: Q.poserLaVotre }}
+          />
+          <div className="gouttiere">
+            <RangeesQuestions
+              base={`/coupes/${s.ancre}`}
+              questions={questions}
+              savoirPlus={Q.savoirPlus}
+            />
+          </div>
+        </section>
+      )}
 
       <Showroom langue={langue} />
     </>
