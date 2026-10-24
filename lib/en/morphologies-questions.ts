@@ -1018,4 +1018,489 @@ export const QUESTIONS_MORPHO_EN: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  H: [
+    {
+      slug: fr("H", 0),
+      q: "Which wedding dress should I choose for an H body shape?",
+      r: "Start with sheath dresses and light mermaids: fitted at the waist or worn with a belt, a sheath marks where you decide; a mermaid creates the curve instead of looking for it. A-lines and ball gowns are worth trying too.",
+      description:
+        "Wedding dress for an H body shape: sheath and light mermaid first, a waist marked by the cut. Advice from the MADAMOON boutique, Paris 10e.",
+      chapo:
+        "Create the curve rather than look for it: with an H body shape, the cut draws it. Here is where to start.",
+      sections: [
+        {
+          titre: "The two silhouettes to try first",
+          texte: [
+            "A sheath, fitted at the waist or worn with a belt, marks where you decide, and nowhere else.",
+            "A mermaid draws what is not yet visible: fitted to the thighs then flared, it creates the curve instead of highlighting it.",
+          ],
+        },
+        {
+          titre: "Those worth trying",
+          texte: [
+            "An A-line opens its skirt from a high waist and gives movement where the line is straight. A ball gown, with its corset and fullness, builds a waist.",
+          ],
+        },
+        {
+          titre: "Mark the waist, or not",
+          texte: [
+            "Marking the waist is an option, not a correction. A straight dress in crisp satin, on a long line, is one of the most beautiful choices there is.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Sheath and light mermaid first.",
+        "A waist marked by the cut or a belt.",
+        "A-line and ball gown are worth trying.",
+      ],
+      liens: [
+        { href: "/morphologies/h", label: "The H body shape" },
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+      ],
+    },
+    {
+      slug: fr("H", 1),
+      q: "How do I recognise an H body shape?",
+      r: "Your shoulders, waist and hips sit on the same straight, vertical line, and the waist is soft. In front of the mirror, a simple belt changes your whole line — more clearly than on other body shapes.",
+      description:
+        "Recognising an H body shape: shoulders, waist and hips on one line, a soft waist, a long, slender look. Three simple markers.",
+      chapo:
+        "A straight line, a long, slender look: three markers are enough to recognise it, one of them in front of the mirror.",
+      sections: [
+        {
+          titre: "The three markers",
+          texte: [],
+          liste: [
+            "The marker — shoulders, waist and hips sit on the same straight, vertical line.",
+            "The waist — soft.",
+            "In front of the mirror — a simple belt changes your whole line, more clearly than on other body shapes.",
+          ],
+        },
+        {
+          titre: "Not to be confused with",
+          texte: [
+            "The O body shape also has a soft waist, but with a generous bust and curves. The X body shape has balanced proportions like the H, but a slim waist and soft curves.",
+          ],
+        },
+        {
+          titre: "A figure, not a label",
+          texte: [
+            "Many brides find themselves between two body shapes. The recommended silhouettes overlap, and the fitting decides. If you are unsure, Élise, the site's advisor, points you in a direction in three questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Shoulders, waist and hips aligned.",
+        "A soft waist.",
+        "A belt changes the whole line.",
+      ],
+      liens: [
+        { href: "/morphologies/h", label: "The H body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+        { href: "/trouver-ma-robe", label: "Find my dress with Élise" },
+      ],
+    },
+    {
+      slug: fr("H", 2),
+      q: "Which dress should I choose when my waist is not very defined?",
+      r: "A dress that creates the waist instead of looking for it: a fitted or belted sheath, a light mermaid, or a structured bodice that draws the line. Or, on the contrary, a straight dress that embraces the long line — an equally beautiful choice.",
+      description:
+        "Wedding dress for a soft waist: a fitted or belted sheath, a light mermaid, a structured bodice, or a straight dress worn with intent. Advice from MADAMOON.",
+      chapo:
+        "A soft waist leaves two paths: draw it, or make it a strength. Both are beautiful.",
+      sections: [
+        {
+          titre: "Draw the waist",
+          texte: [
+            "A sheath fitted at the waist, or worn with a belt, marks the line exactly where you want it. A light mermaid creates the curve as it flares below the thighs. A structured bodice, with a pointed basque waist, draws a waist that was not there.",
+          ],
+        },
+        {
+          titre: "Embrace the line",
+          texte: [
+            "Marking the waist is not an obligation. A straight dress in crisp satin, on a long line, flatters a slender figure without asking anything of it.",
+          ],
+        },
+        {
+          titre: "The boutique's dresses",
+          texte: [
+            "Monica, in floral jacquard, has a belt; Guinevere and Oksana, a corset with a pointed basque waist; Dove, a matte-satin sheath with a draped neckline.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Create the waist: fitted cut, belt, corset.",
+        "Or embrace the long line.",
+        "Both are beautiful choices.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/morphologies/h", label: "The H body shape" },
+      ],
+    },
+    {
+      slug: fr("H", 3),
+      q: "Does a sheath wedding dress suit an H body shape?",
+      r: "Yes, it is one of the two silhouettes to try first. Fitted at the waist or worn with a belt, it marks where you decide, and its fall follows the long line of an H figure.",
+      description:
+        "Sheath wedding dress and H body shape: one of the two silhouettes to try first, fitted or belted. The sheath dresses at MADAMOON, Paris 10e.",
+      chapo:
+        "The sheath and the H figure share the same quality: a long line. Here is how to make the most of it.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "Its fall follows the long line of an H body shape without forcing anything. Fitted at the waist or worn with a belt, it marks the waist where you decide, and nowhere else.",
+          ],
+        },
+        {
+          titre: "What to look at",
+          texte: [
+            "The waist: fitted, belted or draped, it creates the curve. Then the fabric: matte satin or crêpe fall clean; chiffon floats more.",
+          ],
+        },
+        {
+          titre: "The boutique's sheath dresses",
+          texte: ["Among them:"],
+          liste: [
+            "Dove — matte satin, draped neckline, off the shoulder;",
+            "Hélène — beaded corset with raised flowers, chiffon skirt;",
+            "Marie — a timeless line, by Monica Loretti;",
+            "Murielle — floral lace, sheer sleeves;",
+            "Ryle — balloon sleeves, by Watters Designs.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the two silhouettes to try first.",
+        "Fitted or belted, it creates the waist.",
+        "A fall that follows the long line.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/helene", label: "Hélène" },
+        { href: "/morphologies/h", label: "The H body shape" },
+      ],
+    },
+    {
+      slug: fr("H", 4),
+      q: "Can a belt structure a wedding dress on an H figure?",
+      r: "Yes, and more clearly than on other body shapes: on an H figure, a simple belt changes the whole line. It marks the waist where you decide, on a sheath as on an A-line.",
+      description:
+        "Belt and wedding dress on an H figure: it marks the waist and changes the whole line. How to choose it, with the dresses at MADAMOON, Paris.",
+      chapo:
+        "It is the mirror marker for an H body shape: a belt changes everything. Here is how to use it.",
+      sections: [
+        {
+          titre: "Why it changes everything",
+          texte: [
+            "On a straight line, a belt draws the missing horizontal: it creates a waist, and the figure divides at once into two. On an H body shape, the effect is clearer than on any other.",
+          ],
+        },
+        {
+          titre: "Where to place it",
+          texte: [
+            "At the natural waist, it draws a curve; slightly higher, it lengthens the legs. The fitting shows where it sits best.",
+          ],
+        },
+        {
+          titre: "The boutique's dresses",
+          texte: [
+            "Monica, by Monica Loretti, in floral jacquard, has a belt that marks the waist. For another dress, talk to the boutique at the fitting: it will tell you what is possible.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: on an H figure, it changes the whole line.",
+        "At the natural waist for a curve.",
+        "Slightly higher to lengthen.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/morphologies/h", label: "The H body shape" },
+      ],
+    },
+    {
+      slug: fr("H", 5),
+      q: "Can a mermaid dress draw curves on an H body shape?",
+      r: "Yes, it is even one of the two silhouettes to try first. Fitted to the thighs then flared, a mermaid creates the curve instead of highlighting it. Choose a light one, so it lengthens the line without constraining it.",
+      description:
+        "Mermaid wedding dress and H body shape: it creates the curve instead of looking for it. Why choose a light one, and the mermaids at MADAMOON, Paris.",
+      chapo:
+        "The mermaid is the silhouette that draws curves where there are none yet. For an H body shape, it is one of the first to try.",
+      sections: [
+        {
+          titre: "Why it works",
+          texte: [
+            "It draws what is not yet visible. Fitted to the thighs, then flared, it creates a curve at the hips and brings out the waist by contrast.",
+          ],
+        },
+        {
+          titre: "A light mermaid",
+          texte: [
+            "The boutique recommends light mermaids for an H body shape: they draw curves while lengthening the line, without constraining it. A structured corset, when there is one, reinforces the waist.",
+          ],
+        },
+        {
+          titre: "The boutique's mermaid dresses",
+          texte: [
+            "Meredith, in raised lace; Riviera, in charmeuse, with a structured corset and detachable sleeves; Rowan, a charmeuse sheath with a beaded corset; Zina, with a slit and optional 3D flowers.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the two silhouettes to try first.",
+        "It creates the curve instead of looking for it.",
+        "Light, to lengthen the line.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/robes/meredith", label: "Meredith" },
+        { href: "/robes/riviera", label: "Riviera" },
+      ],
+    },
+    {
+      slug: fr("H", 6),
+      q: "Is an empire dress suited to an H body shape?",
+      r: "Very much so. It raises the waist under the bust and lengthens everything below. It deserves a fitting even if the idea did not appeal in a photograph. The boutique does not class its dresses as \"empire\": its sheath dresses come closest to that line.",
+      description:
+        "Empire wedding dress and H body shape: the waist rises under the bust and the line lengthens. Why try it, and the dresses that come closest.",
+      chapo:
+        "The empire line is one the boutique recommends trying for an H body shape — even when the idea does not appeal in a photo.",
+      sections: [
+        {
+          titre: "What an empire dress is",
+          texte: [
+            "An empire dress has its waist placed high, just under the bust, and a skirt that then falls straight or slightly flared.",
+          ],
+        },
+        {
+          titre: "Why it serves an H body shape",
+          texte: [
+            "It creates a waist where the line did not mark one, by raising it under the bust, and it lengthens everything below. It is a silhouette you understand once you wear it.",
+          ],
+        },
+        {
+          titre: "At MADAMOON",
+          texte: [
+            "The catalogue is arranged in five silhouettes — mermaid, ball gown, sheath, A-line, two-in-one — and no dress is classed as \"empire\". Sheath dresses come closest. If that is the line you are looking for, say so when you book.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Very much so: the waist rises under the bust.",
+        "It lengthens everything below.",
+        "At the boutique: sheath dresses come closest.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/morphologies/h", label: "The H body shape" },
+        { href: "/rendez-vous", label: "Book an appointment" },
+      ],
+    },
+    {
+      slug: fr("H", 7),
+      q: "Which bodice creates the impression of a defined waist?",
+      r: "A structured bodice that draws the waist: a corset, especially with a basque waist dipping to a point, a play of seams, or decoration that stops sharply at the waist. The contrast between a worked bodice and a freer skirt does the rest.",
+      description:
+        "Creating the impression of a defined waist: corset, pointed basque waist, seams, decoration that stops at the waist. The bodices of MADAMOON dresses, Paris.",
+      chapo:
+        "A waist can be built. Here are the bodices that draw it, even when the figure does not mark it.",
+      sections: [
+        {
+          titre: "The corset",
+          texte: [
+            "A structured corset holds the bust and draws the waist. Ember and Riviera have a structured corset; Carrie, Rowan and Hélène, a beaded corset.",
+          ],
+        },
+        {
+          titre: "The pointed basque waist",
+          texte: [
+            "It dips in a V below the natural waist and lengthens the bust: the waist looks slimmer by contrast. Guinevere and Oksana have a corset with a pointed basque waist; Santana, a basque waist.",
+          ],
+        },
+        {
+          titre: "Contrast",
+          texte: [
+            "A worked bodice — beaded, embroidered, in lace — stopping sharply at the waist, above a simpler skirt, creates a horizontal line the eye reads as a waist.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A structured corset.",
+        "A pointed basque waist.",
+        "A worked bodice, a freer skirt.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/oksana", label: "Oksana" },
+        { href: "/robes/ember", label: "Ember" },
+      ],
+    },
+    {
+      slug: fr("H", 8),
+      q: "How do I add volume or texture to an H figure?",
+      r: "Through the silhouette — a ball-gown skirt or a flaring mermaid —, through the fabric — raised lace, 3D flowers, a drape — or through the details — balloon sleeves, ribbons. Texture creates the curve the straight line does not draw.",
+      description:
+        "Adding volume or texture to an H figure: a full skirt, raised lace, 3D flowers, a drape, sleeves. The MADAMOON dresses that bring them.",
+      chapo:
+        "An H figure benefits from a dress that brings what the line does not give. Here is where to find volume and texture.",
+      sections: [
+        {
+          titre: "Through the silhouette",
+          texte: [
+            "A ball-gown skirt gives fullness under a built waist. A mermaid, flaring below the thighs, creates volume at the bottom of the dress and a curve at the hips. Alicia and Lovia can be worn as an A-line or with ball-gown volume.",
+          ],
+        },
+        {
+          titre: "Through the fabric",
+          texte: [
+            "Raised lace, as on Meredith; 3D flowers, as on Zina; a beaded corset with raised flowers, as on Hélène; a drape, like Dove's. Light catches the texture and gives the figure shape.",
+          ],
+        },
+        {
+          titre: "Through the details",
+          texte: [
+            "Balloon sleeves, as on Ryle, or velvet ribbons, as on Mitra, add texture without changing the silhouette.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A full skirt or a flaring mermaid.",
+        "Raised lace, 3D flowers, a drape.",
+        "Balloon sleeves, ribbons.",
+      ],
+      liens: [
+        { href: "/robes/meredith", label: "Meredith" },
+        { href: "/robes/zina", label: "Zina" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+    {
+      slug: fr("H", 9),
+      q: "Which wedding dress should I choose for a long, slender figure?",
+      r: "A dress that follows the line: a sheath with a clean fall, a light mermaid, or a straight, minimalist dress that makes length a statement. If you want curves, a fitted or belted waist draws them.",
+      description:
+        "Wedding dress for a long, slender figure: a clean sheath, a light mermaid, a straight minimalist dress, or a marked waist. Advice from MADAMOON, Paris.",
+      chapo:
+        "A long, slender figure has a rare advantage: length. The dress can celebrate it, or add curves to it.",
+      sections: [
+        {
+          titre: "Celebrate the line",
+          texte: [
+            "A straight dress in crisp satin, on a long line, is one of the most beautiful choices there is. Minimalist crêpe dresses, like Milan by Monica Loretti or Bondi by Casablanca Bridal, play that card.",
+          ],
+        },
+        {
+          titre: "Add curves",
+          texte: [
+            "A sheath fitted at the waist, or worn with a belt, marks the waist. A light mermaid creates a curve at the hips while lengthening the line further.",
+          ],
+        },
+        {
+          titre: "Play on length",
+          texte: [
+            "A train, a slit or long sleeves extend the line. Siddalee has a long train; Monica and Murielle, a slit; Pendant, long sleeves.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A straight, minimalist dress, worn with intent.",
+        "Or a fitted waist for curves.",
+        "Train, slit, long sleeves extend the line.",
+      ],
+      liens: [
+        { href: "/robes/milan", label: "Milan" },
+        { href: "/robes/bondi", label: "Bondi" },
+        { href: "/morphologies/h", label: "The H body shape" },
+      ],
+    },
+    {
+      slug: fr("H", 10),
+      q: "Do drop-waist dresses suit an H body shape?",
+      r: "Yes, if you love the long line: a drop waist lengthens the bust and plays the straight figure instead of fighting it. It does not create a waist — for curves, prefer a fitted waist or a high waist.",
+      description:
+        "Drop-waist wedding dress and H body shape: it lengthens the bust and plays the straight line. When to choose it, and the drop waists at MADAMOON.",
+      chapo:
+        "A drop waist does not try to carve the waist: it moves it. On an H figure, it is a choice of style more than a correction.",
+      sections: [
+        {
+          titre: "What it does",
+          texte: [
+            "The seam falls below the natural waist, towards the hips. The bust looks longer, and the skirt starts lower. On a straight line, the effect is slender and graphic.",
+          ],
+        },
+        {
+          titre: "When to choose it",
+          texte: [
+            "If you love your long line and want to play it rather than transform it. If you are looking for curves instead, a fitted waist, a belt or a high empire waist will draw them more.",
+          ],
+        },
+        {
+          titre: "The boutique's drop waists",
+          texte: [
+            "Nirali, an A-line with a straight neckline; Mitra, an A-line in Cassie lace with velvet ribbons; Clover Perles, a ball gown in Caterina lace with a square neckline — all three by Watters Designs.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes, to play the long line.",
+        "It lengthens the bust.",
+        "For curves: a fitted or high waist.",
+      ],
+      liens: [
+        { href: "/robes/nirali", label: "Nirali" },
+        { href: "/robes/mitra", label: "Mitra" },
+        { href: "/robes/clover-perles", label: "Clover Perles" },
+      ],
+    },
+    {
+      slug: fr("H", 11),
+      q: "Which silhouettes should I try first for an H body shape?",
+      r: "The sheath and the light mermaid, which draw curves while lengthening the line. Then an A-line and a ball gown, to compare — and an empire dress if the chance comes up.",
+      description:
+        "H body shape: which silhouettes to try first? The sheath and the light mermaid, then an A-line and a ball gown to compare. Advice from MADAMOON.",
+      chapo:
+        "The order of fittings helps you understand what suits you, and why. Here is the one the boutique recommends for an H body shape.",
+      sections: [
+        {
+          titre: "The order of fittings",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "A sheath — fitted or belted, it marks the waist where you want it.",
+            "A light mermaid — it creates the curve instead of looking for it.",
+            "An A-line — the skirt opens from a high waist.",
+            "A ball gown — to see the effect of a corset and a full skirt.",
+          ],
+        },
+        {
+          titre: "And the empire dress",
+          texte: [
+            "It deserves a fitting, even if the idea did not appeal in a photo. Ask the boutique for the models that come closest.",
+          ],
+        },
+        {
+          titre: "Coming prepared",
+          texte: [
+            "Keep your favourite dresses in your favourites and mention them when you book: they will be ready when you arrive.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First a sheath and a light mermaid.",
+        "Then an A-line and a ball gown.",
+        "An empire dress, if the chance comes up.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Sheath dresses" },
+        { href: "/coupes/sirene", label: "Mermaid dresses" },
+        { href: "/rendez-vous", label: "Book an appointment" },
+      ],
+    },
+  ],
 };

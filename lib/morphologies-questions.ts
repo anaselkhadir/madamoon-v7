@@ -1085,6 +1085,514 @@ export const QUESTIONS_MORPHO: Partial<Record<Lettre, QuestionMorpho[]>> = {
       ],
     },
   ],
+  H: [
+    /* ——————————————————————————————————————— quelle robe ————— */
+    {
+      slug: "quelle-robe-de-mariee-morphologie-h",
+      q: "Quelle robe de mariée choisir pour une morphologie en H ?",
+      r: "Commencez par les fluides et les sirènes légères : cintrée à la taille ou portée avec une ceinture, la fluide marque là où vous le décidez ; la sirène crée la courbe au lieu de la chercher. La trapèze et la princesse valent aussi l'essai.",
+      description:
+        "Robe de mariée et morphologie en H : fluide et sirène légère en premier, une taille marquée par la coupe. Les conseils de la boutique MADAMOON, Paris 10e.",
+      chapo:
+        "Créer la courbe plutôt que la chercher : avec une morphologie en H, c'est la coupe qui la dessine. Voici par où commencer.",
+      sections: [
+        {
+          titre: "Les deux coupes à essayer en premier",
+          texte: [
+            "La fluide, cintrée à la taille ou portée avec une ceinture, marque là où vous le décidez, et nulle part ailleurs.",
+            "La sirène dessine ce qui ne se voit pas encore : ajustée jusqu'aux cuisses puis évasée, elle crée la courbe au lieu de la souligner.",
+          ],
+        },
+        {
+          titre: "Celles qui valent l'essai",
+          texte: [
+            "La trapèze ouvre sa jupe à partir d'une taille haute et donne du mouvement là où la ligne est droite. La princesse, avec son corset et son ampleur, construit une taille.",
+          ],
+        },
+        {
+          titre: "Marquer la taille, ou pas",
+          texte: [
+            "Marquer la taille est une option, pas une correction. Une robe droite, en satin net, sur une ligne longue, est l'un des plus beaux partis pris qui soient.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Fluide et sirène légère en premier.",
+        "Une taille marquée par la coupe ou une ceinture.",
+        "Trapèze et princesse valent l'essai.",
+      ],
+      liens: [
+        { href: "/morphologies/h", label: "La morphologie en H" },
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/coupes/sirene", label: "Les robes sirène" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la reconnaître ————— */
+    {
+      slug: "reconnaitre-morphologie-h",
+      q: "Comment reconnaître une morphologie en H ?",
+      r: "Vos épaules, votre taille et vos hanches sont sur une même ligne droite et verticale, et la taille est peu marquée. Devant le miroir, une simple ceinture change toute votre ligne — plus nettement que sur d'autres morphologies.",
+      description:
+        "Reconnaître une morphologie en H : épaules, taille et hanches sur une même ligne, une taille peu marquée, une allure longiligne. Trois repères simples.",
+      chapo:
+        "Une ligne droite, une allure longiligne : trois repères suffisent pour s'y reconnaître, dont un devant le miroir.",
+      sections: [
+        {
+          titre: "Les trois repères",
+          texte: [],
+          liste: [
+            "Le repère — épaules, taille et hanches sont sur une même ligne droite et verticale.",
+            "La taille — peu marquée.",
+            "Devant le miroir — une simple ceinture change toute votre ligne, plus nettement que sur d'autres morphologies.",
+          ],
+        },
+        {
+          titre: "À ne pas confondre",
+          texte: [
+            "La morphologie en O a elle aussi une taille peu creusée, mais avec une poitrine généreuse et des courbes. La morphologie en X a des proportions équilibrées comme le H, mais une taille fine et des courbes douces.",
+          ],
+        },
+        {
+          titre: "Une silhouette, pas une étiquette",
+          texte: [
+            "Beaucoup de mariées se trouvent entre deux morphologies. Les coupes conseillées se recoupent, et c'est l'essayage qui tranche. Si vous hésitez, Élise, la conseillère du site, vous oriente en trois questions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Épaules, taille et hanches alignées.",
+        "Une taille peu marquée.",
+        "Une ceinture change toute la ligne.",
+      ],
+      liens: [
+        { href: "/morphologies/h", label: "La morphologie en H" },
+        { href: "/morphologies", label: "Les six morphologies" },
+        { href: "/trouver-ma-robe", label: "Trouver ma robe avec Élise" },
+      ],
+    },
+
+    /* ——————————————————————————————————— une taille peu marquée ————— */
+    {
+      slug: "robe-de-mariee-taille-peu-marquee",
+      q: "Quelle robe choisir quand la taille est peu marquée ?",
+      r: "Une robe qui crée la taille au lieu de la chercher : une fluide cintrée ou ceinturée, une sirène légère, ou un corsage structuré qui dessine la ligne. Ou, au contraire, une robe droite qui assume la ligne longue — c'est un parti pris tout aussi beau.",
+      description:
+        "Robe de mariée pour une taille peu marquée : fluide cintrée ou ceinturée, sirène légère, corsage structuré, ou robe droite assumée. Les conseils MADAMOON.",
+      chapo:
+        "Une taille peu marquée laisse deux chemins : la dessiner, ou en faire une force. Les deux sont beaux.",
+      sections: [
+        {
+          titre: "Dessiner la taille",
+          texte: [
+            "Une fluide cintrée à la taille, ou portée avec une ceinture, marque la ligne exactement où vous le voulez. Une sirène légère crée la courbe en s'évasant sous les cuisses. Un corsage structuré, avec une taille basque en pointe, dessine une taille qui n'était pas là.",
+          ],
+        },
+        {
+          titre: "Assumer la ligne",
+          texte: [
+            "Marquer la taille n'est pas une obligation. Une robe droite, en satin net, sur une ligne longue, met en valeur une silhouette élancée sans rien lui demander.",
+          ],
+        },
+        {
+          titre: "Les robes de la boutique",
+          texte: [
+            "Monica, en jacquard floral, a une ceinture ; Guinevere et Oksana, un corset à taille basque en pointe ; Dove, une robe fluide en satin mat au décolleté drapé.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Créer la taille : coupe cintrée, ceinture, corset.",
+        "Ou assumer la ligne longue.",
+        "Les deux sont de beaux partis pris.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/morphologies/h", label: "La morphologie en H" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la fluide ————— */
+    {
+      slug: "robe-fluide-morphologie-h",
+      q: "Une robe de mariée fluide convient-elle à une morphologie en H ?",
+      r: "Oui, c'est l'une des deux coupes à essayer en premier. Cintrée à la taille ou portée avec une ceinture, elle marque là où vous le décidez, et son tombé suit la ligne longue d'une silhouette en H.",
+      description:
+        "Robe de mariée fluide et morphologie en H : l'une des deux coupes à essayer en premier, cintrée ou ceinturée. Les robes fluides de MADAMOON, Paris 10e.",
+      chapo:
+        "La fluide et la silhouette en H partagent la même qualité : une ligne longue. Voici comment en tirer le meilleur.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Son tombé suit la ligne longue d'une morphologie en H sans rien forcer. Cintrée à la taille ou portée avec une ceinture, elle marque la taille là où vous le décidez, et nulle part ailleurs.",
+          ],
+        },
+        {
+          titre: "Ce qu'il faut regarder",
+          texte: [
+            "La taille : cintrée, ceinturée ou drapée, c'est elle qui crée la courbe. La matière ensuite : un satin mat ou un crêpe tombent net ; une mousseline flotte davantage.",
+          ],
+        },
+        {
+          titre: "Les fluides de la boutique",
+          texte: ["Parmi elles :"],
+          liste: [
+            "Dove — satin mat, décolleté drapé, épaules dénudées ;",
+            "Hélène — corset perlé à fleurs en relief, jupe en mousseline ;",
+            "Marie — une ligne intemporelle, de Monica Loretti ;",
+            "Murielle — dentelle florale, manches illusion ;",
+            "Ryle — manches ballon, de Watters Designs.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des deux coupes à essayer en premier.",
+        "Cintrée ou ceinturée, elle crée la taille.",
+        "Un tombé qui suit la ligne longue.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/robes/dove", label: "Dove" },
+        { href: "/robes/helene", label: "Hélène" },
+        { href: "/morphologies/h", label: "La morphologie en H" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la ceinture ————— */
+    {
+      slug: "ceinture-robe-de-mariee-silhouette-h",
+      q: "Une ceinture peut-elle structurer une robe de mariée sur une silhouette en H ?",
+      r: "Oui, et plus nettement que sur d'autres morphologies : sur une silhouette en H, une simple ceinture change toute la ligne. Elle marque la taille là où vous le décidez, sur une fluide comme sur une trapèze.",
+      description:
+        "Ceinture et robe de mariée sur une silhouette en H : elle marque la taille et change toute la ligne. Comment la choisir, avec les robes MADAMOON, Paris.",
+      chapo:
+        "C'est le repère du miroir pour une morphologie en H : une ceinture change tout. Voici comment s'en servir.",
+      sections: [
+        {
+          titre: "Pourquoi elle change tout",
+          texte: [
+            "Sur une ligne droite, une ceinture trace l'horizontale qui manquait : elle crée une taille, et la silhouette se partage d'un coup en deux. Sur une morphologie en H, l'effet est plus net que sur toute autre.",
+          ],
+        },
+        {
+          titre: "Où la placer",
+          texte: [
+            "À la taille naturelle, elle dessine une courbe ; un peu plus haut, elle allonge les jambes. L'essayage dit où elle tombe le mieux.",
+          ],
+        },
+        {
+          titre: "Les robes de la boutique",
+          texte: [
+            "Monica, de Monica Loretti, en jacquard floral, a une ceinture qui marque la taille. Pour une autre robe, parlez-en à la boutique au moment de l'essayage : c'est elle qui vous dira ce qui est possible.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : sur une silhouette en H, elle change toute la ligne.",
+        "À la taille naturelle pour une courbe.",
+        "Un peu plus haut pour allonger.",
+      ],
+      liens: [
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/morphologies/h", label: "La morphologie en H" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la sirène ————— */
+    {
+      slug: "robe-sirene-morphologie-h",
+      q: "Une robe sirène peut-elle dessiner les courbes d'une morphologie en H ?",
+      r: "Oui, c'est même l'une des deux coupes à essayer en premier. Ajustée jusqu'aux cuisses puis évasée, la sirène crée la courbe au lieu de la souligner. Choisissez-la légère, pour qu'elle allonge la ligne sans la contraindre.",
+      description:
+        "Robe de mariée sirène et morphologie en H : elle crée la courbe au lieu de la chercher. Pourquoi la choisir légère, et les sirènes de MADAMOON, Paris.",
+      chapo:
+        "La sirène est la coupe qui dessine des courbes là où il n'y en a pas encore. Pour une morphologie en H, c'est l'une des premières à essayer.",
+      sections: [
+        {
+          titre: "Pourquoi elle fonctionne",
+          texte: [
+            "Elle dessine ce qui ne se voit pas encore. Ajustée jusqu'aux cuisses, puis évasée, elle crée une courbe au niveau des hanches et met la taille en évidence par contraste.",
+          ],
+        },
+        {
+          titre: "Une sirène légère",
+          texte: [
+            "La boutique conseille des sirènes légères pour une morphologie en H : elles dessinent des courbes tout en allongeant la ligne, sans la contraindre. Un corset structuré, quand il y en a un, renforce la taille.",
+          ],
+        },
+        {
+          titre: "Les sirènes de la boutique",
+          texte: [
+            "Meredith, en dentelle en relief ; Riviera, en charmeuse, au corset structuré et aux manches amovibles ; Rowan, fourreau en charmeuse au corset perlé ; Zina, à fente, avec des fleurs 3D optionnelles.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des deux coupes à essayer en premier.",
+        "Elle crée la courbe au lieu de la chercher.",
+        "Légère, pour allonger la ligne.",
+      ],
+      liens: [
+        { href: "/coupes/sirene", label: "Les robes sirène" },
+        { href: "/robes/meredith", label: "Meredith" },
+        { href: "/robes/riviera", label: "Riviera" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la robe empire ————— */
+    {
+      slug: "robe-empire-morphologie-h",
+      q: "Une robe empire est-elle adaptée à une morphologie en H ?",
+      r: "Très bien. Elle remonte la taille sous la poitrine et allonge tout ce qui suit. Elle mérite un essayage même si l'idée ne vous attirait pas sur photographie. La boutique ne classe pas ses robes en « empire » : ses robes fluides sont les plus proches de cette ligne.",
+      description:
+        "Robe de mariée empire et morphologie en H : la taille remonte sous la poitrine et la ligne s'allonge. Pourquoi l'essayer, et les robes qui s'en approchent.",
+      chapo:
+        "La coupe empire est l'une de celles que la boutique conseille d'essayer pour une morphologie en H — même quand l'idée ne séduit pas sur photo.",
+      sections: [
+        {
+          titre: "Ce qu'est une robe empire",
+          texte: [
+            "Une robe empire a sa taille placée haut, juste sous la poitrine, et une jupe qui descend ensuite droite ou légèrement évasée.",
+          ],
+        },
+        {
+          titre: "Pourquoi elle sert une morphologie en H",
+          texte: [
+            "Elle crée une taille là où la ligne n'en marquait pas, en la remontant sous la poitrine, et elle allonge tout ce qui suit. C'est une coupe qui se comprend une fois portée.",
+          ],
+        },
+        {
+          titre: "Chez MADAMOON",
+          texte: [
+            "Le catalogue se range en cinq coupes — sirène, princesse, fluide, trapèze, deux en un — et aucune robe n'y est classée « empire ». Les robes fluides sont celles qui s'en rapprochent le plus. Si c'est cette ligne que vous cherchez, dites-le en prenant rendez-vous.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Très bien : la taille remonte sous la poitrine.",
+        "Elle allonge tout ce qui suit.",
+        "À la boutique : les robes fluides s'en rapprochent.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/morphologies/h", label: "La morphologie en H" },
+        { href: "/rendez-vous", label: "Prendre rendez-vous" },
+      ],
+    },
+
+    /* ——————————————————————————————— un corsage qui marque la taille ————— */
+    {
+      slug: "corsage-creer-taille-marquee",
+      q: "Quel corsage choisir pour créer une impression de taille marquée ?",
+      r: "Un corsage structuré qui dessine la taille : un corset, surtout avec une taille basque qui descend en pointe, un jeu de coutures, ou un décor qui s'arrête net à la taille. Le contraste entre un corsage travaillé et une jupe plus libre fait le reste.",
+      description:
+        "Créer une impression de taille marquée : corset, taille basque en pointe, coutures, décor qui s'arrête à la taille. Les corsages des robes MADAMOON, Paris.",
+      chapo:
+        "Une taille peut se construire. Voici les corsages qui la dessinent, même quand la silhouette ne la marque pas.",
+      sections: [
+        {
+          titre: "Le corset",
+          texte: [
+            "Un corset structuré tient le buste et dessine la taille. Ember et Riviera ont un corset structuré ; Carrie, Rowan et Hélène, un corset perlé.",
+          ],
+        },
+        {
+          titre: "La taille basque en pointe",
+          texte: [
+            "Elle descend en V sous la taille naturelle et allonge le buste : la taille paraît plus fine par contraste. Guinevere et Oksana ont un corset à taille basque en pointe ; Santana, une taille basque.",
+          ],
+        },
+        {
+          titre: "Le contraste",
+          texte: [
+            "Un corsage travaillé — perlé, brodé, en dentelle — qui s'arrête net à la taille, au-dessus d'une jupe plus simple, crée une ligne horizontale que l'œil lit comme une taille.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un corset structuré.",
+        "Une taille basque en pointe.",
+        "Un corsage travaillé, une jupe plus libre.",
+      ],
+      liens: [
+        { href: "/robes/guinevere", label: "Guinevere" },
+        { href: "/robes/oksana", label: "Oksana" },
+        { href: "/robes/ember", label: "Ember" },
+      ],
+    },
+
+    /* ——————————————————————————————————— du volume et du relief ————— */
+    {
+      slug: "volume-relief-silhouette-h",
+      q: "Comment apporter du volume ou du relief à une silhouette en H ?",
+      r: "Par la coupe — une jupe de princesse ou une sirène qui s'évase —, par la matière — une dentelle en relief, des fleurs 3D, un drapé — ou par les détails — des manches ballon, des rubans. Le relief crée la courbe que la ligne droite ne dessine pas.",
+      description:
+        "Apporter du volume ou du relief à une silhouette en H : une jupe ample, une dentelle en relief, des fleurs 3D, un drapé, des manches. Les robes MADAMOON.",
+      chapo:
+        "Une silhouette en H gagne à ce que la robe apporte ce que la ligne ne donne pas. Voici où trouver le volume et le relief.",
+      sections: [
+        {
+          titre: "Par la coupe",
+          texte: [
+            "Une jupe de princesse donne de l'ampleur sous une taille construite. Une sirène, en s'évasant sous les cuisses, crée un volume au bas de la robe et une courbe aux hanches. Alicia et Lovia peuvent se porter en trapèze ou en volume princesse.",
+          ],
+        },
+        {
+          titre: "Par la matière",
+          texte: [
+            "Une dentelle en relief, comme sur Meredith ; des fleurs 3D, comme sur Zina ; un corset perlé à fleurs en relief, comme sur Hélène ; un drapé, comme celui de Dove. La lumière accroche le relief et donne du modelé à la silhouette.",
+          ],
+        },
+        {
+          titre: "Par les détails",
+          texte: [
+            "Des manches ballon, comme sur Ryle, ou des rubans de velours, comme sur Mitra, ajoutent du relief sans changer la coupe.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une jupe ample ou une sirène qui s'évase.",
+        "Dentelle en relief, fleurs 3D, drapé.",
+        "Manches ballon, rubans.",
+      ],
+      liens: [
+        { href: "/robes/meredith", label: "Meredith" },
+        { href: "/robes/zina", label: "Zina" },
+        { href: "/robes/ryle", label: "Ryle" },
+      ],
+    },
+
+    /* ——————————————————————————————————— une silhouette longiligne ————— */
+    {
+      slug: "robe-de-mariee-silhouette-longiligne",
+      q: "Quelle robe de mariée choisir pour une silhouette longiligne ?",
+      r: "Une robe qui suit la ligne : une fluide au tombé net, une sirène légère, ou une robe droite et minimaliste qui fait de la longueur un parti pris. Si vous voulez des courbes, une taille cintrée ou ceinturée les dessine.",
+      description:
+        "Robe de mariée pour une silhouette longiligne : fluide au tombé net, sirène légère, robe droite minimaliste, ou taille marquée. Les conseils MADAMOON, Paris.",
+      chapo:
+        "Une silhouette longiligne a une chance rare : la longueur. La robe peut la célébrer, ou y ajouter des courbes.",
+      sections: [
+        {
+          titre: "Célébrer la ligne",
+          texte: [
+            "Une robe droite, en satin net, sur une ligne longue, est l'un des plus beaux partis pris qui soient. Les robes minimalistes en crêpe, comme Milan, de Monica Loretti, ou Bondi, de Casablanca Bridal, jouent cette carte.",
+          ],
+        },
+        {
+          titre: "Ajouter des courbes",
+          texte: [
+            "Une fluide cintrée à la taille, ou portée avec une ceinture, marque la taille. Une sirène légère crée une courbe aux hanches en allongeant encore la ligne.",
+          ],
+        },
+        {
+          titre: "Jouer la longueur",
+          texte: [
+            "Une traîne, une fente ou des manches longues prolongent la ligne. Siddalee a une longue traîne ; Monica et Murielle, une fente ; Pendant, des manches longues.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une robe droite et minimaliste, assumée.",
+        "Ou une taille cintrée pour des courbes.",
+        "Traîne, fente, manches longues prolongent la ligne.",
+      ],
+      liens: [
+        { href: "/robes/milan", label: "Milan" },
+        { href: "/robes/bondi", label: "Bondi" },
+        { href: "/morphologies/h", label: "La morphologie en H" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la taille basse ————— */
+    {
+      slug: "robe-taille-basse-morphologie-h",
+      q: "Les robes à taille basse conviennent-elles à une morphologie en H ?",
+      r: "Oui, si vous aimez la ligne longue : une taille basse allonge le buste et joue la silhouette droite au lieu de la contrarier. Elle ne crée pas de taille — pour des courbes, préférez une taille cintrée ou une taille haute.",
+      description:
+        "Robe de mariée à taille basse et morphologie en H : elle allonge le buste et joue la ligne droite. Quand la choisir, et les tailles basses de MADAMOON.",
+      chapo:
+        "La taille basse ne cherche pas à creuser la taille : elle la déplace. Sur une silhouette en H, c'est un choix de style plus qu'une correction.",
+      sections: [
+        {
+          titre: "Ce qu'elle fait",
+          texte: [
+            "La couture descend sous la taille naturelle, vers les hanches. Le buste paraît plus long, et la jupe part plus bas. Sur une ligne droite, l'effet est élancé et graphique.",
+          ],
+        },
+        {
+          titre: "Quand la choisir",
+          texte: [
+            "Si vous aimez votre ligne longue et voulez la jouer plutôt que la transformer. Si vous cherchez au contraire des courbes, une taille cintrée, une ceinture ou une taille haute empire les dessineront davantage.",
+          ],
+        },
+        {
+          titre: "Les tailles basses de la boutique",
+          texte: [
+            "Nirali, trapèze au décolleté droit ; Mitra, trapèze en dentelle Cassie et rubans de velours ; Clover Perles, princesse en dentelle Caterina au décolleté carré — toutes trois de Watters Designs.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui, pour jouer la ligne longue.",
+        "Elle allonge le buste.",
+        "Pour des courbes : taille cintrée ou haute.",
+      ],
+      liens: [
+        { href: "/robes/nirali", label: "Nirali" },
+        { href: "/robes/mitra", label: "Mitra" },
+        { href: "/robes/clover-perles", label: "Clover Perles" },
+      ],
+    },
+
+    /* ——————————————————————————————— les premières à essayer ————— */
+    {
+      slug: "premieres-coupes-morphologie-h",
+      q: "Quelles coupes essayer en premier pour une morphologie en H ?",
+      r: "La fluide et la sirène légère, qui dessinent des courbes tout en allongeant la ligne. Ensuite, une trapèze et une princesse, pour comparer — et une robe empire si l'occasion se présente.",
+      description:
+        "Morphologie en H : quelles coupes essayer en premier ? La fluide et la sirène légère, puis une trapèze et une princesse pour comparer. Les conseils MADAMOON.",
+      chapo:
+        "L'ordre des essayages aide à comprendre ce qui vous va, et pourquoi. Voici celui que la boutique conseille pour une morphologie en H.",
+      sections: [
+        {
+          titre: "L'ordre des essayages",
+          texte: [],
+          ordonnee: true,
+          liste: [
+            "Une fluide — cintrée ou ceinturée, elle marque la taille où vous le voulez.",
+            "Une sirène légère — elle crée la courbe au lieu de la chercher.",
+            "Une trapèze — la jupe s'ouvre à partir d'une taille haute.",
+            "Une princesse — pour voir l'effet d'un corset et d'une jupe ample.",
+          ],
+        },
+        {
+          titre: "Et la robe empire",
+          texte: [
+            "Elle mérite un essayage, même si l'idée ne vous attirait pas sur photo. Demandez à la boutique les modèles qui s'en approchent.",
+          ],
+        },
+        {
+          titre: "Venir préparée",
+          texte: [
+            "Gardez vos robes préférées dans vos coups de cœur et dites-le en réservant : elles seront prêtes à votre arrivée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "D'abord une fluide et une sirène légère.",
+        "Puis une trapèze et une princesse.",
+        "Une robe empire, si l'occasion se présente.",
+      ],
+      liens: [
+        { href: "/coupes/fluide", label: "Les robes fluides" },
+        { href: "/coupes/sirene", label: "Les robes sirène" },
+        { href: "/rendez-vous", label: "Prendre rendez-vous" },
+      ],
+    },
+  ],
 };
 
 /** Les questions d'une morphologie, ou rien si elle n'en a pas encore. */
