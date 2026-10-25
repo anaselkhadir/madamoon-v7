@@ -39,6 +39,7 @@ const PAGES = [
   "/a-propos",
   "/rendez-vous",
   "/faq",
+  "/guides",
 ];
 
 /*
@@ -85,6 +86,8 @@ const SOURCES: [string, string][] = [
   ["/faq", "lib/madamoon.ts"],
   ["/coupes", "lib/coupes.ts"],
   ["/morphologies", "lib/morphologies.ts"],
+  /* Le sommaire des guides change quand une question s'ajoute. */
+  ["/guides", "lib/coupes-questions.ts"],
 ];
 
 function dateDe(adresseFr: string): Date | undefined {

@@ -49,6 +49,7 @@ const FR = {
     leShowroom: "Le showroom",
     laMaison: "À propos",
     lesQuestions: "FAQ",
+    lesGuides: "Guides",
     prendreRendezvous: "Prendre rendez-vous",
   },
   /* Les barreaux du fil d'Ariane, celui que les moteurs lisent dans le
@@ -101,7 +102,7 @@ const FR = {
         { texte: "échange", fort: true },
         {
           texte:
-            ". Nous prenons le temps de découvrir votre personnalité, vos envies, vos goûts, ainsi que l’univers de votre mariage : thème, ambiance, lieu et architecture. Ces précieux échanges nous permettent de vous conseiller des robes de mariée adaptées à ",
+            ". Nous prenons le temps de découvrir votre personnalité, vos envies, vos goûts, ainsi que l’univers de votre mariage : thème, ambiance, lieu et architecture. Ces précieux échanges nous permettent de vous conseiller des robes de mariée adaptées à ",
         },
         {
           texte: "votre morphologie, à votre personnalité et à l’esprit de votre mariage",
@@ -122,7 +123,7 @@ const FR = {
         },
         {
           texte:
-            ", vous offre un cadre véritablement hors du temps, pensé pour faire de votre essayage de robe de mariée une expérience unique et mémorable, à partager avec vos proches !",
+            ", vous offre un cadre véritablement hors du temps, pensé pour faire de votre essayage de robe de mariée une expérience unique et mémorable, à partager avec vos proches !",
         },
       ],
     ],
@@ -265,7 +266,7 @@ const FR = {
      * « conseillère » laisse croire à une personne — c'est précisément
      * pour cela qu'il faut le dire, et le dire en toutes lettres. */
     avertissement:
-      "Élise est une intelligence artificielle. Elle peut se tromper : pour une réponse sûre, appelez la boutique.",
+      "Élise est une intelligence artificielle. Elle peut se tromper : pour une réponse sûre, appelez la boutique.",
 
     trouverMaCoupe: "Trouver ma coupe",
     prendreRendezvous: "Prendre rendez-vous",
@@ -315,7 +316,7 @@ const FR = {
     /* Le deux-points de la version lue à voix haute : insécable en
      * français, collé en anglais. */
     recommandationsPlat: "Nos recommandations\u00a0:",
-    lObjectif: "L’objectif :",
+    lObjectif: "L’objectif :",
     dansLOrdre: "Dans l’ordre",
     lettreLabel: (lettre: string) => `En ${lettre}`,
     chezMaison: (nom: string) => `Chez ${nom}`,
@@ -571,7 +572,7 @@ const FR = {
     faq: {
       titre: "Questions fréquentes",
       accroche:
-        "Ce que les mariées nous demandent avant de pousser la porte : les délais, le déroulé d'un essayage, le sur-mesure, le prix.",
+        "Ce que les mariées nous demandent avant de pousser la porte : les délais, le déroulé d'un essayage, le sur-mesure, le prix.",
       sommaire: "Au sommaire",
       /* La frise du délai. Le chiffre redit ce que la réponse écrit en
        * toutes lettres : s'il change là-bas, il change ici. */
@@ -580,7 +581,7 @@ const FR = {
       delaiDebut: "Le premier essayage",
       delaiFin: "Le jour du mariage",
       altEssayage:
-        "Le showroom MADAMOON : l'escalier à tapis rouge, les portants de robes de mariée et le parquet en point de Hongrie",
+        "Le showroom MADAMOON : l'escalier à tapis rouge, les portants de robes de mariée et le parquet en point de Hongrie",
       lesEtapes: "Les quatre temps",
       acompte: "L'acompte",
       solde: "Le solde",
@@ -605,6 +606,24 @@ const FR = {
         soin: "Entretien et retouches",
       },
     },
+    /*
+     * La page des guides : le sommaire de toutes les pages de question
+     * — coupes, morphologies, FAQ. Les questions viennent de leurs
+     * tables ; ce bloc ne porte que les intitulés.
+     */
+    guides: {
+      titre: "Guides",
+      accroche:
+        "Tout ce que la boutique a écrit pour vous aider à choisir : la coupe, la silhouette, l'essayage. Une question, une page.",
+      sommaire: "Au sommaire",
+      coupes: "Les coupes",
+      coupesTexte: "Ce qui définit chaque coupe, à qui elle va, comment la porter et l'accessoiriser.",
+      morphologies: "Les morphologies",
+      morphologiesTexte: "Pour chaque silhouette, les coupes et les détails qui la servent.",
+      essayage: "L'essayage et le sur-mesure",
+      essayageTexte: "Le calendrier, le déroulé d'un essayage, le sur-mesure, les retouches et l'entretien.",
+      lessentiel: "L'essentiel",
+    },
     /* La page dédiée à une question. Ses textes viennent de
      * « lib/questions.ts » ; ce bloc ne porte que les intitulés. */
     question: {
@@ -615,7 +634,7 @@ const FR = {
       itineraire: "L'itinéraire sur Google Maps",
       lesAutresQuestions: "Les autres questions",
       toutesLesQuestions: "Toutes les questions",
-      uneAutreQuestion: "Une autre question ?",
+      uneAutreQuestion: "Une autre question ?",
       uneAutreQuestionTexte:
         "Élise répond sur la coupe, la morphologie et le déroulé d'un essayage. Pour tout le reste, le showroom est au bout du fil.",
       demanderAElise: "Demander à Élise",
@@ -809,6 +828,7 @@ const EN: Textes = {
     leShowroom: "The showroom",
     laMaison: "About",
     lesQuestions: "FAQ",
+    lesGuides: "Guides",
     prendreRendezvous: "Book an appointment",
   },
   ariane: {
@@ -1265,6 +1285,19 @@ const EN: Textes = {
         calendrier: "The calendar",
         soin: "Care and alterations",
       },
+    },
+    guides: {
+      titre: "Guides",
+      accroche:
+        "Everything the boutique has written to help you choose: the silhouette, the body shape, the fitting. One question, one page.",
+      sommaire: "Contents",
+      coupes: "Silhouettes",
+      coupesTexte: "What defines each silhouette, who it suits, how to wear and accessorise it.",
+      morphologies: "Body shapes",
+      morphologiesTexte: "For each figure, the silhouettes and details that flatter it.",
+      essayage: "Fittings and made-to-measure",
+      essayageTexte: "The calendar, how a fitting works, made-to-measure, alterations and care.",
+      lessentiel: "The essentials",
     },
     question: {
       faq: "FAQ",
