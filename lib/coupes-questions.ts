@@ -1657,4 +1657,534 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  trapeze: [
+    /* ——————————————————————————————————————— la définition ————— */
+    {
+      slug: "qu-est-ce-qu-une-robe-de-mariee-trapeze",
+      q: "Qu'est-ce qu'une robe de mariée trapèze ou A-line ?",
+      r: "Une robe au buste ajusté, dont la jupe s'ouvre en A depuis la taille jusqu'au sol, comme la lettre. « Trapèze » en français, « A-line » en anglais : c'est la même coupe. La boutique la tient pour la plus universelle, juste et intemporelle.",
+      description:
+        "Qu'est-ce qu'une robe de mariée trapèze ou A-line ? Un buste ajusté, une jupe qui s'ouvre en A. Définition de la coupe la plus universelle, et trapèzes MADAMOON.",
+      chapo:
+        "Juste et intemporelle : la trapèze est la coupe que la boutique dit la plus universelle. Voici ce qui la définit.",
+      sections: [
+        {
+          titre: "Un A, de la taille au sol",
+          texte: [
+            "Le buste est ajusté et la taille marquée ; de là, la jupe s'élargit progressivement, sans ampleur soudaine, jusqu'au sol. Elle suit les hanches au lieu de les épouser. C'est la ligne de la lettre A, d'où son nom anglais.",
+          ],
+        },
+        {
+          titre: "Ce qu'elle fait à la silhouette",
+          texte: [
+            "Elle structure le buste et libère le reste. Sans volume excessif ni ajustement serré, elle équilibre la silhouette et se porte facilement une journée entière.",
+          ],
+        },
+        {
+          titre: "Les trapèzes de la boutique",
+          texte: [
+            "Chez Watters Designs, Pendant et Aster en dentelle, Finell en satin, Fortune en crêpe, Mitra et Nirali à taille basse ; chez Casablanca Bridal, Solana, Carrie et Emerald ; chez Monica Loretti, Monica en jacquard ; chez Olya Mak, River, une trapèze courte.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Un buste ajusté, une jupe qui s'ouvre en A.",
+        "Trapèze et A-line : la même coupe.",
+        "La plus universelle du catalogue.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "Les robes trapèze" },
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/finell", label: "Finell" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la princesse ————— */
+    {
+      slug: "difference-robe-trapeze-robe-princesse",
+      q: "Quelle différence entre une robe trapèze et une robe princesse ?",
+      r: "Tout tient au volume de la jupe. La trapèze s'ouvre en A, régulièrement, et reste facile à porter ; la princesse assume une jupe ample, de robe de bal. Choisissez la trapèze pour la liberté de mouvement et la sobriété, la princesse pour la solennité.",
+      description:
+        "Robe trapèze ou princesse : laquelle choisir ? La trapèze s'ouvre en A et se porte facilement, la princesse assume le volume. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "Même buste ajusté, deux jupes différentes. Voici comment savoir laquelle vous ressemble.",
+      sections: [
+        {
+          titre: "Quand choisir la trapèze",
+          texte: [],
+          liste: [
+            "Pour bouger librement — la jupe s'ouvre sans peser, de la cérémonie à la piste.",
+            "Pour un lieu plus intime — une mairie, un restaurant, une voiture : la trapèze y tient sans encombrer.",
+            "Pour une allure sobre — elle met le corsage en valeur sans que la jupe lui vole la vedette.",
+          ],
+        },
+        {
+          titre: "Quand lui préférer la princesse",
+          texte: [
+            "Pour une grande cérémonie, un lieu vaste et une silhouette de robe de bal : la princesse a un corset travaillé et un volume assumé que la trapèze n'a pas.",
+          ],
+        },
+        {
+          titre: "Entre les deux",
+          texte: [
+            "Plusieurs robes du catalogue se portent dans l'une ou l'autre : Sienna, Charlotte, Solana, Dolores, et Alicia et Lovia, décrites comme « trapèze ou volume princesse ». En cabine, on voit de quel côté elles penchent sur vous.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Trapèze : liberté et sobriété.",
+        "Princesse : volume et solennité.",
+        "Plusieurs robes se portent dans les deux.",
+      ],
+      liens: [
+        { href: "/coupes/princesse/difference-robe-princesse-robe-trapeze", label: "La même question, côté princesse" },
+        { href: "/robes/alicia", label: "Alicia" },
+        { href: "/robes/solana", label: "Solana" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les morphologies ————— */
+    {
+      slug: "robe-trapeze-quelle-morphologie",
+      q: "À quelle morphologie la robe trapèze convient-elle ?",
+      r: "Elle fait partie des premières coupes à essayer pour les morphologies en O, en A, en 8 et en X. Pour une morphologie en V ou en H, elle vient en second, et vaut l'essai. Toutes les trapèzes du catalogue sont indiquées, sur leurs fiches, pour les six morphologies.",
+      description:
+        "Robe de mariée trapèze : à quelles morphologies convient-elle ? En premier pour O, A, 8 et X, à essayer pour V et H. Les conseils de la boutique MADAMOON.",
+      chapo:
+        "La coupe la plus universelle porte bien son nom. Voici pour qui elle vient en premier.",
+      sections: [
+        {
+          titre: "Les morphologies pour qui elle vient en premier",
+          texte: [],
+          liste: [
+            "En O — le buste est tenu et la jupe part en A dès la taille : le regard s'arrête sur le décolleté.",
+            "En A — la jupe suit les hanches au lieu de les épouser.",
+            "En 8 et en X — la taille marquée et la jupe en A accompagnent une silhouette déjà équilibrée.",
+          ],
+        },
+        {
+          titre: "Celles pour qui elle vaut l'essai",
+          texte: [
+            "En V, choisissez une jupe un peu plus ample et un décolleté en V ou des épaules dénudées, qui adoucissent la ligne des épaules. En H, un corset qui marque la taille, comme celui de Finell ou de Lovia, crée la courbe.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "Les dix-neuf trapèzes de la boutique sont indiquées, sur leurs fiches, pour les six morphologies : c'est la coupe la plus facile à porter. L'essayage choisit entre elles.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "En premier pour O, A, 8 et X.",
+        "À essayer pour V et H.",
+        "Toutes les trapèzes vont aux six morphologies.",
+      ],
+      liens: [
+        { href: "/morphologies/a/robe-trapeze-morphologie-a", label: "La trapèze et la morphologie en A" },
+        { href: "/morphologies/o/robe-trapeze-morphologie-o", label: "La trapèze et la morphologie en O" },
+        { href: "/morphologies", label: "Les six morphologies" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les petites tailles ————— */
+    {
+      slug: "robe-trapeze-petite-taille",
+      q: "La robe trapèze convient-elle à une petite taille ?",
+      r: "Oui, c'est l'une des coupes les plus faciles pour une petite silhouette : la ligne en A allonge sans élargir. Choisissez un volume mesuré, un décolleté en V ou une fente, et une longueur réglée sur vos chaussures. Une trapèze courte, comme River, est aussi une option.",
+      description:
+        "Robe de mariée trapèze pour une petite taille : une ligne en A qui allonge, un volume mesuré, un V ou une fente. Les conseils et trapèzes de MADAMOON, Paris.",
+      chapo:
+        "La trapèze ne demande pas d'être grande. Elle demande un volume à votre échelle.",
+      sections: [
+        {
+          titre: "Une ligne qui allonge",
+          texte: [
+            "La jupe s'ouvre progressivement depuis la taille : l'œil suit une ligne continue jusqu'au sol, sans ampleur soudaine qui tasserait la silhouette.",
+          ],
+        },
+        {
+          titre: "Ce qui accentue l'effet",
+          texte: [],
+          liste: [
+            "Un décolleté en V — Emerald, Lovia, Angel, Monica : il étire le buste.",
+            "Une fente — Héra, Monica, Alicia, Lovia : elle dévoile la jambe en marchant.",
+            "Un volume mesuré — une jupe en crêpe ou en satin, comme Fortune ou Héra, plutôt que plusieurs couches de tulle.",
+          ],
+        },
+        {
+          titre: "La longueur",
+          texte: [
+            "Après l'essayage, la boutique prend vos mensurations pour lancer la confection, et ses couturières ajustent la robe sur place. Un conseil : venez avec les chaussures du jour J. Et River, d'Olya Mak, est une trapèze courte.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : la ligne en A allonge.",
+        "Un V, une fente, un volume mesuré.",
+        "Une longueur réglée sur vos chaussures.",
+      ],
+      liens: [
+        { href: "/robes/hera", label: "Héra" },
+        { href: "/robes/river", label: "River" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "La durée des retouches" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la cérémonie civile ————— */
+    {
+      slug: "robe-trapeze-ceremonie-civile",
+      q: "Une robe trapèze est-elle adaptée à une cérémonie civile ?",
+      r: "Oui, c'est l'une des coupes les plus naturelles à la mairie : sobre, facile à porter, sans volume encombrant. Une trapèze épurée, une courte comme River, ou une robe à pièce amovible — la veste de Solana, les manches d'Aster — pour changer d'allure entre la mairie et la soirée.",
+      description:
+        "Robe de mariée trapèze pour une cérémonie civile : sobre, facile à porter, courte ou à pièce amovible. River, Solana, Aster, les trapèzes MADAMOON à Paris.",
+      chapo:
+        "La mairie demande une robe qui tienne dans la salle, dans la voiture et sur les marches. La trapèze sait tout cela.",
+      sections: [
+        {
+          titre: "Les trapèzes de la mairie",
+          texte: [],
+          liste: [
+            "River — d'Olya Mak, courte, au décolleté carré ; sa fiche la dit parfaite pour un deuxième look, une réception ou une cérémonie moins conventionnelle.",
+            "Fortune — un bustier en crêpe stretch et organza satin, à l'allure élégante et intemporelle.",
+            "Monica — de Monica Loretti, en jacquard floral, avec une large ceinture et une fente.",
+          ],
+        },
+        {
+          titre: "Deux allures en une",
+          texte: [
+            "Solana, de Casablanca Bridal, a une veste asymétrique amovible ; Aster, de Watters Designs, des manches amovibles. Couvertes pour la mairie, plus dégagées pour la soirée.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Pour une cérémonie civile suivie d'une grande réception, une seule trapèze peut suffire ; pour deux journées distinctes, une courte pour la mairie et une longue pour la fête marquent joliment le contraste.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : sobre et facile à porter.",
+        "River, une trapèze courte.",
+        "Une pièce amovible pour deux allures.",
+      ],
+      liens: [
+        { href: "/robes/river", label: "River" },
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/coupes/sirene/robe-sirene-mariage-civil", label: "Une sirène pour un mariage civil" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le volume ————— */
+    {
+      slug: "choisir-volume-robe-trapeze",
+      q: "Comment choisir le volume d'une robe trapèze ?",
+      r: "Selon votre silhouette, le lieu et l'allure voulue. Le catalogue va d'une trapèze près du corps, en crêpe ou en satin, à une jupe de plusieurs couches de tulle presque princesse. La matière fait l'essentiel : le crêpe tombe, le tulle gonfle. Essayez deux volumes pour comparer.",
+      description:
+        "Choisir le volume d'une robe de mariée trapèze : du crêpe près du corps au tulle presque princesse. Les conseils et trapèzes de MADAMOON à Paris.",
+      chapo:
+        "La trapèze n'a pas un volume, elle en a plusieurs. Voici comment trouver le vôtre.",
+      sections: [
+        {
+          titre: "Du plus sobre au plus ample",
+          texte: [],
+          liste: [
+            "Sobre — Fortune, en crêpe stretch ; Héra et Finell, en satin.",
+            "Intermédiaire — Aster, Pendant, Emerald : une jupe en A franche, en dentelle, en satin ou en tulle.",
+            "Ample — Carrie et ses couches de tulle pailleté ; Sienna, au « volume généreux » ; Alicia et Lovia, en « trapèze ou volume princesse ».",
+          ],
+        },
+        {
+          titre: "Selon le lieu",
+          texte: [
+            "Un conseil : un volume mesuré pour une mairie, un restaurant ou une journée chargée ; plus d'ampleur pour une grande salle ou une église. Pensez à toute la journée, pas seulement à l'entrée.",
+          ],
+        },
+        {
+          titre: "Selon la silhouette",
+          texte: [
+            "Pour une petite silhouette, un volume mesuré ; pour des épaules larges, une jupe un peu plus ample qui rééquilibre ; pour des hanches marquées, une jupe qui s'ouvre dès la taille, sans couches superposées.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Du crêpe près du corps au tulle presque princesse.",
+        "La matière fait le volume.",
+        "Pensez au lieu et à toute la journée.",
+      ],
+      liens: [
+        { href: "/robes/fortune", label: "Fortune" },
+        { href: "/robes/carrie", label: "Carrie" },
+        { href: "/robes/sienna", label: "Sienna" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le minimalisme ————— */
+    {
+      slug: "robe-trapeze-minimaliste-moderne",
+      q: "Une robe trapèze peut-elle être minimaliste et moderne ?",
+      r: "Oui. Dans une matière nette — crêpe, satin —, avec peu d'ornements et une ligne franche, la trapèze devient l'une des robes les plus modernes du catalogue. Fortune, Héra, Monica et River en sont les exemples.",
+      description:
+        "Robe de mariée trapèze minimaliste et moderne : crêpe, satin, ligne franche, peu d'ornements. Fortune, Héra, Monica et River, chez MADAMOON à Paris.",
+      chapo:
+        "On associe la trapèze à la dentelle et aux contes de fées. Elle sait aussi être épurée.",
+      sections: [
+        {
+          titre: "Les trapèzes épurées",
+          texte: [],
+          liste: [
+            "Fortune — un bustier en crêpe stretch et organza satin.",
+            "Héra — en satin, au décolleté Bardot, avec une fente sur le devant qui lui donne une allure « résolument contemporaine ».",
+            "Monica — un jacquard floral, une large ceinture et une fente : la fiche parle d'une « la simplicité est sublimée par de beaux détails ».",
+            "River — d'Olya Mak, courte, à la silhouette « épurée et sculpturale ».",
+          ],
+        },
+        {
+          titre: "Ce qui la rend moderne",
+          texte: [
+            "Un conseil : une matière lisse plutôt que des couches de tulle, un décolleté graphique — bustier droit, carré, Bardot —, une fente, et un seul détail fort. Nirali, « résolument moderne » d'après sa fiche, joue sur un décolleté droit bordé de fleurs faites main.",
+          ],
+        },
+        {
+          titre: "Moderne, pas froide",
+          texte: [
+            "Une trapèze minimaliste repose sur la coupe et l'ajustement : c'est là que se voit la différence. À l'essayage, regardez-la de profil et en marchant.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : une matière nette, une ligne franche.",
+        "Peu d'ornements, un détail fort.",
+        "Fortune, Héra, Monica, River.",
+      ],
+      liens: [
+        { href: "/robes/fortune", label: "Fortune" },
+        { href: "/robes/hera", label: "Héra" },
+        { href: "/robes/monica", label: "Monica" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le décolleté ————— */
+    {
+      slug: "decollete-robe-trapeze",
+      q: "Quel décolleté choisir avec une robe trapèze ?",
+      r: "Celui qui met en valeur votre buste et votre style. La trapèze les accueille tous : cœur, V, carré, droit, arrondi, épaules dénudées. Un V allonge, un cœur dessine la poitrine, un carré ou un bustier droit apporte une touche graphique.",
+      description:
+        "Quel décolleté pour une robe de mariée trapèze ? Cœur, V, carré, droit, arrondi, épaules dénudées. Les conseils et trapèzes de MADAMOON, Paris.",
+      chapo:
+        "La jupe en A laisse toute la place au buste. Le décolleté fait le caractère de la robe.",
+      sections: [
+        {
+          titre: "Les décolletés du catalogue",
+          texte: [],
+          liste: [
+            "Cœur — Finell, à l'encolure sculptée ; Sienna, Charlotte, Solana.",
+            "En V — Emerald, Lovia, Angel, Monica.",
+            "Carré — Dolores, River.",
+            "Droit — Nirali, bordé de fleurs faites main.",
+            "Arrondi — Calla.",
+            "Épaules dénudées — Pendant, Héra en Bardot ; Alicia, épaules dégagées.",
+          ],
+        },
+        {
+          titre: "Selon la silhouette",
+          texte: [
+            "Un conseil : le V allonge le buste et adoucit des épaules larges ; le cœur met la poitrine en valeur ; les épaules dénudées ou une encolure carrée élargissent joliment des épaules étroites.",
+          ],
+        },
+        {
+          titre: "Plus couvrant",
+          texte: [
+            "Pendant a des manches longues en dentelle, Aster des manches amovibles et un corsage drapé. Charlotte existe aussi sans le décolleté plongeant, d'après sa fiche, pour une version plus couvrante.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "La trapèze accueille tous les décolletés.",
+        "Le V allonge, le cœur dessine.",
+        "Des versions plus couvrantes existent.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/pendant", label: "Pendant" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la matière ————— */
+    {
+      slug: "matiere-robe-trapeze",
+      q: "Quelle matière privilégier pour une robe trapèze ?",
+      r: "Celle qui donne l'allure voulue. La dentelle pour une trapèze romantique, le satin pour une ligne nette, le tulle pour du volume léger, le crêpe pour une trapèze épurée qui tombe. Emerald existe même avec une jupe de tulle ou de satin, au choix.",
+      description:
+        "Quelle matière pour une robe de mariée trapèze ? Dentelle, satin, tulle, crêpe ou jacquard. Les trapèzes MADAMOON — Aster, Finell, Carrie, Fortune — à Paris.",
+      chapo:
+        "La coupe reste la même ; la matière change tout. Voici ce que chacune donne à une trapèze.",
+      sections: [
+        {
+          titre: "Les matières du catalogue",
+          texte: [],
+          liste: [
+            "La dentelle — Pendant ; Aster, en dentelle de Chantilly ; Charlotte, en dentelle Caterina ; Mitra, en dentelle Cassie ; Calla, en dentelle Highclare.",
+            "Le satin — Finell, Héra ; Aster associe le satin à la dentelle.",
+            "Le tulle — Carrie, en tulle pailleté ; Calla, en tulle très souple ; Dolores.",
+            "Le crêpe — Fortune, en crêpe stretch et organza satin.",
+            "Le jacquard — Monica, aux motifs floraux.",
+          ],
+        },
+        {
+          titre: "Au choix",
+          texte: [
+            "Emerald, de Casablanca Bridal, se décline avec une jupe de tulle ou de satin, sous un même corsage perlé : la même robe, deux allures.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Pour un mariage d'été ou une longue journée, le tulle léger ou un crêpe stretch ; pour une cérémonie solennelle, le satin, qui garde sa ligne ; pour une allure romantique, la dentelle.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Dentelle : romantique.",
+        "Satin : une ligne nette.",
+        "Tulle : du volume léger ; crêpe : épuré.",
+      ],
+      liens: [
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/calla", label: "Calla" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la morphologie en O ————— */
+    {
+      slug: "robe-trapeze-convient-morphologie-o",
+      q: "Une robe trapèze convient-elle à une morphologie en O ?",
+      r: "Oui, c'est l'une des deux coupes à essayer en premier. Pour en tirer le meilleur, choisissez un décolleté en V ou en cœur, un corsage qui tient le buste, et une jupe qui part de la taille dans une matière qui tombe, plutôt que des couches de tulle.",
+      description:
+        "Robe de mariée trapèze et morphologie en O : un décolleté en V ou en cœur, un corsage qui tient, une matière qui tombe. Les conseils de MADAMOON, Paris.",
+      chapo:
+        "La trapèze fait partie des coupes que la boutique conseille d'abord aux silhouettes en O. Voici quelles trapèzes regarder.",
+      sections: [
+        {
+          titre: "Le décolleté",
+          texte: [
+            "Un V ou un cœur met la poitrine en valeur et attire le regard vers le haut. En V : Emerald, Lovia, Angel, Monica ; en cœur : Finell, Sienna, Charlotte.",
+          ],
+        },
+        {
+          titre: "Le corsage et la jupe",
+          texte: [
+            "Un corsage structuré tient le buste ; la jupe part en A dès la taille et laisse le reste libre. Un conseil : une matière qui tombe — satin, crêpe — glisse mieux qu'une jupe faite de plusieurs couches de tulle.",
+          ],
+        },
+        {
+          titre: "Les manches",
+          texte: [
+            "Pour couvrir les bras, Pendant a des manches longues en dentelle, et Aster des manches amovibles, à garder pour la cérémonie.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : l'une des deux coupes à essayer en premier.",
+        "Un décolleté en V ou en cœur.",
+        "Une matière qui tombe.",
+      ],
+      liens: [
+        { href: "/morphologies/o/robe-trapeze-morphologie-o", label: "La trapèze, vue de la morphologie en O" },
+        { href: "/morphologies/o", label: "La morphologie en O" },
+        { href: "/robes/emerald", label: "Emerald" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les accessoires ————— */
+    {
+      slug: "accessoiriser-robe-trapeze",
+      q: "Comment accessoiriser une robe de mariée trapèze ?",
+      r: "En suivant le décolleté et le style de la robe. Une trapèze sobre accueille un voile long, une ceinture ou un bijou marqué ; une trapèze perlée ou pailletée se suffit presque. Certaines ont leurs propres pièces : la veste de Solana, les manches d'Aster, la ceinture de Monica.",
+      description:
+        "Accessoiriser une robe de mariée trapèze : voile, ceinture, bijoux selon le décolleté. Les pièces des trapèzes MADAMOON — Solana, Aster, Monica — à Paris.",
+      chapo:
+        "La trapèze est une base juste. L'accessoire lui donne sa signature.",
+      sections: [
+        {
+          titre: "Les pièces des robes",
+          texte: [],
+          liste: [
+            "Solana — une veste asymétrique amovible.",
+            "Aster — des manches amovibles.",
+            "Monica — une large ceinture qui souligne la taille.",
+            "Mitra — de délicats rubans de velours.",
+          ],
+        },
+        {
+          titre: "Le voile",
+          texte: [
+            "Un conseil : accordez sa longueur à la traîne. Un voile long prolonge une traîne chapelle, comme celle de Finell, ou la longue traîne de Solana ; un voile court laisse voir un dos travaillé, comme le dos transparent à boutons de Dolores.",
+          ],
+        },
+        {
+          titre: "Les bijoux",
+          texte: [
+            "Avec un corsage perlé ou pailleté — Carrie, Emerald, Angel —, des boucles d'oreilles suffisent. Avec une trapèze sobre, comme Fortune, un collier ou des boucles plus marquées portent la tenue. Le bijou suit le décolleté : un pendentif pour un V, rien pour un bustier cœur.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "L'accessoire suit le décolleté.",
+        "Certaines robes ont leurs propres pièces.",
+        "Un voile accordé à la traîne.",
+      ],
+      liens: [
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/dolores", label: "Dolores" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— l'A-line et l'évasée ————— */
+    {
+      slug: "difference-coupe-a-line-coupe-evasee",
+      q: "Quelle différence entre une coupe A-line et une coupe évasée classique ?",
+      r: "« Évasée » désigne toute jupe qui s'élargit vers le bas ; l'A-line en est une forme précise. Elle s'ouvre dès la taille, en ligne droite et régulière. D'autres évasées s'ouvrent plus bas — la sirène, sous les cuisses — ou avec plus d'ampleur — la princesse.",
+      description:
+        "Coupe A-line ou évasée classique : l'évasée est une famille, l'A-line s'ouvre dès la taille en ligne droite. La différence expliquée par MADAMOON, Paris.",
+      chapo:
+        "« Évasée » est un mot de famille ; « A-line » est un nom précis. Voici comment les situer.",
+      sections: [
+        {
+          titre: "L'évasée, une famille",
+          texte: [
+            "Une jupe évasée s'élargit vers le bas. Le mot ne dit pas où elle commence à s'ouvrir, ni avec quelle ampleur : il réunit plusieurs coupes.",
+          ],
+        },
+        {
+          titre: "Les évasées du catalogue",
+          texte: [],
+          liste: [
+            "L'A-line, ou trapèze — elle s'ouvre dès la taille, régulièrement, en A.",
+            "La sirène — ajustée jusqu'aux cuisses, elle s'évase en dessous.",
+            "La princesse — elle s'ouvre à la taille, avec un vrai volume de robe de bal.",
+          ],
+        },
+        {
+          titre: "Au catalogue",
+          texte: [
+            "La fiche d'Aster parle d'une « silhouette A-line » à taille naturelle ; celle de Mitra, d'une robe « trapèze ou A-line » à taille basse : la taille basse fait partir l'évasement un peu plus bas, sans changer la ligne en A.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Évasée : toute jupe qui s'élargit.",
+        "A-line : elle s'ouvre dès la taille, en A.",
+        "La sirène et la princesse sont d'autres évasées.",
+      ],
+      liens: [
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/mitra", label: "Mitra" },
+        { href: "/coupes/sirene/qu-est-ce-qu-une-robe-de-mariee-sirene", label: "Qu'est-ce qu'une sirène" },
+      ],
+    },
+  ],
 };

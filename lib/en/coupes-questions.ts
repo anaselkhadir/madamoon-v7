@@ -1573,4 +1573,511 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  trapeze: [
+    {
+      slug: fr("trapeze", 0),
+      q: "What is an A-line wedding dress?",
+      r: "A dress with a fitted bodice whose skirt opens in an A from the waist to the floor, like the letter. \"Trapèze\" in French, \"A-line\" in English: it is the same silhouette. The boutique considers it the most universal, precise and timeless.",
+      description:
+        "What is an A-line wedding dress? A fitted bodice, a skirt that opens in an A. Definition of the most universal silhouette, and the MADAMOON A-line dresses.",
+      chapo:
+        "Precise and timeless: the A-line is the silhouette the boutique calls the most universal. Here is what defines it.",
+      sections: [
+        {
+          titre: "An A, from the waist to the floor",
+          texte: [
+            "The bodice is fitted and the waist defined; from there, the skirt widens gradually, with no sudden fullness, to the floor. It skims the hips rather than hugging them. It is the line of the letter A, hence its name.",
+          ],
+        },
+        {
+          titre: "What it does to the figure",
+          texte: [
+            "It structures the bust and frees the rest. With no excessive volume and no tight fit, it balances the figure and is easy to wear all day.",
+          ],
+        },
+        {
+          titre: "The boutique's A-line dresses",
+          texte: [
+            "From Watters Designs, Pendant and Aster in lace, Finell in satin, Fortune in crêpe, Mitra and Nirali with a dropped waist; from Casablanca Bridal, Solana, Carrie and Emerald; from Monica Loretti, Monica in jacquard; from Olya Mak, River, a short A-line.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A fitted bodice, a skirt that opens in an A.",
+        "Trapèze and A-line: the same silhouette.",
+        "The most universal in the catalogue.",
+      ],
+      liens: [
+        { href: "/coupes/trapeze", label: "A-line dresses" },
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/finell", label: "Finell" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 1),
+      q: "What is the difference between an A-line dress and a ball gown?",
+      r: "It all comes down to the volume of the skirt. The A-line opens in an A, evenly, and stays easy to wear; the ball gown carries a full, evening-gown skirt. Choose the A-line for freedom of movement and simplicity, the ball gown for formality.",
+      description:
+        "A-line or ball gown: which to choose? The A-line opens in an A and is easy to wear, the ball gown carries volume. Advice from MADAMOON, Paris.",
+      chapo:
+        "The same fitted bodice, two different skirts. Here is how to tell which one is you.",
+      sections: [
+        {
+          titre: "When to choose the A-line",
+          texte: [],
+          liste: [
+            "To move freely — the skirt opens without weighing, from the ceremony to the dance floor.",
+            "For a more intimate venue — a town hall, a restaurant, a car: the A-line fits without getting in the way.",
+            "For a simple look — it shows off the bodice without the skirt stealing the show.",
+          ],
+        },
+        {
+          titre: "When to prefer the ball gown",
+          texte: [
+            "For a grand ceremony, a large venue and an evening-gown silhouette: the ball gown has a crafted corset and an assumed volume the A-line does not.",
+          ],
+        },
+        {
+          titre: "Between the two",
+          texte: [
+            "Several dresses in the catalogue can be worn either way: Sienna, Charlotte, Solana, Dolores, and Alicia and Lovia, described as \"A-line or ball-gown volume\". The fitting room shows which way they lean on you.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A-line: freedom and simplicity.",
+        "Ball gown: volume and formality.",
+        "Several dresses can be worn both ways.",
+      ],
+      liens: [
+        { href: "/coupes/princesse/difference-robe-princesse-robe-trapeze", label: "The same question, from the ball gown side" },
+        { href: "/robes/alicia", label: "Alicia" },
+        { href: "/robes/solana", label: "Solana" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 2),
+      q: "Which body shape does an A-line dress suit?",
+      r: "It is one of the first silhouettes to try for the O, A, 8 and X body shapes. For a V or H body shape, it comes second, and is worth trying. Every A-line dress in the catalogue is listed, on its page, for all six body shapes.",
+      description:
+        "A-line wedding dress: which body shapes does it suit? First for O, A, 8 and X, worth trying for V and H. Advice from the MADAMOON boutique.",
+      chapo:
+        "The most universal silhouette lives up to its name. Here is who it comes first for.",
+      sections: [
+        {
+          titre: "The body shapes it comes first for",
+          texte: [],
+          liste: [
+            "O — the bust is held and the skirt opens in an A from the waist: the eye stops at the neckline.",
+            "A — the skirt skims the hips rather than hugging them.",
+            "8 and X — the defined waist and the A-line skirt go with an already balanced figure.",
+          ],
+        },
+        {
+          titre: "The ones it is worth trying for",
+          texte: [
+            "For a V, choose a slightly fuller skirt and a V neckline or bare shoulders, which soften the line of the shoulders. For an H, a corset that defines the waist, like Finell's or Lovia's, creates the curve.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "All nineteen of the boutique's A-line dresses are listed, on their pages, for all six body shapes: it is the easiest silhouette to wear. The fitting chooses between them.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First for O, A, 8 and X.",
+        "Worth trying for V and H.",
+        "Every A-line suits all six body shapes.",
+      ],
+      liens: [
+        { href: "/morphologies/a/robe-trapeze-morphologie-a", label: "The A-line and the A body shape" },
+        { href: "/morphologies/o/robe-trapeze-morphologie-o", label: "The A-line and the O body shape" },
+        { href: "/morphologies", label: "The six body shapes" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 3),
+      q: "Does an A-line dress suit a petite bride?",
+      r: "Yes, it is one of the easiest silhouettes for a petite figure: the A-line lengthens without widening. Choose a measured volume, a V neckline or a slit, and a length set to your shoes. A short A-line, like River, is also an option.",
+      description:
+        "A-line wedding dress for a petite bride: a lengthening A-line, measured volume, a V or a slit. Advice and A-line dresses from MADAMOON, Paris.",
+      chapo:
+        "The A-line does not ask you to be tall. It asks for volume on your scale.",
+      sections: [
+        {
+          titre: "A line that lengthens",
+          texte: [
+            "The skirt opens gradually from the waist: the eye follows an unbroken line to the floor, with no sudden fullness to shorten the figure.",
+          ],
+        },
+        {
+          titre: "What heightens the effect",
+          texte: [],
+          liste: [
+            "A V neckline — Emerald, Lovia, Angel, Monica: it elongates the bust.",
+            "A slit — Héra, Monica, Alicia, Lovia: it reveals the leg as you walk.",
+            "A measured volume — a crêpe or satin skirt, like Fortune or Héra, rather than layers of tulle.",
+          ],
+        },
+        {
+          titre: "The length",
+          texte: [
+            "After the fitting, the boutique takes your measurements to begin making the dress, and its seamstresses adjust it on site. A tip: come in your wedding-day shoes. And River, by Olya Mak, is a short A-line.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: the A-line lengthens.",
+        "A V, a slit, a measured volume.",
+        "A length set to your shoes.",
+      ],
+      liens: [
+        { href: "/robes/hera", label: "Héra" },
+        { href: "/robes/river", label: "River" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "How long alterations take" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 4),
+      q: "Is an A-line dress suitable for a civil ceremony?",
+      r: "Yes, it is one of the most natural silhouettes at the town hall: simple, easy to wear, with no cumbersome volume. A pared-back A-line, a short one like River, or a dress with a removable piece — Solana's jacket, Aster's sleeves — to change looks between the town hall and the evening.",
+      description:
+        "A-line wedding dress for a civil ceremony: simple, easy to wear, short or with a removable piece. River, Solana, Aster, the MADAMOON A-line dresses in Paris.",
+      chapo:
+        "The town hall calls for a dress that fits in the room, in the car and on the steps. The A-line can do all that.",
+      sections: [
+        {
+          titre: "A-line dresses for the town hall",
+          texte: [],
+          liste: [
+            "River — by Olya Mak, short, with a square neckline; its page calls it perfect for a second look, a reception or a less conventional ceremony.",
+            "Fortune — a strapless bodice in stretch crêpe and satin organza, elegant and timeless.",
+            "Monica — by Monica Loretti, in floral jacquard, with a wide belt and a slit.",
+          ],
+        },
+        {
+          titre: "Two looks in one",
+          texte: [
+            "Solana, by Casablanca Bridal, has a removable asymmetric jacket; Aster, by Watters Designs, removable sleeves. Covered for the town hall, more open for the evening.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "For a civil ceremony followed by a large reception, one A-line can be enough; for two separate days, a short dress for the town hall and a long one for the party mark the contrast beautifully.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: simple and easy to wear.",
+        "River, a short A-line.",
+        "A removable piece for two looks.",
+      ],
+      liens: [
+        { href: "/robes/river", label: "River" },
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/coupes/sirene/robe-sirene-mariage-civil", label: "A mermaid dress for a civil wedding" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 5),
+      q: "How do you choose the volume of an A-line dress?",
+      r: "Based on your figure, the venue and the look you want. The catalogue ranges from a close-fitting A-line in crêpe or satin to a skirt of several tulle layers that is almost a ball gown. The fabric does most of it: crêpe falls, tulle billows. Try two volumes to compare.",
+      description:
+        "Choosing the volume of an A-line wedding dress: from close-fitting crêpe to almost-ball-gown tulle. Advice and A-line dresses from MADAMOON in Paris.",
+      chapo:
+        "The A-line does not have one volume, it has several. Here is how to find yours.",
+      sections: [
+        {
+          titre: "From the simplest to the fullest",
+          texte: [],
+          liste: [
+            "Simple — Fortune, in stretch crêpe; Héra and Finell, in satin.",
+            "In between — Aster, Pendant, Emerald: a clear A-line skirt, in lace, satin or tulle.",
+            "Full — Carrie and its layers of sequinned tulle; Sienna, with its \"generous volume\"; Alicia and Lovia, \"A-line or ball-gown volume\".",
+          ],
+        },
+        {
+          titre: "Depending on the venue",
+          texte: [
+            "A tip: a measured volume for a town hall, a restaurant or a busy day; more fullness for a large hall or a church. Think of the whole day, not just the entrance.",
+          ],
+        },
+        {
+          titre: "Depending on the figure",
+          texte: [
+            "For a petite figure, a measured volume; for broad shoulders, a slightly fuller skirt that rebalances; for pronounced hips, a skirt that opens from the waist, without stacked layers.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "From close-fitting crêpe to almost-ball-gown tulle.",
+        "The fabric makes the volume.",
+        "Think of the venue and the whole day.",
+      ],
+      liens: [
+        { href: "/robes/fortune", label: "Fortune" },
+        { href: "/robes/carrie", label: "Carrie" },
+        { href: "/robes/sienna", label: "Sienna" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 6),
+      q: "Can an A-line dress be minimalist and modern?",
+      r: "Yes. In a clean fabric — crêpe, satin — with little ornament and a clear line, the A-line becomes one of the most modern dresses in the catalogue. Fortune, Héra, Monica and River are the examples.",
+      description:
+        "Minimalist, modern A-line wedding dress: crêpe, satin, a clear line, little ornament. Fortune, Héra, Monica and River, at MADAMOON in Paris.",
+      chapo:
+        "The A-line is associated with lace and fairy tales. It can also be pared back.",
+      sections: [
+        {
+          titre: "The pared-back A-line dresses",
+          texte: [],
+          liste: [
+            "Fortune — a strapless bodice in stretch crêpe and satin organza.",
+            "Héra — in satin, with a Bardot neckline and a front slit that gives it a \"resolutely contemporary\" look.",
+            "Monica — floral jacquard, a wide belt and a slit: its page speaks of \"simplicity enhanced by beautiful details\".",
+            "River — by Olya Mak, short, with a \"pared-back, sculptural\" silhouette.",
+          ],
+        },
+        {
+          titre: "What makes it modern",
+          texte: [
+            "A tip: a smooth fabric rather than layers of tulle, a graphic neckline — straight strapless, square, Bardot — a slit, and a single strong detail. Nirali, \"resolutely modern\" according to its page, plays on a straight neckline edged with handmade flowers.",
+          ],
+        },
+        {
+          titre: "Modern, not cold",
+          texte: [
+            "A minimalist A-line relies on cut and fit: that is where the difference shows. At the fitting, look at it in profile and walking.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: a clean fabric, a clear line.",
+        "Little ornament, one strong detail.",
+        "Fortune, Héra, Monica, River.",
+      ],
+      liens: [
+        { href: "/robes/fortune", label: "Fortune" },
+        { href: "/robes/hera", label: "Héra" },
+        { href: "/robes/monica", label: "Monica" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 7),
+      q: "Which neckline goes with an A-line dress?",
+      r: "The one that flatters your bust and your style. The A-line welcomes them all: sweetheart, V, square, straight, rounded, off-the-shoulder. A V lengthens, a sweetheart shapes the bust, a square or straight strapless adds a graphic touch.",
+      description:
+        "Which neckline for an A-line wedding dress? Sweetheart, V, square, straight, rounded, off-the-shoulder. Advice and A-line dresses from MADAMOON, Paris.",
+      chapo:
+        "The A-line skirt leaves all the room to the bust. The neckline gives the dress its character.",
+      sections: [
+        {
+          titre: "The catalogue's necklines",
+          texte: [],
+          liste: [
+            "Sweetheart — Finell, with its sculpted neckline; Sienna, Charlotte, Solana.",
+            "V — Emerald, Lovia, Angel, Monica.",
+            "Square — Dolores, River.",
+            "Straight — Nirali, edged with handmade flowers.",
+            "Rounded — Calla.",
+            "Off-the-shoulder — Pendant, Héra in Bardot; Alicia, with open shoulders.",
+          ],
+        },
+        {
+          titre: "Depending on the figure",
+          texte: [
+            "A tip: the V elongates the bust and softens broad shoulders; the sweetheart flatters the bust; bare shoulders or a square neckline beautifully widen narrow shoulders.",
+          ],
+        },
+        {
+          titre: "More covered",
+          texte: [
+            "Pendant has long lace sleeves, Aster removable sleeves and a draped bodice. According to its page, Charlotte also comes without the plunging neckline, for a more covered version.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The A-line welcomes every neckline.",
+        "The V lengthens, the sweetheart shapes.",
+        "More covered versions exist.",
+      ],
+      liens: [
+        { href: "/robes/finell", label: "Finell" },
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/pendant", label: "Pendant" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 8),
+      q: "Which fabric is best for an A-line dress?",
+      r: "The one that gives the look you want. Lace for a romantic A-line, satin for a clean line, tulle for light volume, crêpe for a pared-back A-line that falls. Emerald even comes with a tulle or satin skirt, as you choose.",
+      description:
+        "Which fabric for an A-line wedding dress? Lace, satin, tulle, crêpe or jacquard. The MADAMOON A-line dresses — Aster, Finell, Carrie, Fortune — in Paris.",
+      chapo:
+        "The silhouette stays the same; the fabric changes everything. Here is what each gives an A-line.",
+      sections: [
+        {
+          titre: "The catalogue's fabrics",
+          texte: [],
+          liste: [
+            "Lace — Pendant; Aster, in Chantilly lace; Charlotte, in Caterina lace; Mitra, in Cassie lace; Calla, in Highclare lace.",
+            "Satin — Finell, Héra; Aster pairs satin with lace.",
+            "Tulle — Carrie, in sequinned tulle; Calla, in very soft tulle; Dolores.",
+            "Crêpe — Fortune, in stretch crêpe and satin organza.",
+            "Jacquard — Monica, with floral motifs.",
+          ],
+        },
+        {
+          titre: "Your choice",
+          texte: [
+            "Emerald, by Casablanca Bridal, comes with a tulle or satin skirt under the same beaded bodice: one dress, two looks.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "For a summer wedding or a long day, light tulle or a stretch crêpe; for a formal ceremony, satin, which keeps its line; for a romantic look, lace.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Lace: romantic.",
+        "Satin: a clean line.",
+        "Tulle: light volume; crêpe: pared back.",
+      ],
+      liens: [
+        { href: "/robes/emerald", label: "Emerald" },
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/calla", label: "Calla" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 9),
+      q: "Does an A-line dress suit an O body shape?",
+      r: "Yes, it is one of the two silhouettes to try first. To make the most of it, choose a V or sweetheart neckline, a bodice that holds the bust, and a skirt that starts at the waist in a fabric that falls, rather than layers of tulle.",
+      description:
+        "A-line wedding dress and the O body shape: a V or sweetheart neckline, a bodice that holds, a fabric that falls. Advice from MADAMOON, Paris.",
+      chapo:
+        "The A-line is one of the silhouettes the boutique recommends first for O figures. Here is which A-line dresses to look at.",
+      sections: [
+        {
+          titre: "The neckline",
+          texte: [
+            "A V or a sweetheart flatters the bust and draws the eye upwards. V: Emerald, Lovia, Angel, Monica; sweetheart: Finell, Sienna, Charlotte.",
+          ],
+        },
+        {
+          titre: "The bodice and the skirt",
+          texte: [
+            "A structured bodice holds the bust; the skirt opens in an A from the waist and leaves the rest free. A tip: a fabric that falls — satin, crêpe — glides better than a skirt made of several layers of tulle.",
+          ],
+        },
+        {
+          titre: "The sleeves",
+          texte: [
+            "To cover the arms, Pendant has long lace sleeves, and Aster removable sleeves, to keep on for the ceremony.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: one of the two silhouettes to try first.",
+        "A V or sweetheart neckline.",
+        "A fabric that falls.",
+      ],
+      liens: [
+        { href: "/morphologies/o/robe-trapeze-morphologie-o", label: "The A-line, from the O body shape" },
+        { href: "/morphologies/o", label: "The O body shape" },
+        { href: "/robes/emerald", label: "Emerald" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 10),
+      q: "How do you accessorise an A-line wedding dress?",
+      r: "By following the neckline and the style of the dress. A simple A-line welcomes a long veil, a belt or a bold piece of jewellery; a beaded or sequinned A-line needs almost nothing. Some have their own pieces: Solana's jacket, Aster's sleeves, Monica's belt.",
+      description:
+        "Accessorising an A-line wedding dress: veil, belt, jewellery by neckline. The pieces of the MADAMOON A-line dresses — Solana, Aster, Monica — in Paris.",
+      chapo:
+        "The A-line is a precise base. The accessory gives it its signature.",
+      sections: [
+        {
+          titre: "The dresses' own pieces",
+          texte: [],
+          liste: [
+            "Solana — a removable asymmetric jacket.",
+            "Aster — removable sleeves.",
+            "Monica — a wide belt that accents the waist.",
+            "Mitra — delicate velvet ribbons.",
+          ],
+        },
+        {
+          titre: "The veil",
+          texte: [
+            "A tip: match its length to the train. A long veil extends a chapel train, like Finell's, or Solana's long train; a short veil reveals a worked back, like Dolores's sheer buttoned back.",
+          ],
+        },
+        {
+          titre: "Jewellery",
+          texte: [
+            "With a beaded or sequinned bodice — Carrie, Emerald, Angel — earrings are enough. With a simple A-line, like Fortune, a necklace or bolder earrings carry the look. The jewellery follows the neckline: a pendant for a V, nothing for a sweetheart strapless.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The accessory follows the neckline.",
+        "Some dresses have their own pieces.",
+        "A veil matched to the train.",
+      ],
+      liens: [
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/robes/monica", label: "Monica" },
+        { href: "/robes/dolores", label: "Dolores" },
+      ],
+    },
+    {
+      slug: fr("trapeze", 11),
+      q: "What is the difference between an A-line cut and a classic flared cut?",
+      r: "\"Flared\" describes any skirt that widens towards the hem; the A-line is a precise form of it. It opens from the waist, in a straight, even line. Other flared cuts open lower — the mermaid, below the thighs — or with more fullness — the ball gown.",
+      description:
+        "A-line or classic flared cut: flared is a family, the A-line opens from the waist in a straight line. The difference explained by MADAMOON, Paris.",
+      chapo:
+        "\"Flared\" is a family name; \"A-line\" is a precise one. Here is how they fit together.",
+      sections: [
+        {
+          titre: "Flared, a family",
+          texte: [
+            "A flared skirt widens towards the hem. The word does not say where it starts to open, or with how much fullness: it covers several silhouettes.",
+          ],
+        },
+        {
+          titre: "The catalogue's flared silhouettes",
+          texte: [],
+          liste: [
+            "The A-line — it opens from the waist, evenly, in an A.",
+            "The mermaid — fitted to the thighs, it flares below.",
+            "The ball gown — it opens at the waist, with the real volume of an evening gown.",
+          ],
+        },
+        {
+          titre: "In the catalogue",
+          texte: [
+            "Aster's page speaks of an \"A-line silhouette\" with a natural waist; Mitra's, of an \"A-line\" dress with a dropped waist: the dropped waist starts the flare a little lower, without changing the A-line.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Flared: any skirt that widens.",
+        "A-line: it opens from the waist, in an A.",
+        "The mermaid and the ball gown are other flared cuts.",
+      ],
+      liens: [
+        { href: "/robes/aster", label: "Aster" },
+        { href: "/robes/mitra", label: "Mitra" },
+        { href: "/coupes/sirene/qu-est-ce-qu-une-robe-de-mariee-sirene", label: "What is a mermaid dress" },
+      ],
+    },
+  ],
 };
