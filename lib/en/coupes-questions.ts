@@ -2080,4 +2080,501 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  "deux-en-un": [
+    {
+      slug: fr("deux-en-un", 0),
+      q: "What is a two-in-one wedding dress?",
+      r: "One dress, two looks: a base dress, and an overskirt, a skirt or a train that is added or detached. You move from one silhouette to another — from a long ceremony gown to a short or fitted evening dress — without changing dresses.",
+      description:
+        "What is a two-in-one wedding dress? A base dress and a detachable overskirt or train: two looks, one dress. The two-in-one dresses at MADAMOON, Paris.",
+      chapo:
+        "Two looks, one dress: the two-in-one changes silhouette during the day. Here is what defines it.",
+      sections: [
+        {
+          titre: "A dress, and a piece that detaches",
+          texte: [
+            "The base dress is worn on its own: short, mermaid, fitted. An overskirt, a skirt or a train goes over it for the ceremony, and comes off when you wish. The two looks are designed together.",
+          ],
+        },
+        {
+          titre: "The boutique's two-in-one dresses",
+          texte: [],
+          liste: [
+            "Tessa — by Casablanca Bridal, a mermaid with vintage-chic charm, a detachable overskirt and removable straps.",
+            "Clover — by Casablanca Bridal, a short dress embroidered with coloured flowers, and a long overskirt \"at will\".",
+            "Gabriel — by Watters Designs, a delicately beaded short dress, with a removable sheer skirt.",
+            "Chastity — by Olya Mak, in lace, with long sleeves, a high neck and a long train.",
+          ],
+        },
+        {
+          titre: "Elsewhere in the catalogue",
+          texte: [
+            "Mira, by Monica Loretti, is filed with the mermaid dresses, but its page calls it a 2-in-1: it can be paired with a voluminous removable tulle skirt, taking it from a mermaid to a silhouette inspired by the ball gown.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "One dress, two looks.",
+        "An overskirt, a skirt or a train that detaches.",
+        "Tessa, Clover, Gabriel, Chastity — and Mira.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Two-in-one dresses" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 1),
+      q: "How does a two-in-one wedding dress work?",
+      r: "It is made of a base dress, worn on its own, and a piece added to it: an overskirt, a skirt or a train, attached at the waist. You wear it for the ceremony and take it off for the evening. The fastening depends on the dress and is shown at the fitting.",
+      description:
+        "How does a two-in-one wedding dress work? A base dress and an overskirt or skirt attached at the waist, removed for the evening. Explained by MADAMOON.",
+      chapo:
+        "A two-in-one is nothing complicated. It rests on two pieces designed to go together.",
+      sections: [
+        {
+          titre: "Two pieces",
+          texte: [],
+          liste: [
+            "The base dress — worn on its own: short like Clover or Gabriel, mermaid like Tessa or Mira.",
+            "The added piece — a long overskirt (Tessa, Clover), a sheer skirt (Gabriel), a voluminous tulle skirt (Mira).",
+          ],
+        },
+        {
+          titre: "The moment of change",
+          texte: [
+            "Most often, the long piece is worn for the ceremony and the photographs, and removed before dinner or the first dance. A tip: plan a room to change in, and someone to help you.",
+          ],
+        },
+        {
+          titre: "The fastening",
+          texte: [
+            "The piece attaches at the waist; the system varies with the dress. At the fitting, have it shown how it attaches and comes off, and try doing it yourself.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "A base dress, an added piece.",
+        "The long piece for the ceremony.",
+        "The fastening is shown at the fitting.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/coupes/deux-en-un/transformation-robe-deux-en-un-facile", label: "An easy transformation" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 2),
+      q: "What is the difference between a two-in-one dress and a dress with an overskirt?",
+      r: "The overskirt is one way of making a two-in-one: a skirt worn over the dress, which you take off. But a two-in-one can also rely on a removable skirt or a detachable train. And an overskirt that does not come off offers only one look.",
+      description:
+        "Two-in-one or overskirt dress: the overskirt is one way of making a two-in-one, not the only one. The difference explained by MADAMOON, Paris.",
+      chapo:
+        "The two words often overlap. One names a piece, the other what it makes possible.",
+      sections: [
+        {
+          titre: "The overskirt, a piece",
+          texte: [
+            "A skirt worn over the dress. Detachable, it lets you change looks: this is the case with Tessa and Clover, whose long overskirt comes off.",
+          ],
+        },
+        {
+          titre: "The two-in-one, a promise",
+          texte: [
+            "One dress, two looks. The overskirt is the most common way, but not the only one: Gabriel has a removable sheer skirt, Mira a voluminous tulle skirt, and the boutique also speaks of trains that detach.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "If you really want two looks, check that the overskirt comes off and that the base dress stands on its own. The fitting room shows it, as you try both versions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The overskirt is a piece.",
+        "The two-in-one is a dress with two looks.",
+        "A fixed overskirt offers one look.",
+      ],
+      liens: [
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 3),
+      q: "Does a two-in-one dress let you change looks during the day?",
+      r: "Yes, that is its purpose. Long and formal for the ceremony, short or fitted for the evening: Clover goes from a long dress to a short floral one, Tessa from an overskirt dress to a mermaid, Mira from a ball-gown-inspired silhouette to a mermaid.",
+      description:
+        "Changing looks with a two-in-one wedding dress: long for the ceremony, short or mermaid for the evening. Clover, Tessa, Mira, at MADAMOON in Paris.",
+      chapo:
+        "A wedding day has several moments. The two-in-one has the looks for them.",
+      sections: [
+        {
+          titre: "The catalogue's transformations",
+          texte: [],
+          liste: [
+            "Clover — a long overskirt over a short dress embroidered with coloured flowers.",
+            "Gabriel — a sheer skirt over a beaded short dress.",
+            "Tessa — a detachable overskirt over a mermaid, and removable straps \"for another look\".",
+            "Mira — a crêpe mermaid that, with its tulle skirt, takes on a more spectacular silhouette inspired by the ball gown.",
+          ],
+        },
+        {
+          titre: "More subtly",
+          texte: [
+            "Other dresses change look through a detail: Riviera's removable sleeves, which its page says let you \"vary the styles\", or Solana's removable jacket.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "Choose the moment of change in advance — after the ceremony, before dinner, at the first dance — and tell your photographer: both looks deserve their photographs.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: that is its purpose.",
+        "Long for the ceremony, short or mermaid in the evening.",
+        "Plan the moment of change.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/riviera", label: "Riviera" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 4),
+      q: "How do you choose a two-in-one dress for the ceremony and the evening?",
+      r: "By starting from both moments. The long version must suit the ceremony — formality, venue, covered shoulders if needed; the base dress, the evening — dancing, moving around, feeling free. Always try both versions, and the transformation itself.",
+      description:
+        "Choosing a two-in-one wedding dress for the ceremony and the evening: a long version for one, a free base dress for the other. Advice from MADAMOON.",
+      chapo:
+        "A two-in-one is chosen twice: for the ceremony, and for the evening.",
+      sections: [
+        {
+          titre: "For the ceremony",
+          texte: [
+            "A tip: look at the long version as a dress in its own right. For a religious ceremony, covering sleeves and neckline, like Chastity's, in lace, with long sleeves and a high neck; for a town hall, a lighter version is enough.",
+          ],
+        },
+        {
+          titre: "For the evening",
+          texte: [
+            "The base dress must please you on its own: short and floral like Clover, short and beaded like Gabriel, mermaid like Tessa or Mira, whose high slit adds movement.",
+          ],
+        },
+        {
+          titre: "At the fitting",
+          texte: [
+            "Try both versions, walk and sit in each, and do the transformation in the fitting room. A successful two-in-one is two dresses you love equally.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The long version for the ceremony.",
+        "The base dress for the evening.",
+        "Try both, and the change.",
+      ],
+      liens: [
+        { href: "/robes/chastity", label: "Chastity" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 5),
+      q: "Is a two-in-one dress comfortable to dance in?",
+      r: "Yes, it is often the most comfortable for the evening: you remove the overskirt or skirt, leaving a short or fitted dress that is much freer. The base dress must still be comfortable itself: check it at the fitting, by moving.",
+      description:
+        "Two-in-one wedding dress and dancing: the overskirt comes off, leaving a freer short or fitted dress. Advice and two-in-one dresses from MADAMOON, Paris.",
+      chapo:
+        "The evening is when the two-in-one makes the most sense.",
+      sections: [
+        {
+          titre: "A lighter dress",
+          texte: [
+            "Without its long piece, the dress no longer weighs or trails. Clover and Gabriel become short dresses; Tessa and Mira, mermaids, Mira with a high slit that, according to its page, adds movement.",
+          ],
+        },
+        {
+          titre: "The base dress",
+          texte: [
+            "A tip: it is the one you will wear longest. Check that it lets you raise your arms, sit down and walk quickly. Tessa, for example, has a structured corset.",
+          ],
+        },
+        {
+          titre: "The shoes",
+          texte: [
+            "A short dress shows them: choose them for the short version as much as the long one, and consider a second pair for dancing.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: without the overskirt, the dress is freer.",
+        "The base dress must be comfortable.",
+        "A short dress shows the shoes.",
+      ],
+      liens: [
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/mira", label: "Mira" },
+        { href: "/robes/tessa", label: "Tessa" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 6),
+      q: "Which parts of a wedding dress can be removable?",
+      r: "The overskirt, the skirt or the train, to change silhouette; but also the sleeves, the straps, a jacket, a cape, and some ornaments. In the catalogue, Riviera has removable sleeves, Solana a jacket, Oksana pearl chains, Tessa and Ariel straps.",
+      description:
+        "Which removable parts on a wedding dress? Overskirt, skirt, train, sleeves, straps, jacket, ornaments. The removable pieces of the MADAMOON dresses in Paris.",
+      chapo:
+        "A dress can change through a large piece or through a detail. Here is what comes off, dress by dress.",
+      sections: [
+        {
+          titre: "What changes the silhouette",
+          texte: [],
+          liste: [
+            "An overskirt — Tessa, Clover.",
+            "A skirt — Gabriel's sheer skirt, Mira's tulle skirt.",
+          ],
+        },
+        {
+          titre: "What changes the look",
+          texte: [],
+          liste: [
+            "Sleeves — Riviera, Aster.",
+            "Straps — Tessa, Ariel, Siddalee; Addison's off-the-shoulder straps; Oksana's beaded straps.",
+            "A jacket — Solana's asymmetric jacket.",
+            "Ornaments — Oksana's pearl and sequin chains; Zina's optional 3D flowers.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "A removable piece is only worthwhile if the dress is beautiful with and without it. Try both versions in the fitting room.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Overskirt, skirt: the silhouette changes.",
+        "Sleeves, straps, jacket: the look changes.",
+        "The dress must be beautiful with and without.",
+      ],
+      liens: [
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/robes/oksana", label: "Oksana" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 7),
+      q: "How do you make sure the dress transforms easily?",
+      r: "By doing it in the fitting room, before choosing. Have the fastening shown, take the piece off and put it back yourself, time yourself, and come with the person who will help you on the day. Also plan a garment bag for the removed piece.",
+      description:
+        "An easy transformation for a two-in-one wedding dress: try it in the fitting room, time it, plan who helps and where to store the overskirt. MADAMOON advice.",
+      chapo:
+        "Changing should take a few minutes, not half an hour. That can be checked before the big day.",
+      sections: [
+        {
+          titre: "At the fitting",
+          texte: [],
+          liste: [
+            "Have it shown how the piece attaches and comes off.",
+            "Do it yourself, without help, then with help.",
+            "Look at the base dress right after: it must fall perfectly, without marks.",
+          ],
+        },
+        {
+          titre: "On the day",
+          texte: [
+            "A tip: choose the person who will help you and bring them to a fitting. Plan a quiet place to change, and a garment bag or hanger for the removed piece.",
+          ],
+        },
+        {
+          titre: "At the alterations",
+          texte: [
+            "The dress and its piece are fitted together. The boutique's seamstresses adjust the dress on site: it is the moment to check one last time that the transformation is effortless.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Try the transformation in the fitting room.",
+        "Bring the person who will help.",
+        "Plan where to store the removed piece.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un/comment-fonctionne-robe-deux-en-un", label: "How a two-in-one works" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "How long alterations take" },
+        { href: "/faq/qui-emmener-essayage-robe-de-mariee", label: "Who to bring to a fitting" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 8),
+      q: "Which body shape can wear a two-in-one dress?",
+      r: "All of them, provided you look at both versions: a two-in-one has the line of its base dress. The boutique recommends it first for the 8 and X body shapes, second for the A and V. Clover, Gabriel and Chastity are listed, on their pages, for all six body shapes.",
+      description:
+        "Two-in-one wedding dress: which body shapes? First for 8 and X, worth trying for A and V; Clover, Gabriel and Chastity for all. Advice from MADAMOON.",
+      chapo:
+        "A two-in-one is two silhouettes. The body shape is considered for each.",
+      sections: [
+        {
+          titre: "What the boutique says",
+          texte: [],
+          liste: [
+            "First — for the 8 and X body shapes, which every silhouette suits.",
+            "Second — for the A and V body shapes, which benefit from trying it.",
+          ],
+        },
+        {
+          titre: "Dress by dress",
+          texte: [
+            "Clover, Gabriel and Chastity are listed, on their pages, for all six body shapes. Tessa, a mermaid, is listed for the V, H, 8 and X body shapes — as is Mira.",
+          ],
+        },
+        {
+          titre: "A tip",
+          texte: [
+            "Look at the base dress as a silhouette of its own: a mermaid, a short dress. It must suit you on its own, since it is the one you will wear all evening.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "First for 8 and X.",
+        "Worth trying for A and V.",
+        "The base dress decides.",
+      ],
+      liens: [
+        { href: "/morphologies", label: "The six body shapes" },
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/chastity", label: "Chastity" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 9),
+      q: "How do you accessorise both versions of a two-in-one dress?",
+      r: "By keeping what works for both and changing the rest. The jewellery stays; the veil goes with the long version and comes off with it; the shoes are chosen for the short version, which shows them. An evening accessory — bolder earrings, a belt — signs the second look.",
+      description:
+        "Accessorising a two-in-one wedding dress: jewellery for both versions, a veil for the ceremony, shoes for the short version. Advice from MADAMOON, Paris.",
+      chapo:
+        "Two looks, but one bride. The accessories link the two.",
+      sections: [
+        {
+          titre: "What stays",
+          texte: [
+            "A tip: jewellery that suits both versions — earrings, a bracelet — so the bride stays the same from one look to the other.",
+          ],
+        },
+        {
+          titre: "What goes",
+          texte: [
+            "The veil goes with the long version and the ceremony; it comes off at the same time as the overskirt. A long veil extends the overskirt, a short veil already suits the short version.",
+          ],
+        },
+        {
+          titre: "What arrives",
+          texte: [
+            "For the evening, a new touch: a looser hairstyle, bolder earrings, a second pair of shoes. On Clover or Gabriel, short dresses, the shoes show: choose them for that version.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "The jewellery stays.",
+        "The veil goes with the overskirt.",
+        "The shoes are chosen for the short version.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/tessa", label: "Tessa" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 10),
+      q: "Does a short dress with an overskirt suit a civil wedding?",
+      r: "Yes, it is even one of the most practical. Short, it belongs at the town hall; with its overskirt, it becomes long for a religious ceremony or a reception. Clover and Gabriel are short dresses of this kind.",
+      description:
+        "Short wedding dress with overskirt for a civil wedding: short at the town hall, long for the reception. Clover and Gabriel, the MADAMOON two-in-one dresses in Paris.",
+      chapo:
+        "The town hall calls for a light dress, the party for a long one. The short dress with overskirt does both.",
+      sections: [
+        {
+          titre: "The catalogue's dresses",
+          texte: [],
+          liste: [
+            "Clover — a short dress embroidered with coloured flowers, and a long overskirt \"at will\".",
+            "Gabriel — a delicately beaded short dress, and a removable sheer skirt.",
+          ],
+        },
+        {
+          titre: "Two ways to wear it",
+          texte: [
+            "A tip: short for the town hall and long for the reception, or the reverse — long for the ceremony, short for dancing. If the two take place on different days, it serves for both.",
+          ],
+        },
+        {
+          titre: "Other short dresses",
+          texte: [
+            "For a short dress on its own, without an overskirt: Elin, by Olya Mak, designed for a civil wedding, and River, a short A-line from the same house.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Yes: short at the town hall, long afterwards.",
+        "Clover and Gabriel.",
+        "It can serve for two days.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/elin", label: "Elin" },
+        { href: "/coupes/trapeze/robe-trapeze-ceremonie-civile", label: "An A-line for a civil ceremony" },
+      ],
+    },
+    {
+      slug: fr("deux-en-un", 11),
+      q: "What are the advantages of a convertible wedding dress?",
+      r: "Two looks without changing dresses; a freer evening, without the long piece; a single dress to choose, fit and carry; and photographs in two silhouettes. It also adapts to several ceremonies, from the town hall to the reception.",
+      description:
+        "The advantages of a convertible wedding dress: two looks, a freer evening, a single dress to fit, two silhouettes in photos. MADAMOON, Paris.",
+      chapo:
+        "The convertible dress answers a question many brides ask: do I need a second dress?",
+      sections: [
+        {
+          titre: "What it brings",
+          texte: [],
+          liste: [
+            "Two looks — a ceremony gown, an evening dress.",
+            "More freedom — without the long piece, you dance, move around, sit down.",
+            "A single dress — to choose, fit at the alterations, carry.",
+            "Two silhouettes in photographs — without leaving the party for a long change.",
+          ],
+        },
+        {
+          titre: "Several ceremonies",
+          texte: [
+            "When the town hall and the reception take place on the same day or a few days apart, one dress serves for both: short at the town hall, long afterwards, like Clover or Gabriel.",
+          ],
+        },
+        {
+          titre: "What to think about",
+          texte: [
+            "A tip: you must love both versions equally, and the transformation must be simple. That is what the fitting shows.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Two looks, one dress.",
+        "A freer evening.",
+        "A single dress to fit.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Two-in-one dresses" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/coupes/deux-en-un/elements-amovibles-robe-de-mariee", label: "Removable parts" },
+      ],
+    },
+  ],
 };

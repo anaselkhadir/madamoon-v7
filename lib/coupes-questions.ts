@@ -2187,4 +2187,524 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
       ],
     },
   ],
+  "deux-en-un": [
+    /* ——————————————————————————————————————— la définition ————— */
+    {
+      slug: "qu-est-ce-qu-une-robe-de-mariee-deux-en-un",
+      q: "Qu'est-ce qu'une robe de mariée deux-en-un ?",
+      r: "Une robe, deux allures : une robe de base, et une surjupe, une jupe ou une traîne qui s'ajoute ou se détache. On passe ainsi d'une silhouette à une autre — d'une robe longue de cérémonie à une robe courte ou ajustée pour la soirée — sans changer de robe.",
+      description:
+        "Qu'est-ce qu'une robe de mariée deux-en-un ? Une robe de base et une surjupe ou une traîne qui se détache : deux allures, une robe. Les deux-en-un MADAMOON, Paris.",
+      chapo:
+        "Deux allures, une robe : la deux-en-un change de silhouette en cours de journée. Voici ce qui la définit.",
+      sections: [
+        {
+          titre: "Une robe, et une pièce qui se détache",
+          texte: [
+            "La robe de base se porte seule : courte, sirène, ajustée. Une surjupe, une jupe ou une traîne vient par-dessus pour la cérémonie, et se retire quand on le souhaite. Les deux allures sont pensées ensemble.",
+          ],
+        },
+        {
+          titre: "Les deux-en-un de la boutique",
+          texte: [],
+          liste: [
+            "Tessa — de Casablanca Bridal, une sirène au charme vintage-chic, avec une surjupe détachable et des bretelles amovibles.",
+            "Clover — de Casablanca Bridal, une robe courte brodée de fleurs de couleur, et une surjupe longue « à volonté ».",
+            "Gabriel — de Watters Designs, une robe courte délicatement perlée, avec une jupe transparente amovible.",
+            "Chastity — d'Olya Mak, en dentelle, à manches longues, col montant et longue traîne.",
+          ],
+        },
+        {
+          titre: "Et ailleurs au catalogue",
+          texte: [
+            "Mira, de Monica Loretti, est rangée avec les sirènes, mais sa fiche la dit 2-en-1 : elle peut s'accompagner d'une jupe amovible volumineuse en tulle, qui la fait passer d'une sirène à une silhouette inspirée de la princesse.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une robe, deux allures.",
+        "Une surjupe, une jupe ou une traîne qui se détache.",
+        "Tessa, Clover, Gabriel, Chastity — et Mira.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Les robes deux-en-un" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— le fonctionnement ————— */
+    {
+      slug: "comment-fonctionne-robe-deux-en-un",
+      q: "Comment fonctionne une robe de mariée deux-en-un ?",
+      r: "Elle se compose d'une robe de base, qui se porte seule, et d'une pièce qui s'y ajoute : une surjupe, une jupe ou une traîne, attachée à la taille. On la porte pour la cérémonie, on la retire pour la soirée. Le système d'attache dépend de la robe et se montre à l'essayage.",
+      description:
+        "Comment fonctionne une robe de mariée deux-en-un ? Une robe de base et une surjupe ou une jupe qui s'attache à la taille, à retirer pour la soirée. Explications MADAMOON.",
+      chapo:
+        "Une deux-en-un n'a rien de compliqué. Elle repose sur deux pièces pensées pour aller ensemble.",
+      sections: [
+        {
+          titre: "Deux pièces",
+          texte: [],
+          liste: [
+            "La robe de base — elle se porte seule : courte comme Clover ou Gabriel, sirène comme Tessa ou Mira.",
+            "La pièce qui s'ajoute — une surjupe longue (Tessa, Clover), une jupe transparente (Gabriel), une jupe volumineuse en tulle (Mira).",
+          ],
+        },
+        {
+          titre: "Le moment du changement",
+          texte: [
+            "Le plus souvent, la pièce longue se porte pour la cérémonie et les photographies, et se retire avant le dîner ou l'ouverture du bal. Un conseil : prévoyez une pièce où vous changer, et quelqu'un pour vous aider.",
+          ],
+        },
+        {
+          titre: "L'attache",
+          texte: [
+            "La pièce se fixe à la taille ; le système varie selon la robe. À l'essayage, faites-vous montrer comment elle s'attache et se retire, et essayez de le faire vous-même.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Une robe de base, une pièce qui s'ajoute.",
+        "La pièce longue pour la cérémonie.",
+        "L'attache se montre à l'essayage.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/coupes/deux-en-un/transformation-robe-deux-en-un-facile", label: "Une transformation facile" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la surjupe ————— */
+    {
+      slug: "difference-robe-deux-en-un-robe-surjupe",
+      q: "Quelle différence entre une robe deux-en-un et une robe avec surjupe ?",
+      r: "La surjupe est l'une des façons de faire une deux-en-un : une jupe portée par-dessus la robe, qu'on retire. Mais une deux-en-un peut aussi reposer sur une jupe amovible ou une traîne qui se détache. Et une surjupe qui ne se retire pas n'offre qu'une seule allure.",
+      description:
+        "Robe deux-en-un ou robe avec surjupe : la surjupe est l'une des façons de faire une deux-en-un, pas la seule. La différence expliquée par MADAMOON, Paris.",
+      chapo:
+        "Les deux mots se croisent souvent. L'un désigne une pièce, l'autre ce qu'elle permet.",
+      sections: [
+        {
+          titre: "La surjupe, une pièce",
+          texte: [
+            "Une jupe portée par-dessus la robe. Détachable, elle permet de changer d'allure : c'est le cas de Tessa et de Clover, dont la surjupe longue se retire.",
+          ],
+        },
+        {
+          titre: "La deux-en-un, une promesse",
+          texte: [
+            "Une robe, deux allures. La surjupe en est le moyen le plus courant, mais pas le seul : Gabriel a une jupe transparente amovible, Mira une jupe volumineuse en tulle, et la boutique parle aussi de traînes qui se détachent.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Si vous voulez vraiment deux allures, vérifiez que la surjupe se retire et que la robe de base se suffit à elle-même. C'est en cabine qu'on le voit, en essayant les deux versions.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "La surjupe est une pièce.",
+        "La deux-en-un est une robe à deux allures.",
+        "Une surjupe fixe n'offre qu'une allure.",
+      ],
+      liens: [
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— changer de look ————— */
+    {
+      slug: "robe-deux-en-un-changer-de-look",
+      q: "Une robe deux-en-un permet-elle de changer de look pendant la journée ?",
+      r: "Oui, c'est sa raison d'être. Longue et solennelle pour la cérémonie, courte ou ajustée pour la soirée : Clover passe d'une robe longue à une robe courte florale, Tessa d'une robe à surjupe à une sirène, Mira d'une silhouette inspirée de la princesse à une sirène.",
+      description:
+        "Changer de look avec une robe de mariée deux-en-un : longue pour la cérémonie, courte ou sirène pour la soirée. Clover, Tessa, Mira, chez MADAMOON à Paris.",
+      chapo:
+        "Le jour du mariage a plusieurs moments. La deux-en-un en a les allures.",
+      sections: [
+        {
+          titre: "Les métamorphoses du catalogue",
+          texte: [],
+          liste: [
+            "Clover — une surjupe longue sur une robe courte brodée de fleurs de couleur.",
+            "Gabriel — une jupe transparente sur une robe courte perlée.",
+            "Tessa — une surjupe détachable sur une sirène, et des bretelles amovibles « pour un autre look ».",
+            "Mira — une sirène en crêpe qui, avec sa jupe en tulle, prend une silhouette plus spectaculaire, inspirée de la princesse.",
+          ],
+        },
+        {
+          titre: "Plus discrètement",
+          texte: [
+            "D'autres robes changent d'allure par un détail : les manches amovibles de Riviera, que sa fiche dit faites pour « varier les styles », ou la veste amovible de Solana.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Choisissez le moment du changement à l'avance — après la cérémonie, avant le dîner, à l'ouverture du bal — et prévenez votre photographe : les deux allures méritent leurs photographies.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : c'est sa raison d'être.",
+        "Longue pour la cérémonie, courte ou sirène le soir.",
+        "Prévoyez le moment du changement.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/tessa", label: "Tessa" },
+        { href: "/robes/riviera", label: "Riviera" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— cérémonie et soirée ————— */
+    {
+      slug: "choisir-robe-deux-en-un-ceremonie-soiree",
+      q: "Comment choisir une robe deux-en-un pour la cérémonie et la soirée ?",
+      r: "En partant des deux moments. La version longue doit répondre à la cérémonie — solennité, lieu, épaules couvertes si besoin ; la robe de base, à la soirée — danser, circuler, se sentir libre. Essayez toujours les deux versions, et la transformation elle-même.",
+      description:
+        "Choisir une robe de mariée deux-en-un pour la cérémonie et la soirée : une version longue pour l'une, une robe de base libre pour l'autre. Les conseils de MADAMOON.",
+      chapo:
+        "Une deux-en-un se choisit deux fois : pour la cérémonie, et pour la soirée.",
+      sections: [
+        {
+          titre: "Pour la cérémonie",
+          texte: [
+            "Un conseil : regardez la version longue comme une robe à part entière. Pour une cérémonie religieuse, des manches et un col couvrants, comme ceux de Chastity, en dentelle, à manches longues et col montant ; pour une mairie, une version plus légère suffit.",
+          ],
+        },
+        {
+          titre: "Pour la soirée",
+          texte: [
+            "La robe de base doit vous plaire seule : courte et florale comme Clover, courte et perlée comme Gabriel, sirène comme Tessa ou Mira, dont la fente haute apporte du mouvement.",
+          ],
+        },
+        {
+          titre: "À l'essayage",
+          texte: [
+            "Essayez les deux versions, marchez et asseyez-vous dans chacune, et faites la transformation en cabine. Une deux-en-un réussie, c'est deux robes que vous aimez autant.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "La version longue pour la cérémonie.",
+        "La robe de base pour la soirée.",
+        "Essayez les deux, et le changement.",
+      ],
+      liens: [
+        { href: "/robes/chastity", label: "Chastity" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/mira", label: "Mira" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la danse ————— */
+    {
+      slug: "robe-deux-en-un-confortable-danser",
+      q: "Une robe deux-en-un est-elle confortable pour danser ?",
+      r: "Oui, c'est souvent la plus confortable pour la soirée : on retire la surjupe ou la jupe, et il reste une robe courte ou ajustée, bien plus libre. Encore faut-il que la robe de base soit elle-même confortable : c'est à vérifier à l'essayage, en bougeant.",
+      description:
+        "Robe de mariée deux-en-un et danse : la surjupe se retire, il reste une robe courte ou ajustée, plus libre. Les conseils et deux-en-un de MADAMOON, Paris.",
+      chapo:
+        "La soirée est le moment où la deux-en-un donne tout son sens.",
+      sections: [
+        {
+          titre: "Une robe allégée",
+          texte: [
+            "Sans sa pièce longue, la robe ne pèse plus et ne traîne plus. Clover et Gabriel deviennent des robes courtes ; Tessa et Mira, des sirènes, Mira avec une fente haute qui, d'après sa fiche, apporte du mouvement.",
+          ],
+        },
+        {
+          titre: "La robe de base",
+          texte: [
+            "Un conseil : c'est elle que vous porterez le plus longtemps. Vérifiez qu'elle vous laisse lever les bras, vous asseoir et marcher vite. Tessa, par exemple, a un corset structuré.",
+          ],
+        },
+        {
+          titre: "Les chaussures",
+          texte: [
+            "Une robe courte les montre : choisissez-les pour la version courte autant que pour la longue, et pensez à une seconde paire pour danser.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : sans surjupe, la robe est plus libre.",
+        "La robe de base doit être confortable.",
+        "Une robe courte montre les chaussures.",
+      ],
+      liens: [
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/mira", label: "Mira" },
+        { href: "/robes/tessa", label: "Tessa" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les pièces amovibles ————— */
+    {
+      slug: "elements-amovibles-robe-de-mariee",
+      q: "Quels éléments peuvent être amovibles sur une robe de mariée ?",
+      r: "La surjupe, la jupe ou la traîne, pour changer de silhouette ; mais aussi les manches, les bretelles, une veste, une cape, et certains ornements. Au catalogue, Riviera a des manches amovibles, Solana une veste, Oksana des chaînes de perles, Tessa et Ariel des bretelles.",
+      description:
+        "Quels éléments amovibles sur une robe de mariée ? Surjupe, jupe, traîne, manches, bretelles, veste, ornements. Les pièces amovibles des robes MADAMOON à Paris.",
+      chapo:
+        "Une robe peut changer par une grande pièce ou par un détail. Voici ce qui se retire, robe par robe.",
+      sections: [
+        {
+          titre: "Ce qui change la silhouette",
+          texte: [],
+          liste: [
+            "Une surjupe — Tessa, Clover.",
+            "Une jupe — la jupe transparente de Gabriel, la jupe en tulle de Mira.",
+          ],
+        },
+        {
+          titre: "Ce qui change l'allure",
+          texte: [],
+          liste: [
+            "Des manches — Riviera, Aster.",
+            "Des bretelles — Tessa, Ariel, Siddalee ; les bretelles tombantes d'Addison ; les bretelles perlées d'Oksana.",
+            "Une veste — la veste asymétrique de Solana.",
+            "Des ornements — les chaînes de perles et de sequins d'Oksana ; les fleurs 3D optionnelles de Zina.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Une pièce amovible n'a d'intérêt que si la robe est belle avec et sans. Essayez les deux versions en cabine.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Surjupe, jupe : la silhouette change.",
+        "Manches, bretelles, veste : l'allure change.",
+        "La robe doit être belle avec et sans.",
+      ],
+      liens: [
+        { href: "/robes/riviera", label: "Riviera" },
+        { href: "/robes/solana", label: "Solana" },
+        { href: "/robes/oksana", label: "Oksana" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la transformation ————— */
+    {
+      slug: "transformation-robe-deux-en-un-facile",
+      q: "Comment s'assurer que la transformation de la robe est facile ?",
+      r: "En la faisant en cabine, avant de choisir. Faites-vous montrer l'attache, retirez puis remettez la pièce vous-même, chronométrez-vous, et venez avec la personne qui vous aidera le jour J. Prévoyez aussi une housse pour ranger la pièce retirée.",
+      description:
+        "Une transformation facile pour une robe de mariée deux-en-un : l'essayer en cabine, la chronométrer, préparer qui aidera et où ranger la surjupe. Conseils MADAMOON.",
+      chapo:
+        "Le changement de robe doit prendre quelques minutes, pas une demi-heure. Cela se vérifie avant le jour J.",
+      sections: [
+        {
+          titre: "À l'essayage",
+          texte: [],
+          liste: [
+            "Faites-vous montrer comment la pièce s'attache et se retire.",
+            "Faites-le vous-même, sans aide, puis avec aide.",
+            "Regardez la robe de base juste après : elle doit tomber parfaitement, sans marque.",
+          ],
+        },
+        {
+          titre: "Le jour J",
+          texte: [
+            "Un conseil : choisissez la personne qui vous aidera et faites-la venir à un essayage. Prévoyez un endroit calme pour vous changer, et une housse ou un cintre pour la pièce retirée.",
+          ],
+        },
+        {
+          titre: "Aux retouches",
+          texte: [
+            "La robe et sa pièce s'ajustent ensemble. Les couturières de la boutique ajustent la robe sur place : c'est le moment de vérifier une dernière fois que la transformation se fait sans effort.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Essayez la transformation en cabine.",
+        "Faites venir la personne qui aidera.",
+        "Prévoyez où ranger la pièce retirée.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un/comment-fonctionne-robe-deux-en-un", label: "Comment fonctionne une deux-en-un" },
+        { href: "/faq/duree-retouches-robe-de-mariee", label: "La durée des retouches" },
+        { href: "/faq/qui-emmener-essayage-robe-de-mariee", label: "Qui emmener à l'essayage" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les morphologies ————— */
+    {
+      slug: "robe-deux-en-un-quelle-morphologie",
+      q: "Quelle morphologie peut porter une robe deux-en-un ?",
+      r: "Toutes, à condition de regarder les deux versions : une deux-en-un a la ligne de sa robe de base. La boutique la conseille en premier aux morphologies en 8 et en X, en second aux morphologies en A et en V. Clover, Gabriel et Chastity sont indiquées, sur leurs fiches, pour les six morphologies.",
+      description:
+        "Robe de mariée deux-en-un : quelles morphologies ? En premier pour 8 et X, à essayer pour A et V ; Clover, Gabriel et Chastity pour toutes. Les conseils MADAMOON.",
+      chapo:
+        "Une deux-en-un, ce sont deux silhouettes. La morphologie se pense pour chacune.",
+      sections: [
+        {
+          titre: "Ce que dit la boutique",
+          texte: [],
+          liste: [
+            "En premier — pour les morphologies en 8 et en X, à qui toutes les coupes vont.",
+            "En second — pour les morphologies en A et en V, qui gagnent à l'essayer.",
+          ],
+        },
+        {
+          titre: "Robe par robe",
+          texte: [
+            "Clover, Gabriel et Chastity sont indiquées, sur leurs fiches, pour les six morphologies. Tessa, qui est une sirène, l'est pour les morphologies en V, en H, en 8 et en X — comme Mira.",
+          ],
+        },
+        {
+          titre: "Un conseil",
+          texte: [
+            "Regardez la robe de base comme une coupe à part : une sirène, une robe courte. Elle doit vous aller seule, puisque c'est elle que vous porterez toute la soirée.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "En premier pour 8 et X.",
+        "À essayer pour A et V.",
+        "La robe de base décide.",
+      ],
+      liens: [
+        { href: "/morphologies", label: "Les six morphologies" },
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/chastity", label: "Chastity" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les accessoires ————— */
+    {
+      slug: "accessoiriser-robe-deux-en-un",
+      q: "Comment accessoiriser les deux versions d'une robe deux-en-un ?",
+      r: "En gardant ce qui sert aux deux et en changeant le reste. Les bijoux restent ; le voile accompagne la version longue et se retire avec elle ; les chaussures se choisissent pour la version courte, qui les montre. Un accessoire de soirée — une boucle plus marquée, une ceinture — signe le second look.",
+      description:
+        "Accessoiriser une robe de mariée deux-en-un : bijoux pour les deux versions, voile pour la cérémonie, chaussures pour la version courte. Conseils MADAMOON, Paris.",
+      chapo:
+        "Deux allures, mais une seule mariée. Les accessoires font le lien entre les deux.",
+      sections: [
+        {
+          titre: "Ce qui reste",
+          texte: [
+            "Un conseil : des bijoux qui vont aux deux versions — des boucles d'oreilles, un bracelet — pour que la mariée reste la même d'un look à l'autre.",
+          ],
+        },
+        {
+          titre: "Ce qui part",
+          texte: [
+            "Le voile accompagne la version longue et la cérémonie ; il se retire en même temps que la surjupe. Un voile long prolonge la surjupe, un voile court s'accorde déjà à la version courte.",
+          ],
+        },
+        {
+          titre: "Ce qui arrive",
+          texte: [
+            "Pour la soirée, une touche nouvelle : une coiffure relâchée, une boucle plus marquée, une seconde paire de chaussures. Sur Clover ou Gabriel, robes courtes, les chaussures se voient : choisissez-les pour cette version-là.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Les bijoux restent.",
+        "Le voile part avec la surjupe.",
+        "Les chaussures se choisissent pour la version courte.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/robes/tessa", label: "Tessa" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— la mairie ————— */
+    {
+      slug: "robe-courte-surjupe-mariage-civil",
+      q: "Une robe courte avec surjupe convient-elle à un mariage civil ?",
+      r: "Oui, c'est même l'une des plus pratiques. Courte, elle a toute sa place à la mairie ; avec sa surjupe, elle devient longue pour une cérémonie religieuse ou une réception. Clover et Gabriel sont des robes courtes de ce genre.",
+      description:
+        "Robe de mariée courte avec surjupe pour un mariage civil : courte à la mairie, longue pour la réception. Clover et Gabriel, les deux-en-un MADAMOON à Paris.",
+      chapo:
+        "La mairie appelle une robe légère, la fête une robe longue. La courte à surjupe fait les deux.",
+      sections: [
+        {
+          titre: "Les robes du catalogue",
+          texte: [],
+          liste: [
+            "Clover — une robe courte brodée de fleurs de couleur, et une surjupe longue « à volonté ».",
+            "Gabriel — une robe courte délicatement perlée, et une jupe transparente amovible.",
+          ],
+        },
+        {
+          titre: "Deux façons de la porter",
+          texte: [
+            "Un conseil : courte pour la mairie et longue pour la réception, ou l'inverse — longue pour la cérémonie, courte pour danser. Si les deux ont lieu à des jours différents, elle sert aux deux.",
+          ],
+        },
+        {
+          titre: "D'autres robes courtes",
+          texte: [
+            "Pour une robe courte seule, sans surjupe : Elin, d'Olya Mak, pensée pour un mariage civil, et River, une trapèze courte de la même maison.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Oui : courte à la mairie, longue ensuite.",
+        "Clover et Gabriel.",
+        "Elle peut servir à deux journées.",
+      ],
+      liens: [
+        { href: "/robes/clover", label: "Clover" },
+        { href: "/robes/elin", label: "Elin" },
+        { href: "/coupes/trapeze/robe-trapeze-ceremonie-civile", label: "Une trapèze pour la cérémonie civile" },
+      ],
+    },
+
+    /* ——————————————————————————————————————— les avantages ————— */
+    {
+      slug: "avantages-robe-de-mariee-transformable",
+      q: "Quels sont les avantages d'une robe de mariée transformable ?",
+      r: "Deux allures sans changer de robe ; une soirée plus libre, sans la pièce longue ; une seule robe à choisir, à ajuster et à transporter ; et des photographies dans deux silhouettes. Elle s'adapte aussi à plusieurs cérémonies, de la mairie à la réception.",
+      description:
+        "Les avantages d'une robe de mariée transformable : deux allures, une soirée plus libre, une seule robe à ajuster, deux silhouettes en photo. MADAMOON, Paris.",
+      chapo:
+        "La robe transformable répond à une question que se posent beaucoup de mariées : faut-il une seconde robe ?",
+      sections: [
+        {
+          titre: "Ce qu'elle apporte",
+          texte: [],
+          liste: [
+            "Deux allures — une robe de cérémonie, une robe de soirée.",
+            "Plus de liberté — sans la pièce longue, on danse, on circule, on s'assoit.",
+            "Une seule robe — à choisir, à ajuster aux retouches, à transporter.",
+            "Deux silhouettes en photographie — sans quitter la fête pour se changer longuement.",
+          ],
+        },
+        {
+          titre: "Plusieurs cérémonies",
+          texte: [
+            "Quand la mairie et la réception ont lieu le même jour ou à quelques jours d'écart, une même robe sert aux deux : courte à la mairie, longue ensuite, comme Clover ou Gabriel.",
+          ],
+        },
+        {
+          titre: "À quoi penser",
+          texte: [
+            "Un conseil : les deux versions doivent vous plaire autant, et la transformation doit être simple. C'est ce que montre l'essayage.",
+          ],
+        },
+      ],
+      aRetenir: [
+        "Deux allures, une robe.",
+        "Une soirée plus libre.",
+        "Une seule robe à ajuster.",
+      ],
+      liens: [
+        { href: "/coupes/deux-en-un", label: "Les robes deux-en-un" },
+        { href: "/robes/gabriel", label: "Gabriel" },
+        { href: "/coupes/deux-en-un/elements-amovibles-robe-de-mariee", label: "Les éléments amovibles" },
+      ],
+    },
+  ],
 };
