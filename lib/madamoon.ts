@@ -334,7 +334,7 @@ export const ROBES: Robe[] = [
     ligne: "Sirène en dentelle et détails scintillants",
     categorie: "Sirène",
     regard:
-      "Entièrement travaillée avec une dentelle florale scintillante, la robe Fancy épouse élégamment le corps avant de s'évaser en une spectaculaire traîne transparente en dentelle. Son corset marque et affine la taille, créant ainsi une magnifique courbe féminine entre la taille et les hanches. Elle se porte également en bustier : les bretelles tombantes sont optionnelles.",
+      "Entièrement travaillée avec une dentelle florale scintillante, la robe Fancy épouse élégamment le corps avant de s'évaser en une spectaculaire traîne transparente en dentelle. Son corset marque et affine la taille, créant ainsi une magnifique courbe féminine entre la taille et les hanches. Elle se porte également en bustier : les bretelles tombantes sont optionnelles.",
     vues: 4,
     createur: "Casablanca Bridal",
   },
@@ -1184,7 +1184,7 @@ export const MORPHOLOGIES: Morphologie[] = [
     silhouette: "Des épaules et des hanches équilibrées, une taille marquée.",
     objectif: "Sublimer une harmonie qui existe déjà.",
     coupes: [
-      "Toutes les coupes, sans exception : c'est le style du mariage qui tranchera.",
+      "Toutes les coupes, sans exception : c'est le style du mariage qui tranchera.",
       "Les sirènes et les fourreaux, qui épousent la ligne.",
       "Les bustiers cœur et les encolures en V.",
     ],
@@ -1200,7 +1200,7 @@ export const MORPHOLOGIES: Morphologie[] = [
     premieres: ["Sirène", "Fluide", "Trapèze", "Princesse", "Deux en un"],
     secondes: [],
     conseil:
-      "Toutes les coupes conviennent : les sirènes et les fourreaux épousent les courbes, et tout ce qui se cintre à la taille accentue l'équilibre naturel.",
+      "Toutes les coupes conviennent : les sirènes et les fourreaux épousent les courbes, et tout ce qui se cintre à la taille accentue l'équilibre naturel.",
   },
   {
     lettre: "X",
@@ -1422,6 +1422,36 @@ export const FAQ = [
   {
     q: "Peut-on retoucher une robe de mariée achetée en ligne ?",
     r: "Le plus souvent, oui, chez une couturière habituée aux robes de mariée — tout dépend de la coupe, de la matière et de l'écart avec vos mesures. Chez MADAMOON, les retouches sont comprises pour les robes confectionnées par la boutique ; pour une robe achetée ailleurs, renseignez-vous directement auprès d'elle.",
+  },
+
+  /*
+   * Les questions de l'essayage, ajoutées ensuite.
+   *
+   * Elles croisent celles du déroulement, de l'accompagnement et du
+   * nombre de robes : chacune répond à ce que la mariée tape, et renvoie
+   * aux autres pour le reste. Ce que le site ne dit pas — ce qu'on peut
+   * photographier en cabine, le nombre de robes par rendez-vous — n'y est
+   * pas écrit.
+   */
+  {
+    q: "Où essayer une robe de mariée à Paris ?",
+    r: `Au showroom MADAMOON, ${MAISON.adresse}, dans le 10e arrondissement. Les essayages ont lieu sur rendez-vous, dans un showroom privatisé pour vous pendant une heure, parmi les robes de Casablanca Bridal, Watters Designs, Monica Loretti et Olya Mak.`,
+  },
+  {
+    q: "Que faut-il apporter à son premier essayage de robe de mariée ?",
+    r: "Venez sans maquillage, pour préserver les robes, et avec les personnes dont l'avis compte pour vous. Un conseil : apportez aussi des chaussures à la hauteur de talon envisagée, une lingerie couleur chair sans coutures, et quelques images des robes qui vous plaisent.",
+  },
+  {
+    q: "Peut-on essayer plusieurs coupes de robes de mariée lors du même rendez-vous ?",
+    r: "Oui, et c'est même conseillé : quelques robes bien choisies, dans des coupes différentes, vous apprennent vite ce qui vous va. Le showroom étant privatisé pendant une heure, vous pouvez comparer une sirène, une princesse ou une fluide sans vous presser.",
+  },
+  {
+    q: "Comment préparer son rendez-vous pour choisir une robe de mariée à Paris ?",
+    r: "Prenez rendez-vous idéalement huit à neuf mois avant le mariage, en ligne ou par téléphone. Repérez quelques coupes et robes qui vous plaisent, pensez à votre morphologie et au style du mariage, choisissez qui vous accompagne, et venez sans maquillage.",
+  },
+  {
+    q: "Que faire si l'on hésite entre plusieurs robes de mariée après l'essayage ?",
+    r: "Prenez le temps de comparer : notez ce qui vous plaît dans chacune, écartez celle qui vous convainc le moins, et demandez-vous dans laquelle vous vous reconnaissez. Un nouveau rendez-vous permet de réessayer vos finalistes. Gardez un œil sur le calendrier : la confection commence une fois votre choix fait.",
   },
 ] as const;
 

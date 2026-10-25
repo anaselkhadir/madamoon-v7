@@ -857,4 +857,209 @@ export const ARTICLES_EN: Article[] = [
       { href: "/rendez-vous", label: "Book an appointment" },
     ],
   },
+
+  /* ——————————————————————————————————— where to try in Paris ————— */
+  {
+    slug: SLUGS_QUESTIONS[20],
+    description: `Where to try on a wedding dress in Paris? At the MADAMOON showroom, ${MAISON.adresse}, Paris 10th: by appointment, reserved for you for an hour.`,
+    chapo:
+      "To try on a wedding dress in Paris, you need a place, time and dresses. Here is what the MADAMOON showroom keeps for you.",
+    sections: [
+      {
+        titre: "The showroom",
+        texte: [
+          `${ADDRESS}, in the 10th arrondissement. The showroom occupies an elegant 19th-century setting, designed for trying on a wedding dress.`,
+        ],
+      },
+      {
+        titre: "A place for you alone",
+        texte: [
+          "Fittings are by appointment only: the showroom is reserved for each bride for an hour. Your loved ones are welcome throughout the fitting.",
+        ],
+        liste: ["Monday, 12pm to 9pm;", "Tuesday to Saturday, 10am to 7pm."],
+      },
+      {
+        titre: "The dresses",
+        texte: [
+          "Those of four houses — Casablanca Bridal, Watters Designs, Monica Loretti and Olya Mak — in five silhouettes: mermaid, ball gown, sheath, A-line and two-in-one. The dresses are then made in the atelier, to your measurements, alterations included.",
+        ],
+      },
+    ],
+    aRetenir: [
+      ADDRESS,
+      "By appointment, the showroom reserved for an hour.",
+      "Four houses, five silhouettes.",
+    ],
+    liens: [
+      { href: "/showroom", label: "Discover the showroom" },
+      { href: `/faq/${SLUGS_QUESTIONS[6]}`, label: "Address and opening hours" },
+      { href: "/rendez-vous", label: "Book an appointment" },
+    ],
+  },
+
+  /* ——————————————————————————————————— what to bring ————— */
+  {
+    slug: SLUGS_QUESTIONS[21],
+    description:
+      "What to bring to your first wedding dress fitting: come without make-up, with loved ones, shoes, suitable underwear and a few pictures.",
+    chapo:
+      "The first fitting takes a little preparation. Here is what to bring — and what is better left at home.",
+    sections: [
+      {
+        titre: "What the boutique asks",
+        texte: [
+          "Come without make-up: it protects the dresses, which other brides will try after you. And come with others if you wish — the showroom is reserved for you, your loved ones are welcome.",
+        ],
+      },
+      {
+        titre: "What is useful to bring",
+        texte: [],
+        liste: [
+          "Shoes — at the heel height you have in mind: a dress does not fall the same way flat or on a heel.",
+          "Seamless, skin-tone underwear — it leaves no lines under light fabrics.",
+          "A few pictures — dresses saved online in your favourites, or photographs of the wedding venue.",
+          "The wedding date — it sets the making calendar.",
+        ],
+      },
+      {
+        titre: "What is better left behind",
+        texte: [
+          "A tip: too many opinions. Two or three people who know you well help more than a large gathering.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "No make-up.",
+      "Shoes and suitable underwear.",
+      "A few pictures, and the wedding date.",
+    ],
+    liens: [
+      { href: `/faq/${SLUGS_QUESTIONS[1]}`, label: "How the fitting works" },
+      { href: `/faq/${SLUGS_QUESTIONS[13]}`, label: "Who to bring to a fitting" },
+      { href: "/coups-de-coeur", label: "Your favourites" },
+    ],
+  },
+
+  /* ——————————————————————————————————— several silhouettes ————— */
+  {
+    slug: SLUGS_QUESTIONS[22],
+    description:
+      "Can you try several wedding dress silhouettes in one appointment? Yes: mermaid, ball gown, sheath, A-line, compared in a private showroom.",
+    chapo:
+      "Many brides arrive sure of one silhouette and leave in love with another. Trying several gives you that chance.",
+    sections: [
+      {
+        titre: "Yes, and it is recommended",
+        texte: [
+          "A silhouette is judged on you, not in a photograph. A few well-chosen dresses, in different silhouettes, quickly show you what suits you — and what does not.",
+        ],
+      },
+      {
+        titre: "The five silhouettes",
+        texte: [],
+        liste: [
+          "Mermaid — fitted to the thighs, then flared.",
+          "Ball gown — a crafted corset, an assumed volume.",
+          "Sheath — a soft drape that follows movement.",
+          "A-line — a fitted bodice, an A-shaped skirt.",
+          "Two-in-one — one dress, two looks.",
+        ],
+      },
+      {
+        titre: "A tip",
+        texte: [
+          "Start with the silhouette you dream of, then try its opposite: a mermaid after a ball gown, a sheath after an A-line. The contrast often tells you more than a long series. As the showroom is reserved for you for an hour, you have time to compare.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Yes: it is even recommended.",
+      "A silhouette is judged on you.",
+      "Try your dream silhouette, then its opposite.",
+    ],
+    liens: [
+      { href: "/coupes", label: "The five silhouettes" },
+      { href: `/faq/${SLUGS_QUESTIONS[15]}`, label: "How many dresses to try" },
+      { href: "/morphologies", label: "Body shapes" },
+    ],
+  },
+
+  /* ——————————————————————————————————— preparing the appointment ————— */
+  {
+    slug: SLUGS_QUESTIONS[23],
+    description:
+      "Preparing your appointment to choose a wedding dress in Paris: book eight to nine months ahead, pick out silhouettes, choose who comes with you.",
+    chapo:
+      "A well-prepared appointment makes every minute of the fitting count. Here is how to arrive ready.",
+    sections: [
+      {
+        titre: "The steps",
+        ordonnee: true,
+        texte: [],
+        liste: [
+          "Book — ideally eight to nine months before the wedding, online or by phone.",
+          "Pick out — a few silhouettes and dresses you like, in the catalogue or on the silhouette pages.",
+          "Think about your body shape — the page for each, or Élise, the site's adviser, guide you in a few questions.",
+          "Think about the wedding — the venue, the season, the ceremony: a town hall, a church and an estate do not call for the same dress.",
+          "Choose who comes with you — two or three people whose opinion matters.",
+          "On the day — come without make-up, in shoes at the right heel height.",
+        ],
+      },
+      {
+        titre: "If you have less time",
+        texte: [
+          "Say so when you book, giving the wedding date: the boutique almost always finds a solution.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Book eight to nine months ahead.",
+      "Arrive with a few favourites.",
+      "Come without make-up, well accompanied.",
+    ],
+    liens: [
+      { href: "/rendez-vous", label: "Book an appointment" },
+      { href: "/trouver-ma-robe", label: "Find my dress with Élise" },
+      { href: `/faq/${SLUGS_QUESTIONS[21]}`, label: "What to bring" },
+    ],
+  },
+
+  /* ——————————————————————————————————— torn between dresses ————— */
+  {
+    slug: SLUGS_QUESTIONS[24],
+    description:
+      "Torn between several wedding dresses after the fitting: compare, set aside, try your finalists again, while keeping the calendar in mind. MADAMOON advice.",
+    chapo:
+      "Hesitating is normal: it often means several dresses suit you. Here is how to decide calmly.",
+    sections: [
+      {
+        titre: "Compare",
+        texte: [
+          "A tip: right after the fitting, note what you liked in each dress — the silhouette, the fabric, the neckline, how you felt. Often two dresses share the same quality, and that is what you are looking for.",
+        ],
+      },
+      {
+        titre: "Set aside",
+        texte: [
+          "First remove the one that convinces you least, then ask yourself which one you can see yourself walking in, dancing in, being photographed in. And listen to yourself before your loved ones: you are the one who will wear it.",
+        ],
+      },
+      {
+        titre: "Try again",
+        texte: [
+          "A new appointment lets you try your two or three finalists again, with a rested mind; it is booked like the first, online or by phone. Just keep an eye on the calendar: making begins once your choice is made, and your measurements are taken the same day.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Note what you like in each.",
+      "Set aside, then listen to yourself.",
+      "Try your finalists again, without waiting too long.",
+    ],
+    liens: [
+      { href: `/faq/${SLUGS_QUESTIONS[15]}`, label: "How many dresses to try" },
+      { href: `/faq/${SLUGS_QUESTIONS[2]}`, label: "The made-to-measure steps" },
+      { href: "/rendez-vous", label: "Book an appointment" },
+    ],
+  },
 ];

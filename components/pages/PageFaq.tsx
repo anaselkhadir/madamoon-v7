@@ -62,8 +62,8 @@ const ANCRES = [
  * simplement sautée.
  */
 const GROUPES: { cle: "choisir" | "essayage" | "calendrier" | "soin"; rangs: number[] }[] = [
-  { cle: "choisir", rangs: [7, 16, 12, 18] },
-  { cle: "essayage", rangs: [11, 13, 10, 15] },
+  { cle: "choisir", rangs: [7, 16, 12, 18, 24] },
+  { cle: "essayage", rangs: [20, 11, 23, 21, 13, 22, 10, 15] },
   { cle: "calendrier", rangs: [14, 8, 9] },
   { cle: "soin", rangs: [17, 19] },
 ];

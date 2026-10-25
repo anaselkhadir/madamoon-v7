@@ -91,4 +91,24 @@ export const FAQ_EN: { q: string; r: string; horsElise?: boolean }[] = [
     q: "Can a wedding dress bought online be altered?",
     r: "Usually yes, by a seamstress used to wedding dresses — it depends on the cut, the fabric and how far it is from your measurements. At MADAMOON, alterations are included for dresses made by the boutique; for a dress bought elsewhere, ask the boutique directly.",
   },
+  {
+    q: "Where can I try on a wedding dress in Paris?",
+    r: `At the MADAMOON showroom, ${MAISON.adresse}, in the 10th arrondissement. Fittings are by appointment, in a showroom reserved for you alone for an hour, among dresses by Casablanca Bridal, Watters Designs, Monica Loretti and Olya Mak.`,
+  },
+  {
+    q: "What should I bring to my first wedding dress fitting?",
+    r: "Come without make-up, to protect the dresses, and with the people whose opinion matters to you. A tip: also bring shoes at the heel height you have in mind, seamless skin-tone underwear, and a few pictures of dresses you love.",
+  },
+  {
+    q: "Can I try several wedding dress silhouettes in the same appointment?",
+    r: "Yes, and it is even recommended: a few well-chosen dresses, in different silhouettes, quickly show you what suits you. As the showroom is reserved for you for an hour, you can compare a mermaid, a ball gown or a sheath without rushing.",
+  },
+  {
+    q: "How do I prepare my appointment to choose a wedding dress in Paris?",
+    r: "Book ideally eight to nine months before the wedding, online or by phone. Pick out a few silhouettes and dresses you like, think about your body shape and the style of the wedding, choose who comes with you, and come without make-up.",
+  },
+  {
+    q: "What if I am torn between several wedding dresses after the fitting?",
+    r: "Take time to compare: note what you like in each, set aside the one that convinces you least, and ask yourself which one feels like you. A new appointment lets you try your finalists again. Keep an eye on the calendar: making begins once your choice is made.",
+  },
 ];

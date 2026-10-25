@@ -37,8 +37,9 @@ export default function PageQuestion({ slug, langue }: { slug: string; langue: L
         (a) => a.rang !== rang && a.q,
       )}
       /* L'adresse appelle un itinéraire : le site ne décrit pas l'accès
-       * en transports, la fiche Google le fait. */
-      itineraire={slug === SLUGS_QUESTIONS[6]}
+       * en transports, la fiche Google le fait. « Où essayer à Paris »
+       * donne la même adresse, et le même lien. */
+      itineraire={slug === SLUGS_QUESTIONS[6] || slug === SLUGS_QUESTIONS[20]}
     />
   );
 }

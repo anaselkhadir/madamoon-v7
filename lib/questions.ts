@@ -61,6 +61,12 @@ export const SLUGS_QUESTIONS = [
   "entretenir-robe-de-mariee-dentelle",
   "que-porter-sous-robe-sirene",
   "retoucher-robe-de-mariee-achetee-en-ligne",
+  /* Ajoutées ensuite, autour de l'essayage. */
+  "ou-essayer-robe-de-mariee-paris",
+  "que-apporter-premier-essayage-robe-de-mariee",
+  "essayer-plusieurs-coupes-meme-rendez-vous",
+  "preparer-rendez-vous-robe-de-mariee-paris",
+  "hesiter-entre-plusieurs-robes-de-mariee",
 ] as const;
 
 const ADRESSE = `${MAISON.adresse}, ${MAISON.codePostal} ${MAISON.ville}`;
@@ -914,6 +920,211 @@ export const ARTICLES: Article[] = [
     ],
     liens: [
       { href: `/faq/${SLUGS_QUESTIONS[16]}`, label: "Sur mesure ou prêt-à-porter" },
+      { href: "/rendez-vous", label: "Prendre rendez-vous" },
+    ],
+  },
+
+  /* ——————————————————————————————————— où essayer à Paris ————— */
+  {
+    slug: SLUGS_QUESTIONS[20],
+    description: `Où essayer une robe de mariée à Paris ? Au showroom MADAMOON, ${MAISON.adresse}, Paris 10e : sur rendez-vous, privatisé pour vous pendant une heure.`,
+    chapo:
+      "Pour essayer une robe de mariée à Paris, il faut un lieu, du temps et des robes. Voici ce que le showroom MADAMOON vous réserve.",
+    sections: [
+      {
+        titre: "Le showroom",
+        texte: [
+          `${ADRESSE}, dans le 10ᵉ arrondissement. Le showroom occupe un élégant écrin du XIXᵉ siècle, pensé pour l'essayage d'une robe de mariée.`,
+        ],
+      },
+      {
+        titre: "Un lieu pour vous seule",
+        texte: [
+          "Les essayages ont lieu sur rendez-vous uniquement : le showroom est privatisé pour chaque mariée pendant une heure. Vos proches sont les bienvenues pendant tout l'essayage.",
+        ],
+        liste: ["le lundi, de 12h à 21h ;", "du mardi au samedi, de 10h à 19h."],
+      },
+      {
+        titre: "Les robes",
+        texte: [
+          "Celles de quatre maisons — Casablanca Bridal, Watters Designs, Monica Loretti et Olya Mak —, dans cinq coupes : sirène, princesse, fluide, trapèze et deux-en-un. Les robes sont ensuite confectionnées à l'atelier, à vos mesures, retouches incluses.",
+        ],
+      },
+    ],
+    aRetenir: [
+      ADRESSE,
+      "Sur rendez-vous, showroom privatisé pendant une heure.",
+      "Quatre maisons, cinq coupes.",
+    ],
+    liens: [
+      { href: "/showroom", label: "Découvrir le showroom" },
+      { href: `/faq/${SLUGS_QUESTIONS[6]}`, label: "Adresse et horaires" },
+      { href: "/rendez-vous", label: "Prendre rendez-vous" },
+    ],
+  },
+
+  /* ——————————————————————————————————— que faut-il apporter ————— */
+  {
+    slug: SLUGS_QUESTIONS[21],
+    description:
+      "Que faut-il apporter à son premier essayage de robe de mariée ? Venir sans maquillage, avec ses proches, des chaussures, une lingerie adaptée et quelques images.",
+    chapo:
+      "Le premier essayage se prépare un peu. Voici ce qu'il faut avoir avec soi — et ce qu'il vaut mieux laisser à la maison.",
+    sections: [
+      {
+        titre: "Ce que demande la boutique",
+        texte: [
+          "Venez sans maquillage : c'est ce qui préserve les robes, que d'autres mariées essaieront après vous. Et venez accompagnée si vous le souhaitez — le showroom est privatisé, vos proches sont les bienvenues.",
+        ],
+      },
+      {
+        titre: "Ce qu'il est utile d'apporter",
+        texte: [],
+        liste: [
+          "Des chaussures — à la hauteur de talon que vous envisagez : la robe ne tombe pas de la même façon à plat ou sur un talon.",
+          "Une lingerie couleur chair, sans coutures — elle ne marque pas sous les matières claires.",
+          "Quelques images — les robes repérées en ligne, gardées dans vos coups de cœur, ou des photographies du lieu du mariage.",
+          "La date du mariage — elle fixe le calendrier de la confection.",
+        ],
+      },
+      {
+        titre: "Ce qu'il vaut mieux laisser",
+        texte: [
+          "Un conseil : trop d'avis. Deux ou trois personnes qui vous connaissent bien vous aident davantage qu'une grande assemblée.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Sans maquillage.",
+      "Des chaussures et une lingerie adaptée.",
+      "Quelques images, et la date du mariage.",
+    ],
+    liens: [
+      { href: `/faq/${SLUGS_QUESTIONS[1]}`, label: "Le déroulement de l'essayage" },
+      { href: `/faq/${SLUGS_QUESTIONS[13]}`, label: "Qui emmener à l'essayage" },
+      { href: "/coups-de-coeur", label: "Vos coups de cœur" },
+    ],
+  },
+
+  /* ——————————————————————————————————— plusieurs coupes ————— */
+  {
+    slug: SLUGS_QUESTIONS[22],
+    description:
+      "Peut-on essayer plusieurs coupes de robes de mariée au même rendez-vous ? Oui : sirène, princesse, fluide, trapèze, comparées dans un showroom privatisé.",
+    chapo:
+      "Beaucoup de mariées arrivent sûres d'une coupe et repartent amoureuses d'une autre. Essayer plusieurs coupes, c'est se laisser cette chance.",
+    sections: [
+      {
+        titre: "Oui, et c'est conseillé",
+        texte: [
+          "Une coupe se juge sur soi, pas sur une photographie. Quelques robes bien choisies, dans des coupes différentes, vous apprennent vite ce qui vous va — et ce qui ne vous va pas.",
+        ],
+      },
+      {
+        titre: "Les cinq coupes",
+        texte: [],
+        liste: [
+          "La sirène — ajustée jusqu'aux cuisses, puis évasée.",
+          "La princesse — un corset travaillé, un volume assumé.",
+          "La fluide — un tombé souple qui suit le mouvement.",
+          "La trapèze — un buste ajusté, une jupe en A.",
+          "La deux-en-un — une robe, deux allures.",
+        ],
+      },
+      {
+        titre: "Un conseil",
+        texte: [
+          "Commencez par la coupe dont vous rêvez, puis essayez-en une à l'opposé : une sirène après une princesse, une fluide après une trapèze. Le contraste dit souvent plus qu'une longue série. Le showroom étant privatisé pendant une heure, vous avez le temps de comparer.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Oui : c'est même conseillé.",
+      "Une coupe se juge sur soi.",
+      "Essayez la coupe rêvée, puis son contraire.",
+    ],
+    liens: [
+      { href: "/coupes", label: "Les cinq coupes" },
+      { href: `/faq/${SLUGS_QUESTIONS[15]}`, label: "Combien de robes essayer" },
+      { href: "/morphologies", label: "Les morphologies" },
+    ],
+  },
+
+  /* ——————————————————————————————————— préparer son rendez-vous ————— */
+  {
+    slug: SLUGS_QUESTIONS[23],
+    description:
+      "Préparer son rendez-vous pour choisir sa robe de mariée à Paris : réserver huit à neuf mois avant, repérer des coupes, choisir qui vous accompagne.",
+    chapo:
+      "Un rendez-vous bien préparé, c'est une heure d'essayage qui compte. Voici comment arriver prête.",
+    sections: [
+      {
+        titre: "Les étapes",
+        ordonnee: true,
+        texte: [],
+        liste: [
+          "Réservez — idéalement huit à neuf mois avant le mariage, en ligne ou par téléphone.",
+          "Repérez — quelques coupes et robes qui vous plaisent, dans le catalogue ou les pages des coupes.",
+          "Pensez à votre morphologie — les pages consacrées à chacune, ou Élise, la conseillère du site, vous orientent en quelques questions.",
+          "Pensez au mariage — le lieu, la saison, la cérémonie : une mairie, une église, un domaine n'appellent pas la même robe.",
+          "Choisissez qui vous accompagne — deux ou trois personnes dont l'avis compte.",
+          "Le jour même — venez sans maquillage, avec des chaussures à la bonne hauteur de talon.",
+        ],
+      },
+      {
+        titre: "S'il vous reste moins de temps",
+        texte: [
+          "Dites-le dès la prise de rendez-vous, en précisant la date du mariage : la boutique trouve presque toujours une solution.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Réservez huit à neuf mois avant.",
+      "Arrivez avec quelques coups de cœur.",
+      "Venez sans maquillage, bien accompagnée.",
+    ],
+    liens: [
+      { href: "/rendez-vous", label: "Prendre rendez-vous" },
+      { href: "/trouver-ma-robe", label: "Trouver ma robe avec Élise" },
+      { href: `/faq/${SLUGS_QUESTIONS[21]}`, label: "Que faut-il apporter" },
+    ],
+  },
+
+  /* ——————————————————————————————————— hésiter entre plusieurs robes ————— */
+  {
+    slug: SLUGS_QUESTIONS[24],
+    description:
+      "Hésiter entre plusieurs robes de mariée après l'essayage : comparer, écarter, réessayer ses finalistes, sans perdre de vue le calendrier. Les conseils MADAMOON.",
+    chapo:
+      "Hésiter est normal : c'est souvent le signe que plusieurs robes vous vont. Voici comment trancher sereinement.",
+    sections: [
+      {
+        titre: "Comparer",
+        texte: [
+          "Un conseil : notez, juste après l'essayage, ce qui vous a plu dans chaque robe — la coupe, la matière, le décolleté, ce que vous avez ressenti. Souvent, deux robes partagent la même qualité, et c'est elle que vous cherchez.",
+        ],
+      },
+      {
+        titre: "Écarter",
+        texte: [
+          "Retirez d'abord celle qui vous convainc le moins, puis demandez-vous dans laquelle vous vous voyez entrer, danser, être photographiée. Et écoutez-vous avant vos proches : c'est vous qui la porterez.",
+        ],
+      },
+      {
+        titre: "Réessayer",
+        texte: [
+          "Un nouveau rendez-vous permet de réessayer vos deux ou trois finalistes, l'esprit reposé ; il se prend comme le premier, en ligne ou par téléphone. Gardez simplement un œil sur le calendrier : la confection commence une fois votre choix fait, et vos mensurations sont prises le jour même.",
+        ],
+      },
+    ],
+    aRetenir: [
+      "Notez ce qui vous plaît dans chacune.",
+      "Écartez, puis écoutez-vous.",
+      "Réessayez vos finalistes, sans trop attendre.",
+    ],
+    liens: [
+      { href: `/faq/${SLUGS_QUESTIONS[15]}`, label: "Combien de robes essayer" },
+      { href: `/faq/${SLUGS_QUESTIONS[2]}`, label: "Les étapes du sur-mesure" },
       { href: "/rendez-vous", label: "Prendre rendez-vous" },
     ],
   },
