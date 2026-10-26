@@ -137,6 +137,7 @@ export const TRADUITES = new Set<string>([
   "/trouver-ma-robe",
   "/faq",
   "/guides",
+  "/createurs",
 ]);
 
 /* Les familles d'adresses entièrement traduites : toutes les fiches

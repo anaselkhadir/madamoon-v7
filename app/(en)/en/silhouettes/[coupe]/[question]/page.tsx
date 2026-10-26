@@ -40,7 +40,7 @@ export async function generateMetadata({
   const fr = `/coupes/${ancre}/${question}/`;
   const en = `/en/silhouettes/${coupe}/${question}/`;
   return {
-    title: x.q,
+    title: x.titre ?? x.q,
     description: x.description,
     alternates: { canonical: en, languages: { fr, en, "x-default": fr } },
     openGraph: partage(en, "en"),

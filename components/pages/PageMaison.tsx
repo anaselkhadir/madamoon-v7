@@ -89,7 +89,7 @@ export default async function PageMaison({
       <FilDAriane
         langue={langue}
         rangs={[
-          { nom: t(langue).ariane.createurs, adresse: "/robes" },
+          { nom: t(langue).ariane.createurs, adresse: "/createurs" },
           { nom: nomMaison, adresse: `/createurs/${createur.slug}` },
         ]}
       />

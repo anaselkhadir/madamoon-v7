@@ -1,3 +1,4 @@
+import { MAISON } from "@/lib/madamoon";
 import { QUESTIONS_COUPES, type QuestionCoupe } from "@/lib/coupes-questions";
 
 /*
@@ -1241,12 +1242,14 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
     },
     {
       slug: fr("fluide", 4),
+      titre: "Boho wedding dress in Paris",
       q: "Does a sheath dress suit a boho wedding?",
       r: "Yes, it is even the most natural silhouette for a boho wedding. A chiffon skirt, floral lace, light sleeves: according to its page, Hélène is designed for the bride \"who prefers to say YES in a boho-chic look\".",
       description:
-        "Sheath wedding dress for a boho wedding: chiffon, floral lace, light sleeves. Hélène and Murielle, the boho sheath dresses at MADAMOON in Paris.",
+        "Boho wedding dress in Paris: chiffon, floral lace, light sleeves. Hélène, Murielle, Ryle, and Tessa for a vintage touch, at the MADAMOON showroom.",
       chapo:
-        "Boho loves what moves and what breathes. The sheath has made that its nature.",
+        "A boho wedding dress is recognised by what it lets breathe: a chiffon skirt that moves, floral lace, light or sheer sleeves. The sheath is the silhouette that carries this spirit best — and at MADAMOON, you try it in our showroom in Paris's 10th arrondissement.",
+      robes: { titre: "Our boho dresses", slugs: ["helene", "murielle", "ryle"] },
       sections: [
         {
           titre: "The catalogue's dresses",
@@ -1260,6 +1263,7 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
         {
           titre: "What makes it boho",
           texte: [
+            "Boho loves what moves and what breathes. The sheath has made that its nature.",
             "A tip: floral lace, light or sheer sleeves, a short train or none, and a soft hairstyle. The dress should be able to walk on grass and dance barefoot.",
           ],
         },
@@ -1269,16 +1273,36 @@ export const QUESTIONS_COUPES_EN: Record<string, QuestionCoupe[]> = {
             "A boho sheath is still a wedding dress: a crafted bodice, like Hélène's, gives it its hold and its radiance.",
           ],
         },
+        {
+          titre: "A vintage touch",
+          texte: [
+            "For boho with a vintage accent, Tessa, by Casablanca Bridal, has according to its page a \"vintage-chic charm\": a mermaid with a structured corset, a detachable overskirt and removable straps. It is not a sheath — it is filed with the two-in-one dresses — but it is well worth trying next to the boho dresses, to compare.",
+          ],
+        },
+        {
+          titre: "Who it suits",
+          texte: [
+            "The sheath is recommended first for the O, V, H, 8 and X body shapes, and is worth trying for an A. Hélène and Murielle are listed, on their pages, for all six body shapes; Ryle for all but the O.",
+          ],
+        },
+        {
+          titre: "Where to try on a boho wedding dress in Paris?",
+          texte: [
+            `At the MADAMOON showroom, ${MAISON.adresse}, in the 10th arrondissement, by appointment. The showroom is reserved for you for an hour: time to try several sheath dresses and compare the fabrics.`,
+          ],
+        },
       ],
       aRetenir: [
-        "Yes: the most natural silhouette for boho.",
+        "The sheath is the most natural silhouette for boho.",
         "Chiffon, floral lace, light sleeves.",
-        "Hélène is designed for a boho-chic look.",
+        "Hélène is designed for a boho-chic look; Tessa has a vintage-chic charm.",
       ],
       liens: [
+        { href: "/coupes/fluide", label: "Sheath wedding dresses" },
         { href: "/robes/helene", label: "Hélène" },
-        { href: "/robes/murielle", label: "Murielle" },
-        { href: "/robes/ryle", label: "Ryle" },
+        { href: "/robes/tessa", label: "Tessa, with its vintage-chic charm" },
+        { href: "/coupes/fluide/robe-fluide-mariage-ete", label: "A sheath for a summer wedding" },
+        { href: "/rendez-vous", label: "Book an appointment" },
       ],
     },
     {

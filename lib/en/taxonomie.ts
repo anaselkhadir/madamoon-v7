@@ -126,3 +126,21 @@ export const SIGNATURES_EN: { titre: string; texte: string }[] = [
     texte: "For a made-to-measure dress, alterations included.",
   },
 ];
+
+/* Le paragraphe sous l'ouverture d'une coupe, par son ancre française.
+ * Même texte, mêmes robes que le français. */
+export const COUPE_INTRO: Record<string, { texte: string; lien?: string }> = {
+  sirene: {
+    texte:
+      "The mermaid wedding dress follows the figure to the thighs, then flares to the floor, often into a train. At MADAMOON, it comes in crêpe like Mira or Bondi, in lace like Uma, in matte satin like Ariel. In our showroom in Paris's 10th arrondissement, every mermaid dress is tried on before it is chosen: how it holds the body cannot be guessed from a photograph.",
+  },
+  princesse: {
+    texte:
+      "The ball gown wedding dress is recognised by its crafted corset and the assumed fullness of its skirt: a refined, stately silhouette, made for a wedding that is not afraid of volume. Addison, in silk satin, is its image on our site. In Paris, in our 10th-arrondissement showroom, ball gowns are tried on by appointment: the volume of a skirt is judged standing, moving, never on a hanger.",
+  },
+  fluide: {
+    texte:
+      "The sheath wedding dress follows movement rather than restraining it: chiffon, charmeuse, matte satin. It is the most natural silhouette for a boho wedding, and it is just as at home in satin for a more classic ceremony. From Adularia's minimalist elegance to Hélène's boho-chic look, by way of Dove's matte satin, each design shows a different side of it.",
+    lien: "Boho wedding dress in Paris",
+  },
+};

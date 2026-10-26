@@ -20,6 +20,13 @@ export type Coupe = {
    * un, sa photographie sinon. Distincte de `robe`, qui n'est qu'une
    * vignette : ici il faut un modèle filmé quand le catalogue en a un. */
   ouverture?: { robe: string; vue: number };
+  /* Le paragraphe posé sous l'ouverture : il dit en toutes lettres ce
+   * qu'une mariée tape dans un moteur — « robe de mariée sirène » —, et
+   * ne nomme que des robes du catalogue. Les coupes sans données de
+   * recherche n'en ont pas. Mots-clés et volumes : docs/seo/. */
+  intro?: string;
+  /* Une page de la coupe vers laquelle l'intro renvoie. */
+  introLien?: { href: string; label: string };
 };
 
 export const COUPES: Coupe[] = [
@@ -30,6 +37,8 @@ export const COUPES: Coupe[] = [
     robe: "uma",
     vue: 1,
     ouverture: { robe: "ariel", vue: 1 },
+    intro:
+      "La robe de mariée sirène épouse la silhouette jusqu'aux cuisses, puis s'évase jusqu'au sol, souvent en traîne. Chez MADAMOON, elle se décline en crêpe comme Mira ou Bondi, en dentelle comme Uma, en satin mat comme Ariel. Dans notre showroom du 10ᵉ, à Paris, chaque robe sirène s'essaie avant de se choisir : sa tenue sur le corps ne se devine pas sur une photo.",
   },
   {
     nom: "Princesse",
@@ -38,8 +47,19 @@ export const COUPES: Coupe[] = [
     robe: "addison",
     vue: 1,
     ouverture: { robe: "addison", vue: 1 },
+    intro:
+      "La robe de mariée princesse se reconnaît à son corset travaillé et à l'ampleur assumée de sa jupe : une coupe raffinée et solennelle, pensée pour un mariage qui ne craint pas le volume. Addison, en satin de soie, en est l'image sur notre site. À Paris, dans notre showroom du 10ᵉ, l'essayage d'une robe princesse se fait sur rendez-vous : le volume d'une jupe se juge debout, en mouvement, jamais sur un cintre.",
   },
-  { nom: "Fluide", ancre: "fluide", note: "Souple et légère", robe: "adularia", vue: 1 },
+  {
+    nom: "Fluide",
+    ancre: "fluide",
+    note: "Souple et légère",
+    robe: "adularia",
+    vue: 1,
+    intro:
+      "La robe de mariée fluide suit le mouvement plutôt que de le contraindre : mousseline, charmeuse, satin mat. C'est la coupe la plus naturelle pour un mariage bohème, et elle se porte tout aussi bien en satin pour une cérémonie plus classique. De l'élégance minimaliste d'Adularia au look bohème chic d'Hélène, en passant par le satin mat de Dove, chaque modèle en montre une facette.",
+    introLien: { href: "/coupes/fluide/robe-de-mariee-boheme-paris", label: "Robe de mariée bohème à Paris" },
+  },
   {
     nom: "Trapèze",
     ancre: "trapeze",

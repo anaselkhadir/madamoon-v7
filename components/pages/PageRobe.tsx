@@ -19,6 +19,7 @@ import {
 import { FILMS } from "@/lib/films";
 import { SCENES, vues } from "@/lib/medias";
 import { coupe, PLURIEL } from "@/lib/coupes";
+import { stylesDe } from "@/lib/styles";
 import { altRobe } from "@/lib/alt";
 import { de } from "@/lib/francais";
 import { CoeurFiche } from "@/components/parcours/Coeur";
@@ -428,6 +429,20 @@ export default async function PageRobe({
               {initiale(familleTexte(robe.categorie, langue, FAMILLES[robe.categorie]), langue)}
             </dd>
           </div>
+
+          {/* Le style, quand une page de style montre cette robe. */}
+          {stylesDe(robe.slug).length > 0 && (
+            <div className="border-b border-fil py-5">
+              <dt className="legende">{L.fiche.style}</dt>
+              {stylesDe(robe.slug).map((s) => (
+                <dd key={s.href} className="texte mt-2">
+                  <Link href={s.href} className="souligne">
+                    {s.label[langue]}
+                  </Link>
+                </dd>
+              ))}
+            </div>
+          )}
 
           {robe.createur && (
             <div className="border-b border-fil py-5">

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "@/components/Lien";
 import AppelElise from "@/components/AppelElise";
 import HeroPage from "@/components/HeroPage";
 import Tuile from "@/components/Tuile";
@@ -11,6 +12,7 @@ import { altCoupe, altRobe } from "@/lib/alt";
 import {
   bas,
   coupeApposition,
+  coupeIntro,
   coupeNom,
   coupeNote,
   coupePluriel,
@@ -86,6 +88,7 @@ export default async function PageCoupe({
 
   const morphologies = MORPHOLOGIES.filter((m) => m.premieres.includes(s.nom));
   const ouverture = s.ouverture ?? { robe: s.robe, vue: s.vue };
+  const intro = coupeIntro(s, langue);
 
   /* Les données structurées suivent la langue de la page : c'est celle
    * que le moteur affichera dans ses résultats. */
@@ -122,6 +125,9 @@ export default async function PageCoupe({
 
       <HeroPage
         surtitre={coupeNote(s, langue)}
+        /* Seulement sur les coupes qui ont leur paragraphe : celles dont
+         * l'expression a été mesurée. */
+        prefixe={intro ? L.prefixe : undefined}
         titre={nom}
         ligne={familleTexte(s.nom, langue, FAMILLES[s.nom])}
         robe={ouverture.robe}
@@ -133,6 +139,20 @@ export default async function PageCoupe({
          * s'emploie en apposition, donc invariable après « catalogue ». */
         catalogue={{ intitule: coupeApposition(s.nom, langue), contexte: `coupe:${s.ancre}` }}
       />
+
+      {/* ————————————————————————————— l'introduction —————
+        * Le paragraphe qui nomme la coupe en toutes lettres, entre
+        * l'ouverture et les robes. */}
+      {intro && (
+        <section className="gouttiere pt-[clamp(2.5rem,5vw,4.5rem)]">
+          <p className="phrase est-moyenne mesure-l">{intro.texte}</p>
+          {intro.lien && (
+            <Link href={intro.lien.href} className="lien-nav souligne mt-6 inline-block text-action">
+              {intro.lien.label} →
+            </Link>
+          )}
+        </section>
+      )}
 
       {/* ————————————————————————————— par maison ————— */}
       {groupes.map((g, i) => (

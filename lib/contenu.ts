@@ -4,6 +4,7 @@ import { FAQ, MAISON, SIGNATURES } from "@/lib/madamoon";
 import { APPOSITION, PLURIEL, type Coupe } from "@/lib/coupes";
 import {
   COUPE_APPOSITION,
+  COUPE_INTRO,
   COUPE_NOM,
   COUPE_NOTE,
   COUPE_PLURIEL,
@@ -49,6 +50,17 @@ import {
 export const coupeNom = (c: Coupe | Categorie, l: Langue) => {
   const nom = typeof c === "string" ? c : c.nom;
   return l === "fr" ? nom : COUPE_NOM[nom as Categorie] ?? nom;
+};
+
+/* Le paragraphe d'une coupe et le lien qui le suit, dans la langue. */
+export const coupeIntro = (c: Coupe, l: Langue) => {
+  if (!c.intro) return undefined;
+  if (l === "fr") return { texte: c.intro, lien: c.introLien };
+  const en = COUPE_INTRO[c.ancre];
+  return {
+    texte: en?.texte ?? c.intro,
+    lien: c.introLien && { href: c.introLien.href, label: en?.lien ?? c.introLien.label },
+  };
 };
 
 export const coupeNote = (c: Coupe, l: Langue) =>

@@ -1,3 +1,4 @@
+import { MAISON } from "@/lib/madamoon";
 import type { QuestionMorpho } from "@/lib/morphologies-questions";
 
 /*
@@ -1310,13 +1311,18 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
 
     /* ——————————————————————————————————————— la bohème ————— */
     {
-      slug: "robe-fluide-mariage-boheme",
+      /* La page de la fluide qui vise « robe de mariée bohème » : son
+       * adresse et son titre portent l'expression, la question reste
+       * celle de la rangée. Mots-clés et volumes : docs/seo/. */
+      slug: "robe-de-mariee-boheme-paris",
+      titre: "Robe de mariée bohème à Paris",
       q: "Une robe fluide convient-elle à un mariage bohème ?",
       r: "Oui, c'est même la coupe la plus naturelle pour un mariage bohème. Une jupe en mousseline, de la dentelle florale, des manches légères : Hélène est pensée, d'après sa fiche, pour la mariée « qui préfère dire OUI dans un look bohème chic ».",
       description:
-        "Robe de mariée fluide pour un mariage bohème : mousseline, dentelle florale, manches légères. Hélène et Murielle, les fluides bohèmes de MADAMOON à Paris.",
+        "Robe de mariée bohème à Paris : mousseline, dentelle florale, manches légères. Hélène, Murielle, Ryle, et Tessa pour une touche vintage, au showroom MADAMOON.",
       chapo:
-        "Le bohème aime ce qui bouge et ce qui respire. La fluide en a fait sa nature.",
+        "Une robe de mariée bohème se reconnaît à ce qu'elle laisse respirer : une jupe en mousseline qui bouge, de la dentelle florale, des manches légères ou transparentes. C'est la coupe fluide qui porte le mieux cet esprit — et chez MADAMOON, elle s'essaie dans notre showroom du 10ᵉ, à Paris.",
+      robes: { titre: "Nos robes bohèmes", slugs: ["helene", "murielle", "ryle"] },
       sections: [
         {
           titre: "Les robes du catalogue",
@@ -1330,6 +1336,7 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
         {
           titre: "Ce qui fait le bohème",
           texte: [
+            "Le bohème aime ce qui bouge et ce qui respire. La fluide en a fait sa nature.",
             "Un conseil : la dentelle florale, les manches légères ou transparentes, une traîne courte ou absente, et une coiffure souple. La robe doit pouvoir marcher dans l'herbe et danser pieds nus.",
           ],
         },
@@ -1339,16 +1346,36 @@ export const QUESTIONS_COUPES: Record<string, QuestionCoupe[]> = {
             "Une fluide bohème reste une robe de mariée : un corsage travaillé, comme celui d'Hélène, lui donne sa tenue et son éclat.",
           ],
         },
+        {
+          titre: "Une touche vintage",
+          texte: [
+            "Pour un bohème aux accents vintage, Tessa, de Casablanca Bridal, a d'après sa fiche un « charme vintage-chic » : une sirène au corset structuré, avec une surjupe détachable et des bretelles amovibles. Ce n'est pas une fluide — elle est rangée avec les deux-en-un —, mais elle s'essaie volontiers à côté des robes bohèmes, pour comparer.",
+          ],
+        },
+        {
+          titre: "À qui elle va",
+          texte: [
+            "La fluide est conseillée en premier aux morphologies en O, en V, en H, en 8 et en X, et vaut l'essai pour une morphologie en A. Hélène et Murielle sont indiquées, sur leurs fiches, pour les six morphologies ; Ryle pour toutes, sauf la morphologie en O.",
+          ],
+        },
+        {
+          titre: "Où essayer une robe de mariée bohème à Paris ?",
+          texte: [
+            `Au showroom MADAMOON, ${MAISON.adresse}, dans le 10ᵉ arrondissement, sur rendez-vous. Le showroom est privatisé pour vous pendant une heure : le temps d'essayer plusieurs fluides et de comparer les matières.`,
+          ],
+        },
       ],
       aRetenir: [
-        "Oui : la coupe la plus naturelle pour le bohème.",
+        "La fluide est la coupe la plus naturelle pour le bohème.",
         "Mousseline, dentelle florale, manches légères.",
-        "Hélène est pensée pour un look bohème chic.",
+        "Hélène est pensée pour un look bohème chic ; Tessa a un charme vintage-chic.",
       ],
       liens: [
+        { href: "/coupes/fluide", label: "Les robes de mariée fluides" },
         { href: "/robes/helene", label: "Hélène" },
-        { href: "/robes/murielle", label: "Murielle" },
-        { href: "/robes/ryle", label: "Ryle" },
+        { href: "/robes/tessa", label: "Tessa, au charme vintage-chic" },
+        { href: "/coupes/fluide/robe-fluide-mariage-ete", label: "Une fluide pour un mariage d'été" },
+        { href: "/rendez-vous", label: "Prendre rendez-vous" },
       ],
     },
 

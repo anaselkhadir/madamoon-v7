@@ -36,6 +36,14 @@ export type Article = {
   /* Les pages du site qui prolongent la réponse. Adresses françaises :
    * le lien les traduit sur une page anglaise. */
   liens: { href: string; label: string }[];
+  /* Le titre de la page, quand elle vise une expression plutôt que sa
+   * question : « Robe de mariée bohème à Paris ». Il devient le titre
+   * affiché, celui de l'onglet et celui du balisage ; la question reste
+   * celle des rangées, et coiffe la réponse courte. */
+  titre?: string;
+  /* Les robes du catalogue que la page montre en photographie, par leur
+   * adresse — jamais une robe qui n'y est pas. */
+  robes?: { titre: string; slugs: string[] };
 };
 
 /* Les adresses, dans l'ordre de la FAQ. Les deux langues les partagent. */

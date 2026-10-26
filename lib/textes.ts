@@ -236,6 +236,7 @@ const FR = {
     laFiche: "La fiche",
     silhouettes: "Les morphologies qu’elle sublime",
     coupe: "La coupe",
+    style: "Le style",
     maison: "La maison",
     confection: "La confection",
     surMesure: "Sur mesure, retouches incluses",
@@ -367,6 +368,14 @@ const FR = {
       intro:
         "La coupe n’est pas une règle : c’est le premier tri, celui qui fait gagner une heure d’essayage.",
     },
+    /* La page des créateurs. La boutique n'est pas un créateur : elle le
+     * dit, et la page présente ceux dont elle fait essayer les robes. */
+    createurs: {
+      titre: "Robes de mariée de créateurs à Paris",
+      intro:
+        "MADAMOON n'édite pas ses propres collections : la boutique choisit, robe par robe, chez plusieurs créateurs, puis fait confectionner et ajuster la vôtre à l'atelier. Toutes s'essaient à Paris, dans notre showroom du 10ᵉ, sur rendez-vous.",
+      lesMaisons: "Les maisons",
+    },
     morphologies: {
       titre: "Les morphologies",
       toutesLesCoupes: "Toutes les coupes",
@@ -379,6 +388,8 @@ const FR = {
       nosAutres: (pluriel: string) => `Nos autres ${pluriel}`,
       lesNotres: (pluriel: string) => `Nos ${pluriel}`,
       laMaison: "La maison",
+      /* Devant le nom de la coupe, dans le titre. */
+      prefixe: "Robe de mariée",
       aQuiElleVa: "À qui cette coupe va",
       toutesLesMorphologies: "Toutes les morphologies",
       pistes: (coupe: string) =>
@@ -965,6 +976,7 @@ const EN: Textes = {
     laFiche: "About",
     silhouettes: "The body shapes it flatters",
     coupe: "Silhouette",
+    style: "Style",
     maison: "House",
     confection: "Made to order",
     surMesure: "Made to measure, alterations included",
@@ -1076,6 +1088,12 @@ const EN: Textes = {
       intro:
         "The cut is not a rule: it is the first sorting, the one that saves an hour of fittings.",
     },
+    createurs: {
+      titre: "Designer wedding dresses in Paris",
+      intro:
+        "MADAMOON does not produce its own collections: the boutique chooses, dress by dress, from several designers, then has yours made and fitted in the atelier. All of them are tried on in Paris, in our 10th-arrondissement showroom, by appointment.",
+      lesMaisons: "The houses",
+    },
     morphologies: {
       titre: "Body shapes",
       toutesLesCoupes: "All silhouettes",
@@ -1088,6 +1106,7 @@ const EN: Textes = {
       nosAutres: (pluriel: string) => `Our other ${pluriel}`,
       lesNotres: (pluriel: string) => `Our ${pluriel}`,
       laMaison: "The house",
+      prefixe: "Wedding dress",
       aQuiElleVa: "Who this cut suits",
       toutesLesMorphologies: "All body shapes",
       pistes: (coupe: string) =>

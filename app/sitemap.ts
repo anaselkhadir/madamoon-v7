@@ -40,6 +40,7 @@ const PAGES = [
   "/rendez-vous",
   "/faq",
   "/guides",
+  "/createurs",
 ];
 
 /*

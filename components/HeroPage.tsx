@@ -34,6 +34,7 @@ const MOBILE = "(max-width: 700px)";
 
 export default function HeroPage({
   surtitre,
+  prefixe,
   titre,
   ligne,
   robe,
@@ -45,6 +46,11 @@ export default function HeroPage({
   langue,
 }: {
   surtitre?: string;
+  /* Ce qui précède le titre dans le même H1, en petit : « Robe de
+   * mariée » devant « Sirène ». Le titre garde sa taille d'affiche — le
+   * nom de la coupe reste ce qu'on voit —, et le H1 dit enfin
+   * l'expression entière. */
+  prefixe?: string;
   titre: string;
   ligne: string;
   /* La robe qui ouvre la page : son film s'il existe, sa photo sinon. */
@@ -178,7 +184,21 @@ export default function HeroPage({
       <div className="gouttiere absolute inset-0 flex flex-col justify-center">
         <div className="w-full max-w-[53vw] min-w-[16rem] max-md:max-w-[92%]">
           {surtitre && <p className="legende sur-rouge">{surtitre}</p>}
-          <h1 className={`affiche text-sur-image ${surtitre ? "mt-3" : ""}`}>{titre}</h1>
+          <h1 className={`affiche text-sur-image ${surtitre ? "mt-3" : ""}`}>
+            {prefixe && (
+              /* L'espace qui suit compte : sans elle, le texte du titre se
+               * lit « Robe de mariéeSirène ». */
+              <>
+                {/* Dans la lettre du titre, au tiers de sa taille : une
+                  * légende du site prendrait sa propre couleur, grise sur
+                  * la photographie. */}
+                <span className="block" style={{ fontSize: "0.34em", marginBottom: "0.4em" }}>
+                  {prefixe}
+                </span>{" "}
+              </>
+            )}
+            {titre}
+          </h1>
           <p className="accroche mt-6 text-sur-image">{ligne}</p>
           {/* Sous le pouce, le catalogue se réduit à son cercle et le
             * rang tient sur une ligne : deux boutons pleine largeur
