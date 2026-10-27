@@ -85,6 +85,7 @@ Ancienne adresse : `/coupes/fluide/robe-fluide-mariage-boheme/`. Elle n'a jamais
 - **Description** (158 caractères) : « Robe de mariée bohème à Paris : mousseline, dentelle florale, manches légères. Hélène, Murielle, Ryle, et Tessa pour une touche vintage, au showroom MADAMOON. »
 - **H1** : « Robe de mariée bohème à Paris ». La question « Une robe fluide convient-elle à un mariage bohème ? » reste celle de la rangée sur la page fluide, et coiffe la réponse courte.
 - **Paragraphe sous le H1** (réponse directe, environ 55 mots) : repris de la maquette, sans la mention « empois de satin ».
+- **Mise en page** : celle de la maquette (gabarit `PageStyle`) : ouverture en texte avec deux boutons, les trois robes en photo, deux colonnes, Tessa en écho, morphologies sur fond gris, questions, bandeau sombre de rendez-vous.
 - **Ajouts**, tous tirés des fiches :
   - photographies d'Hélène, Murielle et Ryle ;
   - « Une touche vintage » : Tessa, « charme vintage-chic » d'après sa fiche, rangée avec les deux-en-un ;

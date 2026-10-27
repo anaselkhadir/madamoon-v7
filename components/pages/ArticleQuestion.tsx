@@ -1,12 +1,9 @@
 import Link from "@/components/Lien";
-import Tuile from "@/components/Tuile";
 import AppelElise from "@/components/AppelElise";
 import AppelRendezvous from "@/components/parcours/AppelRendezvous";
 import FilDAriane from "@/components/FilDAriane";
 import { FICHE_GOOGLE, ID_MAISON } from "@/lib/schema";
-import { ROBES, SITE_URL } from "@/lib/madamoon";
-import { altRobe } from "@/lib/alt";
-import { couverture } from "@/lib/couverture";
+import { SITE_URL } from "@/lib/madamoon";
 import type { Article } from "@/lib/questions";
 import { versLangue, type Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
@@ -65,9 +62,6 @@ export default function ArticleQuestion({
   const L = t(langue).pages.question;
   /* Le titre de la page : celui qu'elle vise, sinon sa question. */
   const titre = article.titre ?? q;
-  const robes = (article.robes?.slugs ?? [])
-    .map((s) => ROBES.find((x) => x.slug === s))
-    .filter((x): x is (typeof ROBES)[number] => Boolean(x));
 
   /*
    * Le balisage : un article de la maison, sur une question. Pas de
@@ -136,36 +130,6 @@ export default function ArticleQuestion({
           </p>
         </div>
       </section>
-
-      {/* ———————————————————————————————————————— les robes —————
-        * Seulement quand la page en nomme : leurs photographies, chacune
-        * vers sa fiche. */}
-      {article.robes && robes.length > 0 && (
-        <section aria-labelledby="robes-montrees" className="gouttiere pt-[clamp(3rem,6vw,5rem)]">
-          <h2 id="robes-montrees" className="titre-section">
-            {article.robes.titre}
-          </h2>
-          <div className="trame-tuiles mt-6 grid-cols-2 md:grid-cols-3">
-            {robes.map((robe, j) => {
-              const media = couverture(robe);
-              if (!media) return null;
-              return (
-                <Tuile
-                  key={robe.slug}
-                  retard={(j % 3) * 70}
-                  href={`/robes/${robe.slug}`}
-                  coupDeCoeur={robe.slug}
-                  media={media}
-                  dossier="robes"
-                  alt={altRobe(robe, langue)}
-                  nom={robe.nom}
-                  sizes="(max-width: 768px) 50vw, 31vw"
-                />
-              );
-            })}
-          </div>
-        </section>
-      )}
 
       {/* —————————————————————————————————————— le développement ————— */}
       <div className="gouttiere grid gap-x-[clamp(2rem,6vw,6rem)] gap-y-12 py-[clamp(3rem,6vw,5.5rem)] lg:grid-cols-12">

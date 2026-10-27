@@ -259,7 +259,11 @@ export default function Entete() {
    * retiré celle des adresses.
    */
   const OUVERTURES = ["/robes/", "/coupes/", "/morphologies/", "/createurs/"];
-  const surPhoto = cheminFr === "/" || OUVERTURES.some((p) => cheminFr.startsWith(p));
+  /* Un seul segment après le préfixe : « /coupes/sirene » s'ouvre sur une
+   * photographie, « /coupes/sirene/une-question » sur du papier. */
+  const surPhoto =
+    cheminFr === "/" ||
+    OUVERTURES.some((p) => cheminFr.startsWith(p) && !cheminFr.slice(p.length).includes("/"));
   const surImage = surPhoto && !pose && !ouvert && !mega;
 
   useEffect(() => {

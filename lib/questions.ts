@@ -41,9 +41,22 @@ export type Article = {
    * affiché, celui de l'onglet et celui du balisage ; la question reste
    * celle des rangées, et coiffe la réponse courte. */
   titre?: string;
-  /* Les robes du catalogue que la page montre en photographie, par leur
-   * adresse — jamais une robe qui n'y est pas. */
-  robes?: { titre: string; slugs: string[] };
+  /* Une page de style — la bohème — plutôt qu'une page de question :
+   * présente, elle prend la mise en page de « PageStyle ». Les robes
+   * sont nommées par leur adresse, jamais une robe qui n'y est pas. */
+  style?: Style;
+};
+
+export type Style = {
+  robes: { titre: string; liste: { slug: string; texte: string }[] };
+  /* Deux paragraphes côte à côte. */
+  colonnes: { titre: string; texte: string }[];
+  /* Une robe d'une autre coupe, en écho. */
+  echo?: { titre: string; texte: string; robe: string; voir: string };
+  pourQui: { titre: string; texte: string; toutes: string };
+  questions: { titre: string; liste: { q: string; r: string }[]; toutes: string };
+  fin: { titre: string; texte: string };
+  voirLaCoupe: string;
 };
 
 /* Les adresses, dans l'ordre de la FAQ. Les deux langues les partagent. */

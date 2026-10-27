@@ -1,4 +1,5 @@
 import ArticleQuestion from "@/components/pages/ArticleQuestion";
+import PageStyle from "@/components/pages/PageStyle";
 import { coupeNom, questionsCoupe } from "@/lib/contenu";
 import { coupeParAncre } from "@/lib/coupes";
 import type { Langue } from "@/lib/langue";
@@ -36,6 +37,9 @@ export default function PageQuestionCoupe({
     langue === "fr"
       ? `Robes de mariée ${coupeNom(s, langue).toLowerCase()}`
       : `${coupeNom(s, langue)} wedding dresses`;
+
+  /* Une page de style a sa propre mise en page. */
+  if (x.style) return <PageStyle coupe={s} x={{ ...x, style: x.style }} langue={langue} />;
 
   return (
     <ArticleQuestion
