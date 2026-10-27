@@ -68,7 +68,7 @@ export default function PageStyle({
   };
 
   return (
-    <div style={{ background: "var(--color-ivoire)" }}>
+    <div style={{ background: "var(--color-blanc)" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(donnees) }}
@@ -146,13 +146,20 @@ export default function PageStyle({
         </ul>
       </section>
 
-      {/* ————————————————————————————————————— le style ————— */}
-      <section className="gouttiere border-t border-fil py-[clamp(3rem,6vw,5rem)]">
-        <div className="grid gap-x-[clamp(2rem,6vw,6rem)] gap-y-10 md:grid-cols-2">
+      {/* ————————————————————————————————————— le style —————
+        * Deux cartes au gris doux, centrées, à l'angle de la maison. */}
+      <section className="gouttiere pb-[clamp(3.5rem,7vw,6rem)]">
+        <div className="mx-auto grid max-w-[62rem] gap-[clamp(1rem,2vw,1.5rem)] md:grid-cols-2">
           {S.colonnes.map((c, i) => (
-            <div key={c.titre} data-lever data-retard={i * 100}>
+            <div
+              key={c.titre}
+              data-lever
+              data-retard={i * 100}
+              className="rounded-[4px] p-[clamp(1.75rem,3.5vw,2.75rem)] text-center"
+              style={{ background: "var(--color-gris)" }}
+            >
               <h2 className="phrase">{c.titre}</h2>
-              <p className="texte mesure mt-4">{c.texte}</p>
+              <p className="texte mx-auto mt-4 max-w-[40ch]">{c.texte}</p>
             </div>
           ))}
         </div>
