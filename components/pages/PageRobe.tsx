@@ -478,6 +478,8 @@ export default async function PageRobe({
           fermer: L.fiche.fermerVue,
           precedente: L.fiche.vuePrecedente,
           suivante: L.fiche.vueSuivante,
+          zoomer: L.fiche.zoomer,
+          dezoomer: L.fiche.dezoomer,
           rangs: galerie.map((_, i) => L.fiche.rangDeLaVue(i + 1, galerie.length)),
         }}
       />
