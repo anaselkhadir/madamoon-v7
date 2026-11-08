@@ -100,7 +100,8 @@ function arbre(l: Langue): Noeud {
           };
         }),
         aLaUne: [{ href: "/robes", label: T.barre.toutesRobes }],
-        toutVoir: { href: "/createurs", label: T.tiroir.lesCreateurs },
+        /* Pas de « tout voir » : la page qui rassemble les maisons n'est
+         * pas encore en ligne (branche de mise en ligne du design). */
       },
       { cle: "showroom", titre: T.barre.showroom, href: "/showroom" },
     ],
@@ -388,7 +389,6 @@ export default function MenuTiroirs({
                     <ul className="tiroir-monte mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-fil pt-4" style={monte()}>
                       {[
                         { href: "/a-propos", label: T.barre.maison },
-                        { href: "/guides", label: T.raccourcis.lesGuides },
                         { href: "/faq", label: T.raccourcis.lesQuestions },
                       ].map((a) => (
                         <li key={a.href}>
