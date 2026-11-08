@@ -9,6 +9,10 @@
 name: Mise en ligne Hostinger
 
 on:
+  # Sur la seule branche de mise en ligne du design : un envoi publie.
+  # « main » ne publie jamais par un envoi.
+  push:
+    branches: [mise-en-ligne-design]
   workflow_dispatch:
     inputs:
       dossier:
@@ -63,5 +67,5 @@ jobs:
           # au site.
           protocol: ftps
           local-dir: ./out/
-          server-dir: ${{ inputs.dossier }}
+          server-dir: ${{ inputs.dossier || '/public_html/' }}
           dangerous-clean-slate: false
