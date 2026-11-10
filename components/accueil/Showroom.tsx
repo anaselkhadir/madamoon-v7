@@ -42,7 +42,7 @@ export default function Showroom({
   accueil = false,
 }: {
   langue?: Langue;
-  /* Le texte de la maison sous la carte ne paraît que sur l'accueil :
+  /* Sur madamoon.fr, le texte sous la carte ne paraît que sur l'accueil :
    * le même bloc clôt les pages coupe, morphologie et créateur. */
   accueil?: boolean;
 }) {
@@ -109,7 +109,9 @@ export default function Showroom({
 
       {/* Sous la carte, en français seulement : ce que l'on cherche
         * quand on cherche une boutique à Paris, et ce que la maison y
-        * répond. Le texte de la maison, repris de l'accueil de la V8. */}
+        * répond. Le paragraphe vient de l'ancien édito de l'accueil,
+        * réparti à la demande de la maison dans les sections qui en
+        * parlent ; remplacé le 5 novembre 2026 par le texte de la maison. */}
       {accueil && langue === "fr" && (
         <div className="grid gap-x-[clamp(2rem,6vw,6rem)] gap-y-4 pt-[clamp(2rem,4vw,3.5rem)] md:grid-cols-12">
           <h3 className="legende md:col-span-4">Choisir sa robe de mariée à Paris</h3>

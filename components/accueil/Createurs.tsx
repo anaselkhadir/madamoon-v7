@@ -3,24 +3,30 @@ import Photo from "@/components/media/Photo";
 import RailFleches from "@/components/accueil/RailFleches";
 import RailSouris from "@/components/accueil/RailSouris";
 import { AUTRES_CREATEURS, CREATEURS, MAISON, ROBES, estEnVedette } from "@/lib/madamoon";
-import { VIGNETTES_CREATEURS, vues } from "@/lib/medias";
+import { SCENES, VIGNETTES_CREATEURS, vues } from "@/lib/medias";
 import { altRobe } from "@/lib/alt";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
-import { createurOrigine } from "@/lib/contenu";
+import { createurNote, createurOrigine } from "@/lib/contenu";
+import { FILMS } from "@/lib/films";
+import CarteMaisons, { type MaisonCarte } from "@/components/accueil/CarteMaisons";
 
 /*
  * Les créateurs.
  *
- * Une bande de maisons que l'on pousse. Elle a dérivé un temps au
- * défilement de la page — la bande avançait toute seule à mesure qu'on
- * descendait. La maison l'a trouvée déstabilisante, et elle avait
- * raison : un mouvement qu'on ne commande pas se subit.
+ * Le texte à gauche, la carte rouge des maisons à droite : une pastille
+ * par maison, qui s'ouvre sur sa fiche et passe l'image à son film
+ * (CarteMaisons.tsx).
  *
- * C'est donc un rail, comme celui des morphologies et comme sous le
- * pouce : on le tire, on le pousse aux flèches, il s'arrête sur chaque
- * maison. Le même geste partout, et rien qui bouge sans qu'on l'ait
- * voulu.
+ * Sur ordinateur seulement, à la demande de la maison (3 novembre
+ * 2026) : la carte y remplace la bande de photographies des maisons, et
+ * ses liens « Voir la maison » mènent aux mêmes pages. Au doigt et sur
+ * tablette, rien ne change : pas de carte, et la bande d'avant, un rail
+ * que l'on pousse et qui s'arrête sur chaque maison.
+ *
+ * Pas de respiration en bas, et c'est voulu : la section des avis, qui
+ * suit, ouvre sur la sienne, et les deux ensemble doubleraient le blanc
+ * de toutes les autres jonctions de l'accueil.
  */
 
 export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
@@ -54,42 +60,58 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
     media: ReturnType<typeof vues>[number];
   }[];
 
+  /* La carte rouge : une pastille par maison, son film quand la maison
+   * en possède un, sinon la photographie d'ouverture de sa page. */
+  const carte: MaisonCarte[] = CREATEURS.flatMap((c) => {
+    const robe = ROBES.find((r) => r.slug === c.ouverture.robe);
+    if (!robe) return [];
+    const film = FILMS[robe.slug];
+    const photo = vues(robe.slug)[c.ouverture.vue - 1];
+    const plan: MaisonCarte["plan"] | null = film
+      ? { type: "film", src: film.src, affiche: SCENES[film.affiche] }
+      : photo
+        ? { type: "photo", media: photo }
+        : null;
+    if (!plan) return [];
+    return [
+      {
+        slug: c.slug,
+        nom: c.nom === AUTRES_CREATEURS ? L.createurs.autres : c.nom,
+        origine: createurOrigine(c, langue),
+        note: createurNote(c, langue),
+        plan,
+        alt: altRobe(robe, langue),
+      },
+    ];
+  });
+  /* Le film d'ouverture, tout fermé : l'escalier, celui d'Addison. */
+  const ouvertureCarte = (() => {
+    const robe = ROBES.find((r) => r.slug === "addison");
+    const film = FILMS.addison;
+    return robe && film ? { src: film.src, affiche: SCENES[film.affiche], alt: altRobe(robe, langue) } : null;
+  })();
 
   if (maisons.length === 0) return null;
 
-  /* Pas de respiration en bas, et c'est voulu.
-   *
-   * Cette section et celle des avis en portaient une pleine de part et
-   * d'autre : quatre-vingt-deux pixels chacune au seuil de l'ordinateur,
-   * soit cent soixante-quatre de blanc à leur jonction — le double de ce
-   * que la page met partout ailleurs. La maison l'a vu.
-   *
-   * Le chiffre n'est pas choisi au jugé : toutes les autres jonctions de
-   * l'accueil font quatre-vingt-deux pixels, celle-ci les fait
-   * maintenant aussi. La respiration de la section suivante suffit à
-   * les séparer.
-   *
-   * C'est le bas de celle-ci qui cède et non le haut de l'autre : la
-   * section des avis ouvre sur ses étoiles, et les serrer contre ce qui
-   * précède leur ôterait leur silence. */
   return (
     <section
       aria-labelledby="createurs"
       className="bg-blanc pt-[clamp(4rem,8vw,8rem)]"
     >
-      <div className="gouttiere">
+      <div className="gouttiere grid gap-x-[clamp(2rem,4vw,4rem)] gap-y-10 lg:grid-cols-12">
+        <div className="lg:col-span-5">
         <p className="legende">{L.createurs.legende}</p>
         <span data-ligne className="mt-4 block">
           <h2 id="createurs" className="phrase">
             {L.createurs.titre}
           </h2>
         </span>
-        <p className="texte mesure-l mt-4">{L.createurs.lieux}</p>
-        {/* Le texte de la maison (accueil de la V8, 3 novembre 2026) :
-          * d'où viennent les robes, la confection à vos mesures, le prix
-          * de départ. Français seulement. */}
+        <p className="texte texte-a-cote mesure-l mt-4">{L.createurs.lieux}</p>
+        {/* Le texte de la maison, envoyé le 3 novembre 2026 : d'où
+          * viennent les robes, la confection à vos mesures, le prix de
+          * départ. Français seulement. */}
         {langue === "fr" && (
-          <div className="texte mesure-l mt-4">
+          <div className="texte texte-a-cote mesure-l mt-4">
             <p>
               Chez MADAMOON, chaque robe est choisie avec une attention particulière, auprès de créateurs reconnus pour leur élégance et leur savoir-faire. Notre sélection réunit les univers de Watters Designs, Casablanca Bridal, Olya Mak et Monica Loretti, ainsi que quelques ateliers indépendants soigneusement sélectionnés.
             </p>
@@ -101,13 +123,24 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
             </p>
           </div>
         )}
+        </div>
+
+        {ouvertureCarte && carte.length > 0 && (
+        <div className="min-h-[clamp(26rem,38vw,34rem)] max-lg:hidden lg:col-span-7">
+          <CarteMaisons
+            maisons={carte}
+            ouverture={ouvertureCarte}
+            textes={{ legende: L.createurs.carteLegende, voir: L.createurs.carteVoir, liste: L.createurs.carteListe }}
+          />
+        </div>
+        )}
       </div>
 
       {/* La bande. Elle déborde volontairement à droite : c'est ce débord
         * qui donne sa course à la dérive. */}
       {/* Les flèches encadrent le rail, à droite et à gauche : plus
         * claires pour les mariées que groupées au-dessus. */}
-      <div className="relative mt-[clamp(2.5rem,5vw,4rem)]">
+      <div className="relative mt-[clamp(2.5rem,5vw,4rem)] lg:hidden">
         <RailFleches cible="rail-createurs" quoi="createurs" cotes />
         <div
           id="rail-createurs"
@@ -165,6 +198,7 @@ export default function Createurs({ langue = "fr" }: { langue?: Langue }) {
           )}
         </div>
       </div>
+      {/* Au doigt et sur tablette seulement, comme la bande. */}
       <RailSouris cible="rail-createurs" />
     </section>
   );
