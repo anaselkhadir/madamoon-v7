@@ -53,7 +53,7 @@ export default function Accueil() {
       <Coupes langue="fr" />
       <Createurs langue="fr" />
       <Avis langue="fr" />
-      <Showroom langue="fr" />
+      <Showroom langue="fr" accueil />
     </>
   );
 }

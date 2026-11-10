@@ -4,6 +4,7 @@ import { SCENES } from "@/lib/medias";
 import { altScene } from "@/lib/alt";
 import type { Langue } from "@/lib/langue";
 import { t } from "@/lib/textes";
+import { MAISON } from "@/lib/madamoon";
 
 /*
  * Le showroom.
@@ -36,7 +37,15 @@ import { t } from "@/lib/textes";
  * garde la hauteur d'un écran.
  */
 
-export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
+export default function Showroom({
+  langue = "fr",
+  accueil = false,
+}: {
+  langue?: Langue;
+  /* Le texte de la maison sous la carte ne paraît que sur l'accueil :
+   * le même bloc clôt les pages coupe, morphologie et créateur. */
+  accueil?: boolean;
+}) {
   const L = t(langue);
 
   return (
@@ -97,6 +106,29 @@ export default function Showroom({ langue = "fr" }: { langue?: Langue }) {
           </Link>
         </div>
       </div>
+
+      {/* Sous la carte, en français seulement : ce que l'on cherche
+        * quand on cherche une boutique à Paris, et ce que la maison y
+        * répond. Le texte de la maison, repris de l'accueil de la V8. */}
+      {accueil && langue === "fr" && (
+        <div className="grid gap-x-[clamp(2rem,6vw,6rem)] gap-y-4 pt-[clamp(2rem,4vw,3.5rem)] md:grid-cols-12">
+          <h3 className="legende md:col-span-4">Choisir sa robe de mariée à Paris</h3>
+          <div className="texte md:col-span-8">
+            <p>
+              Chercher une boutique de robes de mariée à Paris, c’est avant tout rechercher un lieu où l’on se sent écoutée, accompagnée et libre d’imaginer sa robe idéale. Au showroom <strong className="font-medium text-encre">MADAMOON</strong>, situé au {MAISON.adresse}, dans le 10ᵉ arrondissement de Paris, chaque rendez-vous est pensé comme une expérience privilégiée, dans un espace entièrement privatisé pour vous.
+            </p>
+            <p className="mt-4">
+              Ici, chaque essayage commence par une attention particulière portée à votre silhouette, à vos envies et à votre personnalité. Nous vous guidons vers les coupes qui vous mettent en valeur, puis vers les créations de créateurs soigneusement sélectionnés pour leur élégance et leur savoir-faire.
+            </p>
+            <p className="mt-4">
+              Que vous recherchiez un magasin de robes de mariée à Paris, un showroom intimiste ou une adresse incontournable en Île-de-France, MADAMOON vous accueille exclusivement sur rendez-vous, pour vous offrir un accompagnement personnalisé et des essayages en toute sérénité.
+            </p>
+            <p className="mt-4">
+              Plus qu&apos;une simple boutique de mariage, MADAMOON est une adresse dédiée à celles qui souhaitent trouver une robe à leur image. Nos robes sont proposées à l&apos;achat, jamais à la location. Une seule adresse, un showroom privé et toute l&apos;attention que mérite votre grand jour.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -209,7 +209,17 @@ export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
               {L.coupes.titre}
             </h2>
           </span>
-          <p className="texte mesure mt-3">{L.coupes.texte}</p>
+          {/* En français, la phrase des coupes, vers la page de chacune
+            * (texte de l'accueil de la V8) ; en anglais, la ligne d'avant. */}
+          <p className="texte mesure-l mt-3">
+            {langue === "fr" ? (
+            <>
+              Une <Link href="/coupes/sirene" className="souligne">robe de mariée sirène</Link> dessine la taille et les hanches ; une <Link href="/coupes/princesse" className="souligne">princesse</Link> assume le volume ; une <Link href="/coupes/fluide" className="souligne">robe fluide</Link> suit le mouvement ; un <Link href="/coupes/trapeze" className="souligne">trapèze</Link> s'ouvre en A ; une <Link href="/coupes/deux-en-un" className="souligne">deux-en-un</Link> change d'allure entre la cérémonie et la soirée.
+            </>
+          ) : (
+            L.coupes.texte
+          )}
+          </p>
           <Link href="/coupes" className="lien-nav souligne mt-5 inline-block text-action">
             {L.coupes.lien}
           </Link>
@@ -370,7 +380,15 @@ export default function Coupes({ langue = "fr" }: { langue?: Langue }) {
           <span data-ligne className="mt-4 block">
             <p className="phrase">{L.coupes.titre}</p>
           </span>
-          <p className="texte mt-4">{L.coupes.texte}</p>
+          <p className="texte mt-4">
+            {langue === "fr" ? (
+            <>
+              Une <Link href="/coupes/sirene" className="souligne">robe de mariée sirène</Link> dessine la taille et les hanches ; une <Link href="/coupes/princesse" className="souligne">princesse</Link> assume le volume ; une <Link href="/coupes/fluide" className="souligne">robe fluide</Link> suit le mouvement ; un <Link href="/coupes/trapeze" className="souligne">trapèze</Link> s'ouvre en A ; une <Link href="/coupes/deux-en-un" className="souligne">deux-en-un</Link> change d'allure entre la cérémonie et la soirée.
+            </>
+          ) : (
+            L.coupes.texte
+          )}
+          </p>
         </div>
         <div className="gouttiere mt-8">
           <div className="trame-tuiles grid-cols-2">
